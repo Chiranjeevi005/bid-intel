@@ -48,7 +48,7 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
     
     // Log start (safely omitting sensitive details)
     if (typeof window !== 'undefined' && 'gtag' in window) {
-      (window as unknown as { gtag: Function }).gtag('event', 'rfp_upload_started');
+      (window as unknown as { gtag: (...args: string[]) => void }).gtag('event', 'rfp_upload_started');
     }
 
     // Generate collision-resistant secure path: {user_id}/{uuid}.pdf
@@ -70,7 +70,7 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
       }
 
       // Step 2: Insert Database Record
-      const { error: dbError } = await supabase
+      const { data: insertedDoc, error: dbError } = await supabase
         .from('documents')
         .insert({
           user_id: userId,
@@ -78,7 +78,9 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
           storage_path: storagePath,
           size_bytes: file.size,
           status: 'UPLOADED'
-        });
+        })
+        .select('id')
+        .single();
 
       // Partial Failure Edge Case:
       // If DB insert fails, we attempt to delete the orphaned storage object.
@@ -89,13 +91,44 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
         throw new Error(`Database record failed: ${dbError.message}`);
       }
 
+      // Step 3: Trigger Document Processing
+      if (typeof window !== 'undefined' && 'gtag' in window) {
+        (window as unknown as { gtag: (...args: string[]) => void }).gtag('event', 'document_processing_started');
+      }
+
+      const processRes = await fetch('/api/process-document', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ document_id: insertedDoc.id })
+      });
+
+      if (!processRes.ok) {
+        if (typeof window !== 'undefined' && 'gtag' in window) {
+          (window as unknown as { gtag: (...args: string[]) => void }).gtag('event', 'document_processing_failed');
+        }
+        throw new Error('Document uploaded, but processing failed. Please try again.');
+      }
+
+      const processData = await processRes.json();
+      
+      if (processData.status === 'OCR_REQUIRED') {
+        if (typeof window !== 'undefined' && 'gtag' in window) {
+          (window as unknown as { gtag: (...args: string[]) => void }).gtag('event', 'document_ocr_required');
+        }
+        setSuccessFilename(`${file.name} (Saved. Requires OCR processing)`);
+      } else {
+        if (typeof window !== 'undefined' && 'gtag' in window) {
+          (window as unknown as { gtag: (...args: string[]) => void }).gtag('event', 'document_processing_completed');
+        }
+        setSuccessFilename(`${file.name} (Text Extracted successfully)`);
+      }
+
       // Success
-      setSuccessFilename(file.name);
       setStatus('SUCCESS');
       setFile(null);
       
       if (typeof window !== 'undefined' && 'gtag' in window) {
-        (window as unknown as { gtag: Function }).gtag('event', 'rfp_upload_completed');
+        (window as unknown as { gtag: (...args: string[]) => void }).gtag('event', 'rfp_upload_completed');
       }
 
     } catch (err: unknown) {
@@ -105,7 +138,7 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
       setErrorMsg(errorMessage);
       
       if (typeof window !== 'undefined' && 'gtag' in window) {
-        (window as unknown as { gtag: Function }).gtag('event', 'rfp_upload_failed');
+        (window as unknown as { gtag: (...args: string[]) => void }).gtag('event', 'rfp_upload_failed');
       }
     }
   };

@@ -205,6 +205,16 @@ The processing pipeline must fail safely.
 
 A malformed document must not crash the entire application.
 
+### Secure Document Retrieval
+The backend API must **never trust a client-supplied storage path**.
+To process a document, the client must supply the `document_id`. The server must then:
+1. Verify the authenticated user's session.
+2. Query the `documents` table using the `document_id` and the user's `auth.uid()`.
+3. Retrieve the trusted `storage_path` from the database.
+4. Download the private object securely.
+
+Allowing the browser to specify an arbitrary storage path for server-side processing is strictly forbidden.
+
 ---
 
 # 11. Prompt Injection

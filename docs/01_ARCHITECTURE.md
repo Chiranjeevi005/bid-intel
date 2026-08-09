@@ -441,43 +441,52 @@ Production
 
 ---
 
-# 9. Future Document Processing Architecture
+# 9. Document Processing Architecture
 
-This is architectural direction, NOT Phase 1 implementation.
+This reflects the active implementation established in BUILD-005.
 
 ```text
-PDF Upload
-    │
-    ▼
-File Validation
-    │
-    ▼
-Document Storage
-    │
-    ▼
-Text Extraction
-    │
-    ▼
-Page-Aware Document Representation
-    │
-    ▼
-Structured Evidence
+                 ORIGINAL EVIDENCE
+                       │
+                       ▼
+              ┌─────────────────┐
+              │   RFP PDF       │
+              │  Private Store  │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │  PDF Extraction │
+              │   pdf-parse     │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ document_pages  │
+              │                 │
+              │ Page 1 → text   │
+              │ Page 2 → text   │
+              │ Page 3 → text   │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │   BUILD-006     │
+              │ Intelligence    │
+              └─────────────────┘
 ```
 
-The document representation should preserve source location wherever possible.
+The document representation preserves source page locations to ensure AI findings can point back to the underlying RFP pages. The PDF binary serves as the absolute source of truth.
 
-Example conceptual structure:
+Example concrete structure:
 
 ```text
-Document
- ├── metadata
- ├── pages[]
- │    ├── page_number
- │    └── text
- └── sections[]
-      ├── title
+documents
+ └── document_pages
+      ├── page_number
       ├── content
-      └── source_pages[]
+      └── char_count
+```
 ```
 
 ---

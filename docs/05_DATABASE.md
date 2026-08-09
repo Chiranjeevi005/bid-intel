@@ -118,7 +118,16 @@ Stores metadata for uploaded RFPs, linked to the `rfps` Supabase Storage bucket.
 * `original_filename` (TEXT)
 * `storage_path` (TEXT, UNIQUE)
 * `size_bytes` (BIGINT)
-* `status` (TEXT, e.g., 'UPLOADED')
+* `status` (TEXT, e.g., 'UPLOADED', 'PROCESSING', 'TEXT_EXTRACTED', 'OCR_REQUIRED', 'FAILED')
+* `created_at` (TIMESTAMPTZ)
+
+### `document_pages`
+Stores the page-by-page extracted text representation of an RFP document (BUILD-005).
+
+* `document_id` (UUID, FK to `documents(id)`, PK)
+* `page_number` (INTEGER, PK)
+* `content` (TEXT)
+* `char_count` (INTEGER)
 * `created_at` (TIMESTAMPTZ)
 
 Do NOT automatically create tables for:
