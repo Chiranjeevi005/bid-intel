@@ -690,3 +690,195 @@ The implementation violates scope, architecture, security or verification requir
 # 13. Core Rule
 
 > **Never confuse "AI says it built it" with "we verified it was built correctly."**
+
+---
+
+# BUILD-001 — Production Foundation
+
+**Date:** 2026-08-09
+**Phase:** Phase 1
+**Status:** VERIFIED
+**Commit:** <pending>
+
+---
+
+## 1. Objective
+
+### What are we trying to accomplish?
+Establish a minimal, clean, production-ready Next.js foundation for the MVP.
+The application must be capable of local development, version control, connection to Supabase (client foundation), and GA4 configuration.
+
+### Why does this matter?
+Provides the architectural base for Pre-Bid Intelligence MVP without introducing unnecessary dependencies or speculative features.
+
+---
+
+## 2. Context
+The repository previously only contained documentation and a Git initialization. The objective is to initialize the actual application structure described in `01_ARCHITECTURE.md`.
+
+---
+
+## 3. Antigravity Implementation Plan
+(See `implementation_plan.md` generated previously).
+* Initialize Next.js app via create-next-app with Tailwind, ESLint, TypeScript.
+* Setup Supabase browser client in `lib/supabase/client.ts`.
+* Setup GA4 analytics utility in `lib/analytics.ts`.
+* Add basic application shell and error/loading states.
+
+---
+
+## 4. Plan Review
+
+### Decision
+APPROVED WITH CHANGES
+
+### Reason
+The original plan proposed specifying `tailwind.config.ts`, assumed `npm install` was needed post-creation, lacked independent lint verification, missed `use client` on `error.tsx`, and implied GA4 could be verified without real credentials. These were corrected before execution.
+
+---
+
+## 5. Implementation
+
+### What was actually built?
+* Next.js application scaffold with App Router.
+* Environment variable templates without exposing secrets.
+* Supabase client module for future database access.
+* GA4 analytics client utility without rendering-blocking behavior.
+* Minimal MVP application shell and loading/error states.
+
+### Files created
+* `package.json`, `tsconfig.json`, `next.config.ts`, `eslint.config.mjs`, `postcss.config.mjs`
+* `app/page.tsx`, `app/layout.tsx`, `app/loading.tsx`, `app/error.tsx`, `app/not-found.tsx`
+* `components/Analytics.tsx`
+* `lib/supabase/client.ts`
+* `lib/analytics.ts`
+* `.env.example`, `.env.local`
+
+### Dependencies added
+* `@supabase/supabase-js`
+
+---
+
+## 6. Plan vs Reality
+
+| Planned | Actual | Difference | Reason |
+| ------- | ------ | ---------- | ------ |
+| `tailwind.config.ts` | Did not force filename | Let `create-next-app` determine config format | Next.js V15+ sets up Tailwind CSS directly inside `app/globals.css` instead of `tailwind.config.ts` |
+| Redundant `npm install` | Skipped | `create-next-app` handles installation | Efficiency and avoiding redundant actions |
+| `any` in GA script | Extended `Window` interface | Added type declaration for `gtag` | To comply with strict TypeScript rules and avoid `any` |
+
+### Interpretation
+Differences were intentional to comply with the corrected implementation plan.
+
+---
+
+## 7. Technical Decisions
+No new architectural decisions.
+
+---
+
+## 8. Verification
+
+### Automated Verification
+
+| Check      | Result            | Notes |
+| ---------- | ----------------- | ----- |
+| TypeScript | PASS              | Confirmed via `npm run build` |
+| ESLint     | PASS              | Confirmed via `npm run lint` |
+| Build      | PASS              | `npm run build` succeeded |
+
+### Manual Verification
+* [X] Dependency integrity (`create-next-app` installed successfully, and `@supabase/supabase-js` installed).
+* [X] Error/loading/not-found behavior components exist and meet criteria (`use client` for error).
+* [X] `.env.local` ignored in Git. `.env.example` tracked.
+* [X] Supabase configuration path exists.
+* [X] Analytics configuration path exists.
+
+### Production Verification
+> GA4 production event delivery: NOT VERIFIED (No real Measurement ID available)
+> Supabase production connection: NOT VERIFIED (No real Supabase credentials available)
+
+---
+
+## 9. Antigravity Walkthrough
+(See Walkthrough Artifact)
+
+---
+
+## 10. Walkthrough vs Actual Repository
+| Walkthrough Claim | Repository Evidence | Verified? |
+| ----------------- | ------------------- | --------- |
+| Minimal foundation is set | `app/page.tsx` contains Pre-Bid Intelligence | YES |
+| Supabase client is browser-safe | `lib/supabase/client.ts` uses `NEXT_PUBLIC_` vars | YES |
+
+---
+
+## 11. Architecture Impact
+* [X] Application architecture
+* [X] Environment
+* [X] Dependencies
+
+### Details
+Next.js structure established, environment setup, Supabase client dependency added. Follows Phase 1 architecture exactly.
+
+---
+
+## 12. Security Impact
+```text
+NONE
+```
+Environment file separation ensures secrets are not leaked or tracked by Git. Supabase client only uses `NEXT_PUBLIC_` anon keys.
+
+---
+
+## 13. Cost Impact
+```text
+NONE
+```
+
+---
+
+## 14. Learning Notes
+
+### What I should understand
+#### Concept 1: Next.js Error Boundaries
+`error.tsx` must be a Client Component (`'use client'`) because errors must be caught on the client side at runtime.
+
+#### Concept 2: Next.js 15+ Tailwind Config
+The scaffold doesn't necessarily create `tailwind.config.ts` if it uses the modern PostCSS setup.
+
+---
+
+## 15. Known Limitations
+* GA4 tracking is set up structurally but not functionally verified since no real measurement ID is present.
+* Supabase client uses placeholder URL/keys.
+
+---
+
+## 16. Deferred Work
+* Actual AI and OCR integrations.
+* Database schemas and Authentication.
+
+---
+
+## 17. Next Step
+The next implementation step is:
+> Building out the UI/landing page or preparing for document upload.
+Why:
+> Foundation is ready.
+
+---
+
+## 18. Final Status
+```text
+VERIFIED
+```
+
+---
+
+## 19. Commit
+### Commit message
+```text
+chore: establish production foundation
+```
+
