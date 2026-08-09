@@ -22,8 +22,8 @@ export default async function DashboardPage() {
         <h1 className="text-xl font-bold text-gray-900">Pre-Bid Intelligence</h1>
         <LogoutButton />
       </header>
-      
-      <main className="flex-grow p-6 max-w-7xl mx-auto w-full">
+
+      <main className="grow p-6 max-w-7xl mx-auto w-full">
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center mt-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">Dashboard</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">

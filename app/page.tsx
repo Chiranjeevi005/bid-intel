@@ -42,7 +42,7 @@ export default function Home() {
         </p>
         <button
           onClick={() => handleCtaClick('hero')}
-          className="rounded-md bg-gray-900 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-colors"
+          className="rounded-md bg-gray-900 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-colors"
         >
           See How It Works
         </button>
@@ -64,19 +64,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <article className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 flex flex-col">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Requirement Intelligence</h3>
-              <p className="text-gray-600 text-sm flex-grow">Surface mandatory requirements and compliance obligations directly from the document.</p>
+              <p className="text-gray-600 text-sm grow">Surface mandatory requirements and compliance obligations directly from the document.</p>
             </article>
             <article className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 flex flex-col">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Risk Detection</h3>
-              <p className="text-gray-600 text-sm flex-grow">Highlight non-standard terms, delivery risks, and potential pitfalls hidden in the text.</p>
+              <p className="text-gray-600 text-sm grow">Highlight non-standard terms, delivery risks, and potential pitfalls hidden in the text.</p>
             </article>
             <article className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 flex flex-col">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Ambiguity Analysis</h3>
-              <p className="text-gray-600 text-sm flex-grow">Find contradictory statements or vague clauses before they become contract issues.</p>
+              <p className="text-gray-600 text-sm grow">Find contradictory statements or vague clauses before they become contract issues.</p>
             </article>
             <article className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 flex flex-col">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Clarification Intelligence</h3>
-              <p className="text-gray-600 text-sm flex-grow">Turn unresolved requirements into focused clarification questions for the Q&A period.</p>
+              <p className="text-gray-600 text-sm grow">Turn unresolved requirements into focused clarification questions for the Q&A period.</p>
             </article>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function Home() {
         </h2>
         <button
           onClick={() => handleCtaClick('footer')}
-          className="rounded-md bg-white px-8 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors"
+          className="rounded-md bg-white px-8 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white transition-colors"
         >
           See How It Works
         </button>

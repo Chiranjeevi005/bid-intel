@@ -1256,6 +1256,36 @@ VERIFIED
 
 ## 19. Commit
 ### Commit message
-```text
 feat: implement identity and authentication foundation
+```
+
+---
+
+# BUILD-003.1 — Post-Release Authentication Fixes
+
+**Date:** 2026-08-09
+**Phase:** Phase 1
+**Status:** VERIFIED
+**Commit:** <pending>
+
+---
+
+## 1. Objective
+Resolve an `ERR_SSL_PROTOCOL_ERROR` occurring during the Next.js production build (`npm start`) on localhost, and clean up lingering Tailwind CSS warnings.
+
+## 2. Context
+When running the compiled production build locally, the Supabase Auth callback (`app/auth/callback/route.ts`) incorrectly forced a redirect to `HTTPS` because `NODE_ENV` was set to `production` and a local proxy header was present. Since localhost does not have an SSL certificate, this caused a protocol error immediately after a successful login.
+
+## 3. Implementation
+* **Callback Fix:** Rewrote the redirect logic in `app/auth/callback/route.ts` to explicitly parse the request URL. If the hostname is `localhost` or `127.0.0.1`, it forcefully overrides the protocol back to `http:`, bypassing the strict `HTTPS` proxy check.
+* **Warning Cleanup:** Removed redundant `focus-visible:outline-2` classes and updated `flex-grow` to `grow` in `app/page.tsx` to satisfy Tailwind's linting rules.
+
+## 4. Verification
+* [X] Recompiled via `npm run build` with zero warnings.
+* [X] Ran `npm start` and verified that the Google OAuth and Magic Link redirects land successfully on `http://localhost:3000/dashboard` without SSL errors.
+
+## 5. Commit
+### Commit message
+```text
+fix: force HTTP redirect for localhost auth callback and resolve tailwind warnings
 ```

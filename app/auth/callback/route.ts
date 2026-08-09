@@ -11,16 +11,23 @@ export async function GET(request: Request) {
     const supabase = await createClient();
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error) {
+      const url = new URL(request.url);
+      url.pathname = next;
+      url.search = '';
+
       const forwardedHost = request.headers.get('x-forwarded-host'); // original origin before load balancer
-      const isLocalEnv = process.env.NODE_ENV === 'development';
-      if (isLocalEnv) {
-        // we can be sure that there is no load balancer in between, so no need to watch for X-Forwarded-Host
-        return NextResponse.redirect(`${origin}${next}`);
-      } else if (forwardedHost) {
-        return NextResponse.redirect(`https://${forwardedHost}${next}`);
-      } else {
-        return NextResponse.redirect(`${origin}${next}`);
+      if (forwardedHost) {
+        url.host = forwardedHost;
       }
+
+      // Force HTTP for localhost to prevent ERR_SSL_PROTOCOL_ERROR
+      if (url.hostname === 'localhost' || url.hostname === '127.0.0.1') {
+        url.protocol = 'http:';
+      } else if (forwardedHost) {
+        url.protocol = 'https:';
+      }
+
+      return NextResponse.redirect(url);
     }
   }
 
