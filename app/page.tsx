@@ -18,8 +18,22 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen bg-white">
+      {/* Header */}
+      <header className="absolute inset-x-0 top-0 z-50">
+        <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+          <div className="flex lg:flex-1">
+            <span className="text-xl font-bold text-gray-900">Pre-Bid Intelligence</span>
+          </div>
+          <div className="flex flex-1 justify-end">
+            <a href="/login" className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-600 transition-colors">
+              Log in <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </nav>
+      </header>
+
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center px-6 py-24 md:py-32 text-center bg-gray-50 border-b border-gray-200">
+      <section className="flex flex-col items-center justify-center px-6 pt-32 pb-24 md:pt-40 md:pb-32 text-center bg-gray-50 border-b border-gray-200">
         <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl mb-6">
           Understand the opportunity before you write the proposal.
         </h1>

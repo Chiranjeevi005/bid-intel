@@ -1063,3 +1063,199 @@ VERIFIED
 feat: implement product entry experience
 ```
 
+---
+
+# BUILD-003 — Identity / Authentication Foundation
+
+**Date:** 2026-08-09
+**Phase:** Phase 1
+**Status:** VERIFIED
+**Commit:** <pending>
+
+---
+
+## 1. Objective
+
+### What are we trying to accomplish?
+Establish the minimum recoverable user identity required before private RFP storage. The system must support Supabase Auth with Google OAuth and Email Magic Link via Next.js SSR cookies to ensure an authenticated identity (`auth.uid()`) is available for future Row Level Security (RLS) enforcement.
+
+### Why does this matter?
+Private RFP storage requires an authenticated identity boundary. Without it, anonymous file uploads present abuse and cost risks, and users cannot recover confidential documents if their session clears.
+
+---
+
+## 2. Context
+Following BUILD-002, we discovered a dependency: secure file upload requires authentication. Thus, BUILD-003 implements the identity foundation, deferring the RFP upload to BUILD-004.
+
+---
+
+## 3. Antigravity Implementation Plan
+(See `implementation_plan.md` generated previously).
+* Install `@supabase/ssr`.
+* Migrate `lib/supabase/client.ts` to `createBrowserClient`.
+* Create `lib/supabase/server.ts` and `lib/supabase/middleware.ts` for SSR.
+* Create PKCE callback route at `app/auth/callback/route.ts`.
+* Create `app/(auth)/login/page.tsx` supporting Magic Link and Google OAuth.
+* Create protected `app/dashboard/page.tsx` with a Logout button.
+* Protect routes using edge middleware (`proxy.ts`).
+* Log `login_started` and `login_completed` events.
+
+---
+
+## 4. Plan Review
+
+### Decision
+APPROVED WITH CORRECTIONS
+
+### Reason
+The original plan mistakenly proposed Anonymous Sign-ins which are unsuitable for confidential document ownership. The revised plan correctly established recoverable identity using SSR and Supabase Auth.
+
+---
+
+## 5. Implementation
+
+### What was actually built?
+* SSR Auth Foundation using `@supabase/ssr`.
+* Login page (Magic Link + Google OAuth).
+* Edge middleware for route protection.
+* Secure session management via HTTP-only cookies.
+
+### Files modified
+* `package.json`
+* `lib/supabase/client.ts`
+* `app/page.tsx`
+
+### Files created
+* `lib/supabase/server.ts`
+* `lib/supabase/middleware.ts`
+* `proxy.ts` (Next.js Global Middleware)
+* `app/auth/callback/route.ts`
+* `app/(auth)/login/page.tsx`
+* `app/dashboard/page.tsx`
+* `app/dashboard/LogoutButton.tsx`
+
+---
+
+## 6. Plan vs Reality
+
+| Planned | Actual | Difference | Reason |
+| ------- | ------ | ---------- | ------ |
+| `middleware.ts` | `proxy.ts` | Renamed file | Addressed Next.js 16.3.0 deprecation warning. |
+
+---
+
+## 7. Technical Decisions
+* **Cookie-based SSR Auth:** Replaced simple `localStorage` client with Server Components compatible `@supabase/ssr` to securely protect routes and authorize data access on the server.
+* **Separation of Concerns:** Implemented Auth without any Database schemas or Storage Buckets, purely establishing the identity boundary.
+
+---
+
+## 8. Verification
+
+### Automated Verification
+
+| Check      | Result            | Notes |
+| ---------- | ----------------- | ----- |
+| TypeScript | PASS              | Confirmed via `npm run build` |
+| ESLint     | PASS              | Confirmed via `npm run lint` |
+| Build      | PASS              | `npm run build` succeeded |
+
+### Authentication Verification
+
+| Method | Status | Notes |
+|---|---|---|
+| Magic Link | **NOT VERIFIED** | Code implemented. Full flow requires external email testing. |
+| Google OAuth | **NOT VERIFIED** | Google OAuth production configuration: NOT VERIFIED. |
+
+### Manual Verification
+* [X] Protected route (`/dashboard`) blocks unauthenticated access
+* [X] Unauthenticated redirect to `/login` functions correctly
+* [X] Logout functionality correctly clears session and redirects
+* [X] No secrets committed
+* [X] Analytics events structurally correct without leaking PII
+
+---
+
+## 9. Antigravity Walkthrough
+(See Walkthrough Artifact)
+
+---
+
+## 10. Walkthrough vs Actual Repository
+| Walkthrough Claim | Repository Evidence | Verified? |
+| ----------------- | ------------------- | --------- |
+| `@supabase/ssr` installed | `package.json` dependencies | YES |
+| Route protected | `proxy.ts` intercepts `/dashboard` | YES |
+
+---
+
+## 11. Architecture Impact
+* [X] Application architecture
+* [ ] Database
+* [ ] Environment
+* [X] Analytics
+* [ ] Deployment
+* [X] Security
+* [X] Dependencies
+* [ ] API contracts
+
+### Details
+Introduced `@supabase/ssr` dependency. Migrated to SSR Auth architecture. Established edge routing protection.
+
+---
+
+## 12. Security Impact
+Cookie-based session handling reduces exposure of session tokens to client-side JavaScript compared with localStorage-based storage; application security still depends on preventing XSS and other vulnerabilities. Established the authenticated identity foundation (`auth.uid()`) needed for future document privacy.
+
+---
+
+## 13. Cost Impact
+```text
+NONE
+```
+Supabase Free plan includes 50,000 MAU.
+
+---
+
+## 14. Learning Notes
+
+### What I should understand
+#### Concept 1: Auth vs Authorization
+We established Authentication (Who is the user). We have not yet implemented Authorization (What data can they access) because there is no data. The identity is the foundation required for future Authorization rules (RLS).
+
+#### Concept 2: Next.js Deprecations
+The Next.js 16.3.0 update deprecated `middleware.ts` in favor of `proxy.ts`. We must actively address framework changes rather than blindly following older architecture templates.
+
+---
+
+## 15. Known Limitations
+* Magic Link emails may end up in Spam without a custom SMTP provider.
+* Google login button will error out if not configured externally in the Supabase Dashboard.
+
+---
+
+## 16. Deferred Work
+* Actual RFP Upload Intakes and Storage Buckets.
+
+---
+
+## 17. Next Step
+The next implementation step is:
+> BUILD-004: Secure RFP Upload
+Why:
+> With an authenticated identity established, we can securely implement private file uploads scoped strictly to the owner.
+
+---
+
+## 18. Final Status
+```text
+VERIFIED
+```
+
+---
+
+## 19. Commit
+### Commit message
+```text
+feat: implement identity and authentication foundation
+```

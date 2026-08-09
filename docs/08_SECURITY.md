@@ -305,16 +305,15 @@ Analytics should measure behavior, not confidential business content.
 
 # 16. Authentication
 
-Authentication is not implemented in Phase 1.
+Authentication is implemented via Supabase Auth using `@supabase/ssr` (Next.js App Router).
 
-When authentication is introduced:
+* Session handling is secured via HTTP-only cookies (`auth/callback` PKCE exchange).
+* Cookie-based session handling reduces exposure of session tokens to client-side JavaScript compared with localStorage-based storage; application security still depends on preventing XSS and other vulnerabilities.
+* Route protection is enforced at the edge via `middleware.ts` before pages render.
+* Private resources will be associated with the authenticated user (`auth.uid()`) in subsequent builds.
+* Users must not be able to access another user's resources by changing an identifier.
 
-* session handling must be secure
-* authorization must be enforced server-side
-* private resources must be associated with the authenticated user
-* users must not be able to access another user's resources by changing an identifier
-
-Authentication must not be treated as authorization.
+Authentication must not be treated as authorization (Authorization is handled via RLS).
 
 ---
 

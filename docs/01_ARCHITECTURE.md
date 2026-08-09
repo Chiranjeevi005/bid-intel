@@ -401,13 +401,13 @@ Do not create folders merely for theoretical future functionality.
 
 # 8. Phase 1 Architecture
 
-Phase 1 intentionally contains very little product functionality.
+Phase 1 establishes the product foundation, including authentication, before document processing.
 
 ```text
 Browser
    │
    ▼
-Next.js
+Next.js (App Router)
    │
    ├── React UI
    ├── TypeScript
@@ -415,13 +415,13 @@ Next.js
    └── Analytics
    │
    ▼
+Supabase SSR Authentication (Cookies)
+   │
+   ▼
 Supabase Client
    │
    ▼
-Supabase
-   │
-   ▼
-PostgreSQL
+Supabase Auth & PostgreSQL
 ```
 
 Deployment:
