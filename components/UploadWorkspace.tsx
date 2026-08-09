@@ -47,8 +47,8 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
     setErrorMsg('');
     
     // Log start (safely omitting sensitive details)
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'rfp_upload_started');
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      (window as unknown as { gtag: Function }).gtag('event', 'rfp_upload_started');
     }
 
     // Generate collision-resistant secure path: {user_id}/{uuid}.pdf
@@ -94,17 +94,18 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
       setStatus('SUCCESS');
       setFile(null);
       
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'rfp_upload_completed');
+      if (typeof window !== 'undefined' && 'gtag' in window) {
+        (window as unknown as { gtag: Function }).gtag('event', 'rfp_upload_completed');
       }
 
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
       setStatus('ERROR');
-      setErrorMsg(err.message || 'An unknown error occurred during upload.');
+      const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred during upload.';
+      setErrorMsg(errorMessage);
       
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'rfp_upload_failed');
+      if (typeof window !== 'undefined' && 'gtag' in window) {
+        (window as unknown as { gtag: Function }).gtag('event', 'rfp_upload_failed');
       }
     }
   };
