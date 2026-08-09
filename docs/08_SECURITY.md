@@ -707,3 +707,8 @@ The highest-risk security work will occur before public RFP processing is enable
 # 39. Core Security Principle
 
 > **Treat every external input as untrusted and every confidential document as private by default.**
+
+
+### AI Provider Boundaries (BUILD-006)
+* **DeepSeek API**: Only the extracted text string and page numbers are transmitted to the external provider. No PII, User ID, or Storage Path is sent. The DeepSeek API Key is strictly a server-side secret and is never exposed to the client bundle.
+

@@ -947,3 +947,12 @@ Architecture should evolve from evidence, not speculation.
 Do not build the architecture for the hypothetical final company.
 
 Build the architecture required for the next real step.
+
+
+## BUILD-006: RFP Intelligence Engine
+
+* **Provider**: DeepSeek V4 Flash via explicit Serverless fetch abstraction.
+* **Validation**: Zod runtime schema validation.
+* **Evidence Verification**: Deterministic server-side string checks against extracted page texts.
+* **Flow**: Upload -> Extract Text -> Extract Findings (Idempotent) -> Render Results UI.
+

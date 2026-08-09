@@ -903,3 +903,10 @@ Do not silently overwrite historical reasoning.
 # 8. Core Engineering Principle
 
 > **If we cannot explain why a significant technical decision exists, the decision is not adequately documented.**
+
+
+### BUILD-006: AI Provider & Evidence Contract
+* **Provider Decision**: Selected DeepSeek V4 Flash for 1M context limit and extreme cost efficiency. Used standard etch() over native SDK to retain provider portability.
+* **Evidence-First Design**: Implemented server-side deterministic string-matching. If the model fabricates a quote that does not exist verbatim on the cited page, the finding is discarded.
+* **No-RAG Decision**: Given the 1M token context, all MVP RFPs can fit into a single prompt. Embeddings and RAG were deliberately deferred.
+

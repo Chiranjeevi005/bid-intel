@@ -1333,3 +1333,11 @@ Storage + DB consistency relies on the client attempting to delete the orphaned 
 ```text
 feat: implement secure RFP upload intake with RLS isolation
 ```
+
+
+## [BUILD-006] Evidence-Based RFP Intelligence Engine - 2026-08-09
+* Integrated DeepSeek V4 Flash via strict server-side fetch.
+* Enforced zero-hallucination Evidence Contract by validating JSON findings verbatim against original document pages.
+* Added nalysis_runs and nalysis_findings to database.
+* Implemented AnalysisResults dashboard UI component.
+

@@ -2,12 +2,16 @@
 
 import { useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
+import AnalysisResults from './AnalysisResults';
 
 export default function UploadWorkspace({ userId }: { userId: string }) {
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<'IDLE' | 'UPLOADING' | 'SUCCESS' | 'ERROR'>('IDLE');
   const [errorMsg, setErrorMsg] = useState('');
   const [successFilename, setSuccessFilename] = useState('');
+  const [documentId, setDocumentId] = useState<string | null>(null);
+  const [analysisStatus, setAnalysisStatus] = useState<'IDLE' | 'ANALYZING' | 'COMPLETED' | 'FAILED'>('IDLE');
+  const [runId, setRunId] = useState<string | null>(null);
   
   const supabase = createClient();
 
@@ -15,6 +19,9 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
     const selected = e.target.files?.[0];
     setStatus('IDLE');
     setSuccessFilename('');
+    setDocumentId(null);
+    setAnalysisStatus('IDLE');
+    setRunId(null);
     
     if (!selected) {
       setFile(null);
@@ -126,6 +133,7 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
       // Success
       setStatus('SUCCESS');
       setFile(null);
+      setDocumentId(insertedDoc.id);
       
       if (typeof window !== 'undefined' && 'gtag' in window) {
         (window as unknown as { gtag: (...args: string[]) => void }).gtag('event', 'rfp_upload_completed');
@@ -140,6 +148,30 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
       if (typeof window !== 'undefined' && 'gtag' in window) {
         (window as unknown as { gtag: (...args: string[]) => void }).gtag('event', 'rfp_upload_failed');
       }
+    }
+  };
+
+  const handleAnalyze = async () => {
+    if (!documentId) return;
+    setAnalysisStatus('ANALYZING');
+    setErrorMsg('');
+    try {
+      const res = await fetch('/api/analyze-document', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ document_id: documentId })
+      });
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.error || 'Analysis failed');
+      }
+      const data = await res.json();
+      setRunId(data.runId);
+      setAnalysisStatus('COMPLETED');
+    } catch (err: any) {
+      console.error(err);
+      setAnalysisStatus('FAILED');
+      setErrorMsg(err.message || 'Analysis failed to complete.');
     }
   };
 
@@ -186,9 +218,29 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
       )}
 
       {status === 'SUCCESS' && (
-        <div className="mb-6 p-4 rounded-md bg-green-50 text-green-800 border border-green-200 text-sm">
-          <strong>Secure upload successful.</strong> <br/>
-          <span className="text-green-700">{successFilename}</span> has been securely stored.
+        <div className="mb-6 p-4 rounded-md bg-green-50 text-green-800 border border-green-200 text-sm flex justify-between items-center">
+          <div>
+            <strong>Secure upload successful.</strong> <br/>
+            <span className="text-green-700">{successFilename}</span> has been securely stored.
+          </div>
+          {documentId && successFilename.includes('Text Extracted') && analysisStatus === 'IDLE' && (
+            <button
+              onClick={handleAnalyze}
+              className="ml-4 rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+            >
+              Analyze RFP
+            </button>
+          )}
+          {analysisStatus === 'ANALYZING' && (
+            <div className="ml-4 text-indigo-600 font-semibold text-sm">
+              Analyzing document... (this may take a minute)
+            </div>
+          )}
+          {analysisStatus === 'FAILED' && (
+            <div className="ml-4 text-red-600 font-semibold text-sm">
+              Analysis Failed
+            </div>
+          )}
         </div>
       )}
 
@@ -201,6 +253,8 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
           {status === 'UPLOADING' ? 'Uploading securely...' : 'Upload securely'}
         </button>
       </div>
+
+      {runId && <AnalysisResults runId={runId} />}
     </div>
   );
 }

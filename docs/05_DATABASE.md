@@ -726,3 +726,10 @@ Each will require an explicit decision when its corresponding capability is impl
 # 29. Core Principle
 
 > **Do not design a database for the company we might become. Design the database required by the product we are actually building.**
+
+
+## BUILD-006: Analysis Engine Tables
+
+* **analysis_runs**: Tracks the processing status for an intelligence run. Features a unique partial index to ensure only one active run per document.
+* **analysis_findings**: Stores explicit intelligence findings (category, severity, confidence). A strict foreign key enforces cascading deletes. Stores the exact verbatim quote and the page_number.
+
