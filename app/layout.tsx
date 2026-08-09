@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pre-Bid Intelligence",
-  description: "Analyze RFP requirements, risks, and missing information",
+  title: "Pre-Bid Intelligence | RFP Analysis & Risk Detection",
+  description: "Analyze RFPs to extract requirements, identify risks, and highlight missing information before committing to a proposal.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
