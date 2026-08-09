@@ -70,8 +70,8 @@ export async function POST(request: Request) {
     let pagesWithLittleOrNoText = 0;
 
     for (const page of parseResult.pages) {
-      // Heuristic: A page with fewer than 50 characters is likely scanned, empty, or just a title page.
-      if (page.char_count > 50) {
+      // Heuristic: A page with fewer than 20 characters is likely scanned, empty, or just a title page.
+      if (page.char_count > 20) {
         pagesWithMeaningfulText++;
       } else {
         pagesWithLittleOrNoText++;
@@ -81,10 +81,9 @@ export async function POST(request: Request) {
     let finalStatus = 'TEXT_EXTRACTED';
     
     // Heuristic: If more than 50% of the pages have practically no text, this document is mixed or scanned and requires OCR.
-    // Or if the total char count across all pages is extremely low (e.g. < 500 chars total).
     if (totalPages === 0) {
       finalStatus = 'FAILED';
-    } else if (pagesWithMeaningfulText === 0 || (pagesWithLittleOrNoText / totalPages) > 0.5 || totalChars < 500) {
+    } else if (pagesWithMeaningfulText === 0 || (pagesWithLittleOrNoText / totalPages) > 0.5) {
       finalStatus = 'OCR_REQUIRED';
     }
 
