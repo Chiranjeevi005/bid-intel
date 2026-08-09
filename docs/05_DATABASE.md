@@ -108,13 +108,22 @@ A database change that exists only in a manually modified production database is
 
 # 7. Current Phase 1 Schema
 
-No complete application schema is approved yet.
+The following tables have been explicitly created to support Phase 1 capabilities.
+
+### `documents`
+Stores metadata for uploaded RFPs, linked to the `rfps` Supabase Storage bucket.
+
+* `id` (UUID, PK)
+* `user_id` (UUID, FK to `auth.users`)
+* `original_filename` (TEXT)
+* `storage_path` (TEXT, UNIQUE)
+* `size_bytes` (BIGINT)
+* `status` (TEXT, e.g., 'UPLOADED')
+* `created_at` (TIMESTAMPTZ)
 
 Do NOT automatically create tables for:
 
-* users
-* RFPs
-* documents
+* RFPs (as distinct from documents, if applicable)
 * analyses
 * requirements
 * findings
@@ -123,7 +132,7 @@ Do NOT automatically create tables for:
 * reports
 * payments
 
-unless a Phase 1 technical requirement genuinely requires one.
+unless a future technical requirement genuinely requires one.
 
 ---
 
@@ -677,9 +686,9 @@ Phase 1 is complete when:
 
 Status:
 
-**IN PROGRESS**
+**VERIFIED**
 
-Database implementation should remain intentionally minimal.
+The `documents` table has been implemented with strict RLS to support secure RFP intake. Database implementation will remain intentionally minimal.
 
 ---
 

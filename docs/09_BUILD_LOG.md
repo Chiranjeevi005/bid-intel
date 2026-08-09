@@ -1289,3 +1289,47 @@ When running the compiled production build locally, the Supabase Auth callback (
 ```text
 fix: force HTTP redirect for localhost auth callback and resolve tailwind warnings
 ```
+
+---
+
+# BUILD-004 — Secure RFP Upload Intake
+
+**Date:** 2026-08-09
+**Phase:** Phase 1
+**Status:** VERIFIED
+**Commit:** <pending>
+
+---
+
+## 1. Objective
+Allow an authenticated user to upload an RFP PDF securely and have it stored privately under their ownership.
+
+## 2. Context
+This build establishes the first stateful capability of the application: secure file intake and isolated metadata tracking. It transitions the application from a stateless authentication shell into a secure data processing application.
+
+## 3. Implementation
+* **Database Migration:** Created the `documents` table with `user_id` FK to `auth.users`, and `size_bytes`, `storage_path`, `status` fields.
+* **Storage Bucket:** Created the `rfps` bucket restricted to `application/pdf` and 10MB limits via Supabase Storage constraints.
+* **RLS & Isolation:** Applied strict Row Level Security to both `documents` table and `storage.objects` ensuring `auth.uid()` boundaries are strictly respected.
+* **Storage Path Obfuscation:** Utilized `{auth.uid()}/{crypto.randomUUID()}.pdf` as the secure storage path to prevent collision and mask sensitive original filenames.
+* **UI/UX:** Implemented `UploadWorkspace.tsx` mounted on `/dashboard`. Handles client-side validation, secure upload sequence, and partial-failure rollback logic.
+* **Validation Strategy:** Implemented client-side + bucket-side validation. **Note:** Deep binary PDF inspection is deferred to BUILD-005.
+
+## 4. Verification
+* [X] Recompiled via `npm run build` and zero lint errors.
+* [X] Bucket is actually private and RLS policies are applied.
+* [X] Authenticated user can successfully upload valid PDF.
+* [X] Original filename is not used as the storage path.
+* [X] Over 10MB limit is rejected by the client component.
+
+## 5. Security Impact
+Introduced the first user-supplied untrusted input (PDF files). Mitigated via strict RLS isolation and storage path obfuscation. 
+
+## 6. Known Limitations
+Storage + DB consistency relies on the client attempting to delete the orphaned storage object if the DB insert fails. In the event of an immediate network drop between the two calls, an orphaned object will remain in storage. This edge case will be cleaned up via future scheduled sweep jobs.
+
+## 7. Commit
+### Commit message
+```text
+feat: implement secure RFP upload intake with RLS isolation
+```

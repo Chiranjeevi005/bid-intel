@@ -166,35 +166,27 @@ Do not expose uploaded files through publicly accessible URLs unless explicitly 
 
 # 9. File Upload Security
 
-When PDF upload is implemented, the system must validate:
+The system implements the following intake security limits:
 
 ### File type
+Initial supported format: `PDF`
+* Validated client-side via MIME type and extension.
+* Restricted at the storage bucket layer to `application/pdf`.
 
-Accept only supported formats.
-
-Initial supported format:
-
-```text
-PDF
-```
+> [!WARNING]
+> BUILD-004 validates upload eligibility, but **does not** perform deep binary inspection to prove the file is a genuinely valid PDF. True content/PDF integrity validation is deferred to the future BUILD-005 processing stage.
 
 ### File size
-
-Apply a reasonable maximum file size.
-
-The exact limit will be established when the document-processing implementation is built.
+* Maximum 10 MB limit applied both client-side and at the bucket level.
+* This is an application-level MVP decision, not a Supabase platform limitation.
 
 ### File name
-
-Do not trust user-provided filenames.
-
-Treat filenames as untrusted input.
+User-provided filenames are untrusted and potentially confidential.
+* They are completely obfuscated from the actual storage key using `crypto.randomUUID()`.
+* The storage path format is `{auth.uid()}/{uuid}.pdf`.
 
 ### Content
-
-A file extension alone must not be treated as proof of file type.
-
-Where practical, validate the actual file content.
+Where practical, validate the actual file content. (Deferred to BUILD-005)
 
 ---
 

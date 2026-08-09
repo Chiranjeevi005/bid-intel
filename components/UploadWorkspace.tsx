@@ -1,0 +1,172 @@
+'use client';
+
+import { useState } from 'react';
+import { createClient } from '@/lib/supabase/client';
+
+export default function UploadWorkspace({ userId }: { userId: string }) {
+  const [file, setFile] = useState<File | null>(null);
+  const [status, setStatus] = useState<'IDLE' | 'UPLOADING' | 'SUCCESS' | 'ERROR'>('IDLE');
+  const [errorMsg, setErrorMsg] = useState('');
+  const [successFilename, setSuccessFilename] = useState('');
+  
+  const supabase = createClient();
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selected = e.target.files?.[0];
+    setStatus('IDLE');
+    setSuccessFilename('');
+    
+    if (!selected) {
+      setFile(null);
+      return;
+    }
+
+    // 1. Client-side intake validation
+    // Note: True binary validation happens securely during the future BUILD-005 processing stage.
+    if (selected.type !== 'application/pdf' && !selected.name.toLowerCase().endsWith('.pdf')) {
+      setErrorMsg('Only PDF files are supported.');
+      setFile(null);
+      return;
+    }
+    
+    // 10 MB application-level limit
+    if (selected.size > 10 * 1024 * 1024) {
+      setErrorMsg('File exceeds the 10 MB application limit.');
+      setFile(null);
+      return;
+    }
+    
+    setErrorMsg('');
+    setFile(selected);
+  };
+
+  const handleUpload = async () => {
+    if (!file) return;
+    
+    setStatus('UPLOADING');
+    setErrorMsg('');
+    
+    // Log start (safely omitting sensitive details)
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'rfp_upload_started');
+    }
+
+    // Generate collision-resistant secure path: {user_id}/{uuid}.pdf
+    // Using native browser crypto API as required.
+    const uuid = crypto.randomUUID();
+    const storagePath = `${userId}/${uuid}.pdf`;
+
+    try {
+      // Step 1: Upload to Supabase Storage (which enforces bucket-level MIME/size/RLS)
+      const { error: storageError } = await supabase.storage
+        .from('rfps')
+        .upload(storagePath, file, {
+          cacheControl: '3600',
+          upsert: false
+        });
+
+      if (storageError) {
+        throw new Error(`Storage upload failed: ${storageError.message}`);
+      }
+
+      // Step 2: Insert Database Record
+      const { error: dbError } = await supabase
+        .from('documents')
+        .insert({
+          user_id: userId,
+          original_filename: file.name,
+          storage_path: storagePath,
+          size_bytes: file.size,
+          status: 'UPLOADED'
+        });
+
+      // Partial Failure Edge Case:
+      // If DB insert fails, we attempt to delete the orphaned storage object.
+      // Note: If the client network drops here, the orphan will remain in storage.
+      if (dbError) {
+        console.error('Database insert failed, attempting storage rollback...', dbError);
+        await supabase.storage.from('rfps').remove([storagePath]);
+        throw new Error(`Database record failed: ${dbError.message}`);
+      }
+
+      // Success
+      setSuccessFilename(file.name);
+      setStatus('SUCCESS');
+      setFile(null);
+      
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'rfp_upload_completed');
+      }
+
+    } catch (err: any) {
+      console.error(err);
+      setStatus('ERROR');
+      setErrorMsg(err.message || 'An unknown error occurred during upload.');
+      
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'rfp_upload_failed');
+      }
+    }
+  };
+
+  return (
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+      <h2 className="text-xl font-semibold text-gray-900 mb-6">Upload RFP</h2>
+      
+      <div className="mb-6">
+        <label 
+          htmlFor="file-upload" 
+          className="block w-full cursor-pointer border-2 border-dashed border-gray-300 rounded-lg p-12 text-center hover:border-gray-400 transition-colors bg-gray-50 hover:bg-gray-100"
+        >
+          <span className="mt-2 block text-sm font-semibold text-gray-900">
+            Select a PDF to analyze
+          </span>
+          <span className="mt-1 block text-sm text-gray-500">
+            PDF files only, up to 10 MB
+          </span>
+          <input
+            id="file-upload"
+            name="file-upload"
+            type="file"
+            accept="application/pdf"
+            className="sr-only"
+            onChange={handleFileChange}
+            disabled={status === 'UPLOADING'}
+          />
+        </label>
+      </div>
+
+      {file && status !== 'SUCCESS' && (
+        <div className="flex items-center justify-between bg-gray-50 p-4 rounded-md border border-gray-200 mb-6">
+          <span className="text-sm text-gray-700 truncate mr-4">{file.name}</span>
+          <span className="text-xs font-medium text-gray-500">
+            {(file.size / 1024 / 1024).toFixed(2)} MB
+          </span>
+        </div>
+      )}
+
+      {errorMsg && (
+        <div className="mb-6 p-4 rounded-md bg-red-50 text-red-700 border border-red-200 text-sm">
+          {errorMsg}
+        </div>
+      )}
+
+      {status === 'SUCCESS' && (
+        <div className="mb-6 p-4 rounded-md bg-green-50 text-green-800 border border-green-200 text-sm">
+          <strong>Secure upload successful.</strong> <br/>
+          <span className="text-green-700">{successFilename}</span> has been securely stored.
+        </div>
+      )}
+
+      <div className="flex justify-end">
+        <button
+          onClick={handleUpload}
+          disabled={!file || status === 'UPLOADING'}
+          className="rounded-md bg-gray-900 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center"
+        >
+          {status === 'UPLOADING' ? 'Uploading securely...' : 'Upload securely'}
+        </button>
+      </div>
+    </div>
+  );
+}

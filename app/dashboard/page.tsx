@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import LogoutButton from './LogoutButton';
+import UploadWorkspace from '@/components/UploadWorkspace';
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -23,15 +24,9 @@ export default async function DashboardPage() {
         <LogoutButton />
       </header>
 
-      <main className="grow p-6 max-w-7xl mx-auto w-full">
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center mt-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Dashboard</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            You are securely authenticated. This is the future home of the RFP Upload Intake workflow.
-          </p>
-          <div className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-gray-700 bg-gray-100 cursor-not-allowed">
-            Upload Workflow Coming in BUILD-004
-          </div>
+      <main className="grow p-6 max-w-4xl mx-auto w-full">
+        <div className="mt-8">
+          <UploadWorkspace userId={user.id} />
         </div>
       </main>
     </div>
