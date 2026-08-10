@@ -910,3 +910,9 @@ Do not silently overwrite historical reasoning.
 * **Evidence-First Design**: Implemented server-side deterministic string-matching. If the model fabricates a quote that does not exist verbatim on the cited page, the finding is discarded.
 * **No-RAG Decision**: Given the 1M token context, all MVP RFPs can fit into a single prompt. Embeddings and RAG were deliberately deferred.
 
+
+
+### BUILD-007: Normalized Evidence Validation
+* **Decision**: Chose Deterministic Normalization over Fuzzy Matching.
+* **Rationale**: Fuzzy matching introduces non-deterministic bounds on what constitutes an authentic quote. Normalizing whitespace/unicode preserves the strict requirement that the semantic words explicitly exist in the source document without penalizing minor line-break hallucination by the AI.
+

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { analyzeRfpPages } from '@/lib/ai/provider';
+import { verifyQuote } from '@/lib/ai/validator';
 
 export async function POST(request: Request) {
   try {
@@ -71,47 +72,70 @@ export async function POST(request: Request) {
 
       // 5. Evidence Validation
       const validFindingsToInsert = [];
+      const validQuotesToInsert = [];
 
       for (const finding of result.findings) {
-        if (finding.status !== 'CONFIRMED' || !finding.evidence || finding.page_number === null || finding.page_number === undefined) {
+        if (finding.status !== 'CONFIRMED' || !finding.quotes || finding.quotes.length === 0) {
           continue; // Discard unsupported findings
         }
 
-        const sourcePage = pages.find(p => p.page_number === finding.page_number);
-        if (!sourcePage) {
-          console.warn(`Evidence validation failed: Page ${finding.page_number} does not exist. Discarding finding.`);
-          continue;
+        let allQuotesValid = true;
+
+        for (const q of finding.quotes) {
+          const sourcePage = pages.find(p => p.page_number === q.page_number);
+          if (!sourcePage) {
+            console.warn(`Evidence validation failed: Page ${q.page_number} does not exist. Discarding finding.`);
+            allQuotesValid = false;
+            break;
+          }
+
+          if (!verifyQuote(sourcePage.content, q.quote)) {
+            console.warn(`Evidence validation failed: Quote not found on page ${q.page_number}. Discarding finding.`);
+            allQuotesValid = false;
+            break;
+          }
         }
 
-        // Exact substring match for verbatim quote
-        if (!sourcePage.content.includes(finding.evidence)) {
-          console.warn(`Evidence validation failed: Quote not found verbatim on page ${finding.page_number}. Discarding finding.`);
-          continue;
+        if (!allQuotesValid) {
+          continue; // Discard entire finding if any quote fails
         }
 
-        // Passed evidence check
+        // Generate UUID for finding so we can map quotes
+        const findingId = crypto.randomUUID();
+
         validFindingsToInsert.push({
+          id: findingId,
           analysis_run_id: runId,
           document_id,
           category: finding.category,
           title: finding.title,
           finding: finding.finding,
           severity: finding.severity || null,
-          confidence: finding.confidence,
-          page_number: finding.page_number,
-          evidence: finding.evidence
+          confidence: finding.confidence
         });
+
+        for (const q of finding.quotes) {
+          validQuotesToInsert.push({
+            finding_id: findingId,
+            page_number: q.page_number,
+            quote_text: q.quote
+          });
+        }
       }
 
       // 6. Persist findings
       if (validFindingsToInsert.length > 0) {
-        const { error: insertError } = await supabase
+        const { error: insertFindingsError } = await supabase
           .from('analysis_findings')
           .insert(validFindingsToInsert);
 
-        if (insertError) {
-          throw new Error(`Failed to persist findings: ${insertError.message}`);
-        }
+        if (insertFindingsError) throw new Error(`Failed to persist findings: ${insertFindingsError.message}`);
+
+        const { error: insertQuotesError } = await supabase
+          .from('analysis_finding_quotes')
+          .insert(validQuotesToInsert);
+
+        if (insertQuotesError) throw new Error(`Failed to persist quotes: ${insertQuotesError.message}`);
       }
 
       // 7. Mark COMPLETED

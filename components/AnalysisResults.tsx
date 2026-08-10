@@ -10,8 +10,7 @@ type Finding = {
   finding: string;
   severity: string | null;
   confidence: string;
-  page_number: number;
-  evidence: string;
+  quotes: { id: string; page_number: number; quote_text: string }[];
 };
 
 export default function AnalysisResults({ runId }: { runId: string }) {
@@ -24,10 +23,9 @@ export default function AnalysisResults({ runId }: { runId: string }) {
       const supabase = createClient();
       const { data, error } = await supabase
         .from('analysis_findings')
-        .select('*')
+        .select('*, quotes:analysis_finding_quotes(*)')
         .eq('analysis_run_id', runId)
-        .order('category', { ascending: true })
-        .order('page_number', { ascending: true });
+        .order('category', { ascending: true });
 
       if (error) {
         console.error(error);
@@ -82,11 +80,17 @@ export default function AnalysisResults({ runId }: { runId: string }) {
                 
                 <p className="text-gray-700 mb-4">{f.finding}</p>
                 
-                <div className="bg-blue-50/50 border border-blue-100 rounded-md p-4 text-sm relative">
-                  <div className="absolute -top-3 left-4 bg-blue-100 text-blue-800 px-2 py-0.5 text-xs font-bold rounded">
-                    PAGE {f.page_number}
-                  </div>
-                  <p className="text-gray-600 italic mt-2">"{f.evidence}"</p>
+                <div className="space-y-3">
+                  {f.quotes && f.quotes.length > 0 ? f.quotes.map((q) => (
+                    <div key={q.id} className="bg-blue-50/50 border border-blue-100 rounded-md p-4 text-sm relative mt-2">
+                      <div className="absolute -top-3 left-4 bg-blue-100 text-blue-800 px-2 py-0.5 text-xs font-bold rounded">
+                        PAGE {q.page_number}
+                      </div>
+                      <p className="text-gray-600 italic mt-2">"{q.quote_text}"</p>
+                    </div>
+                  )) : (
+                    <div className="text-sm text-gray-500 italic">No quotes available.</div>
+                  )}
                 </div>
               </div>
             ))}

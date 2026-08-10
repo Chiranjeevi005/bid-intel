@@ -956,3 +956,10 @@ Build the architecture required for the next real step.
 * **Evidence Verification**: Deterministic server-side string checks against extracted page texts.
 * **Flow**: Upload -> Extract Text -> Extract Findings (Idempotent) -> Render Results UI.
 
+
+
+## BUILD-007: Execution & Evidence Hardening
+
+* **Terminology**: Evidence Authenticity vs Interpretation Correctness. We guarantee the AI cites real text (Authenticity). We do not guarantee the AI perfectly understood the text (Correctness).
+* **Validation**: Multi-quote deterministic string matching with NFKC unicode and whitespace normalization.
+

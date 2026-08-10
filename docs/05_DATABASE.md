@@ -733,3 +733,9 @@ Each will require an explicit decision when its corresponding capability is impl
 * **analysis_runs**: Tracks the processing status for an intelligence run. Features a unique partial index to ensure only one active run per document.
 * **analysis_findings**: Stores explicit intelligence findings (category, severity, confidence). A strict foreign key enforces cascading deletes. Stores the exact verbatim quote and the page_number.
 
+
+
+## BUILD-007: Relational Quotes
+
+* **analysis_finding_quotes**: Replaced inline evidence and page_number. Allows one finding to cite multiple independent excerpts (critical for contradictions). RLS enforces ownership boundary.
+

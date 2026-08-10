@@ -1341,3 +1341,12 @@ feat: implement secure RFP upload intake with RLS isolation
 * Added nalysis_runs and nalysis_findings to database.
 * Implemented AnalysisResults dashboard UI component.
 
+
+
+## [BUILD-007] Intelligence Execution & Evidence Validation Hardening
+* Replaced brittle .includes() with robust deterministic normalization (NFKC, whitespace collapsing).
+* Migrated evidence columns to relational nalysis_finding_quotes table.
+* Configured prompts.ts to demand quotes array.
+* Ran regression suite verifying single-page, multi-page, and contradiction validations.
+* **Plan vs Reality**: No maxDuration set because the project doesn't have an explicit Vercel config. Real Execution and Costs marked NOT VERIFIED due to placeholder API key.
+

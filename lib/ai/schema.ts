@@ -22,17 +22,23 @@ export const FindingSchema = z.object({
   severity: SeverityEnum.optional(),
   confidence: ConfidenceEnum,
   status: z.enum(['CONFIRMED', 'UNSUPPORTED']),
-  page_number: z.number().int().nullable().optional(),
-  evidence: z.string().nullable().optional() // Verbatim source quotation
+  quotes: z.array(z.object({
+    page_number: z.number().int(),
+    quote: z.string().min(1)
+  })).optional()
 }).refine((data) => {
-  // If confirmed, evidence and page_number must be present
+  // If confirmed, quotes must be present and have at least 1 item
   if (data.status === 'CONFIRMED') {
-    return data.page_number !== null && data.page_number !== undefined && 
-           data.evidence !== null && data.evidence !== undefined && data.evidence.length > 0;
+    if (!data.quotes || data.quotes.length === 0) return false;
+    
+    // Contradictions MUST have at least 2 quotes
+    if (data.category === 'AMBIGUITIES_CONTRADICTIONS' && data.quotes.length < 2) {
+      return false;
+    }
   }
   return true;
 }, {
-  message: "Confirmed findings MUST include a page_number and verbatim evidence quote."
+  message: "Confirmed findings must include quotes. Contradictions must have at least 2 quotes."
 });
 
 export const AnalysisResultSchema = z.object({
