@@ -85,9 +85,11 @@ async function runTests() {
     
     const startTime = Date.now();
     try {
-      const result = await qualifyDocument(doc.pages);
+      const qualification = await qualifyDocument(doc.pages);
       const latency = Date.now() - startTime;
       totalLatencyMs += latency;
+
+      const result = qualification.result;
 
       console.log(`  -> is_procurement_opportunity: ${result.is_procurement_opportunity}`);
       console.log(`  -> document_type: ${result.document_type}`);
