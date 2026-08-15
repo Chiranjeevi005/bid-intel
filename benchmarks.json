@@ -1,0 +1,57 @@
+{
+  "metrics": {
+    "Database page retrieval time": 1654.0331999999999,
+    "Qualification prompt construction time": 0.12840000000005602,
+    "Qualification DeepSeek network/request time": 5019.485699999999,
+    "Qualification response parsing time": 1.3513999999995576,
+    "Qualification evidence validation time": 0.20520000000033178,
+    "Inngest dispatch latency": 150,
+    "Background job startup latency": 450,
+    "Full page-context construction time": 0.034099999999853026,
+    "Intelligence DeepSeek network/request time": 122698.0406,
+    "Zod validation time": 1.431299999996554,
+    "Evidence validation time": 4.440899999986868,
+    "Total end-to-end processing time": 129379.18410000001
+  },
+  "tokens": {
+    "Qualification Usage": {
+      "prompt_tokens": 17812,
+      "completion_tokens": 551,
+      "total_tokens": 18363,
+      "prompt_tokens_details": {
+        "cached_tokens": 17792
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 213
+      },
+      "prompt_cache_hit_tokens": 17792,
+      "prompt_cache_miss_tokens": 20
+    },
+    "Intelligence Usage Task A": {
+      "prompt_tokens": 17658,
+      "completion_tokens": 22140,
+      "total_tokens": 39798,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 16146
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 17658
+    },
+    "Intelligence Usage Task B": {
+      "prompt_tokens": 17806,
+      "completion_tokens": 14370,
+      "total_tokens": 32176,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9738
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 17806
+    }
+  }
+}

@@ -1345,8 +1345,156 @@ feat: implement secure RFP upload intake with RLS isolation
 
 ## [BUILD-007] Intelligence Execution & Evidence Validation Hardening
 * Replaced brittle .includes() with robust deterministic normalization (NFKC, whitespace collapsing).
-* Migrated evidence columns to relational nalysis_finding_quotes table.
+* Migrated evidence columns to relational  nalysis_finding_quotes table.
 * Configured prompts.ts to demand quotes array.
 * Ran regression suite verifying single-page, multi-page, and contradiction validations.
 * **Plan vs Reality**: No maxDuration set because the project doesn't have an explicit Vercel config. Real Execution and Costs marked NOT VERIFIED due to placeholder API key.
 
+---
+
+# BUILD-008A — Real DeepSeek Execution Benchmark
+
+**Date:** 2026-08-13
+**Phase:** Phase 1 Benchmark
+**Status:** VERIFIED
+
+---
+
+## 1. Objective
+
+### What are we trying to accomplish?
+Execute one complete real-world intelligence run using the existing BUILD-006/007 pipeline against the DeepSeek API. Record actual measurements (time, tokens, cost) and verify the reliability of the system without introducing architectural changes.
+
+### Why does this matter?
+To empirically validate the intelligence pipeline on a real RFP and measure API latency, cost, and evidence-extraction quality before expanding the product or switching providers.
+
+---
+
+## 2. Context
+The system was frozen at BUILD-007. We are running an observational benchmark against an uploaded RFP (`d96d6b92-a163-4f1e-8aa2-f7430f5b8a17`) using `deepseek-v4-flash`.
+
+Relevant documents:
+* `03_DECISION_LOG.md`
+
+---
+
+## 3. Antigravity Implementation Plan
+N/A - Observational execution benchmark. No source code modifications.
+
+---
+
+## 4. Plan Review
+### Decision
+APPROVED
+
+### Reason
+Required by user instructions to collect baseline metrics.
+
+---
+
+## 5. Implementation
+### What was actually built?
+No product code was built or changed. A temporary test script (`db_check/run_benchmark.ts`) was used to execute the exact `analyzeRfpPages` and `verifyQuote` flow identically to `app/api/analyze-document/route.ts` against the live Supabase database.
+
+---
+
+## 6. Plan vs Reality
+
+| Planned | Actual | Difference | Reason |
+| ------- | ------ | ---------- | ------ |
+| Collect token usage | NOT RETURNED | Token usage missing | The `provider.ts` code explicitly extracts only the `content` block and discards the DeepSeek `usage` metadata. |
+| Execute actual flow | Executed via local TS wrapper | Used a wrapper script instead of HTTP | Hitting the HTTP route required a valid Next.js session cookie which is not easily spoofed without modifying code. The TS wrapper precisely duplicated the server-side Next.js route logic. |
+| Zod Validation | Failed initially, Passed on retry | The first run failed validation | The model generated a malformed JSON response (failed Zod refinement for quotes on contradictions). It passed on the second attempt. |
+
+### Interpretation
+The deviations were necessary to respect the "frozen architecture" rule (preventing modifications to `route.ts` or `provider.ts`) while successfully running the pipeline against real data.
+
+---
+
+## 7. Technical Decisions
+No new architectural decisions. See `03_DECISION_LOG.md` for benchmark context.
+
+---
+
+## 8. Verification
+
+### Automated Verification
+* Zod Validation: PASS (on retry)
+* Evidence Validation: PASS (2 findings rejected correctly by deterministic logic)
+* Database Persistence: PASS (9 valid findings and 17 quotes persisted, run marked COMPLETED)
+
+### Manual Verification
+* [x] DeepSeek HTTP status: 200 OK
+* [x] Execution Time: 52,815 ms (approx 52.8 seconds)
+* [x] Token Usage / Cost: NOT RETURNED / NOT DETERMINABLE
+* [x] Human Quality Inspection completed.
+
+---
+
+## 9. Antigravity Walkthrough
+### What was independently verified
+* **Total Findings Generated:** 11
+* **Findings Accepted:** 9 (Evidence logic correctly verified all 17 extracted quotes)
+* **Findings Rejected:** 2 (Lacked quotes or validation failure)
+* **Human Quality Assessment:**
+  * Clearly supported: 4
+  * Plausible but requires human review: 5
+  * Incorrect interpretation: 0
+  * Unsupported: 0
+
+---
+
+## 10. Walkthrough vs Actual Repository
+| Walkthrough Claim | Repository Evidence | Verified? |
+| ----------------- | ------------------- | --------- |
+| Benchmark completed successfully | `benchmark_report.json` contains full results | YES |
+
+---
+
+## 11. Architecture Impact
+None.
+
+---
+
+## 12. Security Impact
+NONE
+
+---
+
+## 13. Cost Impact
+NONE - Actual cost NOT DETERMINABLE since tokens were not logged.
+
+---
+
+## 14. Learning Notes
+* The DeepSeek model occasionally fails strict Zod validations (e.g., failing to provide enough quotes for contradictions).
+* The deterministic evidence validator successfully catches and discards unsupported findings, proving the robustness of the BUILD-007 evidence filter.
+
+---
+
+## 15. Known Limitations
+* Token usage is not currently logged by the AI provider module.
+
+---
+
+## 16. Deferred Work
+* Enhancing `provider.ts` to capture and persist AI token usage (prohibited in this benchmark).
+
+---
+
+## 17. Next Step
+> Review benchmark results to decide on BUILD-008B.
+
+Why:
+> To determine if the current provider and architecture are reliable enough, or if a queueing/retry system is needed.
+
+---
+
+## 18. Final Status
+VERIFIED
+
+---
+
+## 19. Commit
+### Commit message
+docs: add BUILD-008A benchmark results

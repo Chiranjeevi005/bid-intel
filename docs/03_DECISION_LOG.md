@@ -912,7 +912,11 @@ Do not silently overwrite historical reasoning.
 
 
 
+
 ### BUILD-007: Normalized Evidence Validation
 * **Decision**: Chose Deterministic Normalization over Fuzzy Matching.
 * **Rationale**: Fuzzy matching introduces non-deterministic bounds on what constitutes an authentic quote. Normalizing whitespace/unicode preserves the strict requirement that the semantic words explicitly exist in the source document without penalizing minor line-break hallucination by the AI.
 
+### BUILD-008A: Real DeepSeek Execution Benchmark
+* **Decision**: Defer AI Provider lock-in and Architectural Changes (Retries/Queues).
+* **Rationale**: We executed a live benchmark against DeepSeek using `deepseek-v4-flash`. It successfully generated 11 findings, with 9 passing strict deterministic evidence validation (52.8s execution time). 2 findings were rejected for failing Zod/evidence validation. The architecture remains reliable enough for basic observation, but the Zod failures suggest the model struggles with complex schema refinements (like contradictions requiring 2 quotes). Cost and token metrics were not returned by the current implementation. We defer adding complexity until BUILD-008B review.

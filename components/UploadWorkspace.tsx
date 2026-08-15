@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import AnalysisResults from './AnalysisResults';
 
@@ -10,8 +10,33 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
   const [errorMsg, setErrorMsg] = useState('');
   const [successFilename, setSuccessFilename] = useState('');
   const [documentId, setDocumentId] = useState<string | null>(null);
-  const [analysisStatus, setAnalysisStatus] = useState<'IDLE' | 'ANALYZING' | 'COMPLETED' | 'FAILED'>('IDLE');
+  const [analysisStatus, setAnalysisStatus] = useState<'IDLE' | 'QUEUED' | 'PROCESSING' | 'COMPLETED' | 'FAILED' | 'REJECTED' | 'AMBIGUOUS'>('IDLE');
   const [runId, setRunId] = useState<string | null>(null);
+
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout;
+    
+    if (runId && (analysisStatus === 'QUEUED' || analysisStatus === 'PROCESSING')) {
+      intervalId = setInterval(async () => {
+        try {
+          const res = await fetch(`/api/analysis-status?runId=${runId}`);
+          if (res.ok) {
+            const data = await res.json();
+            setAnalysisStatus(data.status);
+            if (data.status === 'FAILED') {
+              setErrorMsg(data.error || 'Analysis failed.');
+            }
+          }
+        } catch (err) {
+          console.error("Polling error", err);
+        }
+      }, 3000);
+    }
+    
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, [runId, analysisStatus]);
   
   const supabase = createClient();
 
@@ -153,7 +178,7 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
 
   const handleAnalyze = async () => {
     if (!documentId) return;
-    setAnalysisStatus('ANALYZING');
+    setAnalysisStatus('QUEUED');
     setErrorMsg('');
     try {
       const res = await fetch('/api/analyze-document', {
@@ -166,12 +191,43 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
         throw new Error(errData.error || 'Analysis failed');
       }
       const data = await res.json();
+      
+      if (!data.success) {
+        if (data.status === 'AI_REJECTED') {
+          setAnalysisStatus('REJECTED');
+          setErrorMsg(`Document identified as non-procurement. Analysis stopped. Reason: ${data.reason}`);
+          return;
+        } else if (data.status === 'AI_AMBIGUOUS') {
+          setAnalysisStatus('AMBIGUOUS');
+          return;
+        }
+      }
+      
       setRunId(data.runId);
-      setAnalysisStatus('COMPLETED');
+      if (data.status) {
+        setAnalysisStatus(data.status as any);
+      }
     } catch (err: any) {
       console.error(err);
       setAnalysisStatus('FAILED');
       setErrorMsg(err.message || 'Analysis failed to complete.');
+    }
+  };
+
+  const handleConfirmProcurement = async () => {
+    if (!documentId) return;
+    try {
+      const { error } = await supabase
+        .from('documents')
+        .update({ qualification_status: 'USER_CONFIRMED' })
+        .eq('id', documentId);
+        
+      if (error) throw error;
+      
+      // Retry analysis
+      handleAnalyze();
+    } catch (err: any) {
+      setErrorMsg('Failed to confirm document. ' + err.message);
     }
   };
 
@@ -231,14 +287,39 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
               Analyze RFP
             </button>
           )}
-          {analysisStatus === 'ANALYZING' && (
+          {analysisStatus === 'QUEUED' && (
             <div className="ml-4 text-indigo-600 font-semibold text-sm">
-              Analyzing document... (this may take a minute)
+              Queued for analysis...
+            </div>
+          )}
+          {analysisStatus === 'PROCESSING' && (
+            <div className="ml-4 text-indigo-600 font-semibold text-sm flex items-center">
+              <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Analyzing document... (this usually takes about a minute)
             </div>
           )}
           {analysisStatus === 'FAILED' && (
             <div className="ml-4 text-red-600 font-semibold text-sm">
               Analysis Failed
+            </div>
+          )}
+          {analysisStatus === 'REJECTED' && (
+            <div className="ml-4 text-red-600 font-semibold text-sm">
+              Qualification Rejected
+            </div>
+          )}
+          {analysisStatus === 'AMBIGUOUS' && (
+            <div className="ml-4 flex items-center space-x-2">
+              <span className="text-yellow-700 text-sm">Classification uncertain. Is this a procurement opportunity?</span>
+              <button
+                onClick={handleConfirmProcurement}
+                className="rounded-md bg-yellow-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-yellow-500"
+              >
+                Confirm as Procurement Opportunity
+              </button>
             </div>
           )}
         </div>

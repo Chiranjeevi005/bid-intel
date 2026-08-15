@@ -1,0 +1,453 @@
+{
+  "metrics": {
+    "Database page retrieval time": 1422.4778,
+    "Intelligence DeepSeek network time": 830.5360999999998,
+    "Zod validation time": 4.140300000002753,
+    "Evidence validation time": 1.4589000000014494,
+    "Total E2E latency": 29304.3243
+  },
+  "tokens": {
+    "Intelligence Usage": {
+      "prompt_tokens": 17805,
+      "completion_tokens": 5082,
+      "total_tokens": 22887,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 17805
+    }
+  },
+  "findings": [
+    {
+      "category": "OPPORTUNITY_OVERVIEW",
+      "title": "Procurement of Event Partner for World Food India 2019",
+      "finding": "The Ministry of Food Processing Industries (MoFPI) is procuring an Event Partner to organize World Food India 2019, a large international food processing event in New Delhi.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 3,
+          "quote": "Ministry of Food Processing Industries (MoFPI), Government of India invites e-bids from Industry Associations/ Bodies/ Organisations of National and International repute for appointment as ‘Event Partner’ for World Food India 2019."
+        },
+        {
+          "page_number": 7,
+          "quote": "The Ministry of Food Processing Industries, Government of India, organised World Food India, 2017, which was the largest gathering of investors, manufacturers, producers, food processors, policy makers, and organizations from the global food ecosystem."
+        }
+      ]
+    },
+    {
+      "category": "KEY_DATES",
+      "title": "Bid Submission and Opening Dates",
+      "finding": "The RFP specifies key dates: RFP upload on 17-12-2018, pre-bid meeting on 26-12-2018, bid submission deadline on 07-01-2019, and technical bid opening on 08-01-2019.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 3,
+          "quote": "Date of upload of RFP 17-12-2018 3.00PM"
+        },
+        {
+          "page_number": 3,
+          "quote": "Date for Pre-bid meeting at Panchsheel Bhawan , New Delhi 26-12-2018 11.00AM"
+        },
+        {
+          "page_number": 3,
+          "quote": "Last date of bid Submission 07-01-2019 5.00PM"
+        },
+        {
+          "page_number": 3,
+          "quote": "Date of Technical bid Opening 08-01-2019 11.00AM"
+        }
+      ]
+    },
+    {
+      "category": "MANDATORY_REQUIREMENTS",
+      "title": "Financial Turnover Requirement",
+      "finding": "Bidders must have an average annual turnover of INR 50 crore in the last three financial years (2015-16, 2016-17, 2017-18), with audited balance sheets and income statements submitted.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 13,
+          "quote": "Average annual Turnover of INR 50 Cr in the last 3 years, i.e., 2017-18, 2016-17 and 2015-16 (Audited Balance sheet and Income statements should be submitted for the last three financial years preceding the Bid Submission Date)"
+        }
+      ]
+    },
+    {
+      "category": "MANDATORY_REQUIREMENTS",
+      "title": "Manpower Strength Requirement",
+      "finding": "Bidders must have a dedicated team for organizing such events and a minimum manpower strength of 150 persons.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 13,
+          "quote": "The bidder should have its own manpower strength of at least 150 persons."
+        }
+      ]
+    },
+    {
+      "category": "MANDATORY_REQUIREMENTS",
+      "title": "Minimum Experience Requirement",
+      "finding": "Bidders must have organized at least 2 international trade/investment promotion events for Central/State Governments in the last 3 financial years, each with expenditure of at least INR 15 crore.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 13,
+          "quote": "The Bidder should have organized at least 2 (two) international trade/investment promotion events for Central/ State Governments during the last 3 (three) Financial Years (viz., FY 2015-16, FY 2016-17, FY 2017-18). The expenditure incurred for each individual event should be at least INR 15 cr."
+        }
+      ]
+    },
+    {
+      "category": "MANDATORY_REQUIREMENTS",
+      "title": "International Outreach Requirement",
+      "finding": "Bidders must have offices or associates/MoU partners in at least 5 countries.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 13,
+          "quote": "The bidder should have its offices or offices of its associates/ MoU partners in at least 5 countries."
+        }
+      ]
+    },
+    {
+      "category": "MANDATORY_REQUIREMENTS",
+      "title": "No Debarment or Criminal Cases",
+      "finding": "Bidders must not be debarred/blacklisted by any government and must have no pending criminal cases, with a self-declaration to that effect.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 13,
+          "quote": "Bidder should not have been debarred/ blacklisted by any State Government or Central Government or their instrumentalities. There should not be any criminal case pending before any court of competent jurisdiction. The Bidder shall have to furnish Self Declaration stating to this effect signed by authorised signatory of the agency with seal."
+        }
+      ]
+    },
+    {
+      "category": "SUBMISSION_REQUIREMENTS",
+      "title": "Online Submission via CPP Portal",
+      "finding": "All bids must be submitted online through the Central Public Procurement Portal (https://eprocure.gov.in/eprocure/app) using a valid Digital Signature Certificate (DSC). Physical documents will not be considered.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 3,
+          "quote": "All proposals are to be submitted online through the portal (https://eprocure.gov.in/eprocure/app) only."
+        },
+        {
+          "page_number": 18,
+          "quote": "The technical evaluation of the bidder will be done based on the documents submitted online. Physical documents submitted by the bidders will not be considered for evaluation."
+        }
+      ]
+    },
+    {
+      "category": "SUBMISSION_REQUIREMENTS",
+      "title": "Bid Processing Fee and EMD",
+      "finding": "Bidders must submit a bid processing fee of Rs.25,000 and an EMD of Rs.5 lakh via separate demand drafts payable to PAO, MoFPI, New Delhi, before the bid closing date.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 6,
+          "quote": "Along with the bids, the bid processing fees of Rs.25,000/- and the EMD of Rs.5 lakh must be submitted on or before the bid closing date by way of separate demand drafts payable to PAO, MoFPI at New Delhi to the Director, Ministry of Food Processing Industries, Panchsheel Bhawan, August Kranti Marg, Khelgaon, New Delhi-110049."
+        }
+      ]
+    },
+    {
+      "category": "SUBMISSION_REQUIREMENTS",
+      "title": "Required Forms and Documents",
+      "finding": "The technical proposal must include Forms A through G, and the financial proposal must be in Form H. CVs of key personnel must be signed on each page.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 25,
+          "quote": "The Technical Proposal should provide the following information using the attached Standard Forms: Standard technical proposal submission form (FORM A), General information format (FORM B), Summary of Events provided in support of Firm Experience in the format provided (FORM C). The list of Key Personnel by specialization and the tasks that would be assigned to each Key Personnel as per the format for Curriculum Vitae (CV) provided (FORM D). The formats provided shall be signed by the proposed Key Personnel or by an authorized official of the Firm. Each page of the CVs provided shall be signed. A description of the detailed approach and methodology and work plan for performing the Project (FORM E) A brief profile of the Consultant (FORM F) Details of international connectivity of the firm in terms of global presence in major foreign countries (FORM G)"
+        },
+        {
+          "page_number": 25,
+          "quote": "The Financial proposal should be provided in prescribed format (FORM H)"
+        }
+      ]
+    },
+    {
+      "category": "EVALUATION_CRITERIA",
+      "title": "Technical Evaluation Criteria",
+      "finding": "Technical evaluation is based on company profile (50 marks) and technical presentation including team strength (50 marks), with a qualifying score of 70 out of 100.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 14,
+          "quote": "Evaluation criteria: Serial Evaluation Criteria Maximum marks Reference document 1 Company Profile 50 marks"
+        },
+        {
+          "page_number": 15,
+          "quote": "2 Technical Presentation including Team Strength 50 marks"
+        },
+        {
+          "page_number": 15,
+          "quote": "The qualifying score will be 70 marks out of 100."
+        }
+      ]
+    },
+    {
+      "category": "EVALUATION_CRITERIA",
+      "title": "Selection Based on QCBS (80:20)",
+      "finding": "Final selection is based on Quality cum Cost Based Selection (QCBS) with 80% weightage to technical score and 20% to financial score.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 16,
+          "quote": "Final selection will be made based on Quality cum Cost Based Selection (QCBS system) by giving 80:20 weightage to the technical and financial score respectively."
+        }
+      ]
+    },
+    {
+      "category": "COMMERCIAL_CONTRACT_TERMS",
+      "title": "Reimbursement of Costs and Fees",
+      "finding": "MoFPI will bear all direct and indirect costs and reimburse the event partner on actual basis, plus pay a quoted fee for manpower and organizing, disbursed in four installments.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 16,
+          "quote": "Ministry shall bear all the direct and indirect costs, expenses, fee, charges, taxes etc., and reimburse to event partner on actual basis, the cost and expenses so incurred by event partner (including taxes), including but not limited to promoting, organizing and executing the event, for and on behalf of Ministry for all the activities performed by event partner as covered in the scope of work."
+        },
+        {
+          "page_number": 16,
+          "quote": "The event partner will be provided with manpower & organising fees as per amount quoted in the bid document."
+        },
+        {
+          "page_number": 17,
+          "quote": "The quoted fees will be disbursed as per the following milestones: 1st instalment @25% On signing of Agreement with MoFPI as Event Partner; 2nd instalment @25% Six months before the event and on utilisation of the first instalment; 3rd instalment @25% Three months before the event and on utilisation of the second instalment; 4th instalment @25% On completion of “Post event” responsibilities as indicated in scope of work."
+        }
+      ]
+    },
+    {
+      "category": "COMMERCIAL_CONTRACT_TERMS",
+      "title": "Project Duration and Extension",
+      "finding": "The assignment duration is 18 months from signing the agreement, with possible extension as per mutually agreed terms.",
+      "severity": "MEDIUM",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 17,
+          "quote": "Duration of the assignment would be for a period of 18 months from the date of signing of the Agreement. The contract for the assignment may be extended after completion of duration of 18 months as per terms and fees mutually agreed upon."
+        }
+      ]
+    },
+    {
+      "category": "COMMERCIAL_CONTRACT_TERMS",
+      "title": "Penalty for Delay",
+      "finding": "A penalty up to 15% of payment may be deducted for delay in deliverables as per the work plan.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 27,
+          "quote": "For delay in the deliverables as per work plan a penalty up to 15% of payment will be deducted from the next due payment."
+        }
+      ]
+    },
+    {
+      "category": "COMMERCIAL_CONTRACT_TERMS",
+      "title": "Termination for Default",
+      "finding": "MoFPI may terminate the contract for various defaults, including failure to remedy breach within 15 days, insolvency, failure to comply with MoFPI decisions, false statements, or unethical acts.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 26,
+          "quote": "MoFPI may terminate the Contract if: a. The Event Partner fails to remedy any breach hereof or any failure in the performance of its obligations hereunder, within fifteen (15) days of receipt of notice of default or within such further period as MoFPI may have subsequently granted in writing; b. The Event Partner becomes insolvent or bankrupt c. If the Event Partner fails to comply decisions / mandate of MoFPI. d. any document, information, data or statement submitted by the Event Partner in its Proposals, based on which it was considered eligible or successful, is found to be false, incorrect or misleading; or e. If the acts of Event partner are found to be unethical by MoFPI."
+        }
+      ]
+    },
+    {
+      "category": "COMMERCIAL_CONTRACT_TERMS",
+      "title": "Termination without Default",
+      "finding": "MoFPI can terminate the agreement without assigning any reason by giving 30 days written notice.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 27,
+          "quote": "MoFPI shall be at liberty to terminate the Agreement without assigning any reason by giving 30 days written notice to the other party."
+        }
+      ]
+    },
+    {
+      "category": "COMMERCIAL_CONTRACT_TERMS",
+      "title": "Indemnity and Liability",
+      "finding": "The event partner must indemnify MoFPI against losses and liabilities, and MoFPI's written demand for damages is final and binding.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 23,
+          "quote": "The Applicant shall hold MoFPI, its successors, Assignees and Administrators fully indemnified and harmless against loss or liability, claims actions or proceedings, if any, that may arise from whatsoever nature caused to MoFPI through the action of its employees, agents, contractors, subcontractors etc."
+        },
+        {
+          "page_number": 24,
+          "quote": "The written demand by MoFPI as to the loss/ damages mentioned above shall be final, conclusive and binding on the Applicant and Applicant shall be liable to pay on demand the actual amount of such loss / damages caused to MoFPI."
+        }
+      ]
+    },
+    {
+      "category": "RISK_CANDIDATES",
+      "title": "Sponsorship Mobilization Requirement",
+      "finding": "The event partner must mobilize sponsorships of at least 25% of total event expenditure, which may be challenging and could impact profitability.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 11,
+          "quote": "Mobilising sponsorships of at least 25% of the total expenditure of the event."
+        }
+      ]
+    },
+    {
+      "category": "RISK_CANDIDATES",
+      "title": "Vicarious Liability for Employees",
+      "finding": "The event partner is vicariously liable for all acts of its employees, even outside the scope of power, which could lead to significant liability.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 23,
+          "quote": "The Applicant shall be vicariously liable for any acts, deeds or things done by their employees which is outside the scope of power vested or instructions issued by MoFPI."
+        }
+      ]
+    },
+    {
+      "category": "RISK_CANDIDATES",
+      "title": "Broad Scope of Work",
+      "finding": "The scope of work includes 'any other work assigned by the Ministry' and requires the partner to handle all aspects, which could lead to undefined additional responsibilities.",
+      "severity": "MEDIUM",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 8,
+          "quote": "Any other work assigned by the Ministry related to the above event."
+        }
+      ]
+    },
+    {
+      "category": "RISK_CANDIDATES",
+      "title": "No Additional Cost for Inherent Services",
+      "finding": "Services not specifically described but inherent to the deliverables must be provided at no additional cost, potentially increasing the bidder's burden.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 23,
+          "quote": "If any services, functions or responsibilities not specifically described in this RFP are an inherent, necessary or customary part of the deliverables or services and are required for proper performance or provision of the deliverables or services in accordance with this RFP, they shall be deemed to be included within the scope of the deliverables or services, as if such services, functions or responsibilities were specifically required and described in this RFP and shall be provided by the Applicant at no additional cost to MoFPI."
+        }
+      ]
+    },
+    {
+      "category": "AMBIGUITIES_CONTRADICTIONS",
+      "title": "Financial Proposal Submission Format",
+      "finding": "The RFP states that the financial proposal must be submitted in a separate sealed envelope and uploaded as PDF, but also mentions that the BOQ must be in XLS format. This could be contradictory.",
+      "severity": "MEDIUM",
+      "confidence": "MEDIUM",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 17,
+          "quote": "Along with the technical documents and presentation, agency is required to submit their financial quotes in a separate sealed envelope. The quotes must be submitted in the attached format given in FORM H and uploaded as pdf document."
+        },
+        {
+          "page_number": 6,
+          "quote": "The Bidders must upload all the required documents electronically in the PDF format except for the Financial Proposal Submission Form (BOQ) which will be electronically uploaded on the prescribed XLS format only on e-Tender portal."
+        }
+      ]
+    },
+    {
+      "category": "AMBIGUITIES_CONTRADICTIONS",
+      "title": "Bid Validity Period",
+      "finding": "Form B states bids shall remain valid for 180 days, but the RFP does not specify a bid validity period elsewhere. This may be a requirement.",
+      "severity": "LOW",
+      "confidence": "MEDIUM",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 30,
+          "quote": "Bids shall remain valid for 180 days after the date of Bid opening prescribed by the MoFPI."
+        }
+      ]
+    },
+    {
+      "category": "CLARIFICATION_QUESTIONS",
+      "title": "Clarification on Financial Proposal Format",
+      "finding": "The RFP indicates financial quotes should be in PDF (Form H) but also mentions BOQ in XLS. Clarify the exact format for financial submission.",
+      "severity": "MEDIUM",
+      "confidence": "MEDIUM",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 17,
+          "quote": "The quotes must be submitted in the attached format given in FORM H and uploaded as pdf document."
+        },
+        {
+          "page_number": 6,
+          "quote": "The Bidders must upload all the required documents electronically in the PDF format except for the Financial Proposal Submission Form (BOQ) which will be electronically uploaded on the prescribed XLS format only on e-Tender portal."
+        }
+      ]
+    },
+    {
+      "category": "CLARIFICATION_QUESTIONS",
+      "title": "Clarification on Sponsorship Mobilization",
+      "finding": "The requirement to mobilize at least 25% of total expenditure through sponsorships is significant. Clarify how this will be measured and what happens if not achieved.",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 11,
+          "quote": "Mobilising sponsorships of at least 25% of the total expenditure of the event."
+        }
+      ]
+    },
+    {
+      "category": "CLARIFICATION_QUESTIONS",
+      "title": "Clarification on 'Any Other Work'",
+      "finding": "The scope includes 'any other work assigned by the Ministry', which is vague. Clarify the extent of such additional work and whether it is reimbursable.",
+      "severity": "MEDIUM",
+      "confidence": "HIGH",
+      "status": "CONFIRMED",
+      "quotes": [
+        {
+          "page_number": 8,
+          "quote": "Any other work assigned by the Ministry related to the above event."
+        }
+      ]
+    }
+  ]
+}
