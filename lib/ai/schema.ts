@@ -1,44 +1,45 @@
 import { z } from 'zod';
 
 export const CategoryEnum = z.enum([
-  'OPPORTUNITY_OVERVIEW',
-  'KEY_DATES',
-  'MANDATORY_REQUIREMENTS',
+  'OPPORTUNITY_FIT',
+  'MANDATORY_ELIGIBILITY',
   'SUBMISSION_REQUIREMENTS',
+  'KEY_DATES',
   'EVALUATION_CRITERIA',
-  'COMMERCIAL_CONTRACT_TERMS',
-  'RISK_CANDIDATES',
+  'COMMERCIAL_TERMS',
+  'LIABILITY_INDEMNITY',
+  'TERMINATION_RIGHTS',
+  'UNUSUAL_OBLIGATIONS',
   'AMBIGUITIES_CONTRADICTIONS',
-  'CLARIFICATION_QUESTIONS'
+  'MISSING_INFORMATION'
 ]);
 
-export const SeverityEnum = z.enum(['LOW', 'MEDIUM', 'HIGH']);
-export const ConfidenceEnum = z.enum(['LOW', 'MEDIUM', 'HIGH']);
+export const PriorityEnum = z.enum(['CRITICAL', 'HIGH', 'MEDIUM', 'LOW']);
+export const ConfidenceEnum = z.enum(['HIGH', 'MEDIUM', 'LOW']);
+export const StatusEnum = z.enum(['CONFIRMED', 'UNSUPPORTED']);
+
+export const QuoteSchema = z.object({
+  page_number: z.number().int(),
+  quote: z.string().min(1)
+});
 
 export const FindingSchema = z.object({
   category: CategoryEnum,
   title: z.string().min(1),
-  finding: z.string().min(1),
-  severity: SeverityEnum.optional(),
+  fact: z.string().min(1),
+  business_implication: z.string().optional(),
+  action_recommendation: z.string().optional(),
+  priority: PriorityEnum,
   confidence: ConfidenceEnum,
-  status: z.enum(['CONFIRMED', 'UNSUPPORTED']),
-  quotes: z.array(z.object({
-    page_number: z.number().int(),
-    quote: z.string().min(1)
-  })).optional()
-}).refine((data) => {
-  // If confirmed, quotes must be present and have at least 1 item
-  if (data.status === 'CONFIRMED') {
-    if (!data.quotes || data.quotes.length === 0) return false;
-    
-    // Contradictions MUST have at least 2 quotes
-    if (data.category === 'AMBIGUITIES_CONTRADICTIONS' && data.quotes.length < 2) {
-      return false;
-    }
+  status: StatusEnum,
+  quotes: z.array(QuoteSchema).optional()
+}).superRefine((data, ctx) => {
+  if (data.status === 'CONFIRMED' && (!data.quotes || data.quotes.length === 0)) {
+    ctx.addIssue({ code: z.ZodIssueCode.custom, message: "CONFIRMED findings MUST have at least 1 quote." });
   }
-  return true;
-}, {
-  message: "Confirmed findings must include quotes. Contradictions must have at least 2 quotes."
+  if (data.status === 'CONFIRMED' && data.category === 'AMBIGUITIES_CONTRADICTIONS' && (!data.quotes || data.quotes.length < 2)) {
+    ctx.addIssue({ code: z.ZodIssueCode.custom, message: "AMBIGUITIES_CONTRADICTIONS findings MUST have at least 2 quotes." });
+  }
 });
 
 export const AnalysisResultSchema = z.object({
@@ -46,7 +47,9 @@ export const AnalysisResultSchema = z.object({
 });
 
 export type Category = z.infer<typeof CategoryEnum>;
-export type Severity = z.infer<typeof SeverityEnum>;
+export type Priority = z.infer<typeof PriorityEnum>;
 export type Confidence = z.infer<typeof ConfidenceEnum>;
+export type Status = z.infer<typeof StatusEnum>;
+export type Quote = z.infer<typeof QuoteSchema>;
 export type Finding = z.infer<typeof FindingSchema>;
 export type AnalysisResult = z.infer<typeof AnalysisResultSchema>;

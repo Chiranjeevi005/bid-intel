@@ -34,6 +34,7 @@ export const analyzeRfpJob = inngest.createFunction(
   },
   async ({ event, step }) => {
     const { documentId, runId } = (event.data as any);
+    const jobStartTime = performance.now();
 
     // 1. Fetch Run and Idempotency Check
     const run = await step.run("fetch-run", async () => {
@@ -82,6 +83,7 @@ export const analyzeRfpJob = inngest.createFunction(
     });
 
     // 3. AI Execution
+    const aiStartTime = performance.now();
     const { aiResult, usage } = await step.run("analyze-ai", async () => {
       try {
         const { result, usage } = await analyzeRfpPages(pages);
@@ -101,6 +103,7 @@ export const analyzeRfpJob = inngest.createFunction(
         throw new Error(`AI Execution Failed: ${msg}`);
       }
     });
+    const aiDurationMs = performance.now() - aiStartTime;
 
     // 4. Evidence Validation & Persistence
     await step.run("validate-and-persist", async () => {
@@ -135,8 +138,10 @@ export const analyzeRfpJob = inngest.createFunction(
           document_id: documentId,
           category: finding.category,
           title: finding.title,
-          finding: finding.finding,
-          severity: finding.severity || null,
+          finding: finding.fact, // Mapped to existing 'finding' column for now
+          business_implication: finding.business_implication || null,
+          action_recommendation: finding.action_recommendation || null,
+          severity: finding.priority, // Mapped 'priority' to 'severity' column
           confidence: finding.confidence
         });
 
@@ -165,16 +170,20 @@ export const analyzeRfpJob = inngest.createFunction(
     });
 
     // 4.5 Persist AI Metrics
+    const totalDurationMs = performance.now() - jobStartTime;
     await step.run("persist-metrics", async () => {
       if (usage) {
         const { error } = await supabase.from('analysis_metrics').insert({
           run_id: runId,
           document_id: documentId,
-          step_name: 'intelligence_extraction',
-          duration_ms: 0, // Inngest steps don't give us exact duration easily, but tokens are key
+          step_name: 'intelligence_extraction_build_008h',
+          duration_ms: Math.round(aiDurationMs), 
           prompt_tokens: usage.prompt_tokens,
           completion_tokens: usage.completion_tokens,
-          total_tokens: usage.total_tokens
+          total_tokens: usage.total_tokens,
+          reasoning_tokens: usage.reasoning_tokens,
+          cached_tokens: usage.cached_tokens,
+          estimated_cost_cents: usage.estimated_cost_cents
         });
         if (error) console.error("Failed to insert intelligence metrics:", error);
       }
