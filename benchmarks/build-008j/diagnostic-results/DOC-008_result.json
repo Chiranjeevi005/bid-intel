@@ -1,0 +1,39 @@
+{
+  "metrics": {
+    "id": "DOC-008",
+    "qual_latency": 2848.124100000001,
+    "total_latency": 56527.93029999999
+  },
+  "result": {
+    "id": "DOC-008",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFP",
+      "confidence": "HIGH",
+      "reason": "The document is a Request for Proposals (RFP) issued by the City of Providence for boiler demolition and abatement at Hope High School. It includes procurement details such as submission instructions, deadlines, and evaluation criteria.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "REQUEST FOR PROPOSALS"
+        },
+        {
+          "page_number": 1,
+          "quote": "Item Description:  Hope High School- Boiler Demolition and Abatement"
+        },
+        {
+          "page_number": 1,
+          "quote": "Date to be opened: 7/27/2026"
+        },
+        {
+          "page_number": 2,
+          "quote": "Bids may be submitted up to 2:15 P.M. on the above meeting date at the Department of the City Clerk. Room 311, City Hall. 25 Dorrance Street, Providence."
+        },
+        {
+          "page_number": 13,
+          "quote": "The City   of   Providence   is   seeking   comprehensive,   competitive   proposals   from   licensed   and   qualified   environmental and demolition contractors."
+        }
+      ]
+    },
+    "error": "Schema validation failed"
+  }
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "document_id": "DOC-001",
+    "queue_wait_ms": 0,
+    "worker_start_ms": 0,
+    "mapping_ms": 0,
+    "retrieval_ms": 0,
+    "extraction_ms": 0,
+    "reasoning_ms": 0,
+    "validation_ms": 0,
+    "persistence_ms": 0,
+    "total_e2e_ms": 1946.6442,
+    "provider_ai_ms": 1946.6326,
+    "non_provider_ms": 0.01160000000004402
+  },
+  {
+    "document_id": "DOC-007",
+    "queue_wait_ms": 0,
+    "worker_start_ms": 0,
+    "mapping_ms": 892.0463999999997,
+    "retrieval_ms": 1.2867999999998574,
+    "extraction_ms": 21096.7396,
+    "reasoning_ms": 0.05899999999746797,
+    "validation_ms": 0.004399999997986015,
+    "persistence_ms": 0,
+    "total_e2e_ms": 23662.1702,
+    "provider_ai_ms": 23660.8422,
+    "non_provider_ms": 1.3280000000013388
+  },
+  {
+    "document_id": "DOC-009",
+    "queue_wait_ms": 0,
+    "worker_start_ms": 0,
+    "mapping_ms": 3933.777099999992,
+    "retrieval_ms": 3.166799999991781,
+    "extraction_ms": 69190.69470000001,
+    "reasoning_ms": 17442.79699999999,
+    "validation_ms": 0.012000000016996637,
+    "persistence_ms": 0,
+    "total_e2e_ms": 93419.1897,
+    "provider_ai_ms": 93415.95779999999,
+    "non_provider_ms": 3.231900000013411
+  },
+  {
+    "document_id": "DOC-012",
+    "queue_wait_ms": 0,
+    "worker_start_ms": 0,
+    "mapping_ms": 4206.59090000001,
+    "retrieval_ms": 6.495300000009593,
+    "extraction_ms": 194068.61860000002,
+    "reasoning_ms": 4647.9392000000225,
+    "validation_ms": 0.005100000009406358,
+    "persistence_ms": 0,
+    "total_e2e_ms": 205946.2637,
+    "provider_ai_ms": 205939.73600000006,
+    "non_provider_ms": 6.527699999947799
+  }
+]
