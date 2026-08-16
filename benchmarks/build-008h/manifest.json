@@ -1,0 +1,122 @@
+[
+  {
+    "id": "DOC-001",
+    "filename": "scam_anoynomous.pdf",
+    "expected_type": "RFP",
+    "expected_qualification": "DECEPTIVE",
+    "difficulty": "MEDIUM",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-002",
+    "filename": "Business Analyst - Aiotrix.pdf",
+    "expected_type": "JOB_DESCRIPTION",
+    "expected_qualification": "NON_PROCUREMENT",
+    "difficulty": "EASY",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-003",
+    "filename": "QuizArena Go-To-Market (GTM) Campaign Manual .pdf",
+    "expected_type": "OTHER",
+    "expected_qualification": "NON_PROCUREMENT",
+    "difficulty": "MEDIUM",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-004",
+    "filename": "Module - 04.pdf",
+    "expected_type": "OTHER",
+    "expected_qualification": "NON_PROCUREMENT",
+    "difficulty": "EASY",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-005",
+    "filename": "Software-as-a-ServiceRevenueModels .pdf",
+    "expected_type": "OTHER",
+    "expected_qualification": "NON_PROCUREMENT",
+    "difficulty": "MEDIUM",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-006",
+    "filename": "HSS28001-FY28HFAC_rfp.pdf",
+    "expected_type": "RFP",
+    "expected_qualification": "PROCUREMENT",
+    "difficulty": "STANDARD",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-007",
+    "filename": "2026-2027_AmeriCorps_NCCC_RFP_2026.03.17.pdf",
+    "expected_type": "RFP",
+    "expected_qualification": "PROCUREMENT",
+    "difficulty": "STANDARD",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-008",
+    "filename": "Public-Property-RFP-Hope-High-School-Boiler-Demolition-and-Abatement-MT-53960-1.pdf",
+    "expected_type": "RFP",
+    "expected_qualification": "PROCUREMENT",
+    "difficulty": "LONG",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-009",
+    "filename": "PVD26-81-Public-Works-IFB-Parking-Signs-and-Related-Materials-MT-54009.pdf",
+    "expected_type": "TENDER",
+    "expected_qualification": "PROCUREMENT",
+    "difficulty": "COMMERCIAL",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-010",
+    "filename": "RFP-CCAG-Countywide-Supplemental-Planning-SS4A.pdf",
+    "expected_type": "RFP",
+    "expected_qualification": "PROCUREMENT",
+    "difficulty": "COMPLEX",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-011",
+    "filename": "7360022802RFQ20-01_RFQ.pdf",
+    "expected_type": "RFQ",
+    "expected_qualification": "PROCUREMENT",
+    "difficulty": "STANDARD",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-012",
+    "filename": "7360022802RFQ23-01_RFQ.pdf",
+    "expected_type": "RFQ",
+    "expected_qualification": "PROCUREMENT",
+    "difficulty": "STANDARD",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-013",
+    "filename": "rfq_19_326_gps_hardware_and_software_final.pdf",
+    "expected_type": "RFQ",
+    "expected_qualification": "PROCUREMENT",
+    "difficulty": "CONTRADICTION",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-014",
+    "filename": "arm_aedms_rfi.pdf",
+    "expected_type": "RFI",
+    "expected_qualification": "PROCUREMENT",
+    "difficulty": "STANDARD",
+    "gold_standard_available": false
+  },
+  {
+    "id": "DOC-015",
+    "filename": "EOI-83-Recovery-Events.pdf",
+    "expected_type": "EOI",
+    "expected_qualification": "PROCUREMENT",
+    "difficulty": "STANDARD",
+    "gold_standard_available": false
+  }
+]

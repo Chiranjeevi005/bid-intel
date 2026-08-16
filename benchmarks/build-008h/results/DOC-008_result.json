@@ -1,0 +1,301 @@
+{
+  "metrics": {
+    "id": "DOC-008",
+    "qual_latency": 47515.994999999995,
+    "qual_usage": {
+      "prompt_tokens": 67637,
+      "completion_tokens": 2076,
+      "total_tokens": 69713,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1862
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 66869
+    },
+    "ext_latency": 133405.8064,
+    "ext_usage": {
+      "prompt_tokens": 67680,
+      "completion_tokens": 14148,
+      "total_tokens": 81828,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10290
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 66912
+    },
+    "total_latency": 180921.8014
+  },
+  "result": {
+    "id": "DOC-008",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFP",
+      "confidence": "HIGH",
+      "reason": "The document is a Request for Proposals issued by the City of Providence for boiler demolition and abatement at Hope High School, including submission deadlines, pre-bid conference details, and scope of work.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "REQUEST FOR PROPOSALS"
+        },
+        {
+          "page_number": 1,
+          "quote": "Item Description:  Hope High School- Boiler Demolition and Abatement"
+        },
+        {
+          "page_number": 2,
+          "quote": "Bids may be submitted up to 2:15 P.M. on the above meeting date"
+        },
+        {
+          "page_number": 13,
+          "quote": "The   City   of   Providence   is   seeking   comprehensive,   competitive   proposals"
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Uncapped Liability and Broad Indemnification",
+          "fact": "The City’s Standard Terms require the bidder to indemnify the City for all claims arising from the work and explicitly disclaim any limitation on liability, including any cap equal to the contract price.",
+          "business_implication": "The bidder faces potentially unlimited financial exposure for claims, including attorneys’ fees, with no contractual liability cap.",
+          "action_recommendation": "Seek clarification or negotiation of a liability cap and additional insured/indemnity limitations before signing; consult counsel.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "To the fullest extent permitted by law, you shall indemnify, defend, and hold harmless the City, its employees, officers, agents, and assigns from and against any and all claims, damages, losses, allegations, demands, actions, causes of action, suits, obligations, fines, penalties, judgments, liabilities, costs and expenses, including but not limited to attorneys’ fees, of any nature whatsoever arising out of, in connection with, or resulting from the performance of the work provided in the Agreement."
+            },
+            {
+              "page_number": 15,
+              "quote": "The City shall not subject itself to any contractual limitations on liability. The City shall have the time permitted within the applicable statute of limitations, and no less, to bring or assert any and all causes of action, suits, claims or demands the City may have arising out of, in connection with, or resulting from the performance of the work provided in the Agreement, and in no event does the City agree to limit your liability to the price of the Agreement or any other monetary limit."
+            }
+          ]
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Five-Day Termination for Perceived Impairment",
+          "fact": "The City may terminate the agreement on five days’ written notice if the bidder fails to observe any term or if the City believes the bidder’s ability to perform has been materially impaired, including loss of insurance or bankruptcy.",
+          "business_implication": "The City can exit without objective cause on subjective grounds; compensation after termination is limited to just and equitable compensation for satisfactory work completed and expenses incurred.",
+          "action_recommendation": "Review termination provisions and clarify standards or cure rights during the question period.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "The City may terminate this Agreement upon five (5) days’ written notice to you if you fail to observe any of the terms and conditions of this Agreement, or if the City believes your ability to perform the terms and conditions of this Agreement has been materially impaired in any way, including but in no way limited to loss of insurance coverage, lapsing of a surety bond, if required, declaration of bankruptcy, or appointment of a receiver. In the event of termination by the City, you shall be entitled to just and equitable compensation for any satisfactory work completed and expenses incurred up to the date of termination."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "60-Day Payment, No Interest, No Collection Costs",
+          "fact": "Invoices are payable 60 days from receipt, but the City is not obligated to pay interest on overdue invoices or any costs associated with collection.",
+          "business_implication": "Cash flow will be constrained; the bidder must price accordingly and maintain adequate working capital.",
+          "action_recommendation": "Account for 60-day payment cycle in pricing and cash-flow planning.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "Invoices submitted to the City shall be payable sixty (60) days from the time of receipt by the City. Invoices shall include support documentation necessary to evidence completion of the work being invoiced. The City may request any other reasonable documentation in support of an invoice. The time for payment shall not commence, and invoices shall not be processed for payment, until you provide reasonably sufficient support documentation. In no circumstances shall the City be obligated to pay or shall you be entitled to receive interest on any overdue invoice or payment. In no circumstances shall the City be obligated to pay any costs associated with your collection of an outstanding invoice."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No Change Orders for Asbestos Quantity Discrepancies",
+          "fact": "The asbestos contractor is responsible for field verification of all asbestos quantities before signing the contract and no change orders will be approved for discrepancies in reported quantities.",
+          "business_implication": "Under-estimated quantities will be at the contractor’s financial risk; the bidder should verify quantities or include contingency.",
+          "action_recommendation": "Conduct independent quantity verification during the mandatory site visit and factor into bid pricing.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 31,
+              "quote": "THE SELECTED ASBESTOS CONTRACTOR SHALL BE RESPONSIBLE FOR THE FIELD VERIFICATION OF ALL ASBESTOS QUANTITIES, AS REPORTED FOR EACH ASBESTOS CONTROL AREA AS DEFINED BY THIS SPECIFICATION - PRIOR TO SIGNING THE PROJECT CONTRACT AND START OF THE PROJECT. NO CHANGE ORDERS WILL BE APPROVED FOR DISCREPANICES ASSOCIATED WITH THE REPORTED QUANTITIES."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Contractor Pays for Failed Clearance Testing Re-Tests",
+          "fact": "If clearance air testing fails, the asbestos contractor is financially responsible for re-testing fees and must pay the building owner at project completion.",
+          "business_implication": "Potential additional costs if containment/cleaning is inadequate; this creates a financial performance incentive.",
+          "action_recommendation": "Budget for potential re-testing and implement rigorous quality control to avoid failures.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 30,
+              "quote": "The fees for any required re-testing due to clearance testing failure(s) within any asbestos work area shall be the financial responsibility of the asbestos contractor and must be paid to the building owner at the completion of the project."
+            }
+          ]
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Required Licenses, Certification, and Registration",
+          "fact": "The City is seeking licensed and qualified environmental and demolition contractors; asbestos abatement must be performed by a Rhode Island licensed asbestos abatement contractor; out-of-state corporations must register to transact business in Rhode Island.",
+          "business_implication": "Bidders lacking required RI asbestos licenses or authority to transact business in RI cannot perform or may be disqualified.",
+          "action_recommendation": "Confirm all required licenses and RI registration/Good Standing are current and where applicable included in the bid.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "The City of Providence is seeking comprehensive, competitive proposals from licensed and qualified environmental and demolition contractors."
+            },
+            {
+              "page_number": 23,
+              "quote": "and the asbestos abatement/ management activities described in this plan must be performed by a RI licensed asbestos abatement contractor."
+            },
+            {
+              "page_number": 4,
+              "quote": "A bidder who is an out-of-state corporation shall qualify or register to transact business in this State, in accordance with the Rhode Island Business Corporation Act, RIGL Sec. 7-1.2-1401, et seq."
+            }
+          ]
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Strict Bid Package Format and Mandatory Forms",
+          "fact": "The bid package must include specified forms in a specified order, all required signatures, and 2 copies; failure to include all required documents or signatures results in disqualification; no faxed or electronic submissions are accepted.",
+          "business_implication": "Non-compliance with format or signatures will make the bid non-responsive and disqualified.",
+          "action_recommendation": "Use the exact current forms in the RFP, assemble in the checklist order, and double-check all signatures and copies.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "The bid package MUST include the following, in this order: Bid Form 1: Bidder's Blank as the cover page/ 1st page (see page 6 of this document) ... All of the above listed documents are REQUIRED. ... Failure to meet specified deadlines, follow specific submission instructions, or enclose all required documents with all applicable signatures will result in disqualification, or in an inability to appropriately evaluate bids."
+            },
+            {
+              "page_number": 2,
+              "quote": "Bidders must submit 2 copies of their bid in sealed envelopes or packages labeled with the captioned Item Description and the City Department to which the solicitation and bid are related and must include the company name and address on the envelope as well."
+            },
+            {
+              "page_number": 13,
+              "quote": "No faxed or electronic submissions will be accepted."
+            }
+          ]
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Conflicting Final Addendum Dates",
+          "fact": "Page 1 states the final addendum will be issued July 14, 2026, while page 13 states the final response to questions will be no later than July 23, 2026 at 2PM.",
+          "business_implication": "Bidders may rely on the wrong addendum date, potentially missing updated requirements or preparing bids on incomplete information.",
+          "action_recommendation": "Seek immediate clarification from the issuing department and continue monitoring the city purchasing website for addenda.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Questions Due: July 9, 2026 @ 4:00 pm Final Addendum: July 14, 2026"
+            },
+            {
+              "page_number": 13,
+              "quote": "Final response to questions (via public addendum) No later than Thursday July 23, 2026, by 2PM"
+            }
+          ]
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "MBE/WBE Participation Threshold: 20% vs 15%",
+          "fact": "Page 10 and 11 refer to a 20% combined MBE/WBE participation goal, while page 57 references a 15% minimum under R.I. Gen. Laws §37-14.1, split 7.5% MBE and 7.5% WBE.",
+          "business_implication": "It is unclear whether the bidder must satisfy a 20% city goal or a 15% statutory minimum; the higher requirement could affect bid structure and partner availability.",
+          "action_recommendation": "Clarify the applicable MBE/WBE participation percentage and waiver process before bid submission.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "If you did not meet the 20% MBE/WBE combined participation goal, submit a Waiver Request Form."
+            },
+            {
+              "page_number": 57,
+              "quote": "Under Rhode Island General Laws §37-14.1, Minority business enterprises shall be included in all procurements and construction projects under this chapter and shall be awarded a minimum of fifteen percent (15%) of the dollar value of the entire procurement or project. Of that fifteen percent (15%), minority business enterprises owned and controlled by a minority owner, shall be awarded a minimum of seven and one-half percent (7.5%), and minority business enterprises owned and controlled by a woman shall be awarded a minimum of seven and one-half percent (7.5%)."
+            }
+          ]
+        },
+        {
+          "category": "MISSING_INFORMATION",
+          "title": "Financial Assurance Requirement Not Determinable",
+          "fact": "The Bid Terms page lists four options for financial assurance (certified check, bid bond, performance/payment bond, or no assurance) but the checkboxes are not marked in the available document evidence. It is impossible to determine whether a bid bond or certified check must accompany the initial bid.",
+          "business_implication": "The bidder cannot know if a financial assurance must be enclosed with the bid; failure to include an assurance, if required, would disqualify the bid.",
+          "action_recommendation": "Clarify with the City before submission whether any initial financial assurance is required and the amount/percentage.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "MISSING_INFORMATION",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Financial assurances may be required in order to be a successful bidder for Commodity or Construction and Service contracts. If either of the first two checkboxes below is checked, the specified assurance must accompany a bid, or the bid will not be considered by the Board of Contract and Supply."
+            },
+            {
+              "page_number": 5,
+              "quote": "a) A certified check for $          must be deposited with the City Clerk as a guarantee that the Contract will be signed and delivered by the bidder. b) A bid bond in the amount of           per centum (%) of the proposed total price, must be deposited with the City Clerk as a guarantee that the contract will be signed and delivered by the bidder; and the amount of such bid bond shall be retained for the use of the City as liquidated damages in case of default. c) A performance and payment bond with a satisfactory surety company will be posted by the bidder in a sum equal to one hundred per centum (100%) of the awarded contract. d) No financial assurance is necessary for this item."
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Lowest Qualified and Responsible Bidder Without Detailed Scoring Methodology",
+          "fact": "The Board will make the award to the lowest qualified and responsible bidder; no detailed evaluation/scoring criteria are provided in the RFP.",
+          "business_implication": "Pricing is likely the primary differentiator, but the City retains discretion in determining equality of bidders and may split awards.",
+          "action_recommendation": "Submit the lowest responsive bid possible and document qualifications/responsiveness thoroughly.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "The Board of Contract and Supply will make the award to the lowest qualified and responsible bidder."
+            },
+            {
+              "page_number": 4,
+              "quote": "Where prices are the same, the Board of Contract and Supply reserves the right to award to one bidder, or to split the award."
+            }
+          ]
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Mandatory Labor Compliance: Apprentices, First Source, and Prevailing Wage with Payment Conditions",
+          "fact": "The project requires no less than 15% of total hours by apprentices, Providence resident hiring under First Source, and prevailing wage rates for construction work over $1,000. Compliance reporting is a condition for payment.",
+          "business_implication": "Bidder must hire and track apprentices, provide First Source hiring opportunities, and submit certified payrolls; non-compliance may delay or bar payment.",
+          "action_recommendation": "Develop an apprentice/First Source plan and certified payroll process before bidding.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "This ordinance outlines requirements for utilizing not less than 15% of total hours worked by apprentices."
+            },
+            {
+              "page_number": 12,
+              "quote": "This ordinance outlines requirements for hiring Providence residents to work on this project."
+            },
+            {
+              "page_number": 57,
+              "quote": "Any construction over $ 1,000.00 is required by state law to pay state prevailing wage. A current copy of the most recent Prevailing Wage scale is obtained from the State of Rhode Island, Department of Labor and Training, Division of Professional Regulation or at the Davis-Bacon Wage Determination link. It is also by request for each construction bid document. All vendors supplying construction services must submit certified payrolls from any contractor and sub-contractor who work on the project. No payments are made until all payrolls are up to date, and correct."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

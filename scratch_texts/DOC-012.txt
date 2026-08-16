@@ -1,0 +1,1479 @@
+
+
+
+---PAGE_1---
+ 
+ 
+ 
+RFQ Title Aggregate Hardware Buy 23-01 RFQ Number 23-01  
+ 
+NYS Office of General Services 
+Procurement Services 
+38
+th
+ Floor, Corning Tower, ESP 
+Albany, NY 12242 
+ 
+Authorized User Delivery Information 
+Multiple Locations Statewide 
+DESIGNATED CONTACTS 
+Names E-Mail 
+Maureen Younkin, Allison White, Katherine Dias, Margaret 
+Armenia, Karley Delaney, Nancy Dougherty, and Kylesha 
+Davis 
+OGS.sm.PS.AggregateBuy@ogs.ny.gov 
+ 
+Subject Line: 
+Aggregate Hardware Buy 23-01 
+ 
+Procurement Lobbying Law/Restricted Period is in effect:   Yes    No 
+By signing, Contractor affirms that it understands and agrees to comply with OGS policies and procedures relative to 
+permissible contacts.  Information on Procurement Lobbying may be accessed 
+at:  http://www.ogs.ny.gov/aboutOgs/regulations/defaultAdvisoryCouncil.html 
+ 
+  
+ 
+Office of General Services Procurement Services 
+Group 73600 – Award 22802 
+Information Technology Umbrella Contract – Manufacturer Based (Statewide) 
+ 
+Request for Quotations 23-01 
+(Previously referred to as 22-01 in RFQPI and RFC documents) 
+Aggregate Hardware Buy  
+REVISED 
+ 
+ 
+
+
+---PAGE_2---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 2 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+QUESTIONS AND OTHER EVENTS  
+ 
+OGS is seeking competitive quotes from Contract holders of the OGS Group 73600 Award 22802 Information Technology 
+Umbrella Contract – Manufacturer Based (Statewide) (“Manufacturer Umbrella Contract”) for the Lot(s) indicated below.  
+Quotes from Resellers will not be accepted.  Contractors must have an award for Lot 2 to bid on this RFQ.  
+ 
+ 
+ Lot 1 – Software      Lot 2 – Hardware     Lot 3 – Cloud     Lot 4 – Implementation 
+ 
+KEY EVENTS/DATES 
+Event Due Date Time 
+RFQ 23-01 Release 
+2/17/2023  
+Attachment B - Contractor Questions and Comments Due 
+3/1/2023  5:00pm EDT 
+OGS Issues Responses to Questions and Comments 
+3/15/2023   
+Second Attachment B – Contractor Questions and Comments 
+Due 
+3/17/2023 5:00pm EDT 
+OGS Issues Responses to Questions and Comments 
+3/22/2023  
+RFQ Submission Due 
+Submission Includes:  
+• Attachment A – Technical Response  
+• Attachment D – Issue Escalation Plan 
+• Manufacturer Information Page (Last page of this 
+Document) 
+ 
+ 
+ 
+ 
+3/28/2023 
+4/4/2023  
+1:30pm EDT 
+OGS sends out Attachment C – Financial Response, which 
+includes approved technical response 
+6/28/2023   
+Contractor returns completed Attachment C – Financial 
+Response  
+7/12/2023  11:00am EDT 
+ 
+ 
+Attachment B – Contractor Questions and Comments: 
+Questions and Comments for this RFQ will only be accepted up to the Attachment B - Contractor Questions and Comments 
+due date and time noted above.  Only email submissions of Attachment B will be accepted: 
+ 
+Send emails to:  OGS.sm.PS.AggregateBuy@ogs.ny.gov 
+                                                     Subject line:       Aggregate Hardware Buy 23-01 – Questions and Comments 
+ 
+For information on RFQ Submission Requirements see RFQ 23-01, Section 4, RFQ Submission Requirements. 
+ 
+BASIS FOR AWARD Highest Total Financial Score meeting specified Technical Requirements and Mandatory Pass/Fail 
+Requirements for each Standard Configuration and associated Required Products. 
+ 
+
+
+---PAGE_3---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 3 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+ATTACHMENTS AND APPENDICES 
+ 
+• RFQ 23-01 Aggregate Hardware Buy  
+ 
+• Attachment A – Technical Response  
+ 
+• Attachment B – Contractor Questions and Comments  
+ 
+• Attachment C – Financial Response   
+Note: Only Contractors determined by OGS to have passed the technical portion of Stage 2 will be provided 
+Attachment C – Financial Response.     
+ 
+• Attachment D – Issue Escalation Plan 
+ 
+• Appendix 1 – Aggregate Hardware Buy - Sales Report  
+ 
+• Appendix 2 – Agreement Price List Modification Procedures  
+ 
+• Appendix 3 – Pricing Modification Form  
+ 
+• Appendix 4 – How to Prepare a Successful Quote  
+ 
+• Appendix 5 – Aggregate Hardware Buy - Delayed Delivery Report 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+---PAGE_4---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 4 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+Table of Contents  
+Section 1. GENERAL ..................................................................................................................... 6 
+Section 2. DEFINITIONS ................................................................................................................ 6 
+Section 3. SCOPE .......................................................................................................................... 6 
+ PURPOSE. .............................................................................................................................................................. 6 
+ BIDDER ELIGIBILITY. ............................................................................................................................................ 7 
+ PRODUCTS IN SCOPE. ......................................................................................................................................... 7 
+Section 4. RFQ SUBMISSION REQUIREMENTS .......................................................................... 7 
+ ELECTRONIC SUBMISSION. ................................................................................................................................ 7 
+ SUBMISSION PACKAGING. ................................................................................................................................. 7 
+ IMPORTANT BUILDING ACCESS PROCEDURES. ............................................................................................. 8 
+ BID VALIDITY. ........................................................................................................................................................ 8 
+4.4.1 BID INQUIRIES ............................................................................................................................................... 8 
+Section 5. METHOD OF AWARD ................................................................................................... 8 
+ EVALUATION PROCESS. ..................................................................................................................................... 8 
+5.1.1 STAGE 1 ADMINISTRATIVE REVIEW........................................................................................................... 9 
+5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION ............................................... 9 
+5.1.3 STAGE 3 FINANCIAL EVALUATION ............................................................................................................. 9 
+Section 6. EVALUATION COMPONENTS ..................................................................................... 9 
+ MANDATORY OFFERINGS ................................................................................................................................... 9 
+6.1.1 STANDARD CONFIGURATIONS. ................................................................................................................ 10 
+6.1.2 REQUIRED PRODUCTS. ............................................................................................................................. 10 
+ OPTIONAL PRODUCTS. ..................................................................................................................................... 10 
+6.2.1 ADDITIONAL PRODUCTS. .......................................................................................................................... 10 
+ DISCOUNT PERCENTAGE. ................................................................................................................................ 11 
+6.3.1 STANDARD CONFIGURATION DISCOUNT. .............................................................................................. 11 
+6.3.2 REQUIRED PRODUCTS DISCOUNT. ......................................................................................................... 11 
+ DEBRIEFING. ....................................................................................................................................................... 11 
+ DISPUTE RESOLUTION. ..................................................................................................................................... 11 
+Section 7. TERMS AND CONDITIONS ........................................................................................ 11 
+ GENERAL. ............................................................................................................................................................ 11 
+ PRICING. .............................................................................................................................................................. 11 
+7.2.1 MONETARY VALUES. .................................................................................................................................. 12 
+7.2.2 DISCOUNT PERCENTAGE VALUES. ......................................................................................................... 12 
+7.2.3 STANDARD CONFIGURATION. .................................................................................................................. 12 
+7.2.4 REQUIRED PRODUCTS. ............................................................................................................................. 12 
+7.2.5 ADDITIONAL PRODUCTS. .......................................................................................................................... 12 
+ RESULTING AGREEMENT DOCUMENTS/ORDER OF PRECEDENCE. .......................................................... 12 
+ COMMENCEMENT OF SALES. ........................................................................................................................... 13 
+ ESTIMATED SPEND AND QUANTITY. ............................................................................................................... 13 
+ PARTICIPATION IN ONLINE NYS MARKETPLACE. ......................................................................................... 13 
+ CONTRACTOR WEBSITE. .................................................................................................................................. 13 
+
+
+---PAGE_5---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 5 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+ PARTICIPATION IN AGGREGATE BUY AGREEMENT..................................................................................... 14 
+7.8.1 SUPPLY SHORTAGE PRIORITIZATION ..................................................................................................... 14 
+ TERM FOR AGGREGATE HARDWARE BUY 23-01 AGREEMENT. ................................................................. 14 
+7.9.1 SHORT TERM EXTENSION. ........................................................................................................................ 14 
+ RESELLER PARTICIPATION UNDER AGGREGATE AGREEMENT. ............................................................... 14 
+7.10.1 PERMISSIBLE USE OF RESELLERS.......................................................................................................... 15 
+ AGREEMENT PRICE LIST MODIFICATION. ...................................................................................................... 15 
+ TYPES OF AGREEMENT MODIFICATIONS. ..................................................................................................... 15 
+7.12.1 LOWERING PRICING OF PRODUCTS. ...................................................................................................... 15 
+7.12.2 ADDING ADDITIONAL PRODUCTS. ........................................................................................................... 16 
+7.12.3 DELETING PRODUCTS FROM THE ADDITIONAL PRODUCTS CATEGORY. ......................................... 16 
+7.12.4 REPLACEMENT OF PRODUCTS. ............................................................................................................... 16 
+7.12.5 REPLACEMENT MODEL FOR STANDARD CONFIGURATION. ............................................................... 16 
+ INVOICING. ........................................................................................................................................................... 17 
+ PRODUCT DELIVERY. ........................................................................................................................................ 17 
+ ISSUE ESCALATION PLAN. ............................................................................................................................... 18 
+ DISPUTES OR CONTROVERSIES OCCURRING DURING THE TERM OF THE AGGREGATE AGREEMENT 
+– CONTRACTOR AND OGS ............................................................................................................................................ 18 
+ IMAGING / LOADING SERVICES. ....................................................................................................................... 18 
+ AGGREGATE HARDWARE BUY 23-01 AGREEMENT - CUSTOMER SERVICE REQUIREMENT. ................ 18 
+ SALES REPORTING AND FISCAL AUDITS. ..................................................................................................... 19 
+7.19.1 SALES REPORTING. ................................................................................................................................... 19 
+7.19.2 FISCAL AUDITS. ........................................................................................................................................... 19 
+ EPEAT REQUIREMENTS. ................................................................................................................................... 19 
+ EXPORT ADMINISTRATION REGULATIONS RESTRICTED BUSINESS ENTITIES. ...................................... 20 
+ REPLACEMENT CONTRACTOR. ....................................................................................................................... 20 
+ ADVERTISING. ..................................................................................................................................................... 20 
+ INSTRUCTION MANUALS AND ASSOCIATED DOCUMENTATION. ............................................................... 20 
+ MWBE GOALS AND REPORTING. ..................................................................................................................... 20 
+ WARRANTY ......................................................................................................................................................... 20 
+7.26.1 DOCKING STATION WARRANTY ............................................................................................................... 21 
+7.26.2 ADDITIONAL PRODUCT WARRANTIES ..................................................................................................... 21 
+Section 8. OGS RESERVED RIGHTS .......................................................................................... 21 
+CONTRACTOR INFORMATION ........................................................................................................ 23 
+ 
+ 
+  
+  
+
+
+---PAGE_6---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 6 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+Section 1.   GENERAL 
+ 
+OGS will not be held liable for any cost incurred by the Contractor for work performed in the preparation of a response to 
+this Request for Quote (RFQ).  Responses to the RFQ must be received by the deadline specified above. Contractor 
+assumes all risks for timely, properly submitted RFQ deliveries.  Late RFQ responses may be rejected.  The received time 
+of a RFQ response will be determined by OGS. 
+ 
+This RFQ incorporates the terms and conditions of the Contractor’s OGS Information Technology Umbrella 
+Contract – Manufacturer Based (Statewide) (“Manufacturer Umbrella Contract”) including executed amendments 
+and the additional terms and conditions set forth in this RFQ, its Attachments, and Appendices.  The award made 
+from this RFQ will result in the Aggregate Hardware Buy 23-01 Agreement (“Agreement”). 
+ 
+All purchases resulting from the Agreement shall be in accordance with the terms and conditions of the Contractor’s 
+Manufacturer Umbrella Contract which can be found at: 
+https://online.ogs.ny.gov/purchase/snt/awardnotes/7360022802AppendicesPageCombo.pdf along with any additional 
+terms and conditions set forth in this RFQ, its Attachments and Appendices.   
+Section 2.   DEFINITIONS 
+ 
+In addition to the terms defined in Contractor’s Manufacturer Umbrella Contract, Section 2.5, Glossary, the following 
+definitions shall apply in this RFQ 23-01 and any resulting Agreement. 
+ 
+Term Definition 
+Additional Products Products that are not part of the Standard Configuration and are optional for Authorized Users 
+to purchase to enhance the Standard Configuration. 
+Configuration Entirety of Standard Configuration, Required Products, and Additional Products 
+Required Products Products that are mandatory for Contractors to quote. 
+Standard 
+Configuration 
+All components/line items necessary for a functional computing device meeting the minimum 
+specifications identified in Attachment A - Technical Response. 
+Quote, 
+RFQ Submission 
+A Contractor's bid response package. 
+Section 3.   SCOPE 
+ 
+ PURPOSE. 
+ 
+OGS is releasing this Request for Quotes (RFQ) for Aggregate Hardware Buy 23-01 (“RFQ 23-01”).  The purpose of RFQ 
+23-01 is to establish an award for each Configuration as set forth in Attachment A - Technical Response. The resulting 
+Agreement(s) will be considered an aggregate buy and all Authorized Users located within NYS (estimated at 7,600) will 
+be able to purchase the Configurations. Upon mutual agreement, this Agreement Pricing may be extended to additional 
+States or governmental jurisdictions, as described in Section 7.8, Participation in Aggregate Buy Agreement.  
+ 
+ Standard Configuration Brief Description 
+1 VDI PC Desktop computer intended for use as a VDI or desktop-
+as-a-service endpoint 
+2 Enterprise Desktop - 
+Standard 
+Desktop computer intended for deployment in an 
+enterprise setting. (high-performance, secure workloads) 
+3 Enterprise Desktop - vPro Desktop computer intended for deployment in an 
+enterprise setting, (high-performance, secure workloads) 
+with Intel’s vPro Enterprise for Windows platform enabled 
+4 Enterprise Desktop - High Desktop computer intended for deployment in an 
+enterprise setting. (high-performance, secure workloads, 
+high specification for intense use cases) 
+5 Enterprise Notebook - 
+Standard 
+Laptop computer intended for deployment in an enterprise 
+setting. 
+
+
+---PAGE_7---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 7 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+ Standard Configuration Brief Description 
+6 Enterprise Notebook - vPro Laptop computer with Intel’s vPro Enterprise for Windows 
+platform enabled intended for deployment in an enterprise 
+setting. 
+7 Enterprise Notebook - High Laptop computer intended for deployment in an enterprise 
+setting (high specification for intense use cases). 
+8 Enterprise All-In-One Desktop computer integrating the computer case and 
+system components into the monitor. 
+9 Convertible Tablet Laptop-tablet hybrid device, with an attached keyboard 
+10 Workstation PC High-end workstation class desktop intended for use with 
+GPU intensive applications such as video editing, CAD, 
+and machine learning 
+11 Chromebook Low Laptop or tablet computer that runs Chrome OS with a 
+standard 11” screen 
+12 Chromebook with 
+Touchscreen 
+Laptop or tablet computer that runs Chrome OS with a 
+touch 11” screen 
+13 Chromebook with 
+Touchscreen – 14” 
+Laptop or tablet computer that runs Chrome OS with a 14” 
+touch screen 
+14 Unbundled Displays Computer displays available in a range of pre-defined 
+sizes 
+ 
+ BIDDER ELIGIBILITY. 
+ 
+RFQ 23-01 is only being distributed to Contractors holding an award for Lot 2 – Hardware under the Manufacturer 
+Umbrella Contract (“Contractors”).  Quotes under RFQ 23-01 will only be accepted from Lot 2 Contractors on the 
+Manufacturer Umbrella Contract; Resellers are not eligible to respond and any bids from a Reseller will be disqualified. 
+ 
+ PRODUCTS IN SCOPE. 
+ 
+All Products proposed as part of the Standard Configuration and Products proposed for Required Products, as well as any 
+Additional Products, must be on the Contractor's Manufacturer Umbrella Contract Lot 2 - Hardware price list at the time of 
+the RFQ Submission due date.  
+ 
+Section 4.   RFQ SUBMISSION REQUIREMENTS  
+ 
+Electronic media shall be included on Microsoft Windows formatted USB flash drives and should be clearly labeled as set 
+forth below.  USB flash drives cannot be password protected or require the installation of software in order to read files.  
+All RFQ Submissions shall be saved in separate unprotected files in Microsoft Office products (Word and Excel) in 
+product releases 2012 or higher. 
+  
+ ELECTRONIC SUBMISSION. 
+ 
+Two (2) digital storage devices (USB flash drive), clearly labeled, shall contain the following documents, 
+completed in their entirety: 
+• Attachment A – Technical Response  
+• Attachment D – Issue Escalation Plan 
+• Manufacturer Information Page (Last page of this Document) 
+ 
+All RFQ Submissions and accompanying documentation shall become the property of the State of New York and shall not 
+be returned. 
+ 
+Contractors are responsible for the accuracy of their RFQ Submissions.  All Contractors are directed to take extreme care 
+in developing their RFQ Submission.  Prior to submission, Contractors are cautioned to carefully review their RFQ 
+Submission. 
+ 
+ SUBMISSION PACKAGING. 
+ 
+
+
+---PAGE_8---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 8 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+Each RFQ Submission should be packaged, sealed and submitted to the location stated below.  A Contractor is solely 
+responsible for timely delivery of its RFQ Submission prior to the stated deadline for submission. 
+ 
+ USB to:  
+Office of General Services 
+Procurement Services 
+38
+th
+ Floor, Corning Tower, ESP 
+Albany, NY 12242  
+ 
+Attention: IT Procurement 
+[Contractor Name], Aggregate Hardware Buy 23-01 
+ 
+ IMPORTANT BUILDING ACCESS PROCEDURES. 
+ 
+To access the Corning Tower, all visitors must check in by presenting photo identification at the information desk.  
+Delays may occur due to a high volume of visitors.  Visitors conducting Procurement Services business are encouraged 
+to pre-register for building access by contacting the Procurement Services receptionist at (518) 474-6262 at least 24 
+hours prior to the visit. Visitors who are not pre-registered will be directed to a designated phone to call the Procurement 
+Services receptionist. The receptionist will register the visitor at that time but delays may occur. Building access 
+procedures may change or be modified at any time. 
+ 
+ BID VALIDITY. 
+ 
+Quotes and pricing submitted in response to RFQ 23-01 must remain open and valid for at least 120 calendar days from 
+the date that RFQ Submissions are due, unless the time for making an award is extended by mutual consent of OGS and 
+the Contractor.  Contractors are encouraged to keep their bids open beyond the 120 calendar day period due to the 
+provisions in Section 7.22, Replacement Contractor.    
+ 
+4.4.1  BID INQUIRIES 
+ 
+Quotes must conform to the terms set forth in the RFQ.  If Contractor intends to submit a Quote that deviates from the 
+requirements of the RFQ in any way, the proposed deviations should be submitted during the Questions period so that 
+they may be given due consideration prior to the submission of Quotes.  Material deviations (including additional, 
+inconsistent, conflicting, or alternative terms) submitted with the Quote may render the Quote non-responsive and may 
+result in rejection of the Quote.   
+ 
+Contractor is advised that OGS will not entertain any exceptions to Appendix A (Standard Clauses for New York State 
+Contracts).  OGS will also not entertain exceptions to the RFQ or Appendix B (General Specifications) that are of a 
+material and substantive nature. Contractors are reminded to adhere to Manufacturer Umbrella Contract Section 2.61, 
+Additional Contractor Terms and Conditions within an Authorized User Agreement.  
+ 
+Extraneous terms submitted on standard, pre-printed forms (including but not limited to:  product literature, order forms, 
+license agreements, contracts or other documents) that are attached or referenced with submissions shall not be 
+considered part of the Quote or resulting Agreement but shall be deemed included for informational or promotional 
+purposes only. 
+Section 5.   METHOD OF AWARD 
+ 
+OGS will separately evaluate and separately make awards for each Configuration. Contractor’s may bid one, some, or all 
+configurations. Awards will be made to the responsive and responsible Contractor(s) with the highest Total Financial 
+Score per Configuration that meets all the specified technical requirements.  The same Contractor can be awarded 
+multiple Configurations.  
+ 
+ EVALUATION PROCESS. 
+ 
+The relative weights of each part of the Proposal are as follows: 
+
+
+---PAGE_9---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 9 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+Technical Response (Attachment A – Technical Response, Attachment D – Issue Escalation Plan, and 
+Manufacturer Information Page): Pass/Fail    
+   Financial Response : 100%  
+Total Financial Score is based on lowest cost and the points are weighted as follows: 
+• Standard Configuration - 50 points 
+• Required Products  
+o Warranty/Services - 15 points 
+o Components - 30 points  
+o Peripherals - 5 points  
+ 
+The evaluation is a three-stage process set forth below:  
+ 
+5.1.1 STAGE 1 ADMINISTRATIVE REVIEW 
+ 
+The submitted Attachment A – Technical Response, Attachment D – Issue Escalation Plan, and the Manufacturer 
+Information page (last page of this document) will be reviewed for completeness.  The addition or deletion of 
+worksheets, columns, unlocking the document, rewriting formulas, or similar alterations to any document is 
+prohibited. OGS reserves the right to reject any RFQ Submission or portion(s) thereof determined to have been 
+altered/modified by the Contractor from the original format. Failure to provide fully completed documents may 
+result in rejection of the RFQ Submission without further review.  
+ 
+5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION 
+ 
+Submitted Attachment A – Technical Response will be compared to Standard Configuration and Required 
+Products requirements.  All proposed SKUs for proposed products offered in Attachment A – Technical Response 
+must be on the Contractor’s approved Manufacturer Umbrella Contract price list. Any Configuration that contains 
+a SKU that is not included on the Manufacturer’s Umbrella Contract price list may not proceed further in the 
+evaluation process.   
+ 
+5.1.3 STAGE 3 FINANCIAL EVALUATION 
+ 
+Only Contractors whose Standard Configuration specifications and Required Products pass review, as determined 
+by OGS, will proceed to the evaluation of Attachment C – Financial Response for those specific Configurations. 
+For those Contractors who have been determined to have passed the Technical Evaluation, their Attachment A - 
+Technical Response will be used to create the Attachment C – Financial Response and will be provided to the 
+Contractor in order to complete and submit.  The proposed pricing on Attachment C – Financial Response will then 
+be used in the Financial Evaluation. 
+ 
+Section 6.   EVALUATION COMPONENTS 
+ 
+All proposed SKUs for Products offered must be on the Contractor’s approved Manufacturer Umbrella Contract 
+price list prior to the RFQ Submission due date for RFQ 23-01.   OGS will prioritize any Contract modification 
+requests related to this RFQ 23-01, provided that the Contractor indicates in their Contract modification request 
+that the Products are intended for this RFQ 23-01. Contractors are requested to limit such Contract modification 
+requests to only Products needed to respond to this RFQ. All pricing offered on Attachment C - Financial Response 
+must be equal to or better than the pricing offered for that SKU on the Contractor's Manufacturer Umbrella Contract. 
+ 
+ MANDATORY OFFERINGS 
+ 
+FOR EACH CONFIGURATION BID, BIDDERS MUST OFFER ALL COMPONENTS WITHIN THE STANDARD 
+CONFIGURATION AND  ALL REQUIRED PRODUCTS . Failure to complete all required fields in Attachment A – 
+Technical Response or Attachment C – Financial Response may result in rejection of the RFQ Submission without further 
+review. 
+ 
+
+
+---PAGE_10---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 10 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+6.1.1 STANDARD CONFIGURATIONS. 
+ 
+Contractor may bid on one, some, or all 14 Standard Configurations.  Specifications can be found in Attachment A 
+- Technical Response. 
+ 
+All line-items identified within each of the Standard Configuration(s) must be offered by Contractor(s). Additional 
+Products needed to complete the Standard Configuration may be itemized in Section A of Attachment A - 
+Technical Response.  Only items that have a mandatory specification will be evaluated in the Technical 
+Evaluation; additional items needed to create the Standard Configuration listed in Section A of Attachment A-
+Technical Response will be reviewed only to determine if the items are included in Lot 2 of the Contractor’s 
+Manufacturer Umbrella Contract price list.  Any listed items not included in Lot 2 of the Contractor’s Manufacturer 
+Umbrella Contract price list will be removed from the RFQ Submission. 
+ 
+Attachment A – Technical Response must include a Product description of any remote diagnosis and/or support 
+service arrangements if offered/provided with the Product.   
+ 
+Contractors are encouraged to aggressively discount their pricing for the Standard Configurations.  Contractors 
+should provide a discount off the Net NYS Contract Price from the Manufacturer Umbrella Contract price list.  
+Contractors shall provide itemized pricing on all Products offered in the Standard Configurations.  In no event may 
+quoted pricing exceed the Net NYS Contract Price on the Manufacturer’s Umbrella Contract.   
+ 
+6.1.2 REQUIRED PRODUCTS.  
+ 
+For evaluation purposes, specific Products have been designated as Required Products.  A Product from each 
+Required Product category has been chosen by OGS to establish a level playing field among Contractors for each 
+Configuration. All Required Products for each Standard Configuration can be found in Section B of Attachment A - 
+Technical Response. Required Product categories are defined below: 
+ 
+1. Warranty & Services includes Products such as multi-year Warranty, agency specific factory imaging, 
+asset tagging, disk retention and accidental damage coverage. 
+ 
+2. Components include Products such as replacements or additional components to the Standard 
+Configuration, e.g., CPU, additional memory, internal optical drives, and operating system. Component 
+upgrades and downgrades may be executed by increment. When an upgrade is done by increment, it 
+must be specified exactly how the upgrade will be provided. For example, if an upgrade to RAM from 
+8GB to 16GB is offered, please specify how the upgrade capacity is met, such as 1x16GB memory 
+module or 2x8GB memory modules. 
+ 
+3. Peripherals include products such as a cable, external optical drive, docking station, wireless keyboard, 
+and/or mouse. 
+ 
+The Net NYS Contract Price provided on Attachment A – Technical Response for a Required Product must 
+represent the complete price of the Product. Recording the price of the Product as the difference in price from a 
+line-item in the Standard Configuration is prohibited.  
+ 
+For Required Products, Contractors must bid a discount percentage on the item that has been selected for each 
+category (e.g., a 3-button mouse for Peripherals). 
+ 
+ OPTIONAL PRODUCTS. 
+ 
+6.2.1 ADDITIONAL PRODUCTS. 
+ 
+At the time of bid submission, the Contractor may choose to include Additional Products under Section C of 
+Attachment A - Technical Response.  External displays/monitors may not be offered as an Additional Product for 
+any Configuration. 
+ 
+Pricing for any Additional Products will not be factored into the evaluation, but submission of items for review at 
+the time of bid will facilitate the availability of Additional Products for Authorized Users as part of a Configuration 
+
+
+---PAGE_11---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 11 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+at time of award. All Additional Products proposed by a Contractor on Attachment A – Technical Response and 
+Attachment C – Financial Response must first be on Contractor’s approved Manufacturer Umbrella Contract price 
+list. OGS reserves the right to decline to include any proposed Additional Product on any resulting awarded 
+Configuration price list if not included on Contractor’s approved Manufacturer Umbrella Contract price list or if the 
+proposed Additional Product is deemed to be out of scope for the Configuration by OGS.  
+ 
+OGS reserves the right to decline to include any proposed Additional Products on any resulting awarded 
+Configuration price list that are deemed to require excess time or clarification during the evaluation of the 
+proposal. 
+ 
+ DISCOUNT PERCENTAGE. 
+ 
+6.3.1 STANDARD CONFIGURATION DISCOUNT. 
+  
+Contractors are encouraged to aggressively discount their pricing for the Standard Configurations.  Contractors 
+shall provide itemized pricing on all Products offered in the Standard Configurations.  In no event may quoted 
+pricing exceed the Net NYS Contract Price on the Manufacturer’s Umbrella Contract price list.  The awarded 
+Standard Configuration price and its component prices will remain equal to the Agreement awarded price for the 
+term of the Agreement(s) and any extensions, though Contractor may offer lower pricing at any time.  
+ 
+6.3.2 REQUIRED PRODUCTS DISCOUNT. 
+ 
+Contractors are required to provide discount percentages that will apply to each of the three (3) Required 
+Products.  The discount that is bid on the single Product shall apply to all Additional Products in the same 
+Required Product category, as described in Section 7.2.5, Additional Products. Contractors are encouraged to 
+aggressively discount their pricing for their Required Products, as the pricing will be factored in the Total Financial 
+Score. The discount percentages may be increased, but not decreased during the term of any resulting 
+Agreement and any extensions.  
+ 
+ DEBRIEFING. 
+ 
+Pursuant to Section 163(9)(c) of the State Finance Law, any unsuccessful bidder may request a debriefing regarding the 
+reasons that the bid submitted by the bidder was not selected for award.  Requests for a debriefing must be made within 
+fifteen (15) calendar days of notification by OGS that the bid submitted by the bidder was not selected for award.  
+Requests should be submitted in writing to a designated contact identified in the RFQ. 
+ 
+ DISPUTE RESOLUTION. 
+ 
+Should a Contractor wish to file a dispute regarding this RFQ 23-01, the dispute will be considered and decided by OGS 
+in accordance with Section 64(II)(B) of Appendix B to the Contractor’s Manufacturer Umbrella Contract. 
+ 
+Section 7.   TERMS AND CONDITIONS  
+ 
+The following terms and conditions shall apply to the Contractor: 
+ 
+ GENERAL. 
+  
+The terms and conditions of the Contractor’s Manufacturer Umbrella Contract including any Amendments and the additional 
+terms and conditions set forth in this RFQ 23-01, Section 7, Terms and Conditions govern any resulting award under RFQ 
+23-01.  This RFQ is referred to herein as either “RFQ 23-01” or “Aggregate Hardware Buy 23-01.” 
+ 
+ PRICING. 
+ 
+The approved Configuration price lists, Attachment 1 – Pricing Pages, for any resulting Agreement will be posted on the 
+OGS Procurement Services website. Only Products listed on such price lists shall be sold under the Agreement. The 
+Agreement item number aggregate buy price is a Not-To-Exceed Price, in accordance with the Contractor’s Manufacturer 
+Umbrella Contract, Section 2.5, Glossary, “Not-to-Exceed (NTE) Price.” 
+
+
+---PAGE_12---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 12 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+ 
+7.2.1 MONETARY VALUES.  
+ 
+All monetary values shall be in U.S. Dollar amounts and will be two decimal points (for example: $1.12). 
+ 
+7.2.2 DISCOUNT PERCENTAGE VALUES. 
+ 
+All Discount percentage values shall not exceed two decimal places (for example: 20.25222% shall be rounded to 
+nearest one hundredth 20.25%).  OGS will round any discount percentage to the nearest hundredth if necessary.  
+A Discount Percentage value cannot be expressed as a range (for example: 10%-20%, or “varies”).  
+ 
+7.2.3 STANDARD CONFIGURATION. 
+ 
+Contractors shall provide itemized pricing on all Products offered in the Standard Configurations.  In no event may 
+quoted pricing exceed the Net NYS Contract Price on the Contractor’s Manufacturer Umbrella Contract.  The 
+awarded Standard Configuration price and its component prices will remain equal to the Agreement awarded 
+price for the term of the Agreement(s) and any extensions, though Contractor may offer lower pricing at any time 
+on an individual transaction.  
+ 
+7.2.4 REQUIRED PRODUCTS.  
+ 
+Products that were bid as Required Products by the Contractor will be available under the Additional Product 
+category on the awarded Configuration price list and are subject to the discount percentage bid by the Contractor 
+as part of the RFQ Submission. The Required Product price awarded shall remain equal to or better than the 
+originally awarded price throughout the life of any resulting Agreement, though Contractor may offer lower pricing 
+at any time on an individual transaction.  Required Product discount percentages may be increased, but not 
+decreased during the term of any resulting Agreement and any extensions.  
+ 
+7.2.5 ADDITIONAL PRODUCTS. 
+ 
+Contractors shall provide the same awarded discount percentages that applied to the three (3) Required Product 
+categories (Warranty and Services, Components, and Peripherals), to the Additional Products in their respective 
+categories.  For all Additional Products, the discount percentages will apply to the Net NYS Contract Price from 
+the Manufacturer Umbrella Contract price list. At time of award, these discount percentages will apply to the 
+original Additional Products bid and any future Additional Products added within the scope of the Agreement. Only 
+Additional Products approved by OGS for inclusion on the awarded Configuration price list may be offered under 
+any resulting Agreement. Discount percentages may be increased, but not decreased during the term of the 
+Agreement and any extensions.  
+ 
+Category Discount percentages are only applicable for products listed on the awarded Agreement Configuration 
+price lists.  Products that are on the Contractor’s Manufacturer Umbrella price list shall not be offered with the 
+Category Discount under any resulting Agreement unless first being submitted to OGS for approval via Appendix 
+3 - Pricing Modification Form. 
+ 
+ 
+ RESULTING AGREEMENT DOCUMENTS/ORDER OF PRECEDENCE. 
+ 
+Any resulting Aggregate Hardware Buy 23-01 Agreement will be comprised of the following documents.  Any conflicts or 
+inconsistencies among such documents shall be resolved by giving precedence to the documents in the following order: 
+ 
+1. Aggregate Hardware Buy 23-01 Agreement TERMS AND CONDITIONS; 
+2. Attachment 1 - Pricing Pages, which consists of the price list for each awarded Configuration as approved by 
+OGS from time to time during the term of the resulting Agreement; 
+3. Attachment 2 - Issue Escalation Plan; 
+4. Attachment 3 - Sales Report Form 
+5. Attachment 4 - Agreement Price List Modification Procedures  
+6. Attachment 5 – Pricing Modification Form  
+
+
+---PAGE_13---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 13 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+7. Attachment 6 - How to Use.  OGS reserves the right to unilaterally make revisions, changes and/or updates to 
+this attachment without processing a formal amendment and/or modification to the resulting Agreement; 
+8. Attachment 7 - Contractor Information;  
+9. RFQ 23-01 Request for Quote 23-01, Aggregate Hardware Buy 
+• RFQ 23-01 Aggregate Hardware Buy 
+• Attachment A – Technical Response  
+• Attachment B – Contractor Questions and Comments  
+• Attachment C – Financial Response   
+• Attachment D – Issue Escalation Plan 
+• Appendix 1 – Aggregate Hardware Buy - Sales Report Form  
+• Appendix 2 – Agreement Price List Modification Procedures  
+• Appendix 3 – Pricing Modification Form  
+• Appendix 4 – How to Prepare a Successful Quote 
+• Appendix 5 – Aggregate Hardware Buy - Delayed Delivery Report  
+• Appendix 6 – Responses to Inquiries Released (3/15/2023) 
+ 
+ COMMENCEMENT OF SALES. 
+  
+The Contractor can commence sales from any resulting Agreement only upon OGS acceptance and posting of the 
+Agreement and awarded Configurations with the Contractor’s contact information on the OGS website. 
+ 
+ ESTIMATED SPEND AND QUANTITY.  
+ 
+The estimated dollar value of the aggregated award of the 14 Standard Configurations in this RFQ 23-01, based on 
+historical purchases under previous awards, is approximately $50 million.  Certain factors including but not limited to the 
+budget structure, the COVID-19 pandemic, and global industry supply chain have impacted the marketplace and 
+estimated volumes.  However, the Agreements resulting from this RFQ will be Indefinite Delivery, Indefinite Quantity 
+(IDIQ) awards.  Numerous factors could cause the actual volume of Product purchased to vary substantially from the 
+above estimate.  Such factors include, but are not limited to, the following: 
+ 
+• There is no guarantee of volume to be purchased  
+• There is no guarantee of dollar value to be purchased 
+• There is no guarantee that demand will continue in any manner consistent with previous purchases or the above 
+estimates  
+ 
+In OGS’ experience, depending on the price of a particular item, the actual volume of purchases for that item could be 
+substantially in excess of, or substantially below, estimated volumes.  Specifically, if actual contract pricing is lower than 
+anticipated or historical pricing, actual quantities purchased could be substantially greater than the estimates; conversely, 
+if actual contract pricing is higher than anticipated or historical pricing, actual quantities purchased could be substantially 
+lower than the estimates.  By submitting a Quote, Contractor acknowledges the foregoing and agrees that actual good 
+faith purchasing volumes during the term of any resulting Agreement could vary substantially from the estimates provided 
+above. Contractor must furnish all quantities actually ordered by Authorized Users at or below the prices in the Aggregate 
+Hardware Buy 23-01 Agreement. 
+ 
+ PARTICIPATION IN ONLINE NYS MARKETPLACE.  
+ 
+Contractors that are awarded a Configuration under the Aggregate Agreement should provide a “hosted” or “punch-out” 
+catalog that is available to Authorized Users via an online NYS marketplace, should one become available for technology 
+products in the future. 
+ 
+ CONTRACTOR WEBSITE. 
+ 
+If a Contractor maintains its own dedicated Agreement website, they are restricted to showing literature only directed 
+toward the models currently on the approved OGS Aggregate Hardware Buy 23-01 Agreement.  The Contractor’s website 
+shall not have a web-based ordering system with the capability of receiving orders from Authorized Users. Contractor may 
+provide a “hosted” or “punch-out” catalog that is available to Authorized Users via an online NYS marketplace. 
+Each Contractor’s website link will be listed under the Contractor information posted on the OGS website. The 
+Contractor’s website will be the responsibility of the Contractor to maintain and keep updated. This website must remain 
+
+
+---PAGE_14---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 14 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+accurate and available throughout the duration of any resulting Agreement. Determination of compliance will be at the 
+sole discretion of OGS. The State reserves the right to request demonstrations of the Contractor’s website. The only 
+offerings allowed within the Contractor’s on-line configurator will be those within the OGS approved Configuration 
+requirements (Standard Configuration, Required Products and Additional Products). Contractor’s website shall comply 
+with Contractor’s Manufacturer Umbrella Contract section titled Accessibility of Web Based Information and Applications 
+Policy Language. 
+ 
+Any conflicts between the OGS-posted price lists and items on a Contractor’s dedicated website shall be resolved in favor 
+of the OGS-posted price list at time of the sale. Repeated conflicts between the two websites may, at OGS’ discretion, 
+lead to the revoking of the ability of the Contractor to host their own dedicated website. 
+ 
+ 
+ PARTICIPATION IN AGGREGATE BUY AGREEMENT 
+ 
+Any resulting Agreement pricing may be extended to additional States or governmental jurisdictions upon mutual written 
+agreement between New York State (the lead contracting State) and the Contractor.  Political subdivisions and other 
+authorized entities within each participating State or governmental jurisdiction may also participate in any resulting 
+Agreement if such State normally allows participation by such entities.  New York State reserves the right to negotiate 
+additional discounts based on any increased volume generated by such extensions. In the event that any resulting 
+Agreement is so extended, such other authorized entities shall be solely responsible for liability and performance under 
+any resulting Agreement and Contractor agrees to hold them solely responsible for such liability and performance.  
+ 
+7.8.1 SUPPLY SHORTAGE PRIORITIZATION 
+ 
+In the event of a supply shortage, a Contractor must make all reasonable efforts to prioritize orders placed under 
+any resulting originating Agreement for New York State Authorized Users, over any orders made by extension of 
+any resulting Agreement to customers outside of New York State Authorized Users.  In addition, in the event that 
+the Contractor believes it necessary to prioritize orders made by extension of any resulting Agreement to 
+customers outside of New York State Authorized Users, over orders placed under any resulting originating 
+Agreement for New York State Authorized Users, the Contractor must contact OGS for approval prior to fulfilling 
+such orders. 
+ 
+ 
+ TERM FOR AGGREGATE HARDWARE BUY 23-01 AGREEMENT. 
+ 
+The term of any resulting Agreement shall be one (1) year.  The term shall not commence until OGS execution, final 
+approval by the Office of the State Comptroller (OSC), and posting of the final executed documents to the OGS 
+Procurement Services website.  OGS reserves the right, at its sole discretion, to extend all or some Configurations of the 
+Agreement for a period up to an additional one (1) year upon written notice to the Contractor.   
+  
+7.9.1 SHORT TERM EXTENSION.  
+ 
+OGS reserves the right to seek an additional short-term extension for the Agreement in accordance with 
+Manufacturer Umbrella Contract, Section 2.18, Short Term Extension: 
+ 
+In the event a replacement Agreement has not been issued, any Agreement let and awarded hereunder by the 
+State, may be extended unilaterally by the State for an additional period of up to three (3) months upon notice to 
+the Contractor with the same terms and conditions as the original Agreement including, but not limited to, prices 
+and delivery requirements.  With the concurrence of the Contractor, the extension may be for a period of up to six 
+(6) months in lieu of three (3) months.  However, this extension terminates should the replacement Agreement be 
+issued in the interim. 
+ 
+ RESELLER PARTICIPATION UNDER AGGREGATE AGREEMENT. 
+ 
+Contractors are permitted to use Resellers in the fulfillment of orders under any resulting Agreement. Contractors must 
+receive payment from Authorized Users directly and must invoice Authorized Users directly. OGS approved Resellers 
+and Sales Agents are not authorized to receive Purchase Orders from Authorized Users or to invoice Authorized 
+Users. Contractors remain wholly and solely responsible for the actions of the Resellers acting on their behalf as part of 
+
+
+---PAGE_15---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 15 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+the aggregate buy, as well as the performance of all Products, and conformity with the Manufacturer Umbrella Contract 
+and any Agreement resulting from this RFQ. All services provided by the Resellers must be billed and invoiced through 
+the Contractor and fall within the scope of the Agreement. 
+ 
+7.10.1 PERMISSIBLE USE OF RESELLERS. 
+ 
+Contractors are allowed to utilize authorized Resellers for the following purposes, including but not limited to: 
+• The fulfilment of orders; 
+• Coordination of deliveries; 
+• Installation of Products purchased under any resulting Aggregate Agreement; or  
+• Other functions that fall within the scope of the purchase by the Authorized User. 
+ 
+ AGREEMENT PRICE LIST MODIFICATION.  
+ 
+The Contractor is authorized to provide the Standard Configuration(s), Required Products, and Additional Products initially 
+awarded in the Agreement.  Products included under the Agreement can be modified through the processes described in 
+RFQ 23-01, Appendix 2 – Agreement Price List Modification Procedures and utilizing both the Agreement Modification 
+Form (last 2 pages of RFQ 23-01, Appendix 2 – Agreement Price List Modification Procedures) and RFQ 23-01, Appendix 
+3 - Pricing Modification Form. 
+ 
+In order to expedite processing of an Agreement modification, only one Agreement modification request can be submitted 
+at a time.  Additional requests may be submitted once the Contractor has received approval of a previously submitted 
+request. The Contractor must request the most current approved Appendix 3 – Pricing Modification Form from the OGS 
+Contract Manager in order to begin the modification process. This will help to ensure there will not be an overlap or 
+discrepancy with the approved Configuration price list. The Contractor must specify the Configuration in their request.  
+ 
+The Contractor shall submit the Product and price information for the Agreement modification electronically via email as 
+described in RFQ 23-01, Appendix 2 – Agreement Price List Modification Procedures and RFQ 23-01, Appendix 3 – 
+Pricing Modification Form (and in hardcopy if requested by OGS) to: 
+ 
+Submit electronically via e-mail: 
+ OGS.sm.PS.AggregateBuy@ogs.ny.gov 
+ Subject Line: Aggregate Hardware Buy 23-01 – [Contractor Name] Modification 
+ 
+ TYPES OF AGREEMENT MODIFICATIONS. 
+ 
+Agreement modifications may include the following: 
+• Lowering pricing of Products; 
+• Adding Additional Products;  
+• Deleting Products from the Additional Products category;  
+• Replacement of Products; and 
+• Replacement Model for Standard Configuration. 
+ 
+7.12.1 LOWERING PRICING OF PRODUCTS. 
+ 
+All Product pricing on the Contractor’s Agreement price list can be lowered at any time throughout the term of any 
+resulting Agreement and any extensions.   
+ 
+Agreement pricing for a Product can be lowered without lowering the Product price on the Contractor’s 
+Manufacturer Umbrella price list.  If Product pricing on the Contractor’s Manufacturer Umbrella price list 
+decreases, a modification must be made to the Agreement price list to reflect the price decreases. 
+ 
+If a Contractor wishes to lower the price for a component in the Standard Configuration, the Contractor must state 
+the new Product pricing in the Proposed Aggregate Agreement Price column on the RFQ 23-01, Appendix 3 – 
+Pricing Modification Form.  The proposed lower price will become the new Agreement price for the component. 
+ 
+If a Contractor wishes to lower the price of a Required Product or Additional Product, the Contractor must state 
+the new Product pricing in the Proposed Aggregate Agreement Price column on the RFQ 23-01, Appendix 3 – 
+
+
+---PAGE_16---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 16 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+Pricing Modification Form.  The proposed lower price minus the percentage discount will become the new 
+Agreement price for the Required Product or Additional Product upon OGS approval. 
+ 
+7.12.2 ADDING ADDITIONAL PRODUCTS. 
+ 
+After Agreement award, in order for a Product to be added to the Additional Products pricing category under the 
+Agreement, a Product must first be approved on the Contractor’s Manufacturer Umbrella Contract in accordance 
+with the Contractor’s Manufacturer Umbrella Contract Appendix C – Contract Modification Procedure.  
+ 
+Once a Product has been successfully added to the Contractor’s OGS approved Manufacturer Umbrella Contract 
+price list, the same Product can then be submitted for an add request under the Agreement. The new Additional 
+Product price, as entered in the Proposed Aggregate Agreement Price column on the RFQ 23-01, Appendix 3 – 
+Pricing Modification Form, must be equal to or less than the Net NYS Contract price for the Product as listed on 
+the Contractor’s Manufacturer Umbrella Contract price list.  The discount percentage described in 7.2.5, 
+Additional Products, will be applied to the proposed Additional Product price resulting in the Agreement price for 
+the Additional Product.  
+  
+7.12.3 DELETING PRODUCTS FROM THE ADDITIONAL PRODUCTS CATEGORY. 
+ 
+Additional Products can only be removed from the Agreement if the Products are shown to OGS’ satisfaction to 
+be incompatible with the Standard Configurations, unavailable, or at End of Life (EOL).  The reason an Additional 
+Product is being removed from the Agreement must be provided in writing to the Agreement Contract Manager(s).  
+OGS must receive no less than 60 calendar days notice for EOL Additional Products.  All EOL Additional 
+Products purchased by Authorized Users must remain under warranty or be replaceable at no additional charge 
+to the Authorized Users. 
+ 
+7.12.4 REPLACEMENT OF PRODUCTS. 
+ 
+Replacements are defined as substitute Products which take the place of a previously awarded Product included 
+in the Standard Configurations and/or Required Products, due to the awarded Product becoming incompatible 
+with the Standard Configuration, unavailable or at Product EOL. The reason a Replacement is needed must be 
+provided in writing to the Agreement Contract Manager(s) for approval.  
+ 
+OGS must receive no less than 60 calendar days notice from Contractor for EOL Products, in order for OGS to 
+process modifications for Product substitutions in a timely manner.  All EOL Replacement Products purchased by 
+Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users. 
+ 
+If a Product in the awarded Standard Configuration and/or Required Products becomes incompatible with the 
+Standard Configuration, unavailable or at Product EOL, a replacement Product of an equal or greater 
+specification than the original Product offered in the Standard Configuration and/or Required Products must first 
+be submitted for OGS approval by completing the modification process outlined in Appendix 2 – Agreement Price 
+List Modification Procedures. The replacement Product must be offered on the Agreement price list at the same 
+or lower Agreement pricing as the Product it is replacing.  Replacement components must be compatible with 
+Agreement peripherals or the Contractor will be responsible for replacement of both the component and the 
+peripheral.  OGS will be solely responsible for determining if the replacement Product meets or exceeds the 
+original Product offered in the Standard Configurations and/or Required Products. 
+  
+7.12.5 REPLACEMENT MODEL FOR STANDARD CONFIGURATION. 
+ 
+The Contractor will be able to update the entire Standard Configuration to a new model as long as acceptable 
+proof that the Product has reached EOL or has become unavailable for purchase is provided in writing to the 
+Agreement Contract Manager(s).  The new model must meet or exceed the specifications of the original offered 
+Standard Configuration in each of the component areas listed on Attachment C – Financial Response.   
+ 
+OGS must receive notification no less than 60 calendar days prior to the EOL of an awarded Standard 
+Configuration model or the date that the awarded Standard Configuration becomes unavailable for purchase.  All 
+EOL Standard Configurations purchased by Authorized Users must remain under warranty or be replaceable at 
+no additional charge to the Authorized Users.   
+ 
+
+
+---PAGE_17---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 17 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+No less than 30 calendar days prior to the EOL of the awarded Standard Configuration or the date that the 
+awarded Standard Configuration has become unavailable for purchase by Authorized Users, a substitute 
+Standard Configuration with specifications that meet or exceed the specifications of the original offered Standard 
+Configuration must be submitted for OGS approval by completing the modification process outlined in Appendix 2 
+– Agreement Price List Modification Procedures.  The replacement model price shall not exceed the original 
+awarded amount for the Standard Configuration and its components; provided, however, if the replacement model 
+costs less than the original Standard Configuration, the price shall be reduced to the lower cost. OGS’ 
+determination that a replacement system meets or exceeds the original offered Standard Configuration will be 
+final and binding on the Contractor. 
+ 
+During the term of the Agreement, should the Contractor: fail to provide acceptable notice of EOL Standard 
+Configuration(s); fail to submit a replacement Standard Configuration via the process outlined in Appendix 2 – 
+Agreement Price List Modification Procedures in the timeframe referenced above; or is unable to provide a 
+replacement model with specifications that meet or exceed the specifications of the original awarded 
+Configuration, OGS reserves the right to award the Configuration to the Contractor with the next lowest bid from 
+RFQ 23-01 for that Configuration that is willing to accept the Configuration award without rebidding.  Under no 
+circumstances will the new Contractor awarded be permitted to increase its component pricing for the Standard 
+Configuration components or Required Products or decrease the percentage discounts on Required Product 
+categories that were originally Bid.  Should the Standard Configuration bid at the time of RFQ 23-01 be obsolete 
+or unavailable, a substitute Standard Configuration with specifications that meet or exceed the specifications of 
+the original offered Standard Configuration may be proposed. 
+ 
+ INVOICING. 
+ 
+All invoices shall at a minimum, include the items listed below and any additional information identified in the Authorized 
+User Purchase Order and any resulting Authorized User Agreement: 
+ 
+• Manufacturer Umbrella Contract Number: PMXXXXX 
+• RFQ Number: 23-01  
+• RFQ Title: Aggregate Hardware Buy 23-01  
+• Contractor Name   
+• NYS Vendor ID 
+• Manufacturer Part Number (SKU) 
+• Product Name 
+• Product Description 
+• Quantity 
+• Aggregate Buy Price for each Product SKU 
+• Specific designation of special price(s) which may be better than the Agreement price  
+• Invoice Total  
+• Standard Configuration Name 
+  
+Agreement prices are Not-To-Exceed prices. Off-Contract sales are prohibited.  
+ 
+ PRODUCT DELIVERY.  
+ 
+The Contractor shall deliver the units ordered by an Authorized User within 45 calendar days of receipt of a Purchase 
+Order, approved by OSC if applicable, unless either the Authorized User or OGS grants an extension of time as provided 
+below.  
+ 
+If upon receipt of a Purchase Order, the Contractor determines it cannot meet the 45 calendar day delivery period, the 
+Contractor must submit a written request to the Authorized User to extend the required Product delivery period as per the 
+terms of Appendix B, Section 48. The Authorized User shall respond in writing to the Contractor either declining the 
+request or specifying the revised delivery period.   
+ 
+ 
+The product delivery period shall start at the time of receipt of a Purchase Order and shall conclude with delivery to the 
+Authorized User. This timeframe shall include all work to be done by a Contractor and/or its Resellers.   
+ 
+
+
+---PAGE_18---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 18 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+The Contractor must provide a Purchase Order receipt notification to the Authorized User within five (5) calendar days of 
+receipt of a Purchase Order.  An Advanced Shipping Notice must be provided to Authorized Users upon request fourteen 
+(14) calendar days prior to delivery.  Such notification must include Purchase Order number, quantity, itemized SKUs, 
+description, price, purchase date, received date, and warranty start date. The Contractor shall notify the Authorized User 
+of any delays and be the main point of contact for all communications, even if using a Reseller to fulfill the order.  
+Contractor shall submit a monthly report to OGS of any delays in delivery by using Appendix 5 – Aggregate Hardware Buy 
+- Delayed Delivery Report. If OGS becomes aware of multiple incidents of delays in delivery, OGS reserves the right to 
+enforce any of the remedies available to us through the terms of this Agreement, including our rights to terminate the 
+Agreement in whole or in part, and award to another contractor as per the terms of Section 7.22 Replacement Contractor. 
+ 
+ ISSUE ESCALATION PLAN. 
+ 
+Contractor shall submit an Issue Escalation Plan.  Space has been provided in Attachment D – Issue Escalation Plan for 
+entry of the plan and additional information may be provided in a separate, unlocked Microsoft Word document.  Please 
+use the Attachment D - Issue Escalation Plan to provide the necessary points of contact for each type of issue listed. 
+  
+As a condition of award, OGS may require the tentative awardee(s) to modify the “Issue Escalation Plan” document(s) 
+submitted with the Quotes, as needed, to adhere to the terms and conditions of any resulting Agreement or Contractor's 
+processes or as otherwise determined by OGS.  OGS may also require Contractor to modify this plan at any time during 
+the term of the resulting Agreement.  The Issue Escalation Plan as approved by OGS at the time of Agreement award 
+shall become a part of the resulting Agreement and Contractor must adhere to such plan during the term of the resulting 
+Agreement.     
+ 
+ 
+ DISPUTES OR CONTROVERSIES OCCURRING DURING THE TERM OF THE AGGREGATE AGREEMENT – 
+CONTRACTOR AND OGS 
+ 
+Disputes between the Contractor and OGS regarding the Aggregate Hardware Buy 23-01 Agreement will be handled 
+pursuant to Contractor’s Manufacturer Umbrella Contract, Appendix B, sections 64(II)(A) and 64(II)(B). Informal disputes 
+between other Authorized Users and the Contractor will be handled under Contractor’s Manufacturer Umbrella Contract, 
+Appendix B sections 64(II)(A), and formal disputes between other Authorized Users and Contractor shall be handled 
+under the Authorized User’s dispute procedures. 
+ 
+ 
+ IMAGING / LOADING SERVICES.  
+ 
+The Contractor is responsible for adding a SKU for Authorized User specific standard software imaging under Additional 
+Products on Attachment A – Technical Response if it is not already included as part of the Standard Configuration or its 
+Required Products.  The Contractor is therefore required to install a factory Authorized User specific standard software 
+image on each computing device purchased, when such image is provided by the Authorized User.   
+ 
+If an Authorized User requires customized factory imaging, the Contractor shall provide a test unit with the customized 
+image within five (5) business days of receiving the Authorized User’s image.  The Contractor must deliver the remainder 
+of the imaged units ordered by the Authorized User, within 30 calendar days from the date of Authorized User’s written 
+approval of the test unit. Notwithstanding the foregoing in this clause the delivery date shall not be required to be less than 
+45 days from date of Purchase Order. 
+  
+ AGGREGATE HARDWARE BUY 23-01 AGREEMENT - CUSTOMER SERVICE REQUIREMENT. 
+ 
+The Contractor shall provide a sufficient number of customer service employees who are knowledgeable and can 
+effectively respond to any Authorized User issues related to any resulting Agreement.  Inquiries shall be responded to 
+within twenty-four (24) hours. 
+ 
+The Contractor shall ensure that their sales staff sell only approved Agreement Products to Authorized Users at the 
+current Agreement 23-01 price. The Contractor shall make all sales staff aware of this responsibility. Sales staff shall not 
+quote or sell Products not available on the approved Agreement price lists. Products must be added to the approved 
+Agreement price lists via the Appendix 2 – Agreement Price List Modification Procedures.   
+ 
+
+
+---PAGE_19---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 19 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+ SALES REPORTING AND FISCAL AUDITS. 
+ 
+7.19.1 SALES REPORTING. 
+ 
+The Contractor shall provide OGS with accurate and timely sales reports containing detailed information 
+of all purchases by State and non-state Authorized Users, political subdivisions and other authorized 
+entities within other State or governmental jurisdictions, made pursuant to any resulting Agreement.  
+Sales under any resulting Agreement must be submitted in accordance with Section 2.23 of the 
+Manufacturer Umbrella Contract, using Appendix I – Report of Contract Sales. Sales reports for any 
+resulting Agreement must also be submitted to OGS.sm.PS.AggregateBuy@ogs.ny.gov utilizing the 
+format in Appendix 1 – Aggregate Hardware Buy - Sales Report Form attached hereto and must be 
+submitted separately from the Contractor’s Manufacturer Umbrella Contract sales documentation. 
+ 
+Sales reports are due to OGS one (1) month directly following the end of each quarter.  The quarters for 
+each sales report submission are as follows: January - March; April - June; July - September; October - 
+December.  The Contractor must send OGS sales reports for the duration of any resulting Agreement and 
+any extensions.  
+Contractor must submit, along with Appendix 1 – Aggregate Hardware Buy - Sales Report Form, a report 
+of any and all deliveries that fall outside the 45-day period stated in Section 7.14, Product Delivery. 
+Failure to submit accurate reports on a timely basis may result in a responsibility hearing, and possible 
+termination of this Agreement in whole or in part, after which OGS reserves the right to award to another 
+contractor as per the terms of Section 7.22 Replacement Contractor. 
+ 
+If requested by OGS, Contractor shall provide backup documentation of all quarterly sales reports 
+to support a sales and fiscal audit.  These records will be made available on request, no more than 
+15 business days after request, in a searchable electronic format as specified by OGS. 
+ 
+Contractors shall provide sales reports specific to the Agreement via email to: 
+OGS.sm.PS.AggregateBuy@ogs.ny.gov 
+Subject Line: Aggregate Hardware Buy 23-01 – Sales Report 
+ 
+ 
+7.19.2 FISCAL AUDITS. 
+ 
+OGS reserves the right to audit the accuracy of the sales reports collected under Award 22802.  Audits shall be 
+conducted during regular business hours, upon not less than 15 business days prior written notice.  Repeated 
+errors on subsequent audits may result in a responsibility hearing in relation to Contractor’s Manufacturer 
+Umbrella Contract and may lead to termination of any resulting Agreement in whole or in part, after which OGS 
+reserves the right to award to another contractor as per the terms of Section 7.22 Replacement Contractor.  
+ 
+In addition, OGS reserves the right to review sales reports and other such documentation for accuracy of all 
+required reporting documents for both NYS Authorized Users and other parties using any resulting Agreement.   
+ 
+ 
+ EPEAT REQUIREMENTS. 
+ 
+Desktops, laptops, and computer monitors provided under any resulting Agreement are required to have achieved a 
+minimum certification of EPEAT Gold at the time of award with the exception of the three Chromebook Configurations 
+(Chromebook Low, Chromebook with Touchscreen and Chromebook with Touchscreen – 14”). Chromebook Standard 
+Configurations will be required to meet a minimum certification of EPEAT Silver at the time of award. EPEAT is an 
+ecolabel designed to help large volume purchasers evaluate, compare, and select electronic products based upon their 
+environmental attributes as specified in the consensus-based IEEE Standard for the Environmental Assessment of 
+Personal Computer Products (IEEE 1680.1). 
+ 
+Contractor is required to provide quarterly reporting on the number of EPEAT registered products purchased under any 
+resulting Agreement. The report is part of the sales report.  For each base unit sold, EPEAT Registration Status (i.e. 
+
+
+---PAGE_20---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 20 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+Bronze, Silver, Gold or Unregistered) must be provided. The information must be reported in aggregate in a matrix 
+providing the following data: Desktop, Notebook, Display Unit. 
+ 
+The database of all products that currently meet EPEAT criteria are viewable at www.greenelectronicscouncil.org.  
+ 
+ EXPORT ADMINISTRATION REGULATIONS RESTRICTED BUSINESS ENTITIES. 
+ 
+OGS will not accept a bid from a Contractor, or a Contractor Product that contains Products made by an entity on any of 
+the lists maintained by the US Customs and Border Patrol at the link set out below. 
+ 
+If Contractor cannot deliver a Product because either the Contractor or a supplier to the Contractor is listed on any of 
+these lists, the Contractor must remove the Product from the Contractor’s Agreement price list.   Additionally, for any 
+order that cannot be fulfilled as a result of such listing, the Authorized User, at their discretion, may either terminate the 
+order or allow Contractor to fulfill the order with a replacement product that either meets or exceeds the applicable 
+Product Specifications.  The replacement Product must be added to the Agreement price list via Appendix 3 - Pricing 
+Modification Form. 
+ 
+https://www.cbp.gov/trade/programs-administration/forced-labor/withhold-release-orders-and-findings 
+ 
+ REPLACEMENT CONTRACTOR. 
+ 
+In the event that OGS terminates any resulting Agreement or any awarded Configuration resulting from such Agreement, 
+OGS reserves the right to then make an award to the Contractor with the next highest Total Financial Score from RFQ 23-
+01 that is willing to accept an Agreement or Configuration award without rebidding.  Under no circumstances will the new 
+awardee be permitted to increase its component prices for Standard Configurations, the prices of the Required Products 
+or decrease the percentage discounts on Additional Products that were originally bid.  
+ 
+ ADVERTISING. 
+ 
+Contractor is reminded of the requirements set forth in the Contractor’s Manufacturer Umbrella Contract, Appendix B, 
+Section 13, Contract Publicity, incorporated as part of the Contract, that any Contractor’s press or media releases, 
+advertisements, or promotional literature, regardless of the medium, referring to an Contractor must be reviewed and 
+approved by OGS prior to issuance.  The Contractor also cannot use, for any purpose, the New York State of Opportunity 
+registered trademark or the State coat of arms without prior approval from the State. 
+ 
+ INSTRUCTION MANUALS AND ASSOCIATED DOCUMENTATION. 
+ 
+Instruction Manuals and Associated Documentation shall be provided in accordance with Manufacturer Umbrella Contract 
+Section 2.21, Instruction Manuals and Associated Documentation. 
+ 
+ MWBE GOALS AND REPORTING. 
+ 
+The Contractor is reminded of their responsibility under Contractor’s Manufacturer Umbrella Contract, Section 2.68, 
+Contractor Requirements and Procedures for Participation By New York State Certified Minority- And Women-Owned 
+Business Enterprises and Equal Employment Opportunities for Minority Group Members and Women. For reporting 
+purposes, Contractor must accurately track and report the effort of the minority or women owned businesses performing 
+such duties as would be covered under the scope of any resulting Agreement. 
+ 
+ WARRANTY 
+ 
+The following terms and conditions shall apply to all warranties under this RFQ: 
+ 
+• If a unit becomes inoperable within the warranty window and cannot be repaired, a brand new unit shall 
+be provided at no charge. Contractor shall not provide refurbished or remanufactured equipment as they 
+are not allowed under this Aggregate Hardware Buy 23-01. The data from the unit being replaced shall be 
+transferred to a new replacement unit at no charge in the event that the data is accessible and non-
+corrupted. The data storage device or, if not removable, the entire unit, must remain in the custody and 
+
+
+---PAGE_21---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 21 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+ownership of the Authorized User after the Contractor has completed the repair or replacement of the 
+unit. 
+• Connections to the Authorized User’s networks must be performed in a manner prescribed by an 
+Authorized User to preserve the integrity of the Authorized User’s network, confidentiality and integrity of 
+information transmitted over that Authorized User’s network, and the availability of the network. Access 
+for remote diagnosis must be approved and supervised by the Authorized User’s technical representative 
+for each specific incident. Contractor should review NYS ITS Technology Standard NYS-S14-010, 
+Remote Access.  
+ 
+7.26.1 DOCKING STATION WARRANTY 
+ 
+The Contractor is responsible for providing a warranty SKU(s) for docking stations listed as a Required Product or 
+Additional Product on the price lists. The warranty SKU(s) must fully cover hardware, software, and drivers. The 
+warranty SKU(s) for docking stations must provide complete support, including break/fix, for all compatible 
+operating systems.  
+ 
+7.26.2 ADDITIONAL PRODUCT WARRANTIES 
+ 
+The Contractor is responsible for adding SKUs for additional warranty year options (e.g. 3 year, 4 year, 5 year) 
+under Additional Products on Attachment A – Technical Response.   
+ 
+ 
+Section 8.   OGS RESERVED RIGHTS 
+ 
+OGS reserves the right to: 
+ 
+1. Reject any or all RFQ Submissions received in response to the RFQ; 
+ 
+2. Withdraw the RFQ any time, in whole or in part, in its sole discretion; 
+ 
+3. Award all, any number, or none of the 14 Product Configurations; 
+ 
+4. Disqualify any Contractor whose Quote fails to conform to the requirements of the RFQ; 
+ 
+5. Seek clarifications and revisions of the RFQ Submission; 
+ 
+6. Prior to the RFQ Submission Date for Attachment C – Financial Response, amend the RFQ to correct errors or 
+oversights, or to supply additional information, as it becomes available; 
+ 
+7. Prior to RFQ Submission Date for Attachment C – Financial Response, direct Contractors to submit RFQ 
+response modifications addressing subsequent amendments; 
+ 
+8. Change any of the schedule dates with notification via email to all applicable Manufacturer Umbrella 
+Contractors; 
+ 
+9. Eliminate any mandatory, non-material specifications that cannot be complied with by all of the prospective 
+Contractors; 
+ 
+10. Waive any requirements that are not material; 
+ 
+11. Negotiate with a Contractor responding to this RFQ within the RFQ requirements to serve the best interests of 
+the State.  This includes requesting clarifications of any part or all of Contractor’s RFQ Submission; 
+ 
+12. Require clarification at any time during the procurement process and/or require correction of arithmetic or other 
+apparent errors for the purpose of assuring a full and complete understanding of a Contractor’s RFQ 
+Submission and/or to determine a Contractor’s compliance with the requirements of the RFQ; 
+ 
+
+
+---PAGE_22---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 22 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+13. Require a Contractor to complete any missing information required by Attachment A – Technical Response 
+and Attachment C – Financial Response.  
+ 
+14. Unilaterally make non-material revisions, changes and/or updates to any templates and/or Attachments to the 
+Aggregate Hardware Buy 23-01 Agreement without processing a formal amendment and/or modification; 
+ 
+15. The State reserves the right to exclude any price lists or individual Products and services that do not fall within 
+the scope of the RFQ; 
+ 
+16. Upon discovery of non-material completeness or conformance issues with a Contractor’s RFQ Submission, 
+contact the Contractor to attempt to cure the issue prior to completion of the evaluation of the Contractor’s 
+RFQ Submission; 
+ 
+17. Reject any Bid containing proposed prices that are unrealistically low as determined by OGS; 
+ 
+ 
+18. Modify the Products identified in Attachment A – Technical Response prior to the prequalified Contractors’ 
+submittal of Attachment C – Financial Response. 
+ 
+19. Modify a specification within the Standard Configuration or Required Product categories in Attachment A – 
+Technical Response or Attachment C – Financial Response prior to the Financial Evaluation, upon written 
+notice to Contractors that have submitted a quote. 
+ 
+20. Terminate an Agreement under this RFQ, in whole or in part, for Contractor’s repeated failure to comply with 
+any requirement under the Agreement. 
+  
+
+
+---PAGE_23---
+Office of General Services 
+Procurement Services 
+Group 73600 – Award 22802  
+IT Umbrella Contract – Manufacturer Based (Statewide) 
+RFQ 23-01 - Aggregate Hardware Buy - REVISED Page 23 of 23 
+ 
+  
+March 2023 Aggregate Hardware Buy 23-01 
+  
+ 
+CONTRACTOR INFORMATION 
+ 
+ 
+RFQ 23-01 
+Aggregate Hardware Buy 23-01 
+ 
+This Page is to be Completed By the Contractor Responding to the RFQ 
+The RFQ Submission must be fully and properly executed by a person authorized to legally bind the Contractor.  By signing you certify your 
+express authority to sign on behalf of yourself, your company, or other entity and full knowledge and acceptance of this RFQ (including any 
+Questions/Answers or addenda), the OGS Centralized Contract and that all information provided is complete, true and accurate. 
+Contract # Contractor Name 
+            
+Contractor Signature:  Date: 
+ 
+Phone Number:       
+E-Mail:       
+Printed or Typed Name:  
+      
+Title:  
+      
+If you are not providing a RFQ Submission, place an “x” in the box, please explain why you are not responding, and return 
+this page only. 
+ WE ARE UNABLE TO RESPOND AT THIS TIME BECAUSE:  
+ 
+      
+ 
+ 

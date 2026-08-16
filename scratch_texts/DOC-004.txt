@@ -1,0 +1,7 @@
+---PAGE_1---
+Module 04: Advanced Algebra
+Course: Math 301
+
+In this module, we cover polynomials and matrices.
+Homework is due on Friday.
+Please review chapter 4 before the exam.

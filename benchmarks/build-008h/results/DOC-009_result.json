@@ -1,0 +1,341 @@
+{
+  "metrics": {
+    "id": "DOC-009",
+    "qual_latency": 15434.622700000007,
+    "qual_usage": {
+      "prompt_tokens": 11637,
+      "completion_tokens": 1221,
+      "total_tokens": 12858,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 765
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 10869
+    },
+    "ext_latency": 113449.9804,
+    "ext_usage": {
+      "prompt_tokens": 11680,
+      "completion_tokens": 15419,
+      "total_tokens": 27099,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11649
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 10912
+    },
+    "total_latency": 128884.60310000001
+  },
+  "result": {
+    "id": "DOC-009",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFP",
+      "confidence": "HIGH",
+      "reason": "The document is a Request for Proposals (RFP) / Invitation for Bids (IFB) issued by the City of Providence for parking signs, posts, and related materials. It includes a clear solicitation purpose, scope of work, submission instructions, deadline, and evaluation criteria, indicating an active procurement opportunity.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "REQUEST FOR PROPOSALS"
+        },
+        {
+          "page_number": 1,
+          "quote": "Item Description:  PARKING SIGNS, PARKING SIGN POSTS, AND RELATED PARKING ADMINISTRATION MATERIALS – ONE-YEAR CONTRACT WITH TWO ONE-YEAR RENEWAL OPTIONS"
+        },
+        {
+          "page_number": 2,
+          "quote": "CITY OF PROVIDENCE INVITATION FOR BIDS (IFB)"
+        },
+        {
+          "page_number": 2,
+          "quote": "The City of Providence Department of Public Works, Parking Administration Division, seeks competitive bids from qualified manufacturers and distributors for the furnishing and delivery of parking regulatory signs, parking sign posts, mounting hardware, parking control devices, and related materials on an as-needed basis under a firm fixed unit price requirements contract."
+        },
+        {
+          "page_number": 7,
+          "quote": "Award shall be made to the lowest responsive and responsible bidder based on the aggregate evaluated price and the bidder's demonstrated responsibility, delivery capability, product quality, warranty, references, and compliance with the specifications."
+        },
+        {
+          "page_number": 9,
+          "quote": "Bids may be submitted up to 2:15 P.M. on the above meeting date at the Department of the City Clerk. Room 311, City Hall. 25 Dorrance Street, Providence. At 2:15 P.M. all bids will be publicly opened and read at the Board of Contract Meeting in Conference Room 305, on the 3rd floor of City Hall."
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Uncapped Indemnity and No Limitation of Liability",
+          "fact": "The contractor must indemnify the City against all claims and expenses, and the City expressly refuses any contractual limitation on the contractor's liability.",
+          "business_implication": "The bidder faces potentially unlimited financial exposure for claims arising from the work, including attorneys' fees, with no liability cap or damages cap.",
+          "action_recommendation": "Seek clarification or negotiate a liability cap during the question period; consider additional insurance coverage.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "To the fullest extent permitted by law, you shall indemnify, defend, and hold harmless the City, its employees, officers, agents, and assigns from and against any and all claims, damages, losses, allegations, demands, actions, causes of action, suits, obligations, fines, penalties, judgments, liabilities, costs and expenses, including but not limited to attorneys’ fees, of any nature whatsoever arising out of, in connection with, or resulting from the performance of the work provided in the Agreement."
+            },
+            {
+              "page_number": 21,
+              "quote": "The City shall not subject itself to any contractual limitations on liability. The City shall have the time permitted within the applicable statute of limitations, and no less, to bring or assert any and all causes of action, suits, claims or demands the City may have arising out of, in connection with, or resulting from the performance of the work provided in the Agreement, and in no event does the City agree to limit your liability to the price of the Agreement or any other monetary limit."
+            }
+          ]
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Broad Termination Right on City's Belief with Five Days' Notice",
+          "fact": "The City may terminate the agreement on five days' written notice if the City believes the contractor's ability to perform is materially impaired, including subjective grounds.",
+          "business_implication": "The contractor's contract can be terminated quickly based on the City's subjective belief, with no cure period; compensation is only for work completed to date.",
+          "action_recommendation": "Assess the risk of arbitrary termination and ensure performance obligations are airtight; attempt to narrow the termination clause in clarifications.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "The City may terminate this Agreement upon five (5) days’ written notice to you if you fail to observe any of the terms and conditions of this Agreement, or if the City believes your ability to perform the"
+            },
+            {
+              "page_number": 22,
+              "quote": "terms and conditions of this Agreement has been materially impaired in any way, including but in no way limited to loss of insurance coverage, lapsing of a surety bond, if required, declaration of bankruptcy, or appointment of a receiver. In the event of termination by the City, you shall be entitled to just and equitable compensation for any satisfactory work completed and expenses incurred up to the date of termination."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "60-Day Payment Terms with No Interest",
+          "fact": "Invoices are payable 60 days after receipt, with no interest on late payments and no collection costs paid by the City.",
+          "business_implication": "The bidder must finance receivables for at least two months, and will not be compensated for late payment.",
+          "action_recommendation": "Factor 60-day payment lag into pricing and cash flow projections; consider requesting shortened payment terms in clarification.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "Invoices submitted to the City shall be payable sixty (60) days from the time of receipt by the City."
+            },
+            {
+              "page_number": 21,
+              "quote": "In no circumstances shall the City be obligated to pay or shall you be entitled to receive interest on any overdue invoice or payment."
+            }
+          ]
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Five Years Manufacturing Experience and Three Municipal References Required",
+          "fact": "Bidders must have at least five years of experience manufacturing traffic control signs and provide three municipal references demonstrating comparable work.",
+          "business_implication": "Distributors without direct manufacturing experience may be ineligible despite the RFP's reference to distributors in the purpose section.",
+          "action_recommendation": "Verify that your organization (or proposed team) meets the manufacturing experience requirement; if not, consider teaming with a qualified manufacturer.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "Bidder shall have at least five years of experience manufacturing traffic control signs and provide three municipal references demonstrating comparable work."
+            }
+          ]
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "RFP vs IFB Confusion",
+          "fact": "The cover page labels the solicitation a Request for Proposals, while the next page identifies it as an Invitation for Bids, and the evaluation section specifies award to the lowest responsive and responsible bidder.",
+          "business_implication": "Bidders cannot tell whether the procurement is a lowest-price sealed bid or an evaluation-based RFP; this affects bid strategy and whether proposals are judged on best value or price alone.",
+          "action_recommendation": "Seek clarification from the Purchasing Department about the applicable procurement process before preparing the submission.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "REQUEST FOR PROPOSALS"
+            },
+            {
+              "page_number": 2,
+              "quote": "INVITATION FOR BIDS (IFB) Parking Signs, Parking Sign Posts, and Related Parking Administration Materials – One-Year Contract with Two One-Year Renewal Options"
+            },
+            {
+              "page_number": 7,
+              "quote": "Award shall be made to the lowest responsive and responsible bidder based on the aggregate evaluated price and the bidder's demonstrated responsibility, delivery capability, product quality, warranty, references, and compliance with the specifications."
+            }
+          ]
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Bid Form Does Not List All Estimated Sign Items",
+          "fact": "The estimated quantities table lists 12 sign categories, while the Bid Form requests unit prices for only 7 sign items, omitting several estimated items such as 24\" x 30\" signs, No Parking signs, and Street Cleaning signs.",
+          "business_implication": "Bidders cannot submit binding pricing for all items the City intends to purchase, creating ambiguity about which items are actually part of the contract.",
+          "action_recommendation": "Request a complete price schedule or clarification of whether the omitted items are covered under the 'Additional Price Schedule'.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Provide unit price for each sign: Item Unit Price ($) 12×18 Parking Sign Each 18×24 Parking Sign Each Handicap Sign Each Resident Permit Sign Each Tow Zone Sign Each Loading Zone Sign Each Temporary Parking Sign Each"
+            },
+            {
+              "page_number": 7,
+              "quote": "Item Estimated Qty 12\" × 18\" Parking Signs 2,500 18\" × 24\" Parking Signs 2,500 24\" × 30\" Parking Signs 300 Handicap Parking Signs 350 Loading Zone Signs 150 No Parking Signs 900 Resident Permit Parking Signs 400 Street Cleaning Signs 400 Tow Zone Signs 300 Reserved Parking Signs 200 Parking Meter Signs 200 Temporary Parking Restriction Signs 600"
+            }
+          ]
+        },
+        {
+          "category": "MISSING_INFORMATION",
+          "title": "Financial Assurance Requirement Indeterminate",
+          "fact": "The Bid Terms page lists several possible financial assurance requirements (certified check, bid bond, performance bond, or none), but no checkbox is visibly selected in the provided text; page 10 refers to a financial assurance requirement 'as indicated on page 5' while the Bid Terms appear on page 12.",
+          "business_implication": "Bidders do not know whether a certified check or bid bond must accompany their bid, and a mistaken assumption could lead to disqualification.",
+          "action_recommendation": "Obtain clarification from the Purchasing Department on which, if any, financial assurance is required for this solicitation.",
+          "priority": "HIGH",
+          "confidence": "MEDIUM",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "a) A certified check for $ must be deposited with the City Clerk as a guarantee that the Contract will be signed and delivered by the bidder."
+            },
+            {
+              "page_number": 12,
+              "quote": "d) No financial assurance is necessary for this item."
+            },
+            {
+              "page_number": 10,
+              "quote": "Financial Assurance, if requested (as indicated on page 5 of this document under “Bid Terms”)"
+            }
+          ]
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Price Increase Restriction vs. Renewal Price Adjustment",
+          "fact": "Bid Terms state that bid prices are firm and requests for price increases will not be honored, while the contract term section permits renewal price adjustments up to the lesser of CPI-U or three percent during renewal periods.",
+          "business_implication": "There is potential confusion about whether price increases are ever permissible; bidders need clarity on the mechanism and timing for any price adjustment.",
+          "action_recommendation": "Ask the Purchasing Department to reconcile the price increase prohibition with the renewal adjustment provision.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "All bid prices will be considered firm, unless qualified otherwise. Requests for price increases will not be honored."
+            },
+            {
+              "page_number": 3,
+              "quote": "Renewal price adjustments may be requested only during renewal periods and shall not exceed the lesser of the annual CPI-U increase or three percent, supported by documentation."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No Minimum Purchase Guarantee and Estimated Quantities Not Binding",
+          "fact": "The City does not guarantee any minimum purchase quantity and may buy greater, lesser, or no quantities at all under the estimated quantity contract.",
+          "business_implication": "The bidder assumes volume risk with no assurance of revenue despite pricing the entire item list.",
+          "action_recommendation": "Price with the risk of low or no order volume; consider whether you can absorb the cost of maintaining stock without guaranteed purchases.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "The City does not guarantee any minimum purchase quantity."
+            },
+            {
+              "page_number": 3,
+              "quote": "The City reserves the right to purchase greater or lesser quantities than those estimated, or to omit the purchase of any item entirely, depending on funding availability, operational requirements, and the City's best interests."
+            }
+          ]
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Mandatory Forms and MBE/WBE Documentation; Disqualification Risk",
+          "fact": "The bid package must include specific forms in a set order, including MBE/WBE forms for every bid, and failure to enclose all required documents with signatures will result in disqualification.",
+          "business_implication": "Substantial administrative burden; missing or improperly signed MBE/WBE forms, or skipping the waiver if the 20% goal is not met, can invalidate the entire bid.",
+          "action_recommendation": "Use a compliance checklist, ensure all required signatures, and coordinate with the MBE/WBE Outreach Director on participation plan or waiver form.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "The bid package MUST include the following, in this order:"
+            },
+            {
+              "page_number": 10,
+              "quote": "Failure to meet specified deadlines, follow specific submission instructions, or enclose all required documents with all applicable signatures will result in disqualification, or in an inability to appropriately evaluate bids."
+            },
+            {
+              "page_number": 10,
+              "quote": "MBE/WBE forms must be completed for EVERY bid submitted and must be inclusive of ALL required signatures."
+            },
+            {
+              "page_number": 18,
+              "quote": "If you did not meet the 20% MBE/WBE combined participation goal, submit a Waiver Request Form."
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Award to Lowest Responsive and Responsible Bidder",
+          "fact": "The City will award to the lowest responsive and responsible bidder, not the proposal with the best value; the bidder's responsibility, delivery capability, product quality, warranty, references, and compliance are also considered.",
+          "business_implication": "Price is the primary factor; bidders must be prepared to prove responsibility and capability but should compete aggressively on price.",
+          "action_recommendation": "Ensure bid pricing is as low as possible while still covering costs; prepare documentation to demonstrate references and qualifications.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Award shall be made to the lowest responsive and responsible bidder based on the aggregate evaluated price and the bidder's demonstrated responsibility, delivery capability, product quality, warranty, references, and compliance with the specifications."
+            }
+          ]
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Question Deadline and Bid Opening Date",
+          "fact": "Questions must be submitted by July 20, 2026 at 4:00 PM EST, and bids are due by 2:15 PM on July 27, 2026.",
+          "business_implication": "Limited window for clarification before final submission; any ambiguity should be raised immediately.",
+          "action_recommendation": "Submit all questions before the July 20 deadline and plan to finalize the bid package in advance of the July 27 opening.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Deadline for questions submissions: via email by July 20, 2026 at 4:00 PM (EST)."
+            },
+            {
+              "page_number": 9,
+              "quote": "Bids may be submitted up to 2:15 P.M. on the above meeting date at the Department of the City Clerk. Room 311, City Hall. 25 Dorrance Street, Providence."
+            }
+          ]
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Ten-Year Manufacturer's Warranty and Defective Replacement",
+          "fact": "The contractor must provide a minimum 10-year warranty covering reflectivity, delamination, peeling, cracking, corrosion, fading, adhesive failure, ink failure, and manufacturing defects, and replace defective or non-conforming materials within five business days at no cost.",
+          "business_implication": "Long-term warranty exposure extends beyond typical industry terms and may require significant reserves; replacement obligations are stringent.",
+          "action_recommendation": "Cost the 10-year warranty into unit prices and verify that sub-suppliers provide matching warranty support.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "Provide a minimum ten-year manufacturer's warranty covering reflectivity, delamination, peeling, cracking, corrosion, fading, adhesive failure, ink failure, and manufacturing defects."
+            },
+            {
+              "page_number": 6,
+              "quote": "Defective or non-conforming materials shall be replaced within five business days at no additional cost."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

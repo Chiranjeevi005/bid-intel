@@ -1,0 +1,46 @@
+{
+  "metrics": {
+    "id": "DOC-002",
+    "qual_latency": 2951.5188999999955,
+    "qual_usage": {
+      "prompt_tokens": 831,
+      "completion_tokens": 323,
+      "total_tokens": 1154,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 198
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 63
+    },
+    "ext_latency": 0,
+    "ext_usage": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "total_latency": 2951.5188999999955
+  },
+  "result": {
+    "id": "DOC-002",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "JOB_DESCRIPTION",
+      "confidence": "HIGH",
+      "reason": "The document is a job posting for a Business Analyst position, not a procurement solicitation. It contains hiring language and responsibilities, with no procurement-related content.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Job Title: Business Analyst"
+        },
+        {
+          "page_number": 1,
+          "quote": "We are hiring a Business Analyst."
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

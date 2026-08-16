@@ -1,0 +1,154 @@
+[
+  {
+    "concept": "Key dates / deadlines",
+    "category": "Key dates / deadlines",
+    "priority": "CRITICAL",
+    "page_number": 2,
+    "quote": "Due Date Time RFQ 20-01 Release 11/3/20 Attachment B - Contractor Questions and Comments Due 11/13/20 5:00pm EST OGS Issues Responses to Questions and Comments 11/23/20 RFQ Submission Due Submission Includes: • Attachment A – Technical Response • Attachment D – Issue Escalation Plan • Manufacturer Information Page (Last page of this Document) 12/9/20 11:00am EST OGS sends out Attachment C – Financial Response, which includes approved technical response 1/21/21 Contractor returns completed Attachment C – Financial Response 1/28/21 11:00am EST Attachment B – Contractor Questions and Comments: Questions and Comments for this Aggregate Hardware RFQ will only be accepted up to the Attachment B - Contractor Questions and Comments due date and time noted above.",
+    "why_material": "Materially impacts key dates / deadlines"
+  },
+  {
+    "concept": "Mandatory eligibility",
+    "category": "Mandatory eligibility",
+    "priority": "CRITICAL",
+    "page_number": 2,
+    "quote": "must have an award for Lot 2 to bid on this RFQ.",
+    "why_material": "Materially impacts mandatory eligibility"
+  },
+  {
+    "concept": "Key dates / deadlines",
+    "category": "Key dates / deadlines",
+    "priority": "CRITICAL",
+    "page_number": 6,
+    "quote": "deadline specified above.",
+    "why_material": "Materially impacts key dates / deadlines"
+  },
+  {
+    "concept": "Key dates / deadlines",
+    "category": "Key dates / deadlines",
+    "priority": "CRITICAL",
+    "page_number": 8,
+    "quote": "Deadline for submission.",
+    "why_material": "Materially impacts key dates / deadlines"
+  },
+  {
+    "concept": "Opportunity / scope",
+    "category": "Opportunity / scope",
+    "priority": "MEDIUM",
+    "page_number": 8,
+    "quote": "to provide fully completed documents may result in rejection of the RFQ Response without further review.",
+    "why_material": "Materially impacts opportunity / scope"
+  },
+  {
+    "concept": "Key dates / deadlines",
+    "category": "Key dates / deadlines",
+    "priority": "CRITICAL",
+    "page_number": 9,
+    "quote": "due date of the Aggregate Hardware Buy 20-01 RFQ.",
+    "why_material": "Materially impacts key dates / deadlines"
+  },
+  {
+    "concept": "Termination rights",
+    "category": "Termination rights",
+    "priority": "HIGH",
+    "page_number": 10,
+    "quote": "termination, considered within the scope of RFQ 20-01 and compatible with a Standard Configuration are not required or mandatory but may be offered to enhance or modify the Standard Configuration.",
+    "why_material": "Materially impacts termination rights"
+  },
+  {
+    "concept": "Opportunity / scope",
+    "category": "Opportunity / scope",
+    "priority": "MEDIUM",
+    "page_number": 11,
+    "quote": "to provide discount percentages that will apply to each of the three (3) Required Products.",
+    "why_material": "Materially impacts opportunity / scope"
+  },
+  {
+    "concept": "Termination rights",
+    "category": "Termination rights",
+    "priority": "HIGH",
+    "page_number": 13,
+    "quote": "termination of compliance will be at the sole discretion of the OGS.",
+    "why_material": "Materially impacts termination rights"
+  },
+  {
+    "concept": "Opportunity / scope",
+    "category": "Opportunity / scope",
+    "priority": "MEDIUM",
+    "page_number": 15,
+    "quote": "to provide the Standard Configuration(s), Required Products, and Additional Products initially awarded in the Aggregate Hardware Buy 20-01 Agreement.",
+    "why_material": "Materially impacts opportunity / scope"
+  },
+  {
+    "concept": "Termination rights",
+    "category": "Termination rights",
+    "priority": "HIGH",
+    "page_number": 17,
+    "quote": "termination that a replacement system meets or exceeds the original offered Standard Configuration will be final and binding on the Contractor.",
+    "why_material": "Materially impacts termination rights"
+  },
+  {
+    "concept": "Opportunity / scope",
+    "category": "Opportunity / scope",
+    "priority": "MEDIUM",
+    "page_number": 17,
+    "quote": "to provide acceptable notice of EOL Standard Configuration(s); fail to submit a replacement Standard Configuration via the process outlined in Appendix 2 – Price List Modification Procedure in the timeframe referenced above; or, is unable to provide a replacement model with specifications that meet or exceed the specifications of the original awarded Configuration, OGS reserves the right to award the Configuration to the Contractor with the next lowest bid from RFQ 20-01 for that Configuration that is willing to accept the Configuration award without rebidding.",
+    "why_material": "Materially impacts opportunity / scope"
+  },
+  {
+    "concept": "Opportunity / scope",
+    "category": "Opportunity / scope",
+    "priority": "MEDIUM",
+    "page_number": 18,
+    "quote": "to provide the necessary points of contact for each type of issue listed.",
+    "why_material": "Materially impacts opportunity / scope"
+  },
+  {
+    "concept": "Key dates / deadlines",
+    "category": "Key dates / deadlines",
+    "priority": "CRITICAL",
+    "page_number": 19,
+    "quote": "due date for each payment will be fifteen (15) calendar days following the end of the quarter.",
+    "why_material": "Materially impacts key dates / deadlines"
+  },
+  {
+    "concept": "Termination rights",
+    "category": "Termination rights",
+    "priority": "HIGH",
+    "page_number": 19,
+    "quote": "termination of the Contractor’s Manufacturer Umbrella Contract in whole or in part and activation 7.",
+    "why_material": "Materially impacts termination rights"
+  },
+  {
+    "concept": "Opportunity / scope",
+    "category": "Opportunity / scope",
+    "priority": "MEDIUM",
+    "page_number": 19,
+    "quote": "Contractor shall provide backup documentation of all quarterly sales reports to support a sales and fiscal audit of the Administrative Fee to be paid to OGS.",
+    "why_material": "Materially impacts opportunity / scope"
+  },
+  {
+    "concept": "Termination rights",
+    "category": "Termination rights",
+    "priority": "HIGH",
+    "page_number": 20,
+    "quote": "termination of this Agreement in whole or in part, after which OGS reserves the right to award to the second-place contractor.",
+    "why_material": "Materially impacts termination rights"
+  },
+  {
+    "concept": "Opportunity / scope",
+    "category": "Opportunity / scope",
+    "priority": "MEDIUM",
+    "page_number": 20,
+    "quote": "to provide quarterly reporting on the number of EPEAT registered products purchased under this Agreement.",
+    "why_material": "Materially impacts opportunity / scope"
+  },
+  {
+    "concept": "Key dates / deadlines",
+    "category": "Key dates / deadlines",
+    "priority": "CRITICAL",
+    "page_number": 22,
+    "quote": "Submission Date for Attachment C – Financial Response, amend the RFQ to correct errors or oversights, or to supply additional information, as it becomes available; 7.",
+    "why_material": "Materially impacts key dates / deadlines"
+  }
+]

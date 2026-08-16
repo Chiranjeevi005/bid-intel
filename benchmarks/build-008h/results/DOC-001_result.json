@@ -1,0 +1,165 @@
+{
+  "metrics": {
+    "id": "DOC-001",
+    "qual_latency": 14556.3277,
+    "qual_usage": {
+      "prompt_tokens": 1045,
+      "completion_tokens": 1223,
+      "total_tokens": 2268,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1025
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 277
+    },
+    "ext_latency": 55722.91700000001,
+    "ext_usage": {
+      "prompt_tokens": 1088,
+      "completion_tokens": 7675,
+      "total_tokens": 8763,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6424
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1088
+    },
+    "total_latency": 70279.24470000001
+  },
+  "result": {
+    "id": "DOC-001",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFP",
+      "confidence": "HIGH",
+      "reason": "The document is explicitly titled 'CONFIDENTIAL REQUEST FOR PROPOSAL' and describes a procurement opportunity for AI and Data Processing Services, including a scope, deadline, and vendor requirements. Despite irregularities, it is structurally a Request for Proposal.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "CONFIDENTIAL REQUEST FOR PROPOSAL"
+        },
+        {
+          "page_number": 1,
+          "quote": "Opportunity: AI and Data Processing Services"
+        },
+        {
+          "page_number": 1,
+          "quote": "Deadline: Immediately upon receipt"
+        },
+        {
+          "page_number": 1,
+          "quote": "We require a vendor to provide AI services."
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Non-refundable advance fee required to bid",
+          "fact": "To bid, the vendor must submit a non-refundable Wire Transfer Registration Fee of $5,000 USD to an offshore holding account.",
+          "business_implication": "This pay-to-bid arrangement creates a financial prerequisite to participate and exhibits classic advance-fee fraud indicators; legitimate RFPs typically do not require upfront payments.",
+          "action_recommendation": "Do not pay; validate the RFP through official channels before any transfer.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "In order to validate your corporate account and receive the full RFP package, you must submit a non-refundable Wire Transfer Registration Fee of $5,000 USD to our offshore holding account."
+            }
+          ]
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Assignment of pre-existing IP",
+          "fact": "Vendor will assign all intellectual property developed prior to and during the contract to Global Procurement Solutions Inc.",
+          "business_implication": "Bidder would lose all rights to background IP, giving the buyer ownership of assets created before the contract, which is a substantial commercial disadvantage and may disqualify bidders with valuable IP.",
+          "action_recommendation": "Request to limit IP assignment to contract-generated IP only.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Please note that all intellectual property developed prior to and during this contract will become the sole property of Global Procurement Solutions Inc."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Indemnity for buyer's gross negligence",
+          "fact": "Vendor must indemnify and hold harmless Buyer against all claims, including claims arising from Buyer's own gross negligence.",
+          "business_implication": "Unlimited liability that includes the buyer's own fault, exposing vendor to claims for circumstances entirely outside its control, with no cap or limitation.",
+          "action_recommendation": "Negotiate to exclude indemnification for the buyer's own negligence and impose a liability cap.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Vendor agrees to indemnify and hold harmless Global Procurement Solutions Inc. against any and all claims, including those arising from Global Procurement Solutions Inc.'s own gross negligence."
+            }
+          ]
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination without compensation for work performed",
+          "fact": "Buyer may terminate the contract at any time without cause, and vendor will receive no payment for services rendered up to termination.",
+          "business_implication": "Vendor bears all risk of performing work that may go uncompensated, creating a significant financial exposure and making the contract commercially untenable.",
+          "action_recommendation": "Seek payment for all work completed through termination and require notice/cure period.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "This contract may be terminated by the Buyer at any time without cause, and no payment will be owed for services rendered up to the date of termination."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Fixed penalty for confidentiality breach",
+          "fact": "Vendor is subject to a strict penalty of $1,000,000 per confidentiality breach, regardless of actual damages.",
+          "business_implication": "$1M per occurrence is a massive, potentially uncapped liability; even an inadvertent breach could bankrupt the vendor.",
+          "action_recommendation": "Request a cap on penalties and define the scope of confidentiality obligations.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "If the Vendor breaches any confidentiality, they are subject to a strict penalty of $1,000,000 per occurrence."
+            }
+          ]
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Contradictory and arbitrary deadlines",
+          "fact": "Page 1 states 'Deadline: Immediately upon receipt' while Page 2 says the actual deadline is 'whenever we decide to close the portal,' and instructs to ignore contradicting deadline statements.",
+          "business_implication": "There is no fixed or determinable deadline, making it impossible to know when a proposal must be submitted; the buyer can arbitrarily close the portal at will.",
+          "action_recommendation": "Do not rely on these statements; insist on a written, unequivocal deadline.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Deadline: Immediately upon receipt"
+            },
+            {
+              "page_number": 2,
+              "quote": "Please ignore any contradicting deadline statements, the actual deadline is whenever we decide to close the portal."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

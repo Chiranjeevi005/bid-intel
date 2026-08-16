@@ -1,0 +1,1104 @@
+{
+  "metrics": {
+    "id": "DOC-008",
+    "qual_latency": 2556.912400000001,
+    "qual_usage": {
+      "prompt_tokens": 67558,
+      "completion_tokens": 246,
+      "total_tokens": 67804,
+      "prompt_tokens_details": {
+        "cached_tokens": 67456
+      },
+      "prompt_cache_hit_tokens": 67456,
+      "prompt_cache_miss_tokens": 102
+    },
+    "mapping_latency": 35120.5582,
+    "extraction_latency": 34266.63500000001,
+    "reasoning_latency": 30345.253800000006,
+    "ext_usage": {
+      "prompt_tokens": 170912,
+      "completion_tokens": 21153,
+      "total_tokens": 192065,
+      "cached_tokens": 115072
+    },
+    "ext_latency": 99732.44700000001,
+    "total_latency": 102289.5192
+  },
+  "result": {
+    "id": "DOC-008",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFP",
+      "confidence": "HIGH",
+      "reason": "The document is a Request for Proposals (RFP) issued by the City of Providence for boiler demolition and abatement at Hope High School, including submission instructions, deadlines, and evaluation criteria.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "REQUEST FOR PROPOSALS"
+        },
+        {
+          "page_number": 1,
+          "quote": "Item Description:  Hope High School- Boiler Demolition and Abatement"
+        },
+        {
+          "page_number": 2,
+          "quote": "Bids may be submitted up to 2:15 P.M. on the above meeting date at the Department of the City Clerk. Room 311, City Hall. 25 Dorrance Street, Providence."
+        },
+        {
+          "page_number": 13,
+          "quote": "The City   of   Providence   is   seeking   comprehensive,   competitive   proposals   from   licensed   and   qualified   environmental and demolition contractors."
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Mandatory Pre-Bid Conference",
+          "fact": "There will be a Mandatory Pre-Bid Conference. Date of Pre-Bid Conference: 6/30/2026 Time: 4:00 pm",
+          "business_implication": "Attendance at the pre-bid conference is mandatory; failure to attend may disqualify the bid.",
+          "action_recommendation": "Ensure attendance at the mandatory pre-bid conference on June 30, 2026 at 4:00 PM at 324 Hope Street, Providence, RI 02906.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "There will be a Mandatory Pre-Bid Conference. Date of Pre-Bid Conference: 6/30/2026 Time: 4:00 pm"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Licensed Environmental and Demolition Contractors",
+          "fact": "The City of Providence is seeking comprehensive, competitive proposals from licensed and qualified environmental and demolition contractors.",
+          "business_implication": "Bidders must hold appropriate licenses for environmental and demolition work, including asbestos abatement.",
+          "action_recommendation": "Verify that your firm holds all required Rhode Island licenses for asbestos abatement and demolition.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "The City of Providence is seeking comprehensive, competitive proposals from licensed and qualified environmental and demolition contractors."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "RI Licensed Asbestos Abatement Contractor Required",
+          "fact": "The asbestos abatement/management activities described in this plan must be performed by a RI licensed asbestos abatement contractor.",
+          "business_implication": "The bidder must be a Rhode Island licensed asbestos abatement contractor to perform the work.",
+          "action_recommendation": "Ensure your firm holds a valid Rhode Island asbestos abatement contractor license.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 23,
+              "quote": "the asbestos abatement/ management activities described in this plan must be performed by a RI licensed asbestos abatement contractor."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Out-of-State Corporation Registration",
+          "fact": "A bidder who is an out-of-state corporation shall qualify or register to transact business in this State, in accordance with the Rhode Island Business Corporation Act, RIGL Sec. 7-1.2-1401, et seq.",
+          "business_implication": "Out-of-state bidders must be registered to do business in Rhode Island.",
+          "action_recommendation": "If your firm is an out-of-state corporation, ensure it is registered with the Rhode Island Secretary of State.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "A bidder who is an out-of-state corporation shall qualify or register to transact business in this State, in accordance with the Rhode Island Business Corporation Act, RIGL Sec. 7-1.2-1401, et seq."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Certificate of Good Standing",
+          "fact": "You must be able to provide: Certificate of Good Standing with the Rhode Island Secretary of State.",
+          "business_implication": "The bidder must be in good standing with the Rhode Island Secretary of State.",
+          "action_recommendation": "Obtain a Certificate of Good Standing from the Rhode Island Secretary of State and be prepared to provide it upon request.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "Certificate of Good Standing with the Rhode Island Secretary of State."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "MBE/WBE Participation Goal",
+          "fact": "The City of Providence’s goal of a combined MBE/WBE participation is 20% of the total bid value.",
+          "business_implication": "Bidders must make good faith efforts to meet the 20% MBE/WBE participation goal or submit a waiver request.",
+          "action_recommendation": "Plan to meet the 20% MBE/WBE participation goal or prepare a waiver request form if unable to meet it.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "I acknowledge the City of Providence’s goal of a combined MBE/WBE participation is 20% of the total bid value."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Apprentice Requirements",
+          "fact": "This ordinance outlines requirements for utilizing not less than 15% of total hours worked by apprentices.",
+          "business_implication": "The bidder must comply with the apprentice utilization requirement of at least 15% of total hours.",
+          "action_recommendation": "Ensure your firm can meet the 15% apprentice hour requirement and be prepared to report compliance.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "This ordinance outlines requirements for utilizing not less than 15% of total hours worked by apprentices."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "First Source Requirements",
+          "fact": "This ordinance outlines requirements for hiring Providence residents to work on this project.",
+          "business_implication": "The bidder must comply with the First Source Agreement requirements for hiring Providence residents.",
+          "action_recommendation": "Be prepared to comply with the First Source hiring requirements and provide compliance reports.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "This ordinance outlines requirements for hiring Providence residents to work on this project."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Prevailing Wage Requirements",
+          "fact": "Any construction over $ 1,000.00 is required by state law to pay state prevailing wage.",
+          "business_implication": "The bidder must pay prevailing wages as required by state law.",
+          "action_recommendation": "Ensure compliance with prevailing wage requirements and submit certified payrolls.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 57,
+              "quote": "Any construction over $ 1,000.00 is required by state law to pay state prevailing wage."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Bid Package Checklist",
+          "fact": "The bid package MUST include the following, in this order: Bid Form 1: Bidder's Blank as the cover page/ 1st page (see page 6 of this document) • Bid Form 2: Certification of Bidder as 2nd page (see page 7 of this document) • Bid Form 3: Certificate Regarding Public Records (see page 8 of this document) • Bid Form 4: Affidavit of City Vendor (see pages 9 and 10 of this document) • Forms from the Minority and Women Business Enterprise Program: Based on Bidder Category. See forms and instructions enclosed (pages 10-11) or on: https://www.providenceri.gov/purchasing/minority-women-owned-business-mbewbe-procurement-program/ *Please note: MBE/WBE forms must be completed for EVERY bid submitted and must be inclusive of ALL required signatures. Forms without all required signatures will be considered incomplete. • Bidder’s Proposal/Packet: Formal response to the specifications outlined in this RFP, including pricing information and details related to the good(s) or service(s) being provided. Please be mindful of formatting responses as requested to ensure clarity. • Financial Assurance, if requested (as indicated on page 5 of this document under “Bid Terms”)",
+          "business_implication": "The bid must include all required forms in the specified order; missing forms or signatures may lead to disqualification.",
+          "action_recommendation": "Assemble the bid package according to the checklist, ensuring all forms are completed and signed.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "The bid package MUST include the following, in this order: Bid Form 1: Bidder's Blank as the cover page/ 1st page (see page 6 of this document) • Bid Form 2: Certification of Bidder as 2nd page (see page 7 of this document) • Bid Form 3: Certificate Regarding Public Records (see page 8 of this document) • Bid Form 4: Affidavit of City Vendor (see pages 9 and 10 of this document) • Forms from the Minority and Women Business Enterprise Program: Based on Bidder Category. See forms and instructions enclosed (pages 10-11) or on: https://www.providenceri.gov/purchasing/minority-women-owned-business-mbewbe-procurement-program/ *Please note: MBE/WBE forms must be completed for EVERY bid submitted and must be inclusive of ALL required signatures. Forms without all required signatures will be considered incomplete. • Bidder’s Proposal/Packet: Formal response to the specifications outlined in this RFP, including pricing information and details related to the good(s) or service(s) being provided. Please be mindful of formatting responses as requested to ensure clarity. • Financial Assurance, if requested (as indicated on page 5 of this document under “Bid Terms”)"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Number of Copies and Labeling",
+          "fact": "Bidders must submit 2 copies of their bid in sealed envelopes or packages labeled with the captioned Item Description and the City Department to which the solicitation and bid are related and must include the company name and address on the envelope as well.",
+          "business_implication": "The bid must be submitted in duplicate with proper labeling; failure to do so may result in rejection.",
+          "action_recommendation": "Prepare two copies of the bid, label envelopes correctly, and include company name and address.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Bidders must submit 2 copies of their bid in sealed envelopes or packages labeled with the captioned Item Description and the City Department to which the solicitation and bid are related and must include the company name and address on the envelope as well."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "No Electronic Submissions",
+          "fact": "No faxed or electronic submissions will be accepted.",
+          "business_implication": "Bids must be submitted in physical form; electronic submissions will not be considered.",
+          "action_recommendation": "Submit the bid in hard copy to the City Clerk's office by the deadline.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "No faxed or electronic submissions will be accepted."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Bid Due Date",
+          "fact": "Bids Due Monday, July 27, 2026",
+          "business_implication": "The bid must be submitted by the specified date and time.",
+          "action_recommendation": "Ensure the bid is delivered to the City Clerk's office by July 27, 2026, at 2:15 PM.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Bids Due Monday, July 27, 2026"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Question Submission Deadline",
+          "fact": "Deadline to submit bid questions (via email to subject matter experts) Thursday, July 9, 2026, at 4 PM",
+          "business_implication": "Questions must be submitted by the deadline to receive a response.",
+          "action_recommendation": "Submit any questions by July 9, 2026, at 4 PM.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Deadline to submit bid questions (via email to subject matter experts) Thursday, July 9, 2026, at 4 PM"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Final Addendum Date",
+          "fact": "Final response to questions (via public addendum) No later than Thursday July 23, 2026, by 2PM",
+          "business_implication": "The final addendum will be issued by this date; bidders should monitor for updates.",
+          "action_recommendation": "Check the City's website for the final addendum after July 23, 2026.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Final response to questions (via public addendum) No later than Thursday July 23, 2026, by 2PM"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Lowest Qualified and Responsible Bidder",
+          "fact": "The Board of Contract and Supply will make the award to the lowest qualified and responsible bidder.",
+          "business_implication": "The award is based on the lowest bid from a qualified and responsible bidder.",
+          "action_recommendation": "Ensure your bid is competitive and that your firm meets all qualifications.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "The Board of Contract and Supply will make the award to the lowest qualified and responsible bidder."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Payment Terms - 60 Days",
+          "fact": "Invoices submitted to the City shall be payable sixty (60) days from the time of receipt by the City.",
+          "business_implication": "The bidder should anticipate a 60-day payment cycle.",
+          "action_recommendation": "Plan cash flow accordingly, as payment may take up to 60 days.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "Invoices submitted to the City shall be payable sixty (60) days from the time of receipt by the City."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No Interest on Overdue Payments",
+          "fact": "In no circumstances shall the City be obligated to pay or shall you be entitled to receive interest on any overdue invoice or payment.",
+          "business_implication": "The bidder cannot claim interest on late payments.",
+          "action_recommendation": "Be aware that late payment interest is not available.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "In no circumstances shall the City be obligated to pay or shall you be entitled to receive interest on any overdue invoice or payment."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Default",
+          "fact": "The City may terminate this Agreement upon five (5) days’ written notice to you if you fail to observe any of the terms and conditions of this Agreement, or if the City believes your ability to perform the",
+          "business_implication": "The City can terminate the contract with only five days' notice for any breach or perceived inability to perform.",
+          "action_recommendation": "Ensure strict compliance with all contract terms to avoid termination.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "The City may terminate this Agreement upon five (5) days’ written notice to you if you fail to observe any of the terms and conditions of this Agreement, or if the City believes your ability to perform the"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Background Checks Required",
+          "fact": "A background check must be completed with the Bureau of Criminal Identification and Investigation prior to construction start.",
+          "business_implication": "All personnel entering the building must pass background checks.",
+          "action_recommendation": "Plan for background checks for all employees who will work on the project.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 95,
+              "quote": "A background check must be completed with the Bureau of Criminal Identification and Investigation prior to construction start."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Submittal Requirements",
+          "fact": "Prior to the start of any asbestos work operations, the selected asbestos contractor shall be required to submit copies of the following items for review and approval. NOTE: Additional submittals not requested at this time may be required for submittal and approval in the future. No asbestos work operations may begin on site until the following items are submitted and approved in writing by the owner (City of Providence / Providence School Department) and/or the owners project representative (StudioJAED Architects)",
+          "business_implication": "The bidder must be prepared to submit numerous documents before starting work.",
+          "action_recommendation": "Prepare all required submittals in advance to avoid delays.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 34,
+              "quote": "Prior to the start of any asbestos work operations, the selected asbestos contractor shall be required to submit copies of the following items for review and approval. NOTE: Additional submittals not requested at this time may be required for submittal and approval in the future. No asbestos work operations may begin on site until the following items are submitted and approved in writing by the owner (City of Providence / Providence School Department) and/or the owners project representative (StudioJAED Architects)"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Conflicting Pre-Bid Conference Dates",
+          "fact": "Page 1 states 'Date of Pre-Bid Conference: 6/30/2026' and page 13 states 'Pre-Bid Conference Tuesday June 30, 2026, at 4PM'.",
+          "business_implication": "The pre-bid conference date is consistent, but the day of the week may be inconsistent (page 1 does not specify day).",
+          "action_recommendation": "Verify the exact date and time of the pre-bid conference.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Date of Pre-Bid Conference: 6/30/2026"
+            },
+            {
+              "page_number": 13,
+              "quote": "Pre-Bid Conference Tuesday June 30, 2026, at 4PM"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MISSING_INFORMATION",
+          "title": "Financial Assurance Requirements",
+          "fact": "The bid terms include options for financial assurances, but it is unclear which option applies to this project.",
+          "business_implication": "The bidder may need to provide a bid bond, certified check, or performance bond, but the specific requirement is not stated.",
+          "action_recommendation": "Clarify with the issuing department which financial assurance is required for this bid.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "UNSUPPORTED",
+          "quotes": [],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Payment terms: 60 days after receipt of invoice",
+          "fact": "Invoices submitted to the City shall be payable sixty (60) days from the time of receipt by the City.",
+          "business_implication": "The bidder must have sufficient cash flow to cover costs for at least 60 days after invoicing, which may be extended if documentation is insufficient.",
+          "action_recommendation": "Plan cash flow accordingly and ensure all required supporting documentation is submitted with invoices to avoid delays.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "Invoices submitted to the City shall be payable sixty (60) days from the time of receipt by the City."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No interest on overdue payments",
+          "fact": "In no circumstances shall the City be obligated to pay or shall you be entitled to receive interest on any overdue invoice or payment.",
+          "business_implication": "The bidder bears the risk of late payment without compensation, increasing financial exposure.",
+          "action_recommendation": "Factor this risk into pricing and consider requesting more favorable payment terms during negotiation.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "In no circumstances shall the City be obligated to pay or shall you be entitled to receive interest on any overdue invoice or payment."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No collection costs recovery",
+          "fact": "In no circumstances shall the City be obligated to pay any costs associated with your collection of an outstanding invoice.",
+          "business_implication": "The bidder cannot recover collection costs if the City fails to pay, increasing financial risk.",
+          "action_recommendation": "Consider this when setting payment terms and possibly include a contingency in pricing.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "In no circumstances shall the City be obligated to pay any costs associated with your collection of an outstanding invoice."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Allowance for glycol fluid",
+          "fact": "Allowance No. 1 Glycol fluid: Includethe stipulatedsum/priceof $10,000for use to fill Glycol system.",
+          "business_implication": "The bidder must include a $10,000 allowance in the bid price for glycol fluid, which may be adjusted based on actual costs.",
+          "action_recommendation": "Ensure the allowance is included in the bid and understand the process for adjusting it.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 68,
+              "quote": "AllowanceNo. 1 Glycolfluid: Includethe stipulatedsum/priceof $10,000for use to fill Glycol system."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No payment until payrolls are up to date",
+          "fact": "No payments are made until all payrolls are up to date, and correct.",
+          "business_implication": "The bidder must ensure timely and accurate certified payroll submissions to avoid payment delays.",
+          "action_recommendation": "Implement robust payroll tracking and submission processes to ensure compliance.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 57,
+              "quote": "No payments are made until all payrolls are up to date, and correct."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Payment application requires AIA forms and schedule of values",
+          "fact": "Use Scheduleof ValuesForm: AIA G703,editionstipulatedin the Agreement. Use FormAIA G702and FormAIA G703,editionstipulatedin the Agreement.",
+          "business_implication": "The bidder must be familiar with AIA forms and submit accurate schedule of values within 15 days of contract execution.",
+          "action_recommendation": "Prepare to use AIA forms and ensure schedule of values is submitted promptly.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 65,
+              "quote": "Use Scheduleof ValuesForm: AIA G703,editionstipulatedin the Agreement."
+            },
+            {
+              "page_number": 65,
+              "quote": "Use FormAIA G702and FormAIA G703,editionstipulatedin the Agreement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Initial progress payment requires multiple documents",
+          "fact": "The following itemsmustbe completeand submittedto the ownerpriorto acceptanceand/orpaymentof the initialapplicationfor payment: ApprovedScheduleof Values, Completelistingof Subcontractors, ContractorsSafetyPlan, EmergencyActionPlanand EmergencyContacts, ContractorsCertificateof Insurance, ContractorsSubmittalSchedule, ApprovedContractor'sConstructionSchedule(Preliminaryif not final).",
+          "business_implication": "The bidder must prepare and submit these documents before the first payment, which may delay initial cash flow.",
+          "action_recommendation": "Prepare these documents early and ensure they are submitted promptly after contract execution.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 67,
+              "quote": "The following itemsmustbe completeand submittedto the ownerpriorto acceptanceand/orpaymentof the initialapplicationfor payment: ApprovedScheduleof Values, Completelistingof Subcontractors, ContractorsSafetyPlan, EmergencyActionPlanand EmergencyContacts, ContractorsCertificateof Insurance, ContractorsSubmittalSchedule, ApprovedContractor'sConstructionSchedule(Preliminaryif not final)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Change order pricing requires quotation within 5 days",
+          "fact": "Contractorshallprepareand submita fixedpricequotationwithin5 days.",
+          "business_implication": "The bidder must be able to quickly price changes, which may require efficient cost estimation processes.",
+          "action_recommendation": "Establish a rapid response team for change order pricing.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 66,
+              "quote": "Contractorshallprepareand submita fixedpricequotationwithin5 days."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Substitution requests must be submitted 10 days prior to bid",
+          "fact": "Requestsfor substitutionmustbe madeten dayspriorto bid.",
+          "business_implication": "The bidder must identify any substitutions early in the bidding process to meet the deadline.",
+          "action_recommendation": "Review specifications early and submit substitution requests well before the deadline.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 69,
+              "quote": "Requestsfor substitutionmustbe madeten dayspriorto bid."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Substitution requests during construction require 14 days notice",
+          "fact": "Under extra-ordinaryconditions,submitrequestfor Substitutionfor Causeimmedatelyupon discoveryof needfor substitution,but not later than14 dayspriorto time requiredfor reviewand approvalby Architect.",
+          "business_implication": "The bidder must anticipate substitution needs and submit requests in a timely manner to avoid delays.",
+          "action_recommendation": "Monitor construction progress and identify potential substitutions early.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 72,
+              "quote": "Under extra-ordinaryconditions,submitrequestfor Substitutionfor Causeimmedatelyupon discoveryof needfor substitution,but not later than14 dayspriorto time requiredfor reviewand approvalby Architect."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Progress payments require updated schedule and photographs",
+          "fact": "Submitupdatedschedulewith eachApplicationfor Payment. Submitphotographswith eachapplicationfor payment,takennot morethan3 dayspriorto submissionof applicationfor payment.",
+          "business_implication": "The bidder must maintain an up-to-date schedule and take photographs regularly to support payment applications.",
+          "action_recommendation": "Implement procedures to update schedules and take photographs before each payment application.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 75,
+              "quote": "Submitupdatedschedulewith eachApplicationfor Payment."
+            },
+            {
+              "page_number": 75,
+              "quote": "Submitphotographswith eachapplicationfor payment,takennot morethan3 dayspriorto submissionof applicationfor payment."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Final payment requires closeout procedures",
+          "fact": "Applicationfor FinalPaymentwill not be considereduntil the followinghavebeenaccomplished: All closeoutproceduresspecifiedin Section01 70 00.",
+          "business_implication": "The bidder must complete all closeout procedures before receiving final payment, which may delay final cash flow.",
+          "action_recommendation": "Plan for closeout activities early and ensure all requirements are met.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 67,
+              "quote": "Applicationfor FinalPaymentwill not be considereduntil the followinghavebeenaccomplished: All closeoutproceduresspecifiedin Section01 70 00."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No interest on overdue payments",
+          "fact": "In no circumstances shall the City be obligated to pay or shall you be entitled to receive interest on any overdue invoice or payment.",
+          "business_implication": "The bidder bears the risk of late payment without compensation, increasing financial exposure.",
+          "action_recommendation": "Factor this risk into pricing and consider requesting more favorable payment terms during negotiation.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "In no circumstances shall the City be obligated to pay or shall you be entitled to receive interest on any overdue invoice or payment."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No collection costs recovery",
+          "fact": "In no circumstances shall the City be obligated to pay any costs associated with your collection of an outstanding invoice.",
+          "business_implication": "The bidder cannot recover collection costs if the City fails to pay, increasing financial risk.",
+          "action_recommendation": "Consider this when setting payment terms and possibly include a contingency in pricing.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "In no circumstances shall the City be obligated to pay any costs associated with your collection of an outstanding invoice."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Allowance for glycol fluid",
+          "fact": "Allowance No. 1 Glycol fluid: Includethe stipulatedsum/priceof $10,000for use to fill Glycol system.",
+          "business_implication": "The bidder must include a $10,000 allowance in the bid price for glycol fluid, which may be adjusted based on actual costs.",
+          "action_recommendation": "Ensure the allowance is included in the bid and understand the process for adjusting it.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 68,
+              "quote": "AllowanceNo. 1 Glycolfluid: Includethe stipulatedsum/priceof $10,000for use to fill Glycol system."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No payment until payrolls are up to date",
+          "fact": "No payments are made until all payrolls are up to date, and correct.",
+          "business_implication": "The bidder must ensure timely and accurate certified payroll submissions to avoid payment delays.",
+          "action_recommendation": "Implement robust payroll tracking and submission processes to ensure compliance.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 57,
+              "quote": "No payments are made until all payrolls are up to date, and correct."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Payment application requires AIA forms and schedule of values",
+          "fact": "Use Scheduleof ValuesForm: AIA G703,editionstipulatedin the Agreement. Use FormAIA G702and FormAIA G703,editionstipulatedin the Agreement.",
+          "business_implication": "The bidder must be familiar with AIA forms and submit accurate schedule of values within 15 days of contract execution.",
+          "action_recommendation": "Prepare to use AIA forms and ensure schedule of values is submitted promptly.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 65,
+              "quote": "Use Scheduleof ValuesForm: AIA G703,editionstipulatedin the Agreement."
+            },
+            {
+              "page_number": 65,
+              "quote": "Use FormAIA G702and FormAIA G703,editionstipulatedin the Agreement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Initial progress payment requires multiple documents",
+          "fact": "The following itemsmustbe completeand submittedto the ownerpriorto acceptanceand/orpaymentof the initialapplicationfor payment: ApprovedScheduleof Values, Completelistingof Subcontractors, ContractorsSafetyPlan, EmergencyActionPlanand EmergencyContacts, ContractorsCertificateof Insurance, ContractorsSubmittalSchedule, ApprovedContractor'sConstructionSchedule(Preliminaryif not final).",
+          "business_implication": "The bidder must prepare and submit these documents before the first payment, which may delay initial cash flow.",
+          "action_recommendation": "Prepare these documents early and ensure they are submitted promptly after contract execution.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 67,
+              "quote": "The following itemsmustbe completeand submittedto the ownerpriorto acceptanceand/orpaymentof the initialapplicationfor payment: ApprovedScheduleof Values, Completelistingof Subcontractors, ContractorsSafetyPlan, EmergencyActionPlanand EmergencyContacts, ContractorsCertificateof Insurance, ContractorsSubmittalSchedule, ApprovedContractor'sConstructionSchedule(Preliminaryif not final)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Change order pricing requires quotation within 5 days",
+          "fact": "Contractorshallprepareand submita fixedpricequotationwithin5 days.",
+          "business_implication": "The bidder must be able to quickly price changes, which may require efficient cost estimation processes.",
+          "action_recommendation": "Establish a rapid response team for change order pricing.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 66,
+              "quote": "Contractorshallprepareand submita fixedpricequotationwithin5 days."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Substitution requests must be submitted 10 days prior to bid",
+          "fact": "Requestsfor substitutionmustbe madeten dayspriorto bid.",
+          "business_implication": "The bidder must identify any substitutions early in the bidding process to meet the deadline.",
+          "action_recommendation": "Review specifications early and submit substitution requests well before the deadline.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 69,
+              "quote": "Requestsfor substitutionmustbe madeten dayspriorto bid."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Substitution requests during construction require 14 days notice",
+          "fact": "Under extra-ordinaryconditions,submitrequestfor Substitutionfor Causeimmedatelyupon discoveryof needfor substitution,but not later than14 dayspriorto time requiredfor reviewand approvalby Architect.",
+          "business_implication": "The bidder must anticipate substitution needs and submit requests in a timely manner to avoid delays.",
+          "action_recommendation": "Monitor construction progress and identify potential substitutions early.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 72,
+              "quote": "Under extra-ordinaryconditions,submitrequestfor Substitutionfor Causeimmedatelyupon discoveryof needfor substitution,but not later than14 dayspriorto time requiredfor reviewand approvalby Architect."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Progress payments require updated schedule and photographs",
+          "fact": "Submitupdatedschedulewith eachApplicationfor Payment. Submitphotographswith eachapplicationfor payment,takennot morethan3 dayspriorto submissionof applicationfor payment.",
+          "business_implication": "The bidder must maintain an up-to-date schedule and take photographs regularly to support payment applications.",
+          "action_recommendation": "Implement procedures to update schedules and take photographs before each payment application.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 75,
+              "quote": "Submitupdatedschedulewith eachApplicationfor Payment."
+            },
+            {
+              "page_number": 75,
+              "quote": "Submitphotographswith eachapplicationfor payment,takennot morethan3 dayspriorto submissionof applicationfor payment."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Final payment requires closeout procedures",
+          "fact": "Applicationfor FinalPaymentwill not be considereduntil the followinghavebeenaccomplished: All closeoutproceduresspecifiedin Section01 70 00.",
+          "business_implication": "The bidder must complete all closeout procedures before receiving final payment, which may delay final cash flow.",
+          "action_recommendation": "Plan for closeout activities early and ensure all requirements are met.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 67,
+              "quote": "Applicationfor FinalPaymentwill not be considereduntil the followinghavebeenaccomplished: All closeoutproceduresspecifiedin Section01 70 00."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Convenience or Cause",
+          "fact": "The City may terminate the Agreement upon five (5) days' written notice if the contractor fails to observe any terms or if the City believes the contractor's ability to perform is materially impaired, including loss of insurance, bankruptcy, etc.",
+          "business_implication": "The City has broad termination rights with minimal notice, which could disrupt the contractor's operations and cash flow.",
+          "action_recommendation": "Understand the termination provisions and ensure compliance to avoid termination; consider negotiating for longer notice periods.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "The City may terminate this Agreement upon five (5) days’ written notice to you if you fail to observe any of the terms and conditions of this Agreement, or if the City believes your ability to perform the terms and conditions of this Agreement has been materially impaired in any way, including but in no way limited to loss of insurance coverage, lapsing of a surety bond, if required, declaration of bankruptcy, or appointment of a receiver."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "60-Day Payment Terms",
+          "fact": "Invoices are payable sixty (60) days from receipt by the City, and the City is not obligated to pay interest on overdue invoices.",
+          "business_implication": "The contractor may face delayed payments, impacting cash flow, and has no recourse for late payment interest.",
+          "action_recommendation": "Plan cash flow accordingly and consider the impact of extended payment terms on project financing.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "Invoices submitted to the City shall be payable sixty (60) days from the time of receipt by the City. Invoices shall include support documentation necessary to evidence completion of the work being invoiced. The City may request any other reasonable documentation in support of an invoice. The time for payment shall not commence, and invoices shall not be processed for payment, until you provide reasonably sufficient support documentation. In no circumstances shall the City be obligated to pay or shall you be entitled to receive interest on any overdue invoice or payment."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Mandatory Apprentice and First Source Requirements",
+          "fact": "The project requires at least 15% of total work hours by apprentices and compliance with First Source hiring requirements for Providence residents, with reporting as a condition for payment.",
+          "business_implication": "The contractor must meet specific workforce composition requirements and submit compliance reports with each payment requisition, which could affect project scheduling and costs.",
+          "action_recommendation": "Ensure ability to meet apprentice and resident hiring quotas; prepare for mandatory meetings and reporting procedures.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "This ordinance outlines requirements for utilizing not less than 15% of total hours worked by apprentices. The City may lower this percentage only if it determines in writing that compliance is not feasible or that it would be unduly cost prohibitive to the project. The attention of prospective bidders is also called to the fact that reporting the efforts undertaken and progress towards achieving the requirements in this ordinance is a condition for payment."
+            },
+            {
+              "page_number": 12,
+              "quote": "This ordinance outlines requirements for hiring Providence residents to work on this project. The City may waive this requirement only upon a determination in writing that qualified residents of Providence are not available for the project, pursuant to Sec. 21-94(e). The attention of prospective bidders is called to the fact that reporting the efforts undertaken and progress towards achieving the requirements in this ordinance is a condition for payment."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "MBE/WBE Participation Requirements",
+          "fact": "The project requires a minimum of 15% of the dollar value to be awarded to minority business enterprises, with 7.5% to minority-owned and 7.5% to women-owned businesses, and reporting within 10 days after Notice of Award.",
+          "business_implication": "The bidder must ensure subcontracting opportunities for MBE/WBE firms to meet these mandatory participation goals, which may affect bid strategy and costs.",
+          "action_recommendation": "Identify and engage qualified MBE/WBE subcontractors early; prepare to submit compliance reports promptly.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 57,
+              "quote": "Under Rhode Island General Laws §37-14.1, Minority business enterprises shall be included in all procurements and construction projects under this chapter and shall be awarded a minimum of fifteen percent (15%) of the dollar value of the entire procurement or project. Of that fifteen percent (15%), minority business enterprises owned and controlled by a minority owner, shall be awarded a minimum of seven and one-half percent (7.5%), and minority business enterprises owned and controlled by a woman shall be awarded a minimum of seven and one-half percent (7.5%)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Bid Bond Requirement",
+          "fact": "A bid bond may be required as a financial assurance; if required, it must accompany the bid or the bid will not be considered.",
+          "business_implication": "The bidder must be prepared to provide a bid bond if the checkbox is marked, which could involve additional costs and administrative effort.",
+          "action_recommendation": "Verify whether a bid bond is required for this specific RFP and arrange for it in advance.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "If either of the first two checkboxes below is checked, the specified assurance must accompany a bid, or the bid will not be considered by the Board of Contract and Supply."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Certificate of Insurance Required",
+          "fact": "Prior to commencing performance, the successful bidder must submit a certificate of insurance in a form and amount satisfactory to the City.",
+          "business_implication": "The bidder must secure appropriate insurance coverage and provide proof before starting work, which could delay project start if not arranged promptly.",
+          "action_recommendation": "Obtain the required insurance certificates and ensure they meet the City's requirements.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Prior to commencing performance under the contract, the successful bidder shall, submit a certificate of insurance, in a form and in an amount satisfactory to the City."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Firm Prices for 90 Days",
+          "fact": "Awards will be made within ninety (90) days of bid opening, and all bid prices will be considered firm unless qualified otherwise; requests for price increases will not be honored.",
+          "business_implication": "The bidder must maintain pricing for at least 90 days, exposing them to potential cost increases during that period.",
+          "action_recommendation": "Factor in potential cost escalation when preparing the bid and avoid qualifying prices unless absolutely necessary.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Awards will be made within nighty (90) days of bid opening. All bid prices will be considered firm, unless qualified otherwise. Requests for price increases will not be honored."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Public Record Disclosure of Bids",
+          "fact": "All bids and documents become public record upon receipt and opening, and the City has no obligation to redact sensitive information if submitted unnecessarily.",
+          "business_implication": "The bidder must be cautious not to include sensitive or proprietary information in the bid packet, as it will become public and the City bears no liability.",
+          "action_recommendation": "Review bid documents to ensure no confidential information is included; follow instructions for submitting sensitive information separately if allowed.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "All bids submitted in response to Requests for Proposals (RFP’s) and Requests for Qualification (RFQ’s), documents contained within, and the details outlined on those documents become public record upon receipt by the City Clerk’s office and opening at the corresponding Board of Contract and Supply (BOCS) meeting."
+            },
+            {
+              "page_number": 8,
+              "quote": "If sensitive information that has not been requested is enclosed or if a bidder opts to enclose the defined supplemental information prior to the issuing department’s request in the bidding packet submitted to the City Clerk, the City of Providence has no obligation to redact those details and bears no liability associated with the information becoming public record."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MISSING_INFORMATION",
+          "title": "Financial Assurance Requirements Not Specified",
+          "fact": "The bid terms include checkboxes for financial assurances, but the specific amounts or percentages are left blank in the provided pages.",
+          "business_implication": "The bidder cannot determine the exact financial assurance requirements from the document, which could affect bid preparation.",
+          "action_recommendation": "Seek clarification from the City on which financial assurance applies and the required amounts.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "UNSUPPORTED",
+          "quotes": [],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Indemnification",
+          "fact": "To the fullest extent permitted by law, you shall indemnify, defend, and hold harmless the City, its employees, officers, agents, and assigns from and against any and all claims, damages, losses, allegations, demands, actions, causes of action, suits, obligations, fines, penalties, judgments, liabilities, costs and expenses, including but not limited to attorneys’ fees, of any nature whatsoever arising out of, in connection with, or resulting from the performance of the work provided in the Agreement.",
+          "business_implication": "The bidder assumes broad indemnification obligations, potentially including the City's own negligence.",
+          "action_recommendation": "Review insurance coverage and consider the extent of indemnification obligations.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "To the fullest extent permitted by law, you shall indemnify, defend, and hold harmless the City, its employees, officers, agents, and assigns from and against any and all claims, damages, losses, allegations, demands, actions, causes of action, suits, obligations, fines, penalties, judgments, liabilities, costs and expenses, including but not limited to attorneys’ fees, of any nature whatsoever arising out of, in connection with, or resulting from the performance of the work provided in the Agreement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "No Limitation of Liability",
+          "fact": "The City shall not subject itself to any contractual limitations on liability. The City shall have the time permitted within the applicable statute of limitations, and no less, to bring or assert any and all causes of action, suits, claims or demands the City may have arising out of, in connection with, or resulting from the performance of the work provided in the Agreement, and in no event does the City agree to limit your liability to the price of the Agreement or any other monetary limit.",
+          "business_implication": "The bidder's liability is not capped; the City can pursue claims without limitation.",
+          "action_recommendation": "Assess the risk of uncapped liability and consider insurance coverage.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "The City shall not subject itself to any contractual limitations on liability. The City shall have the time permitted within the applicable statute of limitations, and no less, to bring or assert any and all causes of action, suits, claims or demands the City may have arising out of, in connection with, or resulting from the performance of the work provided in the Agreement, and in no event does the City agree to limit your liability to the price of the Agreement or any other monetary limit."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Bid Due Date/Time Ambiguity Between Page 1 and Page 13",
+          "fact": "Page 1 states 'Date to be opened: 7/27/2026' without specifying a time, while page 13 states bids are due 'Monday, July 27, 2026, at 2:15 pm'.",
+          "business_implication": "The dates are consistent, but the missing time on page 1 may confuse bidders about the exact deadline, potentially leading to late submissions or disputes.",
+          "action_recommendation": "Issue an addendum or clarification confirming that the bid opening/due date is July 27, 2026, at 2:15 pm, and ensure the time is consistently stated on all relevant pages.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Date to be opened: 7/27/2026"
+            },
+            {
+              "page_number": 13,
+              "quote": "Bids Due  Monday, July 27, 2026"
+            },
+            {
+              "page_number": 13,
+              "quote": "Complete responses must be received by Monday, July 27, 2026, at 2:15 pm"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Unlimited Indemnification Obligation",
+          "fact": "The contractor must indemnify, defend, and hold harmless the City from any and all claims, damages, losses, etc., arising out of or resulting from the performance of the work, with no stated limit.",
+          "business_implication": "The bidder assumes potentially unlimited liability for all claims and expenses, including attorney's fees, which could be financially devastating.",
+          "action_recommendation": "Seek clarification on the scope of indemnification and consider negotiating a cap on liability or obtaining additional insurance coverage.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "To the fullest extent permitted by law, you shall indemnify, defend, and hold harmless the City, its employees, officers, agents, and assigns from and against any and all claims, damages, losses, allegations, demands, actions, causes of action, suits, obligations, fines, penalties, judgments, liabilities, costs and expenses, including but not limited to attorneys’ fees, of any nature whatsoever arising out of, in connection with, or resulting from the performance of the work provided in the Agreement."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "No Limitation of Liability",
+          "fact": "The City does not agree to limit the contractor's liability to the contract price or any other monetary limit, and the City retains the full statute of limitations to bring claims.",
+          "business_implication": "The contractor faces uncapped liability exposure, as the City explicitly rejects any contractual limitations on liability.",
+          "action_recommendation": "Assess the risk and consider whether to bid given the unlimited liability exposure; potentially negotiate for a liability cap.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "The City shall not subject itself to any contractual limitations on liability. The City shall have the time permitted within the applicable statute of limitations, and no less, to bring or assert any and all causes of action, suits, claims or demands the City may have arising out of, in connection with, or resulting from the performance of the work provided in the Agreement, and in no event does the City agree to limit your liability to the price of the Agreement or any other monetary limit."
+            }
+          ],
+          "requires_reasoning_review": true
+        }
+      ]
+    }
+  }
+}

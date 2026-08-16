@@ -1,0 +1,3 @@
+expected_qualification = NON_PROCUREMENT
+expected_document_type = OTHER
+rejection_reason = Standard non-procurement format identified during independent review.

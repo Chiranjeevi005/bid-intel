@@ -1,0 +1,378 @@
+
+
+
+---PAGE_1---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+6450-01-P 
+
+DEPARTMENT OF ENERGY
+ 
+10 CFR Part 431
+
+ [Docket Number EERE–2011-BP-TP-00024]
+ 
+RIN: 1904-AC46
+ 
+Alternative Efficiency Determination Methods and Alternate Rating Methods 
+AGENCY: Office of Energy Efficiency and Renewable Energy, Department of Energy. 
+ACTION:  Notice of availability of request for information (RFI). 
+SUMMARY:  The U.S. Department of Energy (DOE) seeks information and data related to the 
+use of computer simulations, mathematical methods, and other alternative methods of 
+determining the efficiency of certain types of consumer products and commercial and industrial 
+equipment. DOE intends to use the information and data collected in this RFI to better inform the 
+proposals for a rulemaking addressing alternative efficiency determination methods (AEDM) and 
+alternate rating methods (ARM) for these types of covered products. 
+DATES:  Written comments and information are requested on or before [INSERT DATE 30 
+DAYS FOLLOWING PUBLICATION IN FEDERAL REGISTER]. 
+1
+ 
+
+
+---PAGE_2---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ADDRESSES:  Interested persons are encouraged to submit comments using the Federal 
+eRulemaking Portal at http://www.regulations.gov. Follow the instructions for submitting 
+comments. Alternatively, interested persons may submit comments, identified by docket number 
+EERE–2011–BT–TP–0024, by any of the following methods: 
+•	 E-mail: to AED/ARM-2011-TP-0024@ee.doe.gov. Include EERE–2011–BT–TP–0024 
+in the subject line of the message. 
+•	 Mail: Ms. Brenda Edwards, U.S. Department of Energy, Building Technologies Program, 
+Mailstop EE–2J, Revisions to Energy Efficiency Enforcement Regulations, EERE–2011– 
+BT–TP–0024, 1000 Independence Avenue, SW., Washington, DC 20585– 0121. Phone: 
+(202) 586–2945. Please submit one signed paper original. 
+•	 Hand Delivery/Courier: Ms. Brenda Edwards, U.S. Department of Energy, Building 
+Technologies Program, 6th Floor, 950 L’Enfant Plaza, SW., Washington, DC 20024. 
+Phone: (202) 586–2945. Please submit one signed paper original. 
+Instructions: All submissions received must include the agency name and docket number 
+or RIN for this rulemaking. 
+Docket: For access to the docket to read background documents, or comments received, 
+go to the Federal eRulemaking Portal at http://www.regulations.gov. 
+FOR FURTHER INFORMATION CONTACT: Direct requests for additional information 
+may be sent to Ms. Ashley Armstrong, U.S. Department of Energy, Office of Energy Efficiency 
+and Renewable Energy, Building Technologies Program, EE–2J, 1000 Independence Avenue, 
+2
+ 
+
+
+---PAGE_3---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+SW, Washington, DC 20585–0121. Telephone: (202) 586–6590. E-mail: 
+Ashley.Armstrong@ee.doe.gov, and Ms. Laura Barhydt, U.S. Department of Energy, Office of 
+the General Counsel, Forrestal Building, GC–32, 1000 Independence Avenue, SW, Washington, 
+DC 20585. Telephone: (202) 287–6122. E-mail: Laura.Barhydt@hq.doe.gov. 
+BACKGROUND:  As part of the testing procedures for certain consumer products and 
+commercial and industrial equipment (hereafter referred to collectively as covered products), 
+DOE allows the use of AEDMs or ARMs, once validated, in lieu of actual testing for the 
+purposes of determining the certified ratings for basic models. AEDMs and ARMs are derived 
+from mathematical models and engineering principles that govern the energy efficiency and 
+energy consumption characteristics of a basic model. Where authorized by regulation, AEDMs 
+and ARMs enable manufacturers to rate their basic models using estimated energy use or energy 
+efficiency results. DOE has authorized the use of AEDMs or ARMs for covered products that are 
+difficult or expensive to test, thereby reducing the testing burden for manufacturers of expensive 
+or highly custom basic models. Currently, DOE allows the use of alternative rating procedures, 
+once specified development and validation criteria are met, for commercial heating, ventilation, 
+and air conditioning (HVAC) equipment; commercial water heaters; electric motors; distribution 
+transformers; and residential split system central air conditioners and heat pumps. 
+DOE’s existing requirements for the use of an AEDM include substantiation of the 
+alternative method, as well as subsequent verification. Substantiation of the AEDM requires a 
+manufacturer to test a specified number of basic models and then compare those test results with 
+values derived by an AEDM. Tested values and derived values for each individual unit must be 
+3
+ 
+
+
+---PAGE_4---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+within a specified percentage of each other. The overall averages for the tested and AEDM 
+values must also be within a specified percentage of each other. The number of units tested and 
+the percentage correlations are product specific (see 10 CFR 429.70). Verification of an AEDM 
+requires a manufacturer to test a specified number of basic models with the substantiated AEDM. 
+No prior approval is required before the AEDM can be used to certify products. With respect to 
+subsequent verification, if a manufacturer chooses to use an AEDM, it must make information 
+available to DOE upon request for verification of the AEDM, including but not limited to: the 
+mathematical model, complete test data, and the calculations used to determine efficiency. 
+Additionally, if requested by DOE, a manufacturer must perform simulations, analysis, or unit 
+testing to verify the AEDM. 
+While serving the same purpose as AEDMs, ARMs differ in that they are specific to 
+residential central air conditioners and heat pumps and require approval from DOE before they 
+can be used to certify products. In order to receive approval for an ARM, a manufacturer must 
+submit test data for four mixed systems of central air conditioners and heat pumps along with 
+complete documentation of the ARM and products as specified in 10 CFR 429.70(e)(2). Similar 
+to the process for AEDM verification, the manufacturer may be required to conduct further 
+analysis, including additional simulations, if requested by DOE. 
+DOE is publishing this RFI to seek information regarding the current procedures being 
+employed by industry to rate low-volume, custom-built-equipment and to better understand how 
+DOE’s current AEDM and ARM procedures are being applied. At this time, DOE is considering 
+expanding the application of AEDMs to other types of covered commercial equipment, such as 
+4
+ 
+
+
+---PAGE_5---
+ 
+ 
+ 
+ 
+  
+ 
+  
+ 
+ 
+ 
+  
+  
+ 
+  
+ 
+ 
+commercial refrigeration equipment and automatic commercial ice makers. Additionally, DOE 
+plans to consider whether revisions to the procedures governing the substantiation and 
+subsequent verification of AEDMs and ARMs are appropriate based on the data and comments 
+received in response to this RFI. 
+ISSUES ON WHICH DOE SEEKS COMMENT AND INFORMATION: 
+General: 
+1.	 What types of covered products necessitate or warrant the use of an AEDM or ARM? 
+2.	 What are the current methods employed by manufacturers to rate commercial and certain 
+low-volume, built-to-order equipment? 
+3.	 Should DOE have two different types of alternative rating procedures?  Are the 
+
+distinctions between ARMs and AEDMs warranted?
+ 
+4.	 Could an AEDM or ARM be used across multiple product classes or product types? 
+Additionally, if an AEDM is used across product classes or types, should the amount of 
+verification tests performed on the AEDM be dependent on the number of product 
+classes/types to which it is applied? 
+5.	 Should DOE disallow the use of ARMs or AEDMs for manufacturers who have been 
+found in non-compliance with an applicable conservation standard and/or certification 
+requirement? Further, should DOE find all models rated using a specific ARM or AEDM 
+in noncompliance as a result of a determination of noncompliance of one basic model 
+rated with that specific ARM or AEDM? 
+6.	 What are the advantages and/or disadvantages of DOE approval of an AEDM or ARM 
+prior to use as opposed to maintaining and providing data upon request? 
+5
+ 
+
+
+---PAGE_6---
+ 
+ 
+ 
+ 
+  
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+7. Should DOE consider expanding the ARM provisions to allow for substitution of 
+different system components (e.g., condensers) instead of just applying to coils for 
+residential split system air conditioners and heat pumps? Additionally, should 
+manufacturers be allowed to use ARMs for other residential central air conditioner and 
+heat pump product classes? 
+8.	 Should voluntary industry certification programs (VICP) be involved in the development, 
+substantiation, and verification of AEDMs and ARMs, and, if so, to what extent? 
+9.	 What, if any, other changes to current AEDM and ARM regulations should DOE 
+consider that would reduce testing burdens while still ensuring that covered products are 
+appropriately rated and certified as compliant with applicable standards? 
+Substantiation: 
+10. The recently issued certification, compliance, and enforcement final rule added a 
+requirement for re-substantiation of an AEDM or ARM as a result of a change in 
+standard or test procedure. 76 FR 12492 (March 7, 2011). What are the advantages and/or 
+disadvantages of periodic re-substantiation of an ARM or AEDM? If re-substantiation is 
+not necessary, please provide supporting data and specify the amount of time the AEDM 
+or ARM should continue to be valid without further substantiation. 
+11. If the current number of units (sample size) that must be tested to substantiate the AEDM 
+or the ARM is either unwarranted or inadequate, on a product-specific basis, what would 
+be an appropriate sample size? (Please provide supporting data.) Should there be certain 
+types of basic models that must be used in the substantiation process (e.g., the highest 
+selling basic model)? 
+6
+ 
+
+
+---PAGE_7---
+ 
+ 
+  
+  
+ 
+  
+ 
+   
+ 
+ 
+ 
+   
+ 
+  
+   
+ 
+ 
+  
+ 
+ 
+ 
+ 
+12. DOE seeks product specific information on the appropriate tolerances for substantiation 
+of AEDMs and ARMs. Should these tolerances vary by product?  Should these tolerances 
+be aligned with the certification tolerances for a given covered product? 
+13. Would it be feasible for DOE to create standardized tolerances across all products or 
+products with similar characteristics to which AEDMs or ARMs may apply (e.g., 
+refrigeration products)? 
+14. Are two sets of comparison testing for substantiation of the AEDM for commercial 
+HVAC and water heater equipment warranted? Would one set of testing be sufficient? 
+Verification 
+15. DOE requests information on the feasibility and necessity of approval of AEDMs before 
+use by the manufacturer. 
+16. What criteria should DOE use to select AEDM/ARMs for verification? 
+17. When and how frequently should DOE verify AEDM/ARMs? 
+18. What criteria should be used to verify AEDM/ARMs? DOE welcomes specific comment 
+on the following as well as comment on any other applicable criteria: 
+• Tolerances; and 
+• Number of basic models per comparison. 
+PURPOSE: The purpose of this RFI is to solicit feedback from industry, manufacturers, 
+academia, consumer groups, efficiency advocates, government agencies, and other stakeholders 
+on issues related to AEDMs and ARMs. DOE is specifically interested in information and 
+sources of data related to covered products and equipment that could be used in formulating a 
+7
+ 
+
+
+---PAGE_8---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  
+ 
+methodology regarding creation of a standardized procedure for substantiation and verification, 
+where applicable. This is solely a request for information and not a Funding Opportunity 
+Announcement (FOA). 
+DISCLAIMER AND IMPORTANT NOTES:  This RFI does not constitute a formal 
+solicitation for proposals or abstracts. Your response to this notice will be treated as information 
+only. In accordance with FAR 15.201(e), responses to this notice are not offers and cannot be 
+accepted by the Government to form a binding contract. DOE will not provide reimbursement 
+for costs incurred in responding to this RFI. Commenters are advised that DOE is under no 
+obligation to acknowledge receipt of the information received or provide feedback to 
+commenters with respect to any information submitted under this RFI. Responses to this RFI do 
+not bind DOE to any further actions related to this topic.  
+PROPRIETARY INFORMATION: Patentable ideas, trade secrets, and proprietary or 
+confidential commercial or financial information, may be included in responses to this RFI. The 
+use and disclosure of such data may be restricted, provided the commenter includes the 
+following legend on the first page of the comment and specifies the pages of the comment which 
+are to be restricted: 
+“The data contained in pages _____ of this comment have been submitted in confidence 
+and contain trade secrets or proprietary information, and such data shall be used or disclosed 
+only for information and program planning purposes. This restriction does not limit the 
+8
+ 
+
+
+---PAGE_9---
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  
+government’s right to use or disclose data obtained without restriction from any source, 
+including the commenter, consistent with applicable law.” 
+To protect such data, each line or paragraph on the pages containing such data must be 
+specifically identified and marked with a legend similar to the following:  
+“The following contains proprietary information that (name of commenter) requests not be 
+released to persons outside the Government, except for purposes of review and evaluation.” 
+EVALUATION AND ADMINISTRATION BY FEDERAL AND NON-FEDERAL 
+PERSONNEL: Government civil servant employees are subject to the non-disclosure 
+obligations of a felony criminal statute, the Trade Secrets Act, 18 USC 1905. The Government 
+may seek the advice of qualified non-Federal personnel. The Government may also use non-
+Federal personnel to conduct routine, nondiscretionary administrative activities. The commenter, 
+by submitting its response, consents to DOE providing its response to non-Federal parties.  
+9
+ 
+
+
+---PAGE_10---

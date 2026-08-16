@@ -1,0 +1,1481 @@
+{
+  "metrics": {
+    "id": "DOC-006",
+    "qual_latency": 2621.494199999999,
+    "qual_usage": {
+      "prompt_tokens": 28434,
+      "completion_tokens": 331,
+      "total_tokens": 28765,
+      "prompt_tokens_details": {
+        "cached_tokens": 28416
+      },
+      "prompt_cache_hit_tokens": 28416,
+      "prompt_cache_miss_tokens": 18
+    },
+    "mapping_latency": 6313.277499999998,
+    "extraction_latency": 42885.342000000004,
+    "reasoning_latency": 15368.380499999992,
+    "ext_usage": {
+      "prompt_tokens": 106953,
+      "completion_tokens": 27863,
+      "total_tokens": 134816,
+      "cached_tokens": 83072
+    },
+    "ext_latency": 64566.99999999999,
+    "total_latency": 67189.0425
+  },
+  "result": {
+    "id": "DOC-006",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFP",
+      "confidence": "HIGH",
+      "reason": "The document is a Request for Proposals (RFP) issued by the Division of Public Health for the Delaware Health Fund FY 2028 Health Programs and Services. It includes a clear procurement intent, issuing organization, scope of services, submission deadlines, evaluation criteria, and contractual terms.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "REQUEST FOR PROPOSALS FOR PROFESSIONAL SERVICES"
+        },
+        {
+          "page_number": 2,
+          "quote": "The State of Delaware Department of Health and Social Services seeks professional services to Delaware Health Fund – Health Programs and Services."
+        },
+        {
+          "page_number": 2,
+          "quote": "Deadline for Receipt of Proposals Date: September 15, 2026 at 1:00 PM EDT"
+        },
+        {
+          "page_number": 3,
+          "quote": "This Request for Proposals is issued pursuant to that authority and solicits proposals for programs and services to be funded from the Delaware Health Fund in Fiscal Year 2028 (July 1, 2027 – June 30, 2028)."
+        },
+        {
+          "page_number": 5,
+          "quote": "General Evaluation Requirements"
+        },
+        {
+          "page_number": 15,
+          "quote": "The following criteria shall be used by the Evaluation Team to evaluate proposals:"
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Eligibility Restricted to Private Organizations",
+          "fact": "The RFP states that it is open to private organizations only, and state-operated programs are not eligible to respond.",
+          "business_implication": "State-operated programs cannot bid under this RFP and must use a separate process.",
+          "action_recommendation": "Confirm that your organization is a private organization before preparing a proposal.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "Eligibility:  This RFP is open to private organizations.  State-operated programs do not respond to this RFP; funding for state-operated programs is designated by the Department through a separate internal process pursuant to 16 Del. C. § 137(i)(1)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Debarment and Suspension Ineligibility",
+          "fact": "Any entity currently debarred or suspended is ineligible to bid, and any entity ineligible to conduct business in Delaware is ineligible to respond.",
+          "business_implication": "Bidders must ensure they are not currently debarred or suspended and are authorized to do business in Delaware.",
+          "action_recommendation": "Verify your organization's status regarding debarment/suspension and Delaware business eligibility.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "Any individual, business, organization, corporation, consortium, partnership, joint venture, or any other entity including subcontractors currently debarred or suspended is ineligible to bid.  Any entity ineligible to conduct business in the State of Delaware for any reason is ineligible to respond to the RFP."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Affirmation of No Suspension or Debarment",
+          "fact": "The vendor must affirm that within the past five years, the firm and its principals are not currently suspended or debarred.",
+          "business_implication": "Bidders must be able to make this affirmation; any history of suspension/debarment could disqualify them.",
+          "action_recommendation": "Prepare to provide the required affirmation in the proposal.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 30,
+              "quote": "The Vendor must affirm that within the past five (5) years the firm or any officer, controlling stockholder, partner, principal, or other person substantially involved in the contracting activities of the business is not currently suspended or debarred and is not a successor, subsidiary, or affiliate of a suspended or debarred business."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Mandatory Attachments Required",
+          "fact": "Attachments 2, 3, 4, 5, and 6 must be included in the proposal; Attachment 7 is required if subcontractors are involved.",
+          "business_implication": "Failure to include these attachments may render the proposal non-responsive.",
+          "action_recommendation": "Ensure all mandatory attachments are completed and submitted.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 37,
+              "quote": "Attachments 2, 3, 4, 5 and 6 must be included in your proposal"
+            },
+            {
+              "page_number": 37,
+              "quote": "Attachment 7 must be included in your proposal if subcontractors will be involved"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Minimum Mandatory Submission Requirements",
+          "fact": "Appendix A lists mandatory items including transmittal letter, pricing, vendor information sheet, non-collusion statement, exception form, confidentiality form, business references, and workplan template.",
+          "business_implication": "Failure to provide all required items may deem the vendor non-responsive.",
+          "action_recommendation": "Review Appendix A and ensure all listed items are included in the submission.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 44,
+              "quote": "The items listed above provide the basis for evaluating each vendor’s proposal.  Failure to provide all appropriate information may deem the submitting vendor as “non-responsive” and exclude the vendor from further consideration."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Submission via Euna Procurement Only",
+          "fact": "Proposals must be submitted through the Euna Procurement (formerly Bonfire) portal; hard copy, mail, facsimile, or email submissions will not be accepted.",
+          "business_implication": "Bidders must have access to the portal and submit before the deadline.",
+          "action_recommendation": "Ensure you can access the portal and submit your proposal electronically before the deadline.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Responses submitted by hard copy, mail, facsimile, or e-mail will not be accepted."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Proposal Deadline",
+          "fact": "Proposals must be submitted by September 15, 2026 at 1:00 PM EDT.",
+          "business_implication": "Late proposals will not be accepted.",
+          "action_recommendation": "Plan to submit well before the deadline to avoid technical issues.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Deadline for Receipt of Proposals Date: September 15, 2026 at 1:00 PM EDT"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Deadline for Questions",
+          "fact": "Questions must be submitted by August 28, 2026 at 3:00 PM EST.",
+          "business_implication": "Bidders must submit questions by this date to receive clarification.",
+          "action_recommendation": "Submit any questions before the deadline.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Deadline for Questions Date: August 28, 2026 at 3:00 PM EST"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Evaluation Criteria Weights",
+          "fact": "Proposals are evaluated on criteria with weights: Statement of Need (15), Alignment with Health Fund Priorities (25), Program Design and Feasibility (20), Measurable Outcomes and Evaluation Plan (20), Organizational Capacity & Past Performance (10), Budget Reasonableness and Sustainability (10).",
+          "business_implication": "Bidders should focus on the highest-weighted criteria, especially alignment with health fund priorities.",
+          "action_recommendation": "Tailor the proposal to address each criterion with appropriate detail.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "Criteria Weight ... Statement of Need (§ II.A of proposal)-Delaware-specific evidence of the health need and the service gap the program fills; for returning organizations, including prior-year results. [15]"
+            },
+            {
+              "page_number": 15,
+              "quote": "Alignment with Health Fund Priorities (§ II.B)-fit with the purposes in 16 Del. C. § 137(d), with the strongest weight for direct ties to tobacco prevention and cessation and to cancer prevention, detection, and treatment. [25]"
+            },
+            {
+              "page_number": 16,
+              "quote": "Program Design and Feasibility (§ II.C)-goals, activities, timeline, staffing, and geographic reach that are specific, coherent, and achievable within the contract year. [20]"
+            },
+            {
+              "page_number": 16,
+              "quote": "Measurable Outcomes and Evaluation Plan (§ II.D)-specific, verifiable objectives with indicators, targets, and data sources, suitable for incorporation into the award agreement. [20]"
+            },
+            {
+              "page_number": 16,
+              "quote": "Organizational Capacity & Past Performance (§ II.E)-governance, financial management, audit history, and experience operating programs of similar scope. [10]"
+            },
+            {
+              "page_number": 16,
+              "quote": "Budget Reasonableness and Sustainability (§ II.F)= justified costs proportionate to reach, documented other funding, and a realistic plan given declining Master Settlement Agreement revenue. [10]"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Contract Term and Funding Contingency",
+          "fact": "The contract term is one year (July 1, 2027 – June 30, 2028), contingent on appropriation. Funding is not a renewal right.",
+          "business_implication": "Bidders must be prepared for a one-year contract with no guarantee of renewal.",
+          "action_recommendation": "Plan budgets and resources for a single-year contract.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "Contract term is one (1) year, anticipated July 1, 2027 through June 30, 2028, contingent on appropriation.  Funding in subsequent fiscal years is not a renewal right: continued funding is subject to the annual statutory process under 16 Del. C. § 137(i), including the annual request for proposals, and to annual appropriation."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Prices Fixed Through June 30, 2028",
+          "fact": "Prices quoted in the proposal must remain fixed and binding through at least June 30, 2028.",
+          "business_implication": "Bidders must ensure their pricing is sustainable for the contract period.",
+          "action_recommendation": "Consider inflation and cost changes when setting prices.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "Prices quoted in the proposal shall remain fixed and binding on the bidder at least through June 30, 2028."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "General Indemnification",
+          "fact": "The vendor agrees to indemnify and hold harmless the State from any liability arising out of the vendor's performance.",
+          "business_implication": "The vendor assumes broad liability for claims related to the contract.",
+          "action_recommendation": "Review insurance coverage to ensure it is adequate for potential indemnification obligations.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "By submitting a proposal, the proposing vendor agrees that in the event it is awarded a contract, it will indemnify and otherwise hold harmless the State of Delaware, its agents and employees from any and all liability, suits, actions, or claims, together with all costs, expenses for attorney’s fees, arising out of the vendor’s, its agents and employees’ performance work or services in connection with the contract."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Proprietary Rights Indemnification",
+          "fact": "The vendor must indemnify the State against claims of infringement of third-party proprietary rights.",
+          "business_implication": "The vendor is responsible for defending and paying for any IP infringement claims.",
+          "action_recommendation": "Ensure that all proposed solutions do not infringe on third-party rights and consider IP insurance.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 22,
+              "quote": "Vendor shall warrant that all elements of its solution, including all equipment, software, documentation, services and deliverables, do not and will not infringe upon or violate any patent, copyright, trade secret or other proprietary rights of any third party.  In the event of any claim, suit or action by any third party against the State of Delaware, the State of Delaware shall promptly notify the vendor in writing and vendor shall defend such claim, suit or action at vendor’s expense, and vendor shall indemnify the State of Delaware against any loss, cost, damage, expense or liability arising out of such claim, suit or action (including, without limitation, litigation costs, lost employee time, and counsel fees) whether or not such claim, suit or action is successful."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Convenience",
+          "fact": "The State may terminate the contract at any time with 20 days' written notice.",
+          "business_implication": "The vendor has no guarantee of contract duration.",
+          "action_recommendation": "Be prepared for potential early termination and plan accordingly.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "The State may terminate this Contract at any time by giving written notice of such termination and specifying the effective date thereof, at least twenty (20) days before the effective date of such termination."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Non-Appropriation",
+          "fact": "If the General Assembly fails to appropriate funds, the contract terminates.",
+          "business_implication": "Funding is not guaranteed and depends on legislative appropriation.",
+          "action_recommendation": "Understand that the contract is contingent on appropriation and plan for potential non-appropriation.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "In the event the General Assembly fails to appropriate the specific funds necessary to enter into or continue the contractual agreement, in whole or part, the agreement shall be terminated as to any obligation of the State requiring the expenditure of money for which no specific appropriation is available at the end of the last fiscal year for which no appropriation is available or upon the exhaustion of funds."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "No Offshore Activity",
+          "fact": "The vendor must attest that no activity will take place outside the United States.",
+          "business_implication": "All work must be performed within the U.S., which may limit offshoring options.",
+          "action_recommendation": "Ensure that all services are performed domestically and include the attestation in the transmittal letter.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 27,
+              "quote": "No activity is to be executed in an offshore facility, either by a subcontracted firm or a foreign office or division of the vendor.  The vendor must attest to the fact that no activity will take place outside of the United States in its transmittal letter."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Data Storage Restriction",
+          "fact": "The transmittal letter must attest that the vendor shall not store or transfer non-public State of Delaware data outside the United States.",
+          "business_implication": "Data handling must comply with U.S. geographic restrictions.",
+          "action_recommendation": "Ensure data storage and transfer policies comply with this requirement.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Furthermore, the transmittal letter must attest to the fact, at a minimum, that the Vendor shall not store or transfer non-public State of Delaware data outside of the United States."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Vendor Emergency Response Point of Contact",
+          "fact": "The awarded vendor must provide 24/7 contact information for emergencies; failure to provide could render the proposal non-responsive.",
+          "business_implication": "Bidders must have a designated emergency contact available around the clock.",
+          "action_recommendation": "Prepare emergency contact details and include them in the proposal.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 24,
+              "quote": "The awarded vendor(s) shall provide the name(s), telephone, or cell phone number(s) of those individuals who can be contacted twenty four (24) hours a day, seven (7) days a week where there is a critical need for commodities or services when the Governor of the State of Delaware declares a state of emergency under the Delaware Emergency Operations Plan or in the event of a local emergency or disaster where a state governmental entity requires the services of the vendor.  Failure to provide this information could render the proposal as non-responsive."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Background Check Requirements",
+          "fact": "Vendors accessing state property or coming in contact with vulnerable populations must complete background checks on employees, including checking the Delaware Sex Offender Central Registry.",
+          "business_implication": "Bidders must have processes in place to conduct background checks.",
+          "action_recommendation": "Prepare to comply with background check requirements if awarded.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 28,
+              "quote": "Vendor(s) selected for an award that access state property or come in contact with vulnerable populations, including children and youth, shall be required to complete background checks on employees serving the State’s on premises contracts.  Unless otherwise directed, at a minimum, this shall include a check of the following registry: Delaware Sex Offender Central Registry at: https://sexoffender.dsp.delaware.gov/"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MISSING_INFORMATION",
+          "title": "Detailed Scope of Work Not Provided",
+          "fact": "Appendix B, which contains the Scope of Work and Technical Requirements, is listed but its content is not included in the provided pages.",
+          "business_implication": "Bidders cannot fully understand the technical requirements without this appendix.",
+          "action_recommendation": "Obtain the full RFP document including Appendix B to review the detailed scope.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "UNSUPPORTED",
+          "quotes": [],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Fixed Pricing Through June 30, 2028",
+          "fact": "Prices quoted in the proposal shall remain fixed and binding on the bidder at least through June 30, 2028.",
+          "business_implication": "The bidder must account for all costs and inflation for the entire contract period without adjustment.",
+          "action_recommendation": "Ensure pricing is robust and includes contingency for cost increases.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "Prices quoted in the proposal shall remain fixed and binding on the bidder at least through June 30, 2028."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Payment Based on Milestones with Possible Holdback",
+          "fact": "The State of Delaware will require a payment schedule based on defined and measurable milestones. Payments for services will not be made in advance of work performed. The State of Delaware may require holdback of contract monies until acceptable performance is demonstrated (as much as 25%).",
+          "business_implication": "Cash flow may be impacted by milestone-based payments and potential 25% holdback.",
+          "action_recommendation": "Plan cash flow accordingly and negotiate milestone definitions to minimize holdback impact.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 25,
+              "quote": "The State of Delaware will require a payment schedule based on defined and measurable milestones. Payments for services will not be made in advance of work performed. The State of Delaware may require holdback of contract monies until acceptable performance is demonstrated (as much as 25%)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Liquidated Damages May Be Included",
+          "fact": "The State of Delaware may include in the final contract liquidated damages provisions for non-performance.",
+          "business_implication": "Potential financial penalties for non-performance could be significant.",
+          "action_recommendation": "Clarify the liquidated damages provisions during negotiation and ensure performance capabilities.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 25,
+              "quote": "The State of Delaware may include in the final contract liquidated damages provisions for non-performance."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No Advance Payments",
+          "fact": "Payments for services will not be made in advance of work performed.",
+          "business_implication": "The bidder must finance operations until milestones are completed and invoiced.",
+          "action_recommendation": "Ensure sufficient working capital to cover upfront costs.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 25,
+              "quote": "Payments for services will not be made in advance of work performed."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Costs Must Be Detailed and No Additional Charges Without Consent",
+          "fact": "All contract costs must be detailed specifically in the Vendor’s cost proposal. No charges other than as specified in the proposal shall be allowed without written consent of the State of Delaware.",
+          "business_implication": "The bidder must accurately estimate all costs; any omission may not be recoverable.",
+          "action_recommendation": "Thoroughly review cost proposal to ensure all expenses are included.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 25,
+              "quote": "All contract costs must be detailed specifically in the Vendor’s cost proposal. No charges other than as specified in the proposal shall be allowed without written consent of the State of Delaware."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Payment Within 30 Days of Correct Invoice",
+          "fact": "The agencies will authorize and process for payment of each invoice within thirty (30) days after the date of receipt of a correct invoice.",
+          "business_implication": "Standard payment terms; cash flow should be predictable if invoices are correct.",
+          "action_recommendation": "Ensure invoicing processes are accurate to avoid delays.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 34,
+              "quote": "The agencies will authorize and process for payment of each invoice within thirty (30) days after the date of receipt of a correct invoice."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "P-Card Payment No Additional Fees",
+          "fact": "The State of Delaware intends to maximize the use of the P-Card for payment for goods and services provided under contract. Vendors shall not charge additional fees for acceptance of this payment method and shall incorporate any costs into their proposals.",
+          "business_implication": "The bidder must absorb any merchant fees associated with P-Card transactions.",
+          "action_recommendation": "Factor P-Card processing costs into pricing.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 34,
+              "quote": "The State of Delaware intends to maximize the use of the P-Card for payment for goods and services provided under contract. Vendors shall not charge additional fees for acceptance of this payment method and shall incorporate any costs into their proposals."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Contract Term One Year Contingent on Appropriation",
+          "fact": "Contract term is one (1) year, anticipated July 1, 2027 through June 30, 2028, contingent on appropriation. Funding in subsequent fiscal years is not a renewal right.",
+          "business_implication": "The contract is for one year only with no guarantee of renewal; funding depends on annual appropriation.",
+          "action_recommendation": "Plan for a single-year engagement and consider sustainability plans.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "Contract term is one (1) year, anticipated July 1, 2027 through June 30, 2028, contingent on appropriation. Funding in subsequent fiscal years is not a renewal right: continued funding is subject to the annual statutory process under 16 Del. C. § 137(i), including the annual request for proposals, and to annual appropriation."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Extend Contract Month-to-Month",
+          "fact": "The State reserves the right to extend this contract on a month-to-month basis for a period of up to three months after the term of the full contract has been completed.",
+          "business_implication": "Potential for short-term extension beyond the initial term, but not guaranteed.",
+          "action_recommendation": "Be prepared for possible extension and associated costs.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "The State reserves the right to extend this contract on a month-to-month basis for a period of up to three months after the term of the full contract has been completed."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No Bid or Performance Bond Required",
+          "fact": "There is no Bid Bond Requirement. There is no Performance Bond requirement.",
+          "business_implication": "No bonding costs, reducing bid preparation expenses.",
+          "action_recommendation": "No action needed.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 24,
+              "quote": "There is no Bid Bond Requirement."
+            },
+            {
+              "page_number": 24,
+              "quote": "There is no Performance Bond requirement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Award Multiple Contracts",
+          "fact": "Pursuant to 29 Del. C. § 6986, the State of Delaware may award a contract for a particular professional service to two or more vendors if the agency head makes a determination that such an award is in the best interest of the State of Delaware.",
+          "business_implication": "The bidder may not be the sole awardee; competition may continue post-award.",
+          "action_recommendation": "Consider competitive positioning and differentiation.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Pursuant to 29 Del. C. § 6986, the State of Delaware may award a contract for a particular professional service to two or more vendors if the agency head makes a determination that such an award is in the best interest of the State of Delaware."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State Not Obligated to Award to Lowest Price or Highest Score",
+          "fact": "It should be explicitly noted that the State of Delaware is not obligated to award the contract to the vendor who submits the lowest bid or the vendor who receives the highest total point score, rather the contract will be awarded to the vendor whose proposal is the most advantageous to the State of Delaware.",
+          "business_implication": "Price and technical score are not determinative; the State has broad discretion.",
+          "action_recommendation": "Focus on overall value proposition and alignment with State priorities.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "It should be explicitly noted that the State of Delaware is not obligated to award the contract to the vendor who submits the lowest bid or the vendor who receives the highest total point score, rather the contract will be awarded to the vendor whose proposal is the most advantageous to the State of Delaware."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Terminate Negotiations at Any Time",
+          "fact": "The State of Delaware may terminate negotiations at any time and for any reason, or for no reason.",
+          "business_implication": "No guarantee of contract award even if selected for negotiations.",
+          "action_recommendation": "Avoid incurring significant costs before contract execution.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "The State of Delaware may terminate negotiations at any time and for any reason, or for no reason."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Contract Award Requires Full Execution",
+          "fact": "Notice in writing to a vendor of the acceptance of its proposal by the State of Delaware and the subsequent full execution of a written contract will constitute a contract, and no vendor will acquire any legal or equitable rights or privileges until the occurrence of both such events.",
+          "business_implication": "No contractual rights until both acceptance notice and signed contract.",
+          "action_recommendation": "Do not begin work until contract is fully executed.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "Notice in writing to a vendor of the acceptance of its proposal by the State of Delaware and the subsequent full execution of a written contract will constitute a contract, and no vendor will acquire any legal or equitable rights or privileges until the occurrence of both such events."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Vendor Must Execute Contract Within 20 Days of Award",
+          "fact": "The successful vendor shall promptly execute a contract incorporating the terms of this RFP within twenty (20) days after award of the contract.",
+          "business_implication": "Time pressure to finalize contract terms and obtain necessary approvals.",
+          "action_recommendation": "Prepare contract review and negotiation resources in advance.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "The successful vendor shall promptly execute a contract incorporating the terms of this RFP within twenty (20) days after award of the contract."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Add Terms During Negotiations",
+          "fact": "The State of Delaware reserves the right to add terms and conditions during the contract negotiations.",
+          "business_implication": "Contract terms may change after proposal submission; bidder must be flexible.",
+          "action_recommendation": "Be prepared to negotiate additional terms and assess their impact.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 34,
+              "quote": "Additional Terms and Conditions – The State of Delaware reserves the right to add terms and conditions during the contract negotiations."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No Work Before Purchase Order",
+          "fact": "No vendor is to begin any service prior to receipt of a State of Delaware purchase order signed by two authorized representatives of the agency requesting service, properly processed through the State of Delaware Accounting Office and the Department of Finance.",
+          "business_implication": "Work cannot start until formal purchase order is received.",
+          "action_recommendation": "Ensure administrative processes are completed before commencing services.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "No vendor is to begin any service prior to receipt of a State of Delaware purchase order signed by two authorized representatives of the agency requesting service, properly processed through the State of Delaware Accounting Office and the Department of Finance."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Use P-Card with No Additional Fees",
+          "fact": "The State of Delaware intends to maximize the use of the P-Card for payment for goods and services provided under contract. Vendors shall not charge additional fees for acceptance of this payment method and shall incorporate any costs into their proposals.",
+          "business_implication": "The bidder must absorb any merchant fees associated with P-Card transactions.",
+          "action_recommendation": "Factor P-Card processing costs into pricing.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 34,
+              "quote": "The State of Delaware intends to maximize the use of the P-Card for payment for goods and services provided under contract. Vendors shall not charge additional fees for acceptance of this payment method and shall incorporate any costs into their proposals."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Award to Multiple Vendors",
+          "fact": "Pursuant to 29 Del. C. § 6986, the State of Delaware may award a contract for a particular professional service to two or more vendors if the agency head makes a determination that such an award is in the best interest of the State of Delaware.",
+          "business_implication": "The bidder may not be the sole awardee; competition may continue post-award.",
+          "action_recommendation": "Consider competitive positioning and differentiation.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Pursuant to 29 Del. C. § 6986, the State of Delaware may award a contract for a particular professional service to two or more vendors if the agency head makes a determination that such an award is in the best interest of the State of Delaware."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Reject Any Proposal",
+          "fact": "The State of Delaware has the sole right to select the successful vendor(s) for award, to reject any proposal as unsatisfactory or non-responsive, to award a contract to other than the lowest priced proposal, to award multiple contracts, or not to award a contract, as a result of this RFP.",
+          "business_implication": "No guarantee of award; the State has broad discretion.",
+          "action_recommendation": "Submit a strong, compliant proposal.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "The State of Delaware has the sole right to select the successful vendor(s) for award, to reject any proposal as unsatisfactory or non-responsive, to award a contract to other than the lowest priced proposal, to award multiple contracts, or not to award a contract, as a result of this RFP."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Extend Contract Month-to-Month",
+          "fact": "The State reserves the right to extend this contract on a month-to-month basis for a period of up to three months after the term of the full contract has been completed.",
+          "business_implication": "Potential for short-term extension beyond the initial term, but not guaranteed.",
+          "action_recommendation": "Be prepared for possible extension and associated costs.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "The State reserves the right to extend this contract on a month-to-month basis for a period of up to three months after the term of the full contract has been completed."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Terminate for Convenience",
+          "fact": "The State may terminate this Contract at any time by giving written notice of such termination and specifying the effective date thereof, at least twenty (20) days before the effective date of such termination.",
+          "business_implication": "The State can terminate without cause with 20 days' notice, potentially leaving the bidder with unrecovered costs.",
+          "action_recommendation": "Understand termination compensation provisions and plan for potential early termination.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "The State may terminate this Contract at any time by giving written notice of such termination and specifying the effective date thereof, at least twenty (20) days before the effective date of such termination."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Termination for Non-Appropriation",
+          "fact": "In the event the General Assembly fails to appropriate the specific funds necessary to enter into or continue the contractual agreement, in whole or part, the agreement shall be terminated as to any obligation of the State requiring the expenditure of money for which no specific appropriation is available at the end of the last fiscal year for which no appropriation is available or upon the exhaustion of funds.",
+          "business_implication": "The contract can be terminated if funds are not appropriated, with no liability to the State.",
+          "action_recommendation": "Assess risk of non-appropriation and plan accordingly.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "In the event the General Assembly fails to appropriate the specific funds necessary to enter into or continue the contractual agreement, in whole or part, the agreement shall be terminated as to any obligation of the State requiring the expenditure of money for which no specific appropriation is available at the end of the last fiscal year for which no appropriation is available or upon the exhaustion of funds."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Termination for Cause with 20 Days Notice",
+          "fact": "If, for any reasons, or through any cause, the Vendor fails to fulfill in timely and proper manner its obligations under this Contract, or if the Vendor violates any of the covenants, agreements, or stipulations of this Contract, the State shall thereupon have the right to terminate this contract by giving written notice to the Vendor of such termination and specifying the effective date thereof, at least twenty (20) days before the effective date of such termination.",
+          "business_implication": "The State can terminate for cause with 20 days' notice, and the vendor may lose compensation for incomplete work.",
+          "action_recommendation": "Ensure compliance with all contract obligations to avoid termination.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "If, for any reasons, or through any cause, the Vendor fails to fulfill in timely and proper manner its obligations under this Contract, or if the Vendor violates any of the covenants, agreements, or stipulations of this Contract, the State shall thereupon have the right to terminate this contract by giving written notice to the Vendor of such termination and specifying the effective date thereof, at least twenty (20) days before the effective date of such termination."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Terminate Negotiations at Any Time",
+          "fact": "The State of Delaware may terminate negotiations at any time and for any reason, or for no reason.",
+          "business_implication": "No guarantee of contract award even if selected for negotiations.",
+          "action_recommendation": "Avoid incurring significant costs before contract execution.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "The State of Delaware may terminate negotiations at any time and for any reason, or for no reason."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Add Terms During Negotiations",
+          "fact": "The State of Delaware reserves the right to add terms and conditions during the contract negotiations.",
+          "business_implication": "Contract terms may change after proposal submission; bidder must be flexible.",
+          "action_recommendation": "Be prepared to negotiate additional terms and assess their impact.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 34,
+              "quote": "Additional Terms and Conditions – The State of Delaware reserves the right to add terms and conditions during the contract negotiations."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Award to Multiple Vendors",
+          "fact": "Pursuant to 29 Del. C. § 6986, the State of Delaware may award a contract for a particular professional service to two or more vendors if the agency head makes a determination that such an award is in the best interest of the State of Delaware.",
+          "business_implication": "The bidder may not be the sole awardee; competition may continue post-award.",
+          "action_recommendation": "Consider competitive positioning and differentiation.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Pursuant to 29 Del. C. § 6986, the State of Delaware may award a contract for a particular professional service to two or more vendors if the agency head makes a determination that such an award is in the best interest of the State of Delaware."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Reject Any Proposal",
+          "fact": "The State of Delaware has the sole right to select the successful vendor(s) for award, to reject any proposal as unsatisfactory or non-responsive, to award a contract to other than the lowest priced proposal, to award multiple contracts, or not to award a contract, as a result of this RFP.",
+          "business_implication": "No guarantee of award; the State has broad discretion.",
+          "action_recommendation": "Submit a strong, compliant proposal.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "The State of Delaware has the sole right to select the successful vendor(s) for award, to reject any proposal as unsatisfactory or non-responsive, to award a contract to other than the lowest priced proposal, to award multiple contracts, or not to award a contract, as a result of this RFP."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Extend Contract Month-to-Month",
+          "fact": "The State reserves the right to extend this contract on a month-to-month basis for a period of up to three months after the term of the full contract has been completed.",
+          "business_implication": "Potential for short-term extension beyond the initial term, but not guaranteed.",
+          "action_recommendation": "Be prepared for possible extension and associated costs.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "The State reserves the right to extend this contract on a month-to-month basis for a period of up to three months after the term of the full contract has been completed."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State May Terminate for Convenience",
+          "fact": "The State may terminate this Contract at any time by giving written notice of such termination and specifying the effective date thereof, at least twenty (20) days before the effective date of such termination.",
+          "business_implication": "The State can terminate without cause with 20 days' notice, potentially leaving the bidder with unrecovered costs.",
+          "action_recommendation": "Understand termination compensation provisions and plan for potential early termination.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "The State may terminate this Contract at any time by giving written notice of such termination and specifying the effective date thereof, at least twenty (20) days before the effective date of such termination."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Termination for Non-Appropriation",
+          "fact": "In the event the General Assembly fails to appropriate the specific funds necessary to enter into or continue the contractual agreement, in whole or part, the agreement shall be terminated as to any obligation of the State requiring the expenditure of money for which no specific appropriation is available at the end of the last fiscal year for which no appropriation is available or upon the exhaustion of funds.",
+          "business_implication": "The contract can be terminated if funds are not appropriated, with no liability to the State.",
+          "action_recommendation": "Assess risk of non-appropriation and plan accordingly.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "In the event the General Assembly fails to appropriate the specific funds necessary to enter into or continue the contractual agreement, in whole or part, the agreement shall be terminated as to any obligation of the State requiring the expenditure of money for which no specific appropriation is available at the end of the last fiscal year for which no appropriation is available or upon the exhaustion of funds."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Termination for Cause with 20 Days Notice",
+          "fact": "If, for any reasons, or through any cause, the Vendor fails to fulfill in timely and proper manner its obligations under this Contract, or if the Vendor violates any of the covenants, agreements, or stipulations of this Contract, the State shall thereupon have the right to terminate this contract by giving written notice to the Vendor of such termination and specifying the effective date thereof, at least twenty (20) days before the effective date of such termination.",
+          "business_implication": "The State can terminate for cause with 20 days' notice, and the vendor may lose compensation for incomplete work.",
+          "action_recommendation": "Ensure compliance with all contract obligations to avoid termination.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "If, for any reasons, or through any cause, the Vendor fails to fulfill in timely and proper manner its obligations under this Contract, or if the Vendor violates any of the covenants, agreements, or stipulations of this Contract, the State shall thereupon have the right to terminate this contract by giving written notice to the Vendor of such termination and specifying the effective date thereof, at least twenty (20) days before the effective date of such termination."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Convenience with Limited Compensation",
+          "fact": "The State may terminate the contract at any time with 20 days' notice, and the vendor is only entitled to compensation for satisfactory work completed that is usable to the State.",
+          "business_implication": "The vendor may not recover costs for work in progress that is not deemed usable, leading to potential financial loss if the contract is terminated early.",
+          "action_recommendation": "Clarify the definition of 'usable' and negotiate for compensation covering all work performed, including non-usable work, or include a termination fee.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "The State may terminate this Contract at any time by giving written notice of such termination and specifying the effective date thereof, at least twenty (20) days before the effective date of such termination. In that event, all finished or unfinished documents, data, studies, surveys, drawings, models, photographs, reports, supplies, and other materials shall, at the option of the State, become its property and the Vendor shall be entitled to receive compensation for any satisfactory work completed on such documents and other materials, and which is usable to the State."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Cause with Vendor Response Window",
+          "fact": "The State may terminate for cause with 20 days' notice, and the vendor has only 5 days to respond with a corrective action plan, which the State may reject and proceed with termination.",
+          "business_implication": "The vendor has a very short window to cure any alleged breach, and the State retains discretion to reject the plan, leading to potential loss of contract and work product.",
+          "action_recommendation": "Ensure robust performance monitoring and compliance to avoid triggering termination for cause, and prepare contingency plans for responding to notices.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "On receipt of the contract cancellation notice from the State, the Vendor shall have no less than five (5) days to provide a written response and may identify a method(s) to resolve the violation(s). A vendor response shall not affect or prevent the contract cancellation unless the State provides a written acceptance of the vendor response."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Non-Appropriations",
+          "fact": "The contract terminates if the General Assembly fails to appropriate funds, and this is not a termination for convenience.",
+          "business_implication": "The vendor bears the risk of non-appropriation and may not be entitled to compensation for work performed after funds are exhausted.",
+          "action_recommendation": "Assess the likelihood of non-appropriation and consider negotiating for compensation for work performed up to termination.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 26,
+              "quote": "In the event the General Assembly fails to appropriate the specific funds necessary to enter into or continue the contractual agreement, in whole or part, the agreement shall be terminated as to any obligation of the State requiring the expenditure of money for which no specific appropriation is available at the end of the last fiscal year for which no appropriation is available or upon the exhaustion of funds. This is not a termination for convenience and will not be converted to such."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "No Offshore Activity",
+          "fact": "No activity is to be executed in an offshore facility, and the vendor must attest that no activity will take place outside the United States.",
+          "business_implication": "The vendor must ensure all work is performed within the U.S., which may limit access to lower-cost offshore resources and require additional compliance.",
+          "action_recommendation": "Confirm that all operations and subcontractors are U.S.-based and prepare the required attestation in the transmittal letter.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 27,
+              "quote": "No activity is to be executed in an offshore facility, either by a subcontracted firm or a foreign office or division of the vendor. The vendor must attest to the fact that no activity will take place outside of the United States in its transmittal letter. Failure to adhere to this requirement is cause for elimination from future consideration."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "IRS 1075 Compliance and Penalties",
+          "fact": "If the contract involves FTI, the vendor must comply with IRS Publication 1075, including background checks, security controls, and potential criminal/civil penalties for unauthorized disclosure.",
+          "business_implication": "The vendor may incur significant costs to implement and maintain IRS-compliant security measures, and faces severe penalties for non-compliance.",
+          "action_recommendation": "Determine if FTI will be involved and, if so, budget for compliance costs and ensure robust data protection measures are in place.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 31,
+              "quote": "In performance of this contract, the Contractor agrees to comply with and assume responsibility for compliance by officers or employees with the following requirements: (1) All work will be performed under the supervision of the contractor. (2) The contractor and contractor’s officers or employees to be authorized access to FTI must meet background check requirements defined in IRS Publication 1075."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Price Fixed Until June 30, 2028",
+          "fact": "Prices quoted in the proposal shall remain fixed and binding on the bidder at least through June 30, 2028.",
+          "business_implication": "The vendor must absorb any cost increases over the contract period, which could erode profit margins if inflation or other costs rise.",
+          "action_recommendation": "Factor in potential cost escalations when pricing the proposal and consider including escalation clauses if possible.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "Prices quoted in the proposal shall remain fixed and binding on the bidder at least through June 30, 2028."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Payment Holdback Up to 25%",
+          "fact": "The State may require holdback of contract monies until acceptable performance is demonstrated, as much as 25%.",
+          "business_implication": "The vendor may have to finance a significant portion of its costs until performance is accepted, impacting cash flow.",
+          "action_recommendation": "Plan for potential cash flow constraints and negotiate the holdback percentage or milestones for release.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 25,
+              "quote": "The State of Delaware may require holdback of contract monies until acceptable performance is demonstrated (as much as 25%)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Liquidated Damages",
+          "fact": "The State may include liquidated damages provisions for non-performance in the final contract.",
+          "business_implication": "The vendor may be subject to financial penalties for delays or non-performance, which could be substantial.",
+          "action_recommendation": "Review any liquidated damages clauses carefully and ensure they are reasonable and not punitive.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 25,
+              "quote": "The State of Delaware may include in the final contract liquidated damages provisions for non-performance."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No Advance Payments",
+          "fact": "Payments for services will not be made in advance of work performed.",
+          "business_implication": "The vendor must finance its operations until milestones are completed and invoices are paid, which may strain cash flow.",
+          "action_recommendation": "Plan for adequate working capital and negotiate favorable payment terms, such as shorter payment cycles.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 25,
+              "quote": "Payments for services will not be made in advance of work performed."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Exclusions for Criminal Convictions",
+          "fact": "The State may refuse to consider proposals from vendors convicted of certain criminal offenses, including embezzlement, theft, forgery, bribery, or antitrust violations.",
+          "business_implication": "Vendors with such convictions may be automatically disqualified from bidding.",
+          "action_recommendation": "Ensure the vendor and its principals have no disqualifying convictions and be prepared to disclose any relevant history.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "The Proposal Evaluation Team reserves the right to refuse to consider any proposal from a vendor who: a. Has been convicted for commission of a criminal offense as an incident to obtaining or attempting to obtain a public or private contract or subcontract, or in the performance of the contract or subcontract: b. Has been convicted under State or Federal statutes of embezzlement, theft, forgery, bribery, falsification or destruction of records, receiving stolen property, or other offense indicating a lack of business integrity or business honesty that currently and seriously affects responsibility as a State contractor: c. Has been convicted or has had a civil judgment entered for a violation under State or Federal antitrust statutes:"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Business References Required",
+          "fact": "Vendors must provide at least three business references of similar scope and value using Attachment 6.",
+          "business_implication": "Failure to provide references may render the proposal non-responsive.",
+          "action_recommendation": "Prepare three strong references from current or previous customers with similar contracts.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Provide at least three (3) business references consisting of current or previous customers of similar scope and value using Attachment 6."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "State of Delaware Business License",
+          "fact": "The successful vendor must furnish proof of State of Delaware Business Licensure or initiate the application process prior to award.",
+          "business_implication": "Vendors not already licensed in Delaware must apply, which may take time and incur fees.",
+          "action_recommendation": "Verify current Delaware business license status and initiate application if needed well before the proposal due date.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "Prior to receiving an award, the successful vendor shall either furnish the State of Delaware with proof of State of Delaware Business Licensure or initiate the process of application where required."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Affirmation of No Suspension or Debarment",
+          "fact": "The vendor must affirm that within the past five years, the firm and its principals are not suspended or debarred.",
+          "business_implication": "Any suspension or debarment could disqualify the vendor.",
+          "action_recommendation": "Verify the vendor's status and that of its principals to ensure compliance.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 30,
+              "quote": "The Vendor must affirm that within the past five (5) years the firm or any officer, controlling stockholder, partner, principal, or other person substantially involved in the contracting activities of the business is not currently suspended or debarred and is not a successor, subsidiary, or affiliate of a suspended or debarred business."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Submission via Euna Procurement Only",
+          "fact": "All proposals must be submitted through Euna Procurement (formerly Bonfire) at https://dhss.bonfirehub.com/; hard copy, mail, facsimile, or email submissions will not be accepted.",
+          "business_implication": "Vendors must have access to the portal and ensure timely electronic submission to avoid rejection.",
+          "action_recommendation": "Create an account and familiarize with the submission process well in advance of the deadline.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "To be considered, all proposals must be submitted in through Euna Procurement (formerly Bonfire) at https://dhss.bonfirehub.com/ and respond to the items outlined in this RFP. Responses submitted by hard copy, mail, facsimile, or e-mail will not be accepted."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Proposal Due Date and Time",
+          "fact": "All proposals must be submitted prior to 1:00 PM EDT on September 15, 2026.",
+          "business_implication": "Late proposals will not be accepted, so vendors must ensure timely submission.",
+          "action_recommendation": "Plan to submit well before the deadline to avoid technical issues.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "All proposals must be submitted prior to 1:00 PM EDT on September 15, 2026."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Required Attachments",
+          "fact": "Attachments 2, 3, 4, 5, and 6 must be included in the proposal; Attachment 7 is required if subcontractors are involved.",
+          "business_implication": "Missing attachments may render the proposal non-responsive.",
+          "action_recommendation": "Ensure all required attachments are completed and included in the submission.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 37,
+              "quote": "Attachments 2, 3, 4, 5 and 6 must be included in your proposal. Attachment 7 must be included in your proposal if subcontractors will be involved."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Exceptions to RFP Must Be Recorded on Attachment 4",
+          "fact": "Any exceptions to the RFP or the State's terms and conditions must be recorded on Attachment 4.",
+          "business_implication": "Vendors must clearly document any deviations, and acceptance is at the State's discretion.",
+          "action_recommendation": "Carefully review all terms and record any exceptions on Attachment 4, understanding they may not be accepted.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Any exceptions to the RFP, or the State of Delaware’s terms and conditions, must be recorded on Attachment 4."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Proposal Due Date",
+          "fact": "Proposals must be submitted by 1:00 PM EDT on September 15, 2026.",
+          "business_implication": "Vendors must meet this deadline to be considered.",
+          "action_recommendation": "Mark the date and plan submission accordingly.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "All proposals must be submitted prior to 1:00 PM EDT on September 15, 2026."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Proposal Expiration Date",
+          "fact": "Prices must remain fixed and binding through June 30, 2028.",
+          "business_implication": "Vendors must be prepared to honor prices for an extended period.",
+          "action_recommendation": "Consider the long-term pricing commitment when preparing the proposal.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "Prices quoted in the proposal shall remain fixed and binding on the bidder at least through June 30, 2028."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Evaluation Criteria Weights",
+          "fact": "Proposals are evaluated based on: Statement of Need (15%), Alignment with Health Fund Priorities (25%), Program Design and Feasibility (20%), Measurable Outcomes and Evaluation Plan (20%), Organizational Capacity & Past Performance (10%), and Budget Reasonableness and Sustainability (10%).",
+          "business_implication": "Vendors should focus their proposal on the highest-weighted criteria to maximize score.",
+          "action_recommendation": "Allocate proposal effort according to the weights, emphasizing alignment with health fund priorities and program design.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "Criteria Weight Statement of Need (§ II.A of proposal)-Delaware-specific evidence of the health need and the service gap the program fills; for returning organizations, including prior-year results. [15] Alignment with Health Fund Priorities (§ II.B)-fit with the purposes in 16 Del. C. § 137(d), with the strongest weight for direct ties to tobacco [25]"
+            },
+            {
+              "page_number": 16,
+              "quote": "Program Design and Feasibility (§ II.C)-goals, activities, timeline, staffing, and geographic reach that are specific, coherent, and achievable within the contract year. [20] Measurable Outcomes and Evaluation Plan (§ II.D)-specific, verifiable objectives with indicators, targets, and data sources, suitable for incorporation into the award agreement. [20] Organizational Capacity & Past Performance (§ II.E)-governance, financial management, audit history, and experience operating programs of similar scope. [10] Budget Reasonableness and Sustainability (§ II.F)= justified costs proportionate to reach, documented other funding, and a realistic plan given declining Master Settlement Agreement revenue. [10] Total 100"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Insurance Requirements: Additional Insured",
+          "fact": "The RFP states that the State shall not be named as an additional insured on any policy, but also requires certain coverages on a primary non-contributory basis.",
+          "business_implication": "There is no contradiction; the State requires primary coverage but not additional insured status, which is unusual but not conflicting.",
+          "action_recommendation": "Ensure insurance policies meet the specified limits and primary non-contributory requirements without naming the State as additional insured.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 24,
+              "quote": "In no event shall the State of Delaware be named as an additional insured on any policy required under this agreement."
+            },
+            {
+              "page_number": 23,
+              "quote": "Automotive Liability Insurance covering all automotive units used in the work ... providing coverage on a primary non-contributory basis with limits of not less than:"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MISSING_INFORMATION",
+          "title": "No Bid or Performance Bond Required",
+          "fact": "The RFP states there is no bid bond or performance bond requirement.",
+          "business_implication": "Vendors do not need to obtain bonds, reducing upfront costs.",
+          "action_recommendation": "No action needed.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 24,
+              "quote": "There is no Bid Bond Requirement. There is no Performance Bond requirement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Contract Start Date Discrepancy",
+          "fact": "The RFP states an estimated project start date of July 1, 2027, but also states that contracts are anticipated to begin July 1, 2028.",
+          "business_implication": "There is a conflict regarding the start date, which could affect planning and budgeting.",
+          "action_recommendation": "Seek clarification from the designated contact regarding the actual contract start date.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Estimated Project Start Date Date: July 1, 2027"
+            },
+            {
+              "page_number": 4,
+              "quote": "contracts for funded awards are anticipated to begin July 1, 2028."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Broad Indemnification for All Liability",
+          "fact": "The vendor agrees to indemnify and hold harmless the State from any and all liability, suits, actions, or claims, together with all costs, expenses for attorney's fees, arising out of the vendor's performance.",
+          "business_implication": "The vendor assumes broad, uncapped liability for any claims arising from its performance, potentially including those caused by the State's own negligence, leading to significant financial exposure.",
+          "action_recommendation": "Seek clarification on the scope of indemnification, particularly whether it covers claims caused by the State's negligence, and consider negotiating a cap on liability or mutual indemnification.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "By submitting a proposal, the proposing vendor agrees that in the event it is awarded a contract, it will indemnify and otherwise hold harmless the State of Delaware, its agents and employees from any and all liability, suits, actions, or claims, together with all costs, expenses for attorney’s fees, arising out of the vendor’s, its agents and employees’ performance work or services in connection with the contract."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Indemnification for ACA Dual Employer Determination",
+          "fact": "If the IRS or another governmental entity determines that the State is a dual or sole employer of temporary staff, the vendor agrees to hold harmless, indemnify, and defend the State to the maximum extent of any liability arising out of such determinations.",
+          "business_implication": "The vendor bears the risk and cost if the State is deemed a co-employer under the ACA, which could result in substantial liabilities for health benefits and penalties.",
+          "action_recommendation": "Assess the likelihood of such a determination and consider negotiating limitations on this indemnification or obtaining insurance to cover potential liabilities.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "In the event that the Internal Revenue Service, or any other third party governmental entity determines that the State of Delaware is a dual employer or the sole employer of any individual temporary staff person(s) provided to the State of Delaware pursuant to this Solicitation, Vendor agrees to hold harmless, indemnify, and defend the State to the maximum extent of any liability to the State arising out of such determinations."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Proprietary Rights Indemnification with Lost Employee Time",
+          "fact": "Vendor must indemnify the State against any loss, cost, damage, expense or liability arising out of third-party IP claims, including litigation costs, lost employee time, and counsel fees, whether or not the claim is successful.",
+          "business_implication": "The vendor is exposed to potentially high costs, including the State's lost employee time, even if the infringement claim is unsuccessful, increasing financial risk.",
+          "action_recommendation": "Review the indemnification clause carefully and consider negotiating a cap on liability or excluding lost employee time from recoverable damages.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 22,
+              "quote": "In the event of any claim, suit or action by any third party against the State of Delaware, the State of Delaware shall promptly notify the vendor in writing and vendor shall defend such claim, suit or action at vendor's expense, and vendor shall indemnify the State of Delaware against any loss, cost, damage, expense or liability arising out of such claim, suit or action (including, without limitation, litigation costs, lost employee time, and counsel fees) whether or not such claim, suit or action is successful."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Assignment of Antitrust Claims",
+          "fact": "The vendor assigns to the State all rights to antitrust claims related to the goods or services purchased under the contract.",
+          "business_implication": "The vendor gives up its own rights to pursue antitrust claims against suppliers, which could limit its ability to recover damages from price-fixing or other anticompetitive behavior.",
+          "action_recommendation": "Consider the impact of this assignment on the vendor's business and negotiate to exclude claims unrelated to the contract or seek a waiver.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 30,
+              "quote": "As consideration for the award and execution of this contract by the State, the Vendor hereby grants, conveys, sells, assigns, and transfers to the State of Delaware all of its right, title and interest in and to all known or unknown causes of action it presently has or may now or hereafter acquire under the antitrust laws of the United States and the State of Delaware, regarding the specific goods or services purchased or acquired for the State pursuant to this contract."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Work Product Ownership",
+          "fact": "All materials and products developed under the contract are the sole and exclusive property of the State, and the vendor must seek written permission to use any product created under the contract.",
+          "business_implication": "The vendor loses ownership of any intellectual property developed during the contract, which may limit its ability to reuse or commercialize such work.",
+          "action_recommendation": "Clarify the scope of 'work product' and negotiate for a license back to the vendor for pre-existing IP or for the ability to use general knowledge and skills.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 29,
+              "quote": "All materials and products developed under the executed contract by the vendor are the sole and exclusive property of the State. The vendor will seek written permission to use any product created under the contract."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Confidentiality of Proposals vs. FOIA Disclosure",
+          "fact": "The RFP states that all proposals are subject to FOIA public disclosure, but also provides a procedure for vendors to designate confidential business information.",
+          "business_implication": "There is a potential conflict: the State will independently determine the validity of confidentiality designations, and vendors assume the risk that confidential information may enter the public domain.",
+          "action_recommendation": "Carefully follow the confidentiality procedure and be aware that the State's determination is not binding; consider limiting the amount of truly confidential information in the proposal.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "All proposals are subject to FOIA’s public disclosure obligations."
+            },
+            {
+              "page_number": 10,
+              "quote": "A vendor’s allegation as to its confidential business information shall not be binding on the State. The State shall independently determine the validity of any vendor designation as set forth in this section. Any vendor submitting a proposal or using the procedures discussed herein expressly accepts the State’s absolute right and duty to independently assess the legal and factual validity of any information designated as confidential business information. Accordingly, vendor(s) assume the risk that confidential business information included in a proposal may enter the public domain."
+            }
+          ],
+          "requires_reasoning_review": true
+        }
+      ]
+    }
+  }
+}

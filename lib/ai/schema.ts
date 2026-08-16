@@ -32,7 +32,8 @@ export const FindingSchema = z.object({
   priority: PriorityEnum,
   confidence: ConfidenceEnum,
   status: StatusEnum,
-  quotes: z.array(QuoteSchema).optional()
+  quotes: z.array(QuoteSchema).optional(),
+  requires_reasoning_review: z.boolean().optional()
 }).superRefine((data, ctx) => {
   if (data.status === 'CONFIRMED' && (!data.quotes || data.quotes.length === 0)) {
     ctx.addIssue({ code: z.ZodIssueCode.custom, message: "CONFIRMED findings MUST have at least 1 quote." });
