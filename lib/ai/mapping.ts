@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { MAPPING_SYSTEM_PROMPT, buildUserPrompt } from './prompts';
+import { MAPPING_SYSTEM_PROMPT, buildMappingUserPrompt } from './prompts';
 import { CategoryEnum } from './schema';
 
 export const PageSignalSchema = z.object({
@@ -43,7 +43,7 @@ async function mapDocumentPagesSingle(pages: { page_number: number; content: str
     throw new Error("Missing DEEPSEEK_API_KEY environment variable.");
   }
 
-  const userPrompt = buildUserPrompt(pages);
+  const userPrompt = buildMappingUserPrompt(pages);
 
   const requestBody = {
     model: model,

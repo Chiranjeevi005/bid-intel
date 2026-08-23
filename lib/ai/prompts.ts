@@ -1,3 +1,5 @@
+import { Finding } from './schema';
+
 export const SYSTEM_PROMPT = `BUILD-008M — CATEGORY EXTRACTION ENGINE
 
 You are an expert Pre-Bid Intelligence engine analyzing an RFP document.
@@ -654,6 +656,14 @@ export function buildO1UserPrompt(pages: { page_number: number; content: string 
 
 export function buildO3AdjudicatorPrompt(pool: Finding[]): string {
   return `Review the following pool of VERIFIED evidence.\n\n${JSON.stringify(pool, null, 2)}\n\nOutput the JSON with the final deduplicated findings array.`;
+}
+
+export function buildMappingUserPrompt(pages: { page_number: number; content: string }[]): string {
+  let context = `Analyze the following RFP document pages and perform a structural mapping. Output JSON only.\n\n`;
+  for (const page of pages) {
+    context += `--- PAGE ${page.page_number} ---\n${page.content}\n\n`;
+  }
+  return context;
 }
 
 // ============================================================================

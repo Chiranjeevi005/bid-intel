@@ -1,7 +1,0 @@
----PAGE_1---
-Software-as-a-Service Revenue Models
-Whitepaper by TechResearch Inc.
-
-SaaS companies typically employ subscription-based models.
-This paper explores tier-based pricing vs usage-based pricing.
-Conclusion: Hybrid models perform best.

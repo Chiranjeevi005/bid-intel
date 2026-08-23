@@ -1,3 +1,0 @@
-expected_qualification = NON_PROCUREMENT
-expected_document_type = JOB_DESCRIPTION
-rejection_reason = Standard non-procurement format identified during independent review.
