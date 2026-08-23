@@ -131,9 +131,19 @@ for (const doc of manifest) {
     let e2e = (metrics.total_latency / 1000).toFixed(2);
     agg.latencies.push(metrics.total_latency);
     
-    let cost = (metrics.qual_usage.prompt_tokens * COST_IN_PER_TOKEN) + (metrics.qual_usage.completion_tokens * COST_OUT_PER_TOKEN);
-    if (metrics.ext_usage) {
-        cost += (metrics.ext_usage.prompt_tokens * COST_IN_PER_TOKEN) + (metrics.ext_usage.completion_tokens * COST_OUT_PER_TOKEN);
+    let cost = 0;
+    if (metrics.usage) {
+        cost += ((metrics.usage.qual?.prompt_tokens || 0) * COST_IN_PER_TOKEN) + ((metrics.usage.qual?.completion_tokens || 0) * COST_OUT_PER_TOKEN);
+        if (metrics.usage.ext) {
+            for (const extU of metrics.usage.ext) {
+                cost += ((extU.prompt_tokens || 0) * COST_IN_PER_TOKEN) + ((extU.completion_tokens || 0) * COST_OUT_PER_TOKEN);
+            }
+        }
+    } else if (metrics.qual_usage) {
+        cost = (metrics.qual_usage.prompt_tokens * COST_IN_PER_TOKEN) + (metrics.qual_usage.completion_tokens * COST_OUT_PER_TOKEN);
+        if (metrics.ext_usage) {
+            cost += (metrics.ext_usage.prompt_tokens * COST_IN_PER_TOKEN) + (metrics.ext_usage.completion_tokens * COST_OUT_PER_TOKEN);
+        }
     }
     agg.costs.push(cost);
 
@@ -184,6 +194,32 @@ aggTable += `| p90 E2E | ${p90.toFixed(2)}s |\n`;
 aggTable += `| Max E2E | ${max.toFixed(2)}s |\n`;
 aggTable += `| Avg Cost | $${avgCost.toFixed(4)} |\n`;
 aggTable += `| p90 Cost | $${p90Cost.toFixed(4)} |\n`;
+
+if (runName === 'build-008k') {
+    const globalTelemetryPath = path.join(outDir, 'global_telemetry.json');
+    if (fs.existsSync(globalTelemetryPath)) {
+        const { telemetry, stats } = JSON.parse(fs.readFileSync(globalTelemetryPath, 'utf8'));
+        const totalRequests = telemetry.length;
+        const lengthFinishReasons = telemetry.filter((t: any) => t.finish_reason === 'length').length;
+        const lengthFinishPct = totalRequests > 0 ? ((lengthFinishReasons / totalRequests) * 100).toFixed(1) : '0.0';
+        const successfulExtractions = telemetry.filter((t: any) => t.finish_reason === 'stop').length;
+        const successfulExtractionPct = totalRequests > 0 ? ((successfulExtractions / totalRequests) * 100).toFixed(1) : '0.0';
+        
+        let totalReasoningTokens = 0;
+        let totalCeilingHits = stats.totalCeilingHits || 0;
+        let totalSplits = stats.totalSplits || 0;
+        let maxSplitDepth = stats.maxSplitDepth || 0;
+        let totalIdenticalRetries = stats.totalIdenticalRetries || 0;
+
+        aggTable += `| Total ceiling hits | ${totalCeilingHits} |\n`;
+        aggTable += `| Total splits | ${totalSplits} |\n`;
+        aggTable += `| Maximum split depth | ${maxSplitDepth} |\n`;
+        aggTable += `| Identical truncation retries | ${totalIdenticalRetries} |\n`;
+        aggTable += `| Reasoning tokens | ${totalReasoningTokens} |\n`;
+        aggTable += `| successful extraction completion rate | ${successfulExtractionPct}% |\n`;
+        aggTable += `| percentage of extraction requests ending with finish_reason = length | ${lengthFinishPct}% |\n`;
+    }
+}
 
 console.log('--- AGGREGATE METRICS ---');
 console.log(aggTable);

@@ -1,0 +1,524 @@
+[
+  {
+    "doc_id": "DOC-006",
+    "metrics": {
+      "id": "DOC-006",
+      "units_generated": 199,
+      "p1_latency": 21.400198699999997,
+      "p1_fails": 0,
+      "p2_latency": 2.310640599999999,
+      "p3_latency": 3.582161400000001,
+      "coverage_latency": 0.012009500000000116,
+      "total_latency": 27.3054389
+    },
+    "coverage": {
+      "ELIGIBILITY": {
+        "status": "COVERED",
+        "evidence_units_count": 77,
+        "verified_findings_count": 32,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "DATES_SUBMISSION": {
+        "status": "COVERED",
+        "evidence_units_count": 47,
+        "verified_findings_count": 11,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "TERMINATION": {
+        "status": "COVERED",
+        "evidence_units_count": 54,
+        "verified_findings_count": 14,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "LIABILITY_RISK": {
+        "status": "COVERED",
+        "evidence_units_count": 38,
+        "verified_findings_count": 60,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "INDEMNITY": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 10,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "FINANCIAL_REQUIREMENTS": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PENALTIES_LIQUIDATED_DAMAGES": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 10,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "EMD_BID_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PERFORMANCE_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EVALUATION_THRESHOLDS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 34,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "INSURANCE": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 17,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "MANDATORY_DOCUMENTS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 92,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      }
+    }
+  },
+  {
+    "doc_id": "DOC-008",
+    "metrics": {
+      "id": "DOC-008",
+      "units_generated": 320,
+      "p1_latency": 27.2042244,
+      "p1_fails": 0,
+      "p2_latency": 5.970459799999997,
+      "p3_latency": 17.208343300000006,
+      "coverage_latency": 0.016047299999991084,
+      "total_latency": 50.399223299999996
+    },
+    "coverage": {
+      "ELIGIBILITY": {
+        "status": "COVERED",
+        "evidence_units_count": 86,
+        "verified_findings_count": 43,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "DATES_SUBMISSION": {
+        "status": "COVERED",
+        "evidence_units_count": 115,
+        "verified_findings_count": 72,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "TERMINATION": {
+        "status": "COVERED",
+        "evidence_units_count": 29,
+        "verified_findings_count": 2,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "LIABILITY_RISK": {
+        "status": "COVERED",
+        "evidence_units_count": 40,
+        "verified_findings_count": 59,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "INDEMNITY": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 1,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "FINANCIAL_REQUIREMENTS": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PENALTIES_LIQUIDATED_DAMAGES": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 46,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "EMD_BID_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PERFORMANCE_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EVALUATION_THRESHOLDS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 20,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "INSURANCE": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 18,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "MANDATORY_DOCUMENTS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 78,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      }
+    }
+  },
+  {
+    "doc_id": "DOC-010",
+    "metrics": {
+      "id": "DOC-010",
+      "units_generated": 81,
+      "p1_latency": 7.871911300000007,
+      "p1_fails": 0,
+      "p2_latency": 1.2695801999999967,
+      "p3_latency": 2.401135500000004,
+      "coverage_latency": 0.008293599999989965,
+      "total_latency": 11.551084300000003
+    },
+    "coverage": {
+      "ELIGIBILITY": {
+        "status": "COVERED",
+        "evidence_units_count": 47,
+        "verified_findings_count": 20,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "DATES_SUBMISSION": {
+        "status": "COVERED",
+        "evidence_units_count": 31,
+        "verified_findings_count": 11,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "TERMINATION": {
+        "status": "COVERED",
+        "evidence_units_count": 9,
+        "verified_findings_count": 1,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "LIABILITY_RISK": {
+        "status": "COVERED",
+        "evidence_units_count": 1,
+        "verified_findings_count": 11,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "INDEMNITY": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 4,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "FINANCIAL_REQUIREMENTS": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PENALTIES_LIQUIDATED_DAMAGES": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EMD_BID_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PERFORMANCE_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EVALUATION_THRESHOLDS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 25,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "INSURANCE": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 6,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "MANDATORY_DOCUMENTS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 15,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      }
+    }
+  },
+  {
+    "doc_id": "DOC-011",
+    "metrics": {
+      "id": "DOC-011",
+      "units_generated": 142,
+      "p1_latency": 14.413347000000009,
+      "p1_fails": 0,
+      "p2_latency": 1.5326743000000134,
+      "p3_latency": 3.1861848000000026,
+      "coverage_latency": 0.0060127000000065895,
+      "total_latency": 19.138324800000003
+    },
+    "coverage": {
+      "ELIGIBILITY": {
+        "status": "COVERED",
+        "evidence_units_count": 25,
+        "verified_findings_count": 12,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "DATES_SUBMISSION": {
+        "status": "COVERED",
+        "evidence_units_count": 58,
+        "verified_findings_count": 14,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "TERMINATION": {
+        "status": "COVERED",
+        "evidence_units_count": 23,
+        "verified_findings_count": 3,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "LIABILITY_RISK": {
+        "status": "COVERED",
+        "evidence_units_count": 9,
+        "verified_findings_count": 32,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "INDEMNITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "FINANCIAL_REQUIREMENTS": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PENALTIES_LIQUIDATED_DAMAGES": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EMD_BID_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PERFORMANCE_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EVALUATION_THRESHOLDS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 27,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "INSURANCE": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 1,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "MANDATORY_DOCUMENTS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 4,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      }
+    }
+  },
+  {
+    "doc_id": "DOC-012",
+    "metrics": {
+      "id": "DOC-012",
+      "units_generated": 150,
+      "p1_latency": 14.706306399999987,
+      "p1_fails": 0,
+      "p2_latency": 1.5638255999999964,
+      "p3_latency": 5.228680999999982,
+      "coverage_latency": 0.005781499999982771,
+      "total_latency": 21.504671999999992
+    },
+    "coverage": {
+      "ELIGIBILITY": {
+        "status": "COVERED",
+        "evidence_units_count": 24,
+        "verified_findings_count": 10,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "DATES_SUBMISSION": {
+        "status": "COVERED",
+        "evidence_units_count": 67,
+        "verified_findings_count": 18,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "TERMINATION": {
+        "status": "COVERED",
+        "evidence_units_count": 19,
+        "verified_findings_count": 4,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "LIABILITY_RISK": {
+        "status": "COVERED",
+        "evidence_units_count": 13,
+        "verified_findings_count": 38,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "INDEMNITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "FINANCIAL_REQUIREMENTS": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PENALTIES_LIQUIDATED_DAMAGES": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EMD_BID_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PERFORMANCE_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EVALUATION_THRESHOLDS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 28,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "INSURANCE": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 1,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "MANDATORY_DOCUMENTS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 4,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      }
+    }
+  },
+  {
+    "doc_id": "DOC-013",
+    "metrics": {
+      "id": "DOC-013",
+      "units_generated": 115,
+      "p1_latency": 10.821932899999986,
+      "p1_fails": 0,
+      "p2_latency": 2.1387358999999995,
+      "p3_latency": 5.590315600000002,
+      "coverage_latency": 0.005291400000016438,
+      "total_latency": 18.556391199999982
+    },
+    "coverage": {
+      "ELIGIBILITY": {
+        "status": "COVERED",
+        "evidence_units_count": 32,
+        "verified_findings_count": 22,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "DATES_SUBMISSION": {
+        "status": "COVERED",
+        "evidence_units_count": 31,
+        "verified_findings_count": 11,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "TERMINATION": {
+        "status": "COVERED",
+        "evidence_units_count": 52,
+        "verified_findings_count": 7,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "LIABILITY_RISK": {
+        "status": "COVERED",
+        "evidence_units_count": 5,
+        "verified_findings_count": 34,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "INDEMNITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "FINANCIAL_REQUIREMENTS": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PENALTIES_LIQUIDATED_DAMAGES": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 8,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "EMD_BID_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PERFORMANCE_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EVALUATION_THRESHOLDS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 13,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "INSURANCE": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "MANDATORY_DOCUMENTS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 35,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      }
+    }
+  }
+]

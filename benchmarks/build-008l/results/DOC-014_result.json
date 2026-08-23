@@ -1,0 +1,50 @@
+{
+  "metrics": {
+    "id": "DOC-014",
+    "qual_latency": 8368.81979999994,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 3777,
+        "completion_tokens": 955,
+        "total_tokens": 4732,
+        "prompt_tokens_details": {
+          "cached_tokens": 3712
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 744
+        },
+        "prompt_cache_hit_tokens": 3712,
+        "prompt_cache_miss_tokens": 65
+      }
+    },
+    "total_latency": 8368.840199999977,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-014",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "OTHER",
+      "confidence": "HIGH",
+      "reason": "The document is a Department of Energy Request for Information (RFI) seeking comments and data for rulemaking, explicitly stating it is not a formal solicitation for proposals and responses are not offers for a binding contract. Therefore, it does not constitute a procurement opportunity.",
+      "quotes": [
+        {
+          "page_number": 8,
+          "quote": "This is solely a request for information and not a Funding Opportunity Announcement (FOA)."
+        },
+        {
+          "page_number": 8,
+          "quote": "This RFI does not constitute a formal solicitation for proposals or abstracts."
+        },
+        {
+          "page_number": 8,
+          "quote": "In accordance with FAR 15.201(e), responses to this notice are not offers and cannot be accepted by the Government to form a binding contract."
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

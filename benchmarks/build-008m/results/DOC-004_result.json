@@ -1,0 +1,46 @@
+{
+  "metrics": {
+    "id": "DOC-004",
+    "qual_latency": 1611.0063999999984,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 820,
+        "completion_tokens": 202,
+        "total_tokens": 1022,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 81
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 52
+      }
+    },
+    "total_latency": 1611.0145999999986,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-004",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "OTHER",
+      "confidence": "HIGH",
+      "reason": "The document is a course module for a math class, not a procurement solicitation. It contains no procurement intent, issuing organization, or bid-related information.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Module 04: Advanced Algebra"
+        },
+        {
+          "page_number": 1,
+          "quote": "Course: Math 301"
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

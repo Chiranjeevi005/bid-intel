@@ -1,0 +1,46 @@
+{
+  "metrics": {
+    "id": "DOC-003",
+    "qual_latency": 2307.8840999999993,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 827,
+        "completion_tokens": 243,
+        "total_tokens": 1070,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 106
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 59
+      }
+    },
+    "total_latency": 2307.8932000000004,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-003",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "OTHER",
+      "confidence": "HIGH",
+      "reason": "The document is an internal marketing strategy manual for QuizArena, not a procurement solicitation. It lacks procurement signals such as issuing organization, scope of work for vendors, submission instructions, deadlines, or evaluation criteria.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "QuizArena Go-To-Market Campaign Manual"
+        },
+        {
+          "page_number": 1,
+          "quote": "Internal Marketing Strategy 2026"
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

@@ -122,7 +122,7 @@ async function runDiagnostic() {
             qualMetrics = await streamRequest(QUALIFICATION_SYSTEM_PROMPT, qualUserPrompt);
             
             const zodStart = performance.now();
-            parsedQual = JSON.parse(qualMetrics.text);
+            parsedQual = JSON.parse(qualMetrics!.text);
             const valResult = DocumentQualificationSchema.safeParse(parsedQual);
             if (!valResult.success) {
                 console.warn(`Zod Qualification Validation Failed for ${docId}:`, JSON.stringify(valResult.error.issues));
@@ -141,7 +141,7 @@ async function runDiagnostic() {
             extMetrics = await streamRequest(SYSTEM_PROMPT, extUserPrompt);
             
             const zodStart = performance.now();
-            parsedExt = JSON.parse(extMetrics.text);
+            parsedExt = JSON.parse(extMetrics!.text);
             const valResult = AnalysisResultSchema.safeParse(parsedExt);
             if (!valResult.success) {
                 console.warn(`Zod Intelligence Validation Failed for ${docId}:`, JSON.stringify(valResult.error.issues));
@@ -228,31 +228,31 @@ async function runDiagnostic() {
             run_id: runId,
             document_id: documentId,
             step_name: 'diagnostic',
-            duration_ms: Math.round(extMetrics.total_ms),
-            prompt_tokens: extMetrics.usage?.prompt_tokens,
-            completion_tokens: extMetrics.usage?.completion_tokens,
-            total_tokens: extMetrics.usage?.total_tokens,
-            reasoning_tokens: extMetrics.usage?.completion_tokens_details?.reasoning_tokens || 0,
-            cached_tokens: extMetrics.usage?.prompt_cache_hit_tokens || 0,
+            duration_ms: Math.round(extMetrics!.total_ms),
+            prompt_tokens: extMetrics!.usage?.prompt_tokens,
+            completion_tokens: extMetrics!.usage?.completion_tokens,
+            total_tokens: extMetrics!.usage?.total_tokens,
+            reasoning_tokens: extMetrics!.usage?.completion_tokens_details?.reasoning_tokens || 0,
+            cached_tokens: extMetrics!.usage?.prompt_cache_hit_tokens || 0,
             estimated_cost_cents: 0
         });
         persistenceMs = performance.now() - persistStart;
         
         const totalZodMs = zodQualMs + zodExtMs;
-        const totalTokensIn = (qualMetrics.usage?.prompt_tokens || 0) + (extMetrics.usage?.prompt_tokens || 0);
-        const totalTokensOut = (qualMetrics.usage?.completion_tokens || 0) + (extMetrics.usage?.completion_tokens || 0);
-        const totalReasoning = (qualMetrics.usage?.completion_tokens_details?.reasoning_tokens || 0) + (extMetrics.usage?.completion_tokens_details?.reasoning_tokens || 0);
-        const totalCached = (qualMetrics.usage?.prompt_cache_hit_tokens || 0) + (extMetrics.usage?.prompt_cache_hit_tokens || 0);
+        const totalTokensIn = (qualMetrics!.usage?.prompt_tokens || 0) + (extMetrics!.usage?.prompt_tokens || 0);
+        const totalTokensOut = (qualMetrics!.usage?.completion_tokens || 0) + (extMetrics!.usage?.completion_tokens || 0);
+        const totalReasoning = (qualMetrics!.usage?.completion_tokens_details?.reasoning_tokens || 0) + (extMetrics!.usage?.completion_tokens_details?.reasoning_tokens || 0);
+        const totalCached = (qualMetrics!.usage?.prompt_cache_hit_tokens || 0) + (extMetrics!.usage?.prompt_cache_hit_tokens || 0);
         
         results.push({
             document: docId,
             pages: pages.length,
-            qualification_ms: qualMetrics.total_ms,
-            qualification_ttft_ms: qualMetrics.ttft_ms,
-            qualification_generation_ms: qualMetrics.generation_ms,
-            intelligence_ms: extMetrics.total_ms,
-            intelligence_ttft_ms: extMetrics.ttft_ms,
-            intelligence_generation_ms: extMetrics.generation_ms,
+            qualification_ms: qualMetrics!.total_ms,
+            qualification_ttft_ms: qualMetrics!.ttft_ms,
+            qualification_generation_ms: qualMetrics!.generation_ms,
+            intelligence_ms: extMetrics!.total_ms,
+            intelligence_ttft_ms: extMetrics!.ttft_ms,
+            intelligence_generation_ms: extMetrics!.generation_ms,
             zod_ms: totalZodMs,
             evidence_validation_ms: evidenceValidationMs,
             persistence_ms: persistenceMs,

@@ -1,0 +1,1451 @@
+{
+  "metrics": {
+    "id": "DOC-013",
+    "qual_latency": 6371.262699999963,
+    "mapping_latency": 4338.418999999994,
+    "extraction_latency": 70343.00699999998,
+    "reasoning_latency": 3079.0598000000464,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 18802,
+        "completion_tokens": 798,
+        "total_tokens": 19600,
+        "prompt_tokens_details": {
+          "cached_tokens": 18688
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 567
+        },
+        "prompt_cache_hit_tokens": 18688,
+        "prompt_cache_miss_tokens": 114
+      },
+      "map": {
+        "prompt_tokens": 18466,
+        "completion_tokens": 815,
+        "total_tokens": 19281,
+        "prompt_tokens_details": {
+          "cached_tokens": 18432
+        },
+        "prompt_cache_hit_tokens": 18432,
+        "prompt_cache_miss_tokens": 34
+      },
+      "ext": [
+        {
+          "step_name": "stage_3_eligibility",
+          "estimated_cost_cents": 0.3359104,
+          "completion_tokens": 10779
+        },
+        {
+          "step_name": "stage_3_commercial",
+          "estimated_cost_cents": 0.5989312,
+          "completion_tokens": 17597
+        },
+        {
+          "step_name": "stage_3_legal/risk",
+          "estimated_cost_cents": 0.3488072000000001,
+          "completion_tokens": 11365
+        }
+      ],
+      "reason": [
+        {
+          "prompt_tokens": 1810,
+          "completion_tokens": 267,
+          "total_tokens": 2077,
+          "cached_tokens": 0,
+          "reasoning_tokens": 0,
+          "estimated_cost_cents": 0.032816000000000005
+        },
+        {
+          "prompt_tokens": 379,
+          "completion_tokens": 129,
+          "total_tokens": 508,
+          "cached_tokens": 0,
+          "reasoning_tokens": 0,
+          "estimated_cost_cents": 0.008918
+        },
+        {
+          "prompt_tokens": 2346,
+          "completion_tokens": 254,
+          "total_tokens": 2600,
+          "cached_tokens": 0,
+          "reasoning_tokens": 0,
+          "estimated_cost_cents": 0.039956000000000005
+        },
+        {
+          "prompt_tokens": 1083,
+          "completion_tokens": 272,
+          "total_tokens": 1355,
+          "cached_tokens": 0,
+          "reasoning_tokens": 0,
+          "estimated_cost_cents": 0.022778000000000003
+        }
+      ]
+    },
+    "total_latency": 84141.57170000009,
+    "telemetry": [
+      {
+        "batch_name": "Eligibility",
+        "page_count": 25,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Eligibility/A",
+        "page_count": 13,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2546,
+        "prompt_tokens": 9498,
+        "output_budget_ratio": 0.62158203125,
+        "estimated_cost_cents": 0.0849128,
+        "latency_ms": 15194.279300000053,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Eligibility/B",
+        "page_count": 12,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "prompt_tokens": 6163,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.1235556,
+        "latency_ms": 25886.062699999893,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Eligibility/B/A",
+        "page_count": 6,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 3098,
+        "prompt_tokens": 4244,
+        "output_budget_ratio": 0.75634765625,
+        "estimated_cost_cents": 0.09293760000000002,
+        "latency_ms": 19254.255700000096,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Eligibility/B/B",
+        "page_count": 6,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1039,
+        "prompt_tokens": 2921,
+        "output_budget_ratio": 0.253662109375,
+        "estimated_cost_cents": 0.034504400000000005,
+        "latency_ms": 6770.458800000022,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial",
+        "page_count": 17,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial/A",
+        "page_count": 9,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2354,
+        "prompt_tokens": 6054,
+        "output_budget_ratio": 0.57470703125,
+        "estimated_cost_cents": 0.13937840000000004,
+        "latency_ms": 16688.41889999993,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial/B",
+        "page_count": 8,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "prompt_tokens": 7188,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.1250032,
+        "latency_ms": 25512.463600000017,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial/B/A",
+        "page_count": 4,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "prompt_tokens": 4851,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.1229284,
+        "latency_ms": 24820.97860000003,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial/B/A/A",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 3,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1878,
+        "prompt_tokens": 3010,
+        "output_budget_ratio": 0.45849609375,
+        "estimated_cost_cents": 0.05762960000000001,
+        "latency_ms": 12202.091099999961,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial/B/A/B",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 3,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1466,
+        "prompt_tokens": 2844,
+        "output_budget_ratio": 0.35791015625,
+        "estimated_cost_cents": 0.04538240000000001,
+        "latency_ms": 19995.49239999999,
+        "predictive_split": false,
+        "schema_retry_count": 1,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial/B/B",
+        "page_count": 4,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 3707,
+        "prompt_tokens": 3339,
+        "output_budget_ratio": 0.905029296875,
+        "estimated_cost_cents": 0.1086092,
+        "latency_ms": 21609.495200000005,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Legal/Risk",
+        "page_count": 19,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Legal/Risk/A",
+        "page_count": 10,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2256,
+        "prompt_tokens": 9078,
+        "output_budget_ratio": 0.55078125,
+        "estimated_cost_cents": 0.07736400000000002,
+        "latency_ms": 13718.867399999988,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Legal/Risk/B",
+        "page_count": 9,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "prompt_tokens": 5037,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.12230680000000001,
+        "latency_ms": 24064.318899999955,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Legal/Risk/B/A",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 3474,
+        "prompt_tokens": 3593,
+        "output_budget_ratio": 0.84814453125,
+        "estimated_cost_cents": 0.10241560000000002,
+        "latency_ms": 20828.326699999976,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Legal/Risk/B/B",
+        "page_count": 4,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1539,
+        "prompt_tokens": 2448,
+        "output_budget_ratio": 0.375732421875,
+        "estimated_cost_cents": 0.04672080000000001,
+        "latency_ms": 10993.237700000056,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      }
+    ]
+  },
+  "result": {
+    "id": "DOC-013",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFQ",
+      "confidence": "HIGH",
+      "reason": "The document is a Request for Quotes (RFQ) issued by the New York State Department of Taxation and Finance for GPS hardware and software, including a submission deadline, scope of work, and evaluation criteria.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "REQUEST FOR QUOTES"
+        },
+        {
+          "page_number": 1,
+          "quote": "REQUEST FOR QUOTE NUMBER: 19-326"
+        },
+        {
+          "page_number": 3,
+          "quote": "Deadline for Submission of Quotes (Cover Page and Attachments 1-4) October 8, 2019 by 2:00 PM ET"
+        },
+        {
+          "page_number": 8,
+          "quote": "The award will be made to the responsive and responsible Bidder who provides the lowest overall cost and meets all requirements set forth in this RFQ."
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Tie-Breaking Mechanism Conflict",
+          "fact": "Section 8 states 'In the event tie bids are received by the Department, the earliest bid received shall determine the winner.' Section 10.4.7 states 'Determine a tie breaking mechanism for award, to be set prior bid opening, to serve the best interests of the State.'",
+          "business_implication": "There is ambiguity in how tie bids will be resolved; the Department may use a different mechanism than earliest bid.",
+          "action_recommendation": "Clarify with the Department which tie-breaking rule will apply.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "In the event tie bids are received by the Department, the earliest bid received shall determine the winner."
+            },
+            {
+              "page_number": 11,
+              "quote": "Determine a tie breaking mechanism for award, to be set prior bid opening, to serve the best interests of the State."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Potential Conflict Between Contract Terms and Appendix A",
+          "fact": "Appendix A states that its terms control over conflicting contract terms, but the contract may contain other provisions that could conflict.",
+          "business_implication": "The bidder must be aware that Appendix A has precedence, which could override other negotiated terms.",
+          "action_recommendation": "Review all contract documents to identify any potential conflicts and understand the hierarchy of terms.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "CONFLICTING TERMS. In the event of a conflict between the terms of the contract (including any and all attachments thereto and amendments thereof) and the terms of this Appendix A, the terms of this Appendix A shall control."
+            },
+            {
+              "page_number": 17,
+              "quote": "New York State Department of Taxation and Finance Request for Quotes 19-326 GPS Hardware and Software"
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Potential Conflict: Appendix B Informational vs. Requirements",
+          "fact": "Appendix B is provided for informational purposes and is NOT incorporated as requirements, but the hardware must meet 'all requirements described in this section' and be the most current version.",
+          "business_implication": "Bidders may be uncertain whether current specifications in Appendix B are mandatory or just reference.",
+          "action_recommendation": "Clarify with the Department whether Appendix B specifications are mandatory or merely informational.",
+          "priority": "MEDIUM",
+          "confidence": "MEDIUM",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "NOTE: Appendix B is provided for informational purposes to assist Bidders in understanding the Department’s current usage/capabilities and IS NOT incorporated as requirements in this RFQ."
+            },
+            {
+              "page_number": 4,
+              "quote": "The GPS devices must, at a minimum, meet all requirements described in this section. See Appendix B, Current Specifications for information on the hardware currently in use by the Department."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Minimum Qualifications: Original Manufacturer or Authorized Reseller",
+          "fact": "The Bidder must be the original manufacturer or authorized reseller of the hardware and software to be provided.",
+          "business_implication": "Only manufacturers or authorized resellers can bid; resellers must provide proof of authorization.",
+          "action_recommendation": "Verify that your company qualifies as an original manufacturer or authorized reseller and be prepared to provide documentation.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "Be the original manufacturer or authorized reseller of the hardware and software to be provided;"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Compliance with Applicable Laws and Regulations",
+          "fact": "The Bidder must be compliant with all applicable laws and regulations related to providing these services.",
+          "business_implication": "Non-compliance could lead to disqualification.",
+          "action_recommendation": "Ensure all necessary licenses and permits are in place.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "Be compliant with all applicable laws and regulations related to providing these services."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Submission Method and Deadline",
+          "fact": "Responses must be emailed to BFS.Contracts@tax.ny.gov no later than October 8, 2019 at 2:00 PM ET. Responses received by other methods or after the deadline may not be accepted.",
+          "business_implication": "Late or incorrectly submitted bids may be rejected.",
+          "action_recommendation": "Submit the bid via email before the deadline and confirm receipt.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Responses to this RFQ must be emailed to BFS.Contracts@tax.ny.gov no later than October 8, 2019 at 2:00 PM ET. Responses received by other methods or after the deadline may not be accepted."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Schedule of Events",
+          "fact": "RFQ published September 18, 2019; Deadline for Bidder Questions September 25, 2019; Department Responses September 30, 2019; Deadline for Submission of Quotes October 8, 2019 by 2:00 PM ET; Anticipated Notification of Intent to Award October 16, 2019; Issuance of Purchase Order approximately 10 business days after Notification of Intent to Award.",
+          "business_implication": "Bidders must adhere to these dates to remain eligible.",
+          "action_recommendation": "Mark these dates on your calendar and ensure timely submission of questions and bid.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "Request for Quotes Published September 18, 2019\nDeadline for Submission of Bidder Questions September 25, 2019\nDepartment Responses to Bidder Questions Published September 30, 2019\nDeadline for Submission of Quotes (Cover Page and Attachments 1-4) October 8, 2019 by 2:00 PM ET\nAnticipated Notification of Intent to Award October 16, 2019\nIssuance of Purchase Order Approximately 10 business days after Notification of Intent to Award"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Lowest Overall Cost",
+          "fact": "The award will be made to the responsive and responsible Bidder who provides the lowest overall cost and meets all requirements set forth in this RFQ.",
+          "business_implication": "Price is the primary factor; however, bidders must also meet all requirements.",
+          "action_recommendation": "Ensure your pricing is competitive and all requirements are met.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "The award will be made to the responsive and responsible Bidder who provides the lowest overall cost and meets all requirements set forth in this RFQ."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Term of Agreement",
+          "fact": "The Agreement will commence upon the issuance of a Purchase Order and shall be effective for a period of two (2) years.",
+          "business_implication": "The contract duration is two years, which may affect pricing and resource planning.",
+          "action_recommendation": "Consider the two-year term when preparing your bid.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "TERM OF AGREEMENT: The Agreement will commence upon the issuance of a Purchase Order and shall be effective for a period of two (2) years."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Electronic Payment Requirement",
+          "fact": "Payment for invoices submitted by the awarded Bidder shall only be rendered electronically unless payment by paper check is expressly authorized by the Commissioner, at the Commissioner’s sole discretion, due to extenuating circumstances.",
+          "business_implication": "Bidders must be set up to receive electronic payments via the State Comptroller's procedures.",
+          "action_recommendation": "Ensure your company is registered for electronic payments with the State Comptroller.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Payment for invoices submitted by the awarded Bidder shall only be rendered electronically unless payment by paper check is expressly authorized by the Commissioner, at the Commissioner’s sole discretion, due to extenuating circumstances."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Procurement Lobbying Termination",
+          "fact": "DTF reserves the right to terminate this Agreement in the event it is found that the certification filed by the Offerer/bidder in accordance with New York State Finance Law §139-k was intentionally false or intentionally incomplete.",
+          "business_implication": "Providing false or incomplete information can lead to termination of the contract.",
+          "action_recommendation": "Ensure all certifications are accurate and complete.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "DTF reserves the right to terminate this Agreement in the event it is found that the certification filed by the Offerer/bidder in accordance with New York State Finance Law §139-k was intentionally false or intentionally incomplete."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Installation Completion Deadline",
+          "fact": "All installations must be completed no later than the end of Calendar Year 2019.",
+          "business_implication": "The installation schedule is tight, requiring coordination with the Department.",
+          "action_recommendation": "Plan resources to ensure installations are completed by the end of 2019.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "All installations must be completed no later than the end of Calendar Year 2019."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Data Reliability Determination",
+          "fact": "The Department reserves the right, in its sole discretion, to make the final determination of whether the proposed solution includes information that is deemed reliable.",
+          "business_implication": "The Department has sole discretion to judge data reliability, which could affect acceptance.",
+          "action_recommendation": "Ensure your solution provides reliable data and be prepared to demonstrate it.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "The Department reserves the right, in its sole discretion, to make the final determination of whether the proposed solution includes information that is deemed reliable."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Prohibition on Purchase of Tropical Hardwoods",
+          "fact": "The Contractor certifies and warrants that all wood products to be used under this contract award will be in accordance with Section 165 of the State Finance Law, which prohibits purchase and use of tropical hardwoods unless specifically exempted. The bid may not be considered responsive if not in compliance.",
+          "business_implication": "Bidder must ensure that any wood products supplied or installed comply with the tropical hardwood prohibition, or risk disqualification.",
+          "action_recommendation": "Verify that all wood products in the proposed solution comply with Section 165 of the NY State Finance Law, and be prepared to provide proof of exemption if applicable.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 19,
+              "quote": "The Contractor certifies and warrants that all wood products to be used under this contract award will be in accordance with, but not limited to, the specifications and provisions of Section 165 of the State Finance Law, (Use of Tropical Hardwoods) which prohibits purchase and use of tropical hardwoods, unless specifically exempted, by the State or any governmental agency or political subdivision or public benefit corporation."
+            },
+            {
+              "page_number": 19,
+              "quote": "Any such use must meet with the approval of the State; otherwise, the bid may not be considered responsive."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "MacBride Fair Employment Principles",
+          "fact": "The Contractor must stipulate that it either has no business operations in Northern Ireland, or shall take lawful steps in good faith to conduct any business operations in Northern Ireland in accordance with the MacBride Fair Employment Principles, and shall permit independent monitoring of compliance.",
+          "business_implication": "Bidder must confirm compliance with MacBride principles if it has operations in Northern Ireland, or certify that it has no such operations.",
+          "action_recommendation": "Review company operations in Northern Ireland and prepare to certify compliance with MacBride Fair Employment Principles.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 19,
+              "quote": "In accordance with the MacBride Fair Employment Principles (Chapter 807 of the Laws of 1992), the Contractor hereby stipulates that the Contractor either (a) has no business operations in Northern Ireland, or (b) shall take lawful steps in good faith to conduct any business operations in Northern Ireland in accordance with the MacBride Fair Employment Principles (as described in Section 165 of the New York State Finance Law), and shall permit independent monitoring of compliance with such principles."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Reciprocity and Sanctions Provisions",
+          "fact": "Bidders whose principal place of business is in a jurisdiction that penalizes New York State vendors, and whose goods/services are substantially produced/performed outside NY, may be denied contracts. The list includes South Carolina, Alaska, West Virginia, Wyoming, Louisiana, and Hawaii as of May 15, 2002.",
+          "business_implication": "Bidder must verify that its principal place of business is not in a discriminatory jurisdiction, or that its goods/services are not substantially produced/performed outside NY, to avoid disqualification.",
+          "action_recommendation": "Check the current list of discriminatory jurisdictions and assess whether the bidder's principal place of business or production locations could trigger this provision.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "Bidders are hereby notified that if their principal place of business is located in a country, nation, province, state or political subdivision that penalizes New York State vendors, and if the goods or services they offer will be substantially produced or performed outside New York State, the Omnibus Procurement Act 1994 and 2000 amendments (Chapter 684 and Chapter 383, respectively) require that they be denied contracts which they would otherwise obtain."
+            },
+            {
+              "page_number": 20,
+              "quote": "NOTE: As of May 15, 2002, the list of discriminatory jurisdictions subject to this provision includes the states of South Carolina, Alaska, West Virginia, Wyoming, Louisiana and Hawaii."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Quote Response Form Must Not Be Modified",
+          "fact": "The Quote Response Form must not be modified; any alterations may result in a determination of non-responsiveness and disqualification.",
+          "business_implication": "Bidder must submit the form exactly as provided, without any changes, to avoid disqualification.",
+          "action_recommendation": "Ensure the Quote Response Form is filled out without any modifications or alterations.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 27,
+              "quote": "Do not modify this form. Any alterations of the Quote Response Form may result in a determination of non-responsiveness and disqualification of the bid."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Failure to Answer Clarifications May Lead to Disqualification",
+          "fact": "Failure to answer all clarifications or questions may delay evaluation and may result in a determination of non-responsiveness and disqualification.",
+          "business_implication": "Bidder must respond promptly and completely to any clarification requests from the Department to avoid disqualification.",
+          "action_recommendation": "Monitor communications from the Department and respond to all clarification requests thoroughly and within deadlines.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 27,
+              "quote": "Failure to answer all clarifications or questions may delay the evaluation of your bid and may result in a determination of non-responsiveness and disqualification of the bid."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Required attachments for procurement lobbying and non-responsibility disclosures",
+          "fact": "Attachment 2 requires affirmation of understanding and compliance with procurement lobbying guidelines; Attachment 3 requires disclosure of prior non-responsibility determinations; Attachment 4 requires certification of compliance with State Finance Law 139-k.",
+          "business_implication": "Failure to submit these attachments may render the bid non-responsive.",
+          "action_recommendation": "Complete and submit all required attachments with the bid.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 29,
+              "quote": "Attachment 2 – Offerer Understanding of, and Compliance with, Procurement Lobbying Guidelines"
+            },
+            {
+              "page_number": 30,
+              "quote": "Attachment 3 – Offerer Disclosure of Prior Non-Responsibility Determinations"
+            },
+            {
+              "page_number": 33,
+              "quote": "Attachment 4 – Offerer’s Certification of Compliance with State Finance Law 139-k (5)"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Certification of compliance with State Finance Law 139-k",
+          "fact": "Offerer must certify that all information provided to DTF with respect to State Finance Law §139-k is complete, true and accurate.",
+          "business_implication": "False certification could lead to contract termination or legal penalties.",
+          "action_recommendation": "Ensure all disclosures are accurate before signing.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 33,
+              "quote": "I certify that all information provided to the DTF with respect to State Finance Law §139-k is complete, true and accurate."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Vendor Registration Requirement",
+          "fact": "If the Bidder is not currently registered in the Vendor File, the Bidder must request assignment of a Vendor ID number from DTF. Complete the OSC Substitute W-9 Form and submit the form to DTF preferably in advance of bidding.",
+          "business_implication": "Bidders must be registered in the NYS Vendor File or initiate registration before bidding to be eligible for award.",
+          "action_recommendation": "Ensure your company is registered in the NYS Vendor File and obtain a Vendor ID before submitting the bid.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "If the Bidder is not currently registered in the Vendor File, the Bidder must request assignment of a Vendor ID number from DTF. Complete the OSC Substitute W-9 Form (available at http://www.osc.state.ny.us/vendors/forms/ac3237s_fe.pdf) and submit the form to DTF preferably in advance of bidding."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Bid Submission Deadline",
+          "fact": "Deadline for Submission of Quotes (Cover Page and Attachments 1-4) October 8, 2019 by 2:00 PM ET.",
+          "business_implication": "Bids must be submitted by this deadline; late bids may not be accepted.",
+          "action_recommendation": "Submit the bid well before the deadline to avoid any issues.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "Deadline for Submission of Quotes (Cover Page and Attachments 1-4) October 8, 2019 by 2:00 PM ET"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Lowest Overall Cost Award",
+          "fact": "The award will be made to the responsive and responsible Bidder who provides the lowest overall cost and meets all requirements set forth in this RFQ.",
+          "business_implication": "Price is the primary factor; bidders must offer the lowest total cost while meeting all requirements.",
+          "action_recommendation": "Ensure your pricing is competitive and all requirements are met.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "The award will be made to the responsive and responsible Bidder who provides the lowest overall cost and meets all requirements set forth in this RFQ."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Price Guarantee for Term",
+          "fact": "Prices as they appear on submitted bids must be guaranteed by the vendor for the term of the Agreement.",
+          "business_implication": "Bidders cannot increase prices during the two-year term.",
+          "action_recommendation": "Set prices that are sustainable for the entire contract term.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "Prices as they appear on submitted bids must be guaranteed by the vendor for the term of the Agreement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Electronic Payment Requirement",
+          "fact": "Payment for invoices submitted by the awarded Bidder shall only be rendered electronically unless payment by paper check is expressly authorized by the Commissioner, at the Commissioner’s sole discretion, due to extenuating circumstances.",
+          "business_implication": "Bidders must be set up to receive electronic payments via NYS procedures.",
+          "action_recommendation": "Ensure your company is enrolled in the State Comptroller's electronic payment system.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Payment for invoices submitted by the awarded Bidder shall only be rendered electronically unless payment by paper check is expressly authorized by the Commissioner, at the Commissioner’s sole discretion, due to extenuating circumstances."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Unacceptable Replacement Devices",
+          "fact": "The Department reserves the right to terminate the Agreement if such replacement devices are deemed unacceptable.",
+          "business_implication": "The Department can terminate if replacement devices are not acceptable, creating uncertainty.",
+          "action_recommendation": "Ensure replacement devices meet requirements to avoid termination.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "The Department reserves the right to terminate the Agreement if such replacement devices are deemed unacceptable."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "No-Cost Maintenance/Replacement",
+          "fact": "If any devices are identified by the Department to require maintenance or replacement, not resulting from the negligence of any DTF employee, the devices and/or services must be provided to the Department at no cost within 30 days of the Department’s notification.",
+          "business_implication": "Bidder must provide free maintenance/replacement for non-negligent issues, which could be costly.",
+          "action_recommendation": "Factor potential no-cost replacements into pricing and risk assessment.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "If any devices are identified by the Department to require maintenance or replacement, not resulting from the negligence of any DTF employee, the devices and/or services must be provided to the Department at no cost within 30 days of the Department’s notification."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Non-Discrimination Requirements and Penalties",
+          "fact": "Contractor must comply with Article 15 of the Executive Law and other non-discrimination provisions. Violations of Section 220-e or Section 239 of the Labor Law result in fines of $50.00 per person per day, and a second or subsequent violation may lead to termination and forfeiture of all moneys due.",
+          "business_implication": "Non-compliance with non-discrimination laws can result in financial penalties and contract termination, affecting the bidder's eligibility and financial exposure.",
+          "action_recommendation": "Ensure robust compliance programs and review hiring practices to avoid violations.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "Contractor is subject to fines of $50.00 per person per day for any violation of Section 220-e or Section 239 as well as possible termination of this contract and forfeiture of all moneys due hereunder for a second or subsequent violation."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Non-Collusive Bidding Certification",
+          "fact": "In accordance with Section 139-d of the State Finance Law, if the contract was awarded based on bids, the Contractor affirms under penalty of perjury that its bid was arrived at independently and without collusion.",
+          "business_implication": "The bidder must ensure its bid process is independent and certify accordingly.",
+          "action_recommendation": "Ensure internal bid preparation processes are compliant and obtain necessary certifications.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "In accordance with Section 139-d of the State Finance Law, if this contract was awarded based upon the submission of bids, Contractor affirms, under penalty of perjury, that its bid was arrived at independently and without collusion aimed at restricting competition."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "International Boycott Prohibition",
+          "fact": "If the contract exceeds $5,000, the Contractor agrees as a material condition that neither it nor its affiliates have participated or will participate in an international boycott in violation of the federal Export Administration Act. Violation renders the contract forfeit and void.",
+          "business_implication": "The bidder must ensure no involvement in international boycotts to avoid contract voidance.",
+          "action_recommendation": "Verify compliance with export laws and ensure no participation in prohibited boycotts.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 16,
+              "quote": "If such Contractor, or any of the aforesaid affiliates of Contractor, is convicted or is otherwise found to have violated said laws or regulations upon the final determination of the United States Commerce Department or any other appropriate agency of the United States subsequent to the contract's execution, such contract, amendment or modification thereto shall be rendered forfeit and void."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "State's Set-Off Rights",
+          "fact": "The State has the right to withhold moneys due to the Contractor for set-off purposes, including amounts due to the State under this contract, any other contract, or for any other reason including tax delinquencies and monetary penalties.",
+          "business_implication": "The bidder may face payment withholdings for unrelated obligations, impacting cash flow.",
+          "action_recommendation": "Review potential set-off risks and ensure compliance with all state obligations.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 16,
+              "quote": "The State shall have all of its common law, equitable and statutory rights of set-off. These rights shall include, but not be limited to, the State's option to withhold for the purposes of set-off any moneys due to the Contractor under this contract up to any amounts due and owing to the State with regard to this contract, any other contract with any State department or agency, including any contract for a term commencing prior to the term of this contract, plus any amounts due and owing to the State for any other reason including, without limitation, tax delinquencies, fee delinquencies or monetary penalties relative thereto."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Records Retention and Access",
+          "fact": "The Contractor must keep complete and accurate records for the balance of the calendar year in which they were made and for six additional years. The State Comptroller, Attorney General, and other authorized entities have access to these records during normal business hours at an office within New York State.",
+          "business_implication": "The bidder must maintain records for a long period and allow state access, which may require additional administrative effort and potential privacy considerations.",
+          "action_recommendation": "Plan for record retention and ensure accessibility for state auditors.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 16,
+              "quote": "The Records must be kept for the balance of the calendar year in which they were made and for six (6) additional years thereafter. The State Comptroller, the Attorney General and any other person or entity authorized to conduct an examination, as well as the agency or agencies involved in this contract, shall have access to the Records during normal business hours at an office of the Contractor within the State of New York or, if no such office is available, at a mutually agreeable and reasonable venue within the State, for the term specified above for the purposes of inspection, auditing and copying."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Identification Number on Invoices",
+          "fact": "Every invoice or New York State Claim for Payment must include the payee's identification number, which can be the Federal employer identification number, social security number, or Vendor Identification number.",
+          "business_implication": "The bidder must ensure its invoicing process includes the required identification number to avoid payment delays.",
+          "action_recommendation": "Set up invoicing procedures to include the required identification number.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 16,
+              "quote": "Every invoice or New York State Claim for Payment submitted to a New York State agency by a payee, for payment for the sale of goods or services or for transactions (e.g., leases, easements, licenses, etc.) related to real or personal property must include the payee's identification number."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Governing Law and Dispute Resolution",
+          "fact": "The contract is governed by New York State law, and disputes must be heard in a court of competent jurisdiction in New York, with no binding arbitration.",
+          "business_implication": "The bidder must be prepared to litigate disputes in New York courts, which may increase legal costs and complexity.",
+          "action_recommendation": "Assess the implications of New York governing law and the absence of arbitration on dispute resolution strategy.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "GOVERNING LAW. This contract shall be governed by the laws of the State of New York except where the Federal supremacy clause requires otherwise."
+            },
+            {
+              "page_number": 18,
+              "quote": "NO ARBITRATION. Disputes involving this contract, including the breach or alleged breach thereof, may not be submitted to binding arbitration (except where statutorily authorized), but must, instead, be heard in a court of competent jurisdiction of the State of New York."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Service of Process",
+          "fact": "The contractor consents to service of process by registered or certified mail, return receipt requested.",
+          "business_implication": "The bidder must accept service of process via mail, which may affect internal legal procedures.",
+          "action_recommendation": "Ensure that the organization is prepared to accept legal documents via registered or certified mail.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "SERVICE OF PROCESS. In addition to the methods of service allowed by the State Civil Practice Law & Rules (\"CPLR\"), Contractor hereby consents to service of process upon it by registered or certified mail, return receipt requested."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Late Payment Terms",
+          "fact": "Timeliness of payment and interest for late payment are governed by Article 11-A of the State Finance Law.",
+          "business_implication": "The bidder should understand the statutory late payment provisions, which may affect cash flow.",
+          "action_recommendation": "Review Article 11-A of the State Finance Law to understand payment timelines and interest entitlements.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "LATE PAYMENT. Timeliness of payment and any interest to be paid to Contractor for late payment shall be governed by Article 11-A of the State Finance Law to the extent required by law."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Reciprocity and Sanctions Provisions",
+          "fact": "Bidders whose principal place of business is in a jurisdiction that penalizes New York State vendors, and whose goods/services are substantially produced/performed outside NYS, may be denied contracts. The list includes South Carolina, Alaska, West Virginia, Wyoming, Louisiana, and Hawaii as of May 15, 2002.",
+          "business_implication": "Bidders located in or sourcing from the listed states may be ineligible for the contract.",
+          "action_recommendation": "Verify that the bidder's principal place of business and production locations are not in a discriminatory jurisdiction.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "Bidders are hereby notified that if their principal place of business is located in a country, nation, province, state or political subdivision that penalizes New York State vendors, and if the goods or services they offer will be substantially produced or performed outside New York State, the Omnibus Procurement Act 1994 and 2000 amendments (Chapter 684 and Chapter 383, respectively) require that they be denied contracts which they would otherwise obtain. NOTE: As of May 15, 2002, the list of discriminatory jurisdictions subject to this provision includes the states of South Carolina, Alaska, West Virginia, Wyoming, Louisiana and Hawaii."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Quote Response Form Must Not Be Modified",
+          "fact": "The Quote Response Form must not be modified; any alterations may result in non-responsiveness and disqualification.",
+          "business_implication": "The bidder must submit the form exactly as provided, without any changes.",
+          "action_recommendation": "Ensure the Quote Response Form is used as-is and not altered.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 27,
+              "quote": "Do not modify this form. Any alterations of the Quote Response Form may result in a determination of non-responsiveness and disqualification of the bid."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Pricing Structure for Hardware and Installation",
+          "fact": "The Quote Response Form requires one-time cost per device for hardware, and installation costs per device for three locations: Capital Region Office (Albany) approximately 42 devices, Long Island Regional Office approximately 32 devices, and Batavia District Office approximately 19 devices.",
+          "business_implication": "The bidder must provide per-device pricing for hardware and installation for each specified location.",
+          "action_recommendation": "Prepare detailed pricing for hardware and installation for each location.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 27,
+              "quote": "1. HARDWARE i. Item Name ii. Manufacturer iii. Brand Name iv. One-Time Cost $ per device 2. INSTALLATION i. Total Installation Cost (Including all labor, installation equipment, and travel costs) a. Capital Region Office – Albany Approximately 42 Devices $ per device b. Long Island Regional Office Approximately 32 Devices $ per device c. Batavia District Office Approximately 19 Devices $ per device"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Compliance with Information Security Breach and Notification Act",
+          "fact": "Contractor shall comply with the New York State Information Security Breach and Notification Act (General Business Law Section 899-aa; State Technology Law Section 208).",
+          "business_implication": "The bidder must have procedures in place to comply with data breach notification requirements.",
+          "action_recommendation": "Review and ensure compliance with the Information Security Breach and Notification Act.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "COMPLIANCE WITH NEW YORK STATE INFORMATION SECURITY BREACH AND NOTIFICATION ACT. Contractor shall comply with the provisions of the New York State Information Security Breach and Notification Act (General Business Law Section 899-aa; State Technology Law Section 208)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Procurement Lobbying Certification",
+          "fact": "By signing the agreement, the contractor certifies that all disclosures under State Finance Law Sections 139-j and 139-k are complete, true, and accurate. If found intentionally false or incomplete, the State may terminate the agreement.",
+          "business_implication": "The bidder must ensure all lobbying disclosures are accurate and complete to avoid termination.",
+          "action_recommendation": "Review and ensure compliance with procurement lobbying disclosure requirements.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "To the extent this agreement is a \"procurement contract\" as defined by State Finance Law Sections 139-j and 139-k, by signing this agreement the contractor certifies and affirms that all disclosures made in accordance with State Finance Law Sections 139-j and 139-k are complete, true and accurate. In the event such certification is found to be intentionally false or intentionally incomplete, the State may terminate the agreement by providing written notification to the Contractor in accordance with the terms of the agreement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Sales and Compensating Use Tax Registration Certification",
+          "fact": "If the contract is defined by Tax Law Section 5-a, the contractor must certify registration to collect sales and compensating use tax. Failure to make the certification or a false certification is a material breach and may result in termination.",
+          "business_implication": "The bidder must be registered for sales tax collection if required, and ensure the certification is accurate.",
+          "action_recommendation": "Verify sales tax registration status and be prepared to make the required certification.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "To the extent this agreement is a contract as defined by Tax Law Section 5-a, if the contractor fails to make the certification required by Tax Law Section 5-a or if during the term of the contract, the Department of Taxation and Finance or the covered agency, as defined by Tax Law 5-a, discovers that the certification, made under penalty of perjury, is false, then such failure to file or false certification shall be a material breach of this contract and this contract may be terminated, by providing written notification to the Contractor in accordance with the terms of the agreement, if the covered agency determines that such action is in the best interest of the State."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Original Manufacturer or Authorized Reseller Required",
+          "fact": "The Bidder must be the original manufacturer or authorized reseller of the hardware and software to be provided.",
+          "business_implication": "Only manufacturers or authorized resellers can bid; resellers must have authorization documentation.",
+          "action_recommendation": "Verify and be prepared to provide proof of authorization if bidding as a reseller.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "Be the original manufacturer or authorized reseller of the hardware and software to be provided;"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Bid Submission Deadline",
+          "fact": "Responses must be emailed to BFS.Contracts@tax.ny.gov no later than October 8, 2019 at 2:00 PM ET.",
+          "business_implication": "Late bids may not be accepted; timely submission is critical.",
+          "action_recommendation": "Submit the bid well before the deadline to avoid technical issues.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Responses to this RFQ must be emailed to BFS.Contracts@tax.ny.gov no later than October 8, 2019 at 2:00 PM ET."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Lowest Overall Cost Award",
+          "fact": "The award will be made to the responsive and responsible Bidder who provides the lowest overall cost and meets all requirements set forth in this RFQ.",
+          "business_implication": "Price is the primary factor; compliance with all requirements is mandatory.",
+          "action_recommendation": "Ensure pricing is competitive and all requirements are met.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "The award will be made to the responsive and responsible Bidder who provides the lowest overall cost and meets all requirements set forth in this RFQ."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Prices Must Be Guaranteed for Term",
+          "fact": "Prices as they appear on submitted bids must be guaranteed by the vendor for the term of the Agreement.",
+          "business_implication": "No price increases during the contract term; must account for cost stability.",
+          "action_recommendation": "Price with long-term cost stability in mind.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "Prices as they appear on submitted bids must be guaranteed by the vendor for the term of the Agreement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Unacceptable Replacement Devices",
+          "fact": "The Department reserves the right to terminate the Agreement if replacement devices are deemed unacceptable.",
+          "business_implication": "If the GPS model becomes unsupported, the contractor must replace devices; if the Department deems them unacceptable, it can terminate.",
+          "action_recommendation": "Ensure replacement devices meet Department standards to avoid termination.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "The Department reserves the right to terminate the Agreement if such replacement devices are deemed unacceptable."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "No-Cost Maintenance and Replacement Within 30 Days",
+          "fact": "If any devices are identified by the Department to require maintenance or replacement, not resulting from the negligence of any DTF employee, the devices and/or services must be provided to the Department at no cost within 30 days of the Department’s notification.",
+          "business_implication": "Contractor bears the cost of maintenance and replacement for non-negligent issues, with a tight 30-day turnaround.",
+          "action_recommendation": "Plan for rapid response and include costs in pricing.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "If any devices are identified by the Department to require maintenance or replacement, not resulting from the negligence of any DTF employee, the devices and/or services must be provided to the Department at no cost within 30 days of the Department’s notification."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Installation Completion Deadline",
+          "fact": "All installations must be completed no later than the end of Calendar Year 2019.",
+          "business_implication": "Installation schedule is tight; must coordinate with Department to meet deadline.",
+          "action_recommendation": "Plan installation resources to ensure completion by end of 2019.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "All installations must be completed no later than the end of Calendar Year 2019."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Prohibition on Purchase of Tropical Hardwoods",
+          "fact": "The Contractor must certify that all wood products comply with Section 165 of the State Finance Law, which prohibits the use of tropical hardwoods unless specifically exempted. The bid may be considered non-responsive if not in compliance.",
+          "business_implication": "The bidder must ensure that any wood products used in the contract are not tropical hardwoods or obtain an exemption, otherwise the bid may be rejected.",
+          "action_recommendation": "Verify that all wood products to be supplied or installed are compliant with Section 165 of the State Finance Law, and if any tropical hardwoods are used, obtain the necessary exemption approval from the State.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 19,
+              "quote": "The Contractor certifies and warrants that all wood products to be used under this contract award will be in accordance with, but not limited to, the specifications and provisions of Section 165 of the State Finance Law, (Use of Tropical Hardwoods) which prohibits purchase and use of tropical hardwoods, unless specifically exempted, by the State or any governmental agency or political subdivision or public benefit corporation."
+            },
+            {
+              "page_number": 19,
+              "quote": "Any such use must meet with the approval of the State; otherwise, the bid may not be considered responsive."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "MacBride Fair Employment Principles",
+          "fact": "The Contractor must stipulate that it either has no business operations in Northern Ireland or will take lawful steps to conduct business in accordance with the MacBride Fair Employment Principles and permit independent monitoring.",
+          "business_implication": "The bidder must confirm its operations in Northern Ireland, if any, comply with the MacBride Principles, or certify that it has no such operations.",
+          "action_recommendation": "Review the company's operations in Northern Ireland and ensure compliance with the MacBride Fair Employment Principles, or certify that there are no such operations.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 19,
+              "quote": "In accordance with the MacBride Fair Employment Principles (Chapter 807 of the Laws of 1992), the Contractor hereby stipulates that the Contractor either (a) has no business operations in Northern Ireland, or (b) shall take lawful steps in good faith to conduct any business operations in Northern Ireland in accordance with the MacBride Fair Employment Principles (as described in Section 165 of the New York State Finance Law), and shall permit independent monitoring of compliance with such principles."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Reciprocity and Sanctions Provisions",
+          "fact": "Bidders with principal place of business in a jurisdiction that penalizes New York State vendors may be denied contracts if goods/services are substantially produced/performed outside NYS. The list includes South Carolina, Alaska, West Virginia, Wyoming, Louisiana, and Hawaii as of May 15, 2002.",
+          "business_implication": "The bidder must verify that its principal place of business is not in a discriminatory jurisdiction, or that its goods/services are not substantially produced/performed outside NYS, to avoid disqualification.",
+          "action_recommendation": "Check the current list of discriminatory jurisdictions and ensure that the bidder's principal place of business and production locations are not subject to these sanctions.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "Bidders are hereby notified that if their principal place of business is located in a country, nation, province, state or political subdivision that penalizes New York State vendors, and if the goods or services they offer will be substantially produced or performed outside New York State, the Omnibus Procurement Act 1994 and 2000 amendments (Chapter 684 and Chapter 383, respectively) require that they be denied contracts which they would otherwise obtain."
+            },
+            {
+              "page_number": 20,
+              "quote": "NOTE: As of May 15, 2002, the list of discriminatory jurisdictions subject to this provision includes the states of South Carolina, Alaska, West Virginia, Wyoming, Louisiana and Hawaii."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Compliance with New York State Information Security Breach and Notification Act",
+          "fact": "Contractor shall comply with the provisions of the New York State Information Security Breach and Notification Act (General Business Law Section 899-aa; State Technology Law Section 208).",
+          "business_implication": "The bidder must have procedures in place to comply with data breach notification requirements under New York law.",
+          "action_recommendation": "Review and ensure compliance with the NYS Information Security Breach and Notification Act, including breach notification procedures.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "Contractor shall comply with the provisions of the New York State Information Security Breach and Notification Act (General Business Law Section 899-aa; State Technology Law Section 208)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Procurement Lobbying Certification",
+          "fact": "By signing the agreement, the contractor certifies that all disclosures under State Finance Law Sections 139-j and 139-k are complete, true, and accurate. If found intentionally false or incomplete, the State may terminate the agreement.",
+          "business_implication": "The bidder must ensure all lobbying disclosures are accurate to avoid termination for intentional misrepresentation.",
+          "action_recommendation": "Review all procurement lobbying disclosures for accuracy and completeness before signing.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "To the extent this agreement is a \"procurement contract\" as defined by State Finance Law Sections 139-j and 139-k, by signing this agreement the contractor certifies and affirms that all disclosures made in accordance with State Finance Law Sections 139-j and 139-k are complete, true and accurate. In the event such certification is found to be intentionally false or intentionally incomplete, the State may terminate the agreement by providing written notification to the Contractor in accordance with the terms of the agreement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Certification of Registration to Collect Sales and Compensating Use Tax",
+          "fact": "If the contract is defined by Tax Law Section 5-a, the contractor must make the required certification. Failure to do so or a false certification is a material breach and may result in termination.",
+          "business_implication": "The bidder must ensure it is registered to collect sales and compensating use tax in New York State and provide the required certification.",
+          "action_recommendation": "Verify that the company is registered for sales tax collection in NYS and be prepared to provide the certification under Tax Law Section 5-a.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "To the extent this agreement is a contract as defined by Tax Law Section 5-a, if the contractor fails to make the certification required by Tax Law Section 5-a or if during the term of the contract, the Department of Taxation and Finance or the covered agency, as defined by Tax Law 5-a, discovers that the certification, made under penalty of perjury, is false, then such failure to file or false certification shall be a material breach of this contract and this contract may be terminated, by providing written notification to the Contractor in accordance with the terms of the agreement, if the covered agency determines that such action is in the best interest of the State."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Quote Response Form Must Not Be Modified",
+          "fact": "The Quote Response Form must not be modified; any alterations may result in disqualification.",
+          "business_implication": "Bidders must submit the form exactly as provided, without any changes, to avoid being deemed non-responsive.",
+          "action_recommendation": "Ensure the Quote Response Form is used as-is and do not alter any part of it.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 27,
+              "quote": "Do not modify this form. Any alterations of the Quote Response Form may result in a determination of non-responsiveness and disqualification of the bid."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Quote Response Form Must Be Completed",
+          "fact": "Failure to answer all clarifications or questions may delay evaluation and may result in non-responsiveness and disqualification.",
+          "business_implication": "Incomplete responses can lead to disqualification, so all required fields must be filled.",
+          "action_recommendation": "Thoroughly complete all sections of the Quote Response Form, including Part A hardware and installation costs.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 27,
+              "quote": "Failure to answer all clarifications or questions may delay the evaluation of your bid and may result in a determination of non-responsiveness and disqualification of the bid."
+            }
+          ],
+          "requires_reasoning_review": false
+        }
+      ]
+    }
+  }
+}

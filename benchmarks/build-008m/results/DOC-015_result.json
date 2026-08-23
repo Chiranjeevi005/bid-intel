@@ -1,0 +1,325 @@
+{
+  "metrics": {
+    "id": "DOC-015",
+    "qual_latency": 5636.156499999983,
+    "retrieval_latency": 0.739400000020396,
+    "extraction_latency": 4034.958100000047,
+    "interpretation_latency": 8083.213199999998,
+    "total_latency": 17755.882900000026,
+    "telemetry": [
+      {
+        "batch_name": "ELIGIBILITY",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 661,
+        "prompt_tokens": 2330,
+        "output_budget_ratio": 0.161376953125,
+        "estimated_cost_cents": 0.043064000000000005,
+        "latency_ms": 4034.892499999958,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 512,
+        "prompt_tokens": 1375,
+        "output_budget_ratio": 0.125,
+        "estimated_cost_cents": 0.025522000000000003,
+        "latency_ms": 3454.4120999999577,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "LIABILITY_RISK",
+        "page_count": 3,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 424,
+        "prompt_tokens": 2157,
+        "output_budget_ratio": 0.103515625,
+        "estimated_cost_cents": 0.034006,
+        "latency_ms": 3391.2737999999663,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          3
+        ],
+        "context_pages": [
+          2,
+          3,
+          4
+        ],
+        "context_expansion_reason": []
+      }
+    ]
+  },
+  "result": {
+    "id": "DOC-015",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "EOI",
+      "confidence": "HIGH",
+      "reason": "The document is an Expression of Interest (EOI) issued by OhioMHAS for Recovery Month Events funding, including submission deadline, eligibility requirements, and scope of activities.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Recovery Month Events – Expression of Interest (EOI)"
+        },
+        {
+          "page_number": 1,
+          "quote": "Request for Applications Due Date: 07/25/2025, by 3 p.m. EDT"
+        },
+        {
+          "page_number": 2,
+          "quote": "OhioMHAS invites potential eligible organizations to submit an expression of interest based upon the outlined requirements."
+        },
+        {
+          "page_number": 2,
+          "quote": "To submit your expression of interest please complete all questions on the Microsoft form at https://forms.office.com/g/2YnKfqHta7 by July 25th at 3:00 p.m."
+        },
+        {
+          "page_number": 4,
+          "quote": "Organization must be 501(c)(3) non-profit."
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "ELIGIBILITY",
+          "title": "Eligible Organization Types",
+          "fact": "Eligible organizations include prevention, treatment, and/or recovery supports providers; community coalitions; recovery community organizations; peer run organizations; housing providers; faith-based organizations; schools; and other non-profit community organizations.",
+          "business_implication": "This opportunity is open to a wide range of community-based and non-profit organizations, not just traditional treatment providers. This broadens the potential applicant pool, but also means competition may be high.",
+          "action_recommendation": "Confirm that your organization falls into one of the listed categories. If you are a non-profit community organization, ensure you have the necessary documentation to prove your status.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "OhioMHAS is requesting expressions of interest from potential prevention, treatment, and/or recovery supports providers; community coalitions; recovery community organizations; peer run organizations; housing providers; faith-based organizations; schools; and other non-profit community organizations."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Federal Tax Identification Number Required",
+          "fact": "Organizations must have a federal tax identification number (FTID).",
+          "business_implication": "Without a valid FTID, an organization cannot apply. This is a basic eligibility requirement that must be met before proceeding.",
+          "action_recommendation": "Verify that your organization has a valid FTID and that it is correctly associated with your legal entity. If you do not have one, you are not eligible and should not proceed.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Organizations must have a federal tax identification number (FTID)."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "501(c)(3) Non-Profit Requirement",
+          "fact": "Organization must be 501(c)(3) non-profit.",
+          "business_implication": "Only organizations with 501(c)(3) status are eligible. This excludes for-profit entities and other non-profit types, so it is critical to confirm your tax-exempt status.",
+          "action_recommendation": "Ensure your organization has current 501(c)(3) status with the IRS. Have your determination letter ready to include in the application if required.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "Organization must be 501(c)(3) non-profit."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Funding Expended by September 29, 2025",
+          "fact": "All awards must be fully expended by September 29, 2025.",
+          "business_implication": "The funding period is very short (approximately two months from the application deadline). This requires rapid planning and execution of events or activities. Failure to expend funds by the deadline could result in loss of funding or other penalties.",
+          "action_recommendation": "Develop a detailed project plan with a realistic timeline to ensure all funds are spent by September 29, 2025. Consider pre-planning activities and vendor contracts to expedite implementation.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "All awards must be fully expended by September 29, 2025."
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "EOI Submission Deadline",
+          "fact": "Expressions of interest must be submitted via the Microsoft form by July 25th at 3:00 p.m. EDT.",
+          "business_implication": "The deadline is firm and non-negotiable. Missing it will disqualify your organization. The submission is via a Microsoft form, so technical issues could arise.",
+          "action_recommendation": "Submit your EOI well before the deadline to avoid last-minute technical problems. Ensure you have all required information and documents ready. Mark the deadline on your calendar and set reminders.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Request for Applications Due Date: 07/25/2025, by 3 p.m. EDT"
+            },
+            {
+              "page_number": 2,
+              "quote": "To submit your expression of interest please complete all questions on the Microsoft form at https://forms.office.com/g/2YnKfqHta7 by July 25th at 3:00 p.m."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Funding Disbursement and Reporting Obligations",
+          "fact": "Awarded funds will be disbursed via pass-through agent OhioPro, and organizations must report fund utilization via OhioMHAS outcomes survey by November 7, 2025.",
+          "business_implication": "The organization must ensure it can meet the disbursement requirements to access funds and must have the capacity to track and report fund utilization accurately by the deadline. Failure to comply could result in funding delays or potential clawback.",
+          "action_recommendation": "Review the disbursement requirements with OhioPro to understand the process and timeline. Establish internal controls to track expenditures and prepare for the outcomes survey. Assign a responsible person to complete and submit the survey by November 7, 2025.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "Organizations will be able to access the full amount of awarded funds once disbursement requirements are met. Awarded funds will be disbursed, via pass through agent, OhioPro."
+            },
+            {
+              "page_number": 4,
+              "quote": "Organizations are required to report to OhioMHAS how funds were utilized using the OhioMHAS outcomes survey. OhioMHAS will provide the survey link and the SOS questionnaire (if applicable) for required reporting. Completed surveys are due no later than November 7, 2025."
+            }
+          ]
+        }
+      ]
+    },
+    "telemetry": [
+      {
+        "batch_name": "ELIGIBILITY",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 661,
+        "prompt_tokens": 2330,
+        "output_budget_ratio": 0.161376953125,
+        "estimated_cost_cents": 0.043064000000000005,
+        "latency_ms": 4034.892499999958,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 512,
+        "prompt_tokens": 1375,
+        "output_budget_ratio": 0.125,
+        "estimated_cost_cents": 0.025522000000000003,
+        "latency_ms": 3454.4120999999577,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "LIABILITY_RISK",
+        "page_count": 3,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 424,
+        "prompt_tokens": 2157,
+        "output_budget_ratio": 0.103515625,
+        "estimated_cost_cents": 0.034006,
+        "latency_ms": 3391.2737999999663,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          3
+        ],
+        "context_pages": [
+          2,
+          3,
+          4
+        ],
+        "context_expansion_reason": []
+      }
+    ]
+  }
+}

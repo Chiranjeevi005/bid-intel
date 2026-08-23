@@ -1,0 +1,46 @@
+{
+  "metrics": {
+    "id": "DOC-004",
+    "qual_latency": 2845.894500000002,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 820,
+        "completion_tokens": 251,
+        "total_tokens": 1071,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 125
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 52
+      }
+    },
+    "total_latency": 2845.904199999997,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-004",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "OTHER",
+      "confidence": "HIGH",
+      "reason": "The document is an educational module for a math course, covering polynomials and matrices, with homework and exam instructions. There is no procurement intent, solicitation, or vendor-related language.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Module 04: Advanced Algebra"
+        },
+        {
+          "page_number": 1,
+          "quote": "Homework is due on Friday."
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

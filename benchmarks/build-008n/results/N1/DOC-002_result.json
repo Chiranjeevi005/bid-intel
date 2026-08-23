@@ -1,0 +1,46 @@
+{
+  "metrics": {
+    "id": "DOC-002",
+    "qual_latency": 2155.6070999999974,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 823,
+        "completion_tokens": 209,
+        "total_tokens": 1032,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 81
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 439
+      }
+    },
+    "total_latency": 2155.6223000000027,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-002",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "JOB_DESCRIPTION",
+      "confidence": "HIGH",
+      "reason": "The document is a job posting for a Business Analyst position, not a procurement solicitation. It describes responsibilities and application instructions, with no procurement or tender language.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Job Title: Business Analyst"
+        },
+        {
+          "page_number": 1,
+          "quote": "Please apply by sending your resume to HR."
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

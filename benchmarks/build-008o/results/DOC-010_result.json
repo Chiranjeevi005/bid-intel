@@ -1,0 +1,555 @@
+{
+  "metrics": {
+    "total_latency": 34.294,
+    "agents_completed": [
+      "ELIGIBILITY",
+      "DATES_SUBMISSION",
+      "COMMERCIAL",
+      "LIABILITY_RISK",
+      "EVALUATION"
+    ],
+    "raw_findings_count": 18,
+    "verified_union_count": 18,
+    "final_findings_count": 18
+  },
+  "result": {
+    "verified_union": {
+      "findings": [
+        {
+          "category": "ELIGIBILITY",
+          "title": "Minimum Qualifications: Three Projects in Past Ten Years",
+          "fact": "Proposer must demonstrate successful completion of at least three projects in the past ten years related to Local Roadway Safety Plan, Systemic Safety Analysis Report, Vision Zero Action Plan, or supplemental/implementation planning for Safe Streets for All Grant Program.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Proposer must demonstrate to C/CAG’s satisfaction that the prime consultant and/or one or more subconsultant proposed this project have successfully completed at least three (3) projects in the past ten (10) years related to Local Roadway Safety Plan, Systemic Safety Analysis Report (SSAR), Vision Zero Action Plan and/or supplemental or implementation planning for the Safe Streets for All Grant Program."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Minimum Qualifications: Federal Grant Experience",
+          "fact": "Proposers must demonstrate experience managing and implementing large-scale federal grant funded projects and ensuring compliance with all applicable federal, state, and local requirements.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Proposers must demonstrate experience managing and implementing large-scale federal grant funded projects and successfully ensuring compliance with all applicable federal, state, and local requirements for such projects."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Proposal Submission Deadline",
+          "fact": "Proposals must be received by C/CAG no later than 12 PM PST on Friday, January 23, 2026. Proposals received after this time may be considered nonresponsive.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "Proposals must be received by C/CAG no later than 12 PM PST on Friday, January 23, 2026, in accordance with the instructions contained in the RFP."
+            },
+            {
+              "page_number": 3,
+              "quote": "Proposals received after the time and date specified above may be considered nonresponsive."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Unsigned or Unauthorized Proposals Rejected",
+          "fact": "Unsigned proposals or proposals signed by an individual not authorized to bind the prospective consultant will be considered nonresponsive and rejected.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Unsigned proposals or proposals signed by an individual not authorized to bind the prospective consultant will be considered nonresponsive and rejected."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Mandatory Federal Certifications and Forms",
+          "fact": "Proposals must contain the following federal certifications or forms: (1) Certification Regarding Lobbying, (2) Certification Regarding Debarment, Suspension, Ineligibility, and Voluntary Exclusion—Lower Tier Covered Transactions, and (3) Disclosure of Lobbying Activities (SF-LLL) form.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Proposals must contain the following federal certifications or forms: (1) Certification Regarding Lobbying, (2) Certification Regarding Debarment, Suspension, Ineligibility, and Voluntary Exclusion—Lower Tier Covered Transactions, and (3) Disclosure of Lobbying Activities (SF-LLL) form."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Levine Act Disclosure Required",
+          "fact": "Proposers must complete the Levine Act Disclosure form and include it in the submission.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "The Levine Act (California Government Code Section 84308) imposes certain requirements on parties contracting with C/CAG related to campaign contributions to C/CAG Board members. Complete the form available at: https://ccag.ca.gov/wp-content/uploads/2023/07/Appendix-3-CA-Levine-Act-Statement.pdf and include it in your submission."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Insurance Acknowledgement Required",
+          "fact": "Proposer must submit a signed acknowledgement agreeing to provide required certificates of insurance within ten days of notice of selection.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Submit a signed acknowledgement, for proposer only, that the proposer agrees to provide the required certificates of insurance providing verification of the minimum insurance requirements listed in Appendix D, Sample Agreement Template (see Section 11), within ten days of C/CAG’s notice to firm that it is the successful Proposer."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "W-9 Form Required",
+          "fact": "Proposer must submit a W-9 form with original signature.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Submit a W-9, Request for Taxpayer Identification Number and Certification for the proposer only (containing original signature), available at http://www.irs.gov/pub/irs-pdf/fw9.pdf."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Conflict of Interest Statement Required",
+          "fact": "Proposal must include a Conflict of Interest Statement disclosing any financial, business, or other relationship with C/CAG that may impact the outcome of the contract.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "Include a Conflict of Interest Statement disclosing any financial, business or other relationship with C/CAG that may have an impact upon the outcome of the contract."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Proposal Page Limit",
+          "fact": "Each submittal shall be no more than 20 pages, excluding cover letter, title page, table of contents, resumes of key staff members, relevant experience, and references. All required appendices and forms are excluded from the 20 page limit unless otherwise specified.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Each submittal shall be no more than 20 pages, excluding cover letter, title page, table of contents, resumes of key staff members, relevant experience, and references. All required appendices and forms are excluded from the 20 page limit unless otherwise specified."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Proposal Validity Period",
+          "fact": "Proposal must be a firm offer for 120 days from the due date.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Indicate that the proposal is a firm offer to enter into a contract to perform work related to this RFP for a period of 120 days from the due date for proposals."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Key Personnel Commitment",
+          "fact": "Key personnel must be committed to stay with the project for its duration; any change requires prior written approval of C/CAG.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "Key members, especially the project manager, shall have significant demonstrated experience with this type of project, and ideally should be committed to stay with the project for its duration. Any change in key personnel on the project team is subject to prior written approval of C/CAG."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "References Must Be Accessible",
+          "fact": "References must be for work completed within five years of the RFP issuance, and the contact person must be currently accessible via the provided contact information.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "References should be for work completed within five years of the date of the issuance of this RFP, and the contact person must be currently accessible via the contact information provided to be considered."
+            }
+          ],
+          "_sourceAgent": "ELIGIBILITY"
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Waiver of Public Records Act Claims and Indemnification",
+          "fact": "Submission of materials constitutes a waiver of any claim that the information is protected from disclosure, and the proposer agrees to indemnify and hold harmless C/CAG for release of such information.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Submission of any materials in response to this RFP is itself a public record without exception. Submission of any materials in response to this RFP constitutes a waiver by the submitting party of any claim that the information is protected from disclosure. By submitting materials, (1) you consent to release of such materials by C/CAG if requested under the Public Records Act without further notice to you, and (2) you agree to indemnify and hold harmless C/CAG for release of such information."
+            }
+          ],
+          "_sourceAgent": "LIABILITY_RISK"
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Termination for Conflict of Interest",
+          "fact": "C/CAG may terminate the contract if a conflict of interest is discovered, and failure to notify may be grounds for termination for cause.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "If a consultant discovers a conflict during the execution of an assigned task, the consultant must immediately notify the C/CAG Project Manager regarding the conflict(s) of interest. The C/CAG Project Manager may terminate the contract involving the conflict of interest and C/CAG may obtain the conflicted services in any way allowed by law. Failure by the consultant to notify C/CAG Project Manager may be grounds for termination of the contract for cause pursuant to Section 4, Termination, of the Contract Agreement Template, provided as Appendix D to this RFP."
+            }
+          ],
+          "_sourceAgent": "LIABILITY_RISK"
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Material Breach for Key Personnel Changes",
+          "fact": "Removal of key personnel without prior written consent may be considered a material breach of contract.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "Any change in key personnel on the project team is subject to prior written approval of C/CAG. Removal of any key personnel identified in the responses to the RFP without prior written consent of C/CAG may be considered a material breach of contract."
+            }
+          ],
+          "_sourceAgent": "LIABILITY_RISK"
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Compliance with All Laws",
+          "fact": "The work must comply with all federal, state, and local laws without limitation.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "The work performed pursuant to any resulting contract shall comply with the requirements of all federal, state, and local laws without limitation, and shall apply to this RFP and are incorporated into this RFP and any subsequent contract by this reference."
+            }
+          ],
+          "_sourceAgent": "LIABILITY_RISK"
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Insurance Requirements",
+          "fact": "Proposer must provide certificates of insurance verifying minimum insurance requirements within ten days of notice of selection.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Submit a signed acknowledgement, for proposer only, that the proposer agrees to provide the required certificates of insurance providing verification of the minimum insurance requirements listed in Appendix D, Sample Agreement Template (see Section 11), within ten days of C/CAG’s notice to firm that it is the successful Proposer."
+            }
+          ],
+          "_sourceAgent": "LIABILITY_RISK"
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "ELIGIBILITY",
+          "title": "Minimum Qualifications: Three Projects in Past Ten Years",
+          "fact": "Proposer must demonstrate successful completion of at least three projects in the past ten years related to Local Roadway Safety Plan, Systemic Safety Analysis Report, Vision Zero Action Plan, or supplemental/implementation planning for Safe Streets for All Grant Program.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Proposer must demonstrate to C/CAG’s satisfaction that the prime consultant and/or one or more subconsultant proposed this project have successfully completed at least three (3) projects in the past ten (10) years related to Local Roadway Safety Plan, Systemic Safety Analysis Report (SSAR), Vision Zero Action Plan and/or supplemental or implementation planning for the Safe Streets for All Grant Program."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Minimum Qualifications: Federal Grant Experience",
+          "fact": "Proposers must demonstrate experience managing and implementing large-scale federal grant funded projects and ensuring compliance with all applicable federal, state, and local requirements.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Proposers must demonstrate experience managing and implementing large-scale federal grant funded projects and successfully ensuring compliance with all applicable federal, state, and local requirements for such projects."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Proposal Submission Deadline",
+          "fact": "Proposals must be received by C/CAG no later than 12 PM PST on Friday, January 23, 2026. Proposals received after this time may be considered nonresponsive.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "Proposals must be received by C/CAG no later than 12 PM PST on Friday, January 23, 2026, in accordance with the instructions contained in the RFP."
+            },
+            {
+              "page_number": 3,
+              "quote": "Proposals received after the time and date specified above may be considered nonresponsive."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Unsigned or Unauthorized Proposals Rejected",
+          "fact": "Unsigned proposals or proposals signed by an individual not authorized to bind the prospective consultant will be considered nonresponsive and rejected.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Unsigned proposals or proposals signed by an individual not authorized to bind the prospective consultant will be considered nonresponsive and rejected."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Mandatory Federal Certifications and Forms",
+          "fact": "Proposals must contain the following federal certifications or forms: (1) Certification Regarding Lobbying, (2) Certification Regarding Debarment, Suspension, Ineligibility, and Voluntary Exclusion—Lower Tier Covered Transactions, and (3) Disclosure of Lobbying Activities (SF-LLL) form.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Proposals must contain the following federal certifications or forms: (1) Certification Regarding Lobbying, (2) Certification Regarding Debarment, Suspension, Ineligibility, and Voluntary Exclusion—Lower Tier Covered Transactions, and (3) Disclosure of Lobbying Activities (SF-LLL) form."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Levine Act Disclosure Required",
+          "fact": "Proposers must complete the Levine Act Disclosure form and include it in the submission.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "The Levine Act (California Government Code Section 84308) imposes certain requirements on parties contracting with C/CAG related to campaign contributions to C/CAG Board members. Complete the form available at: https://ccag.ca.gov/wp-content/uploads/2023/07/Appendix-3-CA-Levine-Act-Statement.pdf and include it in your submission."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Insurance Acknowledgement Required",
+          "fact": "Proposer must submit a signed acknowledgement agreeing to provide required certificates of insurance within ten days of notice of selection.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Submit a signed acknowledgement, for proposer only, that the proposer agrees to provide the required certificates of insurance providing verification of the minimum insurance requirements listed in Appendix D, Sample Agreement Template (see Section 11), within ten days of C/CAG’s notice to firm that it is the successful Proposer."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "W-9 Form Required",
+          "fact": "Proposer must submit a W-9 form with original signature.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Submit a W-9, Request for Taxpayer Identification Number and Certification for the proposer only (containing original signature), available at http://www.irs.gov/pub/irs-pdf/fw9.pdf."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Conflict of Interest Statement Required",
+          "fact": "Proposal must include a Conflict of Interest Statement disclosing any financial, business, or other relationship with C/CAG that may impact the outcome of the contract.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "Include a Conflict of Interest Statement disclosing any financial, business or other relationship with C/CAG that may have an impact upon the outcome of the contract."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Proposal Page Limit",
+          "fact": "Each submittal shall be no more than 20 pages, excluding cover letter, title page, table of contents, resumes of key staff members, relevant experience, and references. All required appendices and forms are excluded from the 20 page limit unless otherwise specified.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Each submittal shall be no more than 20 pages, excluding cover letter, title page, table of contents, resumes of key staff members, relevant experience, and references. All required appendices and forms are excluded from the 20 page limit unless otherwise specified."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Proposal Validity Period",
+          "fact": "Proposal must be a firm offer for 120 days from the due date.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Indicate that the proposal is a firm offer to enter into a contract to perform work related to this RFP for a period of 120 days from the due date for proposals."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Key Personnel Commitment",
+          "fact": "Key personnel must be committed to stay with the project for its duration; any change requires prior written approval of C/CAG.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "Key members, especially the project manager, shall have significant demonstrated experience with this type of project, and ideally should be committed to stay with the project for its duration. Any change in key personnel on the project team is subject to prior written approval of C/CAG."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "References Must Be Accessible",
+          "fact": "References must be for work completed within five years of the RFP issuance, and the contact person must be currently accessible via the provided contact information.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "References should be for work completed within five years of the date of the issuance of this RFP, and the contact person must be currently accessible via the contact information provided to be considered."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Waiver of Public Records Act Claims and Indemnification",
+          "fact": "Submission of materials constitutes a waiver of any claim that the information is protected from disclosure, and the proposer agrees to indemnify and hold harmless C/CAG for release of such information.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Submission of any materials in response to this RFP is itself a public record without exception. Submission of any materials in response to this RFP constitutes a waiver by the submitting party of any claim that the information is protected from disclosure. By submitting materials, (1) you consent to release of such materials by C/CAG if requested under the Public Records Act without further notice to you, and (2) you agree to indemnify and hold harmless C/CAG for release of such information."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Termination for Conflict of Interest",
+          "fact": "C/CAG may terminate the contract if a conflict of interest is discovered, and failure to notify may be grounds for termination for cause.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "If a consultant discovers a conflict during the execution of an assigned task, the consultant must immediately notify the C/CAG Project Manager regarding the conflict(s) of interest. The C/CAG Project Manager may terminate the contract involving the conflict of interest and C/CAG may obtain the conflicted services in any way allowed by law. Failure by the consultant to notify C/CAG Project Manager may be grounds for termination of the contract for cause pursuant to Section 4, Termination, of the Contract Agreement Template, provided as Appendix D to this RFP."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Material Breach for Key Personnel Changes",
+          "fact": "Removal of key personnel without prior written consent may be considered a material breach of contract.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "Any change in key personnel on the project team is subject to prior written approval of C/CAG. Removal of any key personnel identified in the responses to the RFP without prior written consent of C/CAG may be considered a material breach of contract."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Compliance with All Laws",
+          "fact": "The work must comply with all federal, state, and local laws without limitation.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "The work performed pursuant to any resulting contract shall comply with the requirements of all federal, state, and local laws without limitation, and shall apply to this RFP and are incorporated into this RFP and any subsequent contract by this reference."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Insurance Requirements",
+          "fact": "Proposer must provide certificates of insurance verifying minimum insurance requirements within ten days of notice of selection.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Submit a signed acknowledgement, for proposer only, that the proposer agrees to provide the required certificates of insurance providing verification of the minimum insurance requirements listed in Appendix D, Sample Agreement Template (see Section 11), within ten days of C/CAG’s notice to firm that it is the successful Proposer."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

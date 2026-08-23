@@ -1,0 +1,50 @@
+{
+  "metrics": {
+    "id": "DOC-002",
+    "qual_latency": 2575.750399999997,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 831,
+        "completion_tokens": 292,
+        "total_tokens": 1123,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 126
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 63
+      }
+    },
+    "total_latency": 2575.7687000000005,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-002",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "JOB_DESCRIPTION",
+      "confidence": "HIGH",
+      "reason": "The document is a job posting for a Business Analyst position at Aiotrix, requesting resumes to be sent to HR. It contains no procurement solicitation elements such as scope of work, evaluation criteria, or submission deadlines for bids.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Job Title: Business Analyst"
+        },
+        {
+          "page_number": 1,
+          "quote": "We are hiring a Business Analyst."
+        },
+        {
+          "page_number": 1,
+          "quote": "Please apply by sending your resume to HR."
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

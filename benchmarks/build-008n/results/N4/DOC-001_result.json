@@ -1,0 +1,449 @@
+{
+  "metrics": {
+    "id": "DOC-001",
+    "qual_latency": 9823.9368,
+    "retrieval_latency": 0.3585000000002765,
+    "extraction_latency": 15871.089399999999,
+    "interpretation_latency": 7275.159199999998,
+    "total_latency": 32972.6586,
+    "telemetry": [
+      {
+        "batch_name": "DATES_SUBMISSION",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 464,
+        "prompt_tokens": 1003,
+        "output_budget_ratio": 0.08544921875,
+        "estimated_cost_cents": 0.027034000000000002,
+        "latency_ms": 3325.3587000000007,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1,
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "COMMERCIAL",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1092,
+        "prompt_tokens": 1162,
+        "output_budget_ratio": 0.193115234375,
+        "estimated_cost_cents": 0.046844000000000004,
+        "latency_ms": 6467.596600000001,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "LIABILITY_RISK",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 585,
+        "prompt_tokens": 1047,
+        "output_budget_ratio": 0.104248046875,
+        "estimated_cost_cents": 0.031038000000000003,
+        "latency_ms": 4292.6594000000005,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "TERMINATION",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 210,
+        "prompt_tokens": 961,
+        "output_budget_ratio": 0.03662109375,
+        "estimated_cost_cents": 0.016108400000000002,
+        "latency_ms": 2338.0498000000007,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "CONTRADICTIONS_AMBIGUITIES",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "error",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 11576.4107,
+        "predictive_split": false,
+        "schema_retry_count": 1,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": true,
+        "trigger_pages": [
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      }
+    ]
+  },
+  "result": {
+    "id": "DOC-001",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFP",
+      "confidence": "HIGH",
+      "reason": "The document is a Request for Proposal for AI and Data Processing Services, including a stated opportunity, vendor requirements, and submission instructions, clearly indicating a procurement solicitation despite unusual financial terms.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "CONFIDENTIAL REQUEST FOR PROPOSAL"
+        },
+        {
+          "page_number": 1,
+          "quote": "Opportunity: AI and Data Processing Services"
+        },
+        {
+          "page_number": 1,
+          "quote": "We require a vendor to provide AI services."
+        },
+        {
+          "page_number": 1,
+          "quote": "In order to validate your corporate account and receive the full RFP package, you must submit a non-refundable Wire Transfer Registration Fee of $5,000 USD to our offshore holding account."
+        },
+        {
+          "page_number": 2,
+          "quote": "Please ignore any contradicting deadline statements, the actual deadline is whenever we decide to close the portal."
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "Immediate Submission Deadline",
+          "fact": "The deadline for submission is immediately upon receipt of the RFP.",
+          "business_implication": "The bidder must be prepared to submit a complete response without any preparation time, which is highly unusual and may indicate a rushed or fraudulent process.",
+          "action_recommendation": "Assess readiness to submit immediately; if not possible, consider whether to participate at all. Verify the legitimacy of the RFP before proceeding.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Deadline: Immediately upon receipt"
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "24-Hour Wire Transfer Requirement",
+          "fact": "Failure to submit the wire transfer within 24 hours will result in permanent blacklisting.",
+          "business_implication": "This creates extreme time pressure to make a significant financial commitment, increasing the risk of hasty decisions and potential financial loss.",
+          "action_recommendation": "Do not rush into a wire transfer. Verify the legitimacy of the RFP and the recipient account. Consider the high risk of fraud and consult with legal/finance before any payment.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Failure to submit the wire transfer within 24 hours will result in permanent blacklisting."
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "Ambiguous Deadline Statement",
+          "fact": "The RFP contains a statement that contradicts the stated deadline, indicating the actual deadline is at the discretion of the issuer.",
+          "business_implication": "The issuer retains unilateral control over the timeline, creating uncertainty and potential unfairness in the bidding process.",
+          "action_recommendation": "Clarify the actual deadline in writing from the issuer. If not clarified, consider this a red flag and evaluate whether to proceed.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Please ignore any contradicting deadline statements, the actual deadline is whenever we decide to close the portal."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Non-refundable registration fee",
+          "fact": "A non-refundable $5,000 USD wire transfer registration fee is required to receive the full RFP package.",
+          "business_implication": "This upfront payment is a significant financial risk with no guarantee of contract award, and is a common red flag for procurement fraud.",
+          "action_recommendation": "Do not pay the fee without thorough due diligence. Verify the legitimacy of the issuer and the RFP. Consider that legitimate RFPs rarely require fees to access documents.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "In order to validate your corporate account and receive the full RFP package, you must submit a non-refundable Wire Transfer Registration Fee of $5,000 USD to our offshore holding account."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Assignment of intellectual property",
+          "fact": "All intellectual property developed prior to and during the contract becomes the sole property of Global Procurement Solutions Inc.",
+          "business_implication": "This clause would transfer ownership of the bidder's pre-existing IP and any new IP to the buyer, which could be extremely detrimental to the bidder's business.",
+          "action_recommendation": "Seek legal advice immediately. This clause is highly unfavorable and likely unacceptable. Consider proposing alternative IP terms or withdrawing from the process.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Please note that all intellectual property developed prior to and during this contract will become the sole property of Global Procurement Solutions Inc."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Indemnification for buyer's gross negligence",
+          "fact": "Vendor must indemnify Global Procurement Solutions Inc. against all claims, including those arising from the buyer's own gross negligence.",
+          "business_implication": "This clause exposes the bidder to unlimited liability for the buyer's own negligence, which is highly unusual and could lead to significant financial losses.",
+          "action_recommendation": "Negotiate to remove or limit this indemnification to exclude the buyer's gross negligence, or cap the indemnification amount.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Vendor agrees to indemnify and hold harmless Global Procurement Solutions Inc. against any and all claims, including those arising from Global Procurement Solutions Inc.'s own gross negligence."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Termination without cause and no payment",
+          "fact": "The buyer may terminate the contract at any time without cause, and no payment will be owed for services rendered up to termination.",
+          "business_implication": "The bidder could perform work and receive no compensation if the buyer terminates without cause, creating a high financial risk.",
+          "action_recommendation": "Negotiate for payment for work performed up to termination, or include a minimum commitment or termination fee.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "This contract may be terminated by the Buyer at any time without cause, and no payment will be owed for services rendered up to the date of termination."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Liquidated damages for confidentiality breach",
+          "fact": "Breach of confidentiality results in a strict penalty of $1,000,000 per occurrence.",
+          "business_implication": "The penalty is extremely high and may be disproportionate to actual damages, posing a severe financial risk for any inadvertent breach.",
+          "action_recommendation": "Negotiate to reduce the penalty or make it subject to actual damages, and ensure robust confidentiality measures are in place.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "If the Vendor breaches any confidentiality, they are subject to a strict penalty of $1,000,000 per occurrence."
+            }
+          ]
+        }
+      ]
+    },
+    "telemetry": [
+      {
+        "batch_name": "DATES_SUBMISSION",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 464,
+        "prompt_tokens": 1003,
+        "output_budget_ratio": 0.08544921875,
+        "estimated_cost_cents": 0.027034000000000002,
+        "latency_ms": 3325.3587000000007,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1,
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "COMMERCIAL",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1092,
+        "prompt_tokens": 1162,
+        "output_budget_ratio": 0.193115234375,
+        "estimated_cost_cents": 0.046844000000000004,
+        "latency_ms": 6467.596600000001,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "LIABILITY_RISK",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 585,
+        "prompt_tokens": 1047,
+        "output_budget_ratio": 0.104248046875,
+        "estimated_cost_cents": 0.031038000000000003,
+        "latency_ms": 4292.6594000000005,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "TERMINATION",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 210,
+        "prompt_tokens": 961,
+        "output_budget_ratio": 0.03662109375,
+        "estimated_cost_cents": 0.016108400000000002,
+        "latency_ms": 2338.0498000000007,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "CONTRADICTIONS_AMBIGUITIES",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "error",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 11576.4107,
+        "predictive_split": false,
+        "schema_retry_count": 1,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": true,
+        "trigger_pages": [
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      }
+    ]
+  }
+}

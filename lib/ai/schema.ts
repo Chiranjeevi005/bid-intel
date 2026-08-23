@@ -1,17 +1,13 @@
 import { z } from 'zod';
 
 export const CategoryEnum = z.enum([
-  'OPPORTUNITY_FIT',
-  'MANDATORY_ELIGIBILITY',
-  'SUBMISSION_REQUIREMENTS',
-  'KEY_DATES',
-  'EVALUATION_CRITERIA',
-  'COMMERCIAL_TERMS',
-  'LIABILITY_INDEMNITY',
-  'TERMINATION_RIGHTS',
-  'UNUSUAL_OBLIGATIONS',
-  'AMBIGUITIES_CONTRADICTIONS',
-  'MISSING_INFORMATION'
+  'ELIGIBILITY',
+  'DATES_SUBMISSION',
+  'EVALUATION',
+  'COMMERCIAL',
+  'LIABILITY_RISK',
+  'TERMINATION',
+  'CONTRADICTIONS_AMBIGUITIES'
 ]);
 
 export const PriorityEnum = z.enum(['CRITICAL', 'HIGH', 'MEDIUM', 'LOW']);
@@ -38,8 +34,8 @@ export const FindingSchema = z.object({
   if (data.status === 'CONFIRMED' && (!data.quotes || data.quotes.length === 0)) {
     ctx.addIssue({ code: z.ZodIssueCode.custom, message: "CONFIRMED findings MUST have at least 1 quote." });
   }
-  if (data.status === 'CONFIRMED' && data.category === 'AMBIGUITIES_CONTRADICTIONS' && (!data.quotes || data.quotes.length < 2)) {
-    ctx.addIssue({ code: z.ZodIssueCode.custom, message: "AMBIGUITIES_CONTRADICTIONS findings MUST have at least 2 quotes." });
+  if (data.status === 'CONFIRMED' && data.category === 'CONTRADICTIONS_AMBIGUITIES' && (!data.quotes || data.quotes.length < 2)) {
+    ctx.addIssue({ code: z.ZodIssueCode.custom, message: "CONTRADICTIONS_AMBIGUITIES findings MUST have at least 2 quotes." });
   }
 });
 

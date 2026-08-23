@@ -1,0 +1,1135 @@
+{
+  "metrics": {
+    "id": "DOC-010",
+    "units_generated": 81,
+    "p1_latency": 7.871911300000007,
+    "p1_fails": 0,
+    "p2_latency": 1.2695801999999967,
+    "p3_latency": 2.401135500000004,
+    "coverage_latency": 0.008293599999989965,
+    "total_latency": 11.551084300000003
+  },
+  "result": {
+    "id": "DOC-010",
+    "extracted": [
+      {
+        "unit_id": "DOC-010-P10-U9",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Any change in key personnel on the project team is subject to prior written approval of C/CAG. Removal of any key personnel identified in the responses to the RFP without prior written consent of C/CAG may be considered a material breach of contract.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P5-U5",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Proposers must demonstrate experience managing and implementing large-scale federal grant funded projects and successfully ensuring compliance with all applicable federal, state, and local requirements for such projects.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P4-U1",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "C/CAG has budgeted four hundred thirty-three thousand, one hundred forty-one dollars ($433,171) for this effort. C/CAG expects the work to commence on April 1, 2026 and to be completed no later than June 2030.",
+          "category": "COMMERCIAL_CONDITION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P7-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Submission of any materials in response to this RFP constitutes a waiver by the submitting party of any claim that the information is protected from disclosure. By submitting materials, (1) you consent to release of such materials by C/CAG if requested under the Public Records Act without further notice to you, and (2) you agree to indemnify and hold harmless C/CAG for release of such information.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P10-U8",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "As an appendix, include the following as documentation (no more than 5 pages) of relevant consultant information, qualifications, and experience: Qualifications Identify the qualifications of staff assigned to perform the work, with expertise or experience addresses each of the specified needs. Include subcontractor personnel. Include a statement regarding familiarity with implementing and administering federal grant funded projects as they relate to Supplemental Planning or Implementation activities of a Safety Action Plan. The statement shall include documentation of experience with implementation grants and complying with all relevant federal requirements.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P5-U4",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Proposer must demonstrate to C/CAG’s satisfaction that the prime consultant and/or one or more subconsultant proposed this project have successfully completed at least three (3) projects in the past ten (10) years related to Local Roadway Safety Plan, Systemic Safety Analysis Report (SSAR), Vision Zero Action Plan and/or supplemental or implementation planning for the Safe Streets for All Grant Program.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P11-U10",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The samples must have been prepared by key members of the proposer’s team and should identify the authors.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P13-U14",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "For mandatory requirement this score will result in disqualification of proposal.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P12-U11",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The selected consultant’s services will be federally funded, which necessitate compliance with additional requirements. Special attention is directed to Appendix B, the Grant Agreement Under Fiscal Year 2024 Safe Streets for All Grant Program, including but not limited to Exhibit A to the Grant Agreement “Applicable Federal Laws and Regulations.”",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P13-U13",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "An incomplete submittal will be deemed non-responsive and disqualified at C/CAG staff’s discretion.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P12-U12",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Proposals must contain the following federal certifications or forms: (1) Certification Regarding Lobbying, (2) Certification Regarding Debarment, Suspension, Ineligibility, and Voluntary Exclusion—Lower Tier Covered Transactions, and (3) Disclosure of Lobbying Activities (SF-LLL) form.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P15-U17",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Team and its leaders have experience working in the public sector and knowledge of public sector procurement process.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P14-U15",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The evaluation criteria summary and their respective weights are as follows: \nNo. Written Evaluation Criteria Weight \n1 Organization of Proposal 5 \n2 Staff and Firm Qualifications 20 \n3 Understanding of Project Scope of Work 20 \n4 Proposed Project Approach 15 \n5 Cost Effectiveness 15 \n6 References 5 \n7 Conflict of Interest Statement Pass/Fail \n Subtotal: 80",
+          "category": "EVALUATION_CRITERIA",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P15-U18",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Team is managed by an individual with appropriate experience in similar projects.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P1-U0",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Deadline for Requests for Clarifications: January 9, 2026",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P4-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "12:00 PM PST, Friday, January 23, 2026 RFP Proposals Due",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P16-U19",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Weighted scores for each proposal will be assigned utilizing the table below: \nNo. Evaluation Criteria Rating \n(0-5) \nWeight Score  \n(Rating * Weight) \n1 Organization of Proposal  5  \n2 Staff and Firm Qualifications  20  \n3 Understanding of Project Scope of \nWork \n 20  \n4 Proposed Project Approach  15  \n5 Cost Effectiveness  15  \n6 References  5  \n7 Conflict of Interest Statement  N/A Pass/Fail Pass/Fail \n8 Presentation by Team  10  \n9 Q&A Response to Panel Questions  10  \n Total:  100 /500",
+          "category": "EVALUATION_CRITERIA",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P7-U4",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "To be considered for the project, however, a modified proposal must be received prior to January 23, 2026.",
+          "category": "DEADLINE",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P3-U1",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Proposals received after the time and date specified above may be considered nonresponsive.",
+          "category": "DEADLINE",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P17-U21",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "A proposer may object to a provision of the RFP on the grounds that it is arbitrary, biased, or unduly restrictive, or to the selection of a particular proposer on the grounds that C/CAG procedures, the provisions of the RFP or applicable provisions of federal, state, or local law have been violated or inaccurately or inappropriately applied by submitting a written protest to the C/CAG Project Manager in accordance with the following deadlines: 1. No later than 5:00 p.m. on the third business day prior to the date Responses to RFP are due, for objections to RFP provisions. 2. No later than 5:00 p.m. on the third business day after the date the proposer is notified that it did not meet the minimum qualifications or was found to be non-responsive. 3. No later than 5:00 p.m. on the third business day after the date on which the proposer is notified that it was not selected, or, if applicable, the date the Committee recommends award, whichever is later, for objections to the recommended award.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P8-U5",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Indicate that the proposal is a firm offer to enter into a contract to perform work related to this RFP for a period of 120 days from the due date for proposals.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P9-U9",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The schedule shall be based on an anticipated project kick-off during the week of April 1, 2026, and shall demonstrate completion of all work no later than June 30, 2030. The total contract duration shall be four (4) years; however, the e-bike white paper deliverable shall be completed and submitted for final approval no later than December 31, 2026.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P14-U13",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Q&A Response to panel questions",
+          "category": "EVALUATION_CRITERIA",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P12-U12",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "within ten days of C/CAG’s notice to firm that it is the successful Proposer.",
+          "category": "DEADLINE",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P15-U15",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Schedule shows completion of the work within or preferably prior to the C/CAG overall time limits as specified in this RFP.",
+          "category": "DEADLINE",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P16-U17",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "9 Q&A Response to Panel Questions  10",
+          "category": "EVALUATION_CRITERIA",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P17-U18",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "No later than 5:00 p.m. on the third business day prior to the date Responses to RFP are due, for objections to RFP provisions.",
+          "category": "DEADLINE",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P18-U19",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Consultant shall conduct a project initiation meeting and hold recurring bi-weekly coordination meetings with C/CAG staff to support effective communication, monitor progress, and ensure adherence to the approved project schedule.",
+          "category": "OBLIGATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P11-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "References should be for work completed within five years of the date of the issuance of this RFP, and the contact person must be currently accessible via the contact information provided to be considered.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P6-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "If the selected proposer fails to enter into a contract with C/CAG in a timely manner as determined by C/CAG, C/CAG reserves the right to reject the proposal and enter into a contract with the next highest scoring proposer.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P13-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "For mandatory requirement this score will result in disqualification of proposal.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P13-U4",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "An incomplete submittal will be deemed non-responsive and disqualified at C/CAG staff’s discretion.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P14-U8",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Responses that do not include the proposal content requirements identified within this RFP and subsequent addenda and do not address each of the items listed below will be considered incomplete, be rated a Fail in the Evaluation Criteria and will receive no further consideration.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P16-U10",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "C/CAG reserves the right to not convene oral interviews or discussions, and to make an award on the basis of initial proposals.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P14-U7",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The evaluation criteria summary and their respective weights are as follows: \nNo. Written Evaluation Criteria Weight \n1 Organization of Proposal 5 \n2 Staff and Firm Qualifications 20 \n3 Understanding of Project Scope of Work 20 \n4 Proposed Project Approach 15 \n5 Cost Effectiveness 15 \n6 References 5 \n7 Conflict of Interest Statement Pass/Fail \n Subtotal: 80",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P16-U9",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Weighted scores for each proposal will be assigned utilizing the table below: \nNo. Evaluation Criteria Rating \n(0-5) \nWeight Score  \n(Rating * Weight) \n1 Organization of Proposal  5  \n2 Staff and Firm Qualifications  20  \n3 Understanding of Project Scope of \nWork \n 20  \n4 Proposed Project Approach  15  \n5 Cost Effectiveness  15  \n6 References  5  \n7 Conflict of Interest Statement  N/A Pass/Fail Pass/Fail \n8 Presentation by Team  10  \n9 Q&A Response to Panel Questions  10  \n Total:  100 /500",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P9-U1",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "fully loaded hourly rate means an hourly rate that includes all applicable surcharges such as taxes, insurance and fringe benefits as well as indirect costs, overhead and profit allowance, and ordinary materials and supplies.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P18-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Monthly Invoices and Progress reports",
+          "category": "COMMERCIAL",
+          "priority": "MEDIUM"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P15-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Schedule shows completion of the work within or preferably prior to the C/CAG overall time limits as specified in this RFP. The schedule serves as a project timeline, stating all major milestones and required submittals for project management and federal funding compliance.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P7-U0",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "By submitting materials, (1) you consent to release of such materials by C/CAG if requested under the Public Records Act without further notice to you, and (2) you agree to indemnify and hold harmless C/CAG for release of such information.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P6-U0",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "C/CAG reserves the right to accept or reject all proposals submitted, waive minor irregularities, request additional information, negotiate with any qualified consultant, or modify or cancel in part or in its entirety the RFP if it is in the best interests of C/CAG to do so.",
+          "category": "TERMINATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P10-U1",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Removal of any key personnel identified in the responses to the RFP without prior written consent of C/CAG may be considered a material breach of contract.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P4-U0",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "will be subject to all applicable FHWA-required federal provisions and certifications",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P11-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The C/CAG Project Manager may terminate the contract involving the conflict of interest and C/CAG may obtain the conflicted services in any way allowed by law. Failure by the consultant to notify C/CAG Project Manager may be grounds for termination of the contract for cause pursuant to Section 4, Termination, of the Contract Agreement Template, provided as Appendix D to this RFP.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P12-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Proposals must contain the following federal certifications or forms: (1) Certification Regarding Lobbying, (2) Certification Regarding Debarment, Suspension, Ineligibility, and Voluntary Exclusion—Lower Tier Covered Transactions, and (3) Disclosure of Lobbying Activities (SF-LLL) form.",
+          "category": "COMPLIANCE_OBLIGATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P8-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Indicate whether there are any conflicts of interest, actual or apparent, that would limit the proposer’s ability to provide the requested services and describe the plan for mitigating such conflicts.",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P7-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Any contract and subcontract to provide the services described in this RFP will be subject to the Grant Agreement in Appendix B between C/CAG and FHWA and will be subject to all applicable federal laws and regulations as set forth in Exhibit A to the Grant Agreement.",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P16-U9",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "7 Conflict of Interest Statement  N/A Pass/Fail Pass/Fail",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P10-U4",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Any change in key personnel on the project team is subject to prior written approval of C/CAG. Removal of any key personnel identified in the responses to the RFP without prior written consent of C/CAG may be considered a material breach of contract.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P15-U8",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Discloses any financial, business, or other relationship with C/CAG that may have an impact upon the outcome of the contract.",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P11-U5",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Include a Conflict of Interest Statement disclosing any financial, business or other relationship with C/CAG that may have an impact upon the outcome of the contract. List current clients who may have a financial interest in the outcome of this contract. Identify possible mitigation efforts, if any, to eliminate or avoid any actual or perceived conflicts of interest.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P14-U7",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "7 Conflict of Interest Statement Pass/Fail",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P11-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "If a consultant discovers a conflict during the execution of an assigned task, the consultant must immediately notify the C/CAG Project Manager regarding the conflict(s) of interest. The C/CAG Project Manager may terminate the contract involving the conflict of interest and C/CAG may obtain the conflicted services in any way allowed by law. Failure by the consultant to notify C/CAG Project Manager may be grounds for termination of the contract for cause pursuant to Section 4, Termination, of the Contract Agreement Template, provided as Appendix D to this RFP.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      }
+    ],
+    "rejected": [
+      {
+        "unit_id": "DOC-010-P5-U3",
+        "document_id": "DOC-010",
+        "page_number": 5,
+        "category": "ELIGIBILITY",
+        "source_text": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 3 (1) Regular Crash and Community Needs Review: Conduct ongoing evaluations of crash \ndata and community needs to identify and prioritize opportunities for reducing crash risks \nfor all roadway users, regardless of age or ability.  \n(2) Local Agency Collaboration: Work closely with local agencies to integrate roadway \nsafety considerations into all relevant actions and policies.  \n(3) Best Practices Training: Organize training sessions to keep local jurisdictions updated \non state-of-the-art safety planning and implementation practices.   \nPlan Monitoring and Reporting of Safety Countermeasures: Develop standardized reporting \nprotocols and a comprehensive monitoring plan to track the implementation of key safety \ncountermeasures identified in the Countywide LRSP. This annual monitoring process will enable \nC/CAG to strengthen safety coordination, evaluate the effectiveness of implemented measures, \nand support continuous improvement in road safety across San Mateo County’s diverse \ncommunities. \nDevelop a comprehensive white paper to guide the County in establishing an effective and \nforward-looking electric bicycle (e-bike) policy and implementation approach. The white paper \nwill provide practical, systemwide guidance to support safe and consistent management of e-bike \nactivity across local jurisdictions. The guidance will address policy, regulatory, design, and \noperational considerations, including facility design, speed management, signage, parking, and \nstrategies to reduce conflicts among roadway users. The effort will also examine enforcement \nand education approaches, coordination with partner agencies, and the use of data, monitoring, \nand performance measures to inform decision-making and evaluate safety outcomes over time.  \nIII. MINIMUM QUALIFICATIONS",
+        "trigger_terms": [
+          "qualification"
+        ],
+        "context_before": "",
+        "context_after": "Proposals must demonstrate that the firm or team submitting the proposal (“proposer”) meets the \nfollowing Minimum Qualifications to be eligible for consideration for this project. \n1. Proposer must demonstrate to C/CAG’s satisfaction that the prime consultant and/or one \nor more subconsultant proposed this project have successfully completed at least three (3) \nprojects in the past ten (10) years related to Local Roadway Safety Plan, Systemic Safety \nAnalysis Report (SSAR), Vision Zero Action Plan and/or supplemental or \nimplementation planning for the Safe Streets for All Grant Program.\n\n2. Proposers must demonstrate experience managing and implementing large-scale federal \ngrant funded projects and successfully ensuring compliance with all applicable federal, \nstate, and local requirements for such projects.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P4-U2",
+        "document_id": "DOC-010",
+        "page_number": 4,
+        "category": "ELIGIBILITY",
+        "source_text": "The City/County Association of Governments of San Mateo County (C/CAG), acting as the \nCounty Transportation Authority, is seeking qualified consultants to submit proposals for the San \nMateo Countywide Safe Streets for All Supplemental Planning Project. This project will involve \nsupplemental planning efforts to further develop and expand upon the recommendations \npresented in the adopted Countywide Local Roadway Safety Plan. \nKey elements of the San Mateo County Safe Streets for All Supplemental Planning Project \ninclude, but are not limited to, the following: \nEstablish a San Mateo County Transportation Safety Advisory Committee (TSAC): \nBuilding upon the advisory group particpated in the San Mateo Countywide Local Roadway \nSafety Plan (LRSP) development, the TSAC will include representatives from the 21 \njurisdictions within San Mateo County, partner agencies, and community partners. It will \nconvene quarterly to address the following items:",
+        "trigger_terms": [
+          "iso"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 2 Tentative Schedule  \nDate Description \nFriday, December 19, 2025 Release RFP \nFriday, January 9, 2026 Question and Answer Deadline \n12:00 PM PST, Friday, January 23, 2026 RFP Proposals Due \nWeek of February 16, 2026 Consultant Interviews \nThursday, March 12, 2026 C/CAG Board approval \nMonday, March 16, 2026 Notice to Proceed and Project Kick-off\n\nAnticipated Term and Budget \nThe San Mateo County Safe Streets for All Supplemental Planning Project will be funded through \nthe Safe Streets For All (SS4A ) Grant program using funds from the United States Department of \nTransportation (U.S. DOT) Federal Highway Administration (FHWA) and will be subject to all \napplicable FHWA-required federal provisions and certifications (see Grant Agreement attached as \nAppendix B.) C/CAG has budgeted four hundred thirty-three thousand, one hundred forty-one \ndollars ($433,171) for this effort. C/CAG expects the work to commence on April 1, 2026 and to \nbe completed no later than June 2030. Any contract entered into as a result of this RFP will be \nfunded, in whole or in part, with federal funds administered by the FHWA. Accordingly, federal \nrequirements apply to this procurement, any resulting agreement, and the services to be provided. \nThe successful consultant will be required to follow all federal, state, and local laws and \nregulations.  \nII. PROJECT DESCRIPTION AND BACKGROUND",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P8-U7",
+        "document_id": "DOC-010",
+        "page_number": 8,
+        "category": "ELIGIBILITY",
+        "source_text": "4. Executive Summary and Project Approach Provide a brief summary (no more than two pages) of the qualifications and benefits of \nselecting the proposer to perform requested services. This section should clearly convey the \nproposer’s understanding of the project scope, the general approach to be taken, and identify \nany specific considerations regarding how the work will be completed.",
+        "trigger_terms": [
+          "qualification"
+        ],
+        "context_before": "Re: San Mateo Countywide Safe Streets for All Supplemental Planning Project \nAttn: Eva Gaye, Transportation Program Specialist \nCity/County Association of Governments of San Mateo County \n555 County Center, 5th Floor \nRedwood City, CA 94063 The letter shall be on consultant letterhead and include the name, title, address, phone \nnumber, and email address of the individual to whom correspondence and other contacts \nshould be directed during the selection process. Indicate whether there are any conflicts of \ninterest, actual or apparent, that would limit the proposer’s ability to provide the requested \nservices and describe the plan for mitigating such conflicts. Acknowledge the receipt of this \nRFP and any addendum to the RFP. Indicate that the proposal is a firm offer to enter into a \ncontract to perform work related to this RFP for a period of 120 days from the due date for \nproposals.\n\n2. Title Page Proposals must include a title page that includes the RFP subject, the name of the proposer’s \nfirm, local address, telephone number, name of contact person, contact person’s email \naddress, and the date. 3. Table of Contents Proposals must include a table of contents that includes a clear identification of the material \nby section and page number.",
+        "context_after": "5. Work Plan This section should present a work plan for the tasks described in the Scope of \nWork. Details on the work plan are as follows: a) Discuss how the proposer will conduct the identified task, identify deliverables, and \npropose a schedule. The proposal should discuss the tasks in sufficient detail to",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P2-U0",
+        "document_id": "DOC-010",
+        "page_number": 2,
+        "category": "ELIGIBILITY",
+        "source_text": "TABLE OF CONTENTS I. INTRODUCTION ..............................................................................................................1 \nII. PROJECT DESCRIPTION AND BACKGROUND ........................................................2 \nIII. MINIMUM QUALIFICATIONS ......................................................................................3 \nIV. PROPOSAL REQUIREMENTS .......................................................................................4 \nV. PROPOSAL EVALUATION .......................................................................................... 11 \nAPPENDIX A - SCOPE OF WORK ...................................................................................... 16 \nAPPENDIX B – GRANT AGREEMENT UNDER FISCAL YEAR 2024 SAFE STREETS \nFOR ALL GRANT PROGRAM ............................................................................................ 20 \nAPPENDIX C – COST PROPOSAL TEMPLATE ............................................................... 21 \nAPPENDIX D – SAMPLE AGREEMENT TEMPLATE ..................................................... 22",
+        "trigger_terms": [
+          "qualification"
+        ],
+        "context_before": "",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P14-U16",
+        "document_id": "DOC-010",
+        "page_number": 14,
+        "category": "ELIGIBILITY",
+        "source_text": "2. Staff and Firm Qualifications (20 points) \n• Relevant experience, specific qualifications, and technical expertise of the firm and sub-\nconsultants to conduct services on both federal and nonfederal-aid projects. \n• Describes familiarity of project and demonstrates understanding of work completed to \ndate and project objectives moving forward \n• Roles and Organization of Proposed Team \no Proposes adequate and appropriate disciplines of project team. \no Some or all of team members have previously worked together on similar \nproject(s). \no Overall organization of the team is relevant to C/CAG’s needs. \n• Roles of Key Individuals on the Team \no Proposed team members, as demonstrated by enclosed resumes, have relevant \nexperience for their role in the project.",
+        "trigger_terms": [
+          "qualification",
+          "experience"
+        ],
+        "context_before": "The evaluation criteria summary and their respective weights are as follows: \nNo. Written Evaluation Criteria Weight \n1 Organization of Proposal 5 \n2 Staff and Firm Qualifications 20 \n3 Understanding of Project Scope of Work 20 \n4 Proposed Project Approach 15 \n5 Cost Effectiveness 15 \n6 References 5 \n7 Conflict of Interest Statement Pass/Fail \n Subtotal: 80\n\nNo. Interview Evaluation Criteria Weight \n8 Presentation by team 10 \n9 Q&A Response to panel questions 10 \n Subtotal: 20 \n Total: 100 1. Organization of Proposal (5 points)  \n• Responses that do not include the proposal content requirements identified within this \nRFP and subsequent addenda and do not address each of the items listed below will be \nconsidered incomplete, be rated a Fail in the Evaluation Criteria and will receive no \nfurther consideration.",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P16-U20",
+        "document_id": "DOC-010",
+        "page_number": 16,
+        "category": "ELIGIBILITY",
+        "source_text": "D. Recommendation for Contract Award \nC/CAG reserves the right to not convene oral interviews or discussions, and to make an award on \nthe basis of initial proposals. Accordingly, each initial proposal should be submitted on the most \nfavorable terms from a price and a technical viewpoint. C/CAG reserves the right to negotiate \nand/or include a best and final offer stage to the process.  \nReferences may be contacted at any point in the evaluation process. C/CAG reserves the right to \nconsider consultant performance based on comments from submitted references. Experience and \nability to perform work is a significant consideration.  \nThe Committee will recommend the selected proposer to the C/CAG Board of Directors for \napproval, based on the Committee’s evaluation of the written proposals and oral interviews (if \nheld).",
+        "trigger_terms": [
+          "experience"
+        ],
+        "context_before": "8. Presentation by Team (10 points) (if oral interviews are necessary) \n• Team presentation conveying project understanding, communication skills, \ninnovative ideas, critical issues and solutions. 9. Q&A Response to Panel Questions (10 points) (if oral interviews are necessary) \n• Proposer provides responses to various interview panel questions.\n\nWeighted scores for each proposal will be assigned utilizing the table below: \nNo. Evaluation Criteria Rating \n(0-5) \nWeight Score  \n(Rating * Weight) \n1 Organization of Proposal  5  \n2 Staff and Firm Qualifications  20  \n3 Understanding of Project Scope of \nWork \n 20  \n4 Proposed Project Approach  15  \n5 Cost Effectiveness  15  \n6 References  5  \n7 Conflict of Interest Statement  N/A Pass/Fail Pass/Fail \n8 Presentation by Team  10  \n9 Q&A Response to Panel Questions  10  \n Total:  100 /500",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P18-U22",
+        "document_id": "DOC-010",
+        "page_number": 18,
+        "category": "ELIGIBILITY",
+        "source_text": "the C/CAG Transportation Safety Advisory Committee (TSAC), and for delivering no fewer than twelve (12) formal presentations to C/CAG committees and the Board. The anticipated project term is approximately four (4) years. The first eight (8) months of the contract period (April 2026 through December 2026) shall focus on tasks related to development",
+        "trigger_terms": [
+          "iso"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 16 APPENDIX A - SCOPE OF WORK The Key elements for the San Mateo County Safe Streets for All Supplemental planning project include but is not limited to the following: TASK 1: PROJECT INITIATION AND MANAGEMENT\n\nThe Consultant shall conduct a project initiation meeting and hold recurring bi-weekly coordination meetings with C/CAG staff to support effective communication, monitor progress, and ensure adherence to the approved project schedule. The Consultant shall also be responsible for scheduling, preparing for, and facilitating no fewer than sixteen (16) quarterly meetings with",
+        "context_after": "of the E-Bike White Paper, as well as the initial development of the overall program framework and associated deliverables. Task 1 Deliverables: 1. Project Kick-off Meeting 2. Bi-weekly Project management meetings 3. Develop project management meeting agendas and action items 4. Monthly Invoices and Progress reports\n\nTASK 2: FACILITATE QUARTERLY TRANSPORTATION SAFETY ADVISORY COMMITTEE (TSAC) MEETINGS The Consultant will organize, manage, and facilitate quarterly Transportation Safety Advisory Committee (TSAC) meetings over a four-year period to support coordination, knowledge- sharing, and implementation of Countywide Local Road Safety Plan (LRSP) initiatives.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P18-U23",
+        "document_id": "DOC-010",
+        "page_number": 18,
+        "category": "ELIGIBILITY",
+        "source_text": "TASK 2: FACILITATE QUARTERLY TRANSPORTATION SAFETY ADVISORY COMMITTEE (TSAC) MEETINGS The Consultant will organize, manage, and facilitate quarterly Transportation Safety Advisory Committee (TSAC) meetings over a four-year period to support coordination, knowledge- sharing, and implementation of Countywide Local Road Safety Plan (LRSP) initiatives.",
+        "trigger_terms": [
+          "iso"
+        ],
+        "context_before": "the C/CAG Transportation Safety Advisory Committee (TSAC), and for delivering no fewer than twelve (12) formal presentations to C/CAG committees and the Board. The anticipated project term is approximately four (4) years. The first eight (8) months of the contract period (April 2026 through December 2026) shall focus on tasks related to development\n\nof the E-Bike White Paper, as well as the initial development of the overall program framework and associated deliverables. Task 1 Deliverables: 1. Project Kick-off Meeting 2. Bi-weekly Project management meetings 3. Develop project management meeting agendas and action items 4. Monthly Invoices and Progress reports",
+        "context_after": "These meetings will provide a collaborative forum for sharing best practices, addressing emerging transportation safety challenges, and advancing coordinated solutions among member agencies. The Consultant will develop and manage meeting agendas and materials aligned with Countywide LRSP goals, local agency priorities, and emerging safety issues.\n\nResponsibilities include identifying relevant topics, case studies, and best practices; coordinating up to two qualified external speakers per meeting; and arranging presentations, trainings, and breakout discussions that promote active engagement and informed decision-making. The Consultant will also incorporate updates on current and upcoming funding opportunities to support agency",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P19-U24",
+        "document_id": "DOC-010",
+        "page_number": 19,
+        "category": "ELIGIBILITY",
+        "source_text": "TASK 3: TRACK IMPLEMENTATION PLAN PROGRESS \nThe Consultant will work collaboratively with C/CAG staff and Transportation Safety Advisory \nCommittee (TSAC) member jurisdictions to develop meaningful, actionable performance \nmeasures to support ongoing monitoring of Countywide Local Road Safety Plan (LRSP) \nimplementation. The Consultant will establish a clear and repeatable process for collecting, \ntracking, and updating performance data, which may include surveys or standardized reporting \ntemplates. This performance-tracking framework will streamline countywide evaluation efforts, \nsupport consistent reporting, and enable C/CAG to assess progress, identify trends, and pursue \ncontinuous improvement in roadway safety outcomes. \nTask 3 Deliverables \n1. Performance measures and reporting methodology. \n2. Annual LRSP Implementation Progress Report (Draft and Final)  \n3. Presentation materials for Board and Committee meetings to support annual updates.",
+        "trigger_terms": [
+          "iso"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 17 Task 2: Deliverables \n1. Provide 16 meeting agendas for each TSAC meeting \n2. Provide 16 meeting notes for each TSAC meeting \n3. Develop meeting materials, including slide decks, discussion prompts, handouts, and \nfacilitation guides. \n4. Arrange best practices training",
+        "context_after": "TASK 4: E-BIKE SAFETY WHITEPAPER: \nThe Consultant will prepare a comprehensive, implementation-oriented white paper on electric \nbicycles (e-bikes) to support the County and local jurisdictions in developing consistent and \neffective policies. The white paper will serve as a practical guide that can be adopted, adapted, or \nreferenced for ordinances, design standards, enforcement strategies, and public education efforts. \nIt will integrate best practices, local conditions, emerging technologies, regulatory frameworks, \nand safety considerations to advance a coordinated, forward-looking countywide approach to e-\nbike planning and management. Each component outlined below will be presented to the C/CAG \nStanding Committees during the development of the white paper for review and input. \nThe Consultant shall prepare a series of technical memoranda corresponding to the components \ndescribed in Sections A–F below. These memoranda shall document interim findings, analysis, \nand recommendations as work progresses and shall be used to support ongoing coordination, \nreview, and discussion with C/CAG and its advisory committees. Each memorandum shall \nreflect the state of work at the time of submittal and may be refined as the project advances.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P19-U25",
+        "document_id": "DOC-010",
+        "page_number": 19,
+        "category": "ELIGIBILITY",
+        "source_text": "TASK 4: E-BIKE SAFETY WHITEPAPER: \nThe Consultant will prepare a comprehensive, implementation-oriented white paper on electric \nbicycles (e-bikes) to support the County and local jurisdictions in developing consistent and \neffective policies. The white paper will serve as a practical guide that can be adopted, adapted, or \nreferenced for ordinances, design standards, enforcement strategies, and public education efforts. \nIt will integrate best practices, local conditions, emerging technologies, regulatory frameworks, \nand safety considerations to advance a coordinated, forward-looking countywide approach to e-\nbike planning and management. Each component outlined below will be presented to the C/CAG \nStanding Committees during the development of the white paper for review and input. \nThe Consultant shall prepare a series of technical memoranda corresponding to the components \ndescribed in Sections A–F below. These memoranda shall document interim findings, analysis, \nand recommendations as work progresses and shall be used to support ongoing coordination, \nreview, and discussion with C/CAG and its advisory committees. Each memorandum shall \nreflect the state of work at the time of submittal and may be refined as the project advances.",
+        "trigger_terms": [
+          "iso"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 17 Task 2: Deliverables \n1. Provide 16 meeting agendas for each TSAC meeting \n2. Provide 16 meeting notes for each TSAC meeting \n3. Develop meeting materials, including slide decks, discussion prompts, handouts, and \nfacilitation guides. \n4. Arrange best practices training\n\nTASK 3: TRACK IMPLEMENTATION PLAN PROGRESS \nThe Consultant will work collaboratively with C/CAG staff and Transportation Safety Advisory \nCommittee (TSAC) member jurisdictions to develop meaningful, actionable performance \nmeasures to support ongoing monitoring of Countywide Local Road Safety Plan (LRSP) \nimplementation. The Consultant will establish a clear and repeatable process for collecting, \ntracking, and updating performance data, which may include surveys or standardized reporting \ntemplates. This performance-tracking framework will streamline countywide evaluation efforts, \nsupport consistent reporting, and enable C/CAG to assess progress, identify trends, and pursue \ncontinuous improvement in roadway safety outcomes. \nTask 3 Deliverables \n1. Performance measures and reporting methodology. \n2. Annual LRSP Implementation Progress Report (Draft and Final)  \n3. Presentation materials for Board and Committee meetings to support annual updates.",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P21-U26",
+        "document_id": "DOC-010",
+        "page_number": 21,
+        "category": "ELIGIBILITY",
+        "source_text": "1. Draft memo of each component described above in sections A-F \n2. Final memo of each component described above in sections A-F \n3. Draft final E-bike Safety White Paper compiled from the memos \n4. Final E-bike Safety White Paper \n5. Conduct a minimum of 12 presentations to the C/CAG Technical Advisory Committees, the \nTransportation Safety Advisory Committee, C/CAG Board, and C/CAG Bike and Pedestrian \nAdvisory Committees  \n6. Develop presentation materials for E- Bike White Paper",
+        "trigger_terms": [
+          "iso"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 19 The Consultant shall develop an Enforcement and Education Guide book that outlines \nenforcement strategies appropriate for different community contexts and levels of local \nresources. The recommendation shall include approaches for coordinating education and \noutreach efforts with enforcement activities to improve compliance and safety outcomes.  \nFurthermore, the recommendation shall identify opportunities for coordination with schools, law \nenforcement agencies, and community partners. \nF. Data, Monitoring, and Performance Measures \nThe Consultant shall identify data needs, analytic methods, and performance metrics to support \nmonitoring of e-bike usage patterns, crash trends, and safety outcomes. This section shall support \nevidence-based decision-making and enable jurisdictions to track the effectiveness of \nimplemented policies and treatments over time. \nTask 4 Deliverables:",
+        "context_after": "TASK 5: OPTIONAL TASK(S) \nAs needed and only upon prior approval from the C/CAG project manager, optional tasks as \nassigned may include, but are not limited to: \n• Preparing additional whitepapers centered around the following topics: \no Integrating Emerging Technologies into Transportation Safety \no Developing Comprehensive Road Safety Management Systems \no Leveraging Data and Analytics for Road Safety Improvement\n\nTask 5 Deliverables \n1. To be determined",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P6-U3",
+        "document_id": "DOC-010",
+        "page_number": 6,
+        "category": "DATES_SUBMISSION",
+        "source_text": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 4 IV. PROPOSAL REQUIREMENTS These guidelines are provided to standardize the preparation and submission of proposals by all \nconsultants. The intent of these guidelines is to assist consultants in preparation of their \nproposals, to simplify the review process, and to help assure consistency in format and content. \nGeneral Conditions:  \n• Neither submission of a proposal nor C/CAG’s receipt of proposal materials confers any \nright to the proposer nor any obligation on C/CAG. This RFP does not commit C/CAG to \naward a contract or to pay any costs incurred in the preparation of a proposal in response \nto this RFP. \n• Only one proposal will be accepted from any one person, partnership, corporation, or \nother entity; however, several alternatives may be included in one response. \n• C/CAG reserves the right to accept or reject all proposals submitted, waive minor \nirregularities, request additional information, negotiate with any qualified consultant, or \nmodify or cancel in part or in its entirety the RFP if it is in the best interests of C/CAG to \ndo so.  \n• Any contract resulting from this RFP will be awarded to the responsible proposer whose \nproposal is most advantageous to C/CAG, with price and other factors considered. \n• Should this RFP result in recommendation for award of a contract, the contract will not \nhave any force or effect until it is approved and fully executed by C/CAG. \n• If the selected proposer fails to enter into a contract with C/CAG in a timely manner as \ndetermined by C/CAG, C/CAG reserves the right to reject the proposal and enter into a \ncontract with the next highest scoring proposer. \n• The work performed pursuant to any resulting contract shall comply with the \nrequirements of all federal, state, and local laws without limitation, and shall apply to this \nRFP and are incorporated into this RFP and any subsequent contract by this reference.",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P8-U6",
+        "document_id": "DOC-010",
+        "page_number": 8,
+        "category": "DATES_SUBMISSION",
+        "source_text": "5. Work Plan This section should present a work plan for the tasks described in the Scope of \nWork. Details on the work plan are as follows: a) Discuss how the proposer will conduct the identified task, identify deliverables, and \npropose a schedule. The proposal should discuss the tasks in sufficient detail to",
+        "trigger_terms": [
+          "schedule"
+        ],
+        "context_before": "2. Title Page Proposals must include a title page that includes the RFP subject, the name of the proposer’s \nfirm, local address, telephone number, name of contact person, contact person’s email \naddress, and the date. 3. Table of Contents Proposals must include a table of contents that includes a clear identification of the material \nby section and page number.\n\n4. Executive Summary and Project Approach Provide a brief summary (no more than two pages) of the qualifications and benefits of \nselecting the proposer to perform requested services. This section should clearly convey the \nproposer’s understanding of the project scope, the general approach to be taken, and identify \nany specific considerations regarding how the work will be completed.",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P9-U7",
+        "document_id": "DOC-010",
+        "page_number": 9,
+        "category": "DATES_SUBMISSION",
+        "source_text": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 7 demonstrate a clear understanding of the project and component tasks. The proposal \nmay include additional tasks or sub-tasks the proposer believes necessary to \naccomplish the project goals. The schedule should show the expected sequence of \ntasks, subtasks, and milestones.",
+        "trigger_terms": [
+          "schedule"
+        ],
+        "context_before": "",
+        "context_after": "b) Provide a staffing plan for each task. Provide an organizational chart that shows roles \nand responsibilities of key personnel and reporting structure, including reporting and \ncommunication relationships between C/CAG, consultant staff, and subcontractors, if \nany. Designate a project manager who will provide a single point of contact for the \nmanagement and coordination of all aspects of the work. The project manager will be \nresponsible for coordinating and tracking all deliverables, communicating with the \nC/CAG Project Manager, and reporting results and recommendations. Identify the \ntask leads and backup individuals. Clearly identify all staff with defined roles and \nproposed work location during the project.\n\nc) Describe approach to managing resources and maintaining quality results. Include a \ndescription of the role of any subcontractors, their specific responsibilities, and how \ntheir work will be supervised to maintain quality results. d) Identify and explain any problem areas and/or potential obstacles (such as \nmaintaining schedule, budget overruns, feasibility, etc.) to successful completion of \nthe Scope of Work. Discuss methods, formal and informal, to track and resolve these \nproblems/obstacles during the project.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P9-U8",
+        "document_id": "DOC-010",
+        "page_number": 9,
+        "category": "DATES_SUBMISSION",
+        "source_text": "c) Describe approach to managing resources and maintaining quality results. Include a \ndescription of the role of any subcontractors, their specific responsibilities, and how \ntheir work will be supervised to maintain quality results. d) Identify and explain any problem areas and/or potential obstacles (such as \nmaintaining schedule, budget overruns, feasibility, etc.) to successful completion of \nthe Scope of Work. Discuss methods, formal and informal, to track and resolve these \nproblems/obstacles during the project.",
+        "trigger_terms": [
+          "schedule"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 7 demonstrate a clear understanding of the project and component tasks. The proposal \nmay include additional tasks or sub-tasks the proposer believes necessary to \naccomplish the project goals. The schedule should show the expected sequence of \ntasks, subtasks, and milestones.\n\nb) Provide a staffing plan for each task. Provide an organizational chart that shows roles \nand responsibilities of key personnel and reporting structure, including reporting and \ncommunication relationships between C/CAG, consultant staff, and subcontractors, if \nany. Designate a project manager who will provide a single point of contact for the \nmanagement and coordination of all aspects of the work. The project manager will be \nresponsible for coordinating and tracking all deliverables, communicating with the \nC/CAG Project Manager, and reporting results and recommendations. Identify the \ntask leads and backup individuals. Clearly identify all staff with defined roles and \nproposed work location during the project.",
+        "context_after": "6. Schedule of Work The Consultant shall submit a detailed project schedule in the form of a Gantt chart that \nidentifies all phases of work and all services to be performed under this Agreement, \nincluding appropriate durations for Agency review, comment, and approval. The schedule \nshall be based on an anticipated project kick-off during the week of April 1, 2026, and shall \ndemonstrate completion of all work no later than June 30, 2030. The total contract duration \nshall be four (4) years; however, the e-bike white paper deliverable shall be completed and \nsubmitted for final approval no later than December 31, 2026.\n\nCost Proposal Provide a detailed task-based cost proposal for the project using the Cost Proposal Template \n(Appendix C). The cost estimate shall include personnel names, classifications, hourly rates, \nand any other cost items necessary to perform each of the tasks listed in the Scope of Work. \nA total cost shall be summarized and presented. Rates shall include all qualifying direct and \nindirect costs (consistent with the provisions of the terms and conditions of the Grant \nAgreement (Appendix B); fully loaded hourly rate means an hourly rate that includes all \napplicable surcharges such as taxes, insurance and fringe benefits as well as indirect costs, \noverhead and profit allowance, and ordinary materials and supplies. Rates indicated shall be",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P16-U16",
+        "document_id": "DOC-010",
+        "page_number": 16,
+        "category": "DATES_SUBMISSION",
+        "source_text": "8. Presentation by Team (10 points) (if oral interviews are necessary) \n• Team presentation conveying project understanding, communication skills, \ninnovative ideas, critical issues and solutions. 9. Q&A Response to Panel Questions (10 points) (if oral interviews are necessary) \n• Proposer provides responses to various interview panel questions.",
+        "trigger_terms": [
+          "q&a"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 14 • Lists current clients who may have a financial interest in the outcome of this contract. 7. References (5 points) \n• Provide as reference the names of at least three agencies you currently or have \npreviously consulted for in the past three years.",
+        "context_after": "Weighted scores for each proposal will be assigned utilizing the table below: \nNo. Evaluation Criteria Rating \n(0-5) \nWeight Score  \n(Rating * Weight) \n1 Organization of Proposal  5  \n2 Staff and Firm Qualifications  20  \n3 Understanding of Project Scope of \nWork \n 20  \n4 Proposed Project Approach  15  \n5 Cost Effectiveness  15  \n6 References  5  \n7 Conflict of Interest Statement  N/A Pass/Fail Pass/Fail \n8 Presentation by Team  10  \n9 Q&A Response to Panel Questions  10  \n Total:  100 /500\n\nD. Recommendation for Contract Award \nC/CAG reserves the right to not convene oral interviews or discussions, and to make an award on \nthe basis of initial proposals. Accordingly, each initial proposal should be submitted on the most \nfavorable terms from a price and a technical viewpoint. C/CAG reserves the right to negotiate \nand/or include a best and final offer stage to the process.  \nReferences may be contacted at any point in the evaluation process. C/CAG reserves the right to \nconsider consultant performance based on comments from submitted references. Experience and \nability to perform work is a significant consideration.  \nThe Committee will recommend the selected proposer to the C/CAG Board of Directors for \napproval, based on the Committee’s evaluation of the written proposals and oral interviews (if \nheld).",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P15-U14",
+        "document_id": "DOC-010",
+        "page_number": 15,
+        "category": "DATES_SUBMISSION",
+        "source_text": "3. Understanding of Project Scope of Work (20 points) \n• Detailed Scope of Services to be Provided \no Proposed scope of services is appropriate for all phases of the work. \no Scope addresses all known project needs and appears achievable in the \ntimeframes set forth in the project schedule. \no The proposal includes a detailed work plan.  \n• Project Deliverables \no Understanding of the Project scope and ability to meet program objectives.",
+        "trigger_terms": [
+          "schedule"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 13 o Key positions required to execute the project team’s responsibilities are \nappropriately staffed. \n• Working Relationship with C/CAG \no Team and its leaders have experience working in the public sector and knowledge \nof public sector procurement process. \no Team leadership understands the nature of public sector work and its decision-\nmaking process.",
+        "context_after": "4. Proposed Project Approach (15 points) \n• Project and Management Approach \no Team is managed by an individual with appropriate experience in similar projects. \nThis person’s time is appropriately committed to the project. \no Project team and management approach responds to project issues. Team \nstructure provides adequate capability to perform both volume and quality of \nneeded work within project schedule milestones. \n• Schedule of Work \no Schedule shows completion of the work within or preferably prior to the C/CAG \noverall time limits as specified in this RFP. The schedule serves as a project \ntimeline, stating all major milestones and required submittals for project \nmanagement and federal funding compliance.  \no The schedule addresses all reasonably anticipated phases of the project, in \naccordance with the general requirements of this RFP. \n• Presentation of written proposals and sample reports.\n\n5. Cost Effectiveness (15 points) \n• Cost Control and Budgeting Methodology \no Proposer has a system or process for managing cost and budget. \no Evidence of successful budget management for a similar project. \n• Proposal clearly defines cost in spreadsheet format. \n• Reasonableness of hourly rates.  \n• Allocation of resources for tasks and activities.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P11-U10",
+        "document_id": "DOC-010",
+        "page_number": 11,
+        "category": "DATES_SUBMISSION",
+        "source_text": "b) Levine Act Disclosure  \nThe Levine Act (California Government Code Section 84308) imposes certain \nrequirements on parties contracting with C/CAG related to campaign contributions to \nC/CAG Board members. Complete the form available at: https://ccag.ca.gov/wp-\ncontent/uploads/2023/07/Appendix-3-CA-Levine-Act-Statement.pdf and include it in \nyour submission.",
+        "trigger_terms": [
+          "submission",
+          "upload"
+        ],
+        "context_before": "7. Additional Proposal Requirements \nAs an appendix, include the following documentation (no more than ten pages) related to the \nfollowing items: a) Conflict of Interest Requirements \nInclude a Conflict of Interest Statement disclosing any financial, business or other \nrelationship with C/CAG that may have an impact upon the outcome of the contract. List \ncurrent clients who may have a financial interest in the outcome of this contract. Identify \npossible mitigation efforts, if any, to eliminate or avoid any actual or perceived conflicts \nof interest.\n\nIf a consultant discovers a conflict during the execution of an assigned task, the \nconsultant must immediately notify the C/CAG Project Manager regarding the conflict(s) \nof interest. The C/CAG Project Manager may terminate the contract involving the \nconflict of interest and C/CAG may obtain the conflicted services in any way allowed by \nlaw. Failure by the consultant to notify C/CAG Project Manager may be grounds for \ntermination of the contract for cause pursuant to Section 4, Termination, of the Contract \nAgreement Template, provided as Appendix D to this RFP.",
+        "context_after": "b) Litigation \nIndicate if the proposing consultant is or was involved with any litigation in connection \nwith prior projects. If yes, briefly describe the nature of the litigation and the result.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P12-U11",
+        "document_id": "DOC-010",
+        "page_number": 12,
+        "category": "DATES_SUBMISSION",
+        "source_text": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 10 c) Agreement \nIndicate if the proposing consultant requests any exceptions from the standard agreement \nincluded as Appendix D, Sample Agreement Template. Provide a brief statement affirming that the proposal terms shall remain in effect for one-\nhundred twenty (120) days following the date proposal submittals are due.",
+        "trigger_terms": [
+          "days"
+        ],
+        "context_before": "",
+        "context_after": "d) Insurance Provisions \nSubmit a signed acknowledgement, for proposer only, that the proposer agrees to provide \nthe required certificates of insurance providing verification of the minimum insurance \nrequirements listed in Appendix D, Sample Agreement Template (see Section 11), within \nten days of C/CAG’s notice to firm that it is the successful Proposer.\n\ne) Taxpayer Identification Number and Certification \nSubmit a W-9, Request for Taxpayer Identification Number and Certification for the \nproposer only (containing original signature), available at http://www.irs.gov/pub/irs-\npdf/fw9.pdf. f) Federal Funding Provisions \nThe selected consultant’s services will be federally funded, which necessitate compliance \nwith additional requirements. Special attention is directed to Appendix B, the Grant \nAgreement Under Fiscal Year 2024 Safe Streets for All Grant Program, including but not \nlimited to Exhibit A to the Grant Agreement “Applicable Federal Laws and Regulations.”",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P23-U20",
+        "document_id": "DOC-010",
+        "page_number": 23,
+        "category": "DATES_SUBMISSION",
+        "source_text": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 21 APPENDIX C – COST PROPOSAL TEMPLATE https://ccag.ca.gov/wp-content/uploads/2025/12/Appendix-C-Cost-Proposal-Template.xlsx",
+        "trigger_terms": [
+          "upload"
+        ],
+        "context_before": "",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P24-U21",
+        "document_id": "DOC-010",
+        "page_number": 24,
+        "category": "DATES_SUBMISSION",
+        "source_text": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 22 APPENDIX D – SAMPLE AGREEMENT TEMPLATE https://ccag.ca.gov/wp-content/uploads/2025/12/Appendix-D-2025-federal-funds-agreement-template_.pdf",
+        "trigger_terms": [
+          "upload"
+        ],
+        "context_before": "",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P2-U0",
+        "document_id": "DOC-010",
+        "page_number": 2,
+        "category": "EVALUATION",
+        "source_text": "TABLE OF CONTENTS I. INTRODUCTION ..............................................................................................................1 \nII. PROJECT DESCRIPTION AND BACKGROUND ........................................................2 \nIII. MINIMUM QUALIFICATIONS ......................................................................................3 \nIV. PROPOSAL REQUIREMENTS .......................................................................................4 \nV. PROPOSAL EVALUATION .......................................................................................... 11 \nAPPENDIX A - SCOPE OF WORK ...................................................................................... 16 \nAPPENDIX B – GRANT AGREEMENT UNDER FISCAL YEAR 2024 SAFE STREETS \nFOR ALL GRANT PROGRAM ............................................................................................ 20 \nAPPENDIX C – COST PROPOSAL TEMPLATE ............................................................... 21 \nAPPENDIX D – SAMPLE AGREEMENT TEMPLATE ..................................................... 22",
+        "trigger_terms": [
+          "evaluation"
+        ],
+        "context_before": "",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P5-U1",
+        "document_id": "DOC-010",
+        "page_number": 5,
+        "category": "EVALUATION",
+        "source_text": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 3 (1) Regular Crash and Community Needs Review: Conduct ongoing evaluations of crash \ndata and community needs to identify and prioritize opportunities for reducing crash risks \nfor all roadway users, regardless of age or ability.  \n(2) Local Agency Collaboration: Work closely with local agencies to integrate roadway \nsafety considerations into all relevant actions and policies.  \n(3) Best Practices Training: Organize training sessions to keep local jurisdictions updated \non state-of-the-art safety planning and implementation practices.   \nPlan Monitoring and Reporting of Safety Countermeasures: Develop standardized reporting \nprotocols and a comprehensive monitoring plan to track the implementation of key safety \ncountermeasures identified in the Countywide LRSP. This annual monitoring process will enable \nC/CAG to strengthen safety coordination, evaluate the effectiveness of implemented measures, \nand support continuous improvement in road safety across San Mateo County’s diverse \ncommunities. \nDevelop a comprehensive white paper to guide the County in establishing an effective and \nforward-looking electric bicycle (e-bike) policy and implementation approach. The white paper \nwill provide practical, systemwide guidance to support safe and consistent management of e-bike \nactivity across local jurisdictions. The guidance will address policy, regulatory, design, and \noperational considerations, including facility design, speed management, signage, parking, and \nstrategies to reduce conflicts among roadway users. The effort will also examine enforcement \nand education approaches, coordination with partner agencies, and the use of data, monitoring, \nand performance measures to inform decision-making and evaluate safety outcomes over time.  \nIII. MINIMUM QUALIFICATIONS",
+        "trigger_terms": [
+          "evaluation"
+        ],
+        "context_before": "",
+        "context_after": "Proposals must demonstrate that the firm or team submitting the proposal (“proposer”) meets the \nfollowing Minimum Qualifications to be eligible for consideration for this project. \n1. Proposer must demonstrate to C/CAG’s satisfaction that the prime consultant and/or one \nor more subconsultant proposed this project have successfully completed at least three (3) \nprojects in the past ten (10) years related to Local Roadway Safety Plan, Systemic Safety \nAnalysis Report (SSAR), Vision Zero Action Plan and/or supplemental or \nimplementation planning for the Safe Streets for All Grant Program.\n\n2. Proposers must demonstrate experience managing and implementing large-scale federal \ngrant funded projects and successfully ensuring compliance with all applicable federal, \nstate, and local requirements for such projects.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P13-U5",
+        "document_id": "DOC-010",
+        "page_number": 13,
+        "category": "EVALUATION",
+        "source_text": "Proposals will be evaluated according to each evaluation criterion and scored on a zero-to-five-\npoint rating scale. The scores for all the evaluation criteria will then be multiplied according to \ntheir assigned weight to arrive at a weighted score for each proposal. A proposal with a high \nweighted total will be deemed of higher quality than a proposal with a lesser-weighted total. The \nfinal maximum score for any proposal is five hundred (500) points.",
+        "trigger_terms": [
+          "evaluation",
+          "weight",
+          "criteria"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 11 V. PROPOSAL EVALUATION A. Evaluation Process \nAll proposals will be evaluated by a Selection Committee (Committee) comprised of C/CAG \nstaff and may include other parties with relevant subject matter expertise An initial assessment \nwill be made to ensure that the submittal complies with the RFP requirements. An incomplete \nsubmittal will be deemed non-responsive and disqualified at C/CAG staff’s discretion. The \nCommittee will then assess the quality of each submittal based on the evaluation criteria below, \nand will rank the proposals. All communication during the evaluation phase shall be through the \nC/CAG Contract Administrator/Project Manager only. Proposers shall neither contact nor lobby \nevaluators during the evaluation process. Attempts by proposer to contact members of the \nCommittee may jeopardize the integrity of the evaluation and selection process and risk possible \ndisqualification of proposer. \nThe selection process may include oral interviews. If oral interviews are necessary, the \nconsultant will be notified of the time and place of oral interviews and whether any additional \ninformation may be required to be submitted. The evaluation criteria for the oral interviews, \nshould they occur, are included below. \nB. Evaluation Criteria",
+        "context_after": "Rating Scale \n0 \nNot \nAcceptable \nNon-responsive, fails to meet RFP specifications. The approach has no \nprobability of success. For mandatory requirement this score will result in \ndisqualification of proposal. \n1 Poor \nBelow average, falls short of expectations, is substandard to that which is \nthe average or expected norm, has a low probability of success in \nachieving project objectives per RFP. \n2 Fair \nHas a reasonable probability of success, however, some objectives may \nnot be met. \n3 Average \nAcceptable, achieves all objectives in a reasonable fashion per RFP \nspecification.  \n4 \nAbove \nAverage/Good \nVery good probability of success, better than that which is average or \nexpected as the norm. Achieves all objectives per RFP requirements and \nexpectations.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P19-U11",
+        "document_id": "DOC-010",
+        "page_number": 19,
+        "category": "EVALUATION",
+        "source_text": "TASK 3: TRACK IMPLEMENTATION PLAN PROGRESS \nThe Consultant will work collaboratively with C/CAG staff and Transportation Safety Advisory \nCommittee (TSAC) member jurisdictions to develop meaningful, actionable performance \nmeasures to support ongoing monitoring of Countywide Local Road Safety Plan (LRSP) \nimplementation. The Consultant will establish a clear and repeatable process for collecting, \ntracking, and updating performance data, which may include surveys or standardized reporting \ntemplates. This performance-tracking framework will streamline countywide evaluation efforts, \nsupport consistent reporting, and enable C/CAG to assess progress, identify trends, and pursue \ncontinuous improvement in roadway safety outcomes. \nTask 3 Deliverables \n1. Performance measures and reporting methodology. \n2. Annual LRSP Implementation Progress Report (Draft and Final)  \n3. Presentation materials for Board and Committee meetings to support annual updates.",
+        "trigger_terms": [
+          "evaluation"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 17 Task 2: Deliverables \n1. Provide 16 meeting agendas for each TSAC meeting \n2. Provide 16 meeting notes for each TSAC meeting \n3. Develop meeting materials, including slide decks, discussion prompts, handouts, and \nfacilitation guides. \n4. Arrange best practices training",
+        "context_after": "TASK 4: E-BIKE SAFETY WHITEPAPER: \nThe Consultant will prepare a comprehensive, implementation-oriented white paper on electric \nbicycles (e-bikes) to support the County and local jurisdictions in developing consistent and \neffective policies. The white paper will serve as a practical guide that can be adopted, adapted, or \nreferenced for ordinances, design standards, enforcement strategies, and public education efforts. \nIt will integrate best practices, local conditions, emerging technologies, regulatory frameworks, \nand safety considerations to advance a coordinated, forward-looking countywide approach to e-\nbike planning and management. Each component outlined below will be presented to the C/CAG \nStanding Committees during the development of the white paper for review and input. \nThe Consultant shall prepare a series of technical memoranda corresponding to the components \ndescribed in Sections A–F below. These memoranda shall document interim findings, analysis, \nand recommendations as work progresses and shall be used to support ongoing coordination, \nreview, and discussion with C/CAG and its advisory committees. Each memorandum shall \nreflect the state of work at the time of submittal and may be refined as the project advances.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P9-U0",
+        "document_id": "DOC-010",
+        "page_number": 9,
+        "category": "COMMERCIAL",
+        "source_text": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 7 demonstrate a clear understanding of the project and component tasks. The proposal \nmay include additional tasks or sub-tasks the proposer believes necessary to \naccomplish the project goals. The schedule should show the expected sequence of \ntasks, subtasks, and milestones.",
+        "trigger_terms": [
+          "milestone"
+        ],
+        "context_before": "",
+        "context_after": "b) Provide a staffing plan for each task. Provide an organizational chart that shows roles \nand responsibilities of key personnel and reporting structure, including reporting and \ncommunication relationships between C/CAG, consultant staff, and subcontractors, if \nany. Designate a project manager who will provide a single point of contact for the \nmanagement and coordination of all aspects of the work. The project manager will be \nresponsible for coordinating and tracking all deliverables, communicating with the \nC/CAG Project Manager, and reporting results and recommendations. Identify the \ntask leads and backup individuals. Clearly identify all staff with defined roles and \nproposed work location during the project.\n\nc) Describe approach to managing resources and maintaining quality results. Include a \ndescription of the role of any subcontractors, their specific responsibilities, and how \ntheir work will be supervised to maintain quality results. d) Identify and explain any problem areas and/or potential obstacles (such as \nmaintaining schedule, budget overruns, feasibility, etc.) to successful completion of \nthe Scope of Work. Discuss methods, formal and informal, to track and resolve these \nproblems/obstacles during the project.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P5-U1",
+        "document_id": "DOC-010",
+        "page_number": 5,
+        "category": "CONTRADICTIONS_AMBIGUITIES",
+        "source_text": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 3 (1) Regular Crash and Community Needs Review: Conduct ongoing evaluations of crash \ndata and community needs to identify and prioritize opportunities for reducing crash risks \nfor all roadway users, regardless of age or ability.  \n(2) Local Agency Collaboration: Work closely with local agencies to integrate roadway \nsafety considerations into all relevant actions and policies.  \n(3) Best Practices Training: Organize training sessions to keep local jurisdictions updated \non state-of-the-art safety planning and implementation practices.   \nPlan Monitoring and Reporting of Safety Countermeasures: Develop standardized reporting \nprotocols and a comprehensive monitoring plan to track the implementation of key safety \ncountermeasures identified in the Countywide LRSP. This annual monitoring process will enable \nC/CAG to strengthen safety coordination, evaluate the effectiveness of implemented measures, \nand support continuous improvement in road safety across San Mateo County’s diverse \ncommunities. \nDevelop a comprehensive white paper to guide the County in establishing an effective and \nforward-looking electric bicycle (e-bike) policy and implementation approach. The white paper \nwill provide practical, systemwide guidance to support safe and consistent management of e-bike \nactivity across local jurisdictions. The guidance will address policy, regulatory, design, and \noperational considerations, including facility design, speed management, signage, parking, and \nstrategies to reduce conflicts among roadway users. The effort will also examine enforcement \nand education approaches, coordination with partner agencies, and the use of data, monitoring, \nand performance measures to inform decision-making and evaluate safety outcomes over time.  \nIII. MINIMUM QUALIFICATIONS",
+        "trigger_terms": [
+          "conflict"
+        ],
+        "context_before": "",
+        "context_after": "Proposals must demonstrate that the firm or team submitting the proposal (“proposer”) meets the \nfollowing Minimum Qualifications to be eligible for consideration for this project. \n1. Proposer must demonstrate to C/CAG’s satisfaction that the prime consultant and/or one \nor more subconsultant proposed this project have successfully completed at least three (3) \nprojects in the past ten (10) years related to Local Roadway Safety Plan, Systemic Safety \nAnalysis Report (SSAR), Vision Zero Action Plan and/or supplemental or \nimplementation planning for the Safe Streets for All Grant Program.\n\n2. Proposers must demonstrate experience managing and implementing large-scale federal \ngrant funded projects and successfully ensuring compliance with all applicable federal, \nstate, and local requirements for such projects.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-010-P20-U10",
+        "document_id": "DOC-010",
+        "page_number": 20,
+        "category": "CONTRADICTIONS_AMBIGUITIES",
+        "source_text": "A. E-Bike Safety and Operations Guidance \nThe Consultant shall prepare guidance that outlines best practices and systemwide approaches \nfor managing e-bike activity. This section shall address safe network design, operational \nconsiderations, regulatory approaches, enforcement considerations, and coordination with \nregional and partner agencies. This guidance will focus on practical application across different \nfacility types. \nB. Ordinance Templates and Guidance \nThe Consultant shall prepare a set of model ordinance templates and supporting guidance \ndesigned for use by local jurisdictions to regulate e-bike activity. Deliverables shall include \nwritten ordinance templates organized by e-bike class and facility type, enforcement and citation \nlanguages, and explanatory notes identifying where jurisdictions may tailor language to reflect \nlocal context. All templates shall include explicit references to applicable California Vehicle \nCode provisions to support legal consistency and defensibility. \nC. E-Bike Policy Decision Matrix for Local Agencies \nThe Consultant shall develop an E-Bike Policy Decision Matrix, delivered as a concise, user-\nfriendly table, to help local jurisdictions identify appropriate e-bike rules and safety treatments \nbased on local conditions. The matrix shall outline recommended actions for different contexts, \nincluding where e-bikes may operate, applicable speed management measures, the required \nsignage or facility treatments, and whether education or enforcement actions should be \nconsidered. \nD. Design and Operations Guidance \nThe Consultant shall prepare design and operations guidance to support the safe and effective \nintegration of e-bikes into the transportation system. This guidance shall identify facility \ntreatments for managing e-bike speeds, strategies to mitigate conflicts among e-bike users, \npedestrians, other micromobility users, and motor vehicles, and best practices for signage and \npavement markings. The guidance shall also address e-bike parking, staging, and charging \nconsiderations, as appropriate. \nE. Enforcement and Education Guidebook",
+        "trigger_terms": [
+          "conflict"
+        ],
+        "context_before": "C/CAG  Request for Proposals \n San Mateo Countywide Safe Streets for All Supplemental Planning Project 18 Following completion of the individual memoranda, the Consultant shall consolidate and \nintegrate the content into a single, cohesive E-Bike Safety White Paper. The White Paper shall \nsynthesize the findings and recommendations from the memoranda into a comprehensive, \ncountywide document. A Draft E-Bike Safety White Paper shall be prepared for review and \ncomment, followed by a Final E-Bike Safety White Paper that incorporates C/CAG and \nstakeholder feedback.",
+        "context_after": "",
+        "status": "REJECTED"
+      }
+    ],
+    "recovered": [
+      {
+        "unit_id": "DOC-010-P8-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "propose a schedule",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P16-U16",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "9. Q&A Response to Panel Questions (10 points) (if oral interviews are necessary)",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P6-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "submission of a proposal",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P9-U8",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "maintaining schedule",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P9-U7",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The schedule should show the expected sequence of tasks, subtasks, and milestones.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P11-U10",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "include it in your submission",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P9-U0",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The schedule should show the expected sequence of tasks, subtasks, and milestones.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P21-U26",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "ISO",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P15-U14",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "timeframes set forth in the project schedule",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P5-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "III. MINIMUM QUALIFICATIONS",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P8-U7",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "qualifications and benefits",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P2-U0",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "MINIMUM QUALIFICATIONS",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P4-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "ISO",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P16-U20",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Experience and ability to perform work is a significant consideration.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P18-U22",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "ISO",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P18-U23",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "ISO",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P23-U20",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "https://ccag.ca.gov/wp-content/uploads/2025/12/Appendix-C-Cost-Proposal-Template.xlsx",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P19-U24",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "ISO",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-010-P19-U25",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "ISO",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      }
+    ],
+    "audit_flags": [
+      "DOC-010-P13-U5",
+      "DOC-010-P9-U0",
+      "DOC-010-P21-U26",
+      "DOC-010-P6-U3",
+      "DOC-010-P8-U6",
+      "DOC-010-P9-U7",
+      "DOC-010-P9-U8",
+      "DOC-010-P16-U16",
+      "DOC-010-P15-U14",
+      "DOC-010-P11-U10",
+      "DOC-010-P12-U11",
+      "DOC-010-P23-U20",
+      "DOC-010-P5-U3",
+      "DOC-010-P4-U2",
+      "DOC-010-P8-U7",
+      "DOC-010-P2-U0",
+      "DOC-010-P14-U16",
+      "DOC-010-P16-U20",
+      "DOC-010-P18-U22",
+      "DOC-010-P18-U23",
+      "DOC-010-P19-U24",
+      "DOC-010-P19-U25"
+    ],
+    "coverage": {
+      "ELIGIBILITY": {
+        "status": "COVERED",
+        "evidence_units_count": 47,
+        "verified_findings_count": 20,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "DATES_SUBMISSION": {
+        "status": "COVERED",
+        "evidence_units_count": 31,
+        "verified_findings_count": 11,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "TERMINATION": {
+        "status": "COVERED",
+        "evidence_units_count": 9,
+        "verified_findings_count": 1,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "LIABILITY_RISK": {
+        "status": "COVERED",
+        "evidence_units_count": 1,
+        "verified_findings_count": 11,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "INDEMNITY": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 4,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "FINANCIAL_REQUIREMENTS": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PENALTIES_LIQUIDATED_DAMAGES": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EMD_BID_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PERFORMANCE_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EVALUATION_THRESHOLDS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 25,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "INSURANCE": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 6,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "MANDATORY_DOCUMENTS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 15,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      }
+    }
+  }
+}

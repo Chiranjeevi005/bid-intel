@@ -1,0 +1,1983 @@
+{
+  "metrics": {
+    "id": "DOC-012",
+    "units_generated": 150,
+    "p1_latency": 14.706306399999987,
+    "p1_fails": 0,
+    "p2_latency": 1.5638255999999964,
+    "p3_latency": 5.228680999999982,
+    "coverage_latency": 0.005781499999982771,
+    "total_latency": 21.504671999999992
+  },
+  "result": {
+    "id": "DOC-012",
+    "extracted": [
+      {
+        "unit_id": "DOC-012-P2-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Highest Total Financial Score meeting specified Technical Requirements and Mandatory Pass/Fail Requirements for each Standard Configuration and associated Required Products.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P2-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Contractors must have an award for Lot 2 to bid on this RFQ.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P6-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Required Products Products that are mandatory for Contractors to quote.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P10-U9",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Only items that have a mandatory specification will be evaluated in the Technical Evaluation; additional items needed to create the Standard Configuration listed in Section A of Attachment A- Technical Response will be reviewed only to determine if the items are included in Lot 2 of the Contractor’s Manufacturer Umbrella Contract price list.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U8",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "MANDATORY OFFERINGS FOR EACH CONFIGURATION BID, BIDDERS MUST OFFER ALL COMPONENTS WITHIN THE STANDARD CONFIGURATION AND ALL REQUIRED PRODUCTS . Failure to complete all required fields in Attachment A – Technical Response or Attachment C – Financial Response may result in rejection of the RFQ Submission without further review.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P7-U7",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "BIDDER ELIGIBILITY. RFQ 23-01 is only being distributed to Contractors holding an award for Lot 2 – Hardware under the Manufacturer Umbrella Contract (“Contractors”).  Quotes under RFQ 23-01 will only be accepted from Lot 2 Contractors on the Manufacturer Umbrella Contract; Resellers are not eligible to respond and any bids from a Reseller will be disqualified.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P6-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Responses to the RFQ must be received by the deadline specified above. Contractor assumes all risks for timely, properly submitted RFQ deliveries. Late RFQ responses may be rejected.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P19-U11",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Desktops, laptops, and computer monitors provided under any resulting Agreement are required to have achieved a minimum certification of EPEAT Gold at the time of award with the exception of the three Chromebook Configurations (Chromebook Low, Chromebook with Touchscreen and Chromebook with Touchscreen – 14”). Chromebook Standard Configurations will be required to meet a minimum certification of EPEAT Silver at the time of award.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P2-U0",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "RFQ Submission Due",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P21-U12",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Eliminate any mandatory, non-material specifications that cannot be complied with by all of the prospective Contractors;",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P2-U1",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Contractor returns completed Attachment C – Financial Response 7/12/2023 11:00am EDT",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P7-U8",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All Products proposed as part of the Standard Configuration and Products proposed for Required Products, as well as any Additional Products, must be on the Contractor's Manufacturer Umbrella Contract Lot 2 - Hardware price list at the time of the RFQ Submission due date.",
+          "category": "ELIGIBILITY_RESTRICTION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P8-U12",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "A Contractor is solely responsible for timely delivery of its RFQ Submission prior to the stated deadline for submission.",
+          "category": "DEADLINE",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P8-U14",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Material deviations (including additional, inconsistent, conflicting, or alternative terms) submitted with the Quote may render the Quote non-responsive and may result in rejection of the Quote.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U16",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The addition or deletion of worksheets, columns, unlocking the document, rewriting formulas, or similar alterations to any document is prohibited. OGS reserves the right to reject any RFQ Submission or portion(s) thereof determined to have been altered/modified by the Contractor from the original format. Failure to provide fully completed documents may result in rejection of the RFQ Submission without further review.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U18",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All proposed SKUs for Products offered must be on the Contractor’s approved Manufacturer Umbrella Contract price list prior to the RFQ Submission due date for RFQ 23-01.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U17",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All proposed SKUs for proposed products offered in Attachment A – Technical Response must be on the Contractor’s approved Manufacturer Umbrella Contract price list. Any Configuration that contains a SKU that is not included on the Manufacturer’s Umbrella Contract price list may not proceed further in the evaluation process.",
+          "category": "ELIGIBILITY_REQUIREMENT",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P8-U13",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Quotes and pricing submitted in response to RFQ 23-01 must remain open and valid for at least 120 calendar days from the date that RFQ Submissions are due, unless the time for making an award is extended by mutual consent of OGS and the Contractor.",
+          "category": "OBLIGATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U19",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Failure to complete all required fields in Attachment A – Technical Response or Attachment C – Financial Response may result in rejection of the RFQ Submission without further review.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P10-U21",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "At the time of bid submission, the Contractor may choose to include Additional Products under Section C of Attachment A - Technical Response.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P11-U23",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "OGS reserves the right to decline to include any proposed Additional Products on any resulting awarded Configuration price list that are deemed to require excess time or clarification during the evaluation of the proposal.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P11-U24",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Requests for a debriefing must be made within fifteen (15) calendar days of notification by OGS that the bid submitted by the bidder was not selected for award.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P12-U25",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Required Product discount percentages may be increased, but not decreased during the term of any resulting Agreement and any extensions.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P16-U28",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "OGS must receive notification no less than 60 calendar days prior to the EOL of an awarded Standard Configuration model or the date that the awarded Standard Configuration becomes unavailable for purchase.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P16-U27",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "OGS must receive no less than 60 calendar days notice from Contractor for EOL Products, in order for OGS to process modifications for Product substitutions in a timely manner.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P16-U26",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "OGS must receive no less than 60 calendar days notice for EOL Additional Products.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P17-U30",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Contractor shall deliver the units ordered by an Authorized User within 45 calendar days of receipt of a Purchase Order, approved by OSC if applicable, unless either the Authorized User or OGS grants an extension of time as provided below.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P17-U29",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "No less than 30 calendar days prior to the EOL of the awarded Standard Configuration or the date that the awarded Standard Configuration has become unavailable for purchase by Authorized Users, a substitute Standard Configuration with specifications that meet or exceed the specifications of the original offered Standard Configuration must be submitted for OGS approval by completing the modification process outlined in Appendix 2 – Agreement Price List Modification Procedures.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P19-U33",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Sales reports are due to OGS one (1) month directly following the end of each quarter.",
+          "category": "DEADLINE",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P18-U31",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Contractor must provide a Purchase Order receipt notification to the Authorized User within five (5) calendar days of receipt of a Purchase Order.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P18-U32",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Contractor must deliver the remainder of the imaged units ordered by the Authorized User, within 30 calendar days from the date of Authorized User’s written approval of the test unit.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P19-U34",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "These records will be made available on request, no more than 15 business days after request, in a searchable electronic format as specified by OGS.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P21-U37",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Seek clarifications and revisions of the RFQ Submission;",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P21-U38",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "8. Change any of the schedule dates with notification via email to all applicable Manufacturer Umbrella Contractors;",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P22-U40",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Reject any Bid containing proposed prices that are unrealistically low as determined by OGS;",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P19-U35",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "OGS reserves the right to audit the accuracy of the sales reports collected under Award 22802.  Audits shall be conducted during regular business hours, upon not less than 15 business days prior written notice.  Repeated errors on subsequent audits may result in a responsibility hearing in relation to Contractor’s Manufacturer Umbrella Contract and may lead to termination of any resulting Agreement in whole or in part, after which OGS reserves the right to award to another contractor as per the terms of Section 7.22 Replacement Contractor.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P2-U0",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Highest Total Financial Score meeting specified Technical Requirements and Mandatory Pass/Fail Requirements for each Standard Configuration and associated Required Products.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U5",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Financial Response : 100%  \nTotal Financial Score is based on lowest cost and the points are weighted as follows: \n• Standard Configuration - 50 points \n• Required Products  \no Warranty/Services - 15 points \no Components - 30 points  \no Peripherals - 5 points",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P10-U11",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "For evaluation purposes, specific Products have been designated as Required Products.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The addition or deletion of worksheets, columns, unlocking the document, rewriting formulas, or similar alterations to any document is prohibited. OGS reserves the right to reject any RFQ Submission or portion(s) thereof determined to have been altered/modified by the Contractor from the original format. Failure to provide fully completed documents may result in rejection of the RFQ Submission without further review.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U9",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All proposed SKUs for Products offered must be on the Contractor’s approved Manufacturer Umbrella Contract price list prior to the RFQ Submission due date for RFQ 23-01.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U7",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Any Configuration that contains a SKU that is not included on the Manufacturer’s Umbrella Contract price list may not proceed further in the evaluation process.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P10-U10",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Only items that have a mandatory specification will be evaluated in the Technical Evaluation; additional items needed to create the Standard Configuration listed in Section A of Attachment A- Technical Response will be reviewed only to determine if the items are included in Lot 2 of the Contractor’s Manufacturer Umbrella Contract price list. Any listed items not included in Lot 2 of the Contractor’s Manufacturer Umbrella Contract price list will be removed from the RFQ Submission.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P10-U12",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Pricing for any Additional Products will not be factored into the evaluation, but submission of items for review at the time of bid will facilitate the availability of Additional Products for Authorized Users as part of a Configuration",
+          "category": "EVALUATION",
+          "priority": "MEDIUM"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P11-U13",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "OGS reserves the right to decline to include any proposed Additional Products on any resulting awarded Configuration price list that are deemed to require excess time or clarification during the evaluation of the proposal.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P20-U14",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "OGS will not accept a bid from a Contractor, or a Contractor Product that contains Products made by an entity on any of the lists maintained by the US Customs and Border Patrol at the link set out below.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P22-U17",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Modify a specification within the Standard Configuration or Required Product categories in Attachment A – Technical Response or Attachment C – Financial Response prior to the Financial Evaluation, upon written notice to Contractors that have submitted a quote.",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P22-U16",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Reject any Bid containing proposed prices that are unrealistically low as determined by OGS;",
+          "category": "EVALUATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P6-U5",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Upon mutual agreement, this Agreement Pricing may be extended to additional States or governmental jurisdictions, as described in Section 7.8, Participation in Aggregate Buy Agreement.",
+          "category": "COMMERCIAL",
+          "priority": "MEDIUM"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U7",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Warranty/Services - 15 points",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P10-U10",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "In no event may quoted pricing exceed the Net NYS Contract Price on the Manufacturer’s Umbrella Contract.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P8-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Quotes and pricing submitted in response to RFQ 23-01 must remain open and valid for at least 120 calendar days from the date that RFQ Submissions are due, unless the time for making an award is extended by mutual consent of OGS and the Contractor.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U9",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All pricing offered on Attachment C - Financial Response must be equal to or better than the pricing offered for that SKU on the Contractor's Manufacturer Umbrella Contract.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P11-U13",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "In no event may quoted pricing exceed the Net NYS Contract Price on the Manufacturer’s Umbrella Contract price list.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P12-U16",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "In no event may quoted pricing exceed the Net NYS Contract Price on the Contractor’s Manufacturer Umbrella Contract.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P11-U15",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Only Products listed on such price lists shall be sold under the Agreement.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P11-U14",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Contractors are required to provide discount percentages that will apply to each of the three (3) Required Products. The discount that is bid on the single Product shall apply to all Additional Products in the same Required Product category, as described in Section 7.2.5, Additional Products. Contractors are encouraged to aggressively discount their pricing for their Required Products, as the pricing will be factored in the Total Financial Score. The discount percentages may be increased, but not decreased during the term of any resulting Agreement and any extensions.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P12-U17",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Required Product price awarded shall remain equal to or better than the originally awarded price throughout the life of any resulting Agreement, though Contractor may offer lower pricing at any time on an individual transaction. Required Product discount percentages may be increased, but not decreased during the term of any resulting Agreement and any extensions.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P13-U22",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Contractor must furnish all quantities actually ordered by Authorized Users at or below the prices in the Aggregate Hardware Buy 23-01 Agreement.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P12-U19",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Category Discount percentages are only applicable for products listed on the awarded Agreement Configuration price lists.  Products that are on the Contractor’s Manufacturer Umbrella price list shall not be offered with the Category Discount under any resulting Agreement unless first being submitted to OGS for approval via Appendix 3 - Pricing Modification Form.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P14-U23",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Any resulting Agreement pricing may be extended to additional States or governmental jurisdictions upon mutual written agreement between New York State (the lead contracting State) and the Contractor.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P14-U24",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Contractors must receive payment from Authorized Users directly and must invoice Authorized Users directly.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P15-U25",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All services provided by the Resellers must be billed and invoiced through the Contractor and fall within the scope of the Agreement.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P15-U27",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "only one Agreement modification request can be submitted at a time. Additional requests may be submitted once the Contractor has received approval of a previously submitted request.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P15-U26",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Contractor is authorized to provide the Standard Configuration(s), Required Products, and Additional Products initially awarded in the Agreement. Products included under the Agreement can be modified through the processes described in RFQ 23-01, Appendix 2 – Agreement Price List Modification Procedures and utilizing both the Agreement Modification Form (last 2 pages of RFQ 23-01, Appendix 2 – Agreement Price List Modification Procedures) and RFQ 23-01, Appendix 3 - Pricing Modification Form.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P15-U32",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "If a Contractor wishes to lower the price of a Required Product or Additional Product, the Contractor must state the new Product pricing in the Proposed Aggregate Agreement Price column on the RFQ 23-01, Appendix 3 –",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P15-U31",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "If a Contractor wishes to lower the price for a component in the Standard Configuration, the Contractor must state the new Product pricing in the Proposed Aggregate Agreement Price column on the RFQ 23-01, Appendix 3 – Pricing Modification Form. The proposed lower price will become the new Agreement price for the component.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P15-U30",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All Product pricing on the Contractor’s Agreement price list can be lowered at any time throughout the term of any resulting Agreement and any extensions. Agreement pricing for a Product can be lowered without lowering the Product price on the Contractor’s Manufacturer Umbrella price list. If Product pricing on the Contractor’s Manufacturer Umbrella price list decreases, a modification must be made to the Agreement price list to reflect the price decreases.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P16-U33",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The proposed lower price minus the percentage discount will become the new Agreement price for the Required Product or Additional Product upon OGS approval.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P16-U36",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All EOL Additional Products purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P16-U35",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The new Additional Product price, as entered in the Proposed Aggregate Agreement Price column on the RFQ 23-01, Appendix 3 – Pricing Modification Form, must be equal to or less than the Net NYS Contract price for the Product as listed on the Contractor’s Manufacturer Umbrella Contract price list.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P16-U37",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All EOL Replacement Products purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P16-U38",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The replacement Product must be offered on the Agreement price list at the same or lower Agreement pricing as the Product it is replacing.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P16-U39",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All EOL Standard Configurations purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P17-U40",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Under no circumstances will the new Contractor awarded be permitted to increase its component pricing for the Standard Configuration components or Required Products or decrease the percentage discounts on Required Product categories that were originally Bid.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P21-U46",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Contractor is responsible for adding SKUs for additional warranty year options (e.g. 3 year, 4 year, 5 year) under Additional Products on Attachment A – Technical Response.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P18-U42",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Contractor must provide a Purchase Order receipt notification to the Authorized User within five (5) calendar days of receipt of a Purchase Order. An Advanced Shipping Notice must be provided to Authorized Users upon request fourteen (14) calendar days prior to delivery. Such notification must include Purchase Order number, quantity, itemized SKUs, description, price, purchase date, received date, and warranty start date.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P20-U43",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "If Contractor cannot deliver a Product because either the Contractor or a supplier to the Contractor is listed on any of these lists, the Contractor must remove the Product from the Contractor’s Agreement price list. Additionally, for any order that cannot be fulfilled as a result of such listing, the Authorized User, at their discretion, may either terminate the order or allow Contractor to fulfill the order with a replacement product that either meets or exceeds the applicable Product Specifications. The replacement Product must be added to the Agreement price list via Appendix 3 - Pricing Modification Form.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P21-U45",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Contractor is responsible for providing a warranty SKU(s) for docking stations listed as a Required Product or Additional Product on the price lists. The warranty SKU(s) must fully cover hardware, software, and drivers. The warranty SKU(s) for docking stations must provide complete support, including break/fix, for all compatible operating systems.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P13-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "OGS reserves the right to unilaterally make revisions, changes and/or updates to this attachment without processing a formal amendment and/or modification to the resulting Agreement;",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P14-U4",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "such other authorized entities shall be solely responsible for liability and performance under any resulting Agreement and Contractor agrees to hold them solely responsible for such liability and performance.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P14-U5",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "may be extended unilaterally by the State for an additional period of up to three (3) months upon notice to the Contractor with the same terms and conditions as the original Agreement including, but not limited to, prices and delivery requirements.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P20-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "If a unit becomes inoperable within the warranty window and cannot be repaired, a brand new unit shall be provided at no charge. Contractor shall not provide refurbished or remanufactured equipment as they are not allowed under this Aggregate Hardware Buy 23-01.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P21-U7",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Contractor is responsible for adding SKUs for additional warranty year options (e.g. 3 year, 4 year, 5 year) under Additional Products on Attachment A – Technical Response.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P22-U8",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Unilaterally make non-material revisions, changes and/or updates to any templates and/or Attachments to the Aggregate Hardware Buy 23-01 Agreement without processing a formal amendment and/or modification;",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P17-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "No less than 30 calendar days prior to the EOL of the awarded Standard Configuration or the date that the awarded Standard Configuration has become unavailable for purchase by Authorized Users, a substitute Standard Configuration with specifications that meet or exceed the specifications of the original offered Standard Configuration must be submitted for OGS approval by completing the modification process outlined in Appendix 2 – Agreement Price List Modification Procedures.",
+          "category": "TERMINATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P14-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "OGS reserves the right to seek an additional short-term extension for the Agreement in accordance with Manufacturer Umbrella Contract, Section 2.18, Short Term Extension: In the event a replacement Agreement has not been issued, any Agreement let and awarded hereunder by the State, may be extended unilaterally by the State for an additional period of up to three (3) months upon notice to the Contractor with the same terms and conditions as the original Agreement including, but not limited to, prices and delivery requirements.  With the concurrence of the Contractor, the extension may be for a period of up to six (6) months in lieu of three (3) months.  However, this extension terminates should the replacement Agreement be issued in the interim.",
+          "category": "TERMINATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P18-U4",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "If OGS becomes aware of multiple incidents of delays in delivery, OGS reserves the right to enforce any of the remedies available to us through the terms of this Agreement, including our rights to terminate the Agreement in whole or in part, and award to another contractor as per the terms of Section 7.22 Replacement Contractor.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P19-U5",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Failure to submit accurate reports on a timely basis may result in a responsibility hearing, and possible termination of this Agreement in whole or in part, after which OGS reserves the right to award to another contractor as per the terms of Section 7.22 Replacement Contractor.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P22-U9",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Terminate an Agreement under this RFQ, in whole or in part, for Contractor’s repeated failure to comply with any requirement under the Agreement.",
+          "category": "TERMINATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P19-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Repeated errors on subsequent audits may result in a responsibility hearing in relation to Contractor’s Manufacturer Umbrella Contract and may lead to termination of any resulting Agreement in whole or in part, after which OGS reserves the right to award to another contractor as per the terms of Section 7.22 Replacement Contractor.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P20-U7",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Additionally, for any order that cannot be fulfilled as a result of such listing, the Authorized User, at their discretion, may either terminate the order or allow Contractor to fulfill the order with a replacement product that either meets or exceeds the applicable Product Specifications.",
+          "category": "TERMINATION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P8-U1",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Material deviations (including additional, inconsistent, conflicting, or alternative terms) submitted with the Quote may render the Quote non-responsive and may result in rejection of the Quote.",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P6-U0",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "This RFQ incorporates the terms and conditions of the Contractor’s OGS Information Technology Umbrella Contract – Manufacturer Based (Statewide) (“Manufacturer Umbrella Contract”) including executed amendments and the additional terms and conditions set forth in this RFQ, its Attachments, and Appendices.",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P11-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The terms and conditions of the Contractor’s Manufacturer Umbrella Contract including any Amendments and the additional terms and conditions set forth in this RFQ 23-01, Section 7, Terms and Conditions govern any resulting award under RFQ 23-01.",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P13-U5",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "OGS reserves the right to unilaterally make revisions, changes and/or updates to this attachment without processing a formal amendment and/or modification to the resulting Agreement;",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P12-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Products that were bid as Required Products by the Contractor will be available under the Additional Product category on the awarded Configuration price list and are subject to the discount percentage bid by the Contractor as part of the RFQ Submission.",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P18-U7",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Notwithstanding the foregoing in this clause the delivery date shall not be required to be less than 45 days from date of Purchase Order.",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P12-U4",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Any conflicts or inconsistencies among such documents shall be resolved by giving precedence to the documents in the following order: 1. Aggregate Hardware Buy 23-01 Agreement TERMS AND CONDITIONS; 2. Attachment 1 - Pricing Pages, which consists of the price list for each awarded Configuration as approved by OGS from time to time during the term of the resulting Agreement; 3. Attachment 2 - Issue Escalation Plan; 4. Attachment 3 - Sales Report Form 5. Attachment 4 - Agreement Price List Modification Procedures 6. Attachment 5 – Pricing Modification Form",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P21-U8",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Prior to RFQ Submission Date for Attachment C – Financial Response, direct Contractors to submit RFQ response modifications addressing subsequent amendments;",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P22-U9",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Unilaterally make non-material revisions, changes and/or updates to any templates and/or Attachments to the Aggregate Hardware Buy 23-01 Agreement without processing a formal amendment and/or modification;",
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P14-U6",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Any conflicts between the OGS-posted price lists and items on a Contractor’s dedicated website shall be resolved in favor of the OGS-posted price list at time of the sale. Repeated conflicts between the two websites may, at OGS’ discretion, lead to the revoking of the ability of the Contractor to host their own dedicated website.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      }
+    ],
+    "rejected": [
+      {
+        "unit_id": "DOC-012-P4-U5",
+        "document_id": "DOC-012",
+        "page_number": 4,
+        "category": "ELIGIBILITY",
+        "source_text": "9 5.1.3 STAGE 3 FINANCIAL EVALUATION ............................................................................................................. 9 Section 6. EVALUATION COMPONENTS ..................................................................................... 9 MANDATORY OFFERINGS ...................................................................................................................................",
+        "trigger_terms": [
+          "mandatory"
+        ],
+        "context_before": "8 4.4.1 BID INQUIRIES ............................................................................................................................................... 8 Section 5. METHOD OF AWARD ................................................................................................... 8 EVALUATION PROCESS.\n\n..................................................................................................................................... 8 5.1.1 STAGE 1 ADMINISTRATIVE REVIEW........................................................................................................... 9 5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION ...............................................",
+        "context_after": "9 6.1.1 STANDARD CONFIGURATIONS. ................................................................................................................ 10 6.1.2 REQUIRED PRODUCTS. ............................................................................................................................. 10\n\nOPTIONAL PRODUCTS. ..................................................................................................................................... 10 6.2.1 ADDITIONAL PRODUCTS. ..........................................................................................................................",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P4-U4",
+        "document_id": "DOC-012",
+        "page_number": 4,
+        "category": "ELIGIBILITY",
+        "source_text": "6 BIDDER ELIGIBILITY. ............................................................................................................................................ 7 PRODUCTS IN SCOPE. .........................................................................................................................................",
+        "trigger_terms": [
+          "eligibility"
+        ],
+        "context_before": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 4 of 23 March 2023 Aggregate Hardware Buy 23-01 Table of Contents Section 1. GENERAL .....................................................................................................................\n\n6 Section 2. DEFINITIONS ................................................................................................................ 6 Section 3. SCOPE .......................................................................................................................... 6 PURPOSE. ..............................................................................................................................................................",
+        "context_after": "7 Section 4. RFQ SUBMISSION REQUIREMENTS .......................................................................... 7 ELECTRONIC SUBMISSION. ................................................................................................................................ 7 SUBMISSION PACKAGING. .................................................................................................................................\n\n7 IMPORTANT BUILDING ACCESS PROCEDURES. ............................................................................................. 8 BID VALIDITY. ........................................................................................................................................................",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P1-U0",
+        "document_id": "DOC-012",
+        "page_number": 1,
+        "category": "ELIGIBILITY",
+        "source_text": "RFQ Title Aggregate Hardware Buy 23-01 RFQ Number 23-01 NYS Office of General Services \nProcurement Services \n38\nth\n Floor, Corning Tower, ESP \nAlbany, NY 12242 Authorized User Delivery Information \nMultiple Locations Statewide \nDESIGNATED CONTACTS \nNames E-Mail \nMaureen Younkin, Allison White, Katherine Dias, Margaret \nArmenia, Karley Delaney, Nancy Dougherty, and Kylesha \nDavis \nOGS.sm.PS.AggregateBuy@ogs.ny.gov",
+        "trigger_terms": [
+          "iso"
+        ],
+        "context_before": "",
+        "context_after": "Subject Line: \nAggregate Hardware Buy 23-01 Procurement Lobbying Law/Restricted Period is in effect:   Yes    No \nBy signing, Contractor affirms that it understands and agrees to comply with OGS policies and procedures relative to \npermissible contacts.  Information on Procurement Lobbying may be accessed \nat:  http://www.ogs.ny.gov/aboutOgs/regulations/defaultAdvisoryCouncil.html\n\nOffice of General Services Procurement Services \nGroup 73600 – Award 22802 \nInformation Technology Umbrella Contract – Manufacturer Based (Statewide) Request for Quotations 23-01 \n(Previously referred to as 22-01 in RFQPI and RFC documents) \nAggregate Hardware Buy  \nREVISED",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P1-U1",
+        "document_id": "DOC-012",
+        "page_number": 1,
+        "category": "ELIGIBILITY",
+        "source_text": "Subject Line: \nAggregate Hardware Buy 23-01 Procurement Lobbying Law/Restricted Period is in effect:   Yes    No \nBy signing, Contractor affirms that it understands and agrees to comply with OGS policies and procedures relative to \npermissible contacts.  Information on Procurement Lobbying may be accessed \nat:  http://www.ogs.ny.gov/aboutOgs/regulations/defaultAdvisoryCouncil.html",
+        "trigger_terms": [
+          "iso"
+        ],
+        "context_before": "RFQ Title Aggregate Hardware Buy 23-01 RFQ Number 23-01 NYS Office of General Services \nProcurement Services \n38\nth\n Floor, Corning Tower, ESP \nAlbany, NY 12242 Authorized User Delivery Information \nMultiple Locations Statewide \nDESIGNATED CONTACTS \nNames E-Mail \nMaureen Younkin, Allison White, Katherine Dias, Margaret \nArmenia, Karley Delaney, Nancy Dougherty, and Kylesha \nDavis \nOGS.sm.PS.AggregateBuy@ogs.ny.gov",
+        "context_after": "Office of General Services Procurement Services \nGroup 73600 – Award 22802 \nInformation Technology Umbrella Contract – Manufacturer Based (Statewide) Request for Quotations 23-01 \n(Previously referred to as 22-01 in RFQPI and RFC documents) \nAggregate Hardware Buy  \nREVISED",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P13-U10",
+        "document_id": "DOC-012",
+        "page_number": 13,
+        "category": "ELIGIBILITY",
+        "source_text": "• There is no guarantee of volume to be purchased  \n• There is no guarantee of dollar value to be purchased \n• There is no guarantee that demand will continue in any manner consistent with previous purchases or the above \nestimates In OGS’ experience, depending on the price of a particular item, the actual volume of purchases for that item could be \nsubstantially in excess of, or substantially below, estimated volumes.  Specifically, if actual contract pricing is lower than \nanticipated or historical pricing, actual quantities purchased could be substantially greater than the estimates; conversely, \nif actual contract pricing is higher than anticipated or historical pricing, actual quantities purchased could be substantially \nlower than the estimates.  By submitting a Quote, Contractor acknowledges the foregoing and agrees that actual good \nfaith purchasing volumes during the term of any resulting Agreement could vary substantially from the estimates provided \nabove. Contractor must furnish all quantities actually ordered by Authorized Users at or below the prices in the Aggregate \nHardware Buy 23-01 Agreement.",
+        "trigger_terms": [
+          "experience"
+        ],
+        "context_before": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 13 of 23 March 2023 Aggregate Hardware Buy 23-01 7. Attachment 6 - How to Use.  OGS reserves the right to unilaterally make revisions, changes and/or updates to \nthis attachment without processing a formal amendment and/or modification to the resulting Agreement; \n8. Attachment 7 - Contractor Information;  \n9. RFQ 23-01 Request for Quote 23-01, Aggregate Hardware Buy \n• RFQ 23-01 Aggregate Hardware Buy \n• Attachment A – Technical Response  \n• Attachment B – Contractor Questions and Comments  \n• Attachment C – Financial Response   \n• Attachment D – Issue Escalation Plan \n• Appendix 1 – Aggregate Hardware Buy - Sales Report Form  \n• Appendix 2 – Agreement Price List Modification Procedures  \n• Appendix 3 – Pricing Modification Form  \n• Appendix 4 – How to Prepare a Successful Quote \n• Appendix 5 – Aggregate Hardware Buy - Delayed Delivery Report  \n• Appendix 6 – Responses to Inquiries Released (3/15/2023)\n\nCOMMENCEMENT OF SALES. The Contractor can commence sales from any resulting Agreement only upon OGS acceptance and posting of the \nAgreement and awarded Configurations with the Contractor’s contact information on the OGS website. ESTIMATED SPEND AND QUANTITY. The estimated dollar value of the aggregated award of the 14 Standard Configurations in this RFQ 23-01, based on \nhistorical purchases under previous awards, is approximately $50 million.  Certain factors including but not limited to the \nbudget structure, the COVID-19 pandemic, and global industry supply chain have impacted the marketplace and \nestimated volumes.  However, the Agreements resulting from this RFQ will be Indefinite Delivery, Indefinite Quantity \n(IDIQ) awards.  Numerous factors could cause the actual volume of Product purchased to vary substantially from the \nabove estimate.  Such factors include, but are not limited to, the following:",
+        "context_after": "PARTICIPATION IN ONLINE NYS MARKETPLACE. Contractors that are awarded a Configuration under the Aggregate Agreement should provide a “hosted” or “punch-out” \ncatalog that is available to Authorized Users via an online NYS marketplace, should one become available for technology \nproducts in the future.\n\nCONTRACTOR WEBSITE. If a Contractor maintains its own dedicated Agreement website, they are restricted to showing literature only directed \ntoward the models currently on the approved OGS Aggregate Hardware Buy 23-01 Agreement.  The Contractor’s website \nshall not have a web-based ordering system with the capability of receiving orders from Authorized Users. Contractor may \nprovide a “hosted” or “punch-out” catalog that is available to Authorized Users via an online NYS marketplace. \nEach Contractor’s website link will be listed under the Contractor information posted on the OGS website. The \nContractor’s website will be the responsibility of the Contractor to maintain and keep updated. This website must remain",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P2-U2",
+        "document_id": "DOC-012",
+        "page_number": 2,
+        "category": "DATES_SUBMISSION",
+        "source_text": "Send emails to:  OGS.sm.PS.AggregateBuy@ogs.ny.gov \n                                                     Subject line:       Aggregate Hardware Buy 23-01 – Questions and Comments For information on RFQ Submission Requirements see RFQ 23-01, Section 4, RFQ Submission Requirements. BASIS FOR AWARD Highest Total Financial Score meeting specified Technical Requirements and Mandatory Pass/Fail \nRequirements for each Standard Configuration and associated Required Products.",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "Lot 1 – Software      Lot 2 – Hardware     Lot 3 – Cloud     Lot 4 – Implementation KEY EVENTS/DATES \nEvent Due Date Time \nRFQ 23-01 Release \n2/17/2023  \nAttachment B - Contractor Questions and Comments Due \n3/1/2023  5:00pm EDT \nOGS Issues Responses to Questions and Comments \n3/15/2023   \nSecond Attachment B – Contractor Questions and Comments \nDue \n3/17/2023 5:00pm EDT \nOGS Issues Responses to Questions and Comments \n3/22/2023  \nRFQ Submission Due \nSubmission Includes:  \n• Attachment A – Technical Response  \n• Attachment D – Issue Escalation Plan \n• Manufacturer Information Page (Last page of this \nDocument)\n\n3/28/2023 \n4/4/2023  \n1:30pm EDT \nOGS sends out Attachment C – Financial Response, which \nincludes approved technical response \n6/28/2023   \nContractor returns completed Attachment C – Financial \nResponse  \n7/12/2023  11:00am EDT Attachment B – Contractor Questions and Comments: \nQuestions and Comments for this RFQ will only be accepted up to the Attachment B - Contractor Questions and Comments \ndue date and time noted above.  Only email submissions of Attachment B will be accepted:",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P4-U5",
+        "document_id": "DOC-012",
+        "page_number": 4,
+        "category": "DATES_SUBMISSION",
+        "source_text": "..................................................................................................................................... 8 5.1.1 STAGE 1 ADMINISTRATIVE REVIEW........................................................................................................... 9 5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION ...............................................",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "7 IMPORTANT BUILDING ACCESS PROCEDURES. ............................................................................................. 8 BID VALIDITY. ........................................................................................................................................................\n\n8 4.4.1 BID INQUIRIES ............................................................................................................................................... 8 Section 5. METHOD OF AWARD ................................................................................................... 8 EVALUATION PROCESS.",
+        "context_after": "9 5.1.3 STAGE 3 FINANCIAL EVALUATION ............................................................................................................. 9 Section 6. EVALUATION COMPONENTS ..................................................................................... 9 MANDATORY OFFERINGS ...................................................................................................................................\n\n9 6.1.1 STANDARD CONFIGURATIONS. ................................................................................................................ 10 6.1.2 REQUIRED PRODUCTS. ............................................................................................................................. 10",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P4-U4",
+        "document_id": "DOC-012",
+        "page_number": 4,
+        "category": "DATES_SUBMISSION",
+        "source_text": "7 IMPORTANT BUILDING ACCESS PROCEDURES. ............................................................................................. 8 BID VALIDITY. ........................................................................................................................................................",
+        "trigger_terms": [
+          "validity"
+        ],
+        "context_before": "6 BIDDER ELIGIBILITY. ............................................................................................................................................ 7 PRODUCTS IN SCOPE. .........................................................................................................................................\n\n7 Section 4. RFQ SUBMISSION REQUIREMENTS .......................................................................... 7 ELECTRONIC SUBMISSION. ................................................................................................................................ 7 SUBMISSION PACKAGING. .................................................................................................................................",
+        "context_after": "8 4.4.1 BID INQUIRIES ............................................................................................................................................... 8 Section 5. METHOD OF AWARD ................................................................................................... 8 EVALUATION PROCESS.\n\n..................................................................................................................................... 8 5.1.1 STAGE 1 ADMINISTRATIVE REVIEW........................................................................................................... 9 5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION ...............................................",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P4-U3",
+        "document_id": "DOC-012",
+        "page_number": 4,
+        "category": "DATES_SUBMISSION",
+        "source_text": "7 Section 4. RFQ SUBMISSION REQUIREMENTS .......................................................................... 7 ELECTRONIC SUBMISSION. ................................................................................................................................ 7 SUBMISSION PACKAGING. .................................................................................................................................",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "6 Section 2. DEFINITIONS ................................................................................................................ 6 Section 3. SCOPE .......................................................................................................................... 6 PURPOSE. ..............................................................................................................................................................\n\n6 BIDDER ELIGIBILITY. ............................................................................................................................................ 7 PRODUCTS IN SCOPE. .........................................................................................................................................",
+        "context_after": "7 IMPORTANT BUILDING ACCESS PROCEDURES. ............................................................................................. 8 BID VALIDITY. ........................................................................................................................................................\n\n8 4.4.1 BID INQUIRIES ............................................................................................................................................... 8 Section 5. METHOD OF AWARD ................................................................................................... 8 EVALUATION PROCESS.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P6-U7",
+        "document_id": "DOC-012",
+        "page_number": 6,
+        "category": "DATES_SUBMISSION",
+        "source_text": "In addition to the terms defined in Contractor’s Manufacturer Umbrella Contract, Section 2.5, Glossary, the following \ndefinitions shall apply in this RFQ 23-01 and any resulting Agreement. Term Definition \nAdditional Products Products that are not part of the Standard Configuration and are optional for Authorized Users \nto purchase to enhance the Standard Configuration. \nConfiguration Entirety of Standard Configuration, Required Products, and Additional Products \nRequired Products Products that are mandatory for Contractors to quote. \nStandard \nConfiguration \nAll components/line items necessary for a functional computing device meeting the minimum \nspecifications identified in Attachment A - Technical Response. \nQuote, \nRFQ Submission \nA Contractor's bid response package. \nSection 3.   SCOPE",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "This RFQ incorporates the terms and conditions of the Contractor’s OGS Information Technology Umbrella \nContract – Manufacturer Based (Statewide) (“Manufacturer Umbrella Contract”) including executed amendments \nand the additional terms and conditions set forth in this RFQ, its Attachments, and Appendices.  The award made \nfrom this RFQ will result in the Aggregate Hardware Buy 23-01 Agreement (“Agreement”).\n\nAll purchases resulting from the Agreement shall be in accordance with the terms and conditions of the Contractor’s \nManufacturer Umbrella Contract which can be found at: \nhttps://online.ogs.ny.gov/purchase/snt/awardnotes/7360022802AppendicesPageCombo.pdf along with any additional \nterms and conditions set forth in this RFQ, its Attachments and Appendices.   \nSection 2.   DEFINITIONS",
+        "context_after": "PURPOSE. OGS is releasing this Request for Quotes (RFQ) for Aggregate Hardware Buy 23-01 (“RFQ 23-01”).  The purpose of RFQ \n23-01 is to establish an award for each Configuration as set forth in Attachment A - Technical Response. The resulting \nAgreement(s) will be considered an aggregate buy and all Authorized Users located within NYS (estimated at 7,600) will \nbe able to purchase the Configurations. Upon mutual agreement, this Agreement Pricing may be extended to additional \nStates or governmental jurisdictions, as described in Section 7.8, Participation in Aggregate Buy Agreement.\n\nStandard Configuration Brief Description \n1 VDI PC Desktop computer intended for use as a VDI or desktop-\nas-a-service endpoint \n2 Enterprise Desktop - \nStandard \nDesktop computer intended for deployment in an \nenterprise setting. (high-performance, secure workloads) \n3 Enterprise Desktop - vPro Desktop computer intended for deployment in an \nenterprise setting, (high-performance, secure workloads) \nwith Intel’s vPro Enterprise for Windows platform enabled \n4 Enterprise Desktop - High Desktop computer intended for deployment in an \nenterprise setting. (high-performance, secure workloads, \nhigh specification for intense use cases) \n5 Enterprise Notebook - \nStandard \nLaptop computer intended for deployment in an enterprise \nsetting.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P7-U9",
+        "document_id": "DOC-012",
+        "page_number": 7,
+        "category": "DATES_SUBMISSION",
+        "source_text": "Electronic media shall be included on Microsoft Windows formatted USB flash drives and should be clearly labeled as set \nforth below.  USB flash drives cannot be password protected or require the installation of software in order to read files.  \nAll RFQ Submissions shall be saved in separate unprotected files in Microsoft Office products (Word and Excel) in \nproduct releases 2012 or higher.",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "BIDDER ELIGIBILITY. RFQ 23-01 is only being distributed to Contractors holding an award for Lot 2 – Hardware under the Manufacturer \nUmbrella Contract (“Contractors”).  Quotes under RFQ 23-01 will only be accepted from Lot 2 Contractors on the \nManufacturer Umbrella Contract; Resellers are not eligible to respond and any bids from a Reseller will be disqualified.\n\nPRODUCTS IN SCOPE. All Products proposed as part of the Standard Configuration and Products proposed for Required Products, as well as any \nAdditional Products, must be on the Contractor's Manufacturer Umbrella Contract Lot 2 - Hardware price list at the time of \nthe RFQ Submission due date. Section 4.   RFQ SUBMISSION REQUIREMENTS",
+        "context_after": "ELECTRONIC SUBMISSION. Two (2) digital storage devices (USB flash drive), clearly labeled, shall contain the following documents, \ncompleted in their entirety: \n• Attachment A – Technical Response  \n• Attachment D – Issue Escalation Plan \n• Manufacturer Information Page (Last page of this Document) All RFQ Submissions and accompanying documentation shall become the property of the State of New York and shall not \nbe returned.\n\nContractors are responsible for the accuracy of their RFQ Submissions.  All Contractors are directed to take extreme care \nin developing their RFQ Submission.  Prior to submission, Contractors are cautioned to carefully review their RFQ \nSubmission. SUBMISSION PACKAGING.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P7-U10",
+        "document_id": "DOC-012",
+        "page_number": 7,
+        "category": "DATES_SUBMISSION",
+        "source_text": "ELECTRONIC SUBMISSION. Two (2) digital storage devices (USB flash drive), clearly labeled, shall contain the following documents, \ncompleted in their entirety: \n• Attachment A – Technical Response  \n• Attachment D – Issue Escalation Plan \n• Manufacturer Information Page (Last page of this Document) All RFQ Submissions and accompanying documentation shall become the property of the State of New York and shall not \nbe returned.",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "PRODUCTS IN SCOPE. All Products proposed as part of the Standard Configuration and Products proposed for Required Products, as well as any \nAdditional Products, must be on the Contractor's Manufacturer Umbrella Contract Lot 2 - Hardware price list at the time of \nthe RFQ Submission due date. Section 4.   RFQ SUBMISSION REQUIREMENTS\n\nElectronic media shall be included on Microsoft Windows formatted USB flash drives and should be clearly labeled as set \nforth below.  USB flash drives cannot be password protected or require the installation of software in order to read files.  \nAll RFQ Submissions shall be saved in separate unprotected files in Microsoft Office products (Word and Excel) in \nproduct releases 2012 or higher.",
+        "context_after": "Contractors are responsible for the accuracy of their RFQ Submissions.  All Contractors are directed to take extreme care \nin developing their RFQ Submission.  Prior to submission, Contractors are cautioned to carefully review their RFQ \nSubmission. SUBMISSION PACKAGING.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P7-U11",
+        "document_id": "DOC-012",
+        "page_number": 7,
+        "category": "DATES_SUBMISSION",
+        "source_text": "Contractors are responsible for the accuracy of their RFQ Submissions.  All Contractors are directed to take extreme care \nin developing their RFQ Submission.  Prior to submission, Contractors are cautioned to carefully review their RFQ \nSubmission. SUBMISSION PACKAGING.",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "Electronic media shall be included on Microsoft Windows formatted USB flash drives and should be clearly labeled as set \nforth below.  USB flash drives cannot be password protected or require the installation of software in order to read files.  \nAll RFQ Submissions shall be saved in separate unprotected files in Microsoft Office products (Word and Excel) in \nproduct releases 2012 or higher.\n\nELECTRONIC SUBMISSION. Two (2) digital storage devices (USB flash drive), clearly labeled, shall contain the following documents, \ncompleted in their entirety: \n• Attachment A – Technical Response  \n• Attachment D – Issue Escalation Plan \n• Manufacturer Information Page (Last page of this Document) All RFQ Submissions and accompanying documentation shall become the property of the State of New York and shall not \nbe returned.",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P8-U15",
+        "document_id": "DOC-012",
+        "page_number": 8,
+        "category": "DATES_SUBMISSION",
+        "source_text": "Extraneous terms submitted on standard, pre-printed forms (including but not limited to:  product literature, order forms, \nlicense agreements, contracts or other documents) that are attached or referenced with submissions shall not be \nconsidered part of the Quote or resulting Agreement but shall be deemed included for informational or promotional \npurposes only. \nSection 5.   METHOD OF AWARD",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "4.4.1  BID INQUIRIES Quotes must conform to the terms set forth in the RFQ.  If Contractor intends to submit a Quote that deviates from the \nrequirements of the RFQ in any way, the proposed deviations should be submitted during the Questions period so that \nthey may be given due consideration prior to the submission of Quotes.  Material deviations (including additional, \ninconsistent, conflicting, or alternative terms) submitted with the Quote may render the Quote non-responsive and may \nresult in rejection of the Quote.\n\nContractor is advised that OGS will not entertain any exceptions to Appendix A (Standard Clauses for New York State \nContracts).  OGS will also not entertain exceptions to the RFQ or Appendix B (General Specifications) that are of a \nmaterial and substantive nature. Contractors are reminded to adhere to Manufacturer Umbrella Contract Section 2.61, \nAdditional Contractor Terms and Conditions within an Authorized User Agreement.",
+        "context_after": "OGS will separately evaluate and separately make awards for each Configuration. Contractor’s may bid one, some, or all \nconfigurations. Awards will be made to the responsive and responsible Contractor(s) with the highest Total Financial \nScore per Configuration that meets all the specified technical requirements.  The same Contractor can be awarded \nmultiple Configurations.\n\nEVALUATION PROCESS. The relative weights of each part of the Proposal are as follows:",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P10-U20",
+        "document_id": "DOC-012",
+        "page_number": 10,
+        "category": "DATES_SUBMISSION",
+        "source_text": "All line-items identified within each of the Standard Configuration(s) must be offered by Contractor(s). Additional \nProducts needed to complete the Standard Configuration may be itemized in Section A of Attachment A - \nTechnical Response.  Only items that have a mandatory specification will be evaluated in the Technical \nEvaluation; additional items needed to create the Standard Configuration listed in Section A of Attachment A-\nTechnical Response will be reviewed only to determine if the items are included in Lot 2 of the Contractor’s \nManufacturer Umbrella Contract price list.  Any listed items not included in Lot 2 of the Contractor’s Manufacturer \nUmbrella Contract price list will be removed from the RFQ Submission.",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 10 of 23 March 2023 Aggregate Hardware Buy 23-01 6.1.1 STANDARD CONFIGURATIONS. Contractor may bid on one, some, or all 14 Standard Configurations.  Specifications can be found in Attachment A \n- Technical Response.",
+        "context_after": "Attachment A – Technical Response must include a Product description of any remote diagnosis and/or support \nservice arrangements if offered/provided with the Product. Contractors are encouraged to aggressively discount their pricing for the Standard Configurations.  Contractors \nshould provide a discount off the Net NYS Contract Price from the Manufacturer Umbrella Contract price list.  \nContractors shall provide itemized pricing on all Products offered in the Standard Configurations.  In no event may \nquoted pricing exceed the Net NYS Contract Price on the Manufacturer’s Umbrella Contract.\n\n6.1.2 REQUIRED PRODUCTS. For evaluation purposes, specific Products have been designated as Required Products.  A Product from each \nRequired Product category has been chosen by OGS to establish a level playing field among Contractors for each \nConfiguration. All Required Products for each Standard Configuration can be found in Section B of Attachment A - \nTechnical Response. Required Product categories are defined below:",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P10-U22",
+        "document_id": "DOC-012",
+        "page_number": 10,
+        "category": "DATES_SUBMISSION",
+        "source_text": "Pricing for any Additional Products will not be factored into the evaluation, but submission of items for review at \nthe time of bid will facilitate the availability of Additional Products for Authorized Users as part of a Configuration",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "3. Peripherals include products such as a cable, external optical drive, docking station, wireless keyboard, \nand/or mouse. The Net NYS Contract Price provided on Attachment A – Technical Response for a Required Product must \nrepresent the complete price of the Product. Recording the price of the Product as the difference in price from a \nline-item in the Standard Configuration is prohibited.\n\nFor Required Products, Contractors must bid a discount percentage on the item that has been selected for each \ncategory (e.g., a 3-button mouse for Peripherals). OPTIONAL PRODUCTS. 6.2.1 ADDITIONAL PRODUCTS. At the time of bid submission, the Contractor may choose to include Additional Products under Section C of \nAttachment A - Technical Response.  External displays/monitors may not be offered as an Additional Product for \nany Configuration.",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P21-U36",
+        "document_id": "DOC-012",
+        "page_number": 21,
+        "category": "DATES_SUBMISSION",
+        "source_text": "7.26.2 ADDITIONAL PRODUCT WARRANTIES The Contractor is responsible for adding SKUs for additional warranty year options (e.g. 3 year, 4 year, 5 year) \nunder Additional Products on Attachment A – Technical Response. Section 8.   OGS RESERVED RIGHTS OGS reserves the right to: 1. Reject any or all RFQ Submissions received in response to the RFQ;",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 21 of 23 March 2023 Aggregate Hardware Buy 23-01 ownership of the Authorized User after the Contractor has completed the repair or replacement of the \nunit. \n• Connections to the Authorized User’s networks must be performed in a manner prescribed by an \nAuthorized User to preserve the integrity of the Authorized User’s network, confidentiality and integrity of \ninformation transmitted over that Authorized User’s network, and the availability of the network. Access \nfor remote diagnosis must be approved and supervised by the Authorized User’s technical representative \nfor each specific incident. Contractor should review NYS ITS Technology Standard NYS-S14-010, \nRemote Access.\n\n7.26.1 DOCKING STATION WARRANTY The Contractor is responsible for providing a warranty SKU(s) for docking stations listed as a Required Product or \nAdditional Product on the price lists. The warranty SKU(s) must fully cover hardware, software, and drivers. The \nwarranty SKU(s) for docking stations must provide complete support, including break/fix, for all compatible \noperating systems.",
+        "context_after": "2. Withdraw the RFQ any time, in whole or in part, in its sole discretion; 3. Award all, any number, or none of the 14 Product Configurations; 4. Disqualify any Contractor whose Quote fails to conform to the requirements of the RFQ; 5. Seek clarifications and revisions of the RFQ Submission; 6. Prior to the RFQ Submission Date for Attachment C – Financial Response, amend the RFQ to correct errors or \noversights, or to supply additional information, as it becomes available;\n\n7. Prior to RFQ Submission Date for Attachment C – Financial Response, direct Contractors to submit RFQ \nresponse modifications addressing subsequent amendments; 8. Change any of the schedule dates with notification via email to all applicable Manufacturer Umbrella \nContractors; 9. Eliminate any mandatory, non-material specifications that cannot be complied with by all of the prospective \nContractors;",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P21-U39",
+        "document_id": "DOC-012",
+        "page_number": 21,
+        "category": "DATES_SUBMISSION",
+        "source_text": "10. Waive any requirements that are not material; 11. Negotiate with a Contractor responding to this RFQ within the RFQ requirements to serve the best interests of \nthe State.  This includes requesting clarifications of any part or all of Contractor’s RFQ Submission; 12. Require clarification at any time during the procurement process and/or require correction of arithmetic or other \napparent errors for the purpose of assuring a full and complete understanding of a Contractor’s RFQ \nSubmission and/or to determine a Contractor’s compliance with the requirements of the RFQ;",
+        "trigger_terms": [
+          "submission",
+          "clarification"
+        ],
+        "context_before": "2. Withdraw the RFQ any time, in whole or in part, in its sole discretion; 3. Award all, any number, or none of the 14 Product Configurations; 4. Disqualify any Contractor whose Quote fails to conform to the requirements of the RFQ; 5. Seek clarifications and revisions of the RFQ Submission; 6. Prior to the RFQ Submission Date for Attachment C – Financial Response, amend the RFQ to correct errors or \noversights, or to supply additional information, as it becomes available;\n\n7. Prior to RFQ Submission Date for Attachment C – Financial Response, direct Contractors to submit RFQ \nresponse modifications addressing subsequent amendments; 8. Change any of the schedule dates with notification via email to all applicable Manufacturer Umbrella \nContractors; 9. Eliminate any mandatory, non-material specifications that cannot be complied with by all of the prospective \nContractors;",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P23-U42",
+        "document_id": "DOC-012",
+        "page_number": 23,
+        "category": "DATES_SUBMISSION",
+        "source_text": "Contractor Signature:  Date: Phone Number:       \nE-Mail:       \nPrinted or Typed Name: Title: If you are not providing a RFQ Submission, place an “x” in the box, please explain why you are not responding, and return \nthis page only. \n WE ARE UNABLE TO RESPOND AT THIS TIME BECAUSE:",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 23 of 23 March 2023 Aggregate Hardware Buy 23-01 CONTRACTOR INFORMATION RFQ 23-01 \nAggregate Hardware Buy 23-01 This Page is to be Completed By the Contractor Responding to the RFQ \nThe RFQ Submission must be fully and properly executed by a person authorized to legally bind the Contractor.  By signing you certify your \nexpress authority to sign on behalf of yourself, your company, or other entity and full knowledge and acceptance of this RFQ (including any \nQuestions/Answers or addenda), the OGS Centralized Contract and that all information provided is complete, true and accurate. \nContract # Contractor Name",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P4-U1",
+        "document_id": "DOC-012",
+        "page_number": 4,
+        "category": "EVALUATION",
+        "source_text": "8 4.4.1 BID INQUIRIES ............................................................................................................................................... 8 Section 5. METHOD OF AWARD ................................................................................................... 8 EVALUATION PROCESS.",
+        "trigger_terms": [
+          "evaluation"
+        ],
+        "context_before": "7 Section 4. RFQ SUBMISSION REQUIREMENTS .......................................................................... 7 ELECTRONIC SUBMISSION. ................................................................................................................................ 7 SUBMISSION PACKAGING. .................................................................................................................................\n\n7 IMPORTANT BUILDING ACCESS PROCEDURES. ............................................................................................. 8 BID VALIDITY. ........................................................................................................................................................",
+        "context_after": "..................................................................................................................................... 8 5.1.1 STAGE 1 ADMINISTRATIVE REVIEW........................................................................................................... 9 5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION ...............................................\n\n9 5.1.3 STAGE 3 FINANCIAL EVALUATION ............................................................................................................. 9 Section 6. EVALUATION COMPONENTS ..................................................................................... 9 MANDATORY OFFERINGS ...................................................................................................................................",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P23-U41",
+        "document_id": "DOC-012",
+        "page_number": 23,
+        "category": "DATES_SUBMISSION",
+        "source_text": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 23 of 23 March 2023 Aggregate Hardware Buy 23-01 CONTRACTOR INFORMATION RFQ 23-01 \nAggregate Hardware Buy 23-01 This Page is to be Completed By the Contractor Responding to the RFQ \nThe RFQ Submission must be fully and properly executed by a person authorized to legally bind the Contractor.  By signing you certify your \nexpress authority to sign on behalf of yourself, your company, or other entity and full knowledge and acceptance of this RFQ (including any \nQuestions/Answers or addenda), the OGS Centralized Contract and that all information provided is complete, true and accurate. \nContract # Contractor Name",
+        "trigger_terms": [
+          "submission"
+        ],
+        "context_before": "",
+        "context_after": "Contractor Signature:  Date: Phone Number:       \nE-Mail:       \nPrinted or Typed Name: Title: If you are not providing a RFQ Submission, place an “x” in the box, please explain why you are not responding, and return \nthis page only. \n WE ARE UNABLE TO RESPOND AT THIS TIME BECAUSE:",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P4-U2",
+        "document_id": "DOC-012",
+        "page_number": 4,
+        "category": "EVALUATION",
+        "source_text": "..................................................................................................................................... 8 5.1.1 STAGE 1 ADMINISTRATIVE REVIEW........................................................................................................... 9 5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION ...............................................",
+        "trigger_terms": [
+          "evaluation"
+        ],
+        "context_before": "7 IMPORTANT BUILDING ACCESS PROCEDURES. ............................................................................................. 8 BID VALIDITY. ........................................................................................................................................................\n\n8 4.4.1 BID INQUIRIES ............................................................................................................................................... 8 Section 5. METHOD OF AWARD ................................................................................................... 8 EVALUATION PROCESS.",
+        "context_after": "9 5.1.3 STAGE 3 FINANCIAL EVALUATION ............................................................................................................. 9 Section 6. EVALUATION COMPONENTS ..................................................................................... 9 MANDATORY OFFERINGS ...................................................................................................................................\n\n9 6.1.1 STANDARD CONFIGURATIONS. ................................................................................................................ 10 6.1.2 REQUIRED PRODUCTS. ............................................................................................................................. 10",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P4-U3",
+        "document_id": "DOC-012",
+        "page_number": 4,
+        "category": "EVALUATION",
+        "source_text": "9 5.1.3 STAGE 3 FINANCIAL EVALUATION ............................................................................................................. 9 Section 6. EVALUATION COMPONENTS ..................................................................................... 9 MANDATORY OFFERINGS ...................................................................................................................................",
+        "trigger_terms": [
+          "evaluation"
+        ],
+        "context_before": "8 4.4.1 BID INQUIRIES ............................................................................................................................................... 8 Section 5. METHOD OF AWARD ................................................................................................... 8 EVALUATION PROCESS.\n\n..................................................................................................................................... 8 5.1.1 STAGE 1 ADMINISTRATIVE REVIEW........................................................................................................... 9 5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION ...............................................",
+        "context_after": "9 6.1.1 STANDARD CONFIGURATIONS. ................................................................................................................ 10 6.1.2 REQUIRED PRODUCTS. ............................................................................................................................. 10\n\nOPTIONAL PRODUCTS. ..................................................................................................................................... 10 6.2.1 ADDITIONAL PRODUCTS. ..........................................................................................................................",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P8-U4",
+        "document_id": "DOC-012",
+        "page_number": 8,
+        "category": "EVALUATION",
+        "source_text": "EVALUATION PROCESS. The relative weights of each part of the Proposal are as follows:",
+        "trigger_terms": [
+          "evaluation",
+          "weight"
+        ],
+        "context_before": "Extraneous terms submitted on standard, pre-printed forms (including but not limited to:  product literature, order forms, \nlicense agreements, contracts or other documents) that are attached or referenced with submissions shall not be \nconsidered part of the Quote or resulting Agreement but shall be deemed included for informational or promotional \npurposes only. \nSection 5.   METHOD OF AWARD\n\nOGS will separately evaluate and separately make awards for each Configuration. Contractor’s may bid one, some, or all \nconfigurations. Awards will be made to the responsive and responsible Contractor(s) with the highest Total Financial \nScore per Configuration that meets all the specified technical requirements.  The same Contractor can be awarded \nmultiple Configurations.",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P9-U8",
+        "document_id": "DOC-012",
+        "page_number": 9,
+        "category": "EVALUATION",
+        "source_text": "5.1.3 STAGE 3 FINANCIAL EVALUATION Only Contractors whose Standard Configuration specifications and Required Products pass review, as determined \nby OGS, will proceed to the evaluation of Attachment C – Financial Response for those specific Configurations. \nFor those Contractors who have been determined to have passed the Technical Evaluation, their Attachment A - \nTechnical Response will be used to create the Attachment C – Financial Response and will be provided to the \nContractor in order to complete and submit.  The proposed pricing on Attachment C – Financial Response will then \nbe used in the Financial Evaluation.",
+        "trigger_terms": [
+          "evaluation"
+        ],
+        "context_before": "The evaluation is a three-stage process set forth below: 5.1.1 STAGE 1 ADMINISTRATIVE REVIEW The submitted Attachment A – Technical Response, Attachment D – Issue Escalation Plan, and the Manufacturer \nInformation page (last page of this document) will be reviewed for completeness.  The addition or deletion of \nworksheets, columns, unlocking the document, rewriting formulas, or similar alterations to any document is \nprohibited. OGS reserves the right to reject any RFQ Submission or portion(s) thereof determined to have been \naltered/modified by the Contractor from the original format. Failure to provide fully completed documents may \nresult in rejection of the RFQ Submission without further review.\n\n5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION Submitted Attachment A – Technical Response will be compared to Standard Configuration and Required \nProducts requirements.  All proposed SKUs for proposed products offered in Attachment A – Technical Response \nmust be on the Contractor’s approved Manufacturer Umbrella Contract price list. Any Configuration that contains \na SKU that is not included on the Manufacturer’s Umbrella Contract price list may not proceed further in the \nevaluation process.",
+        "context_after": "Section 6.   EVALUATION COMPONENTS All proposed SKUs for Products offered must be on the Contractor’s approved Manufacturer Umbrella Contract \nprice list prior to the RFQ Submission due date for RFQ 23-01.   OGS will prioritize any Contract modification \nrequests related to this RFQ 23-01, provided that the Contractor indicates in their Contract modification request \nthat the Products are intended for this RFQ 23-01. Contractors are requested to limit such Contract modification \nrequests to only Products needed to respond to this RFQ. All pricing offered on Attachment C - Financial Response \nmust be equal to or better than the pricing offered for that SKU on the Contractor's Manufacturer Umbrella Contract.\n\nMANDATORY OFFERINGS FOR EACH CONFIGURATION BID, BIDDERS MUST OFFER ALL COMPONENTS WITHIN THE STANDARD \nCONFIGURATION AND  ALL REQUIRED PRODUCTS . Failure to complete all required fields in Attachment A – \nTechnical Response or Attachment C – Financial Response may result in rejection of the RFQ Submission without further \nreview.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P4-U1",
+        "document_id": "DOC-012",
+        "page_number": 4,
+        "category": "COMMERCIAL",
+        "source_text": "11 Section 7. TERMS AND CONDITIONS ........................................................................................ 11 GENERAL. ............................................................................................................................................................ 11 PRICING.",
+        "trigger_terms": [
+          "pricing"
+        ],
+        "context_before": "10 DISCOUNT PERCENTAGE. ................................................................................................................................ 11 6.3.1 STANDARD CONFIGURATION DISCOUNT. .............................................................................................. 11 6.3.2 REQUIRED PRODUCTS DISCOUNT.\n\n......................................................................................................... 11 DEBRIEFING. ....................................................................................................................................................... 11 DISPUTE RESOLUTION. .....................................................................................................................................",
+        "context_after": ".............................................................................................................................................................. 11 7.2.1 MONETARY VALUES. ..................................................................................................................................\n\n12 7.2.2 DISCOUNT PERCENTAGE VALUES. ......................................................................................................... 12 7.2.3 STANDARD CONFIGURATION. .................................................................................................................. 12 7.2.4 REQUIRED PRODUCTS.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P20-U15",
+        "document_id": "DOC-012",
+        "page_number": 20,
+        "category": "EVALUATION",
+        "source_text": "https://www.cbp.gov/trade/programs-administration/forced-labor/withhold-release-orders-and-findings REPLACEMENT CONTRACTOR. In the event that OGS terminates any resulting Agreement or any awarded Configuration resulting from such Agreement, \nOGS reserves the right to then make an award to the Contractor with the next highest Total Financial Score from RFQ 23-\n01 that is willing to accept an Agreement or Configuration award without rebidding.  Under no circumstances will the new \nawardee be permitted to increase its component prices for Standard Configurations, the prices of the Required Products \nor decrease the percentage discounts on Additional Products that were originally bid.",
+        "trigger_terms": [
+          "financial score"
+        ],
+        "context_before": "The database of all products that currently meet EPEAT criteria are viewable at www.greenelectronicscouncil.org. EXPORT ADMINISTRATION REGULATIONS RESTRICTED BUSINESS ENTITIES. OGS will not accept a bid from a Contractor, or a Contractor Product that contains Products made by an entity on any of \nthe lists maintained by the US Customs and Border Patrol at the link set out below.\n\nIf Contractor cannot deliver a Product because either the Contractor or a supplier to the Contractor is listed on any of \nthese lists, the Contractor must remove the Product from the Contractor’s Agreement price list.   Additionally, for any \norder that cannot be fulfilled as a result of such listing, the Authorized User, at their discretion, may either terminate the \norder or allow Contractor to fulfill the order with a replacement product that either meets or exceeds the applicable \nProduct Specifications.  The replacement Product must be added to the Agreement price list via Appendix 3 - Pricing \nModification Form.",
+        "context_after": "ADVERTISING. Contractor is reminded of the requirements set forth in the Contractor’s Manufacturer Umbrella Contract, Appendix B, \nSection 13, Contract Publicity, incorporated as part of the Contract, that any Contractor’s press or media releases, \nadvertisements, or promotional literature, regardless of the medium, referring to an Contractor must be reviewed and \napproved by OGS prior to issuance.  The Contractor also cannot use, for any purpose, the New York State of Opportunity \nregistered trademark or the State coat of arms without prior approval from the State.\n\nINSTRUCTION MANUALS AND ASSOCIATED DOCUMENTATION. Instruction Manuals and Associated Documentation shall be provided in accordance with Manufacturer Umbrella Contract \nSection 2.21, Instruction Manuals and Associated Documentation. MWBE GOALS AND REPORTING. The Contractor is reminded of their responsibility under Contractor’s Manufacturer Umbrella Contract, Section 2.68, \nContractor Requirements and Procedures for Participation By New York State Certified Minority- And Women-Owned \nBusiness Enterprises and Equal Employment Opportunities for Minority Group Members and Women. For reporting \npurposes, Contractor must accurately track and report the effort of the minority or women owned businesses performing \nsuch duties as would be covered under the scope of any resulting Agreement.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P3-U0",
+        "document_id": "DOC-012",
+        "page_number": 3,
+        "category": "COMMERCIAL",
+        "source_text": "• Appendix 2 – Agreement Price List Modification Procedures • Appendix 3 – Pricing Modification Form • Appendix 4 – How to Prepare a Successful Quote • Appendix 5 – Aggregate Hardware Buy - Delayed Delivery Report",
+        "trigger_terms": [
+          "pricing"
+        ],
+        "context_before": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 3 of 23 March 2023 Aggregate Hardware Buy 23-01 ATTACHMENTS AND APPENDICES • RFQ 23-01 Aggregate Hardware Buy • Attachment A – Technical Response\n\n• Attachment B – Contractor Questions and Comments • Attachment C – Financial Response   \nNote: Only Contractors determined by OGS to have passed the technical portion of Stage 2 will be provided \nAttachment C – Financial Response. • Attachment D – Issue Escalation Plan • Appendix 1 – Aggregate Hardware Buy - Sales Report",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P5-U3",
+        "document_id": "DOC-012",
+        "page_number": 5,
+        "category": "COMMERCIAL",
+        "source_text": "20 INSTRUCTION MANUALS AND ASSOCIATED DOCUMENTATION. ............................................................... 20 MWBE GOALS AND REPORTING. ..................................................................................................................... 20 WARRANTY .........................................................................................................................................................",
+        "trigger_terms": [
+          "warranty"
+        ],
+        "context_before": "19 7.19.2 FISCAL AUDITS. ........................................................................................................................................... 19 EPEAT REQUIREMENTS. ...................................................................................................................................\n\n19 EXPORT ADMINISTRATION REGULATIONS RESTRICTED BUSINESS ENTITIES. ...................................... 20 REPLACEMENT CONTRACTOR. ....................................................................................................................... 20 ADVERTISING. .....................................................................................................................................................",
+        "context_after": "20 7.26.1 DOCKING STATION WARRANTY ............................................................................................................... 21 7.26.2 ADDITIONAL PRODUCT WARRANTIES ..................................................................................................... 21 Section 8.\n\nOGS RESERVED RIGHTS .......................................................................................... 21 CONTRACTOR INFORMATION ........................................................................................................ 23",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P5-U2",
+        "document_id": "DOC-012",
+        "page_number": 5,
+        "category": "COMMERCIAL",
+        "source_text": "15 TYPES OF AGREEMENT MODIFICATIONS. ..................................................................................................... 15 7.12.1 LOWERING PRICING OF PRODUCTS. ...................................................................................................... 15 7.12.2 ADDING ADDITIONAL PRODUCTS.",
+        "trigger_terms": [
+          "pricing"
+        ],
+        "context_before": "14 7.8.1 SUPPLY SHORTAGE PRIORITIZATION ..................................................................................................... 14 TERM FOR AGGREGATE HARDWARE BUY 23-01 AGREEMENT. ................................................................. 14 7.9.1 SHORT TERM EXTENSION. ........................................................................................................................\n\n14 RESELLER PARTICIPATION UNDER AGGREGATE AGREEMENT. ............................................................... 14 7.10.1 PERMISSIBLE USE OF RESELLERS.......................................................................................................... 15 AGREEMENT PRICE LIST MODIFICATION. ......................................................................................................",
+        "context_after": "........................................................................................................... 16 7.12.3 DELETING PRODUCTS FROM THE ADDITIONAL PRODUCTS CATEGORY. ......................................... 16 7.12.4 REPLACEMENT OF PRODUCTS. ...............................................................................................................\n\n16 7.12.5 REPLACEMENT MODEL FOR STANDARD CONFIGURATION. ............................................................... 16 INVOICING. ........................................................................................................................................................... 17 PRODUCT DELIVERY.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P5-U4",
+        "document_id": "DOC-012",
+        "page_number": 5,
+        "category": "COMMERCIAL",
+        "source_text": "20 7.26.1 DOCKING STATION WARRANTY ............................................................................................................... 21 7.26.2 ADDITIONAL PRODUCT WARRANTIES ..................................................................................................... 21 Section 8.",
+        "trigger_terms": [
+          "warranty"
+        ],
+        "context_before": "19 EXPORT ADMINISTRATION REGULATIONS RESTRICTED BUSINESS ENTITIES. ...................................... 20 REPLACEMENT CONTRACTOR. ....................................................................................................................... 20 ADVERTISING. .....................................................................................................................................................\n\n20 INSTRUCTION MANUALS AND ASSOCIATED DOCUMENTATION. ............................................................... 20 MWBE GOALS AND REPORTING. ..................................................................................................................... 20 WARRANTY .........................................................................................................................................................",
+        "context_after": "OGS RESERVED RIGHTS .......................................................................................... 21 CONTRACTOR INFORMATION ........................................................................................................ 23",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P9-U8",
+        "document_id": "DOC-012",
+        "page_number": 9,
+        "category": "COMMERCIAL",
+        "source_text": "5.1.3 STAGE 3 FINANCIAL EVALUATION Only Contractors whose Standard Configuration specifications and Required Products pass review, as determined \nby OGS, will proceed to the evaluation of Attachment C – Financial Response for those specific Configurations. \nFor those Contractors who have been determined to have passed the Technical Evaluation, their Attachment A - \nTechnical Response will be used to create the Attachment C – Financial Response and will be provided to the \nContractor in order to complete and submit.  The proposed pricing on Attachment C – Financial Response will then \nbe used in the Financial Evaluation.",
+        "trigger_terms": [
+          "pricing"
+        ],
+        "context_before": "The evaluation is a three-stage process set forth below: 5.1.1 STAGE 1 ADMINISTRATIVE REVIEW The submitted Attachment A – Technical Response, Attachment D – Issue Escalation Plan, and the Manufacturer \nInformation page (last page of this document) will be reviewed for completeness.  The addition or deletion of \nworksheets, columns, unlocking the document, rewriting formulas, or similar alterations to any document is \nprohibited. OGS reserves the right to reject any RFQ Submission or portion(s) thereof determined to have been \naltered/modified by the Contractor from the original format. Failure to provide fully completed documents may \nresult in rejection of the RFQ Submission without further review.\n\n5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION Submitted Attachment A – Technical Response will be compared to Standard Configuration and Required \nProducts requirements.  All proposed SKUs for proposed products offered in Attachment A – Technical Response \nmust be on the Contractor’s approved Manufacturer Umbrella Contract price list. Any Configuration that contains \na SKU that is not included on the Manufacturer’s Umbrella Contract price list may not proceed further in the \nevaluation process.",
+        "context_after": "Section 6.   EVALUATION COMPONENTS All proposed SKUs for Products offered must be on the Contractor’s approved Manufacturer Umbrella Contract \nprice list prior to the RFQ Submission due date for RFQ 23-01.   OGS will prioritize any Contract modification \nrequests related to this RFQ 23-01, provided that the Contractor indicates in their Contract modification request \nthat the Products are intended for this RFQ 23-01. Contractors are requested to limit such Contract modification \nrequests to only Products needed to respond to this RFQ. All pricing offered on Attachment C - Financial Response \nmust be equal to or better than the pricing offered for that SKU on the Contractor's Manufacturer Umbrella Contract.\n\nMANDATORY OFFERINGS FOR EACH CONFIGURATION BID, BIDDERS MUST OFFER ALL COMPONENTS WITHIN THE STANDARD \nCONFIGURATION AND  ALL REQUIRED PRODUCTS . Failure to complete all required fields in Attachment A – \nTechnical Response or Attachment C – Financial Response may result in rejection of the RFQ Submission without further \nreview.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P10-U11",
+        "document_id": "DOC-012",
+        "page_number": 10,
+        "category": "COMMERCIAL",
+        "source_text": "1. Warranty & Services includes Products such as multi-year Warranty, agency specific factory imaging, \nasset tagging, disk retention and accidental damage coverage. 2. Components include Products such as replacements or additional components to the Standard \nConfiguration, e.g., CPU, additional memory, internal optical drives, and operating system. Component \nupgrades and downgrades may be executed by increment. When an upgrade is done by increment, it \nmust be specified exactly how the upgrade will be provided. For example, if an upgrade to RAM from \n8GB to 16GB is offered, please specify how the upgrade capacity is met, such as 1x16GB memory \nmodule or 2x8GB memory modules.",
+        "trigger_terms": [
+          "warranty"
+        ],
+        "context_before": "Attachment A – Technical Response must include a Product description of any remote diagnosis and/or support \nservice arrangements if offered/provided with the Product. Contractors are encouraged to aggressively discount their pricing for the Standard Configurations.  Contractors \nshould provide a discount off the Net NYS Contract Price from the Manufacturer Umbrella Contract price list.  \nContractors shall provide itemized pricing on all Products offered in the Standard Configurations.  In no event may \nquoted pricing exceed the Net NYS Contract Price on the Manufacturer’s Umbrella Contract.\n\n6.1.2 REQUIRED PRODUCTS. For evaluation purposes, specific Products have been designated as Required Products.  A Product from each \nRequired Product category has been chosen by OGS to establish a level playing field among Contractors for each \nConfiguration. All Required Products for each Standard Configuration can be found in Section B of Attachment A - \nTechnical Response. Required Product categories are defined below:",
+        "context_after": "3. Peripherals include products such as a cable, external optical drive, docking station, wireless keyboard, \nand/or mouse. The Net NYS Contract Price provided on Attachment A – Technical Response for a Required Product must \nrepresent the complete price of the Product. Recording the price of the Product as the difference in price from a \nline-item in the Standard Configuration is prohibited.\n\nFor Required Products, Contractors must bid a discount percentage on the item that has been selected for each \ncategory (e.g., a 3-button mouse for Peripherals). OPTIONAL PRODUCTS. 6.2.1 ADDITIONAL PRODUCTS. At the time of bid submission, the Contractor may choose to include Additional Products under Section C of \nAttachment A - Technical Response.  External displays/monitors may not be offered as an Additional Product for \nany Configuration.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P10-U12",
+        "document_id": "DOC-012",
+        "page_number": 10,
+        "category": "COMMERCIAL",
+        "source_text": "Pricing for any Additional Products will not be factored into the evaluation, but submission of items for review at \nthe time of bid will facilitate the availability of Additional Products for Authorized Users as part of a Configuration",
+        "trigger_terms": [
+          "pricing"
+        ],
+        "context_before": "3. Peripherals include products such as a cable, external optical drive, docking station, wireless keyboard, \nand/or mouse. The Net NYS Contract Price provided on Attachment A – Technical Response for a Required Product must \nrepresent the complete price of the Product. Recording the price of the Product as the difference in price from a \nline-item in the Standard Configuration is prohibited.\n\nFor Required Products, Contractors must bid a discount percentage on the item that has been selected for each \ncategory (e.g., a 3-button mouse for Peripherals). OPTIONAL PRODUCTS. 6.2.1 ADDITIONAL PRODUCTS. At the time of bid submission, the Contractor may choose to include Additional Products under Section C of \nAttachment A - Technical Response.  External displays/monitors may not be offered as an Additional Product for \nany Configuration.",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P12-U18",
+        "document_id": "DOC-012",
+        "page_number": 12,
+        "category": "COMMERCIAL",
+        "source_text": "7.2.5 ADDITIONAL PRODUCTS. Contractors shall provide the same awarded discount percentages that applied to the three (3) Required Product \ncategories (Warranty and Services, Components, and Peripherals), to the Additional Products in their respective \ncategories.  For all Additional Products, the discount percentages will apply to the Net NYS Contract Price from \nthe Manufacturer Umbrella Contract price list. At time of award, these discount percentages will apply to the \noriginal Additional Products bid and any future Additional Products added within the scope of the Agreement. Only \nAdditional Products approved by OGS for inclusion on the awarded Configuration price list may be offered under \nany resulting Agreement. Discount percentages may be increased, but not decreased during the term of the \nAgreement and any extensions.",
+        "trigger_terms": [
+          "warranty"
+        ],
+        "context_before": "7.2.3 STANDARD CONFIGURATION. Contractors shall provide itemized pricing on all Products offered in the Standard Configurations.  In no event may \nquoted pricing exceed the Net NYS Contract Price on the Contractor’s Manufacturer Umbrella Contract.  The \nawarded Standard Configuration price and its component prices will remain equal to the Agreement awarded \nprice for the term of the Agreement(s) and any extensions, though Contractor may offer lower pricing at any time \non an individual transaction.\n\n7.2.4 REQUIRED PRODUCTS. Products that were bid as Required Products by the Contractor will be available under the Additional Product \ncategory on the awarded Configuration price list and are subject to the discount percentage bid by the Contractor \nas part of the RFQ Submission. The Required Product price awarded shall remain equal to or better than the \noriginally awarded price throughout the life of any resulting Agreement, though Contractor may offer lower pricing \nat any time on an individual transaction.  Required Product discount percentages may be increased, but not \ndecreased during the term of any resulting Agreement and any extensions.",
+        "context_after": "Category Discount percentages are only applicable for products listed on the awarded Agreement Configuration \nprice lists.  Products that are on the Contractor’s Manufacturer Umbrella price list shall not be offered with the \nCategory Discount under any resulting Agreement unless first being submitted to OGS for approval via Appendix \n3 - Pricing Modification Form.\n\nRESULTING AGREEMENT DOCUMENTS/ORDER OF PRECEDENCE. Any resulting Aggregate Hardware Buy 23-01 Agreement will be comprised of the following documents.  Any conflicts or \ninconsistencies among such documents shall be resolved by giving precedence to the documents in the following order: 1. Aggregate Hardware Buy 23-01 Agreement TERMS AND CONDITIONS; \n2. Attachment 1 - Pricing Pages, which consists of the price list for each awarded Configuration as approved by \nOGS from time to time during the term of the resulting Agreement; \n3. Attachment 2 - Issue Escalation Plan; \n4. Attachment 3 - Sales Report Form \n5. Attachment 4 - Agreement Price List Modification Procedures  \n6. Attachment 5 – Pricing Modification Form",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P13-U21",
+        "document_id": "DOC-012",
+        "page_number": 13,
+        "category": "COMMERCIAL",
+        "source_text": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 13 of 23 March 2023 Aggregate Hardware Buy 23-01 7. Attachment 6 - How to Use.  OGS reserves the right to unilaterally make revisions, changes and/or updates to \nthis attachment without processing a formal amendment and/or modification to the resulting Agreement; \n8. Attachment 7 - Contractor Information;  \n9. RFQ 23-01 Request for Quote 23-01, Aggregate Hardware Buy \n• RFQ 23-01 Aggregate Hardware Buy \n• Attachment A – Technical Response  \n• Attachment B – Contractor Questions and Comments  \n• Attachment C – Financial Response   \n• Attachment D – Issue Escalation Plan \n• Appendix 1 – Aggregate Hardware Buy - Sales Report Form  \n• Appendix 2 – Agreement Price List Modification Procedures  \n• Appendix 3 – Pricing Modification Form  \n• Appendix 4 – How to Prepare a Successful Quote \n• Appendix 5 – Aggregate Hardware Buy - Delayed Delivery Report  \n• Appendix 6 – Responses to Inquiries Released (3/15/2023)",
+        "trigger_terms": [
+          "pricing"
+        ],
+        "context_before": "",
+        "context_after": "COMMENCEMENT OF SALES. The Contractor can commence sales from any resulting Agreement only upon OGS acceptance and posting of the \nAgreement and awarded Configurations with the Contractor’s contact information on the OGS website. ESTIMATED SPEND AND QUANTITY. The estimated dollar value of the aggregated award of the 14 Standard Configurations in this RFQ 23-01, based on \nhistorical purchases under previous awards, is approximately $50 million.  Certain factors including but not limited to the \nbudget structure, the COVID-19 pandemic, and global industry supply chain have impacted the marketplace and \nestimated volumes.  However, the Agreements resulting from this RFQ will be Indefinite Delivery, Indefinite Quantity \n(IDIQ) awards.  Numerous factors could cause the actual volume of Product purchased to vary substantially from the \nabove estimate.  Such factors include, but are not limited to, the following:\n\n• There is no guarantee of volume to be purchased  \n• There is no guarantee of dollar value to be purchased \n• There is no guarantee that demand will continue in any manner consistent with previous purchases or the above \nestimates In OGS’ experience, depending on the price of a particular item, the actual volume of purchases for that item could be \nsubstantially in excess of, or substantially below, estimated volumes.  Specifically, if actual contract pricing is lower than \nanticipated or historical pricing, actual quantities purchased could be substantially greater than the estimates; conversely, \nif actual contract pricing is higher than anticipated or historical pricing, actual quantities purchased could be substantially \nlower than the estimates.  By submitting a Quote, Contractor acknowledges the foregoing and agrees that actual good \nfaith purchasing volumes during the term of any resulting Agreement could vary substantially from the estimates provided \nabove. Contractor must furnish all quantities actually ordered by Authorized Users at or below the prices in the Aggregate \nHardware Buy 23-01 Agreement.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P12-U20",
+        "document_id": "DOC-012",
+        "page_number": 12,
+        "category": "COMMERCIAL",
+        "source_text": "RESULTING AGREEMENT DOCUMENTS/ORDER OF PRECEDENCE. Any resulting Aggregate Hardware Buy 23-01 Agreement will be comprised of the following documents.  Any conflicts or \ninconsistencies among such documents shall be resolved by giving precedence to the documents in the following order: 1. Aggregate Hardware Buy 23-01 Agreement TERMS AND CONDITIONS; \n2. Attachment 1 - Pricing Pages, which consists of the price list for each awarded Configuration as approved by \nOGS from time to time during the term of the resulting Agreement; \n3. Attachment 2 - Issue Escalation Plan; \n4. Attachment 3 - Sales Report Form \n5. Attachment 4 - Agreement Price List Modification Procedures  \n6. Attachment 5 – Pricing Modification Form",
+        "trigger_terms": [
+          "pricing"
+        ],
+        "context_before": "7.2.5 ADDITIONAL PRODUCTS. Contractors shall provide the same awarded discount percentages that applied to the three (3) Required Product \ncategories (Warranty and Services, Components, and Peripherals), to the Additional Products in their respective \ncategories.  For all Additional Products, the discount percentages will apply to the Net NYS Contract Price from \nthe Manufacturer Umbrella Contract price list. At time of award, these discount percentages will apply to the \noriginal Additional Products bid and any future Additional Products added within the scope of the Agreement. Only \nAdditional Products approved by OGS for inclusion on the awarded Configuration price list may be offered under \nany resulting Agreement. Discount percentages may be increased, but not decreased during the term of the \nAgreement and any extensions.\n\nCategory Discount percentages are only applicable for products listed on the awarded Agreement Configuration \nprice lists.  Products that are on the Contractor’s Manufacturer Umbrella price list shall not be offered with the \nCategory Discount under any resulting Agreement unless first being submitted to OGS for approval via Appendix \n3 - Pricing Modification Form.",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P15-U28",
+        "document_id": "DOC-012",
+        "page_number": 15,
+        "category": "COMMERCIAL",
+        "source_text": "The Contractor shall submit the Product and price information for the Agreement modification electronically via email as \ndescribed in RFQ 23-01, Appendix 2 – Agreement Price List Modification Procedures and RFQ 23-01, Appendix 3 – \nPricing Modification Form (and in hardcopy if requested by OGS) to:",
+        "trigger_terms": [
+          "pricing"
+        ],
+        "context_before": "AGREEMENT PRICE LIST MODIFICATION. The Contractor is authorized to provide the Standard Configuration(s), Required Products, and Additional Products initially \nawarded in the Agreement.  Products included under the Agreement can be modified through the processes described in \nRFQ 23-01, Appendix 2 – Agreement Price List Modification Procedures and utilizing both the Agreement Modification \nForm (last 2 pages of RFQ 23-01, Appendix 2 – Agreement Price List Modification Procedures) and RFQ 23-01, Appendix \n3 - Pricing Modification Form.\n\nIn order to expedite processing of an Agreement modification, only one Agreement modification request can be submitted \nat a time.  Additional requests may be submitted once the Contractor has received approval of a previously submitted \nrequest. The Contractor must request the most current approved Appendix 3 – Pricing Modification Form from the OGS \nContract Manager in order to begin the modification process. This will help to ensure there will not be an overlap or \ndiscrepancy with the approved Configuration price list. The Contractor must specify the Configuration in their request.",
+        "context_after": "Submit electronically via e-mail: \n OGS.sm.PS.AggregateBuy@ogs.ny.gov \n Subject Line: Aggregate Hardware Buy 23-01 – [Contractor Name] Modification TYPES OF AGREEMENT MODIFICATIONS. Agreement modifications may include the following: \n• Lowering pricing of Products; \n• Adding Additional Products;  \n• Deleting Products from the Additional Products category;  \n• Replacement of Products; and \n• Replacement Model for Standard Configuration.\n\n7.12.1 LOWERING PRICING OF PRODUCTS. All Product pricing on the Contractor’s Agreement price list can be lowered at any time throughout the term of any \nresulting Agreement and any extensions. Agreement pricing for a Product can be lowered without lowering the Product price on the Contractor’s \nManufacturer Umbrella price list.  If Product pricing on the Contractor’s Manufacturer Umbrella price list \ndecreases, a modification must be made to the Agreement price list to reflect the price decreases.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P15-U29",
+        "document_id": "DOC-012",
+        "page_number": 15,
+        "category": "COMMERCIAL",
+        "source_text": "Submit electronically via e-mail: \n OGS.sm.PS.AggregateBuy@ogs.ny.gov \n Subject Line: Aggregate Hardware Buy 23-01 – [Contractor Name] Modification TYPES OF AGREEMENT MODIFICATIONS. Agreement modifications may include the following: \n• Lowering pricing of Products; \n• Adding Additional Products;  \n• Deleting Products from the Additional Products category;  \n• Replacement of Products; and \n• Replacement Model for Standard Configuration.",
+        "trigger_terms": [
+          "pricing"
+        ],
+        "context_before": "In order to expedite processing of an Agreement modification, only one Agreement modification request can be submitted \nat a time.  Additional requests may be submitted once the Contractor has received approval of a previously submitted \nrequest. The Contractor must request the most current approved Appendix 3 – Pricing Modification Form from the OGS \nContract Manager in order to begin the modification process. This will help to ensure there will not be an overlap or \ndiscrepancy with the approved Configuration price list. The Contractor must specify the Configuration in their request.\n\nThe Contractor shall submit the Product and price information for the Agreement modification electronically via email as \ndescribed in RFQ 23-01, Appendix 2 – Agreement Price List Modification Procedures and RFQ 23-01, Appendix 3 – \nPricing Modification Form (and in hardcopy if requested by OGS) to:",
+        "context_after": "7.12.1 LOWERING PRICING OF PRODUCTS. All Product pricing on the Contractor’s Agreement price list can be lowered at any time throughout the term of any \nresulting Agreement and any extensions. Agreement pricing for a Product can be lowered without lowering the Product price on the Contractor’s \nManufacturer Umbrella price list.  If Product pricing on the Contractor’s Manufacturer Umbrella price list \ndecreases, a modification must be made to the Agreement price list to reflect the price decreases.\n\nIf a Contractor wishes to lower the price for a component in the Standard Configuration, the Contractor must state \nthe new Product pricing in the Proposed Aggregate Agreement Price column on the RFQ 23-01, Appendix 3 – \nPricing Modification Form.  The proposed lower price will become the new Agreement price for the component.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P16-U34",
+        "document_id": "DOC-012",
+        "page_number": 16,
+        "category": "COMMERCIAL",
+        "source_text": "7.12.2 ADDING ADDITIONAL PRODUCTS. After Agreement award, in order for a Product to be added to the Additional Products pricing category under the \nAgreement, a Product must first be approved on the Contractor’s Manufacturer Umbrella Contract in accordance \nwith the Contractor’s Manufacturer Umbrella Contract Appendix C – Contract Modification Procedure.",
+        "trigger_terms": [
+          "pricing"
+        ],
+        "context_before": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 16 of 23 March 2023 Aggregate Hardware Buy 23-01 Pricing Modification Form.  The proposed lower price minus the percentage discount will become the new \nAgreement price for the Required Product or Additional Product upon OGS approval.",
+        "context_after": "Once a Product has been successfully added to the Contractor’s OGS approved Manufacturer Umbrella Contract \nprice list, the same Product can then be submitted for an add request under the Agreement. The new Additional \nProduct price, as entered in the Proposed Aggregate Agreement Price column on the RFQ 23-01, Appendix 3 – \nPricing Modification Form, must be equal to or less than the Net NYS Contract price for the Product as listed on \nthe Contractor’s Manufacturer Umbrella Contract price list.  The discount percentage described in 7.2.5, \nAdditional Products, will be applied to the proposed Additional Product price resulting in the Agreement price for \nthe Additional Product.\n\n7.12.3 DELETING PRODUCTS FROM THE ADDITIONAL PRODUCTS CATEGORY. Additional Products can only be removed from the Agreement if the Products are shown to OGS’ satisfaction to \nbe incompatible with the Standard Configurations, unavailable, or at End of Life (EOL).  The reason an Additional \nProduct is being removed from the Agreement must be provided in writing to the Agreement Contract Manager(s).  \nOGS must receive no less than 60 calendar days notice for EOL Additional Products.  All EOL Additional \nProducts purchased by Authorized Users must remain under warranty or be replaceable at no additional charge \nto the Authorized Users.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P17-U41",
+        "document_id": "DOC-012",
+        "page_number": 17,
+        "category": "COMMERCIAL",
+        "source_text": "INVOICING. All invoices shall at a minimum, include the items listed below and any additional information identified in the Authorized \nUser Purchase Order and any resulting Authorized User Agreement: • Manufacturer Umbrella Contract Number: PMXXXXX \n• RFQ Number: 23-01  \n• RFQ Title: Aggregate Hardware Buy 23-01  \n• Contractor Name   \n• NYS Vendor ID \n• Manufacturer Part Number (SKU) \n• Product Name \n• Product Description \n• Quantity \n• Aggregate Buy Price for each Product SKU \n• Specific designation of special price(s) which may be better than the Agreement price  \n• Invoice Total  \n• Standard Configuration Name",
+        "trigger_terms": [
+          "invoice"
+        ],
+        "context_before": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 17 of 23 March 2023 Aggregate Hardware Buy 23-01 No less than 30 calendar days prior to the EOL of the awarded Standard Configuration or the date that the \nawarded Standard Configuration has become unavailable for purchase by Authorized Users, a substitute \nStandard Configuration with specifications that meet or exceed the specifications of the original offered Standard \nConfiguration must be submitted for OGS approval by completing the modification process outlined in Appendix 2 \n– Agreement Price List Modification Procedures.  The replacement model price shall not exceed the original \nawarded amount for the Standard Configuration and its components; provided, however, if the replacement model \ncosts less than the original Standard Configuration, the price shall be reduced to the lower cost. OGS’ \ndetermination that a replacement system meets or exceeds the original offered Standard Configuration will be \nfinal and binding on the Contractor.\n\nDuring the term of the Agreement, should the Contractor: fail to provide acceptable notice of EOL Standard \nConfiguration(s); fail to submit a replacement Standard Configuration via the process outlined in Appendix 2 – \nAgreement Price List Modification Procedures in the timeframe referenced above; or is unable to provide a \nreplacement model with specifications that meet or exceed the specifications of the original awarded \nConfiguration, OGS reserves the right to award the Configuration to the Contractor with the next lowest bid from \nRFQ 23-01 for that Configuration that is willing to accept the Configuration award without rebidding.  Under no \ncircumstances will the new Contractor awarded be permitted to increase its component pricing for the Standard \nConfiguration components or Required Products or decrease the percentage discounts on Required Product \ncategories that were originally Bid.  Should the Standard Configuration bid at the time of RFQ 23-01 be obsolete \nor unavailable, a substitute Standard Configuration with specifications that meet or exceed the specifications of \nthe original offered Standard Configuration may be proposed.",
+        "context_after": "Agreement prices are Not-To-Exceed prices. Off-Contract sales are prohibited. PRODUCT DELIVERY. The Contractor shall deliver the units ordered by an Authorized User within 45 calendar days of receipt of a Purchase \nOrder, approved by OSC if applicable, unless either the Authorized User or OGS grants an extension of time as provided \nbelow.\n\nIf upon receipt of a Purchase Order, the Contractor determines it cannot meet the 45 calendar day delivery period, the \nContractor must submit a written request to the Authorized User to extend the required Product delivery period as per the \nterms of Appendix B, Section 48. The Authorized User shall respond in writing to the Contractor either declining the \nrequest or specifying the revised delivery period.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P11-U2",
+        "document_id": "DOC-012",
+        "page_number": 11,
+        "category": "LIABILITY_RISK",
+        "source_text": "PRICING. The approved Configuration price lists, Attachment 1 – Pricing Pages, for any resulting Agreement will be posted on the \nOGS Procurement Services website. Only Products listed on such price lists shall be sold under the Agreement. The \nAgreement item number aggregate buy price is a Not-To-Exceed Price, in accordance with the Contractor’s Manufacturer \nUmbrella Contract, Section 2.5, Glossary, “Not-to-Exceed (NTE) Price.”",
+        "trigger_terms": [
+          "loss"
+        ],
+        "context_before": "DISPUTE RESOLUTION. Should a Contractor wish to file a dispute regarding this RFQ 23-01, the dispute will be considered and decided by OGS \nin accordance with Section 64(II)(B) of Appendix B to the Contractor’s Manufacturer Umbrella Contract. Section 7.   TERMS AND CONDITIONS The following terms and conditions shall apply to the Contractor:\n\nGENERAL. The terms and conditions of the Contractor’s Manufacturer Umbrella Contract including any Amendments and the additional \nterms and conditions set forth in this RFQ 23-01, Section 7, Terms and Conditions govern any resulting award under RFQ \n23-01.  This RFQ is referred to herein as either “RFQ 23-01” or “Aggregate Hardware Buy 23-01.”",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P5-U0",
+        "document_id": "DOC-012",
+        "page_number": 5,
+        "category": "LIABILITY_RISK",
+        "source_text": "20 7.26.1 DOCKING STATION WARRANTY ............................................................................................................... 21 7.26.2 ADDITIONAL PRODUCT WARRANTIES ..................................................................................................... 21 Section 8.",
+        "trigger_terms": [
+          "warranties"
+        ],
+        "context_before": "19 EXPORT ADMINISTRATION REGULATIONS RESTRICTED BUSINESS ENTITIES. ...................................... 20 REPLACEMENT CONTRACTOR. ....................................................................................................................... 20 ADVERTISING. .....................................................................................................................................................\n\n20 INSTRUCTION MANUALS AND ASSOCIATED DOCUMENTATION. ............................................................... 20 MWBE GOALS AND REPORTING. ..................................................................................................................... 20 WARRANTY .........................................................................................................................................................",
+        "context_after": "OGS RESERVED RIGHTS .......................................................................................... 21 CONTRACTOR INFORMATION ........................................................................................................ 23",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P6-U1",
+        "document_id": "DOC-012",
+        "page_number": 6,
+        "category": "LIABILITY_RISK",
+        "source_text": "In addition to the terms defined in Contractor’s Manufacturer Umbrella Contract, Section 2.5, Glossary, the following \ndefinitions shall apply in this RFQ 23-01 and any resulting Agreement. Term Definition \nAdditional Products Products that are not part of the Standard Configuration and are optional for Authorized Users \nto purchase to enhance the Standard Configuration. \nConfiguration Entirety of Standard Configuration, Required Products, and Additional Products \nRequired Products Products that are mandatory for Contractors to quote. \nStandard \nConfiguration \nAll components/line items necessary for a functional computing device meeting the minimum \nspecifications identified in Attachment A - Technical Response. \nQuote, \nRFQ Submission \nA Contractor's bid response package. \nSection 3.   SCOPE",
+        "trigger_terms": [
+          "loss"
+        ],
+        "context_before": "This RFQ incorporates the terms and conditions of the Contractor’s OGS Information Technology Umbrella \nContract – Manufacturer Based (Statewide) (“Manufacturer Umbrella Contract”) including executed amendments \nand the additional terms and conditions set forth in this RFQ, its Attachments, and Appendices.  The award made \nfrom this RFQ will result in the Aggregate Hardware Buy 23-01 Agreement (“Agreement”).\n\nAll purchases resulting from the Agreement shall be in accordance with the terms and conditions of the Contractor’s \nManufacturer Umbrella Contract which can be found at: \nhttps://online.ogs.ny.gov/purchase/snt/awardnotes/7360022802AppendicesPageCombo.pdf along with any additional \nterms and conditions set forth in this RFQ, its Attachments and Appendices.   \nSection 2.   DEFINITIONS",
+        "context_after": "PURPOSE. OGS is releasing this Request for Quotes (RFQ) for Aggregate Hardware Buy 23-01 (“RFQ 23-01”).  The purpose of RFQ \n23-01 is to establish an award for each Configuration as set forth in Attachment A - Technical Response. The resulting \nAgreement(s) will be considered an aggregate buy and all Authorized Users located within NYS (estimated at 7,600) will \nbe able to purchase the Configurations. Upon mutual agreement, this Agreement Pricing may be extended to additional \nStates or governmental jurisdictions, as described in Section 7.8, Participation in Aggregate Buy Agreement.\n\nStandard Configuration Brief Description \n1 VDI PC Desktop computer intended for use as a VDI or desktop-\nas-a-service endpoint \n2 Enterprise Desktop - \nStandard \nDesktop computer intended for deployment in an \nenterprise setting. (high-performance, secure workloads) \n3 Enterprise Desktop - vPro Desktop computer intended for deployment in an \nenterprise setting, (high-performance, secure workloads) \nwith Intel’s vPro Enterprise for Windows platform enabled \n4 Enterprise Desktop - High Desktop computer intended for deployment in an \nenterprise setting. (high-performance, secure workloads, \nhigh specification for intense use cases) \n5 Enterprise Notebook - \nStandard \nLaptop computer intended for deployment in an enterprise \nsetting.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P20-U44",
+        "document_id": "DOC-012",
+        "page_number": 20,
+        "category": "COMMERCIAL",
+        "source_text": "WARRANTY The following terms and conditions shall apply to all warranties under this RFQ: • If a unit becomes inoperable within the warranty window and cannot be repaired, a brand new unit shall \nbe provided at no charge. Contractor shall not provide refurbished or remanufactured equipment as they \nare not allowed under this Aggregate Hardware Buy 23-01. The data from the unit being replaced shall be \ntransferred to a new replacement unit at no charge in the event that the data is accessible and non-\ncorrupted. The data storage device or, if not removable, the entire unit, must remain in the custody and",
+        "trigger_terms": [
+          "warranty"
+        ],
+        "context_before": "ADVERTISING. Contractor is reminded of the requirements set forth in the Contractor’s Manufacturer Umbrella Contract, Appendix B, \nSection 13, Contract Publicity, incorporated as part of the Contract, that any Contractor’s press or media releases, \nadvertisements, or promotional literature, regardless of the medium, referring to an Contractor must be reviewed and \napproved by OGS prior to issuance.  The Contractor also cannot use, for any purpose, the New York State of Opportunity \nregistered trademark or the State coat of arms without prior approval from the State.\n\nINSTRUCTION MANUALS AND ASSOCIATED DOCUMENTATION. Instruction Manuals and Associated Documentation shall be provided in accordance with Manufacturer Umbrella Contract \nSection 2.21, Instruction Manuals and Associated Documentation. MWBE GOALS AND REPORTING. The Contractor is reminded of their responsibility under Contractor’s Manufacturer Umbrella Contract, Section 2.68, \nContractor Requirements and Procedures for Participation By New York State Certified Minority- And Women-Owned \nBusiness Enterprises and Equal Employment Opportunities for Minority Group Members and Women. For reporting \npurposes, Contractor must accurately track and report the effort of the minority or women owned businesses performing \nsuch duties as would be covered under the scope of any resulting Agreement.",
+        "context_after": "",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P14-U1",
+        "document_id": "DOC-012",
+        "page_number": 14,
+        "category": "TERMINATION",
+        "source_text": "Office of General Services \nProcurement Services \nGroup 73600 – Award 22802  \nIT Umbrella Contract – Manufacturer Based (Statewide) \nRFQ 23-01 - Aggregate Hardware Buy - REVISED Page 14 of 23 March 2023 Aggregate Hardware Buy 23-01 accurate and available throughout the duration of any resulting Agreement. Determination of compliance will be at the \nsole discretion of OGS. The State reserves the right to request demonstrations of the Contractor’s website. The only \nofferings allowed within the Contractor’s on-line configurator will be those within the OGS approved Configuration \nrequirements (Standard Configuration, Required Products and Additional Products). Contractor’s website shall comply \nwith Contractor’s Manufacturer Umbrella Contract section titled Accessibility of Web Based Information and Applications \nPolicy Language.",
+        "trigger_terms": [
+          "termination"
+        ],
+        "context_before": "",
+        "context_after": "Any conflicts between the OGS-posted price lists and items on a Contractor’s dedicated website shall be resolved in favor \nof the OGS-posted price list at time of the sale. Repeated conflicts between the two websites may, at OGS’ discretion, \nlead to the revoking of the ability of the Contractor to host their own dedicated website.\n\nPARTICIPATION IN AGGREGATE BUY AGREEMENT Any resulting Agreement pricing may be extended to additional States or governmental jurisdictions upon mutual written \nagreement between New York State (the lead contracting State) and the Contractor.  Political subdivisions and other \nauthorized entities within each participating State or governmental jurisdiction may also participate in any resulting \nAgreement if such State normally allows participation by such entities.  New York State reserves the right to negotiate \nadditional discounts based on any increased volume generated by such extensions. In the event that any resulting \nAgreement is so extended, such other authorized entities shall be solely responsible for liability and performance under \nany resulting Agreement and Contractor agrees to hold them solely responsible for such liability and performance.",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P1-U0",
+        "document_id": "DOC-012",
+        "page_number": 1,
+        "category": "TERMINATION",
+        "source_text": "Subject Line: \nAggregate Hardware Buy 23-01 Procurement Lobbying Law/Restricted Period is in effect:   Yes    No \nBy signing, Contractor affirms that it understands and agrees to comply with OGS policies and procedures relative to \npermissible contacts.  Information on Procurement Lobbying may be accessed \nat:  http://www.ogs.ny.gov/aboutOgs/regulations/defaultAdvisoryCouncil.html",
+        "trigger_terms": [
+          "default"
+        ],
+        "context_before": "RFQ Title Aggregate Hardware Buy 23-01 RFQ Number 23-01 NYS Office of General Services \nProcurement Services \n38\nth\n Floor, Corning Tower, ESP \nAlbany, NY 12242 Authorized User Delivery Information \nMultiple Locations Statewide \nDESIGNATED CONTACTS \nNames E-Mail \nMaureen Younkin, Allison White, Katherine Dias, Margaret \nArmenia, Karley Delaney, Nancy Dougherty, and Kylesha \nDavis \nOGS.sm.PS.AggregateBuy@ogs.ny.gov",
+        "context_after": "Office of General Services Procurement Services \nGroup 73600 – Award 22802 \nInformation Technology Umbrella Contract – Manufacturer Based (Statewide) Request for Quotations 23-01 \n(Previously referred to as 22-01 in RFQPI and RFC documents) \nAggregate Hardware Buy  \nREVISED",
+        "status": "REJECTED"
+      },
+      {
+        "unit_id": "DOC-012-P20-U8",
+        "document_id": "DOC-012",
+        "page_number": 20,
+        "category": "TERMINATION",
+        "source_text": "https://www.cbp.gov/trade/programs-administration/forced-labor/withhold-release-orders-and-findings REPLACEMENT CONTRACTOR. In the event that OGS terminates any resulting Agreement or any awarded Configuration resulting from such Agreement, \nOGS reserves the right to then make an award to the Contractor with the next highest Total Financial Score from RFQ 23-\n01 that is willing to accept an Agreement or Configuration award without rebidding.  Under no circumstances will the new \nawardee be permitted to increase its component prices for Standard Configurations, the prices of the Required Products \nor decrease the percentage discounts on Additional Products that were originally bid.",
+        "trigger_terms": [
+          "terminate"
+        ],
+        "context_before": "The database of all products that currently meet EPEAT criteria are viewable at www.greenelectronicscouncil.org. EXPORT ADMINISTRATION REGULATIONS RESTRICTED BUSINESS ENTITIES. OGS will not accept a bid from a Contractor, or a Contractor Product that contains Products made by an entity on any of \nthe lists maintained by the US Customs and Border Patrol at the link set out below.\n\nIf Contractor cannot deliver a Product because either the Contractor or a supplier to the Contractor is listed on any of \nthese lists, the Contractor must remove the Product from the Contractor’s Agreement price list.   Additionally, for any \norder that cannot be fulfilled as a result of such listing, the Authorized User, at their discretion, may either terminate the \norder or allow Contractor to fulfill the order with a replacement product that either meets or exceeds the applicable \nProduct Specifications.  The replacement Product must be added to the Agreement price list via Appendix 3 - Pricing \nModification Form.",
+        "context_after": "ADVERTISING. Contractor is reminded of the requirements set forth in the Contractor’s Manufacturer Umbrella Contract, Appendix B, \nSection 13, Contract Publicity, incorporated as part of the Contract, that any Contractor’s press or media releases, \nadvertisements, or promotional literature, regardless of the medium, referring to an Contractor must be reviewed and \napproved by OGS prior to issuance.  The Contractor also cannot use, for any purpose, the New York State of Opportunity \nregistered trademark or the State coat of arms without prior approval from the State.\n\nINSTRUCTION MANUALS AND ASSOCIATED DOCUMENTATION. Instruction Manuals and Associated Documentation shall be provided in accordance with Manufacturer Umbrella Contract \nSection 2.21, Instruction Manuals and Associated Documentation. MWBE GOALS AND REPORTING. The Contractor is reminded of their responsibility under Contractor’s Manufacturer Umbrella Contract, Section 2.68, \nContractor Requirements and Procedures for Participation By New York State Certified Minority- And Women-Owned \nBusiness Enterprises and Equal Employment Opportunities for Minority Group Members and Women. For reporting \npurposes, Contractor must accurately track and report the effort of the minority or women owned businesses performing \nsuch duties as would be covered under the scope of any resulting Agreement.",
+        "status": "REJECTED"
+      }
+    ],
+    "recovered": [
+      {
+        "unit_id": "DOC-012-P13-U21",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Appendix 3 – Pricing Modification Form",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P10-U12",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Pricing for any Additional Products will not be factored into the evaluation, but submission of items for review at the time of bid will facilitate the availability of Additional Products for Authorized Users as part of a Configuration",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P12-U18",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Warranty and Services",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P15-U29",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Lowering pricing of Products;",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P12-U20",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Attachment 1 - Pricing Pages, which consists of the price list for each awarded Configuration as approved by OGS from time to time during the term of the resulting Agreement;",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P15-U28",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The Contractor shall submit the Product and price information for the Agreement modification electronically via email as described in RFQ 23-01, Appendix 2 – Agreement Price List Modification Procedures and RFQ 23-01, Appendix 3 – Pricing Modification Form (and in hardcopy if requested by OGS) to:",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P10-U11",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Warranty & Services includes Products such as multi-year Warranty, agency specific factory imaging, asset tagging, disk retention and accidental damage coverage.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P5-U4",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "WARRANTY",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U8",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Only Contractors whose Standard Configuration specifications and Required Products pass review, as determined by OGS, will proceed to the evaluation of Attachment C – Financial Response for those specific Configurations.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P2-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "For information on RFQ Submission Requirements see RFQ 23-01, Section 4, RFQ Submission Requirements.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P20-U44",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "If a unit becomes inoperable within the warranty window and cannot be repaired, a brand new unit shall be provided at no charge. Contractor shall not provide refurbished or remanufactured equipment as they are not allowed under this Aggregate Hardware Buy 23-01.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P7-U9",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All RFQ Submissions shall be saved in separate unprotected files in Microsoft Office products (Word and Excel) in product releases 2012 or higher.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P7-U10",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "All RFQ Submissions and accompanying documentation shall become the property of the State of New York and shall not be returned.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P13-U10",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "In OGS’ experience, depending on the price of a particular item, the actual volume of purchases for that item could be substantially in excess of, or substantially below, estimated volumes.",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P17-U41",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "INVOICING. All invoices shall at a minimum, include the items listed below and any additional information identified in the Authorized User Purchase Order and any resulting Authorized User Agreement: • Manufacturer Umbrella Contract Number: PMXXXXX • RFQ Number: 23-01 • RFQ Title: Aggregate Hardware Buy 23-01 • Contractor Name • NYS Vendor ID • Manufacturer Part Number (SKU) • Product Name • Product Description • Quantity • Aggregate Buy Price for each Product SKU • Specific designation of special price(s) which may be better than the Agreement price • Invoice Total • Standard Configuration Name",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P7-U11",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Contractors are responsible for the accuracy of their RFQ Submissions.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P1-U1",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Procurement Lobbying Law/Restricted Period is in effect",
+          "category": "ELIGIBILITY",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P10-U22",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "submission of items for review at the time of bid will facilitate the availability of Additional Products for Authorized Users as part of a Configuration",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P8-U15",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Extraneous terms submitted on standard, pre-printed forms (including but not limited to:  product literature, order forms, license agreements, contracts or other documents) that are attached or referenced with submissions shall not be considered part of the Quote or resulting Agreement but shall be deemed included for informational or promotional purposes only.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P10-U20",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Any listed items not included in Lot 2 of the Contractor’s Manufacturer Umbrella Contract price list will be removed from the RFQ Submission.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P4-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "RFQ SUBMISSION REQUIREMENTS",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P4-U1",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "EVALUATION PROCESS.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P23-U41",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The RFQ Submission must be fully and properly executed by a person authorized to legally bind the Contractor.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P4-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "5.1.2 STAGE 2 TECHNICAL EVALUATION OF CONFIGURATION SUBMISSION",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P9-U8",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Only Contractors whose Standard Configuration specifications and Required Products pass review, as determined by OGS, will proceed to the evaluation of Attachment C – Financial Response for those specific Configurations.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P21-U39",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Require clarification at any time during the procurement process and/or require correction of arithmetic or other apparent errors for the purpose of assuring a full and complete understanding of a Contractor’s RFQ Submission and/or to determine a Contractor’s compliance with the requirements of the RFQ;",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P23-U42",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "If you are not providing a RFQ Submission, place an “x” in the box, please explain why you are not responding, and return this page only.",
+          "category": "DATES_SUBMISSION",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P4-U1",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "EVALUATION PROCESS.",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P8-U4",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "The relative weights of each part of the Proposal are as follows:",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P21-U36",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Reject any or all RFQ Submissions received in response to the RFQ",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P20-U15",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Total Financial Score",
+          "category": "LIABILITY_RISK",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P3-U0",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "Appendix 3 – Pricing Modification Form",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P5-U3",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "WARRANTY",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      },
+      {
+        "unit_id": "DOC-012-P5-U2",
+        "finding": {
+          "contains_material_evidence": true,
+          "exact_quote": "7.12.1 LOWERING PRICING OF PRODUCTS.",
+          "category": "COMMERCIAL",
+          "priority": "HIGH"
+        }
+      }
+    ],
+    "audit_flags": [
+      "DOC-012-P5-U4",
+      "DOC-012-P9-U8",
+      "DOC-012-P10-U11",
+      "DOC-012-P10-U12",
+      "DOC-012-P12-U18",
+      "DOC-012-P12-U20",
+      "DOC-012-P13-U21",
+      "DOC-012-P15-U28",
+      "DOC-012-P15-U29",
+      "DOC-012-P16-U34",
+      "DOC-012-P17-U41",
+      "DOC-012-P20-U44",
+      "DOC-012-P20-U8",
+      "DOC-012-P1-U1",
+      "DOC-012-P13-U10",
+      "DOC-012-P2-U2",
+      "DOC-012-P7-U9",
+      "DOC-012-P7-U10",
+      "DOC-012-P7-U11",
+      "DOC-012-P8-U15",
+      "DOC-012-P10-U20",
+      "DOC-012-P10-U22",
+      "DOC-012-P21-U36",
+      "DOC-012-P21-U39",
+      "DOC-012-P23-U42",
+      "DOC-012-P4-U1",
+      "DOC-012-P23-U41",
+      "DOC-012-P4-U2",
+      "DOC-012-P4-U3",
+      "DOC-012-P8-U4",
+      "DOC-012-P9-U8",
+      "DOC-012-P4-U1",
+      "DOC-012-P20-U15",
+      "DOC-012-P3-U0",
+      "DOC-012-P5-U3",
+      "DOC-012-P5-U2"
+    ],
+    "coverage": {
+      "ELIGIBILITY": {
+        "status": "COVERED",
+        "evidence_units_count": 24,
+        "verified_findings_count": 10,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "DATES_SUBMISSION": {
+        "status": "COVERED",
+        "evidence_units_count": 67,
+        "verified_findings_count": 18,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "TERMINATION": {
+        "status": "COVERED",
+        "evidence_units_count": 19,
+        "verified_findings_count": 4,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "LIABILITY_RISK": {
+        "status": "COVERED",
+        "evidence_units_count": 13,
+        "verified_findings_count": 38,
+        "reason": "Verified finding(s) exist and evidence units were examined."
+      },
+      "INDEMNITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "FINANCIAL_REQUIREMENTS": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PENALTIES_LIQUIDATED_DAMAGES": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EMD_BID_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "PERFORMANCE_SECURITY": {
+        "status": "EXTRACTION_UNCERTAIN",
+        "evidence_units_count": 0,
+        "verified_findings_count": 0,
+        "reason": "Insufficient candidate/evidence coverage to make a meaningful conclusion."
+      },
+      "EVALUATION_THRESHOLDS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 28,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "INSURANCE": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 1,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      },
+      "MANDATORY_DOCUMENTS": {
+        "status": "REVIEW_REQUIRED",
+        "evidence_units_count": 4,
+        "verified_findings_count": 0,
+        "reason": "Relevant evidence units exist, but no verified finding survived extraction/recovery."
+      }
+    }
+  }
+}

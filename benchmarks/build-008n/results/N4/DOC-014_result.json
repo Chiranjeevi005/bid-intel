@@ -1,0 +1,50 @@
+{
+  "metrics": {
+    "id": "DOC-014",
+    "qual_latency": 19399.33440000005,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 3769,
+        "completion_tokens": 2482,
+        "total_tokens": 6251,
+        "prompt_tokens_details": {
+          "cached_tokens": 3712
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2279
+        },
+        "prompt_cache_hit_tokens": 3712,
+        "prompt_cache_miss_tokens": 57
+      }
+    },
+    "total_latency": 19399.35699999996,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-014",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "RFI",
+      "confidence": "HIGH",
+      "reason": "This document is a Request for Information (RFI) issued by the Department of Energy seeking public comments and data on alternative efficiency determination methods and alternate rating methods. It explicitly states it is not a formal solicitation for proposals or a funding opportunity, and thus does not constitute an active procurement opportunity.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "ACTION:  Notice of availability of request for information (RFI)."
+        },
+        {
+          "page_number": 8,
+          "quote": "This is solely a request for information and not a Funding Opportunity Announcement (FOA)."
+        },
+        {
+          "page_number": 8,
+          "quote": "This RFI does not constitute a formal solicitation for proposals or abstracts."
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

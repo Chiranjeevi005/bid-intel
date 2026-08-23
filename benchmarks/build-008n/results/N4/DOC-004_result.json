@@ -1,0 +1,50 @@
+{
+  "metrics": {
+    "id": "DOC-004",
+    "qual_latency": 2594.2687000000005,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 812,
+        "completion_tokens": 257,
+        "total_tokens": 1069,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 100
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 44
+      }
+    },
+    "total_latency": 2594.2785000000003,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-004",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "OTHER",
+      "confidence": "HIGH",
+      "reason": "The document is a course module for an advanced algebra class, containing homework instructions and exam review material. It lacks any procurement intent, issuing organization, submission instructions, evaluation criteria, or other structural signals of a procurement opportunity.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Module 04: Advanced Algebra"
+        },
+        {
+          "page_number": 1,
+          "quote": "Course: Math 301"
+        },
+        {
+          "page_number": 1,
+          "quote": "Homework is due on Friday."
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

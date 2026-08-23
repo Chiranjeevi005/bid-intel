@@ -1,0 +1,3141 @@
+{
+  "metrics": {
+    "id": "DOC-012",
+    "qual_latency": 67779.82300000003,
+    "retrieval_latency": 4.419699999969453,
+    "extraction_latency": 31353.019100000034,
+    "interpretation_latency": 31820.02390000003,
+    "total_latency": 130969.65160000004,
+    "telemetry": [
+      {
+        "batch_name": "ELIGIBILITY",
+        "page_count": 19,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          13,
+          19,
+          21
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "ELIGIBILITY/A",
+        "page_count": 10,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1156,
+        "prompt_tokens": 6871,
+        "output_budget_ratio": 0.2822265625,
+        "estimated_cost_cents": 0.12049800000000001,
+        "latency_ms": 6274.982700000051,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          13,
+          19,
+          21
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "ELIGIBILITY/B",
+        "page_count": 9,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1305,
+        "prompt_tokens": 7963,
+        "output_budget_ratio": 0.318603515625,
+        "estimated_cost_cents": 0.139958,
+        "latency_ms": 8217.148099999991,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          13,
+          19,
+          21
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION",
+        "page_count": 22,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION/A",
+        "page_count": 11,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1087,
+        "prompt_tokens": 7721,
+        "output_budget_ratio": 0.265380859375,
+        "estimated_cost_cents": 0.130466,
+        "latency_ms": 5643.722600000096,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION/B",
+        "page_count": 11,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 340,
+        "prompt_tokens": 9008,
+        "output_budget_ratio": 0.0830078125,
+        "estimated_cost_cents": 0.127568,
+        "latency_ms": 3145.471099999966,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "EVALUATION",
+        "page_count": 16,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          8,
+          9,
+          10,
+          11,
+          20,
+          22
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "EVALUATION/A",
+        "page_count": 8,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1652,
+        "prompt_tokens": 5267,
+        "output_budget_ratio": 0.4033203125,
+        "estimated_cost_cents": 0.11193000000000002,
+        "latency_ms": 8692.735000000102,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          8,
+          9,
+          10,
+          11,
+          20,
+          22
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "EVALUATION/B",
+        "page_count": 8,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 768,
+        "prompt_tokens": 6216,
+        "output_budget_ratio": 0.1875,
+        "estimated_cost_cents": 0.10046400000000003,
+        "latency_ms": 6772.961899999995,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          8,
+          9,
+          10,
+          11,
+          20,
+          22
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "COMMERCIAL",
+        "page_count": 21,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          20,
+          21
+        ],
+        "context_pages": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "COMMERCIAL/A",
+        "page_count": 11,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1579,
+        "prompt_tokens": 8255,
+        "output_budget_ratio": 0.385498046875,
+        "estimated_cost_cents": 0.15171800000000002,
+        "latency_ms": 8312.921199999982,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          20,
+          21
+        ],
+        "context_pages": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "COMMERCIAL/B",
+        "page_count": 10,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2838,
+        "prompt_tokens": 8849,
+        "output_budget_ratio": 0.69287109375,
+        "estimated_cost_cents": 0.195286,
+        "latency_ms": 14404.50430000003,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          20,
+          21
+        ],
+        "context_pages": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "LIABILITY_RISK",
+        "page_count": 16,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          5,
+          6,
+          11,
+          13,
+          14,
+          20,
+          21,
+          22
+        ],
+        "context_pages": [
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "LIABILITY_RISK/A",
+        "page_count": 8,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 670,
+        "prompt_tokens": 6832,
+        "output_budget_ratio": 0.16357421875,
+        "estimated_cost_cents": 0.10634400000000001,
+        "latency_ms": 3791.4810999999754,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          5,
+          6,
+          11,
+          13,
+          14,
+          20,
+          21,
+          22
+        ],
+        "context_pages": [
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "LIABILITY_RISK/B",
+        "page_count": 8,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1980,
+        "prompt_tokens": 6441,
+        "output_budget_ratio": 0.4833984375,
+        "estimated_cost_cents": 0.13755,
+        "latency_ms": 9813.494600000093,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          5,
+          6,
+          11,
+          13,
+          14,
+          20,
+          21,
+          22
+        ],
+        "context_pages": [
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "TERMINATION",
+        "page_count": 14,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1096,
+        "prompt_tokens": 10774,
+        "output_budget_ratio": 0.267578125,
+        "estimated_cost_cents": 0.17346000000000003,
+        "latency_ms": 6542.324600000051,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1,
+          14,
+          17,
+          18,
+          19,
+          20,
+          22
+        ],
+        "context_pages": [
+          1,
+          2,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "CONTRADICTIONS_AMBIGUITIES",
+        "page_count": 19,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          6,
+          8,
+          11,
+          12,
+          13,
+          14,
+          18,
+          21,
+          22
+        ],
+        "context_pages": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "CONTRADICTIONS_AMBIGUITIES/A",
+        "page_count": 10,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1614,
+        "prompt_tokens": 8657,
+        "output_budget_ratio": 0.39404296875,
+        "estimated_cost_cents": 0.058332400000000006,
+        "latency_ms": 16113.707399999956,
+        "predictive_split": false,
+        "schema_retry_count": 1,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          6,
+          8,
+          11,
+          12,
+          13,
+          14,
+          18,
+          21,
+          22
+        ],
+        "context_pages": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "CONTRADICTIONS_AMBIGUITIES/B",
+        "page_count": 9,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "error",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 8732.360700000077,
+        "predictive_split": false,
+        "schema_retry_count": 1,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": true,
+        "trigger_pages": [
+          6,
+          8,
+          11,
+          12,
+          13,
+          14,
+          18,
+          21,
+          22
+        ],
+        "context_pages": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      }
+    ]
+  },
+  "result": {
+    "id": "DOC-012",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFQ",
+      "confidence": "HIGH",
+      "reason": "The document is a Request for Quotations (RFQ) issued by NYS Office of General Services for an Aggregate Hardware Buy, including scope, submission deadlines, and evaluation criteria.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "RFQ Title Aggregate Hardware Buy 23-01 RFQ Number 23-01"
+        },
+        {
+          "page_number": 2,
+          "quote": "OGS is seeking competitive quotes from Contract holders of the OGS Group 73600 Award 22802 Information Technology"
+        },
+        {
+          "page_number": 6,
+          "quote": "OGS is releasing this Request for Quotes (RFQ) for Aggregate Hardware Buy 23-01 (“RFQ 23-01”)."
+        },
+        {
+          "page_number": 6,
+          "quote": "Responses to the RFQ must be received by the deadline specified above."
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "ELIGIBILITY",
+          "title": "Discount percentages must be specific, not ranges",
+          "fact": "Discount percentage values cannot be expressed as a range and must not exceed two decimal places.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "A Discount Percentage value cannot be expressed as a range (for example: 10%-20%, or “varies”)."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Contractor must comply with MWBE requirements",
+          "fact": "Contractor must comply with Manufacturer Umbrella Contract Section 2.68 regarding MWBE participation and reporting.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "The Contractor is reminded of their responsibility under Contractor’s Manufacturer Umbrella Contract, Section 2.68, Contractor Requirements and Procedures for Participation By New York State Certified Minority- And Women-Owned Business Enterprises and Equal Employment Opportunities for Minority Group Members and Women."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Contractor must provide warranty SKUs for docking stations",
+          "fact": "Contractor must provide warranty SKUs for docking stations that fully cover hardware, software, and drivers.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "The Contractor is responsible for providing a warranty SKU(s) for docking stations listed as a Required Product or Additional Product on the price lists. The warranty SKU(s) must fully cover hardware, software, and drivers."
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "OGS Issues Responses to Questions and Comments",
+          "fact": "OGS issues responses to questions and comments on 3/15/2023 and 3/22/2023.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "OGS Issues Responses to Questions and Comments \n3/15/2023   \nSecond Attachment B – Contractor Questions and Comments \nDue \n3/17/2023 5:00pm EDT \nOGS Issues Responses to Questions and Comments \n3/22/2023"
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "RFQ Release Date",
+          "fact": "RFQ 23-01 was released on 2/17/2023.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "RFQ 23-01 Release \n2/17/2023"
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "Responses to Inquiries Released Date",
+          "fact": "The RFQ includes an appendix titled 'Responses to Inquiries Released (3/15/2023)', indicating a date of March 15, 2023 for responses to inquiries.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Appendix 6 – Responses to Inquiries Released (3/15/2023)"
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION",
+          "title": "Stage 1 Administrative Review: Completeness and Format",
+          "fact": "In Stage 1, submissions are reviewed for completeness. Alterations to documents are prohibited and may lead to rejection.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "The submitted Attachment A – Technical Response, Attachment D – Issue Escalation Plan, and the Manufacturer Information page (last page of this document) will be reviewed for completeness. The addition or deletion of worksheets, columns, unlocking the document, rewriting formulas, or similar alterations to any document is prohibited. OGS reserves the right to reject any RFQ Submission or portion(s) thereof determined to have been altered/modified by the Contractor from the original format. Failure to provide fully completed documents may result in rejection of the RFQ Submission without further review."
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION",
+          "title": "Separate Evaluation and Awards per Configuration",
+          "fact": "OGS will separately evaluate and separately make awards for each Configuration. Contractors may bid one, some, or all configurations.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "OGS will separately evaluate and separately make awards for each Configuration. Contractor’s may bid one, some, or all configurations."
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION",
+          "title": "OGS May Modify Specifications Prior to Financial Evaluation",
+          "fact": "OGS reserves the right to modify a specification within the Standard Configuration or Required Product categories prior to the Financial Evaluation.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 22,
+              "quote": "Modify a specification within the Standard Configuration or Required Product categories in Attachment A – Technical Response or Attachment C – Financial Response prior to the Financial Evaluation, upon written notice to Contractors that have submitted a quote."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Price List Posting and Not-to-Exceed Price",
+          "fact": "The approved Configuration price lists will be posted on the OGS website, and the Agreement item number aggregate buy price is a Not-To-Exceed Price.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "The approved Configuration price lists, Attachment 1 – Pricing Pages, for any resulting Agreement will be posted on the OGS Procurement Services website."
+            },
+            {
+              "page_number": 11,
+              "quote": "The Agreement item number aggregate buy price is a Not-To-Exceed Price, in accordance with the Contractor’s Manufacturer Umbrella Contract, Section 2.5, Glossary, “Not-to-Exceed (NTE) Price.”"
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Pricing Modification Procedures",
+          "fact": "Products on the Manufacturer Umbrella price list cannot be offered with the Category Discount under the Agreement unless submitted to OGS for approval via Appendix 3 - Pricing Modification Form.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Products that are on the Contractor’s Manufacturer Umbrella price list shall not be offered with the Category Discount under any resulting Agreement unless first being submitted to OGS for approval via Appendix 3 - Pricing Modification Form."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Monetary and Discount Value Formatting",
+          "fact": "All monetary values must be in U.S. dollars with two decimal points; discount percentages must not exceed two decimal places and will be rounded to the nearest hundredth if necessary.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "All monetary values shall be in U.S. Dollar amounts and will be two decimal points (for example: $1.12)."
+            },
+            {
+              "page_number": 12,
+              "quote": "All Discount percentage values shall not exceed two decimal places (for example: 20.25222% shall be rounded to nearest one hundredth 20.25%). OGS will round any discount percentage to the nearest hundredth if necessary."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Invoicing Requirements",
+          "fact": "All invoices must include specific information such as Manufacturer Umbrella Contract Number, RFQ Number, RFQ Title, Contractor Name, NYS Vendor ID, Manufacturer Part Number, Product Name, Product Description, Quantity, Aggregate Buy Price, and Standard Configuration Name.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "All invoices shall at a minimum, include the items listed below and any additional information identified in the Authorized User Purchase Order and any resulting Authorized User Agreement:"
+            },
+            {
+              "page_number": 17,
+              "quote": "• Manufacturer Umbrella Contract Number: PMXXXXX\n• RFQ Number: 23-01\n• RFQ Title: Aggregate Hardware Buy 23-01\n• Contractor Name\n• NYS Vendor ID\n• Manufacturer Part Number (SKU)\n• Product Name\n• Product Description\n• Quantity\n• Aggregate Buy Price for each Product SKU\n• Specific designation of special price(s) which may be better than the Agreement price\n• Invoice Total\n• Standard Configuration Name"
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Fiscal Audits",
+          "fact": "OGS reserves the right to audit the accuracy of sales reports, with audits conducted during regular business hours upon not less than 15 business days prior written notice. Repeated errors may lead to termination.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 19,
+              "quote": "OGS reserves the right to audit the accuracy of the sales reports collected under Award 22802. Audits shall be conducted during regular business hours, upon not less than 15 business days prior written notice."
+            },
+            {
+              "page_number": 19,
+              "quote": "Repeated errors on subsequent audits may result in a responsibility hearing in relation to Contractor’s Manufacturer Umbrella Contract and may lead to termination of any resulting Agreement in whole or in part, after which OGS reserves the right to award to another contractor as per the terms of Section 7.22 Replacement Contractor."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Only Lot 2 Hardware Contractors Eligible",
+          "fact": "RFQ 23-01 is only open to Contractors holding an award for Lot 2 – Hardware under the Manufacturer Umbrella Contract. Resellers are not eligible and bids from resellers will be disqualified.",
+          "business_implication": "If your company is a reseller or does not hold a Lot 2 Hardware award under the Manufacturer Umbrella Contract, you are not eligible to bid on this RFQ. Submitting a bid would result in automatic disqualification, wasting time and resources.",
+          "action_recommendation": "Verify that your company holds a valid Lot 2 Hardware award under the Manufacturer Umbrella Contract before proceeding. If you are a reseller, do not submit a bid. If you are a contractor, ensure your Lot 2 award is active and in good standing.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Quotes from Resellers will not be accepted. Contractors must have an award for Lot 2 to bid on this RFQ."
+            },
+            {
+              "page_number": 7,
+              "quote": "RFQ 23-01 is only being distributed to Contractors holding an award for Lot 2 – Hardware under the Manufacturer Umbrella Contract (“Contractors”). Quotes under RFQ 23-01 will only be accepted from Lot 2 Contractors on the Manufacturer Umbrella Contract; Resellers are not eligible to respond and any bids from a Reseller will be disqualified."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Products Must Be on Manufacturer Umbrella Contract Price List",
+          "fact": "All proposed products (Standard Configuration, Required Products, Additional Products) must be on the Contractor's Manufacturer Umbrella Contract Lot 2 - Hardware price list at the time of RFQ submission due date.",
+          "business_implication": "If any proposed product is not on your Manufacturer Umbrella Contract price list by the submission deadline, your bid may be disqualified or fail technical evaluation. This could lead to loss of the opportunity and potential financial penalties.",
+          "action_recommendation": "Review your current Manufacturer Umbrella Contract price list and ensure all products you intend to bid are listed. If any products are missing, initiate a contract modification request with OGS as soon as possible, indicating they are for RFQ 23-01, and ensure they are added before the submission due date.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "All Products proposed as part of the Standard Configuration and Products proposed for Required Products, as well as any Additional Products, must be on the Contractor's Manufacturer Umbrella Contract Lot 2 - Hardware price list at the time of the RFQ Submission due date."
+            },
+            {
+              "page_number": 9,
+              "quote": "All proposed SKUs for Products offered must be on the Contractor’s approved Manufacturer Umbrella Contract price list prior to the RFQ Submission due date for RFQ 23-01."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Bid Validity Period",
+          "fact": "Quotes must remain valid for at least 120 calendar days from the RFQ submission due date, unless extended by mutual consent.",
+          "business_implication": "Your pricing and terms must remain firm for at least 120 days after the submission deadline. This could expose you to market fluctuations or cost changes during that period, potentially affecting your profitability.",
+          "action_recommendation": "Ensure your pricing strategy accounts for a 120-day validity period. Consider including contingency clauses for significant cost changes, but be aware that any deviations may be rejected. Also, be prepared to extend the validity if OGS requests mutual consent.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Quotes and pricing submitted in response to RFQ 23-01 must remain open and valid for at least 120 calendar days from the date that RFQ Submissions are due, unless the time for making an award is extended by mutual consent of OGS and the Contractor."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "No Exceptions to Appendix A and Material Exceptions to RFQ",
+          "fact": "OGS will not entertain exceptions to Appendix A (Standard Clauses for New York State Contracts) or material exceptions to the RFQ or Appendix B.",
+          "business_implication": "You cannot request changes to the standard contract terms or material requirements. Any attempt to deviate may render your bid non-responsive and lead to rejection.",
+          "action_recommendation": "Review Appendix A and Appendix B thoroughly to ensure you can comply with all terms. If you have concerns, submit questions during the Q&A period, but do not expect exceptions to be granted. Ensure your bid fully conforms to the RFQ requirements.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Contractor is advised that OGS will not entertain any exceptions to Appendix A (Standard Clauses for New York State Contracts). OGS will also not entertain exceptions to the RFQ or Appendix B (General Specifications) that are of a material and substantive nature."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Alteration of Documents Prohibited",
+          "fact": "Alteration of Attachment A, Attachment D, or Manufacturer Information Page is prohibited; OGS may reject altered submissions.",
+          "business_implication": "If you modify the provided templates in any way, your submission may be rejected without further review. This could lead to disqualification even if your bid is otherwise compliant.",
+          "action_recommendation": "Download the official templates and fill them out exactly as instructed. Do not add or delete worksheets, columns, unlock the document, or rewrite formulas. Double-check that all documents are in their original format before submission.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "The addition or deletion of worksheets, columns, unlocking the document, rewriting formulas, or similar alterations to any document is prohibited. OGS reserves the right to reject any RFQ Submission or portion(s) thereof determined to have been altered/modified by the Contractor from the original format."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Eligibility restricted to Manufacturer Umbrella Contract holders",
+          "fact": "Only Contractors with an approved Manufacturer Umbrella Contract can participate in RFQ 23-01.",
+          "business_implication": "Bidders must already hold a Manufacturer Umbrella Contract with OGS to be eligible. Without it, they cannot participate, limiting competition to existing contract holders.",
+          "action_recommendation": "Verify that your company holds an approved Manufacturer Umbrella Contract (Award 22802) and that all proposed products are listed on its price list. If not, consider partnering with an eligible contractor or pursuing the umbrella contract separately.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "All Additional Products proposed by a Contractor on Attachment A – Technical Response and Attachment C – Financial Response must first be on Contractor’s approved Manufacturer Umbrella Contract price list."
+            },
+            {
+              "page_number": 11,
+              "quote": "The terms and conditions of the Contractor’s Manufacturer Umbrella Contract including any Amendments and the additional terms and conditions set forth in this RFQ 23-01, Section 7, Terms and Conditions govern any resulting award under RFQ 23-01."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Prohibition on products from restricted entities",
+          "fact": "OGS will not accept a bid from a Contractor or a Contractor Product that contains Products made by an entity on the US Customs and Border Patrol lists.",
+          "business_implication": "Bidders must ensure that none of their products or components are sourced from entities on the CBP restricted lists. Non-compliance could lead to bid rejection or contract termination.",
+          "action_recommendation": "Conduct a thorough supply chain review to confirm that no products or components come from entities on the CBP withhold release orders or findings lists. If any are found, remove them from the bid or seek alternative sources.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "OGS will not accept a bid from a Contractor, or a Contractor Product that contains Products made by an entity on any of the lists maintained by the US Customs and Border Patrol at the link set out below."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "EPEAT certification requirements",
+          "fact": "Desktops, laptops, and computer monitors must achieve EPEAT Gold certification at time of award, except Chromebooks which must meet EPEAT Silver.",
+          "business_implication": "Products must meet specific environmental certification standards. Failure to meet these requirements could disqualify the bid or delay award.",
+          "action_recommendation": "Ensure that all proposed desktops, laptops, and monitors have EPEAT Gold certification, and Chromebooks have at least EPEAT Silver. Verify certifications on the EPEAT registry and include proof in the bid.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 19,
+              "quote": "Desktops, laptops, and computer monitors provided under any resulting Agreement are required to have achieved a minimum certification of EPEAT Gold at the time of award with the exception of the three Chromebook Configurations (Chromebook Low, Chromebook with Touchscreen and Chromebook with Touchscreen – 14”). Chromebook Standard Configurations will be required to meet a minimum certification of EPEAT Silver at the time of award."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Pricing must not exceed Net NYS Contract Price",
+          "fact": "Quoted pricing for Standard Configurations and Required Products must not exceed the Net NYS Contract Price on the Manufacturer's Umbrella Contract price list.",
+          "business_implication": "Bidders cannot set prices above the established Net NYS Contract Price. This ensures competitive pricing but may limit profit margins.",
+          "action_recommendation": "Review the Manufacturer Umbrella Contract price list to determine the Net NYS Contract Price for each product. Ensure that all quoted prices are at or below these amounts, and consider offering aggressive discounts to improve competitiveness.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "In no event may quoted pricing exceed the Net NYS Contract Price on the Manufacturer’s Umbrella Contract price list."
+            },
+            {
+              "page_number": 12,
+              "quote": "In no event may quoted pricing exceed the Net NYS Contract Price on the Contractor’s Manufacturer Umbrella Contract."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Contractor must be able to provide all quantities ordered",
+          "fact": "Contractor must furnish all quantities actually ordered by Authorized Users at or below the prices in the Agreement.",
+          "business_implication": "Bidders must have sufficient capacity and supply chain reliability to meet potentially high order volumes. Failure to fulfill orders could lead to penalties or contract termination.",
+          "action_recommendation": "Assess your company's production and supply chain capacity to handle large orders. Develop contingency plans for supply disruptions and ensure that you can meet demand at the agreed prices.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Contractor must furnish all quantities actually ordered by Authorized Users at or below the prices in the Aggregate Hardware Buy 23-01 Agreement."
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "RFQ Submission Due Date and Time",
+          "fact": "The RFQ submission is due on 3/28/2023 or 4/4/2023 at 1:30pm EDT.",
+          "business_implication": "The bidder must submit the technical response and other required documents by the specified deadline. The dual dates may indicate a revised deadline, so the bidder must confirm the correct date to avoid missing the submission.",
+          "action_recommendation": "Verify the exact submission deadline with the contracting officer and ensure all required documents are submitted before the deadline. Plan internal review and approval processes well in advance.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "RFQ Submission Due \nSubmission Includes:  \n• Attachment A – Technical Response  \n• Attachment D – Issue Escalation Plan \n• Manufacturer Information Page (Last page of this \nDocument) \n\n\n\n3/28/2023 \n4/4/2023  \n1:30pm EDT"
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "Attachment B - Contractor Questions and Comments Due",
+          "fact": "Attachment B - Contractor Questions and Comments are due on 3/1/2023 at 5:00pm EDT.",
+          "business_implication": "The bidder has a limited window to submit questions and comments. Missing this deadline may result in unanswered clarifications, potentially affecting the bid quality.",
+          "action_recommendation": "Prepare and submit any questions or comments by the deadline. Ensure all internal stakeholders review the RFQ and provide input in time.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Attachment B - Contractor Questions and Comments Due \n3/1/2023  5:00pm EDT"
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "Second Attachment B – Contractor Questions and Comments Due",
+          "fact": "Second Attachment B – Contractor Questions and Comments are due on 3/17/2023 at 5:00pm EDT.",
+          "business_implication": "This is a second opportunity to ask questions after the first round of responses. It allows the bidder to clarify any new issues that may have arisen.",
+          "action_recommendation": "Review the responses to the first round of questions and submit any additional questions by this deadline. Use this opportunity to refine the bid strategy.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Second Attachment B – Contractor Questions and Comments \nDue \n3/17/2023 5:00pm EDT"
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "Attachment C – Financial Response Issuance and Return",
+          "fact": "OGS sends out Attachment C – Financial Response on 6/28/2023, and Contractor returns completed Attachment C – Financial Response on 7/12/2023 at 11:00am EDT.",
+          "business_implication": "The financial response is due after the technical response is approved. The bidder must be prepared to submit pricing within a short turnaround time after receiving Attachment C.",
+          "action_recommendation": "Prepare pricing models and approvals in advance so that the financial response can be completed quickly once Attachment C is received. Ensure all necessary internal approvals are in place.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "OGS sends out Attachment C – Financial Response, which \nincludes approved technical response \n6/28/2023   \nContractor returns completed Attachment C – Financial \nResponse  \n7/12/2023  11:00am EDT"
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "RFQ Submission Date for Attachment C – Financial Response",
+          "fact": "The RFQ document references a specific submission date for Attachment C – Financial Response, but the exact date is not provided in the supplied pages.",
+          "business_implication": "The exact deadline for the financial response is not explicitly stated in the provided pages, but it is likely the date mentioned in the key events (7/12/2023). This ambiguity could lead to confusion and missed deadlines.",
+          "action_recommendation": "Clarify the exact submission date for Attachment C with the contracting officer. Ensure all internal calendars reflect the confirmed date to avoid missing the deadline.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "Prior to the RFQ Submission Date for Attachment C – Financial Response, amend the RFQ to correct errors or oversights, or to supply additional information, as it becomes available;"
+            },
+            {
+              "page_number": 21,
+              "quote": "Prior to RFQ Submission Date for Attachment C – Financial Response, direct Contractors to submit RFQ response modifications addressing subsequent amendments;"
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION",
+          "title": "Basis for Award: Highest Total Financial Score",
+          "fact": "Awards will be made to the responsive and responsible Contractor(s) with the highest Total Financial Score per Configuration that meets all specified technical requirements.",
+          "business_implication": "The award is based solely on price (financial score) after passing technical requirements. This means the bidder must offer the lowest total cost to win, but must also ensure technical compliance to even be considered.",
+          "action_recommendation": "Focus on optimizing pricing to be as low as possible while ensuring all technical requirements are met. Since technical is pass/fail, any technical non-compliance will disqualify the bid regardless of price.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "BASIS FOR AWARD Highest Total Financial Score meeting specified Technical Requirements and Mandatory Pass/Fail Requirements for each Standard Configuration and associated Required Products."
+            },
+            {
+              "page_number": 8,
+              "quote": "Awards will be made to the responsive and responsible Contractor(s) with the highest Total Financial Score per Configuration that meets all the specified technical requirements."
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION",
+          "title": "Evaluation Weights: Technical Pass/Fail, Financial 100%",
+          "fact": "Technical Response is Pass/Fail, Financial Response is 100% of evaluation. Total Financial Score is based on lowest cost with points weighted: Standard Configuration 50 points, Required Products (Warranty/Services 15, Components 30, Peripherals 5).",
+          "business_implication": "The financial evaluation is 100% of the score, with specific weights on different product categories. This means the bidder must price each category competitively, but the overall score is based on the lowest total cost, so a low price in any category can improve the total score.",
+          "action_recommendation": "Price all categories as low as possible, but pay special attention to the categories with higher weights (Standard Configuration 50 points, Components 30 points) as they have the most impact on the total score. Ensure pricing is competitive across all categories.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "Technical Response (Attachment A – Technical Response, Attachment D – Issue Escalation Plan, and Manufacturer Information Page): Pass/Fail    Financial Response : 100%  Total Financial Score is based on lowest cost and the points are weighted as follows: • Standard Configuration - 50 points • Required Products o Warranty/Services - 15 points o Components - 30 points o Peripherals - 5 points"
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION",
+          "title": "Stage 2 Technical Evaluation: SKU Price List Requirement",
+          "fact": "In Stage 2, proposed SKUs must be on the Contractor's approved Manufacturer Umbrella Contract price list; otherwise, the configuration may not proceed.",
+          "business_implication": "If any proposed SKU is not on the approved Manufacturer Umbrella Contract price list, the entire configuration will be disqualified from further evaluation. This is a critical gatekeeper for technical compliance.",
+          "action_recommendation": "Before submission, verify that every SKU proposed in Attachment A is on the Contractor's approved Manufacturer Umbrella Contract price list. If any SKU is missing, either add it to the contract via a modification request (if possible) or replace it with an approved SKU.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "Submitted Attachment A – Technical Response will be compared to Standard Configuration and Required Products requirements. All proposed SKUs for proposed products offered in Attachment A – Technical Response must be on the Contractor’s approved Manufacturer Umbrella Contract price list. Any Configuration that contains a SKU that is not included on the Manufacturer’s Umbrella Contract price list may not proceed further in the evaluation process."
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION",
+          "title": "Stage 3 Financial Evaluation: Only After Technical Pass",
+          "fact": "Only Contractors whose technical submissions pass review proceed to financial evaluation using Attachment C.",
+          "business_implication": "Financial evaluation is only conducted for technically compliant bids. This means that even if the bidder has the lowest price, they will not be considered if they fail any technical requirement.",
+          "action_recommendation": "Ensure that the technical submission is complete and fully compliant with all requirements. Double-check that all mandatory fields are filled and that the submission adheres to the format and instructions to avoid rejection.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "Only Contractors whose Standard Configuration specifications and Required Products pass review, as determined by OGS, will proceed to the evaluation of Attachment C – Financial Response for those specific Configurations. For those Contractors who have been determined to have passed the Technical Evaluation, their Attachment A - Technical Response will be used to create the Attachment C – Financial Response and will be provided to the Contractor in order to complete and submit. The proposed pricing on Attachment C – Financial Response will then be used in the Financial Evaluation."
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION",
+          "title": "Pricing Must Be Equal to or Better Than Umbrella Contract",
+          "fact": "All pricing offered on Attachment C must be equal to or better than the pricing for that SKU on the Contractor's Manufacturer Umbrella Contract.",
+          "business_implication": "The bidder cannot offer prices higher than those already on their Manufacturer Umbrella Contract. This ensures that the pricing is at least as favorable as the contract pricing, which may limit the bidder's ability to offer aggressive discounts.",
+          "action_recommendation": "Review the current pricing on the Manufacturer Umbrella Contract for all proposed SKUs. Ensure that the pricing in Attachment C is equal to or lower than the contract pricing. If lower pricing is desired, consider negotiating better pricing on the umbrella contract before submission.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "All pricing offered on Attachment C - Financial Response must be equal to or better than the pricing offered for that SKU on the Contractor's Manufacturer Umbrella Contract."
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION",
+          "title": "Technical Evaluation of Mandatory Specifications",
+          "fact": "Only items with mandatory specifications are evaluated in the Technical Evaluation; additional items are reviewed only for inclusion in Lot 2 of the Manufacturer Umbrella Contract price list.",
+          "business_implication": "The technical evaluation focuses only on mandatory items, but additional items must still be on the manufacturer's price list to be included. This means bidders must ensure all additional items are listed to avoid removal from the submission.",
+          "action_recommendation": "Verify that all additional items needed for the Standard Configuration are included in Lot 2 of the Manufacturer Umbrella Contract price list before submission.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "Only items that have a mandatory specification will be evaluated in the Technical Evaluation; additional items needed to create the Standard Configuration listed in Section A of Attachment A- Technical Response will be reviewed only to determine if the items are included in Lot 2 of the Contractor’s Manufacturer Umbrella Contract price list."
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION",
+          "title": "Required Products Discount Factored in Total Financial Score",
+          "fact": "The discount percentages bid on Required Products will be factored into the Total Financial Score.",
+          "business_implication": "Aggressive discounting on Required Products can significantly improve the financial score, as these discounts are directly factored into the evaluation.",
+          "action_recommendation": "Strategically set competitive discount percentages for Required Products to maximize the Total Financial Score, while ensuring profitability.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "Contractors are encouraged to aggressively discount their pricing for their Required Products, as the pricing will be factored in the Total Financial Score."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Financial Evaluation Weighting",
+          "fact": "The Financial Response is 100% of the evaluation, with points allocated as: Standard Configuration 50 points, Required Products Warranty/Services 15 points, Components 30 points, Peripherals 5 points.",
+          "business_implication": "The financial proposal is the sole determinant of award, with the Standard Configuration carrying the most weight. Pricing strategy across all categories is critical.",
+          "action_recommendation": "Focus on offering the lowest total cost for the Standard Configuration while also providing competitive pricing for Required Products, especially Components which have a high point allocation.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "Financial Response : 100%  Total Financial Score is based on lowest cost and the points are weighted as follows: • Standard Configuration - 50 points • Required Products o Warranty/Services - 15 points o Components - 30 points o Peripherals - 5 points"
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Estimated Spend and Quantity",
+          "fact": "The estimated dollar value of the aggregated award of the 14 Standard Configurations is approximately $50 million, but there is no guarantee of volume or dollar value to be purchased.",
+          "business_implication": "While the potential contract value is significant, the actual purchases are uncertain. Bidders should not rely on the estimated volume for capacity planning or pricing decisions.",
+          "action_recommendation": "Prepare for variable demand and avoid over-committing resources based on the estimate. Price competitively to win the contract, but ensure pricing remains viable even if volumes are lower than expected.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "The estimated dollar value of the aggregated award of the 14 Standard Configurations in this RFQ 23-01, based on historical purchases under previous awards, is approximately $50 million."
+            },
+            {
+              "page_number": 13,
+              "quote": "There is no guarantee of volume to be purchased"
+            },
+            {
+              "page_number": 13,
+              "quote": "There is no guarantee of dollar value to be purchased"
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "IDIQ Contract",
+          "fact": "The Agreements resulting from this RFQ will be Indefinite Delivery, Indefinite Quantity (IDIQ) awards.",
+          "business_implication": "This is an IDIQ contract, meaning the buyer is not obligated to purchase any minimum quantity. The contractor must be prepared to fulfill orders as they come, without guaranteed revenue.",
+          "action_recommendation": "Ensure operational flexibility to handle fluctuating order volumes. Consider the cost of maintaining capacity and inventory without guaranteed demand.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "However, the Agreements resulting from this RFQ will be Indefinite Delivery, Indefinite Quantity (IDIQ) awards."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Commencement of Sales",
+          "fact": "The Contractor can commence sales only upon OGS acceptance and posting of the Agreement and awarded Configurations on the OGS website.",
+          "business_implication": "Sales cannot begin until OGS formally accepts and posts the agreement, which may delay revenue generation. The contractor must plan for this administrative step and ensure all required documentation is in order to expedite the process.",
+          "action_recommendation": "Monitor OGS website for posting and prepare sales infrastructure in advance. Maintain communication with OGS to confirm acceptance and posting dates.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "The Contractor can commence sales from any resulting Agreement only upon OGS acceptance and posting of the Agreement and awarded Configurations with the Contractor’s contact information on the OGS website."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Term of Agreement",
+          "fact": "The term of any resulting Agreement shall be one (1) year, with an option for OGS to extend for up to an additional one (1) year, and a possible short-term extension of up to three (3) months (or six (6) months with Contractor concurrence).",
+          "business_implication": "The initial contract term is only one year, but OGS has unilateral options to extend, providing potential for longer revenue stream. However, the contractor must be prepared for possible extensions and ensure pricing and capacity remain viable.",
+          "action_recommendation": "Plan for a possible multi-year engagement by maintaining competitive pricing and supply chain readiness. Be responsive to OGS extension notices and consider concurring with short-term extensions to maintain continuity.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "The term of any resulting Agreement shall be one (1) year."
+            },
+            {
+              "page_number": 14,
+              "quote": "OGS reserves the right, at its sole discretion, to extend all or some Configurations of the Agreement for a period up to an additional one (1) year upon written notice to the Contractor."
+            },
+            {
+              "page_number": 14,
+              "quote": "In the event a replacement Agreement has not been issued, any Agreement let and awarded hereunder by the State, may be extended unilaterally by the State for an additional period of up to three (3) months upon notice to the Contractor with the same terms and conditions as the original Agreement including, but not limited to, prices and delivery requirements. With the concurrence of the Contractor, the extension may be for a period of up to six (6) months in lieu of three (3) months."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Pricing Modification",
+          "fact": "The Contractor can lower pricing of Products at any time, add Additional Products, delete Additional Products, replace Products, and replace Standard Configuration models, subject to OGS approval and specific procedures.",
+          "business_implication": "Flexibility to adjust pricing and product offerings can help the contractor remain competitive and respond to market changes. However, all modifications require OGS approval and must follow strict procedures, which could introduce delays.",
+          "action_recommendation": "Develop a streamlined internal process for preparing modification requests. Proactively monitor product lifecycle and market pricing to submit timely requests. Ensure compliance with OGS procedures to avoid delays.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "All Product pricing on the Contractor’s Agreement price list can be lowered at any time throughout the term of any resulting Agreement and any extensions."
+            },
+            {
+              "page_number": 16,
+              "quote": "After Agreement award, in order for a Product to be added to the Additional Products pricing category under the Agreement, a Product must first be approved on the Contractor’s Manufacturer Umbrella Contract in accordance with the Contractor’s Manufacturer Umbrella Contract Appendix C – Contract Modification Procedure."
+            },
+            {
+              "page_number": 16,
+              "quote": "Additional Products can only be removed from the Agreement if the Products are shown to OGS’ satisfaction to be incompatible with the Standard Configurations, unavailable, or at End of Life (EOL)."
+            },
+            {
+              "page_number": 16,
+              "quote": "Replacements are defined as substitute Products which take the place of a previously awarded Product included in the Standard Configurations and/or Required Products, due to the awarded Product becoming incompatible with the Standard Configuration, unavailable or at Product EOL."
+            },
+            {
+              "page_number": 16,
+              "quote": "The Contractor will be able to update the entire Standard Configuration to a new model as long as acceptable proof that the Product has reached EOL or has become unavailable for purchase is provided in writing to the Agreement Contract Manager(s)."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Product Delivery",
+          "fact": "The Contractor shall deliver units within 45 calendar days of receipt of a Purchase Order, unless an extension is granted. The Contractor must provide a Purchase Order receipt notification within 5 calendar days and an Advanced Shipping Notice upon request 14 calendar days prior to delivery.",
+          "business_implication": "Strict delivery timelines are imposed, and failure to meet them could lead to penalties or termination. The contractor must have robust logistics and inventory management to ensure on-time delivery.",
+          "action_recommendation": "Establish efficient order processing and fulfillment procedures. Monitor delivery performance and proactively communicate any potential delays to Authorized Users and OGS. Use the delayed delivery report to track and address issues.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "The Contractor shall deliver the units ordered by an Authorized User within 45 calendar days of receipt of a Purchase Order, approved by OSC if applicable, unless either the Authorized User or OGS grants an extension of time as provided below."
+            },
+            {
+              "page_number": 18,
+              "quote": "The Contractor must provide a Purchase Order receipt notification to the Authorized User within five (5) calendar days of receipt of a Purchase Order. An Advanced Shipping Notice must be provided to Authorized Users upon request fourteen (14) calendar days prior to delivery."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Sales Reporting",
+          "fact": "The Contractor must submit quarterly sales reports to OGS using Appendix 1 – Aggregate Hardware Buy - Sales Report Form, due one month after the end of each quarter. Failure to submit accurate reports may result in termination.",
+          "business_implication": "Accurate and timely sales reporting is mandatory, and non-compliance can lead to termination. This adds administrative burden and requires robust tracking systems.",
+          "action_recommendation": "Implement a reliable sales reporting process with internal checks. Assign responsibility for report preparation and submission. Ensure all sales data is captured accurately and submitted by the deadline.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 19,
+              "quote": "Sales reports are due to OGS one (1) month directly following the end of each quarter. The quarters for each sales report submission are as follows: January - March; April - June; July - September; October - December."
+            },
+            {
+              "page_number": 19,
+              "quote": "Failure to submit accurate reports on a timely basis may result in a responsibility hearing, and possible termination of this Agreement in whole or in part, after which OGS reserves the right to award to another contractor as per the terms of Section 7.22 Replacement Contractor."
+            }
+          ]
+        },
+        {
+          "category": "COMMERCIAL",
+          "title": "Warranty Requirements",
+          "fact": "If a unit becomes inoperable within the warranty window and cannot be repaired, a brand new unit shall be provided at no charge. Refurbished or remanufactured equipment is not allowed.",
+          "business_implication": "The bidder must ensure that its warranty service model can provide brand new replacements without additional cost to the customer, and must not use refurbished or remanufactured units. This may increase warranty costs and require robust inventory management.",
+          "action_recommendation": "Review warranty terms and pricing to ensure they cover the cost of new replacements. Develop a process to quickly source new units and handle data transfer. Confirm that all warranty service providers comply with the no-refurbished-equipment requirement.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "If a unit becomes inoperable within the warranty window and cannot be repaired, a brand new unit shall be provided at no charge. Contractor shall not provide refurbished or remanufactured equipment as they are not allowed under this Aggregate Hardware Buy 23-01."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "OGS Not Liable for Bid Preparation Costs",
+          "fact": "OGS will not be held liable for any cost incurred by the Contractor for work performed in the preparation of a response to this RFQ.",
+          "business_implication": "The bidder bears all costs associated with preparing the bid, including any internal resources or third-party consultants. There is no reimbursement if the bid is unsuccessful.",
+          "action_recommendation": "Budget for bid preparation costs and ensure that the investment is justified by the potential contract value. Avoid over-spending on bid development.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "OGS will not be held liable for any cost incurred by the Contractor for work performed in the preparation of a response to this Request for Quote (RFQ)."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Contractor Assumes Risk for Timely Submission",
+          "fact": "Contractor assumes all risks for timely, properly submitted RFQ deliveries.",
+          "business_implication": "The bidder is responsible for ensuring that the bid is submitted on time and in the correct format. Any delays or errors in submission could lead to rejection, with no recourse against OGS.",
+          "action_recommendation": "Implement a robust bid submission process with multiple checks and backups. Submit well before the deadline to avoid last-minute issues. Confirm the submission method and requirements in advance.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "Contractor assumes all risks for timely, properly submitted RFQ deliveries."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "OGS Reserved Rights",
+          "fact": "OGS reserves the right to unilaterally make revisions, changes and/or updates to Attachment 6 without formal amendment.",
+          "business_implication": "OGS can change Attachment 6 (likely the 'How to Use' guide) at any time without going through a formal amendment process. This introduces uncertainty and may affect the bidder's obligations or procedures.",
+          "action_recommendation": "Monitor any updates to Attachment 6 and ensure that internal processes can adapt quickly. Consider the potential impact of changes on pricing or service delivery and plan accordingly.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "OGS reserves the right to unilaterally make revisions, changes and/or updates to this attachment without processing a formal amendment and/or modification to the resulting Agreement;"
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Contractor Responsible for Replacement of Incompatible Components",
+          "fact": "Replacement components must be compatible with Agreement peripherals or the Contractor will be responsible for replacement of both the component and the peripheral.",
+          "business_implication": "If a replacement component is not compatible with existing peripherals, the bidder must replace both the component and the peripheral at its own cost. This could lead to significant financial exposure if compatibility issues arise.",
+          "action_recommendation": "Thoroughly test replacement components for compatibility with all peripherals listed in the agreement. Maintain a list of compatible peripherals and ensure that any replacements meet those specifications. Include contingency costs in pricing for potential replacements.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 16,
+              "quote": "Replacement components must be compatible with Agreement peripherals or the Contractor will be responsible for replacement of both the component and the peripheral."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Contractor Responsible for Warranty and Replacement of EOL Products",
+          "fact": "All EOL Additional Products purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users.",
+          "business_implication": "The contractor bears the financial risk of providing warranty or replacement for EOL products at no extra cost, which could lead to significant expenses if products become obsolete or fail.",
+          "action_recommendation": "Assess the lifecycle of products offered and ensure adequate warranty provisions or replacement plans are in place. Consider pricing strategies to mitigate potential costs.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 16,
+              "quote": "All EOL Additional Products purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users."
+            },
+            {
+              "page_number": 16,
+              "quote": "All EOL Replacement Products purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users."
+            },
+            {
+              "page_number": 16,
+              "quote": "All EOL Standard Configurations purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Contractor Responsible for Warranty of Additional Products",
+          "fact": "The Contractor is responsible for adding SKUs for additional warranty year options (e.g. 3 year, 4 year, 5 year) under Additional Products on Attachment A – Technical Response.",
+          "business_implication": "The contractor must ensure that warranty options are available for additional products, which may require additional administrative effort and could affect pricing competitiveness.",
+          "action_recommendation": "Review the technical response to confirm all required warranty SKUs are included. Ensure pricing for extended warranties is competitive and covers potential service costs.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "The Contractor is responsible for adding SKUs for additional warranty year options (e.g. 3 year, 4 year, 5 year) under Additional Products on Attachment A – Technical Response."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Contractor Responsible for Network Integrity",
+          "fact": "Connections to the Authorized User’s networks must be performed in a manner prescribed by an Authorized User to preserve the integrity of the Authorized User’s network, confidentiality and integrity of information transmitted over that Authorized User’s network, and the availability of the network.",
+          "business_implication": "The contractor must comply with the customer's network requirements, which may involve additional security measures and could increase implementation complexity.",
+          "action_recommendation": "Familiarize with NYS ITS Technology Standard NYS-S14-010 and ensure staff are trained to follow prescribed network connection procedures. Develop a plan to handle remote access requests securely.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "Connections to the Authorized User’s networks must be performed in a manner prescribed by an Authorized User to preserve the integrity of the Authorized User’s network, confidentiality and integrity of information transmitted over that Authorized User’s network, and the availability of the network."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Contractor Responsible for Compliance with Export Administration Regulations",
+          "fact": "If Contractor cannot deliver a Product because either the Contractor or a supplier to the Contractor is listed on any of these lists, the Contractor must remove the Product from the Contractor’s Agreement price list.",
+          "business_implication": "The contractor may face product removal and potential order cancellations if they or their suppliers are listed on restricted entity lists, impacting revenue and customer relationships.",
+          "action_recommendation": "Conduct due diligence on supply chain to ensure compliance with export regulations. Monitor restricted party lists and have contingency plans for product substitutions.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "If Contractor cannot deliver a Product because either the Contractor or a supplier to the Contractor is listed on any of these lists, the Contractor must remove the Product from the Contractor’s Agreement price list."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Contractor Subject to Termination for Repeated Failure to Comply",
+          "fact": "OGS reserves the right to terminate an Agreement under this RFQ, in whole or in part, for Contractor’s repeated failure to comply with any requirement under the Agreement.",
+          "business_implication": "Non-compliance with any agreement requirement could lead to termination, risking loss of the contract and potential financial penalties.",
+          "action_recommendation": "Implement robust compliance monitoring and ensure all contractual obligations are met consistently. Establish internal processes to track and address any compliance issues promptly.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 22,
+              "quote": "Terminate an Agreement under this RFQ, in whole or in part, for Contractor’s repeated failure to comply with any requirement under the Agreement."
+            }
+          ]
+        },
+        {
+          "category": "TERMINATION",
+          "title": "Termination for Delayed Deliveries",
+          "fact": "If OGS becomes aware of multiple incidents of delays in delivery, OGS reserves the right to enforce remedies including termination of the Agreement in whole or in part, and award to another contractor.",
+          "business_implication": "The bidder must ensure timely delivery to avoid termination and loss of the contract. Multiple delays could lead to replacement by a competitor, resulting in lost revenue and reputational damage.",
+          "action_recommendation": "Implement robust delivery tracking and escalation procedures to meet the 45-day delivery requirement. Proactively communicate any potential delays and seek extensions as per the contract. Maintain a buffer in supply chain and logistics to mitigate risks.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "If OGS becomes aware of multiple incidents of delays in delivery, OGS reserves the right to enforce any of the remedies available to us through the terms of this Agreement, including our rights to terminate the Agreement in whole or in part, and award to another contractor as per the terms of Section 7.22 Replacement Contractor."
+            }
+          ]
+        },
+        {
+          "category": "TERMINATION",
+          "title": "Termination for Failure to Provide EOL Notice or Replacement",
+          "fact": "If the Contractor fails to provide acceptable notice of EOL Standard Configurations, fails to submit a replacement Standard Configuration in the required timeframe, or is unable to provide a replacement model meeting specifications, OGS reserves the right to award the Configuration to the next lowest bidder.",
+          "business_implication": "Failure to manage end-of-life (EOL) transitions properly could result in losing the configuration to a competitor, leading to loss of revenue and market share for that product line.",
+          "action_recommendation": "Establish a proactive EOL monitoring process to identify upcoming EOL dates at least 30 days in advance. Prepare replacement configurations that meet or exceed specifications and submit them promptly via the modification process. Ensure internal alignment between product management and sales to avoid delays.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "During the term of the Agreement, should the Contractor: fail to provide acceptable notice of EOL Standard Configuration(s); fail to submit a replacement Standard Configuration via the process outlined in Appendix 2 – Agreement Price List Modification Procedures in the timeframe referenced above; or is unable to provide a replacement model with specifications that meet or exceed the specifications of the original awarded Configuration, OGS reserves the right to award the Configuration to the Contractor with the next lowest bid from RFQ 23-01 for that Configuration that is willing to accept the Configuration award without rebidding."
+            }
+          ]
+        },
+        {
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "title": "Ambiguity in Discount Percentage Application to Additional Products",
+          "fact": "Section 6.3.2 states that the discount bid on a single Required Product shall apply to all Additional Products in the same category, but Section 7.2.5 states that the same awarded discount percentages that applied to the three Required Product categories shall apply to Additional Products. This could be interpreted as the discount percentages being category-wide, but the wording in 6.3.2 might imply a single product's discount applies to all additional products in that category, which could be ambiguous if different Required Products in the same category have different discounts.",
+          "business_implication": "The ambiguity could lead to disputes over pricing for Additional Products, potentially affecting profitability and customer relationships. If the discount is applied incorrectly, the bidder may be forced to offer deeper discounts than intended, reducing margins.",
+          "action_recommendation": "Seek clarification from OGS before bidding to understand the intended application of discounts. In the bid, clearly specify the discount percentages for each Required Product and how they apply to Additional Products. Consider bidding conservative discounts to mitigate risk, and document assumptions in the proposal.",
+          "priority": "MEDIUM",
+          "confidence": "MEDIUM",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "Contractors are required to provide discount percentages that will apply to each of the three (3) Required Products. The discount that is bid on the single Product shall apply to all Additional Products in the same Required Product category, as described in Section 7.2.5, Additional Products."
+            },
+            {
+              "page_number": 12,
+              "quote": "Contractors shall provide the same awarded discount percentages that applied to the three (3) Required Product categories (Warranty and Services, Components, and Peripherals), to the Additional Products in their respective categories."
+            }
+          ]
+        },
+        {
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "title": "Ambiguity in Pricing for Required Products: Discount vs. Itemized Pricing",
+          "fact": "Section 6.1.2 states that for Required Products, Contractors must bid a discount percentage on the item selected for each category, but Section 7.2.4 states that Required Products will be available under the Additional Product category and are subject to the discount percentage bid. However, Section 6.1.2 also states that the Net NYS Contract Price provided on Attachment A for a Required Product must represent the complete price of the Product, which might conflict with the discount approach.",
+          "business_implication": "The conflict between discount-based pricing and complete price requirements could lead to pricing errors or disputes. If the bidder misinterprets the requirement, they may underprice or overprice Required Products, affecting evaluation scores and profitability.",
+          "action_recommendation": "Clarify with OGS how to reconcile the discount percentage with the requirement for complete pricing. In the bid, ensure that the Net NYS Contract Price for Required Products is the full price, and clearly state the discount percentage applied. Consider providing both the base price and the discounted price to avoid ambiguity.",
+          "priority": "MEDIUM",
+          "confidence": "MEDIUM",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "For Required Products, Contractors must bid a discount percentage on the item that has been selected for each category (e.g., a 3-button mouse for Peripherals)."
+            },
+            {
+              "page_number": 10,
+              "quote": "The Net NYS Contract Price provided on Attachment A – Technical Response for a Required Product must represent the complete price of the Product. Recording the price of the Product as the difference in price from a line-item in the Standard Configuration is prohibited."
+            }
+          ]
+        },
+        {
+          "category": "CONTRADICTIONS_AMBIGUITIES",
+          "title": "Ambiguity in Website Ordering Restriction",
+          "fact": "Section 7.6 states that the Contractor's website shall not have a web-based ordering system with the capability of receiving orders from Authorized Users, but Section 7.5 states that Contractors should provide a 'hosted' or 'punch-out' catalog that is available to Authorized Users via an online NYS marketplace. This could be seen as contradictory because a punch-out catalog typically allows ordering, but the RFQ might intend that the Contractor's own website cannot take orders, while the marketplace can.",
+          "business_implication": "The contradiction could lead to compliance issues if the bidder implements an ordering system on their website, risking penalties or termination. Conversely, failing to provide a punch-out catalog might reduce sales opportunities.",
+          "action_recommendation": "Interpret the clauses strictly: the contractor's own website should not accept orders, but they should be prepared to provide a punch-out catalog for the NYS marketplace if it becomes available. Ensure that any e-commerce functionality is limited to the marketplace, not the contractor's site. Seek clarification from OGS if needed.",
+          "priority": "LOW",
+          "confidence": "MEDIUM",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "Contractors that are awarded a Configuration under the Aggregate Agreement should provide a “hosted” or “punch-out” catalog that is available to Authorized Users via an online NYS marketplace, should one become available for technology products in the future."
+            },
+            {
+              "page_number": 13,
+              "quote": "The Contractor’s website shall not have a web-based ordering system with the capability of receiving orders from Authorized Users. Contractor may provide a “hosted” or “punch-out” catalog that is available to Authorized Users via an online NYS marketplace."
+            }
+          ]
+        }
+      ]
+    },
+    "telemetry": [
+      {
+        "batch_name": "ELIGIBILITY",
+        "page_count": 19,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          13,
+          19,
+          21
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "ELIGIBILITY/A",
+        "page_count": 10,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1156,
+        "prompt_tokens": 6871,
+        "output_budget_ratio": 0.2822265625,
+        "estimated_cost_cents": 0.12049800000000001,
+        "latency_ms": 6274.982700000051,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          13,
+          19,
+          21
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "ELIGIBILITY/B",
+        "page_count": 9,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1305,
+        "prompt_tokens": 7963,
+        "output_budget_ratio": 0.318603515625,
+        "estimated_cost_cents": 0.139958,
+        "latency_ms": 8217.148099999991,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          13,
+          19,
+          21
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION",
+        "page_count": 22,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION/A",
+        "page_count": 11,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1087,
+        "prompt_tokens": 7721,
+        "output_budget_ratio": 0.265380859375,
+        "estimated_cost_cents": 0.130466,
+        "latency_ms": 5643.722600000096,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION/B",
+        "page_count": 11,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 340,
+        "prompt_tokens": 9008,
+        "output_budget_ratio": 0.0830078125,
+        "estimated_cost_cents": 0.127568,
+        "latency_ms": 3145.471099999966,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "EVALUATION",
+        "page_count": 16,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          8,
+          9,
+          10,
+          11,
+          20,
+          22
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "EVALUATION/A",
+        "page_count": 8,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1652,
+        "prompt_tokens": 5267,
+        "output_budget_ratio": 0.4033203125,
+        "estimated_cost_cents": 0.11193000000000002,
+        "latency_ms": 8692.735000000102,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          8,
+          9,
+          10,
+          11,
+          20,
+          22
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "EVALUATION/B",
+        "page_count": 8,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 768,
+        "prompt_tokens": 6216,
+        "output_budget_ratio": 0.1875,
+        "estimated_cost_cents": 0.10046400000000003,
+        "latency_ms": 6772.961899999995,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4,
+          8,
+          9,
+          10,
+          11,
+          20,
+          22
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "COMMERCIAL",
+        "page_count": 21,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          20,
+          21
+        ],
+        "context_pages": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "COMMERCIAL/A",
+        "page_count": 11,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1579,
+        "prompt_tokens": 8255,
+        "output_budget_ratio": 0.385498046875,
+        "estimated_cost_cents": 0.15171800000000002,
+        "latency_ms": 8312.921199999982,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          20,
+          21
+        ],
+        "context_pages": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "COMMERCIAL/B",
+        "page_count": 10,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2838,
+        "prompt_tokens": 8849,
+        "output_budget_ratio": 0.69287109375,
+        "estimated_cost_cents": 0.195286,
+        "latency_ms": 14404.50430000003,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          20,
+          21
+        ],
+        "context_pages": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "LIABILITY_RISK",
+        "page_count": 16,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          5,
+          6,
+          11,
+          13,
+          14,
+          20,
+          21,
+          22
+        ],
+        "context_pages": [
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "LIABILITY_RISK/A",
+        "page_count": 8,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 670,
+        "prompt_tokens": 6832,
+        "output_budget_ratio": 0.16357421875,
+        "estimated_cost_cents": 0.10634400000000001,
+        "latency_ms": 3791.4810999999754,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          5,
+          6,
+          11,
+          13,
+          14,
+          20,
+          21,
+          22
+        ],
+        "context_pages": [
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "LIABILITY_RISK/B",
+        "page_count": 8,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1980,
+        "prompt_tokens": 6441,
+        "output_budget_ratio": 0.4833984375,
+        "estimated_cost_cents": 0.13755,
+        "latency_ms": 9813.494600000093,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          5,
+          6,
+          11,
+          13,
+          14,
+          20,
+          21,
+          22
+        ],
+        "context_pages": [
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "TERMINATION",
+        "page_count": 14,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1096,
+        "prompt_tokens": 10774,
+        "output_budget_ratio": 0.267578125,
+        "estimated_cost_cents": 0.17346000000000003,
+        "latency_ms": 6542.324600000051,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1,
+          14,
+          17,
+          18,
+          19,
+          20,
+          22
+        ],
+        "context_pages": [
+          1,
+          2,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "CONTRADICTIONS_AMBIGUITIES",
+        "page_count": 19,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          6,
+          8,
+          11,
+          12,
+          13,
+          14,
+          18,
+          21,
+          22
+        ],
+        "context_pages": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "CONTRADICTIONS_AMBIGUITIES/A",
+        "page_count": 10,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1614,
+        "prompt_tokens": 8657,
+        "output_budget_ratio": 0.39404296875,
+        "estimated_cost_cents": 0.058332400000000006,
+        "latency_ms": 16113.707399999956,
+        "predictive_split": false,
+        "schema_retry_count": 1,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          6,
+          8,
+          11,
+          12,
+          13,
+          14,
+          18,
+          21,
+          22
+        ],
+        "context_pages": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      },
+      {
+        "batch_name": "CONTRADICTIONS_AMBIGUITIES/B",
+        "page_count": 9,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "error",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 8732.360700000077,
+        "predictive_split": false,
+        "schema_retry_count": 1,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": true,
+        "trigger_pages": [
+          6,
+          8,
+          11,
+          12,
+          13,
+          14,
+          18,
+          21,
+          22
+        ],
+        "context_pages": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "context_expansion_reason": [
+          "hereunder"
+        ]
+      }
+    ]
+  }
+}

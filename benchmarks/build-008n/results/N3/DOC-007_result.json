@@ -1,0 +1,337 @@
+{
+  "metrics": {
+    "id": "DOC-007",
+    "qual_latency": 6438.944399999993,
+    "retrieval_latency": 0.5222000000067055,
+    "extraction_latency": 10853.893299999996,
+    "interpretation_latency": 4683.884600000005,
+    "total_latency": 21977.69859999999,
+    "telemetry": [
+      {
+        "batch_name": "ELIGIBILITY",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 146,
+        "prompt_tokens": 1349,
+        "output_budget_ratio": 0.03564453125,
+        "estimated_cost_cents": 0.0181356,
+        "latency_ms": 1276.6116000000038,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 403,
+        "prompt_tokens": 1362,
+        "output_budget_ratio": 0.098388671875,
+        "estimated_cost_cents": 0.025513599999999997,
+        "latency_ms": 2749.2658999999985,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "LIABILITY_RISK",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 131,
+        "prompt_tokens": 1387,
+        "output_budget_ratio": 0.031982421875,
+        "estimated_cost_cents": 0.018247600000000003,
+        "latency_ms": 2563.9231,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "CONTRADICTIONS_AMBIGUITIES",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "error",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 9577.100399999996,
+        "predictive_split": false,
+        "schema_retry_count": 1,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": true,
+        "trigger_pages": [
+          1
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      }
+    ]
+  },
+  "result": {
+    "id": "DOC-007",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFP",
+      "confidence": "HIGH",
+      "reason": "The document is a Request for Proposals from AmeriCorps NCCC inviting organizations to apply for teams, including application instructions, eligibility criteria, and partner responsibilities.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "2026-2027 REQUEST FOR PROPOSALS"
+        },
+        {
+          "page_number": 1,
+          "quote": "Contact us by emailing NCCCProjectApplications@AmeriCorps.gov."
+        },
+        {
+          "page_number": 1,
+          "quote": "Who Can Receive a Team?"
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "Award Notification Timeline",
+          "fact": "Applicants will be notified of award approximately six weeks prior to the project start date.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "We will notify applicants of award approximately six weeks prior to the project start date."
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "Project Dates Subject to Change",
+          "fact": "Project dates are subject to change and include travel time to and from the project.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "*Project dates are subject to change and INCLUDE a team’s travel time to and from the project."
+            }
+          ]
+        },
+        {
+          "category": "ELIGIBILITY",
+          "title": "Qualifying Organizations",
+          "fact": "Eligible organizations include nonprofit and faith-based organizations, government entities, public schools and universities, and Native American tribal councils.",
+          "business_implication": "The bidder must confirm that their organization type is explicitly listed as eligible. If not, they may be disqualified from applying for an AmeriCorps NCCC team.",
+          "action_recommendation": "Verify organizational eligibility against the list. If uncertain, contact AmeriCorps NCCC via the provided email to confirm eligibility before proceeding with the application.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Qualifying organizations include: • Nonprofit and faith-based organizations • Government entities (federal, state, and local) • Public schools and universities • Native American tribal councils"
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "Application Submission Process",
+          "fact": "Applications are handled by Assistant Program Directors (APDs) and must be submitted by emailing NCCCProjectApplications@AmeriCorps.gov, following instructions to submit a complete application by the due date.",
+          "business_implication": "The application process is specific and deadline-driven. Failure to follow the submission instructions or missing the due date could result in rejection.",
+          "action_recommendation": "Initiate contact with the APD via the provided email early to obtain detailed instructions and clarify any questions. Ensure all required components are included and submit the application well before the deadline to avoid last-minute issues.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Contact us by emailing NCCCProjectApplications@AmeriCorps.gov."
+            },
+            {
+              "page_number": 1,
+              "quote": "Follow the instructions to submit a complete application by the due date."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Federal Tort Claims Act Coverage",
+          "fact": "AmeriCorps NCCC provides coverage for the team through the Federal Tort Claims Act and Federal Employees’ Compensation Act.",
+          "business_implication": "This coverage limits the partner organization's liability for certain claims arising from team activities, reducing potential financial risk.",
+          "action_recommendation": "Review the scope of coverage to understand what is and isn't covered. Ensure that any additional liability insurance is considered for risks not covered by the federal acts, and consult with legal counsel if needed.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Coverage for the team through the Federal Tort Claims Act and Federal Employees’ Compensation Act"
+            }
+          ]
+        }
+      ]
+    },
+    "telemetry": [
+      {
+        "batch_name": "ELIGIBILITY",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 146,
+        "prompt_tokens": 1349,
+        "output_budget_ratio": 0.03564453125,
+        "estimated_cost_cents": 0.0181356,
+        "latency_ms": 1276.6116000000038,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 403,
+        "prompt_tokens": 1362,
+        "output_budget_ratio": 0.098388671875,
+        "estimated_cost_cents": 0.025513599999999997,
+        "latency_ms": 2749.2658999999985,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "LIABILITY_RISK",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 131,
+        "prompt_tokens": 1387,
+        "output_budget_ratio": 0.031982421875,
+        "estimated_cost_cents": 0.018247600000000003,
+        "latency_ms": 2563.9231,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "CONTRADICTIONS_AMBIGUITIES",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "error",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 9577.100399999996,
+        "predictive_split": false,
+        "schema_retry_count": 1,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": true,
+        "trigger_pages": [
+          1
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      }
+    ]
+  }
+}

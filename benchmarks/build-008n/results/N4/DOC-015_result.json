@@ -1,0 +1,289 @@
+{
+  "metrics": {
+    "id": "DOC-015",
+    "qual_latency": 6633.571299999952,
+    "retrieval_latency": 0.9165999999968335,
+    "extraction_latency": 4954.369399999967,
+    "interpretation_latency": 5330.296300000045,
+    "total_latency": 16919.512800000026,
+    "telemetry": [
+      {
+        "batch_name": "ELIGIBILITY",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 182,
+        "prompt_tokens": 1877,
+        "output_budget_ratio": 0.04443359375,
+        "estimated_cost_cents": 0.031374,
+        "latency_ms": 1779.08050000004,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 504,
+        "prompt_tokens": 1387,
+        "output_budget_ratio": 0.059814453125,
+        "estimated_cost_cents": 0.028691600000000005,
+        "latency_ms": 4953.660399999935,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "LIABILITY_RISK",
+        "page_count": 3,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 554,
+        "prompt_tokens": 2159,
+        "output_budget_ratio": 0.0595703125,
+        "estimated_cost_cents": 0.0408996,
+        "latency_ms": 4182.830300000031,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          3
+        ],
+        "context_pages": [
+          2,
+          3,
+          4
+        ],
+        "context_expansion_reason": []
+      }
+    ]
+  },
+  "result": {
+    "id": "DOC-015",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "EOI",
+      "confidence": "HIGH",
+      "reason": "The document is an Expression of Interest issued by the Ohio Department of Mental Health and Addiction Services (OhioMHAS) for Recovery Month Events funding. It includes a clear procurement intent, issuing organization, scope of work, eligibility requirements, funding amount, deadlines, and application instructions, making it a valid procurement opportunity for analysis.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Recovery Month Events – Expression of Interest (EOI)"
+        },
+        {
+          "page_number": 1,
+          "quote": "Request for Applications Due Date: 07/25/2025, by 3 p.m. EDT"
+        },
+        {
+          "page_number": 2,
+          "quote": "OhioMHAS is requesting expressions of interest from potential prevention, treatment, and/or recovery supports providers; community coalitions; recovery community organizations; peer run organizations; housing providers; faith-based organizations; schools; and other non-profit community organizations."
+        },
+        {
+          "page_number": 2,
+          "quote": "Each eligible organization may request up to $10,000 to plan and implement activities and event(s)"
+        },
+        {
+          "page_number": 4,
+          "quote": "Organization must be 501(c)(3) non-profit."
+        },
+        {
+          "page_number": 4,
+          "quote": "All awards must be fully expended by September 29, 2025."
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "RFA Posting Date",
+          "fact": "The Request for Applications is posted on 07/11/2025.",
+          "business_implication": "The application window is short, giving bidders only 14 days to prepare and submit a response.",
+          "action_recommendation": "Begin preparation immediately, allocate resources, and prioritize completing the application well before the deadline.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Request for Applications Posting Date: 07/11/2025"
+            }
+          ]
+        },
+        {
+          "category": "DATES_SUBMISSION",
+          "title": "RFA Due Date and Time",
+          "fact": "The Request for Applications is due on 07/25/2025 by 3 p.m. EDT.",
+          "business_implication": "Strict deadline; late submissions will likely be rejected, risking loss of funding opportunity.",
+          "action_recommendation": "Submit well before the deadline to avoid technical issues; set internal deadline earlier and confirm submission receipt.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Request for Applications Due Date: 07/25/2025, by 3 p.m. EDT"
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Non-Profit Status Requirement",
+          "fact": "The organization must be a 501(c)(3) non-profit, which may affect eligibility and liability.",
+          "business_implication": "Only 501(c)(3) non-profits are eligible; if the bidder does not have this status, they cannot apply, and if they do, they must ensure compliance with IRS regulations.",
+          "action_recommendation": "Verify 501(c)(3) status and have documentation ready; if not eligible, consider partnering with an eligible organization or seek fiscal sponsorship.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "Organization must be 501(c)(3) non-profit."
+            }
+          ]
+        },
+        {
+          "category": "LIABILITY_RISK",
+          "title": "Expenditure Deadline",
+          "fact": "All awards must be fully expended by September 29, 2025, creating a deadline that could impact financial exposure if not met.",
+          "business_implication": "Failure to expend funds by the deadline may result in clawback or loss of funds, and could harm the organization's reputation and future funding prospects.",
+          "action_recommendation": "Develop a detailed spending plan and timeline to ensure full expenditure by the deadline; monitor progress regularly and adjust plans as needed.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "All awards must be fully expended by September 29, 2025."
+            }
+          ]
+        }
+      ]
+    },
+    "telemetry": [
+      {
+        "batch_name": "ELIGIBILITY",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 182,
+        "prompt_tokens": 1877,
+        "output_budget_ratio": 0.04443359375,
+        "estimated_cost_cents": 0.031374,
+        "latency_ms": 1779.08050000004,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          2,
+          4
+        ],
+        "context_pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "DATES_SUBMISSION",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 504,
+        "prompt_tokens": 1387,
+        "output_budget_ratio": 0.059814453125,
+        "estimated_cost_cents": 0.028691600000000005,
+        "latency_ms": 4953.660399999935,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          1
+        ],
+        "context_pages": [
+          1,
+          2
+        ],
+        "context_expansion_reason": []
+      },
+      {
+        "batch_name": "LIABILITY_RISK",
+        "page_count": 3,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 554,
+        "prompt_tokens": 2159,
+        "output_budget_ratio": 0.0595703125,
+        "estimated_cost_cents": 0.0408996,
+        "latency_ms": 4182.830300000031,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false,
+        "trigger_pages": [
+          3
+        ],
+        "context_pages": [
+          2,
+          3,
+          4
+        ],
+        "context_expansion_reason": []
+      }
+    ]
+  }
+}

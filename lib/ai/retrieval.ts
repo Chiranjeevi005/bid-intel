@@ -1,80 +1,118 @@
-import { CategoryEnum } from './schema';
-import { Category } from './schema';
+import { Category, CategoryEnum } from './schema';
 
 export const PROCUREMENT_LEXICON: Record<Category, string[]> = {
-  OPPORTUNITY_FIT: [
-    'scope of work', 'background', 'objective', 'overview', 'project description', 'deliverables', 'purpose of this rfp'
+  ELIGIBILITY: [
+    'eligibility', 'qualification', 'mandatory', 'must have', 'turnover', 'experience', 'certification', 'iso', 'financial capacity', 'minimum criteria', 'pre-qualification', 'eligible bidder', 'net worth', 'financial turnover', 'similar work'
   ],
-  MANDATORY_ELIGIBILITY: [
-    'eligibility', 'qualification', 'mandatory', 'must have', 'turnover', 'experience', 'certification', 'iso', 'financial capacity', 'minimum criteria'
+  DATES_SUBMISSION: [
+    'submission', 'deadline', 'due date', 'emd', 'earnest money', 'security deposit', 'format of proposal', 'how to apply', 'portal', 'upload', 'schedule', 'timeline', 'key dates', 'important dates', 'q&a', 'clarification', 'validity', 'closing date', 'days', 'calendar days', 'working days', 'bid submission', 'pre-bid'
   ],
-  SUBMISSION_REQUIREMENTS: [
-    'submission', 'deadline', 'due date', 'emd', 'earnest money', 'security deposit', 'format of proposal', 'how to apply', 'portal', 'upload'
+  EVALUATION: [
+    'evaluation', 'scoring', 'weight', 'weightage', 'criteria', 'technical score', 'financial score', 'qcbs', 'l1', 'minimum qualifying', 'threshold', 'marks', 'disqualification'
   ],
-  KEY_DATES: [
-    'schedule', 'timeline', 'key dates', 'important dates', 'q&a', 'clarification', 'validity', 'closing date'
+  COMMERCIAL: [
+    'payment', 'pricing', 'milestone', 'invoice', 'penalty', 'liquidated damages', 'sla', 'service level agreement', 'warranty', 'taxes', 'reimbursement', 'financial obligation', 'sponsorship', 'funding obligation'
   ],
-  EVALUATION_CRITERIA: [
-    'evaluation', 'scoring', 'weight', 'weightage', 'criteria', 'technical score', 'financial score', 'qcbs', 'l1'
+  LIABILITY_RISK: [
+    'liability', 'indemnity', 'indemnification', 'damages', 'hold harmless', 'consequential', 'indirect damages', 'liability cap', 'vicarious', 'loss', 'claim', 'warranties', 'unilateral', 'unusual'
   ],
-  COMMERCIAL_TERMS: [
-    'payment', 'pricing', 'milestone', 'invoice', 'penalty', 'liquidated damages', 'sla', 'service level agreement', 'warranty', 'taxes'
+  TERMINATION: [
+    'termination', 'terminate', 'breach', 'default', 'convenience', 'force majeure', 'suspension', 'cancel', 'suspend', 'termination without cause'
   ],
-  LIABILITY_INDEMNITY: [
-    'liability', 'indemnity', 'indemnification', 'damages', 'hold harmless', 'consequential', 'indirect damages', 'liability cap'
-  ],
-  TERMINATION_RIGHTS: [
-    'termination', 'terminate', 'breach', 'default', 'convenience', 'force majeure', 'suspension', 'cancel'
-  ],
-  UNUSUAL_OBLIGATIONS: [
-    'intellectual property', 'ip rights', 'escrow', 'audit rights', 'exclusivity', 'non-compete', 'step-in rights'
-  ],
-  AMBIGUITIES_CONTRADICTIONS: [], // Handled by AI, not keywords
-  MISSING_INFORMATION: [] // Handled by AI, not keywords
+  CONTRADICTIONS_AMBIGUITIES: [
+    // This category is primarily handled by cross-referencing and AI, but we can seed it with structural keywords.
+    'notwithstanding', 'subject to', 'conflict', 'inconsistency', 'ambiguity', 'prevail', 'supersede', 'amendment', 'corrigendum'
+  ]
 };
 
-/**
- * Deterministically scans a page's content for keywords associated with each category.
- * Returns an array of Categories that had keyword hits on this page.
- */
-export function getKeywordSignalsForPage(content: string): Category[] {
-  const text = content.toLowerCase();
-  const signals: Category[] = [];
+const EXPANSION_MARKERS = [
+  'as stated above',
+  'as mentioned earlier',
+  'in accordance with clause',
+  'refer to section',
+  'as per annexure',
+  'defined in section',
+  'the aforesaid',
+  'hereunder',
+  'subject to clause'
+];
 
-  for (const [category, keywords] of Object.entries(PROCUREMENT_LEXICON)) {
-    if (keywords.length === 0) continue;
-    
-    // Check if any keyword in this category is present in the text
-    const hasHit = keywords.some(keyword => text.includes(keyword.toLowerCase()));
-    
-    if (hasHit) {
-      signals.push(category as Category);
-    }
-  }
-
-  return signals;
+export interface CandidateSet {
+  category: Category;
+  trigger_pages: number[];
+  context_pages: number[];
+  context_expansion_reason?: string[];
 }
 
 /**
- * Consolidates AI mapped signals and deterministic keyword signals for a document.
+ * Deterministically scans document pages for category keywords.
+ * Applies context expansion (Page N-1, N, N+1) and checks for cross-reference markers for further expansion.
  */
-export function consolidatePageSignals(
-  pages: { page_number: number; content: string }[],
-  aiMappedSignals?: { page_number: number, signals: Category[] }[]
-): Record<number, Category[]> {
-  const consolidated: Record<number, Category[]> = {};
+export function getCategoryCandidates(pages: { page_number: number; content: string }[]): CandidateSet[] {
+  const candidateSets: Record<string, CandidateSet> = {};
 
-  for (const page of pages) {
-    // 1. Get deterministic signals
-    const keywordSignals = getKeywordSignalsForPage(page.content);
-    
-    // 2. Get AI signals for this page
-    const aiSignals = aiMappedSignals?.find(m => m.page_number === page.page_number)?.signals || [];
-    
-    // 3. Union
-    const combinedSet = new Set([...keywordSignals, ...aiSignals]);
-    consolidated[page.page_number] = Array.from(combinedSet);
+  // Initialize candidate sets
+  for (const category of CategoryEnum.options) {
+    candidateSets[category] = {
+      category: category as Category,
+      trigger_pages: [],
+      context_pages: [],
+      context_expansion_reason: []
+    };
   }
 
-  return consolidated;
+  const pageContents = new Map(pages.map(p => [p.page_number, p.content.toLowerCase()]));
+
+  for (const page of pages) {
+    const text = page.content.toLowerCase();
+
+    for (const [category, keywords] of Object.entries(PROCUREMENT_LEXICON)) {
+      if (keywords.length === 0) continue;
+      
+      const hasHit = keywords.some(keyword => text.includes(keyword.toLowerCase()));
+      
+      if (hasHit) {
+        const set = candidateSets[category];
+        if (!set.trigger_pages.includes(page.page_number)) {
+          set.trigger_pages.push(page.page_number);
+        }
+
+        // Base expansion: N-1, N, N+1
+        const toAdd = [page.page_number - 1, page.page_number, page.page_number + 1];
+        
+        // Check for expansion markers in the trigger page
+        let expanded = false;
+        for (const marker of EXPANSION_MARKERS) {
+          if (text.includes(marker)) {
+            expanded = true;
+            if (!set.context_expansion_reason?.includes(marker)) {
+              set.context_expansion_reason?.push(marker);
+            }
+            break;
+          }
+        }
+
+        if (expanded) {
+          // If expansion marker found, aggressively pull N-2 and N+2
+          toAdd.push(page.page_number - 2);
+          toAdd.push(page.page_number + 2);
+        }
+
+        for (const pg of toAdd) {
+          // Only add valid pages
+          if (pageContents.has(pg) && !set.context_pages.includes(pg)) {
+            set.context_pages.push(pg);
+          }
+        }
+      }
+    }
+  }
+
+  // Sort context pages
+  for (const set of Object.values(candidateSets)) {
+    set.context_pages.sort((a, b) => a - b);
+    set.trigger_pages.sort((a, b) => a - b);
+  }
+
+  return Object.values(candidateSets);
 }

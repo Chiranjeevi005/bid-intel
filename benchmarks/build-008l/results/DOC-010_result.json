@@ -1,0 +1,1157 @@
+{
+  "metrics": {
+    "id": "DOC-010",
+    "qual_latency": 3741.619400000025,
+    "mapping_latency": 3182.064000000013,
+    "extraction_latency": 24230.9657,
+    "reasoning_latency": 2707.499600000039,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 10828,
+        "completion_tokens": 487,
+        "total_tokens": 11315,
+        "prompt_tokens_details": {
+          "cached_tokens": 10752
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 62
+        },
+        "prompt_cache_hit_tokens": 10752,
+        "prompt_cache_miss_tokens": 76
+      },
+      "map": {
+        "prompt_tokens": 10492,
+        "completion_tokens": 583,
+        "total_tokens": 11075,
+        "prompt_tokens_details": {
+          "cached_tokens": 10368
+        },
+        "prompt_cache_hit_tokens": 10368,
+        "prompt_cache_miss_tokens": 124
+      },
+      "ext": [
+        {
+          "step_name": "stage_3_eligibility",
+          "estimated_cost_cents": 0.19645640000000003,
+          "completion_tokens": 6371
+        },
+        {
+          "step_name": "stage_3_commercial",
+          "estimated_cost_cents": 0.2650228,
+          "completion_tokens": 5773
+        },
+        {
+          "step_name": "stage_3_legal/risk",
+          "estimated_cost_cents": 0.1495704,
+          "completion_tokens": 3994
+        }
+      ],
+      "reason": [
+        {
+          "prompt_tokens": 1093,
+          "completion_tokens": 229,
+          "total_tokens": 1322,
+          "cached_tokens": 0,
+          "reasoning_tokens": 0,
+          "estimated_cost_cents": 0.021714000000000004
+        },
+        {
+          "prompt_tokens": 1857,
+          "completion_tokens": 334,
+          "total_tokens": 2191,
+          "cached_tokens": 0,
+          "reasoning_tokens": 0,
+          "estimated_cost_cents": 0.03535
+        },
+        {
+          "prompt_tokens": 1234,
+          "completion_tokens": 370,
+          "total_tokens": 1604,
+          "cached_tokens": 0,
+          "reasoning_tokens": 0,
+          "estimated_cost_cents": 0.027636
+        }
+      ]
+    },
+    "total_latency": 33868.50209999998,
+    "telemetry": [
+      {
+        "batch_name": "Eligibility",
+        "page_count": 23,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Eligibility/A",
+        "page_count": 12,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 4045,
+        "prompt_tokens": 6590,
+        "output_budget_ratio": 0.987548828125,
+        "estimated_cost_cents": 0.12326720000000002,
+        "latency_ms": 23866.574399999983,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Eligibility/B",
+        "page_count": 11,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2326,
+        "prompt_tokens": 5299,
+        "output_budget_ratio": 0.56787109375,
+        "estimated_cost_cents": 0.07318920000000001,
+        "latency_ms": 15488.850199999986,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial",
+        "page_count": 15,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "predictive_split",
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "output_budget_ratio": 0,
+        "estimated_cost_cents": 0,
+        "latency_ms": 0,
+        "predictive_split": true,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial/A",
+        "page_count": 8,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 3670,
+        "prompt_tokens": 4527,
+        "output_budget_ratio": 0.89599609375,
+        "estimated_cost_cents": 0.15484840000000002,
+        "latency_ms": 22903.260300000024,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial/B",
+        "page_count": 7,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2103,
+        "prompt_tokens": 4470,
+        "output_budget_ratio": 0.513427734375,
+        "estimated_cost_cents": 0.1101744,
+        "latency_ms": 13732.090199999977,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Legal/Risk",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 3994,
+        "prompt_tokens": 3502,
+        "output_budget_ratio": 0.97509765625,
+        "estimated_cost_cents": 0.1495704,
+        "latency_ms": 24229.280200000037,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      }
+    ]
+  },
+  "result": {
+    "id": "DOC-010",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFP",
+      "confidence": "HIGH",
+      "reason": "This document is a Request for Proposals (RFP) issued by the City/County Association of Governments of San Mateo County for a planning project. It includes a clear procurement solicitation with deadlines, submission instructions, scope of work, evaluation criteria, and budget details.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "REQUEST FOR PROPOSALS \n San Mateo Countywide Safe Streets for All Supplemental Planning"
+        },
+        {
+          "page_number": 1,
+          "quote": "Proposals are due: January 23, 2026, 12:00PM PST"
+        },
+        {
+          "page_number": 3,
+          "quote": "The City/County Association of Governments of San Mateo County (C/CAG), a Joint Powers Agency composed of the County of San Mateo and all twenty cities located within San Mateo County, invites qualified consultants to submit proposals for San Mateo Countywide Safe Streets for All Supplemental Planning Project, which is funded through the U.S. Department of Transportation (USDOT) Safe Streets for All (SS4A) Grant Program."
+        },
+        {
+          "page_number": 3,
+          "quote": "Proposals must be received by C/CAG no later than 12 PM PST on Friday, January 23, 2026, in accordance with the instructions contained in the RFP."
+        },
+        {
+          "page_number": 4,
+          "quote": "C/CAG has budgeted four hundred thirty-three thousand, one hundred forty-one dollars ($433,171) for this effort."
+        },
+        {
+          "page_number": 6,
+          "quote": "IV. PROPOSAL REQUIREMENTS"
+        },
+        {
+          "page_number": 13,
+          "quote": "V. PROPOSAL EVALUATION"
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Public Records Act Indemnification",
+          "fact": "By submitting materials, proposer consents to release of materials under the Public Records Act and agrees to indemnify and hold harmless C/CAG for release of such information.",
+          "business_implication": "Bidder may be liable for costs associated with release of its own information.",
+          "action_recommendation": "Be aware of potential indemnification obligations; consider marking confidential information (though waiver is broad).",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "By submitting materials, (1) you consent to release of such materials by C/CAG if requested under the Public Records Act without further notice to you, and (2) you agree to indemnify and hold harmless C/CAG for release of such information."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Contract Term Duration Discrepancy",
+          "fact": "The RFP states the anticipated contract term is approximately 48 months, but also states the total contract duration shall be four (4) years. These are consistent, but the schedule indicates completion by June 30, 2030, which is more than 48 months from April 1, 2026 (50 months).",
+          "business_implication": "There may be a slight inconsistency in the contract duration versus the completion date.",
+          "action_recommendation": "Clarify the exact contract end date with C/CAG.",
+          "priority": "MEDIUM",
+          "confidence": "MEDIUM",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "The anticipated contract term will be approximately 48 months."
+            },
+            {
+              "page_number": 9,
+              "quote": "The total contract duration shall be four (4) years; however, the e-bike white paper deliverable shall be completed and submitted for final approval no later than December 31, 2026."
+            },
+            {
+              "page_number": 9,
+              "quote": "The schedule shall be based on an anticipated project kick-off during the week of April 1, 2026, and shall demonstrate completion of all work no later than June 30, 2030."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Waiver of Public Records Protection and Indemnification",
+          "fact": "Submission of any materials in response to this RFP is itself a public record without exception. Submission of any materials in response to this RFP constitutes a waiver by the submitting party of any claim that the information is protected from disclosure. By submitting materials, (1) you consent to release of such materials by C/CAG if requested under the Public Records Act without further notice to you, and (2) you agree to indemnify and hold harmless C/CAG for release of such information.",
+          "business_implication": "The bidder waives confidentiality protections for its proposal and agrees to indemnify C/CAG for any release of information, potentially exposing the bidder to liability if third parties claim damages from disclosure.",
+          "action_recommendation": "Review the indemnification clause carefully and consider limiting the scope of indemnification in the contract negotiation phase.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Also, all information submitted in response to this RFP is itself a public record without exception. Submission of any materials in response to this RFP constitutes a waiver by the submitting party of any claim that the information is protected from disclosure. By submitting materials, (1) you consent to release of such materials by C/CAG if requested under the Public Records Act without further notice to you, and (2) you agree to indemnify and hold harmless C/CAG for release of such information."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Minimum Qualifications: Three Projects in Past Ten Years",
+          "fact": "Proposer must demonstrate successful completion of at least three projects in the past ten years related to Local Roadway Safety Plan, Systemic Safety Analysis Report (SSAR), Vision Zero Action Plan and/or supplemental or implementation planning for the Safe Streets for All Grant Program.",
+          "business_implication": "Bidder must have verifiable experience in these specific areas to be considered eligible.",
+          "action_recommendation": "Ensure proposal clearly documents three qualifying projects with dates and descriptions.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Proposer must demonstrate to C/CAG’s satisfaction that the prime consultant and/or one or more subconsultant proposed this project have successfully completed at least three (3) projects in the past ten (10) years related to Local Roadway Safety Plan, Systemic Safety Analysis Report (SSAR), Vision Zero Action Plan and/or supplemental or implementation planning for the Safe Streets for All Grant Program."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Minimum Qualifications: Federal Grant Experience",
+          "fact": "Proposers must demonstrate experience managing and implementing large-scale federal grant funded projects and successfully ensuring compliance with all applicable federal, state, and local requirements for such projects.",
+          "business_implication": "Bidder must have a track record with federal grants, including compliance.",
+          "action_recommendation": "Highlight relevant federal grant experience in the proposal, including compliance achievements.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Proposers must demonstrate experience managing and implementing large-scale federal grant funded projects and successfully ensuring compliance with all applicable federal, state, and local requirements for such projects."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Proposal Submission Deadline and Method",
+          "fact": "Proposals must be received by C/CAG no later than 12 PM PST on Friday, January 23, 2026, via email with subject line 'RFP – San Mateo Countywide Safe Streets for All Supplemental Planning Project' to Eva Gaye (egaye@smcgov.org).",
+          "business_implication": "Late submissions may be considered nonresponsive; email delivery must be ensured.",
+          "action_recommendation": "Submit proposal well before deadline and confirm receipt.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "Proposals must be received by C/CAG no later than 12 PM PST on Friday, January 23, 2026, in accordance with the instructions contained in the RFP. Proposals should be emailed with the subject line “RFP – San Mateo Countywide Safe Streets for All Supplemental Planning Project” to: Eva Gaye (egaye@smcgov.org)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Page Limit and Formatting",
+          "fact": "Each submittal shall be no more than 20 pages, excluding cover letter, title page, table of contents, resumes of key staff members, relevant experience, and references. All required appendices and forms are excluded from the 20 page limit unless otherwise specified.",
+          "business_implication": "Bidder must carefully manage page count to avoid disqualification.",
+          "action_recommendation": "Ensure proposal body is within 20 pages; use appendices for excluded items.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Each submittal shall be no more than 20 pages, excluding cover letter, title page, table of contents, resumes of key staff members, relevant experience, and references. All required appendices and forms are excluded from the 20 page limit unless otherwise specified."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Required Federal Certifications",
+          "fact": "Proposals must contain the following federal certifications or forms: (1) Certification Regarding Lobbying, (2) Certification Regarding Debarment, Suspension, Ineligibility, and Voluntary Exclusion—Lower Tier Covered Transactions, and (3) Disclosure of Lobbying Activities (SF-LLL) form.",
+          "business_implication": "Missing these forms could render proposal nonresponsive.",
+          "action_recommendation": "Include all three federal forms in the proposal submission.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Proposals must contain the following federal certifications or forms: (1) Certification Regarding Lobbying, (2) Certification Regarding Debarment, Suspension, Ineligibility, and Voluntary Exclusion—Lower Tier Covered Transactions, and (3) Disclosure of Lobbying Activities (SF-LLL) form."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Signed Acknowledgement of Insurance Requirements",
+          "fact": "Submit a signed acknowledgement, for proposer only, that the proposer agrees to provide the required certificates of insurance providing verification of the minimum insurance requirements listed in Appendix D, Sample Agreement Template (see Section 11), within ten days of C/CAG’s notice to firm that it is the successful Proposer.",
+          "business_implication": "Must be prepared to provide insurance certificates within 10 days of award notice.",
+          "action_recommendation": "Prepare signed acknowledgement and ensure ability to obtain insurance promptly.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Submit a signed acknowledgement, for proposer only, that the proposer agrees to provide the required certificates of insurance providing verification of the minimum insurance requirements listed in Appendix D, Sample Agreement Template (see Section 11), within ten days of C/CAG’s notice to firm that it is the successful Proposer."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "RFP Release and Deadlines",
+          "fact": "RFP released on December 19, 2025; Q&A deadline January 9, 2026; proposals due January 23, 2026 at 12:00 PM PST; interviews week of February 16, 2026; Board approval March 12, 2026; Notice to Proceed March 16, 2026.",
+          "business_implication": "Bidder must meet these deadlines to be considered.",
+          "action_recommendation": "Mark calendar and prepare submission accordingly.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Date Released: December 19, 2025"
+            },
+            {
+              "page_number": 1,
+              "quote": "Deadline for Requests for Clarifications: January 9, 2026"
+            },
+            {
+              "page_number": 1,
+              "quote": "Proposals are due: January 23, 2026, 12:00PM PST"
+            },
+            {
+              "page_number": 4,
+              "quote": "Week of February 16, 2026 Consultant Interviews"
+            },
+            {
+              "page_number": 4,
+              "quote": "Thursday, March 12, 2026 C/CAG Board approval"
+            },
+            {
+              "page_number": 4,
+              "quote": "Monday, March 16, 2026 Notice to Proceed and Project Kick-off"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Evaluation Criteria Not Detailed in RFP",
+          "fact": "The RFP does not provide specific evaluation criteria or weights in the provided pages.",
+          "business_implication": "Bidder cannot tailor proposal to specific scoring factors.",
+          "action_recommendation": "Request evaluation criteria during clarification period.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "V. PROPOSAL EVALUATION .......................................................................................... 11"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Proposal Validity Period",
+          "fact": "Proposal must be a firm offer for 120 days from the due date for proposals.",
+          "business_implication": "Bidder must keep pricing and terms valid for 120 days.",
+          "action_recommendation": "Ensure proposal states validity period and internal approvals.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Indicate that the proposal is a firm offer to enter into a contract to perform work related to this RFP for a period of 120 days from the due date for proposals."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Key Personnel Commitment",
+          "fact": "Any change in key personnel on the project team is subject to prior written approval of C/CAG. Removal of any key personnel identified in the responses to the RFP without prior written consent of C/CAG may be considered a material breach of contract.",
+          "business_implication": "Bidder must ensure key personnel remain available for project duration.",
+          "action_recommendation": "Confirm key personnel availability and include commitment letters if possible.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "Any change in key personnel on the project team is subject to prior written approval of C/CAG. Removal of any key personnel identified in the responses to the RFP without prior written consent of C/CAG may be considered a material breach of contract."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Conflict of Interest Notification",
+          "fact": "If a consultant discovers a conflict during the execution of an assigned task, the consultant must immediately notify the C/CAG Project Manager. Failure to notify may be grounds for termination for cause.",
+          "business_implication": "Bidder must have procedures to identify and report conflicts promptly.",
+          "action_recommendation": "Implement conflict of interest monitoring and reporting process.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "If a consultant discovers a conflict during the execution of an assigned task, the consultant must immediately notify the C/CAG Project Manager regarding the conflict(s) of interest. The C/CAG Project Manager may terminate the contract involving the conflict of interest and C/CAG may obtain the conflicted services in any way allowed by law. Failure by the consultant to notify C/CAG Project Manager may be grounds for termination of the contract for cause pursuant to Section 4, Termination, of the Contract Agreement Template, provided as Appendix D to this RFP."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Duplicate Section Labeling in Proposal Requirements",
+          "fact": "In the 'Additional Proposal Requirements' section, two items are labeled as 'b)' - one for Levine Act Disclosure and one for Litigation.",
+          "business_implication": "This may cause confusion in proposal organization, but likely a typographical error.",
+          "action_recommendation": "Follow the intended order and label correctly in proposal.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "b) Levine Act Disclosure"
+            },
+            {
+              "page_number": 11,
+              "quote": "b) Litigation"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Evaluation Criteria and Weights",
+          "fact": "Proposals are evaluated on a 0-5 scale with weighted criteria: Organization of Proposal (5), Staff and Firm Qualifications (20), Understanding of Project Scope of Work (20), Proposed Project Approach (15), Cost Effectiveness (15), References (5), Conflict of Interest Statement (Pass/Fail), Presentation by Team (10), Q&A Response to Panel Questions (10). Total weighted score out of 500.",
+          "business_implication": "The bidder must prioritize the highest-weighted criteria (Staff/Firm Qualifications and Understanding of Scope) to maximize score.",
+          "action_recommendation": "Allocate proposal effort to thoroughly address the top-weighted criteria with strong evidence of qualifications and scope understanding.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "The evaluation criteria summary and their respective weights are as follows: No. Written Evaluation Criteria Weight 1 Organization of Proposal 5 2 Staff and Firm Qualifications 20 3 Understanding of Project Scope of Work 20 4 Proposed Project Approach 15 5 Cost Effectiveness 15 6 References 5 7 Conflict of Interest Statement Pass/Fail Subtotal: 80 No. Interview Evaluation Criteria Weight 8 Presentation by team 10 9 Q&A Response to panel questions 10 Subtotal: 20 Total: 100"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Incomplete Proposals Disqualified",
+          "fact": "An incomplete submittal will be deemed non-responsive and disqualified at C/CAG staff’s discretion.",
+          "business_implication": "Failure to include all required content will result in immediate disqualification, regardless of technical merit.",
+          "action_recommendation": "Ensure the proposal is complete and addresses all RFP requirements before submission.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "An incomplete submittal will be deemed non-responsive and disqualified at C/CAG staff’s discretion."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Oral Interviews May Be Held",
+          "fact": "The selection process may include oral interviews. If held, they are weighted 20% (10% for presentation, 10% for Q&A).",
+          "business_implication": "Bidders should be prepared for oral interviews and ensure their team can present effectively.",
+          "action_recommendation": "Prepare a strong presentation and rehearse Q&A responses in case interviews are conducted.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "The selection process may include oral interviews. If oral interviews are necessary, the consultant will be notified of the time and place of oral interviews and whether any additional information may be required to be submitted."
+            },
+            {
+              "page_number": 14,
+              "quote": "No. Interview Evaluation Criteria Weight 8 Presentation by team 10 9 Q&A Response to panel questions 10 Subtotal: 20"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Cost Proposal Template Provided",
+          "fact": "The cost proposal must be submitted using the provided template (Appendix C) available at a URL.",
+          "business_implication": "Bidders must use the specified template to ensure compliance and ease of evaluation.",
+          "action_recommendation": "Download and use the Appendix C template for the cost proposal.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 23,
+              "quote": "APPENDIX C – COST PROPOSAL TEMPLATE https://ccag.ca.gov/wp-content/uploads/2025/12/Appendix-C-Cost-Proposal-Template.xlsx"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Sample Agreement Template Provided",
+          "fact": "A sample agreement template (Appendix D) is provided for reference.",
+          "business_implication": "Bidders should review the sample agreement to understand contractual terms and conditions.",
+          "action_recommendation": "Review the sample agreement template to assess potential liabilities and obligations.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 24,
+              "quote": "APPENDIX D – SAMPLE AGREEMENT TEMPLATE https://ccag.ca.gov/wp-content/uploads/2025/12/Appendix-D-2025-federal-funds-agreement-template_.pdf"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Proposal Submission Deadline",
+          "fact": "Proposals are due January 23, 2026, 12:00 PM PST.",
+          "business_implication": "The bidder must ensure timely submission to avoid being considered nonresponsive.",
+          "action_recommendation": "Plan submission well in advance to avoid last-minute issues.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Proposals are due: January 23, 2026, 12:00PM PST"
+            },
+            {
+              "page_number": 3,
+              "quote": "Proposals must be received by C/CAG no later than 12 PM PST on Friday, January 23, 2026"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Deadline for Requests for Clarifications",
+          "fact": "Deadline for Requests for Clarifications is January 9, 2026.",
+          "business_implication": "The bidder must submit any clarifying questions by this date.",
+          "action_recommendation": "Identify and submit all clarifications before the deadline.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "Deadline for Requests for Clarifications: January 9, 2026"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Anticipated Contract Term and Completion",
+          "fact": "The contract term is approximately 48 months, with work commencing April 1, 2026 and completion no later than June 2030.",
+          "business_implication": "The bidder must commit to a long-term project timeline.",
+          "action_recommendation": "Ensure resource availability for the full duration.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "The anticipated contract term will be approximately 48 months."
+            },
+            {
+              "page_number": 4,
+              "quote": "C/CAG expects the work to commence on April 1, 2026 and to be completed no later than June 2030."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Minimum Qualifications: Relevant Project Experience",
+          "fact": "Proposer must demonstrate successful completion of at least three projects in the past ten years related to Local Roadway Safety Plan, Systemic Safety Analysis Report, Vision Zero Action Plan, or supplemental/implementation planning for Safe Streets for All Grant Program.",
+          "business_implication": "The bidder must have verifiable experience in these specific areas to be eligible.",
+          "action_recommendation": "Prepare evidence of relevant project experience.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Proposer must demonstrate to C/CAG’s satisfaction that the prime consultant and/or one or more subconsultant proposed this project have successfully completed at least three (3) projects in the past ten (10) years related to Local Roadway Safety Plan, Systemic Safety Analysis Report (SSAR), Vision Zero Action Plan and/or supplemental or implementation planning for the Safe Streets for All Grant Program."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Minimum Qualifications: Federal Grant Experience",
+          "fact": "Proposers must demonstrate experience managing and implementing large-scale federal grant funded projects and ensuring compliance with all applicable federal, state, and local requirements.",
+          "business_implication": "The bidder must have a track record with federal grants and compliance.",
+          "action_recommendation": "Highlight relevant federal grant experience in the proposal.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 5,
+              "quote": "Proposers must demonstrate experience managing and implementing large-scale federal grant funded projects and successfully ensuring compliance with all applicable federal, state, and local requirements for such projects."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Proposal Submission Method and Address",
+          "fact": "Proposals must be emailed with subject line 'RFP – San Mateo Countywide Safe Streets for All Supplemental Planning Project' to Eva Gaye (egaye@smcgov.org).",
+          "business_implication": "The bidder must follow specific email instructions to ensure delivery.",
+          "action_recommendation": "Double-check email address and subject line before sending.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "Proposals should be emailed with the subject line “RFP – San Mateo Countywide Safe Streets for All Supplemental Planning Project” to: Eva Gaye (egaye@smcgov.org)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Proposal Validity Period",
+          "fact": "The proposal must be a firm offer for 120 days from the due date.",
+          "business_implication": "The bidder must keep its offer valid for 120 days.",
+          "action_recommendation": "Ensure internal approvals allow for a 120-day validity period.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Indicate that the proposal is a firm offer to enter into a contract to perform work related to this RFP for a period of 120 days from the due date for proposals."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Cost Proposal Requirements",
+          "fact": "Cost proposal must use the Cost Proposal Template (Appendix C) and include personnel names, classifications, hourly rates, and other cost items. Rates must be fully loaded including all surcharges.",
+          "business_implication": "The bidder must provide detailed cost breakdown with fully loaded rates.",
+          "action_recommendation": "Prepare cost proposal using the template and ensure rates are fully loaded.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "Provide a detailed task-based cost proposal for the project using the Cost Proposal Template (Appendix C). The cost estimate shall include personnel names, classifications, hourly rates, and any other cost items necessary to perform each of the tasks listed in the Scope of Work."
+            },
+            {
+              "page_number": 9,
+              "quote": "fully loaded hourly rate means an hourly rate that includes all applicable surcharges such as taxes, insurance and fringe benefits as well as indirect costs, overhead and profit allowance, and ordinary materials and supplies."
+            }
+          ]
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Evaluation Criteria Not Detailed in Provided Pages",
+          "fact": "The RFP mentions a proposal evaluation section (Section V) but the provided pages do not include the detailed evaluation criteria.",
+          "business_implication": "The bidder cannot know the exact weighting of evaluation factors from the provided pages.",
+          "action_recommendation": "Request the full RFP or clarification on evaluation criteria.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "V. PROPOSAL EVALUATION .......................................................................................... 11"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Budget Cap",
+          "fact": "C/CAG has budgeted $433,171 for this effort.",
+          "business_implication": "The bidder's cost proposal must not exceed this budget.",
+          "action_recommendation": "Ensure cost proposal is within the budget cap.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "C/CAG has budgeted four hundred thirty-three thousand, one hundred forty-one dollars ($433,171) for this effort."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No Reimbursement for Proposal Costs",
+          "fact": "Costs for developing proposals are entirely the responsibility of the proposer and will not be reimbursed.",
+          "business_implication": "The bidder bears all costs of preparing the proposal.",
+          "action_recommendation": "Budget accordingly for proposal preparation.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "Costs for developing the proposals are entirely the responsibility of the proposer and will not be reimbursed."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Federal Funding Requirements",
+          "fact": "The contract will be funded with federal funds and subject to all applicable FHWA-required federal provisions and certifications.",
+          "business_implication": "The bidder must comply with federal requirements, which may include additional terms and conditions.",
+          "action_recommendation": "Review Appendix B (Grant Agreement) for specific federal provisions.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "Any contract entered into as a result of this RFP will be funded, in whole or in part, with federal funds administered by the FHWA. Accordingly, federal requirements apply to this procurement, any resulting agreement, and the services to be provided."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "No Specific Liability Terms in Provided Pages",
+          "fact": "The provided pages do not contain specific liability or indemnity clauses.",
+          "business_implication": "The bidder cannot assess liability exposure from the provided pages.",
+          "action_recommendation": "Review the Sample Agreement Template (Appendix D) for liability terms.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "APPENDIX D – SAMPLE AGREEMENT TEMPLATE ..................................................... 22"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "No Specific Termination Terms in Provided Pages",
+          "fact": "The provided pages do not contain specific termination clauses.",
+          "business_implication": "The bidder cannot assess termination rights from the provided pages.",
+          "action_recommendation": "Review the Sample Agreement Template (Appendix D) for termination provisions.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "APPENDIX D – SAMPLE AGREEMENT TEMPLATE ..................................................... 22"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "E-bike White Paper Deadline",
+          "fact": "The e-bike white paper deliverable must be completed and submitted for final approval no later than December 31, 2026.",
+          "business_implication": "The bidder must prioritize this deliverable within the overall project timeline.",
+          "action_recommendation": "Plan resources to meet this early deadline.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "the e-bike white paper deliverable shall be completed and submitted for final approval no later than December 31, 2026."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Conflict of Interest Statement Required as Pass/Fail",
+          "fact": "The RFP requires a Conflict of Interest Statement as part of the proposal, and it is evaluated as Pass/Fail.",
+          "business_implication": "Failure to provide an adequate Conflict of Interest Statement may result in disqualification.",
+          "action_recommendation": "Ensure the Conflict of Interest Statement is complete and discloses all relevant relationships.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "Include a Conflict of Interest Statement disclosing any financial, business or other relationship with C/CAG that may have an impact upon the outcome of the contract."
+            },
+            {
+              "page_number": 15,
+              "quote": "Conflict of Interest Statement (Pass/Fail)"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Litigation Disclosure Required",
+          "fact": "The RFP requires disclosure of any litigation involvement in connection with prior projects.",
+          "business_implication": "Failure to disclose litigation may be considered a misrepresentation and could affect evaluation.",
+          "action_recommendation": "Prepare a litigation disclosure statement and include it in the proposal.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "Indicate if the proposing consultant is or was involved with any litigation in connection with prior projects. If yes, briefly describe the nature of the litigation and the result."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Evaluation Criteria and Weights",
+          "fact": "The RFP details evaluation criteria with weights: Organization of Proposal (5), Staff and Firm Qualifications (20), Understanding of Project Scope (20), Proposed Project Approach (15), Cost Effectiveness (15), References (5), Conflict of Interest Statement (Pass/Fail), Presentation by Team (10), Q&A Response (10). Total 100 points.",
+          "business_implication": "The proposal should be tailored to maximize scores in the heavily weighted criteria: Staff and Firm Qualifications, Understanding of Scope, and Proposed Approach.",
+          "action_recommendation": "Allocate proposal development effort to address the top-weighted criteria thoroughly.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "The evaluation criteria summary and their respective weights are as follows: No. Written Evaluation Criteria Weight 1 Organization of Proposal 5 2 Staff and Firm Qualifications 20 3 Understanding of Project Scope of Work 20 4 Proposed Project Approach 15 5 Cost Effectiveness 15 6 References 5 7 Conflict of Interest Statement Pass/Fail Subtotal: 80 No. Interview Evaluation Criteria Weight 8 Presentation by team 10 9 Q&A Response to panel questions 10 Subtotal: 20 Total: 100"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Incomplete Proposals May Be Disqualified",
+          "fact": "The RFP states that proposals not including required content will be considered incomplete, rated a Fail, and receive no further consideration.",
+          "business_implication": "Missing any required element could lead to immediate disqualification.",
+          "action_recommendation": "Use a compliance checklist to ensure all required sections are included.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "Responses that do not include the proposal content requirements identified within this RFP and subsequent addenda and do not address each of the items listed below will be considered incomplete, be rated a Fail in the Evaluation Criteria and will receive no further consideration."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Cost Effectiveness Evaluation",
+          "fact": "Cost Effectiveness is evaluated based on cost control methodology, clear cost spreadsheet, reasonableness of hourly rates, and resource allocation.",
+          "business_implication": "The cost proposal must be detailed and justify rates and resource allocation.",
+          "action_recommendation": "Prepare a transparent cost spreadsheet with clear justifications for rates and resource allocation.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 15,
+              "quote": "Cost Control and Budgeting Methodology o Proposer has a system or process for managing cost and budget. o Evidence of successful budget management for a similar project. • Proposal clearly defines cost in spreadsheet format. • Reasonableness of hourly rates. • Allocation of resources for tasks and activities."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Conflict of Interest Discovery During Contract",
+          "fact": "If a consultant discovers a conflict during execution, they must immediately notify the C/CAG Project Manager; failure to do so may be grounds for termination for cause.",
+          "business_implication": "The consultant must have procedures in place to identify and report conflicts promptly to avoid termination.",
+          "action_recommendation": "Implement a conflict-of-interest monitoring process and ensure all staff are aware of the notification requirement.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "If a consultant discovers a conflict during the execution of an assigned task, the consultant must immediately notify the C/CAG Project Manager regarding the conflict(s) of interest. The C/CAG Project Manager may terminate the contract involving the conflict of interest and C/CAG may obtain the conflicted services in any way allowed by law. Failure by the consultant to notify C/CAG Project Manager may be grounds for termination of the contract for cause pursuant to Section 4, Termination, of the Contract Agreement Template, provided as Appendix D to this RFP."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Insurance Acknowledgement Required",
+          "fact": "Submit a signed acknowledgement, for proposer only, that the proposer agrees to provide the required certificates of insurance providing verification of the minimum insurance requirements listed in Appendix D, Sample Agreement Template (see Section 11), within ten days of C/CAG’s notice to firm that it is the successful Proposer.",
+          "business_implication": "The bidder must be prepared to provide insurance certificates within a short timeframe after award notification.",
+          "action_recommendation": "Prepare insurance documentation in advance to meet the 10-day deadline.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Submit a signed acknowledgement, for proposer only, that the proposer agrees to provide the required certificates of insurance providing verification of the minimum insurance requirements listed in Appendix D, Sample Agreement Template (see Section 11), within ten days of C/CAG’s notice to firm that it is the successful Proposer."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Federal Certifications Required",
+          "fact": "Proposals must contain the following federal certifications or forms: (1) Certification Regarding Lobbying, (2) Certification Regarding Debarment, Suspension, Ineligibility, and Voluntary Exclusion—Lower Tier Covered Transactions, and (3) Disclosure of Lobbying Activities (SF-LLL) form.",
+          "business_implication": "The bidder must complete and include these federal forms to be considered responsive.",
+          "action_recommendation": "Obtain and complete the required federal forms from the provided FHWA link.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 12,
+              "quote": "Proposals must contain the following federal certifications or forms: (1) Certification Regarding Lobbying, (2) Certification Regarding Debarment, Suspension, Ineligibility, and Voluntary Exclusion—Lower Tier Covered Transactions, and (3) Disclosure of Lobbying Activities (SF-LLL) form."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Conflict of Interest",
+          "fact": "If a consultant discovers a conflict during the execution of an assigned task, the consultant must immediately notify the C/CAG Project Manager regarding the conflict(s) of interest. The C/CAG Project Manager may terminate the contract involving the conflict of interest and C/CAG may obtain the conflicted services in any way allowed by law. Failure by the consultant to notify C/CAG Project Manager may be grounds for termination of the contract for cause pursuant to Section 4, Termination, of the Contract Agreement Template, provided as Appendix D to this RFP.",
+          "business_implication": "The bidder must have robust conflict-of-interest monitoring and disclosure procedures to avoid termination risk.",
+          "action_recommendation": "Implement internal processes to promptly identify and disclose any potential conflicts of interest.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "If a consultant discovers a conflict during the execution of an assigned task, the consultant must immediately notify the C/CAG Project Manager regarding the conflict(s) of interest. The C/CAG Project Manager may terminate the contract involving the conflict of interest and C/CAG may obtain the conflicted services in any way allowed by law. Failure by the consultant to notify C/CAG Project Manager may be grounds for termination of the contract for cause pursuant to Section 4, Termination, of the Contract Agreement Template, provided as Appendix D to this RFP."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Key Personnel Commitment",
+          "fact": "Any change in key personnel on the project team is subject to prior written approval of C/CAG. Removal of any key personnel identified in the responses to the RFP without prior written consent of C/CAG may be considered a material breach of contract.",
+          "business_implication": "The bidder must ensure key personnel are committed for the project duration and manage any changes carefully to avoid breach of contract.",
+          "action_recommendation": "Secure commitments from key personnel and include contingency plans for unexpected changes.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "Any change in key personnel on the project team is subject to prior written approval of C/CAG. Removal of any key personnel identified in the responses to the RFP without prior written consent of C/CAG may be considered a material breach of contract."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Conflict of Interest Statement Required",
+          "fact": "Include a Conflict of Interest Statement disclosing any financial, business or other relationship with C/CAG that may have an impact upon the outcome of the contract. List current clients who may have a financial interest in the outcome of this contract. Identify possible mitigation efforts, if any, to eliminate or avoid any actual or perceived conflicts of interest.",
+          "business_implication": "The bidder must disclose any potential conflicts and propose mitigation measures.",
+          "action_recommendation": "Prepare a thorough conflict of interest statement and identify any potential conflicts early.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "Include a Conflict of Interest Statement disclosing any financial, business or other relationship with C/CAG that may have an impact upon the outcome of the contract. List current clients who may have a financial interest in the outcome of this contract. Identify possible mitigation efforts, if any, to eliminate or avoid any actual or perceived conflicts of interest."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Litigation Disclosure Required",
+          "fact": "Indicate if the proposing consultant is or was involved with any litigation in connection with prior projects. If yes, briefly describe the nature of the litigation and the result.",
+          "business_implication": "The bidder must disclose any litigation history, which may affect evaluation.",
+          "action_recommendation": "Prepare a litigation history disclosure and be ready to explain any past litigation.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "Indicate if the proposing consultant is or was involved with any litigation in connection with prior projects. If yes, briefly describe the nature of the litigation and the result."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Proposal Page Limit",
+          "fact": "Each submittal shall be no more than 20 pages, excluding cover letter, title page, table of contents, resumes of key staff members, relevant experience, and references. All required appendices and forms are excluded from the 20 page limit unless otherwise specified.",
+          "business_implication": "The bidder must carefully manage the page count to stay within the limit.",
+          "action_recommendation": "Plan the proposal structure to comply with the page limit.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Each submittal shall be no more than 20 pages, excluding cover letter, title page, table of contents, resumes of key staff members, relevant experience, and references. All required appendices and forms are excluded from the 20 page limit unless otherwise specified."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Unsigned Proposals Rejected",
+          "fact": "Unsigned proposals or proposals signed by an individual not authorized to bind the prospective consultant will be considered nonresponsive and rejected.",
+          "business_implication": "The bidder must ensure the proposal is properly signed by an authorized individual.",
+          "action_recommendation": "Verify that the proposal is signed by an authorized signatory before submission.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Unsigned proposals or proposals signed by an individual not authorized to bind the prospective consultant will be considered nonresponsive and rejected."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Proposal Modification Deadline",
+          "fact": "Any proposals received prior to the time and date specified above may be withdrawn or modified by written request of the consultant. To be considered for the project, however, a modified proposal must be received prior to January 23, 2026.",
+          "business_implication": "The bidder must submit any modifications by the specified deadline.",
+          "action_recommendation": "Note the modification deadline and plan accordingly.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "Any proposals received prior to the time and date specified above may be withdrawn or modified by written request of the consultant. To be considered for the project, however, a modified proposal must be received prior to January 23, 2026."
+            }
+          ],
+          "requires_reasoning_review": false
+        }
+      ]
+    }
+  }
+}

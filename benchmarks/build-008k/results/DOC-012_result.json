@@ -1,0 +1,1512 @@
+{
+  "metrics": {
+    "id": "DOC-012",
+    "qual_latency": 30123.818700000003,
+    "mapping_latency": 4172.694099999964,
+    "extraction_latency": 89736.82510000002,
+    "reasoning_latency": 2138.817400000058,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 17156,
+        "completion_tokens": 4258,
+        "total_tokens": 21414,
+        "prompt_tokens_details": {
+          "cached_tokens": 17152
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3916
+        },
+        "prompt_cache_hit_tokens": 17152,
+        "prompt_cache_miss_tokens": 4
+      },
+      "map": {
+        "prompt_tokens": 16820,
+        "completion_tokens": 742,
+        "total_tokens": 17562,
+        "prompt_tokens_details": {
+          "cached_tokens": 16768
+        },
+        "prompt_cache_hit_tokens": 16768,
+        "prompt_cache_miss_tokens": 52
+      },
+      "ext": [
+        {
+          "step_name": "stage_3_eligibility",
+          "estimated_cost_cents": 0.11000359999999999,
+          "completion_tokens": 3320
+        },
+        {
+          "step_name": "stage_3_commercial",
+          "estimated_cost_cents": 1.3459404,
+          "completion_tokens": 29446
+        },
+        {
+          "step_name": "stage_3_legal/risk",
+          "estimated_cost_cents": 0.6471752000000001,
+          "completion_tokens": 17670
+        }
+      ],
+      "reason": [
+        {
+          "prompt_tokens": 1051,
+          "completion_tokens": 261,
+          "total_tokens": 1312,
+          "cached_tokens": 0,
+          "reasoning_tokens": 0,
+          "estimated_cost_cents": 0.022022000000000003
+        },
+        {
+          "prompt_tokens": 2331,
+          "completion_tokens": 278,
+          "total_tokens": 2609,
+          "cached_tokens": 0,
+          "reasoning_tokens": 0,
+          "estimated_cost_cents": 0.04041800000000001
+        }
+      ]
+    },
+    "total_latency": 126180.04310000001,
+    "telemetry": [
+      {
+        "batch_name": "Eligibility",
+        "page_count": 16,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 3320,
+        "output_budget_ratio": 0.810546875,
+        "estimated_cost_cents": 0.11000359999999999,
+        "latency_ms": 21190.02800000005
+      },
+      {
+        "batch_name": "Commercial",
+        "page_count": 20,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.13728120000000002,
+        "latency_ms": 24803.810699999973
+      },
+      {
+        "batch_name": "Commercial/A",
+        "page_count": 10,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.2143344,
+        "latency_ms": 24884.45279999997
+      },
+      {
+        "batch_name": "Commercial/A/A",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2053,
+        "output_budget_ratio": 0.501220703125,
+        "estimated_cost_cents": 0.10047240000000002,
+        "latency_ms": 12802.917200000025
+      },
+      {
+        "batch_name": "Commercial/A/B",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2218,
+        "output_budget_ratio": 0.54150390625,
+        "estimated_cost_cents": 0.1215004,
+        "latency_ms": 13472.857399999979
+      },
+      {
+        "batch_name": "Commercial/B",
+        "page_count": 10,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.23228240000000003,
+        "latency_ms": 25293.5368
+      },
+      {
+        "batch_name": "Commercial/B/A",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 3987,
+        "output_budget_ratio": 0.973388671875,
+        "estimated_cost_cents": 0.17582040000000002,
+        "latency_ms": 24093.940500000026
+      },
+      {
+        "batch_name": "Commercial/B/B",
+        "page_count": 5,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.1708364,
+        "latency_ms": 23345.473499999964
+      },
+      {
+        "batch_name": "Commercial/B/B/A",
+        "page_count": 3,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 3,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2711,
+        "output_budget_ratio": 0.661865234375,
+        "estimated_cost_cents": 0.11738440000000003,
+        "latency_ms": 16281.899499999941
+      },
+      {
+        "batch_name": "Commercial/B/B/B",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 3,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 2093,
+        "output_budget_ratio": 0.510986328125,
+        "estimated_cost_cents": 0.07602840000000001,
+        "latency_ms": 12659.396700000041
+      },
+      {
+        "batch_name": "Legal/Risk",
+        "page_count": 9,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.12603360000000002,
+        "latency_ms": 26084.651699999988
+      },
+      {
+        "batch_name": "Legal/Risk/A",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 3394,
+        "output_budget_ratio": 0.82861328125,
+        "estimated_cost_cents": 0.14943040000000002,
+        "latency_ms": 19952.97039999999
+      },
+      {
+        "batch_name": "Legal/Risk/B",
+        "page_count": 4,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 1,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.1566404,
+        "latency_ms": 24174.813199999975
+      },
+      {
+        "batch_name": "Legal/Risk/B/A",
+        "page_count": 2,
+        "ceiling_hit": true,
+        "split_occurred": true,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "output_budget_ratio": 1,
+        "estimated_cost_cents": 0.1419684,
+        "latency_ms": 23981.521999999997
+      },
+      {
+        "batch_name": "Legal/Risk/B/B",
+        "page_count": 2,
+        "ceiling_hit": false,
+        "split_occurred": true,
+        "split_depth": 2,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 1988,
+        "output_budget_ratio": 0.4853515625,
+        "estimated_cost_cents": 0.0731024,
+        "latency_ms": 12701.314899999998
+      }
+    ]
+  },
+  "result": {
+    "id": "DOC-012",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "RFQ",
+      "confidence": "HIGH",
+      "reason": "The document is a Request for Quotations (RFQ) issued by the NYS Office of General Services for an Aggregate Hardware Buy, containing submission deadlines, scope of work, evaluation criteria, and terms and conditions, clearly indicating a procurement solicitation.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "RFQ Title Aggregate Hardware Buy 23-01 RFQ Number 23-01"
+        },
+        {
+          "page_number": 2,
+          "quote": "OGS is seeking competitive quotes from Contract holders of the OGS Group 73600 Award 22802 Information Technology \nUmbrella Contract – Manufacturer Based (Statewide) (“Manufacturer Umbrella Contract”) for the Lot(s) indicated below."
+        },
+        {
+          "page_number": 6,
+          "quote": "OGS is releasing this Request for Quotes (RFQ) for Aggregate Hardware Buy 23-01 (“RFQ 23-01”).  The purpose of RFQ 23-01 is to establish an award for each Configuration as set forth in Attachment A - Technical Response."
+        },
+        {
+          "page_number": 8,
+          "quote": "Quotes and pricing submitted in response to RFQ 23-01 must remain open and valid for at least 120 calendar days from the date that RFQ Submissions are due, unless the time for making an award is extended by mutual consent of OGS and the Contractor."
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "AMBIGUITIES_CONTRADICTIONS",
+          "title": "Delivery Timeframe Contradiction",
+          "fact": "The document states that the Contractor must deliver within 45 calendar days, but also states that for imaging, the delivery date shall not be required to be less than 45 days from date of Purchase Order.",
+          "business_implication": "There is a potential contradiction regarding the delivery timeframe for imaged units, which could cause confusion.",
+          "action_recommendation": "Seek clarification from OGS on the exact delivery requirements for imaged units.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "The Contractor shall deliver the units ordered by an Authorized User within 45 calendar days of receipt of a Purchase Order, approved by OSC if applicable, unless either the Authorized User or OGS grants an extension of time as provided below."
+            },
+            {
+              "page_number": 18,
+              "quote": "Notwithstanding the foregoing in this clause the delivery date shall not be required to be less than 45 days from date of Purchase Order."
+            }
+          ],
+          "requires_reasoning_review": true
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Only Lot 2 Hardware Contractors Eligible",
+          "fact": "RFQ 23-01 is only being distributed to Contractors holding an award for Lot 2 – Hardware under the Manufacturer Umbrella Contract. Quotes will only be accepted from Lot 2 Contractors; Resellers are not eligible and any bids from a Reseller will be disqualified.",
+          "business_implication": "Bidders must hold an active Lot 2 Hardware award under OGS Group 73600 Award 22802 to participate. Resellers or contractors without Lot 2 will be automatically disqualified.",
+          "action_recommendation": "Verify that your company holds a current Lot 2 Hardware award under the Manufacturer Umbrella Contract before preparing a bid.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Quotes from Resellers will not be accepted. Contractors must have an award for Lot 2 to bid on this RFQ."
+            },
+            {
+              "page_number": 7,
+              "quote": "RFQ 23-01 is only being distributed to Contractors holding an award for Lot 2 – Hardware under the Manufacturer Umbrella Contract (“Contractors”). Quotes under RFQ 23-01 will only be accepted from Lot 2 Contractors on the Manufacturer Umbrella Contract; Resellers are not eligible to respond and any bids from a Reseller will be disqualified."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Products Must Be on Lot 2 Price List",
+          "fact": "All Products proposed as part of the Standard Configuration, Required Products, and Additional Products must be on the Contractor's Manufacturer Umbrella Contract Lot 2 - Hardware price list at the time of the RFQ Submission due date.",
+          "business_implication": "Bidders must ensure that every SKU they propose is already on their approved Lot 2 price list. Any SKU not on the price list may cause disqualification or removal from the bid.",
+          "action_recommendation": "Review your Lot 2 price list to confirm all proposed SKUs are included and submit any necessary contract modification requests before the submission deadline.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 7,
+              "quote": "All Products proposed as part of the Standard Configuration and Products proposed for Required Products, as well as any Additional Products, must be on the Contractor's Manufacturer Umbrella Contract Lot 2 - Hardware price list at the time of the RFQ Submission due date."
+            },
+            {
+              "page_number": 9,
+              "quote": "All proposed SKUs for proposed products offered in Attachment A – Technical Response must be on the Contractor’s approved Manufacturer Umbrella Contract price list. Any Configuration that contains a SKU that is not included on the Manufacturer’s Umbrella Contract price list may not proceed further in the evaluation process."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Mandatory Submission Documents and Format",
+          "fact": "RFQ Submissions must include Attachment A – Technical Response, Attachment D – Issue Escalation Plan, and the Manufacturer Information Page. Submissions must be on two USB flash drives, in Microsoft Office formats (Word/Excel 2012 or higher), and not password protected.",
+          "business_implication": "Failure to provide all required documents in the specified format may result in rejection. Bidders must ensure strict compliance with submission packaging and labeling.",
+          "action_recommendation": "Prepare two USB drives with all required documents, clearly labeled, and follow the packaging instructions exactly.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Submission Includes: • Attachment A – Technical Response • Attachment D – Issue Escalation Plan • Manufacturer Information Page (Last page of this Document)"
+            },
+            {
+              "page_number": 7,
+              "quote": "Two (2) digital storage devices (USB flash drive), clearly labeled, shall contain the following documents, completed in their entirety: • Attachment A – Technical Response • Attachment D – Issue Escalation Plan • Manufacturer Information Page (Last page of this Document)"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Award Based on Highest Total Financial Score",
+          "fact": "Awards will be made to the responsive and responsible Contractor(s) with the highest Total Financial Score per Configuration that meets all specified technical requirements. Technical response is Pass/Fail; Financial Response is 100% of evaluation.",
+          "business_implication": "Bidders must pass the technical evaluation to be considered; pricing is the sole competitive factor. The lowest cost for each configuration will win.",
+          "action_recommendation": "Focus on offering competitive pricing while ensuring all technical requirements are met.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "BASIS FOR AWARD Highest Total Financial Score meeting specified Technical Requirements and Mandatory Pass/Fail Requirements for each Standard Configuration and associated Required Products."
+            },
+            {
+              "page_number": 8,
+              "quote": "Awards will be made to the responsive and responsible Contractor(s) with the highest Total Financial Score per Configuration that meets all the specified technical requirements."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Pricing Must Not Exceed Net NYS Contract Price",
+          "fact": "Quoted pricing for Standard Configurations and Required Products must not exceed the Net NYS Contract Price on the Manufacturer Umbrella Contract. Discount percentages must be applied to the Net NYS Contract Price.",
+          "business_implication": "Bidders must ensure their quoted prices are at or below their existing contract prices. This may limit pricing flexibility.",
+          "action_recommendation": "Review your current Net NYS Contract Prices and ensure your bid pricing is compliant.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "In no event may quoted pricing exceed the Net NYS Contract Price on the Manufacturer’s Umbrella Contract."
+            },
+            {
+              "page_number": 12,
+              "quote": "In no event may quoted pricing exceed the Net NYS Contract Price on the Contractor’s Manufacturer Umbrella Contract."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Bid Validity Period",
+          "fact": "Quotes and pricing must remain open and valid for at least 120 calendar days from the RFQ submission due date, unless extended by mutual consent.",
+          "business_implication": "Bidders must be prepared to hold their pricing for at least 120 days, which may affect cost assumptions.",
+          "action_recommendation": "Ensure your pricing remains valid for the required period and consider potential extensions.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Quotes and pricing submitted in response to RFQ 23-01 must remain open and valid for at least 120 calendar days from the date that RFQ Submissions are due, unless the time for making an award is extended by mutual consent of OGS and the Contractor."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "EPEAT Certification Requirements",
+          "fact": "Desktops, laptops, and monitors must have EPEAT Gold certification at time of award, except Chromebooks which must meet EPEAT Silver. Quarterly reporting on EPEAT registered products is required.",
+          "business_implication": "Bidders must ensure their products meet the required EPEAT certifications and be prepared to report on them quarterly.",
+          "action_recommendation": "Verify EPEAT certification status for all proposed products and establish reporting processes.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 19,
+              "quote": "Desktops, laptops, and computer monitors provided under any resulting Agreement are required to have achieved a minimum certification of EPEAT Gold at the time of award with the exception of the three Chromebook Configurations (Chromebook Low, Chromebook with Touchscreen and Chromebook with Touchscreen – 14”). Chromebook Standard Configurations will be required to meet a minimum certification of EPEAT Silver at the time of award."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Export Administration Regulations Restricted Business Entities",
+          "fact": "OGS will not accept a bid from a Contractor, or a Contractor Product that contains Products made by an entity on any of the lists maintained by the US Customs and Border Patrol (forced labor lists).",
+          "business_implication": "Bidders must ensure that neither they nor their suppliers are on the CBP withhold release orders list. If a product becomes restricted, it must be removed from the price list.",
+          "action_recommendation": "Screen your supply chain against the CBP list and have contingency plans for product removal.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "OGS will not accept a bid from a Contractor, or a Contractor Product that contains Products made by an entity on any of the lists maintained by the US Customs and Border Patrol at the link set out below."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "OGS Not Liable for Bid Preparation Costs",
+          "fact": "OGS will not be held liable for any cost incurred by the Contractor for work performed in the preparation of a response to this RFQ.",
+          "business_implication": "Bidders bear all costs associated with preparing their bid; there is no reimbursement.",
+          "action_recommendation": "Budget accordingly for bid preparation costs.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "OGS will not be held liable for any cost incurred by the Contractor for work performed in the preparation of a response to this Request for Quote (RFQ)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "OGS Reserved Right to Terminate",
+          "fact": "OGS reserves the right to terminate an Agreement under this RFQ, in whole or in part, for Contractor's repeated failure to comply with any requirement under the Agreement.",
+          "business_implication": "Bidders must ensure ongoing compliance to avoid termination.",
+          "action_recommendation": "Implement robust compliance processes to meet all contractual obligations.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 22,
+              "quote": "Terminate an Agreement under this RFQ, in whole or in part, for Contractor’s repeated failure to comply with any requirement under the Agreement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Reseller Quotes Not Accepted",
+          "fact": "Quotes from Resellers will not be accepted. Contractors must have an award for Lot 2 to bid on this RFQ.",
+          "business_implication": "Only manufacturers with an existing Lot 2 award under the Manufacturer Umbrella Contract can participate; resellers are excluded.",
+          "action_recommendation": "Verify that your company holds a Lot 2 award under OGS Group 73600 Award 22802 before preparing a bid.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Quotes from Resellers will not be accepted. Contractors must have an award for Lot 2 to bid on this RFQ."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "RFQ Submission Deadline",
+          "fact": "RFQ Submission Due: 3/28/2023 at 1:30pm EDT. Submission includes Attachment A – Technical Response, Attachment D – Issue Escalation Plan, and Manufacturer Information Page.",
+          "business_implication": "The bidder must submit the required documents by the specified deadline to be considered.",
+          "action_recommendation": "Ensure all required documents are prepared and submitted before the deadline.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "RFQ Submission Due \nSubmission Includes:  \n• Attachment A – Technical Response  \n• Attachment D – Issue Escalation Plan \n• Manufacturer Information Page (Last page of this \nDocument) \n3/28/2023 \n4/4/2023  \n1:30pm EDT"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Financial Response Deadline",
+          "fact": "OGS sends out Attachment C – Financial Response, which includes approved technical response on 6/28/2023. Contractor returns completed Attachment C – Financial Response by 7/12/2023 at 11:00am EDT.",
+          "business_implication": "The bidder must be prepared to complete and return the financial response within the specified timeframe after receiving it.",
+          "action_recommendation": "Plan internal resources to complete the financial response promptly after receiving it.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "OGS sends out Attachment C – Financial Response, \nwhich includes approved technical response \n6/28/2023   \nContractor returns completed Attachment C – Financial \nResponse  \n7/12/2023  11:00am EDT"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Basis for Award",
+          "fact": "Basis for Award: Highest Total Financial Score meeting specified Technical Requirements and Mandatory Pass/Fail Requirements for each Standard Configuration and associated Required Products.",
+          "business_implication": "Award is based on financial score, but only after passing technical and mandatory requirements.",
+          "action_recommendation": "Ensure technical response fully meets all mandatory requirements to be eligible for financial evaluation.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "BASIS FOR AWARD Highest Total Financial Score meeting specified Technical Requirements and Mandatory Pass/Fail Requirements for each Standard Configuration and associated Required Products."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Electronic Submission Only",
+          "fact": "Only email submissions of Attachment B will be accepted. Send emails to OGS.sm.PS.AggregateBuy@ogs.ny.gov with subject line 'Aggregate Hardware Buy 23-01 – Questions and Comments'.",
+          "business_implication": "The bidder must use the specified email address and subject line for questions and comments.",
+          "action_recommendation": "Use the provided email and subject line for any questions or comments.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Only email submissions of Attachment B will be accepted: \nSend emails to:  OGS.sm.PS.AggregateBuy@ogs.ny.gov \nSubject line:       Aggregate Hardware Buy 23-01 – Questions and Comments"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "No Liability for Preparation Costs",
+          "fact": "OGS will not be held liable for any cost incurred by the Contractor for work performed in the preparation of a response to this RFQ.",
+          "business_implication": "The bidder bears all costs of preparing the bid; no reimbursement is available.",
+          "action_recommendation": "Budget accordingly for bid preparation costs.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "OGS will not be held liable for any cost incurred by the Contractor for work performed in the preparation of a response to this Request for Quote (RFQ)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Incorporation of Umbrella Contract Terms",
+          "fact": "This RFQ incorporates the terms and conditions of the Contractor’s OGS Information Technology Umbrella Contract – Manufacturer Based (Statewide) including executed amendments and the additional terms and conditions set forth in this RFQ, its Attachments, and Appendices.",
+          "business_implication": "The bidder must be familiar with and comply with the existing Umbrella Contract terms in addition to the RFQ-specific terms.",
+          "action_recommendation": "Review the Umbrella Contract terms and ensure compliance with both sets of requirements.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "This RFQ incorporates the terms and conditions of the Contractor’s OGS Information Technology Umbrella Contract – Manufacturer Based (Statewide) (“Manufacturer Umbrella Contract”) including executed amendments and the additional terms and conditions set forth in this RFQ, its Attachments, and Appendices."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Late Responses May Be Rejected",
+          "fact": "Late RFQ responses may be rejected. The received time of a RFQ response will be determined by OGS.",
+          "business_implication": "Timely submission is critical; late submissions risk rejection.",
+          "action_recommendation": "Submit well before the deadline to avoid any risk of rejection.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 6,
+              "quote": "Late RFQ responses may be rejected. The received time of a RFQ response will be determined by OGS."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "SKUs Must Be on Approved Price List",
+          "fact": "All proposed SKUs must be on the Contractor's approved Manufacturer Umbrella Contract price list prior to the RFQ submission due date.",
+          "business_implication": "If any SKU is not on the price list, the configuration may not proceed in evaluation.",
+          "action_recommendation": "Verify all SKUs are on the approved price list before submission.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "All proposed SKUs for Products offered must be on the Contractor’s approved Manufacturer Umbrella Contract price list prior to the RFQ Submission due date for RFQ 23-01."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Bid Validity Period",
+          "fact": "Quotes and pricing must remain valid for at least 120 calendar days from the due date.",
+          "business_implication": "Bidder must be prepared to hold pricing for at least 120 days.",
+          "action_recommendation": "Ensure pricing remains valid for the required period.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Quotes and pricing submitted in response to RFQ 23-01 must remain open and valid for at least 120 calendar days from the date that RFQ Submissions are due, unless the time for making an award is extended by mutual consent of OGS and the Contractor."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Submission Packaging and Delivery",
+          "fact": "RFQ Submission must be packaged, sealed, and submitted to the specified location; contractor is solely responsible for timely delivery.",
+          "business_implication": "Late delivery may result in rejection; contractor bears risk of delivery issues.",
+          "action_recommendation": "Plan for timely delivery and consider using a reliable courier.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Each RFQ Submission should be packaged, sealed and submitted to the location stated below. A Contractor is solely responsible for timely delivery of its RFQ Submission prior to the stated deadline for submission."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Evaluation Weights",
+          "fact": "Technical Response is Pass/Fail; Financial Response is 100% of evaluation. Total Financial Score based on lowest cost with points: Standard Configuration 50, Warranty/Services 15, Components 30, Peripherals 5.",
+          "business_implication": "Price is the sole factor in award decision; technical compliance is a gate.",
+          "action_recommendation": "Focus on competitive pricing while ensuring technical compliance.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 9,
+              "quote": "Technical Response (Attachment A – Technical Response, Attachment D – Issue Escalation Plan, and Manufacturer Information Page): Pass/Fail Financial Response : 100% Total Financial Score is based on lowest cost and the points are weighted as follows: • Standard Configuration - 50 points • Required Products o Warranty/Services - 15 points o Components - 30 points o Peripherals - 5 points"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Pricing Cannot Exceed Net NYS Contract Price",
+          "fact": "Quoted pricing must not exceed the Net NYS Contract Price on the Manufacturer's Umbrella Contract.",
+          "business_implication": "Bidder must ensure pricing is at or below the established contract price.",
+          "action_recommendation": "Review current contract prices and set bid prices accordingly.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 10,
+              "quote": "In no event may quoted pricing exceed the Net NYS Contract Price on the Manufacturer’s Umbrella Contract."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Discount Percentages Cannot Be Decreased",
+          "fact": "Required Product discount percentages may be increased, but not decreased during the term of any resulting Agreement and any extensions.",
+          "business_implication": "Bidder must be cautious in setting initial discount percentages as they cannot be lowered later.",
+          "action_recommendation": "Set discount percentages at a level that is sustainable for the contract term.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "The discount percentages may be increased, but not decreased during the term of any resulting Agreement and any extensions."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Awarded Prices Remain Fixed",
+          "fact": "The awarded Standard Configuration price and its component prices will remain equal to the Agreement awarded price for the term of the Agreement(s) and any extensions, though Contractor may offer lower pricing at any time.",
+          "business_implication": "Bidder cannot increase prices during the contract term, but may lower them.",
+          "action_recommendation": "Ensure initial pricing is set at a level that remains profitable for the contract duration.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 11,
+              "quote": "The awarded Standard Configuration price and its component prices will remain equal to the Agreement awarded price for the term of the Agreement(s) and any extensions, though Contractor may offer lower pricing at any time."
+            }
+          ]
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "No Exceptions to Appendix A",
+          "fact": "OGS will not entertain any exceptions to Appendix A (Standard Clauses for New York State Contracts).",
+          "business_implication": "Bidder must accept all standard clauses without modification.",
+          "action_recommendation": "Review Appendix A and be prepared to accept all terms.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "Contractor is advised that OGS will not entertain any exceptions to Appendix A (Standard Clauses for New York State Contracts)."
+            }
+          ]
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Building Access Procedures",
+          "fact": "Visitors must check in with photo ID; pre-registration is encouraged to avoid delays.",
+          "business_implication": "Bidder should pre-register to ensure timely submission.",
+          "action_recommendation": "Pre-register for building access at least 24 hours before submission.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 8,
+              "quote": "To access the Corning Tower, all visitors must check in by presenting photo identification at the information desk. Delays may occur due to a high volume of visitors. Visitors conducting Procurement Services business are encouraged to pre-register for building access by contacting the Procurement Services receptionist at (518) 474-6262 at least 24 hours prior to the visit."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Delivery Deadline",
+          "fact": "The Contractor shall deliver the units ordered by an Authorized User within 45 calendar days of receipt of a Purchase Order, approved by OSC if applicable, unless either the Authorized User or OGS grants an extension of time as provided below.",
+          "business_implication": "Bidders must have logistics and supply chain capabilities to meet the 45-day delivery requirement.",
+          "action_recommendation": "Assess ability to meet the 45-day delivery timeline and plan for potential extensions.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "The Contractor shall deliver the units ordered by an Authorized User within 45 calendar days of receipt of a Purchase Order, approved by OSC if applicable, unless either the Authorized User or OGS grants an extension of time as provided below."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "OGS Sole Discretion in Compliance and Replacement Determinations",
+          "fact": "Determination of compliance will be at the sole discretion of OGS. OGS will be solely responsible for determining if the replacement Product meets or exceeds the original Product offered in the Standard Configurations and/or Required Products. OGS’ determination that a replacement system meets or exceeds the original offered Standard Configuration will be final and binding on the Contractor.",
+          "business_implication": "OGS has broad discretion in evaluating compliance and replacement products, which could impact the contractor's ability to modify offerings.",
+          "action_recommendation": "Ensure all products and modifications strictly meet OGS specifications to avoid adverse determinations.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "Determination of compliance will be at the sole discretion of OGS."
+            },
+            {
+              "page_number": 16,
+              "quote": "OGS will be solely responsible for determining if the replacement Product meets or exceeds the original Product offered in the Standard Configurations and/or Required Products."
+            },
+            {
+              "page_number": 17,
+              "quote": "OGS’ determination that a replacement system meets or exceeds the original offered Standard Configuration will be final and binding on the Contractor."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Not-To-Exceed Pricing and Off-Contract Sales Prohibition",
+          "fact": "Agreement prices are Not-To-Exceed prices. Off-Contract sales are prohibited.",
+          "business_implication": "Contractors must adhere to the agreed pricing and cannot sell outside the contract, limiting flexibility.",
+          "action_recommendation": "Ensure pricing is competitive and compliant with the Not-To-Exceed requirement.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "Agreement prices are Not-To-Exceed prices. Off-Contract sales are prohibited."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "OGS Right to Award Configuration to Next Lowest Bidder",
+          "fact": "During the term of the Agreement, should the Contractor: fail to provide acceptable notice of EOL Standard Configuration(s); fail to submit a replacement Standard Configuration via the process outlined in Appendix 2 – Agreement Price List Modification Procedures in the timeframe referenced above; or is unable to provide a replacement model with specifications that meet or exceed the specifications of the original awarded Configuration, OGS reserves the right to award the Configuration to the Contractor with the next lowest bid from RFQ 23-01 for that Configuration that is willing to accept the Configuration award without rebidding.",
+          "business_implication": "Failure to meet EOL notification or replacement requirements could result in losing the award to a competitor, impacting revenue.",
+          "action_recommendation": "Establish robust EOL monitoring and replacement processes to ensure compliance and avoid losing the configuration.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "During the term of the Agreement, should the Contractor: fail to provide acceptable notice of EOL Standard Configuration(s); fail to submit a replacement Standard Configuration via the process outlined in Appendix 2 – Agreement Price List Modification Procedures in the timeframe referenced above; or is unable to provide a replacement model with specifications that meet or exceed the specifications of the original awarded Configuration, OGS reserves the right to award the Configuration to the Contractor with the next lowest bid from RFQ 23-01 for that Configuration that is willing to accept the Configuration award without rebidding."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Supply Shortage Prioritization",
+          "fact": "In the event of a supply shortage, a Contractor must make all reasonable efforts to prioritize orders placed under any resulting originating Agreement for New York State Authorized Users, over any orders made by extension of any resulting Agreement to customers outside of New York State Authorized Users. In addition, in the event that the Contractor believes it necessary to prioritize orders made by extension of any resulting Agreement to customers outside of New York State Authorized Users, over orders placed under any resulting originating Agreement for New York State Authorized Users, the Contractor must contact OGS for approval prior to fulfilling such orders.",
+          "business_implication": "Contractors must prioritize NYS orders during shortages, which could impact other customers and require OGS approval for exceptions.",
+          "action_recommendation": "Develop a supply shortage response plan that prioritizes NYS orders and includes a process for obtaining OGS approval if needed.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "In the event of a supply shortage, a Contractor must make all reasonable efforts to prioritize orders placed under any resulting originating Agreement for New York State Authorized Users, over any orders made by extension of any resulting Agreement to customers outside of New York State Authorized Users. In addition, in the event that the Contractor believes it necessary to prioritize orders made by extension of any resulting Agreement to customers outside of New York State Authorized Users, over orders placed under any resulting originating Agreement for New York State Authorized Users, the Contractor must contact OGS for approval prior to fulfilling such orders."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Website Restrictions",
+          "fact": "If a Contractor maintains its own dedicated Agreement website, they are restricted to showing literature only directed toward the models currently on the approved OGS Aggregate Hardware Buy 23-01 Agreement. The Contractor’s website shall not have a web-based ordering system with the capability of receiving orders from Authorized Users. Contractor may provide a “hosted” or “punch-out” catalog that is available to Authorized Users via an online NYS marketplace.",
+          "business_implication": "Contractors must ensure their websites comply with OGS restrictions, limiting e-commerce capabilities.",
+          "action_recommendation": "Review and adjust any existing website to ensure compliance with OGS requirements.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 13,
+              "quote": "If a Contractor maintains its own dedicated Agreement website, they are restricted to showing literature only directed toward the models currently on the approved OGS Aggregate Hardware Buy 23-01 Agreement. The Contractor’s website shall not have a web-based ordering system with the capability of receiving orders from Authorized Users. Contractor may provide a “hosted” or “punch-out” catalog that is available to Authorized Users via an online NYS marketplace."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "EOL Product Warranty Obligations",
+          "fact": "All EOL Additional Products purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users. All EOL Replacement Products purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users. All EOL Standard Configurations purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users.",
+          "business_implication": "Contractors must ensure warranty or replacement support for EOL products, which could incur costs.",
+          "action_recommendation": "Plan for EOL product support and include associated costs in pricing.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 16,
+              "quote": "All EOL Additional Products purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users."
+            },
+            {
+              "page_number": 16,
+              "quote": "All EOL Replacement Products purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users."
+            },
+            {
+              "page_number": 16,
+              "quote": "All EOL Standard Configurations purchased by Authorized Users must remain under warranty or be replaceable at no additional charge to the Authorized Users."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Issue Escalation Plan Required",
+          "fact": "Contractor shall submit an Issue Escalation Plan. Space has been provided in Attachment D – Issue Escalation Plan for entry of the plan and additional information may be provided in a separate, unlocked Microsoft Word document.",
+          "business_implication": "The bidder must prepare and submit an Issue Escalation Plan as part of the quote, and it may be modified by OGS as a condition of award.",
+          "action_recommendation": "Prepare a comprehensive Issue Escalation Plan using Attachment D and ensure it is submitted with the quote.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "Contractor shall submit an Issue Escalation Plan. Space has been provided in Attachment D – Issue Escalation Plan for entry of the plan and additional information may be provided in a separate, unlocked Microsoft Word document."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Imaging/Loading Services SKU Requirement",
+          "fact": "The Contractor is responsible for adding a SKU for Authorized User specific standard software imaging under Additional Products on Attachment A – Technical Response if it is not already included as part of the Standard Configuration or its Required Products.",
+          "business_implication": "The bidder must ensure that imaging services are properly included in the technical response, potentially requiring additional SKUs.",
+          "action_recommendation": "Review Attachment A to confirm whether imaging SKUs are included or need to be added.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "The Contractor is responsible for adding a SKU for Authorized User specific standard software imaging under Additional Products on Attachment A – Technical Response if it is not already included as part of the Standard Configuration or its Required Products."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Delivery Timeline for Customized Imaging",
+          "fact": "The Contractor must deliver the remainder of the imaged units ordered by the Authorized User, within 30 calendar days from the date of Authorized User’s written approval of the test unit. Notwithstanding the foregoing in this clause the delivery date shall not be required to be less than 45 days from date of Purchase Order.",
+          "business_implication": "The bidder must be able to meet the 30-day delivery after approval, but the 45-day minimum from PO provides a buffer.",
+          "action_recommendation": "Ensure operational capacity to deliver imaged units within these timelines.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "The Contractor must deliver the remainder of the imaged units ordered by the Authorized User, within 30 calendar days from the date of Authorized User’s written approval of the test unit. Notwithstanding the foregoing in this clause the delivery date shall not be required to be less than 45 days from date of Purchase Order."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Customer Service Response Time",
+          "fact": "Inquiries shall be responded to within twenty-four (24) hours.",
+          "business_implication": "The bidder must have sufficient customer service staff to respond to inquiries within 24 hours.",
+          "action_recommendation": "Ensure staffing and processes are in place to meet the 24-hour response requirement.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "Inquiries shall be responded to within twenty-four (24) hours."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Sales Reporting Requirements",
+          "fact": "Sales reports are due to OGS one (1) month directly following the end of each quarter. The quarters for each sales report submission are as follows: January - March; April - June; July - September; October - December. The Contractor must send OGS sales reports for the duration of any resulting Agreement and any extensions.",
+          "business_implication": "The bidder must have systems to track and report sales quarterly, including deliveries outside the 45-day period.",
+          "action_recommendation": "Set up reporting processes to ensure timely and accurate submission of sales reports.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 19,
+              "quote": "Sales reports are due to OGS one (1) month directly following the end of each quarter. The quarters for each sales report submission are as follows: January - March; April - June; July - September; October - December. The Contractor must send OGS sales reports for the duration of any resulting Agreement and any extensions."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "EPEAT Certification Requirements",
+          "fact": "Desktops, laptops, and computer monitors provided under any resulting Agreement are required to have achieved a minimum certification of EPEAT Gold at the time of award with the exception of the three Chromebook Configurations (Chromebook Low, Chromebook with Touchscreen and Chromebook with Touchscreen – 14”). Chromebook Standard Configurations will be required to meet a minimum certification of EPEAT Silver at the time of award.",
+          "business_implication": "The bidder must ensure that all offered products meet the specified EPEAT certification levels, which may affect product eligibility.",
+          "action_recommendation": "Verify EPEAT certification status for all proposed products and ensure compliance.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 19,
+              "quote": "Desktops, laptops, and computer monitors provided under any resulting Agreement are required to have achieved a minimum certification of EPEAT Gold at the time of award with the exception of the three Chromebook Configurations (Chromebook Low, Chromebook with Touchscreen and Chromebook with Touchscreen – 14”). Chromebook Standard Configurations will be required to meet a minimum certification of EPEAT Silver at the time of award."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Export Administration Regulations Restricted Business Entities",
+          "fact": "OGS will not accept a bid from a Contractor, or a Contractor Product that contains Products made by an entity on any of the lists maintained by the US Customs and Border Patrol at the link set out below.",
+          "business_implication": "The bidder must ensure that neither they nor their suppliers are on the restricted lists, or they may be disqualified.",
+          "action_recommendation": "Conduct due diligence to ensure compliance with the restricted entity lists.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "OGS will not accept a bid from a Contractor, or a Contractor Product that contains Products made by an entity on any of the lists maintained by the US Customs and Border Patrol at the link set out below."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Advertising Restrictions",
+          "fact": "Contractor is reminded of the requirements set forth in the Contractor’s Manufacturer Umbrella Contract, Appendix B, Section 13, Contract Publicity, incorporated as part of the Contract, that any Contractor’s press or media releases, advertisements, or promotional literature, regardless of the medium, referring to an Contractor must be reviewed and approved by OGS prior to issuance.",
+          "business_implication": "The bidder must obtain OGS approval before issuing any press releases or advertisements referencing the contract.",
+          "action_recommendation": "Implement internal procedures to ensure all publicity is reviewed and approved by OGS.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "Contractor is reminded of the requirements set forth in the Contractor’s Manufacturer Umbrella Contract, Appendix B, Section 13, Contract Publicity, incorporated as part of the Contract, that any Contractor’s press or media releases, advertisements, or promotional literature, regardless of the medium, referring to an Contractor must be reviewed and approved by OGS prior to issuance."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Warranty Replacement Obligation",
+          "fact": "If a unit becomes inoperable within the warranty window and cannot be repaired, a brand new unit shall be provided at no charge. Contractor shall not provide refurbished or remanufactured equipment as they are not allowed under this Aggregate Hardware Buy 23-01.",
+          "business_implication": "The bidder must be prepared to replace inoperable units with new units at no charge, which could be costly.",
+          "action_recommendation": "Assess warranty costs and ensure pricing accounts for potential replacements.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 20,
+              "quote": "If a unit becomes inoperable within the warranty window and cannot be repaired, a brand new unit shall be provided at no charge. Contractor shall not provide refurbished or remanufactured equipment as they are not allowed under this Aggregate Hardware Buy 23-01."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Network Connection Requirements",
+          "fact": "Connections to the Authorized User’s networks must be performed in a manner prescribed by an Authorized User to preserve the integrity of the Authorized User’s network, confidentiality and integrity of information transmitted over that Authorized User’s network, and the availability of the network. Access for remote diagnosis must be approved and supervised by the Authorized User’s technical representative for each specific incident.",
+          "business_implication": "The contractor must comply with strict network access protocols and obtain approval for each remote diagnostic session, which may increase operational complexity and require coordination with Authorized User technical staff.",
+          "action_recommendation": "Ensure that technical staff are familiar with NYS ITS Technology Standard NYS-S14-010 and prepare to follow Authorized User-specific network access procedures.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "Connections to the Authorized User’s networks must be performed in a manner prescribed by an Authorized User to preserve the integrity of the Authorized User’s network, confidentiality and integrity of information transmitted over that Authorized User’s network, and the availability of the network. Access for remote diagnosis must be approved and supervised by the Authorized User’s technical representative for each specific incident."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Docking Station Warranty Requirements",
+          "fact": "The Contractor is responsible for providing a warranty SKU(s) for docking stations listed as a Required Product or Additional Product on the price lists. The warranty SKU(s) must fully cover hardware, software, and drivers. The warranty SKU(s) for docking stations must provide complete support, including break/fix, for all compatible operating systems.",
+          "business_implication": "The contractor must ensure that warranty offerings for docking stations are comprehensive, covering all components and operating systems, which may affect pricing and product availability.",
+          "action_recommendation": "Verify that warranty SKUs for docking stations meet the full coverage requirements and include support for all compatible operating systems.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "The Contractor is responsible for providing a warranty SKU(s) for docking stations listed as a Required Product or Additional Product on the price lists. The warranty SKU(s) must fully cover hardware, software, and drivers. The warranty SKU(s) for docking stations must provide complete support, including break/fix, for all compatible operating systems."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Additional Product Warranty SKUs",
+          "fact": "The Contractor is responsible for adding SKUs for additional warranty year options (e.g. 3 year, 4 year, 5 year) under Additional Products on Attachment A – Technical Response.",
+          "business_implication": "The contractor must offer extended warranty options for additional products, which may require additional SKU management and pricing considerations.",
+          "action_recommendation": "Prepare to list extended warranty SKUs for additional products in Attachment A – Technical Response.",
+          "priority": "LOW",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "The Contractor is responsible for adding SKUs for additional warranty year options (e.g. 3 year, 4 year, 5 year) under Additional Products on Attachment A – Technical Response."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Repeated Failure to Comply",
+          "fact": "OGS reserves the right to terminate an Agreement under this RFQ, in whole or in part, for Contractor’s repeated failure to comply with any requirement under the Agreement.",
+          "business_implication": "The contractor faces termination risk if it repeatedly fails to meet any contractual requirement, emphasizing the need for strict compliance.",
+          "action_recommendation": "Implement robust compliance monitoring to avoid repeated failures that could lead to termination.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 22,
+              "quote": "Terminate an Agreement under this RFQ, in whole or in part, for Contractor’s repeated failure to comply with any requirement under the Agreement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "OGS Reserved Rights to Reject and Disqualify",
+          "fact": "OGS reserves the right to reject any or all RFQ Submissions received in response to the RFQ; withdraw the RFQ any time, in whole or in part, in its sole discretion; award all, any number, or none of the 14 Product Configurations; disqualify any Contractor whose Quote fails to conform to the requirements of the RFQ; and reject any Bid containing proposed prices that are unrealistically low as determined by OGS.",
+          "business_implication": "The bidder must ensure full compliance with all RFQ requirements and realistic pricing to avoid disqualification or rejection.",
+          "action_recommendation": "Carefully review all requirements and ensure pricing is realistic and justifiable.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "Reject any or all RFQ Submissions received in response to the RFQ;"
+            },
+            {
+              "page_number": 21,
+              "quote": "Disqualify any Contractor whose Quote fails to conform to the requirements of the RFQ;"
+            },
+            {
+              "page_number": 22,
+              "quote": "Reject any Bid containing proposed prices that are unrealistically low as determined by OGS;"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Unilateral Non-Material Revisions",
+          "fact": "OGS reserves the right to unilaterally make non-material revisions, changes and/or updates to any templates and/or Attachments to the Aggregate Hardware Buy 23-01 Agreement without processing a formal amendment and/or modification.",
+          "business_implication": "The contractor must accept that OGS can make non-material changes to templates and attachments without formal amendment, potentially affecting terms without negotiation.",
+          "action_recommendation": "Monitor any updates to templates and attachments and assess their impact on the agreement.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 22,
+              "quote": "Unilaterally make non-material revisions, changes and/or updates to any templates and/or Attachments to the Aggregate Hardware Buy 23-01 Agreement without processing a formal amendment and/or modification;"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Modification of Products and Specifications",
+          "fact": "OGS reserves the right to modify the Products identified in Attachment A – Technical Response prior to the prequalified Contractors’ submittal of Attachment C – Financial Response, and to modify a specification within the Standard Configuration or Required Product categories in Attachment A – Technical Response or Attachment C – Financial Response prior to the Financial Evaluation, upon written notice to Contractors that have submitted a quote.",
+          "business_implication": "The contractor must be prepared for potential changes to product specifications and configurations before financial submission, which could affect pricing and offerings.",
+          "action_recommendation": "Stay flexible and be prepared to adjust pricing and product offerings if specifications change.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 22,
+              "quote": "Modify the Products identified in Attachment A – Technical Response prior to the prequalified Contractors’ submittal of Attachment C – Financial Response."
+            },
+            {
+              "page_number": 22,
+              "quote": "Modify a specification within the Standard Configuration or Required Product categories in Attachment A – Technical Response or Attachment C – Financial Response prior to the Financial Evaluation, upon written notice to Contractors that have submitted a quote."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "OPPORTUNITY_FIT",
+          "title": "Aggregate Hardware Buy Opportunity",
+          "fact": "The RFQ is for Aggregate Hardware Buy 23-01 under the IT Umbrella Contract – Manufacturer Based (Statewide).",
+          "business_implication": "This is a large statewide procurement opportunity for hardware manufacturers and their resellers.",
+          "action_recommendation": "Assess capability to meet the requirements and consider bidding.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "RFQ Title Aggregate Hardware Buy 23-01 RFQ Number 23-01"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Contractor Must Comply with OGS Policies",
+          "fact": "By signing, Contractor affirms that it understands and agrees to comply with OGS policies and procedures relative to permissible contacts.",
+          "business_implication": "Non-compliance with procurement lobbying rules could disqualify the bidder.",
+          "action_recommendation": "Ensure all staff are aware of and comply with OGS policies.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "By signing, Contractor affirms that it understands and agrees to comply with OGS policies and procedures relative to permissible contacts."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "KEY_DATES",
+          "title": "Agreement Term and Extensions",
+          "fact": "The term of any resulting Agreement shall be one (1) year. OGS reserves the right to extend for up to an additional one (1) year upon written notice. Also, a short-term extension of up to three (3) months (or six with concurrence) is possible.",
+          "business_implication": "The contract duration is one year with possible extensions, affecting resource planning.",
+          "action_recommendation": "Plan for a one-year term with potential extensions.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "The term of any resulting Agreement shall be one (1) year. The term shall not commence until OGS execution, final approval by the Office of the State Comptroller (OSC), and posting of the final executed documents to the OGS Procurement Services website. OGS reserves the right, at its sole discretion, to extend all or some Configurations of the Agreement for a period up to an additional one (1) year upon written notice to the Contractor."
+            },
+            {
+              "page_number": 14,
+              "quote": "OGS reserves the right to seek an additional short-term extension for the Agreement in accordance with Manufacturer Umbrella Contract, Section 2.18, Short Term Extension: In the event a replacement Agreement has not been issued, any Agreement let and awarded hereunder by the State, may be extended unilaterally by the State for an additional period of up to three (3) months upon notice to the Contractor with the same terms and conditions as the original Agreement including, but not limited to, prices and delivery requirements. With the concurrence of the Contractor, the extension may be for a period of up to six (6) months in lieu of three (3) months."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "Evaluation Criteria Not Specified",
+          "fact": "The document does not provide explicit evaluation criteria for the RFQ.",
+          "business_implication": "Bidders may not know how proposals will be evaluated, increasing uncertainty.",
+          "action_recommendation": "Seek clarification from OGS regarding evaluation criteria.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 1,
+              "quote": "RFQ Title Aggregate Hardware Buy 23-01 RFQ Number 23-01"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Pricing is Not-To-Exceed",
+          "fact": "Agreement prices are Not-To-Exceed prices. Off-Contract sales are prohibited.",
+          "business_implication": "Bidders must ensure their pricing is competitive and cannot exceed the agreed prices.",
+          "action_recommendation": "Carefully set pricing to be competitive while ensuring profitability.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "Agreement prices are Not-To-Exceed prices. Off-Contract sales are prohibited."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Delivery Timeframe",
+          "fact": "The Contractor shall deliver the units ordered by an Authorized User within 45 calendar days of receipt of a Purchase Order, approved by OSC if applicable, unless either the Authorized User or OGS grants an extension.",
+          "business_implication": "Bidders must have the capacity to meet the 45-day delivery requirement.",
+          "action_recommendation": "Assess supply chain and logistics capabilities to ensure compliance.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 17,
+              "quote": "The Contractor shall deliver the units ordered by an Authorized User within 45 calendar days of receipt of a Purchase Order, approved by OSC if applicable, unless either the Authorized User or OGS grants an extension of time as provided below."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "LIABILITY_INDEMNITY",
+          "title": "Liability for Resellers",
+          "fact": "Contractors remain wholly and solely responsible for the actions of the Resellers acting on their behalf as part of the Agreement.",
+          "business_implication": "The bidder assumes full liability for any actions of its resellers, increasing risk.",
+          "action_recommendation": "Ensure robust oversight and contractual protections with resellers.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "Contractors remain wholly and solely responsible for the actions of the Resellers acting on their behalf as part of"
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "OGS Right to Terminate for Delays",
+          "fact": "If OGS becomes aware of multiple incidents of delays in delivery, OGS reserves the right to enforce any of the remedies available to us through the terms of this Agreement, including our rights to terminate the Agreement in whole or in part, and award to another contractor as per the terms of Section 7.22 Replacement Contractor.",
+          "business_implication": "The bidder faces termination risk if delivery delays occur, which could lead to loss of contract and potential liability.",
+          "action_recommendation": "Implement robust delivery tracking and mitigation strategies to avoid delays.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "If OGS becomes aware of multiple incidents of delays in delivery, OGS reserves the right to enforce any of the remedies available to us through the terms of this Agreement, including our rights to terminate the Agreement in whole or in part, and award to another contractor as per the terms of Section 7.22 Replacement Contractor."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Supply Shortage Prioritization",
+          "fact": "In the event of a supply shortage, a Contractor must make all reasonable efforts to prioritize orders placed under any resulting originating Agreement for New York State Authorized Users, over any orders made by extension of any resulting Agreement to customers outside of New York State Authorized Users. In addition, in the event that the Contractor believes it necessary to prioritize orders made by extension of any resulting Agreement to customers outside of New York State Authorized Users, over orders placed under any resulting originating Agreement for New York State Authorized Users, the Contractor must contact OGS for approval prior to fulfilling such orders.",
+          "business_implication": "The bidder must prioritize NYS orders during shortages, which could impact other customers and require OGS approval for any deviation.",
+          "action_recommendation": "Develop a prioritization plan and ensure compliance with OGS approval requirements.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 14,
+              "quote": "In the event of a supply shortage, a Contractor must make all reasonable efforts to prioritize orders placed under any resulting originating Agreement for New York State Authorized Users, over any orders made by extension of any resulting Agreement to customers outside of New York State Authorized Users. In addition, in the event that the Contractor believes it necessary to prioritize orders made by extension of any resulting Agreement to customers outside of New York State Authorized Users, over orders placed under any resulting originating Agreement for New York State Authorized Users, the Contractor must contact OGS for approval prior to fulfilling such orders."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Imaging/Loading Services",
+          "fact": "The Contractor is responsible for adding a SKU for Authorized User specific standard software imaging under Additional Products on Attachment A – Technical Response if it is not already included as part of the Standard Configuration or its Required Products. The Contractor is therefore required to install a factory Authorized User specific standard software image on each computing device purchased, when such image is provided by the Authorized User.",
+          "business_implication": "The bidder must have the capability to perform imaging services, which may require additional resources and processes.",
+          "action_recommendation": "Assess imaging capabilities and include necessary SKUs in the bid.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "The Contractor is responsible for adding a SKU for Authorized User specific standard software imaging under Additional Products on Attachment A – Technical Response if it is not already included as part of the Standard Configuration or its Required Products. The Contractor is therefore required to install a factory Authorized User specific standard software image on each computing device purchased, when such image is provided by the Authorized User."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Customer Service Requirements",
+          "fact": "The Contractor shall provide a sufficient number of customer service employees who are knowledgeable and can effectively respond to any Authorized User issues related to any resulting Agreement. Inquiries shall be responded to within twenty-four (24) hours.",
+          "business_implication": "The bidder must have a responsive customer service team to meet the 24-hour response requirement.",
+          "action_recommendation": "Ensure adequate staffing and processes to meet response time commitments.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "The Contractor shall provide a sufficient number of customer service employees who are knowledgeable and can effectively respond to any Authorized User issues related to any resulting Agreement. Inquiries shall be responded to within twenty-four (24) hours."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Sales Staff Restrictions",
+          "fact": "The Contractor shall ensure that their sales staff sell only approved Agreement Products to Authorized Users at the current Agreement 23-01 price. The Contractor shall make all sales staff aware of this responsibility. Sales staff shall not quote or sell Products not available on the approved Agreement price lists.",
+          "business_implication": "The bidder must enforce strict sales policies to avoid off-contract sales, which could lead to penalties.",
+          "action_recommendation": "Train sales staff and implement monitoring to ensure compliance.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 18,
+              "quote": "The Contractor shall ensure that their sales staff sell only approved Agreement Products to Authorized Users at the current Agreement 23-01 price. The Contractor shall make all sales staff aware of this responsibility. Sales staff shall not quote or sell Products not available on the approved Agreement price lists."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Network Connection and Remote Access Obligations",
+          "fact": "Connections to the Authorized User’s networks must be performed in a manner prescribed by an Authorized User to preserve the integrity of the Authorized User’s network, confidentiality and integrity of information transmitted over that Authorized User’s network, and the availability of the network. Access for remote diagnosis must be approved and supervised by the Authorized User’s technical representative for each specific incident.",
+          "business_implication": "The contractor must comply with specific network security protocols and obtain approval for remote access, which may require additional resources and coordination with the Authorized User.",
+          "action_recommendation": "Review NYS ITS Technology Standard NYS-S14-010 and ensure capability to comply with network access requirements.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "Connections to the Authorized User’s networks must be performed in a manner prescribed by an Authorized User to preserve the integrity of the Authorized User’s network, confidentiality and integrity of information transmitted over that Authorized User’s network, and the availability of the network. Access for remote diagnosis must be approved and supervised by the Authorized User’s technical representative for each specific incident. Contractor should review NYS ITS Technology Standard NYS-S14-010, Remote Access."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Warranty Requirements for Docking Stations",
+          "fact": "The Contractor is responsible for providing a warranty SKU(s) for docking stations listed as a Required Product or Additional Product on the price lists. The warranty SKU(s) must fully cover hardware, software, and drivers. The warranty SKU(s) for docking stations must provide complete support, including break/fix, for all compatible operating systems.",
+          "business_implication": "The bidder must ensure that warranty offerings for docking stations are comprehensive and cover all required components and operating systems, which may affect pricing and product availability.",
+          "action_recommendation": "Verify that warranty SKUs for docking stations meet the specified coverage requirements and include them in the financial response.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "The Contractor is responsible for providing a warranty SKU(s) for docking stations listed as a Required Product or Additional Product on the price lists. The warranty SKU(s) must fully cover hardware, software, and drivers. The warranty SKU(s) for docking stations must provide complete support, including break/fix, for all compatible operating systems."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Additional Warranty Year Options",
+          "fact": "The Contractor is responsible for adding SKUs for additional warranty year options (e.g. 3 year, 4 year, 5 year) under Additional Products on Attachment A – Technical Response.",
+          "business_implication": "The bidder must offer extended warranty options as additional products, which may affect pricing and product catalog.",
+          "action_recommendation": "Ensure that additional warranty year SKUs are included in the technical response and priced appropriately.",
+          "priority": "MEDIUM",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 21,
+              "quote": "The Contractor is responsible for adding SKUs for additional warranty year options (e.g. 3 year, 4 year, 5 year) under Additional Products on Attachment A – Technical Response."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "TERMINATION_RIGHTS",
+          "title": "Termination for Repeated Failure to Comply",
+          "fact": "OGS reserves the right to terminate an Agreement under this RFQ, in whole or in part, for Contractor’s repeated failure to comply with any requirement under the Agreement.",
+          "business_implication": "The bidder faces termination risk if it repeatedly fails to meet any contractual requirement, which could lead to loss of business and potential liability.",
+          "action_recommendation": "Ensure robust compliance processes to avoid repeated failures and understand the termination provisions.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 22,
+              "quote": "Terminate an Agreement under this RFQ, in whole or in part, for Contractor’s repeated failure to comply with any requirement under the Agreement."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "OGS Reserved Rights to Modify Specifications",
+          "fact": "OGS reserves the right to modify the Products identified in Attachment A – Technical Response prior to the prequalified Contractors’ submittal of Attachment C – Financial Response, and to modify a specification within the Standard Configuration or Required Product categories in Attachment A – Technical Response or Attachment C – Financial Response prior to the Financial Evaluation, upon written notice to Contractors that have submitted a quote.",
+          "business_implication": "The bidder must be prepared for potential changes to product specifications before financial submission, which could affect pricing and product availability.",
+          "action_recommendation": "Monitor communications for any modifications and be prepared to adjust the financial response accordingly.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 22,
+              "quote": "Modify the Products identified in Attachment A – Technical Response prior to the prequalified Contractors’ submittal of Attachment C – Financial Response."
+            },
+            {
+              "page_number": 22,
+              "quote": "Modify a specification within the Standard Configuration or Required Product categories in Attachment A – Technical Response or Attachment C – Financial Response prior to the Financial Evaluation, upon written notice to Contractors that have submitted a quote."
+            }
+          ],
+          "requires_reasoning_review": false
+        }
+      ]
+    }
+  }
+}

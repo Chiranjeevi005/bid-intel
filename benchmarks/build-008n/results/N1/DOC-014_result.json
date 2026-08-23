@@ -1,0 +1,50 @@
+{
+  "metrics": {
+    "id": "DOC-014",
+    "qual_latency": 11034.367800000007,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 3769,
+        "completion_tokens": 1574,
+        "total_tokens": 5343,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1391
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 3001
+      }
+    },
+    "total_latency": 11034.39300000004,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-014",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "OTHER",
+      "confidence": "HIGH",
+      "reason": "The document is a Department of Energy RFI seeking public comments for rulemaking, explicitly stating it is not a solicitation for proposals or a funding opportunity, and therefore does not constitute a procurement opportunity.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "ACTION:  Notice of availability of request for information (RFI)."
+        },
+        {
+          "page_number": 7,
+          "quote": "This is solely a request for information and not a Funding Opportunity Announcement (FOA)."
+        },
+        {
+          "page_number": 8,
+          "quote": "This RFI does not constitute a formal solicitation for proposals or abstracts."
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

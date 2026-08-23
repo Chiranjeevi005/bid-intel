@@ -1,0 +1,50 @@
+{
+  "metrics": {
+    "id": "DOC-005",
+    "qual_latency": 2979.478900000002,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 817,
+        "completion_tokens": 352,
+        "total_tokens": 1169,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 198
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 49
+      }
+    },
+    "total_latency": 2979.5328999999983,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-005",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "OTHER",
+      "confidence": "HIGH",
+      "reason": "The document is a whitepaper on SaaS revenue models, not a procurement solicitation. It lacks procurement signals such as deadlines, submission instructions, or evaluation criteria.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Software-as-a-Service Revenue Models"
+        },
+        {
+          "page_number": 1,
+          "quote": "Whitepaper by TechResearch Inc."
+        },
+        {
+          "page_number": 1,
+          "quote": "This paper explores tier-based pricing vs usage-based pricing."
+        }
+      ]
+    },
+    "extraction": null
+  }
+}

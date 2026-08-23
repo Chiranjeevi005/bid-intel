@@ -1,0 +1,272 @@
+{
+  "metrics": {
+    "id": "DOC-015",
+    "qual_latency": 5201.646799999988,
+    "mapping_latency": 1351.78330000001,
+    "extraction_latency": 18033.097700000042,
+    "reasoning_latency": 2076.271999999997,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 2405,
+        "completion_tokens": 707,
+        "total_tokens": 3112,
+        "prompt_tokens_details": {
+          "cached_tokens": 2304
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 358
+        },
+        "prompt_cache_hit_tokens": 2304,
+        "prompt_cache_miss_tokens": 101
+      },
+      "map": {
+        "prompt_tokens": 2069,
+        "completion_tokens": 192,
+        "total_tokens": 2261,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "prompt_cache_hit_tokens": 2048,
+        "prompt_cache_miss_tokens": 21
+      },
+      "ext": [
+        {
+          "step_name": "stage_3_eligibility",
+          "estimated_cost_cents": 0.030184,
+          "completion_tokens": 916
+        },
+        {
+          "step_name": "stage_3_commercial",
+          "estimated_cost_cents": 0.09055200000000002,
+          "completion_tokens": 3092
+        }
+      ],
+      "reason": [
+        {
+          "prompt_tokens": 661,
+          "completion_tokens": 276,
+          "total_tokens": 937,
+          "cached_tokens": 0,
+          "reasoning_tokens": 0,
+          "estimated_cost_cents": 0.016982
+        }
+      ]
+    },
+    "total_latency": 26664.266999999993,
+    "telemetry": [
+      {
+        "batch_name": "Eligibility",
+        "page_count": 5,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 916,
+        "prompt_tokens": 2628,
+        "output_budget_ratio": 0.2236328125,
+        "estimated_cost_cents": 0.030184,
+        "latency_ms": 5455.896199999959,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      },
+      {
+        "batch_name": "Commercial",
+        "page_count": 4,
+        "ceiling_hit": false,
+        "split_occurred": false,
+        "split_depth": 0,
+        "identical_retry": false,
+        "finish_reason": "stop",
+        "completion_tokens": 3092,
+        "prompt_tokens": 2588,
+        "output_budget_ratio": 0.7548828125,
+        "estimated_cost_cents": 0.09055200000000002,
+        "latency_ms": 18032.749300000025,
+        "predictive_split": false,
+        "schema_retry_count": 0,
+        "identical_retry_count": 0,
+        "mapping_fallback": false,
+        "batch_failed": false
+      }
+    ]
+  },
+  "result": {
+    "id": "DOC-015",
+    "qualification": {
+      "is_procurement_opportunity": true,
+      "document_type": "EOI",
+      "confidence": "HIGH",
+      "reason": "The document is an Expression of Interest (EOI) issued by OhioMHAS for Recovery Month Events funding. It contains procurement signals such as an issuing organization, scope of activities, eligibility requirements, submission instructions, deadlines, and funding details.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Recovery Month Events – Expression of Interest (EOI)"
+        },
+        {
+          "page_number": 1,
+          "quote": "Request for Applications Due Date: 07/25/2025, by 3 p.m. EDT"
+        },
+        {
+          "page_number": 2,
+          "quote": "OhioMHAS utilizes the EOI to conduct market research to identify organizations interested in participating in a proposed opportunity."
+        },
+        {
+          "page_number": 2,
+          "quote": "OhioMHAS is requesting expressions of interest from potential prevention, treatment, and/or recovery supports providers; community coalitions; recovery community organizations; peer run organizations; housing providers; faith-based organizations; schools; and other non-profit community organizations."
+        },
+        {
+          "page_number": 4,
+          "quote": "An organization at the federal tax identification (FTID) number level, independent of number of sites, is eligible to submit a single request for up to $10,000."
+        },
+        {
+          "page_number": 4,
+          "quote": "All awards must be fully expended by September 29, 2025."
+        }
+      ]
+    },
+    "extraction": {
+      "findings": [
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Eligible Organization Types",
+          "fact": "OhioMHAS is requesting expressions of interest from potential prevention, treatment, and/or recovery supports providers; community coalitions; recovery community organizations; peer run organizations; housing providers; faith-based organizations; schools; and other non-profit community organizations.",
+          "business_implication": "The bidder must be one of these specified organization types to be eligible.",
+          "action_recommendation": "Confirm that your organization falls into one of the listed categories before applying.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "OhioMHAS is requesting expressions of interest from potential prevention, treatment, and/or recovery supports providers; community coalitions; recovery community organizations; peer run organizations; housing providers; faith-based organizations; schools; and other non-profit community organizations."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "Federal Tax Identification Number Required",
+          "fact": "Organizations must have a federal tax identification number (FTID).",
+          "business_implication": "The bidder must possess a valid FTID to be eligible.",
+          "action_recommendation": "Ensure your organization has a valid FTID before applying.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Organizations must have a federal tax identification number (FTID)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "MANDATORY_ELIGIBILITY",
+          "title": "501(c)(3) Non-Profit Status Required",
+          "fact": "Organization must be 501(c)(3) non-profit.",
+          "business_implication": "Only organizations with 501(c)(3) status are eligible to apply.",
+          "action_recommendation": "Verify your organization's 501(c)(3) status and have documentation ready.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "Organization must be 501(c)(3) non-profit."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "OPPORTUNITY_FIT",
+          "title": "Funding Opportunity for Recovery Month Events",
+          "fact": "OhioMHAS is requesting expressions of interest from potential prevention, treatment, and/or recovery supports providers; community coalitions; recovery community organizations; peer run organizations; housing providers; faith-based organizations; schools; and other non-profit community organizations. Organizations must have a federal tax identification number (FTID).",
+          "business_implication": "The bidder must be a non-profit organization with an FTID to be eligible for this funding opportunity.",
+          "action_recommendation": "Verify that the organization meets the eligibility criteria, including non-profit status and FTID.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "OhioMHAS is requesting expressions of interest from potential prevention, treatment, and/or recovery supports providers; community coalitions; recovery community organizations; peer run organizations; housing providers; faith-based organizations; schools; and other non-profit community organizations. Organizations must have a federal tax identification number (FTID)."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "SUBMISSION_REQUIREMENTS",
+          "title": "Submission via Microsoft Form",
+          "fact": "To submit your expression of interest please complete all questions on the Microsoft form at https://forms.office.com/g/2YnKfqHta7 by July 25th at 3:00 p.m.",
+          "business_implication": "The bidder must submit the EOI through the specified Microsoft form by the deadline.",
+          "action_recommendation": "Ensure the EOI is submitted via the provided link before the deadline.",
+          "priority": "CRITICAL",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "To submit your expression of interest please complete all questions on the Microsoft form at https://forms.office.com/g/2YnKfqHta7 by July 25th at 3:00 p.m."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "EVALUATION_CRITERIA",
+          "title": "First-Come, First-Served Basis",
+          "fact": "Funding will be provided to organizations on a first-come, first-served basis.",
+          "business_implication": "The bidder should submit the EOI as early as possible to increase chances of receiving funding.",
+          "action_recommendation": "Submit the EOI promptly after the posting date.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 3,
+              "quote": "Funding will be provided to organizations on a first-come, first-served basis."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "COMMERCIAL_TERMS",
+          "title": "Funding Amount and Allowable Activities",
+          "fact": "Each eligible organization may request up to $10,000 to plan and implement activities and event(s) focused on any or all the following: Reducing opioid use disorder, stimulant use disorder, and/or opioid-related overdoses; increasing access to addiction treatment; preventing youth alcohol and drug use; increasing recovery supports; and providing educational opportunities and training to promote harm reduction practices. The population of focus for this initiative includes transitional aged youth and young adults (ages 16-25), adults, families, and communities impacted by opioid use disorder, stimulant use disorder, and concurrent behavioral health conditions.",
+          "business_implication": "The bidder can request up to $10,000 for eligible activities, but must ensure the activities align with the specified focus areas and population.",
+          "action_recommendation": "Plan activities that meet the allowable uses and target the specified population.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 2,
+              "quote": "Each eligible organization may request up to $10,000 to plan and implement activities and event(s) focused on any or all the following: Reducing opioid use disorder, stimulant use disorder, and/or opioid-related overdoses; increasing access to addiction treatment; preventing youth alcohol and drug use; increasing recovery supports; and providing educational opportunities and training to promote harm reduction practices. The population of focus for this initiative includes transitional aged youth and young adults (ages 16-25), adults, families, and communities impacted by opioid use disorder, stimulant use disorder, and concurrent behavioral health conditions."
+            }
+          ],
+          "requires_reasoning_review": false
+        },
+        {
+          "category": "UNUSUAL_OBLIGATIONS",
+          "title": "Reporting Obligations",
+          "fact": "Organizations are required to report to OhioMHAS how funds were utilized using the OhioMHAS outcomes survey. OhioMHAS will provide the survey link and the SOS questionnaire (if applicable) for required reporting. Completed surveys are due no later than November 7, 2025.",
+          "business_implication": "The bidder must comply with reporting requirements by the specified deadline.",
+          "action_recommendation": "Plan to complete and submit the required surveys by November 7, 2025.",
+          "priority": "HIGH",
+          "confidence": "HIGH",
+          "status": "CONFIRMED",
+          "quotes": [
+            {
+              "page_number": 4,
+              "quote": "Organizations are required to report to OhioMHAS how funds were utilized using the OhioMHAS outcomes survey. OhioMHAS will provide the survey link and the SOS questionnaire (if applicable) for required reporting. Completed surveys are due no later than November 7, 2025."
+            }
+          ],
+          "requires_reasoning_review": false
+        }
+      ]
+    }
+  }
+}

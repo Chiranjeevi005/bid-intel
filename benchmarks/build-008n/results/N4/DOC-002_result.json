@@ -1,0 +1,46 @@
+{
+  "metrics": {
+    "id": "DOC-002",
+    "qual_latency": 2532.5647000000026,
+    "mapping_latency": 0,
+    "extraction_latency": 0,
+    "reasoning_latency": 0,
+    "usage": {
+      "qual": {
+        "prompt_tokens": 823,
+        "completion_tokens": 245,
+        "total_tokens": 1068,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 120
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 55
+      }
+    },
+    "total_latency": 2532.5867,
+    "telemetry": []
+  },
+  "result": {
+    "id": "DOC-002",
+    "qualification": {
+      "is_procurement_opportunity": false,
+      "document_type": "JOB_DESCRIPTION",
+      "confidence": "HIGH",
+      "reason": "The document is a job posting for a Business Analyst position at Aiotrix, including responsibilities and application instructions, with no procurement solicitation elements.",
+      "quotes": [
+        {
+          "page_number": 1,
+          "quote": "Job Title: Business Analyst"
+        },
+        {
+          "page_number": 1,
+          "quote": "Please apply by sending your resume to HR."
+        }
+      ]
+    },
+    "extraction": null
+  }
+}
