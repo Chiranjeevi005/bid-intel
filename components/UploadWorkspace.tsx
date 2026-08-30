@@ -203,7 +203,7 @@ export default function UploadWorkspace({ userId }: { userId: string }) {
         }
       }
       
-      setRunId(data.runId);
+      setRunId(data.runId || data.run_id || null);
       if (data.status) {
         setAnalysisStatus(data.status as any);
       }

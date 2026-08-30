@@ -6,8 +6,8 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const runId = searchParams.get('runId');
     
-    if (!runId) {
-      return NextResponse.json({ error: 'runId is required' }, { status: 400 });
+    if (!runId || runId === 'undefined' || runId === 'null') {
+      return NextResponse.json({ error: 'Valid runId is required' }, { status: 400 });
     }
 
     const supabase = await createClient();
