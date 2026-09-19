@@ -131,6 +131,16 @@ export async function POST(request: Request) {
 
   } catch (err: unknown) {
     console.error('Process error:', err);
+    try {
+      const body = await request.clone().json().catch(() => null);
+      const fallbackDocId = body?.document_id;
+      if (fallbackDocId) {
+        const supabase = await createClient();
+        await markFailed(supabase, fallbackDocId);
+      }
+    } catch (cleanupErr) {
+      console.error('Failed to mark document as FAILED after exception:', cleanupErr);
+    }
     // Generic error returned to client to hide stack trace
     return NextResponse.json({ error: 'An unexpected processing error occurred' }, { status: 500 });
   }

@@ -169,7 +169,11 @@ export async function analyzeBatchBounded(
 
       const minPages = getMinExtractionPages();
       if (pages.length <= minPages) {
-        console.error(`[functions] UNRESOLVABLE_OUTPUT_CEILING: batch "${batchName}" at ${pages.length} pages (min=${minPages}). Returning empty array for isolation.`);
+        console.error(`[functions] UNRESOLVABLE_OUTPUT_CEILING: batch "${batchName}" at ${pages.length} pages (min=${minPages}). Marking batch_failed in telemetry.`);
+        // Mark the last telemetry entry as failed rather than successful empty
+        if (telemetryOut.length > 0) {
+          telemetryOut[telemetryOut.length - 1].batch_failed = true;
+        }
         return { findings: [], telemetry: telemetryOut };
       }
 
@@ -238,19 +242,32 @@ export const analyzeRfpJob = inngest.createFunction(
     triggers: [{ event: "rfp.analysis.requested" }],
     retries: 3,
     onFailure: async ({ event, error }) => {
-      const { runId } = (event.data.event.data as any);
-      await supabase
-        .from('analysis_runs')
-        .update({
-          status: 'FAILED',
-          last_error: error.message || 'Unknown terminal failure',
-          failed_at: new Date().toISOString()
-        })
-        .eq('id', runId);
+      const eventData = (event.data.event.data as any) || {};
+      const { runId, ledgerId } = eventData;
+      if (runId) {
+        await supabase
+          .from('analysis_runs')
+          .update({
+            status: 'FAILED',
+            last_error: error.message || 'Unknown terminal failure',
+            failed_at: new Date().toISOString()
+          })
+          .eq('id', runId);
+
+        try {
+          const { resolveLedgerId, safeFinalizeEntitlement } = await import('../pipeline/runner');
+          const resolvedLedgerId = await resolveLedgerId(runId, ledgerId);
+          if (resolvedLedgerId) {
+            await safeFinalizeEntitlement(resolvedLedgerId, false, false);
+          }
+        } catch (finalizeErr) {
+          console.error('[inngest onFailure] Failed to finalize entitlement safety net:', finalizeErr);
+        }
+      }
     }
   },
   async ({ event, step }) => {
-    const { documentId, runId } = (event.data as any);
+    const { documentId, runId, ledgerId } = (event.data as any);
     const jobStartTime = performance.now();
     let totalUsages: any[] = [];
     const allBatchTelemetry: BatchTelemetry[] = [];
@@ -409,26 +426,56 @@ export const analyzeRfpJob = inngest.createFunction(
     });
 
     // K6: Validation — Evidence Contract unchanged
+    // K6: Validation — Evidence Contract with CF-3 Preservation & MI-2 Immutable Integrity
     const validFindingsToInsert: any[] = [];
     const validQuotesToInsert: any[] = [];
     
-    const verifiedFindings = await step.run("validate-evidence", async () => {
-      const verified = [];
-      for (const finding of deduplicatedFindings) {
-        if (finding.status !== 'CONFIRMED' || !finding.quotes || finding.quotes.length === 0) continue;
+    const { verifiedFindings, unverifiedFindings } = await step.run("validate-evidence", async () => {
+      const verified: Finding[] = [];
+      const unverified: Finding[] = [];
 
-        let allQuotesValid = true;
-        for (const q of finding.quotes) {
-          const sourcePage = pages.find((p: { page_number: number }) => p.page_number === q.page_number);
-          if (!sourcePage || !verifyQuote(sourcePage.content, q.quote)) {
-            console.warn(`Evidence validation failed for page ${q.page_number}. Discarding finding.`);
-            allQuotesValid = false;
-            break;
+      for (const finding of deduplicatedFindings) {
+        if (finding.status === 'CONFIRMED' && finding.quotes && finding.quotes.length > 0) {
+          let allQuotesValid = true;
+          const confirmedQuotes: typeof finding.quotes = [];
+          for (const q of finding.quotes) {
+            const sourcePage = pages.find((p: { page_number: number }) => p.page_number === q.page_number);
+            if (sourcePage && verifyQuote(sourcePage.content, q.quote)) {
+              confirmedQuotes.push(q);
+            } else {
+              allQuotesValid = false;
+            }
+          }
+          if (allQuotesValid) {
+            verified.push({
+              ...finding,
+              quotes: confirmedQuotes
+            });
+            continue;
           }
         }
-        if (allQuotesValid) verified.push(finding);
+
+        // CF-3: Preserve unverified/unsupported findings for human review instead of silently discarding
+        const unverifiedTitle = finding.title.startsWith('[UNVERIFIED]')
+          ? finding.title
+          : `[UNVERIFIED] ${finding.title}`;
+
+        const partialValidQuotes = (finding.quotes || []).filter(q => {
+          const sourcePage = pages.find((p: { page_number: number }) => p.page_number === q.page_number);
+          return sourcePage && verifyQuote(sourcePage.content, q.quote);
+        });
+
+        unverified.push({
+          ...finding,
+          title: unverifiedTitle,
+          confidence: 'LOW',
+          priority: (finding.priority === 'CRITICAL' || finding.priority === 'HIGH') ? 'HIGH' : 'MEDIUM',
+          business_implication: finding.business_implication || 'Evidence quote could not be deterministically verified against page text. Requires human review.',
+          action_recommendation: finding.action_recommendation || 'Verify source document manually before relying on this requirement.',
+          quotes: partialValidQuotes
+        });
       }
-      return verified;
+      return { verifiedFindings: verified, unverifiedFindings: unverified };
     });
 
     // M5: Selective Interpretation
@@ -459,7 +506,25 @@ export const analyzeRfpJob = inngest.createFunction(
         chunk.forEach(finding => finding.quotes?.forEach(q => pageNumbers.add(q.page_number)));
         const contextPages = pages.filter((p: { page_number: number }) => pageNumbers.has(p.page_number));
         
-        return interpretFindings(chunk, contextPages);
+        const interpRes = await interpretFindings(chunk, contextPages);
+
+        // MI-2: Immutable Evidence Integrity
+        // Interpretation LLM must ONLY populate business_implication and action_recommendation.
+        // The original verified quotes, fact, and title remain the immutable ground truth.
+        const mergedResults = chunk.map((origFinding, fIdx) => {
+          const matching = interpRes.result[fIdx] || interpRes.result.find(r => r.title === origFinding.title || r.fact === origFinding.fact);
+          return {
+            ...origFinding,
+            business_implication: matching?.business_implication || origFinding.business_implication || undefined,
+            action_recommendation: matching?.action_recommendation || origFinding.action_recommendation || undefined,
+            quotes: origFinding.quotes // immutable source quotes strictly preserved
+          };
+        });
+
+        return {
+          result: mergedResults,
+          usage: interpRes.usage
+        };
       });
 
       const results = await runWithConcurrencyLimit(tasks, limit);
@@ -471,6 +536,9 @@ export const analyzeRfpJob = inngest.createFunction(
         final.push(...res.result);
         usages.push({ step_name: `stage_3_interpretation_${idx}`, ...res.usage });
       });
+
+      // Append unverified findings for human review (never silently dropped)
+      final.push(...unverifiedFindings);
 
       return { finalFindings: final, interpretationUsages: usages, interpretationDurationMs: end - start };
     });

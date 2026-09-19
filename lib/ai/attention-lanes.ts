@@ -38,6 +38,14 @@ export function classifyFindingToLane(finding: FindingItem): AttentionLaneType {
   const fact = (finding.finding || '').toLowerCase();
   const implication = (finding.business_implication || '').toLowerCase();
 
+  // 0. UNVERIFIED or Low-Confidence findings ALWAYS route to STILL_UNCLEAR for human review
+  if (
+    (finding.confidence || '').toUpperCase() === 'LOW' ||
+    title.includes('[unverified]')
+  ) {
+    return 'STILL_UNCLEAR';
+  }
+
   // 1. MUST_MEET: Eligibility, Submission deadlines, Formats, EMD/Security, Qualifying Thresholds
   if (
     cat === 'MANDATORY_ELIGIBILITY' ||

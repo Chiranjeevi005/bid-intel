@@ -83,13 +83,13 @@ const INVESTIGATION_STAGES: InvestigationStage[] = [
   {
     step: "03",
     badge: "BID DECISION DOSSIER",
-    title: "Executive Verdict & Q&A Strategy",
+    title: "Executive Decision Dossier & Q&A Strategy",
     shortDesc:
-      "Synthesizes findings into a Go/No-Go recommendation, line-item risk scores, and formal clarification inquiries for the Q&A period.",
+      "Synthesizes verified findings into an executive decision dossier, line-item risk highlights, and formal clarification inquiries for the Q&A period.",
     consoleTitle: "Pre-Bid Executive Dossier",
-    metric: "Verdict: Review Required",
+    metric: "Status: Review Required",
     metricLabel: "4 Clarification Questions",
-    visualTag: "GO/NO-GO VERDICT",
+    visualTag: "EXECUTIVE DOSSIER",
     visualTagColor: "danger",
     documentContext: {
       section: "Executive Action Plan · Q&A Submission Draft",
@@ -108,7 +108,7 @@ const INVESTIGATION_STAGES: InvestigationStage[] = [
   },
 ];
 
-export default function DecisionBrief() {
+export default function DecisionBrief({ user = null }: { user?: any | null }) {
   const [activeStepIndex, setActiveStepIndex] = useState<number>(1);
   const activeStage = INVESTIGATION_STAGES[activeStepIndex];
 
@@ -144,7 +144,7 @@ export default function DecisionBrief() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4 mb-10">
               <Link
-                href="/login"
+                href={user ? "/dashboard" : "/login"}
                 className="inline-flex items-center justify-center rounded-sm bg-[#3157D5] px-6 py-3.5 text-[14px] font-semibold text-white shadow-sm hover:bg-[#2845a9] transition-all duration-150 active:scale-[0.98]"
               >
                 Analyse a tender &rarr;
@@ -476,7 +476,7 @@ export default function DecisionBrief() {
               </p>
             </div>
             <Link
-              href="/login"
+              href={user ? "/dashboard" : "/login"}
               className="inline-flex items-center justify-center rounded-sm bg-[#3157D5] px-6 py-3.5 text-[14px] font-semibold text-white shadow-sm hover:bg-[#2845a9] transition-all duration-150 active:scale-[0.98] shrink-0"
             >
               Analyse a tender now &rarr;

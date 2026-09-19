@@ -116,3 +116,43 @@ export function getCategoryCandidates(pages: { page_number: number; content: str
 
   return Object.values(candidateSets);
 }
+
+export interface PageCoverageAudit {
+  total_pages: number;
+  evaluated_pages: number[];
+  unexamined_pages: number[];
+  evaluated_count: number;
+  unexamined_count: number;
+  evaluation_percentage: number;
+}
+
+/**
+ * Deterministically computes page evaluation accounting:
+ * - evaluated_pages: union of all context pages sent to category AI extraction
+ * - unexamined_pages: pages in document never matched by any category candidate set
+ */
+export function getPageCoverageAudit(
+  pages: { page_number: number; content: string }[],
+  candidateSets: CandidateSet[]
+): PageCoverageAudit {
+  const evaluatedSet = new Set<number>();
+  candidateSets.forEach((set) => {
+    set.context_pages.forEach((p) => evaluatedSet.add(p));
+  });
+
+  const evaluated_pages = Array.from(evaluatedSet).sort((a, b) => a - b);
+  const total_pages = pages.length;
+  const unexamined_pages = pages
+    .map((p) => p.page_number)
+    .filter((p) => !evaluatedSet.has(p))
+    .sort((a, b) => a - b);
+
+  return {
+    total_pages,
+    evaluated_pages,
+    unexamined_pages,
+    evaluated_count: evaluated_pages.length,
+    unexamined_count: unexamined_pages.length,
+    evaluation_percentage: total_pages > 0 ? Math.round((evaluated_pages.length / total_pages) * 100) : 0
+  };
+}

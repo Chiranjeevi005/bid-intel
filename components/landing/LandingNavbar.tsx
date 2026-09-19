@@ -1,7 +1,32 @@
+'use client';
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { createClient } from "@/lib/supabase/client";
 
-export default function LandingNavbar() {
+interface LandingNavbarProps {
+  initialUser?: any | null;
+}
+
+export default function LandingNavbar({ initialUser = null }: LandingNavbarProps) {
+  const [user, setUser] = useState<any | null>(initialUser);
+  const supabase = createClient();
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data: { user: currentUser } }) => {
+      setUser(currentUser);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user || null);
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [supabase]);
+
   return (
     <header className="w-full h-18 border-b border-[#D9DEE5] bg-background px-6 lg:px-12 sticky top-0 z-50 flex items-center justify-center">
       <div className="w-full max-w-6xl mx-auto flex items-center justify-between">
@@ -31,14 +56,16 @@ export default function LandingNavbar() {
 
         {/* Right: Auth & CTA */}
         <div className="flex items-center gap-6">
+          {!user && (
+            <Link 
+              href="/login" 
+              className="hidden sm:block text-[13px] font-medium text-[#667085] hover:text-foreground transition-colors duration-150"
+            >
+              Sign in
+            </Link>
+          )}
           <Link 
-            href="/login" 
-            className="hidden sm:block text-[13px] font-medium text-[#667085] hover:text-foreground transition-colors duration-150"
-          >
-            Sign in
-          </Link>
-          <Link 
-            href="/login" 
+            href={user ? "/dashboard" : "/login"} 
             className="flex items-center justify-center rounded-sm bg-[#3157D5] px-4 py-2 text-[13px] font-medium text-white hover:bg-[#2845a9] transition-all duration-150 active:scale-[0.98] active:translate-y-px"
           >
             Analyse a tender &rarr;

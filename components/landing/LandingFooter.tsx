@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function LandingFooter() {
+export default function LandingFooter({ user = null }: { user?: any | null }) {
   return (
     <footer className="w-full bg-[#F5F6F4] border-t border-[#D9DEE5] pt-16 pb-8 px-6 lg:px-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-16">
@@ -23,7 +23,7 @@ export default function LandingFooter() {
             <div className="text-[11px] font-semibold text-[#111827] uppercase tracking-widest mb-1">
               Product
             </div>
-            <Link href="/login" className="text-[13px] text-[#667085] hover:text-[#111827] transition-colors font-medium">Analyse a tender</Link>
+            <Link href={user ? "/dashboard" : "/login"} className="text-[13px] text-[#667085] hover:text-[#111827] transition-colors font-medium">Analyse a tender</Link>
             <Link href="#how-it-works" className="text-[13px] text-[#667085] hover:text-[#111827] transition-colors font-medium">How it works</Link>
           </div>
 

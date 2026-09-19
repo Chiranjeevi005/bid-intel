@@ -1,15 +1,19 @@
 import LandingNavbar from "@/components/landing/LandingNavbar";
 import DecisionBrief from "@/components/landing/DecisionBrief";
 import LandingFooter from "@/components/landing/LandingFooter";
+import { createClient } from "@/lib/supabase/server";
 
-export default function Home() {
+export default async function Home() {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F5F6F4]">
-      <LandingNavbar />
+      <LandingNavbar initialUser={user} />
       <main className="flex-1">
-        <DecisionBrief />
+        <DecisionBrief user={user} />
       </main>
-      <LandingFooter />
+      <LandingFooter user={user} />
     </div>
   );
 }

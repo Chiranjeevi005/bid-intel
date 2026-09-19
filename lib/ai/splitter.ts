@@ -7,13 +7,13 @@ import { Finding } from './schema';
 /** Maximum tokens allowed per extraction call. Configurable. Never hard-coded. */
 export function getMaxTokensExtraction(): number {
   const env = process.env.DEEPSEEK_MAX_TOKENS_EXTRACTION;
-  return env ? parseInt(env, 10) : 4096;
+  return env ? parseInt(env, 10) : 8192;
 }
 
 /** Minimum pages per batch before splitting is halted. Configurable. */
 export function getMinExtractionPages(): number {
   const env = process.env.DEEPSEEK_MIN_EXTRACTION_PAGES;
-  return env ? parseInt(env, 10) : 2;
+  return env ? parseInt(env, 10) : 1;
 }
 
 /** Concurrency limit for parallel extraction sub-batches. Configurable. */

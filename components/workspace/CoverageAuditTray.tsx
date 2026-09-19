@@ -2,10 +2,12 @@
 
 import React, { useMemo } from 'react';
 import { CRITICAL_CATEGORIES, CriticalCategory, CategoryCoverage } from '@/lib/ai/coverage';
+import { PageCoverageAudit } from '@/lib/ai/retrieval';
 import { CategoryInspectionState } from './EvidenceInspector';
 
 interface CoverageAuditTrayProps {
   coverage: Record<CriticalCategory, CategoryCoverage> | null;
+  pageCoverage?: PageCoverageAudit | null;
   candidates?: Array<{ category: string; trigger_pages: number[]; context_pages: number[] }>;
   activeCategoryFilter: string;
   onSelectCategory: (category: string) => void;
@@ -16,6 +18,7 @@ interface CoverageAuditTrayProps {
 
 export default function CoverageAuditTray({
   coverage,
+  pageCoverage,
   candidates = [],
   activeCategoryFilter,
   onSelectCategory,
@@ -78,6 +81,55 @@ export default function CoverageAuditTray({
             </button>
           )}
         </div>
+
+        {/* Page-Level Examination Accounting */}
+        {pageCoverage && (
+          <div className="mb-6 bg-white border border-[#D9DEE5] p-4 rounded-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2 pb-2 border-b border-[#F2F4F7]">
+              <span className="text-[12px] font-bold uppercase tracking-wider text-[#111827]">
+                Page-Level Examination Accounting
+              </span>
+              <div className="flex items-center gap-2 text-[12px]">
+                <span className="font-semibold text-[#475467]">
+                  Evaluated: {pageCoverage.evaluated_count} / {pageCoverage.total_pages} pages ({pageCoverage.evaluation_percentage}%)
+                </span>
+                {pageCoverage.unexamined_count > 0 && (
+                  <span className="text-[#B54708] bg-[#FFFAEB] border border-[#FEDF89] px-2 py-0.5 rounded text-[11px] font-bold">
+                    {pageCoverage.unexamined_count} unexamined pages
+                  </span>
+                )}
+              </div>
+            </div>
+            <p className="text-[12px] text-[#475467] leading-relaxed mb-2">
+              Evaluated pages entered category retrieval candidate batches and AI extraction. Pages not triggering procurement lexicon terms were not evaluated by AI models.
+            </p>
+            {pageCoverage.unexamined_count > 0 && (
+              <div className="flex items-center gap-1.5 flex-wrap pt-1">
+                <span className="text-[11px] font-semibold text-[#667085]">Unexamined pages:</span>
+                {pageCoverage.unexamined_pages.map(pageNum => (
+                  <button
+                    key={pageNum}
+                    onClick={() => {
+                      onInspectCategory({
+                        name: 'UNEXAMINED_PAGE',
+                        status: 'EXTRACTION_UNCERTAIN',
+                        evidence_units_count: 0,
+                        verified_findings_count: 0,
+                        reason: `Page ${pageNum} did not contain category trigger terms and was not evaluated by AI extraction.`,
+                        candidatePages: [pageNum]
+                      });
+                      if (onClose) onClose();
+                    }}
+                    className="px-2 py-0.5 bg-[#FFFAEB] hover:bg-[#FEF0C7] text-[#B54708] border border-[#FEDF89] rounded text-[11px] font-mono font-semibold transition-colors cursor-pointer"
+                    title={`Inspect Page ${pageNum} text in Evidence Inspector`}
+                  >
+                    p. {pageNum}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Operational Principle Banner */}
         <div className="mb-6 bg-[#FAFBF9] border-l-4 border-l-[#111827] border-y border-r border-[#E5E7EB] p-4 rounded-r-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">

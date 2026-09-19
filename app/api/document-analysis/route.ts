@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { getCategoryCandidates } from '@/lib/ai/retrieval';
+import { getCategoryCandidates, getPageCoverageAudit, PageCoverageAudit } from '@/lib/ai/retrieval';
 import { segmentEvidenceUnits } from '@/lib/ai/segmentation';
 import { assessCriticalCoverage } from '@/lib/ai/coverage';
 import { Finding } from '@/lib/ai/schema';
@@ -57,6 +57,7 @@ export async function GET(request: Request) {
     let findings: any[] = [];
     let coverageReport: any = null;
     let candidates: any[] = [];
+    let pageCoverage: PageCoverageAudit | null = null;
 
     if (latestRun && latestRun.id) {
       const { data: rawFindings, error: findingsError } = await supabase
@@ -72,6 +73,7 @@ export async function GET(request: Request) {
       // Compute authoritative BUILD-008P coverage if pages exist
       if (pages && pages.length > 0) {
         candidates = getCategoryCandidates(pages);
+        pageCoverage = getPageCoverageAudit(pages, candidates);
         const allUnits = segmentEvidenceUnits(documentId, pages, candidates);
 
         const formattedFindings: { finding: Finding }[] = findings.map((f: any) => ({
@@ -93,6 +95,9 @@ export async function GET(request: Request) {
 
         coverageReport = assessCriticalCoverage(allUnits, formattedFindings);
       }
+    } else if (pages && pages.length > 0) {
+      candidates = getCategoryCandidates(pages);
+      pageCoverage = getPageCoverageAudit(pages, candidates);
     }
 
     return NextResponse.json({
@@ -112,7 +117,8 @@ export async function GET(request: Request) {
       run: latestRun || null,
       findings,
       coverage: coverageReport,
-      candidates
+      candidates,
+      page_coverage: pageCoverage
     });
 
   } catch (err: any) {

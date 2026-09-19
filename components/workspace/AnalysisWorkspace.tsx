@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import WorkspaceHeader from './WorkspaceHeader';
 import AttentionBrief from './AttentionBrief';
 import CoveragePulse from './CoveragePulse';
@@ -11,6 +12,7 @@ import DocumentIntake from './DocumentIntake';
 import AnalysisQueueDrawer, { QueueJob } from './AnalysisQueueDrawer';
 import { CriticalCategory, CategoryCoverage } from '@/lib/ai/coverage';
 import { partitionAttentionLanes } from '@/lib/ai/attention-lanes';
+import { PageCoverageAudit } from '@/lib/ai/retrieval';
 
 interface DocumentSummary {
   id: string;
@@ -47,6 +49,7 @@ interface ActiveDocumentData {
   findings: FindingItem[];
   coverage: Record<CriticalCategory, CategoryCoverage> | null;
   candidates: Array<{ category: string; trigger_pages: number[]; context_pages: number[] }>;
+  page_coverage: PageCoverageAudit | null;
 }
 
 interface AnalysisWorkspaceProps {
@@ -58,8 +61,16 @@ export default function AnalysisWorkspace({
   userId,
   initialDocumentId
 }: AnalysisWorkspaceProps) {
+  const router = useRouter();
   const [documentsList, setDocumentsList] = useState<DocumentSummary[]>([]);
   const [activeDocId, setActiveDocId] = useState<string | null>(initialDocumentId || null);
+
+  // Synchronize activeDocId when initialDocumentId prop updates (e.g., client route changes)
+  useEffect(() => {
+    if (initialDocumentId && initialDocumentId !== activeDocId) {
+      setActiveDocId(initialDocumentId);
+    }
+  }, [initialDocumentId]);
   const [activeDocData, setActiveDocData] = useState<ActiveDocumentData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isIntakeView, setIsIntakeView] = useState<boolean>(false);
@@ -164,13 +175,15 @@ export default function AnalysisWorkspace({
         const docs = data.documents || [];
         if (isMounted) {
           setDocumentsList(docs);
-          if (docs.length > 0) {
-            const qualifiedDoc = docs.find((d: DocumentSummary) => d.qualification_status === 'AI_QUALIFIED' || d.status === 'ANALYSIS_COMPLETE');
-            const targetDocId = qualifiedDoc ? qualifiedDoc.id : docs[0].id;
-            setActiveDocId((prev) => prev || targetDocId);
-          } else {
-            setIsIntakeView(true);
-            setIsLoading(false);
+          if (!initialDocumentId) {
+            if (docs.length > 0) {
+              const qualifiedDoc = docs.find((d: DocumentSummary) => d.qualification_status === 'AI_QUALIFIED' || d.status === 'ANALYSIS_COMPLETE');
+              const targetDocId = qualifiedDoc ? qualifiedDoc.id : docs[0].id;
+              setActiveDocId((prev) => prev || targetDocId);
+            } else {
+              setIsIntakeView(true);
+              setIsLoading(false);
+            }
           }
         }
       } catch (err) {
@@ -281,6 +294,7 @@ export default function AnalysisWorkspace({
     setIsEvidenceDrawerOpen(false);
     setIsFullLedgerOpen(false);
     setIsCoverageMatrixOpen(false);
+    router.push(`/documents/${newDocId}`);
   };
 
   const handleOpenFindingEvidence = (finding: FindingItem) => {
@@ -442,6 +456,7 @@ export default function AnalysisWorkspace({
                 {/* STAGE 2: COVERAGE PULSE (12-Category Summary) */}
                 <CoveragePulse
                   coverage={activeDocData.coverage}
+                  pageCoverage={activeDocData.page_coverage}
                   onViewFullAudit={() => setIsCoverageMatrixOpen(true)}
                 />
 
@@ -558,6 +573,7 @@ export default function AnalysisWorkspace({
               <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-sm shadow-2xl">
                 <CoverageAuditTray
                   coverage={activeDocData.coverage}
+                  pageCoverage={activeDocData.page_coverage}
                   candidates={activeDocData.candidates}
                   activeCategoryFilter={activeCategoryFilter}
                   onSelectCategory={(cat) => setActiveCategoryFilter(cat)}

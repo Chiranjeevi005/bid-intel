@@ -171,7 +171,7 @@ export default function AttentionBrief({
 
             {mustMeetFindings.length > 4 && (
               <button
-                onClick={() => onOpenFullLedger('MANDATORY_ELIGIBILITY')}
+                onClick={() => onOpenFullLedger('LANE_MUST_MEET')}
                 className="text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
               >
                 View all ({mustMeetFindings.length}) &rarr;
@@ -253,7 +253,7 @@ export default function AttentionBrief({
 
             {couldHurtFindings.length > 4 && (
               <button
-                onClick={() => onOpenFullLedger('LIABILITY_INDEMNITY')}
+                onClick={() => onOpenFullLedger('LANE_COULD_HURT')}
                 className="text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
               >
                 View all ({couldHurtFindings.length}) &rarr;
@@ -333,12 +333,22 @@ export default function AttentionBrief({
               </p>
             </div>
 
-            <button
-              onClick={onOpenCoverageAudit}
-              className="text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
-            >
-              Full Coverage Matrix &rarr;
-            </button>
+            <div className="flex items-center gap-3">
+              {stillUnclearFindings.length > 3 && (
+                <button
+                  onClick={() => onOpenFullLedger('LANE_STILL_UNCLEAR')}
+                  className="text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
+                >
+                  View all ({stillUnclearFindings.length}) &rarr;
+                </button>
+              )}
+              <button
+                onClick={onOpenCoverageAudit}
+                className="text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
+              >
+                Full Coverage Matrix &rarr;
+              </button>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3">

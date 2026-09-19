@@ -48,7 +48,9 @@ export async function qualifyDocument(pages: { page_number: number; content: str
       { role: "user", content: userPrompt }
     ],
     response_format: { type: "json_object" },
-    temperature: 0.1
+    temperature: 0.1,
+    thinking: { type: "disabled" },
+    max_tokens: 4096
   };
 
   const response = await fetch("https://api.deepseek.com/chat/completions", {

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { classifyFindingToLane } from '@/lib/ai/attention-lanes';
 
 export interface FindingQuote {
   id: string;
@@ -56,26 +57,52 @@ export default function FindingsLedger({
     return Array.from(set);
   }, [findings]);
 
-  // Compute live severity counts based on actual records
-  const severityCounts = useMemo(() => {
-    const counts: Record<string, number> = { ALL: findings.length, CRITICAL: 0, HIGH: 0, MEDIUM: 0, LOW: 0 };
+  // Compute live attention lane counts
+  const laneCounts = useMemo(() => {
+    const counts = { MUST_MEET: 0, COULD_HURT: 0, STILL_UNCLEAR: 0 };
     findings.forEach((f) => {
+      const lane = classifyFindingToLane(f);
+      if (lane === 'MUST_MEET') counts.MUST_MEET++;
+      else if (lane === 'COULD_HURT') counts.COULD_HURT++;
+      else if (lane === 'STILL_UNCLEAR') counts.STILL_UNCLEAR++;
+    });
+    return counts;
+  }, [findings]);
+
+  // First filter by Domain or Attention Lane
+  const domainFilteredFindings = useMemo(() => {
+    return findings.filter((f) => {
+      if (activeCategoryFilter === 'ALL') return true;
+      const upperFilter = activeCategoryFilter.toUpperCase();
+      if (upperFilter === 'LANE_MUST_MEET' || upperFilter === 'MUST_MEET' || upperFilter === 'MANDATORY_ELIGIBILITY') {
+        return classifyFindingToLane(f) === 'MUST_MEET' || f.category.toUpperCase() === 'ELIGIBILITY';
+      }
+      if (upperFilter === 'LANE_COULD_HURT' || upperFilter === 'COULD_HURT' || upperFilter === 'LIABILITY_INDEMNITY') {
+        return classifyFindingToLane(f) === 'COULD_HURT' || f.category.toUpperCase() === 'LIABILITY_RISK';
+      }
+      if (upperFilter === 'LANE_STILL_UNCLEAR' || upperFilter === 'STILL_UNCLEAR') {
+        return classifyFindingToLane(f) === 'STILL_UNCLEAR';
+      }
+      return f.category.toUpperCase() === upperFilter;
+    });
+  }, [findings, activeCategoryFilter]);
+
+  // Compute live severity counts based on the active domain/lane filter
+  const severityCounts = useMemo(() => {
+    const counts: Record<string, number> = { ALL: domainFilteredFindings.length, CRITICAL: 0, HIGH: 0, MEDIUM: 0, LOW: 0 };
+    domainFilteredFindings.forEach((f) => {
       const sev = (f.severity || 'MEDIUM').toUpperCase();
       if (counts[sev] !== undefined) {
         counts[sev]++;
       }
     });
     return counts;
-  }, [findings]);
+  }, [domainFilteredFindings]);
 
-  // Filter findings
+  // Finally filter by severity and search query
   const filteredFindings = useMemo(() => {
-    return findings
+    return domainFilteredFindings
       .filter((f) => {
-        // Category filter
-        if (activeCategoryFilter !== 'ALL' && f.category.toUpperCase() !== activeCategoryFilter.toUpperCase()) {
-          return false;
-        }
         // Severity filter
         if (severityFilter !== 'ALL' && (f.severity || 'MEDIUM').toUpperCase() !== severityFilter.toUpperCase()) {
           return false;
@@ -96,7 +123,7 @@ export default function FindingsLedger({
         const orderB = SEVERITY_ORDER[(b.severity || 'MEDIUM').toUpperCase()] || 99;
         return orderA - orderB;
       });
-  }, [findings, activeCategoryFilter, severityFilter, searchQuery]);
+  }, [domainFilteredFindings, severityFilter, searchQuery]);
 
   return (
     <div className="flex flex-col h-full bg-[#F5F6F4]">
@@ -107,7 +134,7 @@ export default function FindingsLedger({
         {/* Top Filter Bar: Category & Search */}
         <div className="flex flex-col sm:flex-row gap-2.5 items-stretch sm:items-center justify-between">
           
-          {/* Category Dropdown */}
+          {/* Category / Lane Dropdown */}
           <div className="flex items-center gap-2">
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#667085] shrink-0">
               Domain:
@@ -118,11 +145,26 @@ export default function FindingsLedger({
               className="text-[12px] font-semibold text-[#111827] bg-[#F5F6F4] border border-[#D9DEE5] rounded-sm px-2.5 py-1 focus:ring-1 focus:ring-[#3157D5] focus:outline-none"
             >
               <option value="ALL">All Domains ({findings.length})</option>
-              {availableCategories.map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat.replace(/_/g, ' ')}
+              
+              <optgroup label="Attention Lanes">
+                <option value="LANE_MUST_MEET">
+                  01 / Must Meet ({laneCounts.MUST_MEET})
                 </option>
-              ))}
+                <option value="LANE_COULD_HURT">
+                  02 / Could Hurt ({laneCounts.COULD_HURT})
+                </option>
+                <option value="LANE_STILL_UNCLEAR">
+                  03 / Still Unclear ({laneCounts.STILL_UNCLEAR})
+                </option>
+              </optgroup>
+
+              <optgroup label="Specific Categories">
+                {availableCategories.map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat.replace(/_/g, ' ')} ({findings.filter(f => f.category === cat).length})
+                  </option>
+                ))}
+              </optgroup>
             </select>
           </div>
 
@@ -218,11 +260,23 @@ export default function FindingsLedger({
             <span className="text-[13px] font-semibold text-[#111827] mb-1">
               No findings matching active filters
             </span>
-            <p className="text-[12px] text-[#667085] max-w-sm">
+            <p className="text-[12px] text-[#667085] max-w-sm mb-3">
               {findings.length === 0
                 ? 'No verified findings were extracted for this document. Use the Critical Coverage audit below to review candidate evidence sections manually.'
                 : 'Adjust your domain or priority filters above to display other extracted records.'}
             </p>
+            {findings.length > 0 && (
+              <button
+                onClick={() => {
+                  onCategoryFilterChange('ALL');
+                  setSeverityFilter('ALL');
+                  setSearchQuery('');
+                }}
+                className="px-3 py-1.5 bg-[#111827] hover:bg-black text-white text-[12px] font-semibold rounded-sm transition-colors cursor-pointer"
+              >
+                Reset Filters to All Domains ({findings.length})
+              </button>
+            )}
           </div>
         ) : (
           filteredFindings.map((finding) => {

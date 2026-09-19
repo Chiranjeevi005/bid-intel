@@ -13,10 +13,90 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
+async function isDocumentActive(documentId: string): Promise<boolean> {
+  try {
+    const { data } = await supabase
+      .from('documents')
+      .select('id')
+      .eq('id', documentId)
+      .maybeSingle();
+    return !!data;
+  } catch {
+    return false;
+  }
+}
+
 export interface PipelineExecutionOptions {
   extractionConcurrency?: number;
   interpretationConcurrency?: number;
   userConfirmed?: boolean;
+  ledgerId?: string;
+}
+
+function getServiceSupabase() {
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!serviceKey) {
+    throw new Error('SUPABASE_SERVICE_ROLE_KEY is required for entitlement operations');
+  }
+  return createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, serviceKey, {
+    auth: { persistSession: false, autoRefreshToken: false }
+  });
+}
+
+export async function resolveLedgerId(runId: string, providedLedgerId?: string, client?: any): Promise<string | null> {
+  if (providedLedgerId) return providedLedgerId;
+  const serviceClient = client || getServiceSupabase();
+  const { data, error } = await serviceClient
+    .from('analysis_entitlement_ledger')
+    .select('id')
+    .eq('analysis_run_id', runId)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error(`Database error resolving ledger_id for run ${runId}: ${error.message}`);
+  }
+  return data?.id || null;
+}
+
+export async function safeFinalizeEntitlement(
+  ledgerId: string,
+  success: boolean,
+  consumed: boolean,
+  client?: any
+): Promise<void> {
+  const serviceClient = client || getServiceSupabase();
+
+  // 1. Query ledger state
+  const { data: ledger, error: queryError } = await serviceClient
+    .from('analysis_entitlement_ledger')
+    .select('id, status')
+    .eq('id', ledgerId)
+    .maybeSingle();
+
+  if (queryError) {
+    throw new Error(`Database error querying ledger ${ledgerId} for finalization: ${queryError.message}`);
+  }
+
+  // Row is genuinely missing (e.g. cascaded away on document deletion)
+  if (!ledger) {
+    console.log(`[pipeline] Ledger ${ledgerId} no longer exists in database (cascaded deletion). Finalization skipped.`);
+    return;
+  }
+
+  // Idempotent short-circuit if already in target terminal state
+  if (ledger.status === 'CONSUMED' && consumed) return;
+  if (ledger.status === 'RELEASED' && !consumed) return;
+
+  // 2. Execute RPC
+  const { error: rpcError } = await serviceClient.rpc('finalize_analysis_entitlement', {
+    p_ledger_id: ledgerId,
+    p_success: success,
+    p_consumed: consumed
+  });
+
+  if (rpcError) {
+    throw new Error(`Failed to finalize entitlement ledger ${ledgerId}: ${rpcError.message}`);
+  }
 }
 
 /**
@@ -33,11 +113,11 @@ export async function executeAnalysisPipeline(
   const allBatchTelemetry: BatchTelemetry[] = [];
 
   try {
-    // 1. Mark Run as EXTRACTING
+    // 1. Mark Run as PROCESSING
     await supabase
       .from('analysis_runs')
       .update({
-        status: 'EXTRACTING',
+        status: 'PROCESSING',
         started_at: new Date().toISOString()
       })
       .eq('id', runId);
@@ -63,8 +143,8 @@ export async function executeAnalysisPipeline(
       throw new Error('Document has no extracted pages in database');
     }
 
-    // 3. Document Qualification Gate (STAGE: QUALIFYING)
-    await supabase.from('analysis_runs').update({ status: 'QUALIFYING' }).eq('id', runId);
+    // 3. Document Qualification Gate
+    // Stage tracking handled via telemetry/metrics to maintain DB status constraint compliance
 
     if (options.userConfirmed) {
       await supabase
@@ -108,11 +188,16 @@ export async function executeAnalysisPipeline(
           await supabase
             .from('analysis_runs')
             .update({
-              status: 'REJECTED',
+              status: 'FAILED',
               last_error: qualification.reason || 'Document classified as non-procurement',
               completed_at: new Date().toISOString()
             })
             .eq('id', runId);
+
+          const resolvedLedgerId = await resolveLedgerId(runId, options.ledgerId);
+          if (resolvedLedgerId) {
+            await safeFinalizeEntitlement(resolvedLedgerId, false, false);
+          }
 
           return {
             success: false,
@@ -126,8 +211,18 @@ export async function executeAnalysisPipeline(
       }
     }
 
-    // 4. Deterministic Candidate Retrieval (STAGE: ANALYSING)
-    await supabase.from('analysis_runs').update({ status: 'ANALYSING' }).eq('id', runId);
+    // Check document liveness before proceeding to Stage 4
+    if (!(await isDocumentActive(documentId))) {
+      console.log(`[pipeline] Document ${documentId} no longer exists. Aborting pipeline before retrieval.`);
+      return {
+        success: false,
+        findingsCount: 0,
+        durationMs: performance.now() - startTime,
+        error: 'DOCUMENT_DELETED'
+      };
+    }
+
+    // 4. Deterministic Candidate Retrieval
 
     const retrievalStart = performance.now();
     const candidateSets = getCategoryCandidates(pages);
@@ -206,28 +301,54 @@ export async function executeAnalysisPipeline(
       }
     }
 
-    // 7. Verbatim Evidence Validation (STAGE: VERIFYING)
-    await supabase.from('analysis_runs').update({ status: 'VERIFYING' }).eq('id', runId);
+    // 7. Verbatim Evidence Validation
 
     const verifiedFindings: Finding[] = [];
-    for (const finding of deduplicatedFindings) {
-      if (finding.status !== 'CONFIRMED' || !finding.quotes || finding.quotes.length === 0) continue;
+    const unverifiedFindings: Finding[] = [];
 
-      let allQuotesValid = true;
-      for (const q of finding.quotes) {
-        const sourcePage = pages.find(p => p.page_number === q.page_number);
-        if (!sourcePage || !verifyQuote(sourcePage.content, q.quote)) {
-          allQuotesValid = false;
-          break;
+    for (const finding of deduplicatedFindings) {
+      if (finding.status === 'CONFIRMED' && finding.quotes && finding.quotes.length > 0) {
+        let allQuotesValid = true;
+        const confirmedQuotes: typeof finding.quotes = [];
+        for (const q of finding.quotes) {
+          const sourcePage = pages.find(p => p.page_number === q.page_number);
+          if (sourcePage && verifyQuote(sourcePage.content, q.quote)) {
+            confirmedQuotes.push(q);
+          } else {
+            allQuotesValid = false;
+          }
+        }
+        if (allQuotesValid) {
+          verifiedFindings.push({
+            ...finding,
+            quotes: confirmedQuotes
+          });
+          continue;
         }
       }
-      if (allQuotesValid) {
-        verifiedFindings.push(finding);
-      }
+
+      // CF-3: Preserve unverified/unsupported findings for human review instead of silently discarding
+      const unverifiedTitle = finding.title.startsWith('[UNVERIFIED]')
+        ? finding.title
+        : `[UNVERIFIED] ${finding.title}`;
+
+      const partialValidQuotes = (finding.quotes || []).filter(q => {
+        const sourcePage = pages.find(p => p.page_number === q.page_number);
+        return sourcePage && verifyQuote(sourcePage.content, q.quote);
+      });
+
+      unverifiedFindings.push({
+        ...finding,
+        title: unverifiedTitle,
+        confidence: 'LOW',
+        priority: (finding.priority === 'CRITICAL' || finding.priority === 'HIGH') ? 'HIGH' : 'MEDIUM',
+        business_implication: finding.business_implication || 'Evidence quote could not be deterministically verified against page text. Requires human review.',
+        action_recommendation: finding.action_recommendation || 'Verify source document manually before relying on this requirement.',
+        quotes: partialValidQuotes
+      });
     }
 
-    // 8. Selective Risk Interpretation (STAGE: FINALIZING)
-    await supabase.from('analysis_runs').update({ status: 'FINALIZING' }).eq('id', runId);
+    // 8. Selective Risk Interpretation
 
     const riskyCategories = ['LIABILITY_RISK', 'TERMINATION', 'CONTRADICTIONS_AMBIGUITIES'];
     const toInterpret = verifiedFindings.filter(f =>
@@ -240,6 +361,16 @@ export async function executeAnalysisPipeline(
     let finalFindings: Finding[] = [...notInterpret];
 
     if (toInterpret.length > 0) {
+      if (!(await isDocumentActive(documentId))) {
+        console.log(`[pipeline] Document ${documentId} no longer exists. Aborting before interpretation.`);
+        return {
+          success: false,
+          findingsCount: 0,
+          durationMs: performance.now() - startTime,
+          error: 'DOCUMENT_DELETED'
+        };
+      }
+
       const { interpretFindings } = await import('../ai/provider');
       const interpretationLimit = options.interpretationConcurrency || 2;
       const CHUNK_SIZE = 5;
@@ -252,7 +383,25 @@ export async function executeAnalysisPipeline(
         const pageNumbers = new Set<number>();
         chunk.forEach(finding => finding.quotes?.forEach(q => pageNumbers.add(q.page_number)));
         const contextPages = pages.filter(p => pageNumbers.has(p.page_number));
-        return interpretFindings(chunk, contextPages);
+        const interpRes = await interpretFindings(chunk, contextPages);
+
+        // MI-2: Immutable Evidence Integrity
+        // Interpretation LLM must ONLY populate business_implication and action_recommendation.
+        // The original verified quotes, fact, and title remain the immutable ground truth.
+        const mergedResults = chunk.map((origFinding, fIdx) => {
+          const matching = interpRes.result[fIdx] || interpRes.result.find(r => r.title === origFinding.title || r.fact === origFinding.fact);
+          return {
+            ...origFinding,
+            business_implication: matching?.business_implication || origFinding.business_implication || undefined,
+            action_recommendation: matching?.action_recommendation || origFinding.action_recommendation || undefined,
+            quotes: origFinding.quotes // immutable source quotes strictly preserved
+          };
+        });
+
+        return {
+          result: mergedResults,
+          usage: interpRes.usage
+        };
       });
 
       const interpretationStart = performance.now();
@@ -267,6 +416,20 @@ export async function executeAnalysisPipeline(
           ...res.usage
         });
       });
+    }
+
+    // Append unverified findings for human review (never silently dropped)
+    finalFindings.push(...unverifiedFindings);
+
+    // Check document liveness before transactional persistence
+    if (!(await isDocumentActive(documentId))) {
+      console.log(`[pipeline] Document ${documentId} no longer exists. Aborting before findings persistence.`);
+      return {
+        success: false,
+        findingsCount: 0,
+        durationMs: performance.now() - startTime,
+        error: 'DOCUMENT_DELETED'
+      };
     }
 
     // 9. Transactional Persistence & Idempotency
@@ -335,6 +498,11 @@ export async function executeAnalysisPipeline(
       })
       .eq('id', runId);
 
+    const resolvedLedgerId = await resolveLedgerId(runId, options.ledgerId);
+    if (resolvedLedgerId) {
+      await safeFinalizeEntitlement(resolvedLedgerId, true, true);
+    }
+
     return {
       success: true,
       findingsCount: validFindingsToInsert.length,
@@ -342,6 +510,23 @@ export async function executeAnalysisPipeline(
     };
 
   } catch (err: any) {
+    // Concurrent deletion race check: if document was deleted while query/write was executing,
+    // foreign-key cascade will destroy analysis_runs and document. Exit cleanly without throwing or crashing.
+    const active = await isDocumentActive(documentId);
+    if (!active) {
+      console.log(`[pipeline] Document ${documentId} was deleted during pipeline execution. Halting cleanly.`);
+      const resolvedLedgerId = await resolveLedgerId(runId, options.ledgerId).catch(() => null);
+      if (resolvedLedgerId) {
+        await safeFinalizeEntitlement(resolvedLedgerId, false, false).catch(e => console.warn('Finalize on deleted doc error:', e));
+      }
+      return {
+        success: false,
+        findingsCount: 0,
+        durationMs: performance.now() - startTime,
+        error: 'DOCUMENT_DELETED'
+      };
+    }
+
     console.error('Pipeline Execution Error:', err);
     await supabase
       .from('analysis_runs')
@@ -351,6 +536,11 @@ export async function executeAnalysisPipeline(
         failed_at: new Date().toISOString()
       })
       .eq('id', runId);
+
+    const resolvedLedgerId = await resolveLedgerId(runId, options.ledgerId).catch(() => null);
+    if (resolvedLedgerId) {
+      await safeFinalizeEntitlement(resolvedLedgerId, false, false);
+    }
 
     return {
       success: false,

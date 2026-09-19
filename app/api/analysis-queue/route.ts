@@ -1,14 +1,16 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@/lib/supabase/server';
 
 export async function GET(request: Request) {
   try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
+    const supabase = await createClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
 
-    // Fetch all documents
+    if (authError || !user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    // 1. Fetch only documents belonging to the authenticated user
     const { data: docs, error: docError } = await supabase
       .from('documents')
       .select(`
@@ -21,37 +23,61 @@ export async function GET(request: Request) {
         qualification_reason,
         created_at
       `)
+      .eq('user_id', user.id)
       .order('created_at', { ascending: false });
 
     if (docError) throw docError;
 
-    // Fetch latest analysis run for each document
+    const userDocIds = (docs || []).map(d => d.id);
+
+    if (userDocIds.length === 0) {
+      return NextResponse.json({
+        success: true,
+        jobs: [],
+        summary: {
+          total_jobs: 0,
+          analysing_count: 0,
+          ready_count: 0,
+          queued_count: 0,
+          failed_count: 0
+        }
+      });
+    }
+
+    // 2. Fetch latest analysis runs scoped strictly to user's documents
     const { data: runs, error: runError } = await supabase
       .from('analysis_runs')
       .select('*')
+      .in('document_id', userDocIds)
       .order('created_at', { ascending: false });
 
     if (runError) throw runError;
 
-    // Fetch page counts per document
+    // 3. Fetch page counts scoped strictly to user's documents
     const { data: pageCounts } = await supabase
       .from('document_pages')
-      .select('document_id, page_number');
+      .select('document_id, page_number')
+      .in('document_id', userDocIds);
 
     const pagesPerDoc: Record<string, number> = {};
     pageCounts?.forEach(p => {
       pagesPerDoc[p.document_id] = Math.max(pagesPerDoc[p.document_id] || 0, p.page_number);
     });
 
-    // Fetch findings count per run
-    const { data: findings } = await supabase
-      .from('analysis_findings')
-      .select('analysis_run_id');
+    // 4. Fetch findings count scoped strictly to user's runs
+    const userRunIds = (runs || []).map(r => r.id);
+    let findingsPerRun: Record<string, number> = {};
 
-    const findingsPerRun: Record<string, number> = {};
-    findings?.forEach(f => {
-      findingsPerRun[f.analysis_run_id] = (findingsPerRun[f.analysis_run_id] || 0) + 1;
-    });
+    if (userRunIds.length > 0) {
+      const { data: findings } = await supabase
+        .from('analysis_findings')
+        .select('analysis_run_id')
+        .in('analysis_run_id', userRunIds);
+
+      findings?.forEach(f => {
+        findingsPerRun[f.analysis_run_id] = (findingsPerRun[f.analysis_run_id] || 0) + 1;
+      });
+    }
 
     // Merge into queue jobs
     const jobs = (docs || []).map(doc => {

@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
-import AnalysisWorkspace from '@/components/workspace/AnalysisWorkspace';
+import DocumentLibrary from '@/components/dashboard/DocumentLibrary';
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -11,6 +11,6 @@ export default async function DashboardPage() {
   }
 
   return (
-    <AnalysisWorkspace userId={user.id} />
+    <DocumentLibrary userId={user.id} userEmail={user.email} />
   );
 }

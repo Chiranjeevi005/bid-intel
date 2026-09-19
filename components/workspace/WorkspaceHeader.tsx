@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+import Link from 'next/link';
 import LogoutButton from '@/app/dashboard/LogoutButton';
 
 interface DocumentSummary {
@@ -45,18 +47,43 @@ export default function WorkspaceHeader({
   onOpenQueue
 }: WorkspaceHeaderProps) {
   return (
-    <header className="h-14 bg-white border-b border-[#D9DEE5] px-4 md:px-6 flex items-center justify-between sticky top-0 z-40">
+    <header className="h-14 bg-white border-b border-[#D9DEE5] px-3 sm:px-4 md:px-6 flex items-center justify-between sticky top-0 z-40">
       
-      {/* Left Group: Brand & Active Document Metadata */}
-      <div className="flex items-center gap-3 md:gap-4 overflow-hidden">
-        <span className="font-bold text-[14px] text-[#111827] tracking-tight shrink-0">
-          RFPground
-        </span>
+      {/* Left Group: Brand & All Documents Navigation */}
+      <div className="flex items-center gap-2 sm:gap-3 min-w-0 overflow-hidden">
+        <Link
+          href="/"
+          className="flex items-center shrink-0 hover:opacity-85 transition-opacity cursor-pointer"
+          title="RFPground Homepage"
+        >
+          <Image
+            src="/brand-assets/navbar-logo.png"
+            alt="RFPground"
+            width={120}
+            height={30}
+            className="h-6 sm:h-7 w-auto object-contain shrink-0"
+            priority
+          />
+        </Link>
 
         <span className="h-4 w-px bg-[#D9DEE5] shrink-0" />
 
-        {activeDoc ? (
-          <div className="flex items-center gap-2 md:gap-3 overflow-hidden">
+        {/* Link back to Document Library */}
+        <Link
+          href="/dashboard"
+          className="inline-flex items-center gap-1 sm:gap-1.5 text-[11.5px] sm:text-[12.5px] font-semibold text-[#344054] hover:text-[#111827] px-1.5 sm:px-2 py-1 rounded hover:bg-[#F5F6F4] transition-colors shrink-0"
+          title="Return to Document Library"
+        >
+          <svg className="w-3.5 h-3.5 text-[#667085] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          <span className="whitespace-nowrap font-semibold">All Documents</span>
+        </Link>
+
+        {activeDoc && (
+          <div className="hidden md:flex items-center gap-2 md:gap-3 overflow-hidden pl-1">
+            <span className="h-4 w-px bg-[#D9DEE5] shrink-0" />
+
             {/* Document Switcher Dropdown */}
             <div className="relative shrink-0">
               <select
@@ -75,32 +102,25 @@ export default function WorkspaceHeader({
 
             {/* Page Count */}
             {activeDoc.total_pages > 0 && (
-              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#F5F6F4] text-[#475467] border border-[#D9DEE5] shrink-0">
+              <span className="hidden lg:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#F5F6F4] text-[#475467] border border-[#D9DEE5] shrink-0">
                 {activeDoc.total_pages} Pages
               </span>
             )}
 
-            {/* Document Type */}
-            {activeDoc.document_type && (
-              <span className="hidden md:inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-gray-100 text-gray-700 uppercase shrink-0">
-                {activeDoc.document_type}
-              </span>
-            )}
-
-            {/* Qualification Badges for Non-Qualified Tenders */}
+            {/* Qualification Badges */}
             {activeDoc.qualification_status === 'AI_REJECTED' && (
-              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#FEF3F2] text-[#B42318] border border-[#FECDCA] shrink-0">
+              <span className="hidden lg:inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#FEF3F2] text-[#B42318] border border-[#FECDCA] shrink-0">
                 NON-TENDER
               </span>
             )}
             {activeDoc.qualification_status === 'AI_AMBIGUOUS' && (
-              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#FFFAEB] text-[#B54708] border border-[#FEDF89] shrink-0">
+              <span className="hidden lg:inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#FFFAEB] text-[#B54708] border border-[#FEDF89] shrink-0">
                 AMBIGUOUS TENDER
               </span>
             )}
 
             {/* Operational Status Beacon */}
-            <div className="hidden lg:flex items-center gap-1.5 shrink-0 pl-2">
+            <div className="hidden xl:flex items-center gap-1.5 shrink-0 pl-1">
               {runStatus === 'COMPLETED' ? (
                 <span className="text-[11px] font-semibold text-[#027A48] flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#027A48]" />
@@ -111,47 +131,29 @@ export default function WorkspaceHeader({
                   <span className="w-1.5 h-1.5 rounded-full bg-[#3157D5]" />
                   ANALYSING
                 </span>
-              ) : runStatus === 'QUEUED' ? (
-                <span className="text-[11px] font-semibold text-[#B54708] flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#B54708]" />
-                  QUEUED
-                </span>
-              ) : runStatus === 'FAILED' ? (
-                <span className="text-[11px] font-semibold text-[#B42318] flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#B42318]" />
-                  ANALYSIS FAILED
-                </span>
-              ) : activeDoc.status === 'OCR_REQUIRED' ? (
-                <span className="text-[11px] font-semibold text-[#B54708] flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#B54708]" />
-                  OCR REQUIRED
-                </span>
               ) : null}
             </div>
           </div>
-        ) : (
-          <span className="text-[13px] text-[#667085] font-medium">
-            Tender Intake Desk
-          </span>
         )}
       </div>
 
       {/* Right Group: Action Controls & User Logout */}
-      <div className="flex items-center gap-3 shrink-0">
+      <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        {/* Queue button: hidden on mobile, visible on tablet/desktop */}
         {queueSummary && queueSummary.total_jobs > 0 && (
           <button
             onClick={onOpenQueue}
-            className="inline-flex items-center gap-1.5 rounded-sm border border-[#D9DEE5] bg-[#F8F9FA] px-2.5 py-1.5 text-[12px] font-semibold text-[#344054] hover:bg-gray-100 transition-colors cursor-pointer shadow-2xs"
+            className="hidden sm:inline-flex items-center gap-1.5 rounded-sm border border-[#D9DEE5] bg-[#F8F9FA] px-2.5 py-1 text-[12px] font-semibold text-[#344054] hover:bg-gray-100 transition-colors cursor-pointer shadow-2xs"
             title="Open Analysis Queue"
           >
             {queueSummary.analysing_count > 0 ? (
               <>
-                <span className="w-2 h-2 rounded-full bg-[#3157D5] animate-pulse" />
-                <span>{queueSummary.analysing_count} analysing · {queueSummary.ready_count} ready</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#3157D5] animate-pulse" />
+                <span>{queueSummary.analysing_count} analysing</span>
               </>
             ) : (
               <>
-                <span className="w-2 h-2 rounded-full bg-[#027A48]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#027A48]" />
                 <span>Queue ({queueSummary.ready_count} ready)</span>
               </>
             )}
@@ -160,12 +162,12 @@ export default function WorkspaceHeader({
 
         <button
           onClick={onNewTenderClick}
-          className="inline-flex items-center justify-center rounded-sm border border-[#D9DEE5] bg-white px-3 py-1.5 text-[12px] font-semibold text-[#344054] hover:bg-gray-50 transition-colors shadow-xs"
+          className="inline-flex items-center gap-1 rounded-sm bg-[#3157D5] px-2.5 py-1 text-[11.5px] sm:text-[12px] font-semibold text-white hover:bg-[#2544ab] transition-colors cursor-pointer shadow-2xs shrink-0 whitespace-nowrap"
         >
-          + New Tender
+          <span>+ New Tender</span>
         </button>
 
-        <span className="h-4 w-px bg-[#D9DEE5]" />
+        <span className="h-4 w-px bg-[#D9DEE5] shrink-0" />
 
         <LogoutButton />
       </div>
