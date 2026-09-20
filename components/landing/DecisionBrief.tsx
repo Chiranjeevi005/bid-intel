@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle2, AlertTriangle, HelpCircle, ChevronLeft, ChevronRight, ArrowRight, ArrowDown } from "lucide-react";
 
 interface InvestigationStage {
   step: string;
@@ -145,15 +146,17 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
             <div className="flex flex-wrap items-center gap-4 mb-10">
               <Link
                 href={user ? "/dashboard" : "/login"}
-                className="inline-flex items-center justify-center rounded-sm bg-[#3157D5] px-6 py-3.5 text-[14px] font-semibold text-white shadow-sm hover:bg-[#2845a9] transition-all duration-150 active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-1.5 rounded-sm bg-[#3157D5] px-6 py-3.5 text-[14px] font-semibold text-white shadow-sm hover:bg-[#2845a9] transition-all duration-150 active:scale-[0.98]"
               >
-                Analyse a tender &rarr;
+                <span>Analyse a tender</span>
+                <ArrowRight className="w-4 h-4" strokeWidth={2} />
               </Link>
               <a
                 href="#investigation-process"
-                className="inline-flex items-center justify-center rounded-sm border border-[#D0D5DD] bg-white px-5 py-3.5 text-[14px] font-medium text-[#344054] hover:bg-gray-50 transition-colors duration-150"
+                className="inline-flex items-center justify-center gap-1.5 rounded-sm border border-[#D0D5DD] bg-white px-5 py-3.5 text-[14px] font-medium text-[#344054] hover:bg-gray-50 transition-colors duration-150"
               >
-                Explore the investigation flow &darr;
+                <span>Explore the investigation flow</span>
+                <ArrowDown className="w-3.5 h-3.5 text-[#667085]" strokeWidth={2} />
               </a>
             </div>
 
@@ -237,19 +240,31 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                 <div className="grid grid-cols-2 gap-3 text-[12px]">
                   <div className="flex items-center justify-between p-2.5 bg-gray-50 rounded border border-gray-100">
                     <span className="font-medium text-[#344054]">Eligibility</span>
-                    <span className="text-[#027A48] font-semibold">✓ Covered</span>
+                    <span className="inline-flex items-center gap-1 text-[#027A48] font-semibold">
+                      <CheckCircle2 className="w-3.5 h-3.5" strokeWidth={2.5} />
+                      Covered
+                    </span>
                   </div>
                   <div className="flex items-center justify-between p-2.5 bg-gray-50 rounded border border-gray-100">
                     <span className="font-medium text-[#344054]">Liability Cap</span>
-                    <span className="text-[#B42318] font-semibold">! Uncapped</span>
+                    <span className="inline-flex items-center gap-1 text-[#B42318] font-semibold">
+                      <AlertTriangle className="w-3.5 h-3.5" strokeWidth={2.5} />
+                      Uncapped
+                    </span>
                   </div>
                   <div className="flex items-center justify-between p-2.5 bg-gray-50 rounded border border-gray-100">
                     <span className="font-medium text-[#344054]">Milestone Penalties</span>
-                    <span className="text-[#B42318] font-semibold">! $15k/Day</span>
+                    <span className="inline-flex items-center gap-1 text-[#B42318] font-semibold">
+                      <AlertTriangle className="w-3.5 h-3.5" strokeWidth={2.5} />
+                      $15k/Day
+                    </span>
                   </div>
                   <div className="flex items-center justify-between p-2.5 bg-gray-50 rounded border border-gray-100">
                     <span className="font-medium text-[#344054]">Support SLAs</span>
-                    <span className="text-[#B54708] font-semibold">? Ambiguous</span>
+                    <span className="inline-flex items-center gap-1 text-[#B54708] font-semibold">
+                      <HelpCircle className="w-3.5 h-3.5" strokeWidth={2.5} />
+                      Ambiguous
+                    </span>
                   </div>
                 </div>
               </div>
@@ -430,9 +445,24 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                             }`}
                           >
                             {insight.value}
-                            {insight.status === "danger" && <span className="text-[11px]">! CRITICAL</span>}
-                            {insight.status === "warning" && <span className="text-[11px]">? AMBIGUOUS</span>}
-                            {insight.status === "covered" && <span className="text-[11px]">✓ VERIFIED</span>}
+                            {insight.status === "danger" && (
+                              <span className="inline-flex items-center gap-1 text-[11px]">
+                                <AlertTriangle className="w-3 h-3 text-red-400 shrink-0" strokeWidth={2.5} />
+                                CRITICAL
+                              </span>
+                            )}
+                            {insight.status === "warning" && (
+                              <span className="inline-flex items-center gap-1 text-[11px]">
+                                <HelpCircle className="w-3 h-3 text-amber-400 shrink-0" strokeWidth={2.5} />
+                                AMBIGUOUS
+                              </span>
+                            )}
+                            {insight.status === "covered" && (
+                              <span className="inline-flex items-center gap-1 text-[11px]">
+                                <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" strokeWidth={2.5} />
+                                VERIFIED
+                              </span>
+                            )}
                           </span>
                         </div>
                       ))}
@@ -449,15 +479,17 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => setActiveStepIndex((prev) => (prev > 0 ? prev - 1 : 2))}
-                      className="px-3 py-1.5 text-[12px] font-mono bg-gray-800 hover:bg-gray-700 text-gray-200 rounded border border-gray-700 transition-colors"
+                      className="inline-flex items-center px-3 py-1.5 text-[12px] font-mono bg-gray-800 hover:bg-gray-700 text-gray-200 rounded border border-gray-700 transition-colors cursor-pointer"
                     >
-                      &larr; Prev Stage
+                      <ChevronLeft className="w-3.5 h-3.5 mr-1" strokeWidth={2} />
+                      Prev Stage
                     </button>
                     <button
                       onClick={() => setActiveStepIndex((prev) => (prev < 2 ? prev + 1 : 0))}
-                      className="px-3 py-1.5 text-[12px] font-mono bg-[#3157D5] hover:bg-[#2845a9] text-white rounded transition-colors"
+                      className="inline-flex items-center px-3 py-1.5 text-[12px] font-mono bg-[#3157D5] hover:bg-[#2845a9] text-white rounded transition-colors cursor-pointer"
                     >
-                      Next Stage &rarr;
+                      Next Stage
+                      <ChevronRight className="w-3.5 h-3.5 ml-1" strokeWidth={2} />
                     </button>
                   </div>
                 </div>
@@ -477,9 +509,10 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
             </div>
             <Link
               href={user ? "/dashboard" : "/login"}
-              className="inline-flex items-center justify-center rounded-sm bg-[#3157D5] px-6 py-3.5 text-[14px] font-semibold text-white shadow-sm hover:bg-[#2845a9] transition-all duration-150 active:scale-[0.98] shrink-0"
+              className="inline-flex items-center justify-center gap-1.5 rounded-sm bg-[#3157D5] px-6 py-3.5 text-[14px] font-semibold text-white shadow-sm hover:bg-[#2845a9] transition-all duration-150 active:scale-[0.98] shrink-0"
             >
-              Analyse a tender now &rarr;
+              <span>Analyse a tender now</span>
+              <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </Link>
           </div>
 

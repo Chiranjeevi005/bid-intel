@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useMemo } from 'react';
+import { CheckCircle2, AlertTriangle, HelpCircle, X, ArrowRight, Lock } from 'lucide-react';
 import { CRITICAL_CATEGORIES, CriticalCategory, CategoryCoverage } from '@/lib/ai/coverage';
 import { PageCoverageAudit } from '@/lib/ai/retrieval';
 import { CategoryInspectionState } from './EvidenceInspector';
@@ -14,6 +15,8 @@ interface CoverageAuditTrayProps {
   onInspectCategory: (state: CategoryInspectionState) => void;
   onClose?: () => void;
   isExpandedView?: boolean;
+  userPlan?: 'FREE' | 'PRO_INDIA' | 'PRO_GLOBAL';
+  onUpgradeToPro?: () => void;
 }
 
 export default function CoverageAuditTray({
@@ -24,7 +27,9 @@ export default function CoverageAuditTray({
   onSelectCategory,
   onInspectCategory,
   onClose,
-  isExpandedView = false
+  isExpandedView = false,
+  userPlan = 'FREE',
+  onUpgradeToPro
 }: CoverageAuditTrayProps) {
   // Tally the 3 states unconditionally
   const summaryCounts = useMemo(() => {
@@ -75,9 +80,10 @@ export default function CoverageAuditTray({
           {onClose && (
             <button
               onClick={onClose}
-              className="p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-colors cursor-pointer text-[13px] font-semibold"
+              className="inline-flex items-center p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-colors cursor-pointer text-[13px] font-semibold"
             >
-              ✕ Close
+              <X className="w-4 h-4 mr-1" strokeWidth={2} />
+              Close
             </button>
           )}
         </div>
@@ -137,13 +143,16 @@ export default function CoverageAuditTray({
             <strong>Core Rule:</strong> <span className="font-semibold text-[#111827]">No Verified Finding &ne; No Requirement.</span> A category marked <em>Review Required</em> or <em>Extraction Uncertain</em> indicates unconfirmed evidence or sparse pages that demand manual audit.
           </div>
           <div className="flex items-center gap-2 shrink-0 text-[11px] font-semibold">
-            <span className="text-[#027A48] bg-[#ECFDF3] px-2 py-0.5 rounded border border-[#ABEFC6]">
+            <span className="inline-flex items-center text-[#027A48] bg-[#ECFDF3] px-2 py-0.5 rounded border border-[#ABEFC6]">
+              <CheckCircle2 className="w-3 h-3 mr-1 text-[#027A48]" strokeWidth={2.5} />
               {summaryCounts.covered} Covered
             </span>
-            <span className="text-[#B54708] bg-[#FFFAEB] px-2 py-0.5 rounded border border-[#FEDF89]">
+            <span className="inline-flex items-center text-[#B54708] bg-[#FFFAEB] px-2 py-0.5 rounded border border-[#FEDF89]">
+              <AlertTriangle className="w-3 h-3 mr-1 text-[#B54708]" strokeWidth={2.5} />
               {summaryCounts.reviewRequired} Review
             </span>
-            <span className="text-[#475467] bg-[#F2F4F7] px-2 py-0.5 rounded border border-[#D0D5DD]">
+            <span className="inline-flex items-center text-[#475467] bg-[#F2F4F7] px-2 py-0.5 rounded border border-[#D0D5DD]">
+              <HelpCircle className="w-3 h-3 mr-1 text-[#475467]" strokeWidth={2} />
               {summaryCounts.uncertain} Uncertain
             </span>
           </div>
@@ -189,9 +198,17 @@ export default function CoverageAuditTray({
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[12px] font-bold text-[#111827]">
-                      {cat.replace(/_/g, ' ')}
-                    </span>
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="text-[12px] font-bold text-[#111827]">
+                        {cat.replace(/_/g, ' ')}
+                      </span>
+                      {['TERMINATION', 'LIABILITY_RISK', 'INDEMNITY', 'PENALTIES_LIQUIDATED_DAMAGES', 'INSURANCE'].includes(cat) && userPlan !== 'PRO_GLOBAL' && (
+                        <span className="inline-flex items-center gap-0.5 text-[9.5px] font-bold uppercase tracking-wider bg-[#3157D5] text-white px-1.5 py-0.2 rounded-xs">
+                          <Lock className="w-2.5 h-2.5" strokeWidth={2.5} />
+                          PRO
+                        </span>
+                      )}
+                    </div>
                     <span
                       className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded ${
                         isCovered
@@ -212,8 +229,9 @@ export default function CoverageAuditTray({
 
                 <div className="pt-2 border-t border-[#F2F4F7] flex items-center justify-between text-[11px] font-mono text-[#667085]">
                   <span>{item.verified_findings_count} Finding(s)</span>
-                  <span className="text-[#3157D5] font-sans font-semibold text-[11.5px] hover:underline">
-                    Inspect &rarr;
+                  <span className="inline-flex items-center text-[#3157D5] font-sans font-semibold text-[11.5px] hover:underline">
+                    Inspect
+                    <ArrowRight className="w-3 h-3 ml-0.5" strokeWidth={2} />
                   </span>
                 </div>
               </div>
@@ -236,13 +254,16 @@ export default function CoverageAuditTray({
             12-Category Critical Coverage Audit:
           </span>
           <div className="flex items-center gap-2 text-[11px] font-semibold">
-            <span className="text-[#027A48] bg-[#ECFDF3] px-2 py-0.5 rounded border border-[#ABEFC6]">
+            <span className="inline-flex items-center text-[#027A48] bg-[#ECFDF3] px-2 py-0.5 rounded border border-[#ABEFC6]">
+              <CheckCircle2 className="w-3 h-3 mr-1 text-[#027A48]" strokeWidth={2.5} />
               {summaryCounts.covered} Covered
             </span>
-            <span className="text-[#B54708] bg-[#FFFAEB] px-2 py-0.5 rounded border border-[#FEDF89]">
+            <span className="inline-flex items-center text-[#B54708] bg-[#FFFAEB] px-2 py-0.5 rounded border border-[#FEDF89]">
+              <AlertTriangle className="w-3 h-3 mr-1 text-[#B54708]" strokeWidth={2.5} />
               {summaryCounts.reviewRequired} Review Required
             </span>
-            <span className="text-[#475467] bg-[#F2F4F7] px-2 py-0.5 rounded border border-[#D0D5DD]">
+            <span className="inline-flex items-center text-[#475467] bg-[#F2F4F7] px-2 py-0.5 rounded border border-[#D0D5DD]">
+              <HelpCircle className="w-3 h-3 mr-1 text-[#475467]" strokeWidth={2} />
               {summaryCounts.uncertain} Extraction Uncertain
             </span>
           </div>
@@ -298,7 +319,13 @@ export default function CoverageAuditTray({
                   : 'bg-[#F2F4F7] text-[#475467] border-[#D0D5DD] hover:bg-gray-200'
               }`}
             >
-              <span>{isCovered ? '✓' : isReview ? '!' : '?'}</span>
+              {isCovered ? (
+                <CheckCircle2 className="w-3 h-3 text-[#027A48] shrink-0" strokeWidth={2.5} />
+              ) : isReview ? (
+                <AlertTriangle className="w-3 h-3 text-[#B54708] shrink-0" strokeWidth={2.5} />
+              ) : (
+                <HelpCircle className="w-3 h-3 text-[#475467] shrink-0" strokeWidth={2} />
+              )}
               <span>{cat.replace(/_/g, ' ')}</span>
               <span className="text-[10px] opacity-75 font-mono">
                 ({item.verified_findings_count})

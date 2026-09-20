@@ -146,6 +146,14 @@ export function classifyFindingToLane(finding: FindingItem): AttentionLaneType {
 }
 
 /**
+ * Returns true if a finding belongs to the Contract Exposure layer (Pro gated):
+ * Liabilities, Indemnities, Termination/Suspension, Penalties/Liquidated Damages, Insurance, Commercial Exposure clauses.
+ */
+export function isContractExposureFinding(finding: FindingItem): boolean {
+  return classifyFindingToLane(finding) === 'COULD_HURT';
+}
+
+/**
  * Generalized procurement prioritization for MUST_MEET:
  * Ranks findings by:
  * 1. Severity tier (CRITICAL -> HIGH -> MEDIUM -> LOW)
@@ -250,7 +258,8 @@ export function partitionAttentionLanes(
   });
 
   // 2. The primary attention finding is the overall highest-priority verified finding
-  const primaryAttentionFinding = sortedFindings.length > 0 ? sortedFindings[0] : null;
+  // If user is not Pro, do not surface a gated Contract Exposure finding as the dominant primary finding
+  const primaryAttentionFinding = sortedFindings.find((f) => !f.is_pro_gated) || sortedFindings[0] || null;
 
   const rawMustMeet: FindingItem[] = [];
   const rawCouldHurt: FindingItem[] = [];

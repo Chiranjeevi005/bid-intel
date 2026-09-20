@@ -1,7 +1,18 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { createClient } from '@/lib/supabase/client';
+import Link from 'next/link';
+import { 
+  UploadCloud, 
+  Loader2, 
+  CheckCircle2, 
+  AlertTriangle, 
+  Ban, 
+  AlertCircle, 
+  ArrowRight, 
+  FileText,
+  X
+} from 'lucide-react';
 
 interface DocumentIntakeProps {
   userId: string;
@@ -36,7 +47,6 @@ export default function DocumentIntake({
   const [statusMessage, setStatusMessage] = useState<string>('');
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const supabase = createClient();
 
   // Validate and select file
   const handleFileSelect = (file: File) => {
@@ -66,46 +76,31 @@ export default function DocumentIntake({
     try {
       setErrorMessage(null);
       setStage('UPLOADING');
-      setStatusMessage('Uploading PDF to secure private storage...');
+      setStatusMessage('Uploading PDF...');
 
-      // 1. Upload file to Supabase Storage bucket 'rfps'
-      const fileExt = 'pdf';
-      const storageKey = `${userId}/${crypto.randomUUID()}.${fileExt}`;
+      // 1. Upload file via server API (atomic storage upload and document record creation)
+      const formData = new FormData();
+      formData.append('file', selectedFile);
 
-      const { error: uploadError } = await supabase.storage
-        .from('rfps')
-        .upload(storageKey, selectedFile, {
-          cacheControl: '3600',
-          upsert: false
-        });
+      const uploadRes = await fetch('/api/documents', {
+        method: 'POST',
+        body: formData,
+      });
 
-      if (uploadError) {
-        console.error('Storage Upload Error:', uploadError);
-        throw new Error(`Upload failed: ${uploadError.message}`);
+      if (!uploadRes.ok) {
+        const errData = await uploadRes.json().catch(() => ({}));
+        throw new Error(errData.error || 'Upload failed. Please try again.');
       }
 
-      // 2. Insert document record in PostgreSQL
-      const { data: docData, error: dbError } = await supabase
-        .from('documents')
-        .insert({
-          user_id: userId,
-          original_filename: selectedFile.name,
-          storage_path: storageKey,
-          size_bytes: selectedFile.size,
-          status: 'UPLOADED'
-        })
-        .select()
-        .single();
-
-      if (dbError || !docData) {
-        console.error('Database Insert Error:', dbError);
-        throw new Error('Failed to create document record.');
+      const uploadData = await uploadRes.json();
+      const currentDocId = uploadData.document?.id;
+      if (!currentDocId) {
+        throw new Error('Server did not return a valid document ID.');
       }
 
-      const currentDocId = docData.id;
       setDocId(currentDocId);
 
-      // 3. Process Document (Page text extraction + OCR heuristics)
+      // 2. Process Document (Page text extraction + OCR heuristics)
       setStage('EXTRACTING');
       setStatusMessage('Extracting document pages and verifying text density...');
 
@@ -156,12 +151,19 @@ export default function DocumentIntake({
     const analyzeData = await analyzeRes.json();
 
     if (!analyzeRes.ok) {
+      if (analyzeRes.status === 403 && (analyzeData.code === 'QUOTA_EXCEEDED' || analyzeData.error?.includes('quota'))) {
+        setErrorMessage(analyzeData.message || 'Analysis quota exceeded. Please upgrade to a paid plan for 15 analyses per month.');
+        setStage('IDLE');
+        return;
+      }
       if (analyzeRes.status === 422 && analyzeData.ambiguous) {
+        setErrorMessage(null);
         setStage('AMBIGUOUS_CONFIRMATION');
         setAmbiguityReason(analyzeData.reason || 'Document structure is non-standard.');
         return;
       }
       if (analyzeRes.status === 422 && analyzeData.rejected) {
+        setErrorMessage(null);
         setStage('REJECTED');
         setAmbiguityReason(analyzeData.reason || 'Document does not appear to be a procurement opportunity.');
         return;
@@ -169,13 +171,15 @@ export default function DocumentIntake({
       throw new Error(analyzeData.error || 'Failed to dispatch analysis run.');
     }
 
-    if (analyzeData.status === 'AI_REJECTED' || analyzeData.success === false && analyzeData.status === 'AI_REJECTED') {
+    if (analyzeData.status === 'AI_REJECTED' || (analyzeData.success === false && analyzeData.status === 'AI_REJECTED')) {
+      setErrorMessage(null);
       setStage('REJECTED');
       setAmbiguityReason(analyzeData.reason || 'Document does not appear to be a procurement opportunity.');
       return;
     }
 
-    if (analyzeData.status === 'AI_AMBIGUOUS' || analyzeData.success === false && analyzeData.status === 'AI_AMBIGUOUS') {
+    if (analyzeData.status === 'AI_AMBIGUOUS' || (analyzeData.success === false && analyzeData.status === 'AI_AMBIGUOUS')) {
+      setErrorMessage(null);
       setStage('AMBIGUOUS_CONFIRMATION');
       setAmbiguityReason(analyzeData.reason || 'Document classification uncertain, requires user confirmation');
       return;
@@ -218,10 +222,26 @@ export default function DocumentIntake({
         if (data.status === 'COMPLETED') {
           clearInterval(interval);
           onAnalysisComplete(activeDocId);
+        } else if (data.status === 'REJECTED' || data.qualification_status === 'AI_REJECTED') {
+          clearInterval(interval);
+          setErrorMessage(null);
+          setAmbiguityReason(data.qualification_reason || data.error || 'Document does not appear to be a procurement opportunity.');
+          setStage('REJECTED');
+        } else if (data.status === 'AMBIGUOUS' || data.qualification_status === 'AI_AMBIGUOUS') {
+          clearInterval(interval);
+          setErrorMessage(null);
+          setAmbiguityReason(data.qualification_reason || data.error || 'Document classification uncertain, requires user confirmation.');
+          setStage('AMBIGUOUS_CONFIRMATION');
         } else if (data.status === 'FAILED') {
           clearInterval(interval);
-          setStage('FAILED');
-          setErrorMessage(data.error || 'Analysis execution encountered a server error.');
+          if (data.qualification_status === 'AI_REJECTED') {
+            setErrorMessage(null);
+            setAmbiguityReason(data.qualification_reason || data.error || 'Document does not appear to be a procurement opportunity.');
+            setStage('REJECTED');
+          } else {
+            setStage('FAILED');
+            setErrorMessage(data.error || data.last_error || 'Analysis execution encountered a server error.');
+          }
         } else {
           setStatusMessage(`Analysing document pages (Stage: ${data.status})...`);
         }
@@ -255,11 +275,21 @@ export default function DocumentIntake({
         )}
       </div>
 
-      {/* Error Alert */}
-      {errorMessage && (
-        <div className="mb-6 p-4 bg-[#FEF3F2] border border-[#FECDCA] rounded-sm text-[13px] text-[#B42318] flex items-start gap-2.5">
-          <span className="font-bold">Error:</span>
-          <span>{errorMessage}</span>
+      {/* Error Alert - only shown when in IDLE file selection mode */}
+      {errorMessage && stage === 'IDLE' && (
+        <div className="mb-6 p-4 bg-[#FEF3F2] border border-[#FECDCA] rounded-sm text-[13px] text-[#B42318] flex items-start justify-between gap-3">
+          <div className="flex items-start gap-2.5">
+            <span className="font-bold">Error:</span>
+            <span>{errorMessage}</span>
+          </div>
+          {errorMessage.toLowerCase().includes('quota') && (
+            <Link
+              href="/subscription"
+              className="shrink-0 px-2.5 py-1 bg-[#B42318] hover:bg-[#912018] text-white text-[12px] font-medium rounded transition-colors"
+            >
+              View Plans
+            </Link>
+          )}
         </div>
       )}
 
@@ -291,10 +321,8 @@ export default function DocumentIntake({
               }}
             />
 
-            <div className="w-10 h-10 rounded-full bg-white border border-[#D9DEE5] flex items-center justify-center mb-3 text-[#3157D5]">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-              </svg>
+            <div className="w-10 h-10 rounded-full bg-white border border-[#D9DEE5] flex items-center justify-center mb-3 text-[#3157D5] shadow-2xs">
+              <UploadCloud className="w-5 h-5" strokeWidth={1.75} />
             </div>
 
             {selectedFile ? (
@@ -322,9 +350,10 @@ export default function DocumentIntake({
           <button
             disabled={!selectedFile}
             onClick={handleStartIntake}
-            className="w-full py-2.5 px-4 bg-[#3157D5] hover:bg-[#2546B8] disabled:bg-gray-200 disabled:text-gray-400 text-white font-semibold text-[13.5px] rounded-sm transition-colors shadow-xs"
+            className="w-full py-2.5 px-4 bg-[#3157D5] hover:bg-[#2546B8] disabled:bg-gray-200 disabled:text-gray-400 text-white font-semibold text-[13.5px] rounded-sm transition-colors shadow-xs flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
           >
-            Start Tender Ingestion & Analysis &rarr;
+            <span>Start Tender Ingestion & Analysis</span>
+            <ArrowRight className="w-4 h-4" strokeWidth={2} />
           </button>
         </div>
       )}
@@ -332,7 +361,7 @@ export default function DocumentIntake({
       {/* STAGE 2: PROCESSING (UPLOADING / EXTRACTING / QUALIFYING / ANALYSING) */}
       {(stage === 'UPLOADING' || stage === 'EXTRACTING' || stage === 'QUALIFYING' || stage === 'ANALYSING') && (
         <div className="p-8 text-center flex flex-col items-center justify-center bg-[#F5F6F4] border border-[#D9DEE5] rounded-sm">
-          <div className="w-8 h-8 border-2 border-[#3157D5] border-t-transparent rounded-full animate-spin mb-4" />
+          <Loader2 className="w-8 h-8 text-[#3157D5] animate-spin mb-4" strokeWidth={2} />
           
           <h3 className="text-[15px] font-bold text-[#111827] mb-1">
             {stage === 'UPLOADING' && 'Uploading Tender Document...'}
@@ -357,13 +386,14 @@ export default function DocumentIntake({
       {stage === 'ACCEPTED' && (
         <div className="p-6 bg-[#ECFDF3] border border-[#ABEFC6] rounded-sm">
           <div className="flex items-center gap-2 mb-2 text-[#027A48]">
-            <span className="font-bold text-[14px]">✓ Tender Accepted & Queued</span>
+            <CheckCircle2 className="w-4 h-4 text-[#027A48]" strokeWidth={2} />
+            <span className="font-bold text-[14px]">Tender Accepted & Queued</span>
           </div>
           <p className="text-[13.5px] font-semibold text-[#054F31] mb-1">
             {selectedFile?.name}
           </p>
           <p className="text-[12.5px] text-[#067647] leading-relaxed mb-4">
-            The document has been securely stored and queued for analysis in the background. You can continue working, upload another tender, or inspect the analysis queue.
+            The document has been queued for analysis in the background. You can continue working, upload another tender, or inspect the analysis queue.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <button
@@ -383,9 +413,10 @@ export default function DocumentIntake({
                   onCancel();
                 }
               }}
-              className="px-4 py-2 bg-white border border-[#D9DEE5] text-[#344054] font-semibold text-[12.5px] rounded-sm hover:bg-gray-50 cursor-pointer shadow-2xs"
+              className="px-4 py-2 bg-white border border-[#D9DEE5] text-[#344054] font-semibold text-[12.5px] rounded-sm hover:bg-gray-50 cursor-pointer shadow-2xs flex items-center gap-1.5"
             >
-              Go to Workspace &rarr;
+              <span>Go to Workspace</span>
+              <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
             </button>
           </div>
         </div>
@@ -395,14 +426,15 @@ export default function DocumentIntake({
       {stage === 'OCR_REQUIRED' && (
         <div className="p-6 bg-[#FFFAEB] border border-[#FEDF89] rounded-sm">
           <div className="flex items-center gap-2 mb-2 text-[#B54708]">
-            <span className="font-bold text-[14px]">⚠️ OCR Required</span>
+            <AlertTriangle className="w-4 h-4 text-[#B54708]" strokeWidth={2} />
+            <span className="font-bold text-[14px]">OCR Required</span>
           </div>
           <p className="text-[13px] text-[#7A2E0E] leading-relaxed mb-4">
             This document contains scanned image pages or extremely low text density. The current text extractor yielded insufficient character data. Optical Character Recognition (OCR) is required before this document can be analyzed.
           </p>
           <button
             onClick={() => setStage('IDLE')}
-            className="px-4 py-2 bg-white border border-[#D9DEE5] rounded-sm text-[12.5px] font-semibold text-[#344054] hover:bg-gray-50"
+            className="px-4 py-2 bg-white border border-[#D9DEE5] rounded-sm text-[12.5px] font-semibold text-[#344054] hover:bg-gray-50 cursor-pointer"
           >
             Select Another Document
           </button>
@@ -413,7 +445,8 @@ export default function DocumentIntake({
       {stage === 'AMBIGUOUS_CONFIRMATION' && (
         <div className="p-6 bg-[#FFFAEB] border border-[#FEDF89] rounded-sm">
           <div className="flex items-center gap-2 mb-2 text-[#B54708]">
-            <span className="font-bold text-[14px]">⚠️ Document Qualification Ambiguous</span>
+            <AlertTriangle className="w-4 h-4 text-[#B54708]" strokeWidth={2} />
+            <span className="font-bold text-[14px]">Document Qualification Ambiguous</span>
           </div>
           <p className="text-[13px] text-[#7A2E0E] leading-relaxed mb-2">
             The automated qualification gate classified this document with low confidence.
@@ -426,13 +459,13 @@ export default function DocumentIntake({
           <div className="flex items-center gap-3">
             <button
               onClick={() => docId && triggerAnalysis(docId, true)}
-              className="px-4 py-2 bg-[#3157D5] text-white font-semibold text-[12.5px] rounded-sm hover:bg-[#2546B8]"
+              className="px-4 py-2 bg-[#3157D5] text-white font-semibold text-[12.5px] rounded-sm hover:bg-[#2546B8] cursor-pointer shadow-xs"
             >
               Confirm as Procurement Opportunity & Proceed
             </button>
             <button
               onClick={() => setStage('IDLE')}
-              className="px-3 py-2 bg-white border border-[#D9DEE5] text-[#344054] font-semibold text-[12.5px] rounded-sm hover:bg-gray-50"
+              className="px-3 py-2 bg-white border border-[#D9DEE5] text-[#344054] font-semibold text-[12.5px] rounded-sm hover:bg-gray-50 cursor-pointer"
             >
               Cancel
             </button>
@@ -440,46 +473,116 @@ export default function DocumentIntake({
         </div>
       )}
 
-      {/* STAGE 5: REJECTED DOCUMENT GATE */}
+      {/* STAGE 5: REJECTED DOCUMENT GATE (MATCHING QUEUED SIDE PANEL DESIGN & ACTIONS) */}
       {stage === 'REJECTED' && (
         <div className="p-6 bg-[#FEF3F2] border border-[#FECDCA] rounded-sm">
-          <div className="flex items-center gap-2 mb-2 text-[#B42318]">
-            <span className="font-bold text-[14px]">🚫 Document Rejected</span>
+          <div className="flex items-start justify-between gap-2 mb-2">
+            <div>
+              <div className="flex items-center gap-2 text-[#B42318] mb-1">
+                <Ban className="w-4 h-4 text-[#B42318]" strokeWidth={2} />
+                <span className="font-bold text-[14px]">Document Rejected</span>
+              </div>
+              {selectedFile && (
+                <p className="text-[13px] font-semibold text-[#111827] truncate">
+                  {selectedFile.name}
+                </p>
+              )}
+            </div>
+            <span className="px-2 py-0.5 text-[10px] font-mono font-semibold rounded border bg-white text-[#B42318] border-[#FECDCA] shrink-0">
+              REJECTED
+            </span>
           </div>
-          <p className="text-[13px] text-[#912018] leading-relaxed mb-2">
-            This document was classified as a non-procurement document (such as an internal resume, invoice, or brochure) and cannot be processed as a tender.
+
+          <p className="text-[12.5px] text-[#912018] mb-3 leading-relaxed">
+            This document was identified as a non-procurement document (such as an internal resume, invoice, brochure, or marketing material) and cannot be processed as a tender.
           </p>
+
           {ambiguityReason && (
-            <p className="text-[12px] font-mono text-[#912018] bg-white/80 p-3 rounded border border-[#FECDCA] mb-4 leading-relaxed">
-              Reason: {ambiguityReason}
-            </p>
+            <div className="p-3 bg-white/80 rounded border border-[#FECDCA] mb-4">
+              <div className="text-[11px] font-bold text-[#B42318] uppercase tracking-wider mb-1">
+                Reason
+              </div>
+              <p className="text-[12px] font-mono text-[#912018] leading-relaxed">
+                {ambiguityReason}
+              </p>
+            </div>
           )}
-          <div className="flex flex-wrap items-center gap-3">
+
+          <div className="flex items-center justify-between pt-3 border-t border-[#FECDCA]/60">
             <button
-              onClick={() => setStage('IDLE')}
+              onClick={() => {
+                setSelectedFile(null);
+                setDocId(null);
+                setRunId(null);
+                setErrorMessage(null);
+                setAmbiguityReason(null);
+                setStage('IDLE');
+              }}
               className="px-4 py-2 bg-white border border-[#D9DEE5] text-[#344054] font-semibold text-[12.5px] rounded-sm hover:bg-gray-50 cursor-pointer shadow-2xs"
             >
               Upload Another Document
             </button>
-            <button
-              onClick={() => docId && triggerAnalysis(docId, true)}
-              className="px-4 py-2 bg-[#111827] hover:bg-black text-white font-semibold text-[12.5px] rounded-sm transition-colors cursor-pointer shadow-xs"
-            >
-              Analyze Anyway (Override Gate) &rarr;
-            </button>
+            {docId && (
+              <button
+                onClick={() => triggerAnalysis(docId, true)}
+                className="px-4 py-2 bg-[#111827] hover:bg-black text-white font-semibold text-[12.5px] rounded-sm transition-colors cursor-pointer shadow-xs flex items-center gap-1.5"
+              >
+                <span>Override & Analyze</span>
+                <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+              </button>
+            )}
           </div>
         </div>
       )}
 
-      {/* STAGE 6: FAILURE STATE */}
+      {/* STAGE 6: FAILURE STATE (MATCHING QUEUED SIDE PANEL DESIGN & ACTIONS) */}
       {stage === 'FAILED' && (
-        <div className="p-6 bg-white border border-[#D9DEE5] rounded-sm text-center">
-          <button
-            onClick={() => setStage('IDLE')}
-            className="px-4 py-2 bg-[#3157D5] text-white text-[12.5px] font-semibold rounded-sm hover:bg-[#2546B8]"
-          >
-            Try Again
-          </button>
+        <div className="p-6 bg-[#FEF3F2] border border-[#FECDCA] rounded-sm">
+          <div className="flex items-start justify-between gap-2 mb-2">
+            <div>
+              <div className="flex items-center gap-2 text-[#B42318] mb-1">
+                <AlertCircle className="w-4 h-4 text-[#B42318]" strokeWidth={2} />
+                <span className="font-bold text-[14px]">Processing Failed</span>
+              </div>
+              {selectedFile && (
+                <p className="text-[13px] font-semibold text-[#111827] truncate">
+                  {selectedFile.name}
+                </p>
+              )}
+            </div>
+            <span className="px-2 py-0.5 text-[10px] font-mono font-semibold rounded border bg-white text-[#B42318] border-[#FECDCA] shrink-0">
+              FAILED
+            </span>
+          </div>
+
+          <p className="text-[12.5px] text-[#912018] mb-4 leading-relaxed">
+            {errorMessage || 'Analysis execution encountered an unexpected error.'}
+          </p>
+
+          <div className="flex items-center justify-between pt-3 border-t border-[#FECDCA]/60">
+            <button
+              onClick={() => {
+                setSelectedFile(null);
+                setDocId(null);
+                setRunId(null);
+                setErrorMessage(null);
+                setAmbiguityReason(null);
+                setStage('IDLE');
+              }}
+              className="px-4 py-2 bg-white border border-[#D9DEE5] text-[#344054] font-semibold text-[12.5px] rounded-sm hover:bg-gray-50 cursor-pointer shadow-2xs"
+            >
+              Upload Another Document
+            </button>
+            {docId && (
+              <button
+                onClick={() => triggerAnalysis(docId, true)}
+                className="px-4 py-2 bg-[#111827] hover:bg-black text-white font-semibold text-[12.5px] rounded-sm transition-colors cursor-pointer shadow-xs flex items-center gap-1.5"
+              >
+                <span>Retry Analysis</span>
+                <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+              </button>
+            )}
+          </div>
         </div>
       )}
 

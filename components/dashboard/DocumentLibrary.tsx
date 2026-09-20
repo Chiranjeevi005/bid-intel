@@ -6,6 +6,24 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import LogoutButton from '@/app/dashboard/LogoutButton';
 import DocumentIntake from '@/components/workspace/DocumentIntake';
+import BillingBadge from '@/components/billing/BillingBadge';
+import {
+  Plus,
+  Search,
+  Check,
+  AlertTriangle,
+  Ban,
+  CheckCircle,
+  Trash2,
+  ArrowRight,
+  X,
+  FileText,
+  Loader2,
+  ShieldAlert,
+  Database,
+  FileCheck,
+  HardDrive
+} from 'lucide-react';
 
 export interface LibraryDocument {
   id: string;
@@ -49,16 +67,29 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [deleteError, setDeleteError] = useState<string | null>(null);
 
+  // Library fetch error state (Law 1: Error != Empty)
+  const [fetchError, setFetchError] = useState<string | null>(null);
+
   // Fetch all documents for this user
   const fetchDocuments = useCallback(async () => {
     try {
       setIsLoading(true);
+      setFetchError(null);
       const res = await fetch('/api/documents');
-      if (!res.ok) return;
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        // Use user-safe message; do not expose internal/stack details
+        const safeMsg = errData.error && typeof errData.error === 'string' && !errData.error.includes('at ')
+          ? errData.error
+          : 'Unable to communicate with the tender service. Please try again.';
+        setFetchError(safeMsg);
+        return;
+      }
       const data = await res.json();
       setDocuments(data.documents || []);
-    } catch (err) {
-      console.error('Failed to fetch document library:', err);
+      setFetchError(null);
+    } catch {
+      setFetchError('A network error occurred while retrieving your tenders. Please check your connection.');
     } finally {
       setIsLoading(false);
     }
@@ -217,6 +248,13 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
         </div>
 
         <div className="flex items-center gap-3">
+          <BillingBadge />
+          <Link
+            href="/subscription"
+            className="text-[12px] font-medium text-[#475467] hover:text-[#101828] bg-[#F2F4F7] hover:bg-[#EAECF0] border border-[#D0D5DD] px-2.5 py-1 rounded transition-colors hidden sm:inline"
+          >
+            Plans & Pricing
+          </Link>
           {userEmail && (
             <span className="text-[12px] font-medium text-[#667085] hidden md:inline">
               {userEmail}
@@ -248,9 +286,7 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
             onClick={() => setIsUploadModalOpen(true)}
             className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#3157D5] hover:bg-[#2544ab] text-white text-[13px] font-semibold rounded-md shadow-xs transition-colors cursor-pointer shrink-0"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-            </svg>
+            <Plus className="w-4 h-4" strokeWidth={2} />
             <span>Upload Tender</span>
           </button>
         </div>
@@ -259,19 +295,7 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-2.5 rounded-lg border border-[#D9DEE5] shadow-2xs">
           {/* Search Input */}
           <div className="relative flex-1">
-            <svg
-              className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#98A2B3]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#98A2B3]" strokeWidth={2} />
             <input
               type="text"
               value={searchQuery}
@@ -298,17 +322,15 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-2.5 py-1 text-[12px] font-semibold rounded-md transition-colors cursor-pointer shrink-0 flex items-center gap-1.5 ${
-                    isActive
-                      ? 'bg-[#3157D5] text-white shadow-2xs'
-                      : 'text-[#475467] hover:bg-[#F5F6F4] hover:text-[#111827]'
-                  }`}
+                  className={`px-2.5 py-1 text-[12px] font-semibold rounded-md transition-colors cursor-pointer shrink-0 flex items-center gap-1.5 ${isActive
+                    ? 'bg-[#3157D5] text-white shadow-2xs'
+                    : 'text-[#475467] hover:bg-[#F5F6F4] hover:text-[#111827]'
+                    }`}
                 >
                   <span>{tab.label}</span>
                   <span
-                    className={`text-[10.5px] px-1.5 py-0.2 rounded-full ${
-                      isActive ? 'bg-white/20 text-white' : 'bg-[#E4E7EC] text-[#475467]'
-                    }`}
+                    className={`text-[10.5px] px-1.5 py-0.2 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-[#E4E7EC] text-[#475467]'
+                      }`}
                   >
                     {tab.count}
                   </span>
@@ -318,11 +340,11 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
           </div>
         </div>
 
-        {/* 3. DOCUMENT LIST / HYBRID ROWS */}
+        {/* Documents Grid / List */}
         <div className="flex flex-col gap-2.5">
           {isLoading ? (
             <div className="bg-white border border-[#D9DEE5] rounded-lg p-12 flex flex-col items-center justify-center text-center">
-              <div className="w-7 h-7 border-2 border-[#3157D5] border-t-transparent rounded-full animate-spin mb-3" />
+              <Loader2 className="w-7 h-7 text-[#3157D5] animate-spin mb-3" strokeWidth={2} />
               <span className="text-[13px] font-semibold text-[#111827]">
                 Loading Document Library...
               </span>
@@ -330,12 +352,32 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                 Fetching verified tender records
               </span>
             </div>
+          ) : fetchError ? (
+            /* Law 1: Error != Empty. Render explicit error state when fetch fails */
+            <div className="bg-white border border-[#FECDCA] rounded-lg p-10 flex flex-col items-center justify-center text-center shadow-xs">
+              <div className="w-12 h-12 rounded-full bg-[#FEF3F2] border border-[#FECDCA] text-[#B42318] flex items-center justify-center mb-3">
+                <AlertTriangle className="w-6 h-6 text-[#D92D20]" strokeWidth={2} />
+              </div>
+              <h3 className="text-[15px] font-bold text-[#111827]">
+                Unable to Load Document Library
+              </h3>
+              <p className="text-[13px] text-[#B42318] max-w-md mt-1 mb-1 font-medium">
+                {fetchError}
+              </p>
+              <p className="text-[12px] text-[#475467] max-w-sm mb-5">
+                Your previously uploaded tenders and analyses are safe in our database.
+              </p>
+              <button
+                onClick={fetchDocuments}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#D92D20] hover:bg-[#B42318] text-white text-[12.5px] font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
+              >
+                <span>Retry Loading Tenders</span>
+              </button>
+            </div>
           ) : filteredDocuments.length === 0 ? (
             <div className="bg-white border border-[#D9DEE5] rounded-lg p-12 flex flex-col items-center justify-center text-center">
               <div className="w-10 h-10 rounded-full bg-[#F5F6F4] flex items-center justify-center text-[#667085] mb-3">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
+                <FileText className="w-5 h-5 text-[#667085]" strokeWidth={1.75} />
               </div>
               <h3 className="text-[14px] font-bold text-[#111827]">
                 {searchQuery ? 'No matching documents found' : 'No documents in this view'}
@@ -348,9 +390,10 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
               {!searchQuery && (
                 <button
                   onClick={() => setIsUploadModalOpen(true)}
-                  className="px-3.5 py-1.5 bg-[#3157D5] hover:bg-[#2544ab] text-white text-[12.5px] font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#3157D5] hover:bg-[#2544ab] text-white text-[12.5px] font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
                 >
-                  + Upload Your First RFP
+                  <Plus className="w-3.5 h-3.5" strokeWidth={2} />
+                  <span>Upload Your First RFP</span>
                 </button>
               )}
             </div>
@@ -390,22 +433,26 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                       {/* Qualification Badge */}
                       {doc.qualification_status === 'AI_QUALIFIED' && (
                         <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#ECFDF3] text-[#027A48] border border-[#ABEFC6]">
-                          ✓ Qualified RFP
+                          <Check className="w-3 h-3 mr-1" strokeWidth={2.5} />
+                          <span>Qualified RFP</span>
                         </span>
                       )}
                       {isAmbiguous && (
                         <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FFFAEB] text-[#B54708] border border-[#FEDF89]">
-                          Ambiguous Tender
+                          <AlertTriangle className="w-3 h-3 mr-1" strokeWidth={2} />
+                          <span>Ambiguous Tender</span>
                         </span>
                       )}
                       {isRejected && (
                         <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FEF3F2] text-[#B42318] border border-[#FECDCA]">
-                          ✕ Non-RFP Rejected
+                          <Ban className="w-3 h-3 mr-1" strokeWidth={2} />
+                          <span>Non-RFP Rejected</span>
                         </span>
                       )}
                       {doc.qualification_status === 'USER_CONFIRMED' && (
                         <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#EFF8FF] text-[#175CD3] border border-[#B2DDFF]">
-                          Manually Confirmed
+                          <CheckCircle className="w-3 h-3 mr-1" strokeWidth={2} />
+                          <span>Manually Confirmed</span>
                         </span>
                       )}
                     </div>
@@ -415,7 +462,7 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                       <span>{doc.total_pages > 0 ? `${doc.total_pages} pages` : 'Pending page audit'}</span>
                       <span>•</span>
                       <span>Uploaded {formatTimeAgo(doc.created_at)}</span>
-                      
+
                       {/* Operational Status Tag */}
                       {isCompleted && (
                         <>
@@ -441,8 +488,8 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                             {opStatus === 'EXTRACTING'
                               ? 'Extracting Document Pages...'
                               : opStatus === 'QUALIFYING'
-                              ? 'Qualifying Document Signals...'
-                              : 'Analysis In Progress...'}
+                                ? 'Qualifying Document Signals...'
+                                : 'Analysis In Progress...'}
                           </span>
                         </>
                       )}
@@ -495,29 +542,29 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                   <div className="shrink-0 sm:self-center flex items-center gap-2">
                     <Link
                       href={`/documents/${doc.id}`}
-                      className={`w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-[12.5px] font-semibold rounded-md transition-colors cursor-pointer ${
-                        isCompleted
-                          ? 'bg-[#3157D5] hover:bg-[#2544ab] text-white shadow-2xs'
-                          : isRejected
+                      className={`w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-[12.5px] font-semibold rounded-md transition-colors cursor-pointer ${isCompleted
+                        ? 'bg-[#3157D5] hover:bg-[#2544ab] text-white shadow-2xs'
+                        : isRejected
                           ? 'bg-[#FEF3F2] hover:bg-[#FEE4E2] text-[#B42318] border border-[#FECDCA]'
                           : isAmbiguous
-                          ? 'bg-[#FFFAEB] hover:bg-[#FEF0C7] text-[#B54708] border border-[#FEDF89]'
-                          : isFailed
-                          ? 'bg-[#FEF3F2] hover:bg-[#FEE4E2] text-[#B42318] border border-[#FECDCA]'
-                          : 'bg-white hover:bg-[#F5F6F4] text-[#344054] border border-[#D9DEE5]'
-                      }`}
+                            ? 'bg-[#FFFAEB] hover:bg-[#FEF0C7] text-[#B54708] border border-[#FEDF89]'
+                            : isFailed
+                              ? 'bg-[#FEF3F2] hover:bg-[#FEE4E2] text-[#B42318] border border-[#FECDCA]'
+                              : 'bg-white hover:bg-[#F5F6F4] text-[#344054] border border-[#D9DEE5]'
+                        }`}
                     >
                       <span>
                         {isCompleted
-                          ? 'Open Analysis →'
+                          ? 'Open Analysis'
                           : isRejected
-                          ? 'Review Qualification →'
-                          : isAmbiguous
-                          ? 'Review Intake →'
-                          : isFailed
-                          ? 'View Error →'
-                          : 'View Status →'}
+                            ? 'Review Qualification'
+                            : isAmbiguous
+                              ? 'Review Intake'
+                              : isFailed
+                                ? 'View Error'
+                                : 'View Status'}
                       </span>
+                      <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                     </Link>
 
                     {/* Direct Delete Button */}
@@ -532,9 +579,7 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                       aria-label="Delete document"
                       className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-[12.5px] font-medium text-[#B42318] hover:text-[#912018] bg-white hover:bg-[#FEF3F2] border border-[#FECDCA] hover:border-[#FDA29B] rounded-md transition-colors cursor-pointer shrink-0"
                     >
-                      <svg className="w-3.5 h-3.5 text-[#D92D20]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                      </svg>
+                      <Trash2 className="w-3.5 h-3.5 text-[#D92D20]" strokeWidth={1.75} />
                       <span>Delete</span>
                     </button>
                   </div>
@@ -560,9 +605,10 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
               </div>
               <button
                 onClick={() => setIsUploadModalOpen(false)}
-                className="p-1.5 text-[#667085] hover:text-[#111827] hover:bg-gray-200 rounded transition-colors cursor-pointer text-[13px] font-semibold"
+                className="p-1.5 text-[#667085] hover:text-[#111827] hover:bg-gray-200 rounded transition-colors cursor-pointer"
+                title="Close"
               >
-                ✕
+                <X className="w-4 h-4" strokeWidth={2} />
               </button>
             </div>
 
@@ -579,19 +625,27 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
 
       {/* 5. PERMANENT DELETE CONFIRMATION MODAL */}
       {deletingDoc && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 p-4 flex items-center justify-center animate-in fade-in duration-150">
-          <div className="relative w-full max-w-md bg-white rounded-xl shadow-2xl border border-[#D9DEE5] overflow-hidden">
-            {/* Modal Header */}
-            <div className="px-6 py-4 border-b border-[#EAECF0] flex items-center justify-between bg-[#FEF3F2]">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#FEE4E2] text-[#D92D20] flex items-center justify-center shrink-0">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                  </svg>
+        <div
+          className="fixed inset-0 z-50 overflow-y-auto bg-[#0F172A]/50 backdrop-blur-[2px] p-4 flex items-center justify-center animate-in fade-in duration-150"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="delete-dialog-title"
+        >
+          <div className="relative w-full max-w-110 bg-white rounded-lg shadow-xl border border-[#E2E8F0] overflow-hidden">
+            {/* Header */}
+            <div className="px-6 pt-6 pb-4 flex items-start justify-between">
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-full bg-[#FEF3F2] border border-[#FEE4E2] text-[#D92D20] flex items-center justify-center shrink-0">
+                  <Trash2 className="w-5 h-5 text-[#D92D20]" strokeWidth={1.75} />
                 </div>
-                <h3 className="text-[15px] font-bold text-[#B42318] uppercase tracking-wide">
-                  DELETE DOCUMENT?
-                </h3>
+                <div>
+                  <h3 id="delete-dialog-title" className="text-[16px] font-semibold text-[#101828] leading-tight">
+                    Delete tender document
+                  </h3>
+                  <p className="text-[13px] text-[#475467] mt-1 leading-normal">
+                    This will permanently remove this tender and all its associated intelligence.
+                  </p>
+                </div>
               </div>
               <button
                 disabled={isDeleting}
@@ -599,52 +653,72 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                   setDeletingDoc(null);
                   setDeleteError(null);
                 }}
-                className="p-1.5 text-[#667085] hover:text-[#111827] hover:bg-white/60 rounded transition-colors cursor-pointer text-[13px] font-semibold"
+                className="p-1 text-[#98A2B3] hover:text-[#475467] hover:bg-[#F2F4F7] rounded-md transition-colors cursor-pointer disabled:opacity-50 -mr-1 -mt-1"
+                title="Close"
               >
-                ✕
+                <X className="w-4 h-4" strokeWidth={2} />
               </button>
             </div>
 
-            {/* Modal Body */}
-            <div className="p-6 space-y-4">
-              <div className="text-[13px] text-[#344054] space-y-2">
-                <p className="font-medium text-[#1D2939]">
-                  This will permanently delete:
-                </p>
-                <ul className="space-y-1.5 pl-2 text-[#475467]">
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D92D20]" />
-                    <span>the uploaded file <strong className="text-[#1D2939]">({deletingDoc.original_filename})</strong></span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D92D20]" />
-                    <span>its extracted pages</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D92D20]" />
-                    <span>its analysis</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D92D20]" />
-                    <span>its evidence</span>
-                  </li>
-                </ul>
-                <p className="text-[12px] font-semibold text-[#B42318] pt-2 border-t border-[#F2F4F7]">
-                  This action cannot be undone.
-                </p>
+            {/* Document Details Card */}
+            <div className="px-6 pb-5 space-y-3.5">
+              <div className="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-md">
+                <div className="flex items-center gap-2.5">
+                  <FileText className="w-4 h-4 text-[#64748B] shrink-0" strokeWidth={2} />
+                  <span className="text-[13px] font-medium text-[#1E293B] truncate" title={deletingDoc.original_filename}>
+                    {deletingDoc.original_filename}
+                  </span>
+                </div>
+                <div className="mt-2 pt-2 border-t border-[#EDF2F7] flex items-center gap-3 text-[11.5px] text-[#64748B]">
+                  <span>{deletingDoc.total_pages} pages</span>
+                  <span>•</span>
+                  <span>{(deletingDoc.size_bytes / 1024 / 1024).toFixed(1)} MB</span>
+                  <span>•</span>
+                  <span className="capitalize">{deletingDoc.status.replace(/_/g, ' ').toLowerCase()}</span>
+                </div>
               </div>
 
-              {/* Truthful error message display if deletion failed */}
+              {/* Items affected breakdown */}
+              <div className="rounded-md border border-[#F2F4F7] bg-[#FAFAFA] p-3 space-y-2">
+                <p className="text-[11px] font-semibold text-[#64748B] uppercase tracking-wider">
+                  The following data will be purged:
+                </p>
+                <div className="grid grid-cols-2 gap-2 text-[12px] text-[#475467]">
+                  <div className="flex items-center gap-1.5">
+                    <HardDrive className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
+                    <span>Raw PDF file</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <FileCheck className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
+                    <span>Extracted pages</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <Database className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
+                    <span>Clause findings</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <ShieldAlert className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
+                    <span>Risk matrix audit</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Notice */}
+              <p className="text-[12px] text-[#B42318] bg-[#FEF3F2] border border-[#FECDCA] rounded-md px-3 py-2 leading-snug">
+                <strong>Warning:</strong> This operation is permanent and cannot be reversed.
+              </p>
+
+              {/* Error if deletion failed */}
               {deleteError && (
-                <div className="p-3 bg-[#FEF3F2] border border-[#FECDCA] rounded-lg text-[#B42318] text-[12px] flex items-start gap-2">
-                  <span className="font-bold">Error:</span>
-                  <span className="leading-tight">{deleteError}</span>
+                <div className="p-3 bg-[#FEF3F2] border border-[#FECDCA] rounded-md text-[#B42318] text-[12px] flex items-start gap-2">
+                  <AlertTriangle className="w-4 h-4 text-[#D92D20] shrink-0 mt-0.5" strokeWidth={2} />
+                  <span className="leading-normal">{deleteError}</span>
                 </div>
               )}
             </div>
 
-            {/* Modal Footer Actions */}
-            <div className="px-6 py-4 bg-[#F8F9FA] border-t border-[#EAECF0] flex items-center justify-end gap-2.5">
+            {/* Footer */}
+            <div className="px-6 py-3.5 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-end gap-2.5">
               <button
                 type="button"
                 disabled={isDeleting}
@@ -652,7 +726,7 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                   setDeletingDoc(null);
                   setDeleteError(null);
                 }}
-                className="px-4 py-2 text-[12.5px] font-semibold text-[#344054] bg-white hover:bg-[#F2F4F7] border border-[#D0D5DD] rounded-lg transition-colors cursor-pointer disabled:opacity-50"
+                className="px-3.5 py-2 text-[13px] font-medium text-[#344054] bg-white hover:bg-[#F2F4F7] border border-[#D0D5DD] rounded-md transition-colors cursor-pointer disabled:opacity-50"
               >
                 Cancel
               </button>
@@ -660,15 +734,18 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                 type="button"
                 disabled={isDeleting}
                 onClick={handleDeleteConfirm}
-                className="px-4 py-2 text-[12.5px] font-semibold text-white bg-[#D92D20] hover:bg-[#B42318] rounded-lg transition-colors cursor-pointer shadow-xs disabled:opacity-50 flex items-center gap-2"
+                className="px-4 py-2 text-[13px] font-medium text-white bg-[#D92D20] hover:bg-[#B42318] rounded-md transition-colors cursor-pointer shadow-xs disabled:opacity-50 flex items-center gap-2"
               >
                 {isDeleting ? (
                   <>
-                    <span className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Deleting permanently...</span>
+                    <Loader2 className="w-3.5 h-3.5 animate-spin text-white" strokeWidth={2} />
+                    <span>Deleting...</span>
                   </>
                 ) : (
-                  <span>Delete permanently</span>
+                  <>
+                    <Trash2 className="w-3.5 h-3.5 text-white" strokeWidth={2} />
+                    <span>Delete tender</span>
+                  </>
                 )}
               </button>
             </div>

@@ -4,6 +4,7 @@ import React from 'react';
 import { FindingItem } from './FindingsLedger';
 import { UnclearCoverageItem } from '@/lib/ai/attention-lanes';
 import { CategoryInspectionState } from './EvidenceInspector';
+import { FileText, Lock, ArrowRight } from 'lucide-react';
 
 interface AttentionBriefProps {
   primaryFinding: FindingItem | null;
@@ -12,10 +13,12 @@ interface AttentionBriefProps {
   stillUnclearFindings: FindingItem[];
   stillUnclearCoverage: UnclearCoverageItem[];
   totalPages: number;
+  userPlan?: 'FREE' | 'PRO_INDIA' | 'PRO_GLOBAL';
   onSelectFinding: (finding: FindingItem) => void;
   onInspectCategoryAudit: (catState: CategoryInspectionState) => void;
   onOpenFullLedger: (categoryFilter?: string) => void;
   onOpenCoverageAudit: () => void;
+  onUpgradeToPro?: () => void;
 }
 
 export default function AttentionBrief({
@@ -25,19 +28,19 @@ export default function AttentionBrief({
   stillUnclearFindings,
   stillUnclearCoverage,
   totalPages,
+  userPlan = 'FREE',
   onSelectFinding,
   onInspectCategoryAudit,
   onOpenFullLedger,
-  onOpenCoverageAudit
+  onOpenCoverageAudit,
+  onUpgradeToPro
 }: AttentionBriefProps) {
   // If there are zero findings and zero unverified coverage items across the entire document
   if (!primaryFinding && mustMeetFindings.length === 0 && couldHurtFindings.length === 0 && stillUnclearFindings.length === 0 && stillUnclearCoverage.length === 0) {
     return (
       <div className="bg-white border border-[#D9DEE5] rounded-sm p-6 sm:p-8 text-center shadow-2xs">
         <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#F2F4F7] border border-[#EAECF0] text-[#475467] mb-3">
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
+          <FileText className="w-5 h-5 text-[#667085]" strokeWidth={1.75} />
         </div>
         <h3 className="text-[15px] font-bold text-[#111827] mb-1">
           No Verified Findings Extracted
@@ -49,7 +52,8 @@ export default function AttentionBrief({
           onClick={onOpenCoverageAudit}
           className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#111827] hover:bg-black text-white text-[12px] font-semibold rounded-sm transition-colors cursor-pointer"
         >
-          View Coverage Audit &rarr;
+          <span>View Coverage Audit</span>
+          <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
         </button>
       </div>
     );
@@ -115,7 +119,8 @@ export default function AttentionBrief({
                     onClick={() => onSelectFinding(primaryFinding)}
                     className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#3157D5] hover:bg-[#2546B8] text-white text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer shadow-xs"
                   >
-                    Review Evidence &rarr;
+                    <span>Review Evidence</span>
+                    <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                   </button>
                 </div>
               </div>
@@ -137,7 +142,8 @@ export default function AttentionBrief({
                 onClick={onOpenCoverageAudit}
                 className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#111827] hover:bg-black text-white text-[12px] font-semibold rounded-sm transition-colors cursor-pointer shrink-0"
               >
-                Inspect Coverage Audit &rarr;
+                <span>Inspect Coverage Audit</span>
+                <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
               </button>
             </div>
           )}
@@ -172,9 +178,10 @@ export default function AttentionBrief({
             {mustMeetFindings.length > 4 && (
               <button
                 onClick={() => onOpenFullLedger('LANE_MUST_MEET')}
-                className="text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
+                className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
               >
-                View all ({mustMeetFindings.length}) &rarr;
+                <span>View all ({mustMeetFindings.length})</span>
+                <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
               </button>
             )}
           </div>
@@ -217,8 +224,9 @@ export default function AttentionBrief({
                           p.{pageNum}
                         </span>
                       )}
-                      <span className="text-[12px] text-[#3157D5] font-semibold group-hover:translate-x-0.5 transition-transform">
-                        Inspect &rarr;
+                      <span className="inline-flex items-center gap-1 text-[12px] text-[#3157D5] font-semibold group-hover:translate-x-0.5 transition-transform">
+                        <span>Inspect</span>
+                        <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                       </span>
                     </div>
                   </div>
@@ -251,17 +259,50 @@ export default function AttentionBrief({
               </p>
             </div>
 
-            {couldHurtFindings.length > 4 && (
+            {couldHurtFindings.length > 4 && userPlan === 'PRO_GLOBAL' && (
               <button
                 onClick={() => onOpenFullLedger('LANE_COULD_HURT')}
-                className="text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
+                className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
               >
-                View all ({couldHurtFindings.length}) &rarr;
+                <span>View all ({couldHurtFindings.length})</span>
+                <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
               </button>
             )}
           </div>
 
-          {couldHurtFindings.length > 0 ? (
+          {userPlan !== 'PRO_GLOBAL' ? (
+            /* Non-Pro (Free or Plus) Gated Preview */
+            <div className="p-4 sm:p-5 bg-linear-to-b from-[#FAFBFD] to-[#F0F4FE] border border-[#D9DEE5] rounded-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 rounded-full bg-[#E0E8F9] text-[#3157D5] flex items-center justify-center shrink-0 mt-0.5 border border-[#C5D5F6]">
+                  <Lock className="w-4 h-4 text-[#3157D5]" strokeWidth={2} />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h4 className="text-[14px] font-bold text-[#111827]">
+                      Contract Exposure
+                    </h4>
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-[#3157D5] text-white px-2 py-0.5 rounded-full">
+                      PRO ONLY
+                    </span>
+                  </div>
+                  <p className="text-[12.5px] text-[#475467] mt-1 leading-relaxed max-w-xl">
+                    This tender contains <strong>{couldHurtFindings.length} contractual exposure findings</strong> covering liability, indemnity, termination, liquidated damages, and insurance obligations. Upgrade to Pro to inspect the findings and supporting evidence.
+                  </p>
+                </div>
+              </div>
+
+              <div className="shrink-0 w-full sm:w-auto">
+                <button
+                  onClick={onUpgradeToPro}
+                  className="w-full sm:w-auto px-4 py-2 bg-[#3157D5] hover:bg-[#2544ab] text-white text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer shadow-xs whitespace-nowrap flex items-center justify-center gap-1.5"
+                >
+                  <span>Upgrade to Pro</span>
+                  <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+                </button>
+              </div>
+            </div>
+          ) : couldHurtFindings.length > 0 ? (
             <div className="divide-y divide-[#F2F4F7]">
               {couldHurtFindings.slice(0, 4).map((item, idx) => {
                 const pageNum = item.quotes?.[0]?.page_number || null;
@@ -299,8 +340,9 @@ export default function AttentionBrief({
                           p.{pageNum}
                         </span>
                       )}
-                      <span className="text-[12px] text-[#3157D5] font-semibold group-hover:translate-x-0.5 transition-transform">
-                        Inspect &rarr;
+                      <span className="inline-flex items-center gap-1 text-[12px] text-[#3157D5] font-semibold group-hover:translate-x-0.5 transition-transform">
+                        <span>Inspect</span>
+                        <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                       </span>
                     </div>
                   </div>
@@ -337,16 +379,18 @@ export default function AttentionBrief({
               {stillUnclearFindings.length > 3 && (
                 <button
                   onClick={() => onOpenFullLedger('LANE_STILL_UNCLEAR')}
-                  className="text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
+                  className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
                 >
-                  View all ({stillUnclearFindings.length}) &rarr;
+                  <span>View all ({stillUnclearFindings.length})</span>
+                  <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                 </button>
               )}
               <button
                 onClick={onOpenCoverageAudit}
-                className="text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
+                className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#3157D5] hover:underline cursor-pointer"
               >
-                Full Coverage Matrix &rarr;
+                <span>Full Coverage Matrix</span>
+                <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
               </button>
             </div>
           </div>
@@ -383,8 +427,9 @@ export default function AttentionBrief({
                             p.{pageNum}
                           </span>
                         )}
-                        <span className="text-[12px] text-[#3157D5] font-semibold group-hover:translate-x-0.5 transition-transform">
-                          Inspect &rarr;
+                        <span className="inline-flex items-center gap-1 text-[12px] text-[#3157D5] font-semibold group-hover:translate-x-0.5 transition-transform">
+                          <span>Inspect</span>
+                          <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                         </span>
                       </div>
                     </div>
@@ -444,8 +489,9 @@ export default function AttentionBrief({
                               ? `Pages ${cov.trigger_pages.join(', ')}`
                               : 'No candidate pages'}
                           </span>
-                          <span className="font-semibold text-[#3157D5]">
-                            Inspect uncertainty &rarr;
+                          <span className="inline-flex items-center gap-1 font-semibold text-[#3157D5]">
+                            <span>Inspect uncertainty</span>
+                            <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                           </span>
                         </div>
                       </div>

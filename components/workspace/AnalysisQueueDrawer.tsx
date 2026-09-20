@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { X, Loader2, CheckCircle2, AlertTriangle, ArrowRight, Inbox, RefreshCw } from 'lucide-react';
 
 export interface QueueJob {
   document_id: string;
@@ -36,33 +37,37 @@ export default function AnalysisQueueDrawer({
 }: AnalysisQueueDrawerProps) {
   if (!isOpen) return null;
 
-  const activeJobs = jobs.filter(j => ['QUEUED', 'PROCESSING', 'EXTRACTING', 'QUALIFYING', 'ANALYSING', 'VERIFYING', 'FINALIZING'].includes(j.status));
+  // Split into in-progress, completed, failed/action required
+  const activeJobs = jobs.filter(j => 
+    ['QUEUED', 'PARSING', 'VALIDATING', 'ANALYZING', 'SYNTHESIZING', 'PROCESSING', 'EXTRACTING', 'QUALIFYING', 'ANALYSING', 'VERIFYING', 'FINALIZING'].includes(j.status)
+  );
+  
   const completedJobs = jobs.filter(j => j.status === 'COMPLETED');
-  const failedJobs = jobs.filter(j => j.status === 'FAILED' || j.status === 'REJECTED');
+  
+  const failedJobs = jobs.filter(j => 
+    ['FAILED', 'REJECTED', 'CANCELLED'].includes(j.status)
+  );
 
   const formatStageLabel = (status: string) => {
     switch (status) {
       case 'QUEUED':
-        return { label: 'QUEUED', sub: 'Waiting in analysis queue', color: 'bg-[#FFFAEB] text-[#B54708] border-[#FEDF89]' };
+        return { label: 'Queued', sub: 'Waiting for worker allocation', color: 'bg-[#F2F4F7] text-[#344054] border-[#D0D5DD]' };
+      case 'PARSING':
       case 'EXTRACTING':
-        return { label: 'EXTRACTING', sub: 'Extracting tender text & page density', color: 'bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]' };
+        return { label: 'Extracting Text', sub: 'Parsing document structure & pages', color: 'bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]' };
+      case 'VALIDATING':
       case 'QUALIFYING':
-        return { label: 'QUALIFYING', sub: 'Evaluating procurement gate', color: 'bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]' };
+        return { label: 'Tender Qualification', sub: 'Verifying RFP criteria & format', color: 'bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]' };
+      case 'ANALYZING':
       case 'ANALYSING':
       case 'PROCESSING':
-        return { label: 'ANALYSING', sub: 'Targeted extraction across categories', color: 'bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]' };
+        return { label: 'Extracting Terms', sub: 'Running audit across 5 dimensions', color: 'bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]' };
+      case 'SYNTHESIZING':
       case 'VERIFYING':
-        return { label: 'VERIFYING EVIDENCE', sub: 'Checking verbatim quotes against pages', color: 'bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]' };
       case 'FINALIZING':
-        return { label: 'PREPARING ANALYSIS', sub: 'Persisting findings and coverage metrics', color: 'bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]' };
-      case 'COMPLETED':
-        return { label: 'ANALYSIS READY', sub: 'Decision brief ready for review', color: 'bg-[#ECFDF3] text-[#027A48] border-[#ABEFC6]' };
-      case 'REJECTED':
-        return { label: 'NON-TENDER REJECTED', sub: 'Document flagged as non-procurement', color: 'bg-[#FEF3F2] text-[#B42318] border-[#FECDCA]' };
-      case 'FAILED':
-        return { label: 'ANALYSIS FAILED', sub: 'Encountered execution error', color: 'bg-[#FEF3F2] text-[#B42318] border-[#FECDCA]' };
+        return { label: 'Synthesizing', sub: 'Generating executive decision brief', color: 'bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]' };
       default:
-        return { label: status, sub: 'Processing tender', color: 'bg-gray-100 text-gray-700 border-gray-200' };
+        return { label: status, sub: 'Processing...', color: 'bg-[#F2F4F7] text-[#344054] border-[#D0D5DD]' };
     }
   };
 
@@ -70,13 +75,13 @@ export default function AnalysisQueueDrawer({
     <div className="fixed inset-0 z-50 overflow-hidden">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/30 backdrop-blur-xs transition-opacity"
+        className="absolute inset-0 bg-black/40 backdrop-blur-[2px] transition-opacity"
         onClick={onClose}
       />
 
       {/* Slide-over Panel */}
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col border-l border-[#D9DEE5]">
+        <div className="w-screen max-w-md bg-white shadow-xl flex flex-col">
           
           {/* Header */}
           <div className="h-14 px-6 border-b border-[#D9DEE5] flex items-center justify-between bg-white shrink-0">
@@ -85,7 +90,8 @@ export default function AnalysisQueueDrawer({
                 Analysis Queue
               </h2>
               {activeJobs.length > 0 && (
-                <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#EFF8FF] text-[#175CD3] border border-[#B2DDFF] animate-pulse">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#EFF8FF] text-[#175CD3] border border-[#B2DDFF] animate-pulse">
+                  <Loader2 className="w-3 h-3 animate-spin shrink-0" strokeWidth={2.5} />
                   {activeJobs.length} Active
                 </span>
               )}
@@ -95,9 +101,7 @@ export default function AnalysisQueueDrawer({
               className="p-1.5 text-gray-400 hover:text-gray-600 rounded-sm hover:bg-gray-100 transition-colors"
               title="Close Queue"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <X className="w-5 h-5" strokeWidth={1.75} />
             </button>
           </div>
 
@@ -156,7 +160,8 @@ export default function AnalysisQueueDrawer({
                         <span className="text-[13px] font-semibold text-[#111827] truncate" title={job.document_name}>
                           {job.document_name}
                         </span>
-                        <span className="px-2 py-0.5 text-[10px] font-mono font-semibold rounded border bg-[#ECFDF3] text-[#027A48] border-[#ABEFC6] shrink-0">
+                        <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-mono font-semibold rounded border bg-[#ECFDF3] text-[#027A48] border-[#ABEFC6] shrink-0">
+                          <CheckCircle2 className="w-3 h-3 mr-1 text-[#027A48]" strokeWidth={2.5} />
                           READY
                         </span>
                       </div>
@@ -172,9 +177,10 @@ export default function AnalysisQueueDrawer({
                             onSelectDocument(job.document_id);
                             onClose();
                           }}
-                          className="px-3 py-1 bg-[#027A48] hover:bg-[#05603A] text-white font-semibold text-[11.5px] rounded-sm transition-colors cursor-pointer"
+                          className="inline-flex items-center gap-1 px-3 py-1 bg-[#027A48] hover:bg-[#05603A] text-white font-semibold text-[11.5px] rounded-sm transition-colors cursor-pointer"
                         >
-                          Open Analysis &rarr;
+                          Open Analysis
+                          <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                         </button>
                       </div>
                     </div>
@@ -199,7 +205,8 @@ export default function AnalysisQueueDrawer({
                         <span className="text-[13px] font-semibold text-[#111827] truncate" title={job.document_name}>
                           {job.document_name}
                         </span>
-                        <span className="px-2 py-0.5 text-[10px] font-mono font-semibold rounded border bg-white text-[#B42318] border-[#FECDCA] shrink-0">
+                        <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-mono font-semibold rounded border bg-white text-[#B42318] border-[#FECDCA] shrink-0">
+                          <AlertTriangle className="w-3 h-3 mr-1 text-[#B42318]" strokeWidth={2} />
                           {job.status}
                         </span>
                       </div>
@@ -209,9 +216,19 @@ export default function AnalysisQueueDrawer({
                       <div className="flex items-center justify-end gap-2 pt-2 border-t border-[#FECDCA]/60">
                         <button
                           onClick={() => onRetryAnalysis(job.document_id, true)}
-                          className="px-3 py-1 bg-[#111827] hover:bg-black text-white font-semibold text-[11.5px] rounded-sm transition-colors cursor-pointer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#111827] hover:bg-black text-white font-semibold text-[11.5px] rounded-sm transition-colors cursor-pointer"
                         >
-                          {job.status === 'REJECTED' ? 'Override & Analyze →' : 'Retry Analysis →'}
+                          {job.status === 'REJECTED' ? (
+                            <>
+                              Override & Analyze
+                              <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+                            </>
+                          ) : (
+                            <>
+                              <RefreshCw className="w-3 h-3" strokeWidth={2} />
+                              Retry Analysis
+                            </>
+                          )}
                         </button>
                       </div>
                     </div>
@@ -222,7 +239,8 @@ export default function AnalysisQueueDrawer({
 
             {jobs.length === 0 && (
               <div className="text-center py-12 text-[#667085]">
-                <p className="text-[13px]">No tenders in queue.</p>
+                <Inbox className="w-8 h-8 text-[#98A2B3] mx-auto mb-2" strokeWidth={1.5} />
+                <p className="text-[13px] font-medium text-[#344054]">No tenders in queue</p>
                 <p className="text-[11.5px] text-[#98A2B3] mt-1">Upload a PDF to begin analysis.</p>
               </div>
             )}

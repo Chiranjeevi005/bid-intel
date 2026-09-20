@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { ArrowRight } from 'lucide-react';
 import { FindingItem } from './FindingsLedger';
 
 interface DecisionSnapshotProps {
@@ -19,11 +20,11 @@ export default function DecisionSnapshot({
   // Empty State: Truthful handling when 0 verified findings exist
   if (!finding) {
     return (
-      <section className="bg-white border border-[#D9DEE5] rounded-sm p-6 sm:p-8">
+      <section className="bg-white border border-[#D9DEE5] rounded-sm p-6 sm:p-8 mb-6">
         <div className="flex items-center gap-2 mb-3">
-          <span className="w-2 h-2 rounded-full bg-[#667085]" />
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#667085]">
-            Primary Decision Snapshot
+          <span className="w-2 h-2 rounded-full bg-[#B54708]" />
+          <span className="text-[11.5px] font-bold uppercase tracking-wider text-[#B54708]">
+            Notice: Sparse Procurement Evidence
           </span>
         </div>
 
@@ -38,9 +39,10 @@ export default function DecisionSnapshot({
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenCoverageAudit}
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#111827] hover:bg-black text-white text-[13px] font-semibold rounded-sm transition-colors shadow-xs"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#111827] hover:bg-black text-white text-[13px] font-semibold rounded-sm transition-colors shadow-xs cursor-pointer"
             >
-              Review Coverage Audit &rarr;
+              <span>Review Coverage Audit</span>
+              <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </button>
           </div>
         </div>
@@ -133,7 +135,7 @@ export default function DecisionSnapshot({
           className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#3157D5] hover:bg-[#2546B8] text-white text-[13px] font-semibold rounded-sm transition-colors shadow-xs cursor-pointer"
         >
           <span>Review Evidence</span>
-          <span className="text-[15px]">&rarr;</span>
+          <ArrowRight className="w-4 h-4" strokeWidth={2} />
         </button>
       </div>
 

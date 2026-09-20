@@ -1,18 +1,21 @@
 'use client';
 
 import React, { useMemo } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { CRITICAL_CATEGORIES, CriticalCategory, CategoryCoverage } from '@/lib/ai/coverage';
 import { PageCoverageAudit } from '@/lib/ai/retrieval';
 
 interface CoveragePulseProps {
   coverage: Record<CriticalCategory, CategoryCoverage> | null;
   pageCoverage?: PageCoverageAudit | null;
+  userPlan?: 'FREE' | 'PRO_INDIA' | 'PRO_GLOBAL';
   onViewFullAudit: () => void;
 }
 
 export default function CoveragePulse({
   coverage,
   pageCoverage,
+  userPlan = 'FREE',
   onViewFullAudit
 }: CoveragePulseProps) {
   const counts = useMemo(() => {
@@ -49,6 +52,15 @@ export default function CoveragePulse({
           <div className="flex items-center gap-1.5 font-bold uppercase tracking-wider text-[#111827] text-[11.5px]">
             <span className="w-2 h-2 rounded-full bg-[#027A48]" />
             <span>Coverage Audit</span>
+            {userPlan === 'PRO_GLOBAL' ? (
+              <span className="text-[10px] font-mono font-semibold text-[#3157D5] bg-[#EFF4FF] border border-[#D1E0FF] px-1.5 py-0.2 rounded-xs">
+                Full 12 Domains (Pro)
+              </span>
+            ) : (
+              <span className="text-[10px] font-mono font-semibold text-[#475467] bg-[#F2F4F7] border border-[#D0D5DD] px-1.5 py-0.2 rounded-xs">
+                Qualification Layer
+              </span>
+            )}
           </div>
 
           {pageCoverage && (
@@ -100,7 +112,7 @@ export default function CoveragePulse({
             className="text-[12px] font-semibold text-[#3157D5] hover:text-[#2546B8] flex items-center gap-1 cursor-pointer transition-colors"
           >
             <span>View audit matrix</span>
-            <span>&rarr;</span>
+            <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
           </button>
         </div>
 

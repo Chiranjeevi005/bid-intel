@@ -1,11 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
+import { Loader2, CheckCircle2, AlertCircle, AlertTriangle } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 import { event } from '@/lib/analytics';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
-export default function LoginPage() {
+function LoginForm() {
+  const searchParams = useSearchParams();
+  const errorParam = searchParams.get('error');
+  const nextParam = searchParams.get('next');
+
+  // Validate internal path for next to prevent open redirect
+  let safeNext = '/dashboard';
+  if (nextParam && nextParam.startsWith('/') && !nextParam.startsWith('//') && !nextParam.startsWith('/\\') && !nextParam.includes('\\') && !nextParam.includes(':')) {
+    safeNext = nextParam;
+  }
+
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<{ type: 'error' | 'success'; text: string } | null>(null);
@@ -27,10 +39,11 @@ export default function LoginPage() {
     event({ action: 'login_started', category: 'auth', label: 'magic_link' });
 
     try {
+      const emailRedirectTo = `${location.origin}/auth/callback?next=${encodeURIComponent(safeNext)}`;
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: `${location.origin}/auth/callback`,
+          emailRedirectTo,
         },
       });
 
@@ -53,10 +66,11 @@ export default function LoginPage() {
     event({ action: 'login_started', category: 'auth', label: 'google' });
 
     try {
+      const redirectTo = `${location.origin}/auth/callback?next=${encodeURIComponent(safeNext)}`;
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${location.origin}/auth/callback`,
+          redirectTo,
         },
       });
 
@@ -138,16 +152,33 @@ export default function LoginPage() {
             <p className="text-[14px] text-[#667085]">Enter your workspace.</p>
           </div>
 
+          {errorParam === 'auth-callback-failed' && (
+            <div
+              className="mb-6 text-[13px] font-medium p-3 rounded-sm border flex items-start gap-2.5 bg-[#FFFAEB] border-[#FEDF89] text-[#B54708]"
+              role="alert"
+            >
+              <AlertTriangle className="w-4 h-4 text-[#B54708] shrink-0 mt-0.5" strokeWidth={2} />
+              <div className="leading-snug">
+                Your login link has expired or has already been used. Please enter your email to request a fresh link.
+              </div>
+            </div>
+          )}
+
           {status && (
             <div
-              className={`mb-6 text-[13px] font-medium p-3 rounded-sm border ${
+              className={`mb-6 text-[13px] font-medium p-3 rounded-sm border flex items-center gap-2 ${
                 status.type === 'success'
                   ? 'bg-[#ECFDF3] border-[#027A48]/20 text-[#027A48]'
                   : 'bg-[#FEF3F2] border-[#B42318]/20 text-[#B42318]'
               }`}
               role="alert"
             >
-              {status.text}
+              {status.type === 'success' ? (
+                <CheckCircle2 className="w-4 h-4 text-[#027A48] shrink-0" strokeWidth={2} />
+              ) : (
+                <AlertCircle className="w-4 h-4 text-[#B42318] shrink-0" strokeWidth={2} />
+              )}
+              <span>{status.text}</span>
             </div>
           )}
 
@@ -166,7 +197,7 @@ export default function LoginPage() {
                   disabled={loading}
                   onFocus={() => setIsFocused(true)}
                   onBlur={() => setIsFocused(false)}
-                  className="block w-full rounded-sm border border-[#D9DEE5] bg-[#FFFFFF] px-3.5 py-2.5 text-[14px] text-[#111827] placeholder:text-[#98A2B3] focus:outline-none focus:border-[#3157D5] disabled:bg-slate-50 transition-colors duration-150"
+                  className="block w-full rounded-sm border border-[#D9DEE5] bg-[#FFFFFF] px-3.5 py-2.5 text-[14px] text-[#111827] placeholder-[#667085] shadow-2xs focus:outline-none"
                   placeholder="name@company.com"
                   value={email}
                   onChange={(e) => {
@@ -184,10 +215,7 @@ export default function LoginPage() {
             >
               {loading ? (
                 <span className="flex items-center gap-2">
-                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
+                  <Loader2 className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" strokeWidth={2.5} />
                   Sending...
                 </span>
               ) : (
@@ -222,6 +250,18 @@ export default function LoginPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-dvh flex items-center justify-center bg-[#F5F6F4]">
+        <Loader2 className="w-8 h-8 text-[#3157D5] animate-spin" strokeWidth={2} />
+      </div>
+    }>
+      <LoginForm />
+    </Suspense>
   );
 }
 

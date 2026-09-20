@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { Search, Lock, ArrowRight, FilterX } from 'lucide-react';
 import { classifyFindingToLane } from '@/lib/ai/attention-lanes';
 
 export interface FindingQuote {
@@ -22,6 +23,7 @@ export interface FindingItem {
   business_implication?: string | null;
   action_recommendation?: string | null;
   quotes?: FindingQuote[];
+  is_pro_gated?: boolean;
   created_at: string;
 }
 
@@ -31,6 +33,8 @@ interface FindingsLedgerProps {
   onSelectFinding: (finding: FindingItem) => void;
   activeCategoryFilter: string;
   onCategoryFilterChange: (cat: string) => void;
+  userPlan?: 'FREE' | 'PRO_INDIA' | 'PRO_GLOBAL';
+  onUpgradeToPro?: () => void;
 }
 
 const SEVERITY_ORDER: Record<string, number> = {
@@ -45,7 +49,9 @@ export default function FindingsLedger({
   selectedFindingId,
   onSelectFinding,
   activeCategoryFilter,
-  onCategoryFilterChange
+  onCategoryFilterChange,
+  userPlan = 'FREE',
+  onUpgradeToPro
 }: FindingsLedgerProps) {
   const [severityFilter, setSeverityFilter] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -170,12 +176,13 @@ export default function FindingsLedger({
 
           {/* Search Box */}
           <div className="relative">
+            <Search className="w-3.5 h-3.5 text-[#98A2B3] absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" strokeWidth={2} />
             <input
               type="text"
               placeholder="Search findings or text..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full sm:w-48 md:w-56 text-[12px] bg-[#F5F6F4] border border-[#D9DEE5] rounded-sm pl-2.5 pr-2 py-1 text-[#111827] placeholder-[#667085] focus:ring-1 focus:ring-[#3157D5] focus:outline-none"
+              className="w-full sm:w-48 md:w-56 text-[12px] bg-[#F5F6F4] border border-[#D9DEE5] rounded-sm pl-8 pr-2 py-1 text-[#111827] placeholder-[#667085] focus:ring-1 focus:ring-[#3157D5] focus:outline-none"
             />
           </div>
         </div>
@@ -257,6 +264,7 @@ export default function FindingsLedger({
         
         {filteredFindings.length === 0 ? (
           <div className="bg-white border border-[#D9DEE5] rounded-sm p-8 text-center flex flex-col items-center justify-center my-auto">
+            <FilterX className="w-8 h-8 text-[#98A2B3] mx-auto mb-2" strokeWidth={1.5} />
             <span className="text-[13px] font-semibold text-[#111827] mb-1">
               No findings matching active filters
             </span>
@@ -283,6 +291,44 @@ export default function FindingsLedger({
             const isSelected = finding.id === selectedFindingId;
             const primaryQuote = finding.quotes?.[0];
             const severity = (finding.severity || 'MEDIUM').toUpperCase();
+
+            if (finding.is_pro_gated) {
+              return (
+                <div
+                  key={finding.id}
+                  className="p-3.5 rounded-sm bg-[#FAFBFD] border border-blue-200 shadow-2xs"
+                >
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#475467] bg-[#F5F6F4] px-1.5 py-0.5 rounded border border-[#D9DEE5]">
+                        {finding.category.replace(/_/g, ' ')}
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-wider bg-[#3157D5] text-white px-2 py-0.5 rounded-full">
+                        <Lock className="w-2.5 h-2.5" strokeWidth={2.5} />
+                        PRO ONLY
+                      </span>
+                    </div>
+                  </div>
+
+                  <h4 className="text-[13.5px] font-semibold text-[#111827] leading-snug mb-1">
+                    Contractual Exposure Finding
+                  </h4>
+                  <p className="text-[12px] text-[#475467] leading-relaxed mb-2.5">
+                    Substantive contractual finding details and verbatim evidence are protected under the Pro plan.
+                  </p>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (onUpgradeToPro) onUpgradeToPro();
+                    }}
+                    className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#3157D5] hover:text-[#2544ab] cursor-pointer"
+                  >
+                    <span>Upgrade to Pro to inspect findings & evidence</span>
+                    <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+                  </button>
+                </div>
+              );
+            }
 
             return (
               <div

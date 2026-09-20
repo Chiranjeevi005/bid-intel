@@ -25,6 +25,7 @@ export default function LandingFooter({ user = null }: { user?: any | null }) {
             </div>
             <Link href={user ? "/dashboard" : "/login"} className="text-[13px] text-[#667085] hover:text-[#111827] transition-colors font-medium">Analyse a tender</Link>
             <Link href="#how-it-works" className="text-[13px] text-[#667085] hover:text-[#111827] transition-colors font-medium">How it works</Link>
+            <Link href="/subscription" className="text-[13px] text-[#667085] hover:text-[#111827] transition-colors font-medium">Pricing & Plans</Link>
           </div>
 
           <div className="flex flex-col gap-4">

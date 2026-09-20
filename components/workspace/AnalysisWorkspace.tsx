@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import WorkspaceHeader from './WorkspaceHeader';
 import AttentionBrief from './AttentionBrief';
 import CoveragePulse from './CoveragePulse';
@@ -13,6 +14,8 @@ import AnalysisQueueDrawer, { QueueJob } from './AnalysisQueueDrawer';
 import { CriticalCategory, CategoryCoverage } from '@/lib/ai/coverage';
 import { partitionAttentionLanes } from '@/lib/ai/attention-lanes';
 import { PageCoverageAudit } from '@/lib/ai/retrieval';
+import { exportFindingsToJSON, exportFindingsToCSV } from '@/lib/export/findings-export';
+import { AlertTriangle, Ban, Plus, ArrowRight, X } from 'lucide-react';
 
 interface DocumentSummary {
   id: string;
@@ -50,6 +53,8 @@ interface ActiveDocumentData {
   coverage: Record<CriticalCategory, CategoryCoverage> | null;
   candidates: Array<{ category: string; trigger_pages: number[]; context_pages: number[] }>;
   page_coverage: PageCoverageAudit | null;
+  userPlan?: 'FREE' | 'PRO_INDIA' | 'PRO_GLOBAL';
+  contractExposureGatedCount?: number;
 }
 
 interface AnalysisWorkspaceProps {
@@ -73,6 +78,7 @@ export default function AnalysisWorkspace({
   }, [initialDocumentId]);
   const [activeDocData, setActiveDocData] = useState<ActiveDocumentData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [analysisError, setAnalysisError] = useState<string | null>(null);
   const [isIntakeView, setIsIntakeView] = useState<boolean>(false);
   const [isQueueOpen, setIsQueueOpen] = useState<boolean>(false);
   const [queueJobs, setQueueJobs] = useState<QueueJob[]>([]);
@@ -103,6 +109,19 @@ export default function AnalysisWorkspace({
 
   // Active category filter for the full ledger
   const [activeCategoryFilter, setActiveCategoryFilter] = useState<string>('ALL');
+
+  // Export handlers (exports only authorized findings currently in activeDocData)
+  const handleExportJSON = () => {
+    if (!activeDocData || !activeDocData.findings) return;
+    const filename = activeDocData.document.filename || 'tender';
+    exportFindingsToJSON(activeDocData.findings, filename);
+  };
+
+  const handleExportCSV = () => {
+    if (!activeDocData || !activeDocData.findings) return;
+    const filename = activeDocData.document.filename || 'tender';
+    exportFindingsToCSV(activeDocData.findings, filename);
+  };
 
   // Fetch analysis queue jobs & summary
   const fetchQueue = useCallback(async () => {
@@ -141,23 +160,55 @@ export default function AnalysisWorkspace({
     }
   }, [activeDocId]);
 
+  // Request identifier to protect against out-of-order race conditions
+  const activeRequestIdRef = useRef<number>(0);
+
   // 2. Fetch active document analysis data
-  const fetchDocumentAnalysis = useCallback(async (docId: string) => {
-    try {
+  const fetchDocumentAnalysis = useCallback(async (docId: string, isPolling: boolean = false) => {
+    const requestId = ++activeRequestIdRef.current;
+
+    // Only trigger full-screen loading spinner on initial document switch/load, not background polling
+    if (!isPolling) {
       setIsLoading(true);
+      setAnalysisError(null);
+    }
+
+    try {
       const res = await fetch(`/api/document-analysis?documentId=${docId}`);
+      if (requestId !== activeRequestIdRef.current) {
+        // Obsolete response from previous document/request discarded
+        return;
+      }
+
       if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        const safeMsg = errData.error && typeof errData.error === 'string' && !errData.error.includes('at ')
+          ? errData.error
+          : 'Unable to communicate with the document analysis service.';
+        setAnalysisError(safeMsg);
         setIsLoading(false);
         return;
       }
+
       const data: ActiveDocumentData = await res.json();
+      if (requestId !== activeRequestIdRef.current) {
+        return;
+      }
+
       setActiveDocData(data);
-      setSelectedCategoryState(null);
-      setIsIntakeView(false);
-    } catch (err) {
-      console.error('Failed to fetch document analysis:', err);
+      setAnalysisError(null);
+      if (!isPolling) {
+        setSelectedCategoryState(null);
+        setIsIntakeView(false);
+      }
+    } catch {
+      if (requestId === activeRequestIdRef.current && !isPolling) {
+        setAnalysisError('A network error occurred while retrieving tender analysis. Please check your connection.');
+      }
     } finally {
-      setIsLoading(false);
+      if (requestId === activeRequestIdRef.current && !isPolling) {
+        setIsLoading(false);
+      }
     }
   }, []);
 
@@ -203,32 +254,31 @@ export default function AnalysisWorkspace({
       setIsLoading(false);
       return;
     }
-    let isMounted = true;
-    const loadAnalysis = async () => {
-      try {
-        setIsLoading(true);
-        const res = await fetch(`/api/document-analysis?documentId=${activeDocId}`);
-        if (!res.ok) {
-          if (isMounted) setIsLoading(false);
-          return;
-        }
-        const data: ActiveDocumentData = await res.json();
-        if (isMounted) {
-          setActiveDocData(data);
-          setSelectedCategoryState(null);
-          setIsIntakeView(false);
-          setIsLoading(false);
-        }
-      } catch (err) {
-        console.error('Failed to fetch document analysis:', err);
-        if (isMounted) setIsLoading(false);
-      }
-    };
-    loadAnalysis();
+    fetchDocumentAnalysis(activeDocId, false);
+  }, [activeDocId, fetchDocumentAnalysis]);
+
+  // 3. Canonical Background Refresh (every 5 seconds while analysis is QUEUED or PROCESSING)
+  useEffect(() => {
+    if (!activeDocId || !activeDocData?.run) {
+      return;
+    }
+
+    const currentRunStatus = activeDocData.run.status;
+    const isActivelyProcessing = currentRunStatus === 'QUEUED' || currentRunStatus === 'PROCESSING';
+
+    if (!isActivelyProcessing) {
+      // Terminal state confirmed (COMPLETED, FAILED, etc.) or no active run -> Do not poll
+      return;
+    }
+
+    const intervalId = setInterval(() => {
+      fetchDocumentAnalysis(activeDocId, true);
+    }, 5000);
+
     return () => {
-      isMounted = false;
+      clearInterval(intervalId);
     };
-  }, [activeDocId]);
+  }, [activeDocId, activeDocData?.run?.status, fetchDocumentAnalysis]);
 
   // 3. Queue Polling Interval (every 3 seconds)
   useEffect(() => {
@@ -349,6 +399,8 @@ export default function AnalysisWorkspace({
         onNewTenderClick={() => setIsIntakeView(true)}
         queueSummary={queueSummary}
         onOpenQueue={() => setIsQueueOpen(true)}
+        onExportJSON={activeDocData && activeDocData.findings.length > 0 ? handleExportJSON : undefined}
+        onExportCSV={activeDocData && activeDocData.findings.length > 0 ? handleExportCSV : undefined}
       />
 
       {/* 2. INTAKE VIEW (When uploading a new tender or no documents exist) */}
@@ -379,9 +431,7 @@ export default function AnalysisWorkspace({
             {/* 1. DOCUMENT QUALIFICATION STATE BANNERS */}
             {activeDocData.document.qualification_status === 'AI_AMBIGUOUS' && (
               <div className="bg-[#FFFAEB] border border-[#FEDF89] rounded-sm p-4 flex items-start gap-3 text-[12.5px] text-[#B54708] shadow-2xs">
-                <svg className="w-5 h-5 text-[#B54708] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
+                <AlertTriangle className="w-5 h-5 text-[#B54708] shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
                   <h4 className="font-bold text-[#7A2E0E] text-[13px] mb-0.5">
                     Ambiguous Document Qualification
@@ -397,9 +447,7 @@ export default function AnalysisWorkspace({
             {activeDocData.document.qualification_status === 'AI_REJECTED' ? (
               <div className="bg-white border border-[#D9DEE5] rounded-sm p-8 sm:p-12 text-center shadow-2xs">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#FEF3F2] border border-[#FECDCA] text-[#B42318] mb-4">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
-                  </svg>
+                  <Ban className="w-6 h-6" strokeWidth={2} />
                 </div>
                 <h3 className="text-[17px] font-bold text-[#111827] mb-1.5">
                   Document Not Classified as Procurement Tender
@@ -416,13 +464,14 @@ export default function AnalysisWorkspace({
                   </button>
                   <button
                     onClick={() => setIsIntakeView(true)}
-                    className="px-4 py-2 bg-[#111827] hover:bg-black text-white text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer shadow-xs"
+                    className="px-4 py-2 bg-[#111827] hover:bg-black text-white text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer shadow-xs flex items-center gap-1.5"
                   >
-                    Ingest a New Tender &rarr;
+                    <span>Ingest a New Tender</span>
+                    <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                   </button>
                 </div>
               </div>
-            ) : activeDocData.document.status === 'PROCESSING' || activeDocData.run?.status === 'PROCESSING' ? (
+            ) : (activeDocData.run?.status === 'PROCESSING' || activeDocData.run?.status === 'QUEUED' || (!activeDocData.run && activeDocData.document.status === 'PROCESSING')) ? (
               /* 3. IN-PROGRESS PROCESSING STATE */
               <div className="bg-white border border-[#D9DEE5] rounded-sm p-8 sm:p-12 text-center shadow-2xs">
                 <div className="w-9 h-9 border-3 border-[#3157D5] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
@@ -447,16 +496,19 @@ export default function AnalysisWorkspace({
                   stillUnclearFindings={stillUnclearFindings}
                   stillUnclearCoverage={stillUnclearCoverage}
                   totalPages={activeDocData.document.total_pages}
+                  userPlan={activeDocData.userPlan}
                   onSelectFinding={handleOpenFindingEvidence}
                   onInspectCategoryAudit={handleInspectCategoryAudit}
                   onOpenFullLedger={handleOpenLedgerWithCategory}
                   onOpenCoverageAudit={() => setIsCoverageMatrixOpen(true)}
+                  onUpgradeToPro={() => router.push('/subscription')}
                 />
 
                 {/* STAGE 2: COVERAGE PULSE (12-Category Summary) */}
                 <CoveragePulse
                   coverage={activeDocData.coverage}
                   pageCoverage={activeDocData.page_coverage}
+                  userPlan={activeDocData.userPlan}
                   onViewFullAudit={() => setIsCoverageMatrixOpen(true)}
                 />
 
@@ -480,9 +532,10 @@ export default function AnalysisWorkspace({
                     </button>
                     <button
                       onClick={() => handleOpenLedgerWithCategory('ALL')}
-                      className="px-4 py-2 bg-[#111827] hover:bg-black text-white text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer shadow-xs"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#111827] hover:bg-black text-white text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer shadow-xs"
                     >
-                      View All Findings ({activeDocData.findings.length}) &rarr;
+                      <span>View All Findings ({activeDocData.findings.length})</span>
+                      <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                     </button>
                   </div>
                 </div>
@@ -542,9 +595,10 @@ export default function AnalysisWorkspace({
                   </div>
                   <button
                     onClick={() => setIsFullLedgerOpen(false)}
-                    className="p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-colors cursor-pointer text-[13px] font-semibold"
+                    className="inline-flex items-center p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-colors cursor-pointer text-[13px] font-semibold"
                   >
-                    ✕ Close
+                    <X className="w-4 h-4 mr-1" strokeWidth={2} />
+                    Close
                   </button>
                 </div>
 
@@ -553,12 +607,18 @@ export default function AnalysisWorkspace({
                     findings={activeDocData.findings}
                     selectedFindingId={selectedFinding?.id || null}
                     onSelectFinding={(f) => {
+                      if (f.is_pro_gated) {
+                        router.push('/subscription');
+                        return;
+                      }
                       setSelectedFinding(f);
                       setSelectedCategoryState(null);
                       setIsEvidenceDrawerOpen(true);
                     }}
                     activeCategoryFilter={activeCategoryFilter}
                     onCategoryFilterChange={(cat) => setActiveCategoryFilter(cat)}
+                    userPlan={activeDocData.userPlan}
+                    onUpgradeToPro={() => router.push('/subscription')}
                   />
                 </div>
               </div>
@@ -580,11 +640,50 @@ export default function AnalysisWorkspace({
                   onInspectCategory={handleInspectCategoryAudit}
                   onClose={() => setIsCoverageMatrixOpen(false)}
                   isExpandedView={true}
+                  userPlan={activeDocData.userPlan}
+                  onUpgradeToPro={() => {
+                    setIsCoverageMatrixOpen(false);
+                    router.push('/subscription');
+                  }}
                 />
               </div>
             </div>
           )}
 
+        </main>
+      ) : analysisError ? (
+        /* Law 1: Error != Empty. Explicit error state when analysis fetch fails */
+        <main className="flex-1 flex flex-col items-center justify-center p-8 sm:p-12 text-center max-w-xl mx-auto w-full">
+          <div className="bg-white border border-[#FECDCA] rounded-lg p-8 sm:p-10 flex flex-col items-center justify-center text-center shadow-xs w-full">
+            <div className="w-12 h-12 rounded-full bg-[#FEF3F2] border border-[#FECDCA] text-[#B42318] flex items-center justify-center mb-3">
+              <AlertTriangle className="w-6 h-6 text-[#D92D20]" strokeWidth={2} />
+            </div>
+            <h3 className="text-[16px] font-bold text-[#111827]">
+              Unable to Load Document Analysis
+            </h3>
+            <p className="text-[13px] text-[#B42318] mt-1 mb-1 font-medium">
+              {analysisError}
+            </p>
+            <p className="text-[12px] text-[#475467] mb-6">
+              Your tender document and database records are safe.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {activeDocId && (
+                <button
+                  onClick={() => fetchDocumentAnalysis(activeDocId)}
+                  className="px-4 py-2 bg-[#D92D20] hover:bg-[#B42318] text-white text-[12.5px] font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
+                >
+                  Retry Loading Analysis
+                </button>
+              )}
+              <Link
+                href="/dashboard"
+                className="px-4 py-2 bg-white hover:bg-gray-50 border border-[#D0D5DD] text-[#344054] text-[12.5px] font-semibold rounded-md transition-colors cursor-pointer"
+              >
+                Return to Document Library
+              </Link>
+            </div>
+          </div>
         </main>
       ) : (
         <main className="flex-1 flex flex-col items-center justify-center p-12 text-center">
@@ -596,9 +695,10 @@ export default function AnalysisWorkspace({
           </p>
           <button
             onClick={() => setIsIntakeView(true)}
-            className="px-4 py-2 bg-[#3157D5] text-white text-[13px] font-semibold rounded-sm shadow-xs hover:bg-[#2546B8] cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#3157D5] text-white text-[13px] font-semibold rounded-sm shadow-xs hover:bg-[#2546B8] cursor-pointer"
           >
-            + Ingest New Tender PDF
+            <Plus className="w-4 h-4" strokeWidth={2} />
+            <span>Ingest New Tender PDF</span>
           </button>
         </main>
       )}

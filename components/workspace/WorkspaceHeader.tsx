@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import LogoutButton from '@/app/dashboard/LogoutButton';
+import { ArrowLeft, Download, ChevronDown, Plus, ListOrdered } from 'lucide-react';
 
 interface DocumentSummary {
   id: string;
@@ -35,6 +36,8 @@ interface WorkspaceHeaderProps {
     failed_count: number;
   };
   onOpenQueue?: () => void;
+  onExportJSON?: () => void;
+  onExportCSV?: () => void;
 }
 
 export default function WorkspaceHeader({
@@ -44,7 +47,9 @@ export default function WorkspaceHeader({
   onSelectDocument,
   onNewTenderClick,
   queueSummary,
-  onOpenQueue
+  onOpenQueue,
+  onExportJSON,
+  onExportCSV
 }: WorkspaceHeaderProps) {
   return (
     <header className="h-14 bg-white border-b border-[#D9DEE5] px-3 sm:px-4 md:px-6 flex items-center justify-between sticky top-0 z-40">
@@ -71,12 +76,10 @@ export default function WorkspaceHeader({
         {/* Link back to Document Library */}
         <Link
           href="/dashboard"
-          className="inline-flex items-center gap-1 sm:gap-1.5 text-[11.5px] sm:text-[12.5px] font-semibold text-[#344054] hover:text-[#111827] px-1.5 sm:px-2 py-1 rounded hover:bg-[#F5F6F4] transition-colors shrink-0"
+          className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12.5px] font-semibold text-[#344054] hover:text-[#111827] px-2 py-1 rounded hover:bg-[#F5F6F4] transition-colors shrink-0"
           title="Return to Document Library"
         >
-          <svg className="w-3.5 h-3.5 text-[#667085] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
+          <ArrowLeft className="w-3.5 h-3.5 text-[#667085] shrink-0" strokeWidth={2} />
           <span className="whitespace-nowrap font-semibold">All Documents</span>
         </Link>
 
@@ -146,6 +149,7 @@ export default function WorkspaceHeader({
             className="hidden sm:inline-flex items-center gap-1.5 rounded-sm border border-[#D9DEE5] bg-[#F8F9FA] px-2.5 py-1 text-[12px] font-semibold text-[#344054] hover:bg-gray-100 transition-colors cursor-pointer shadow-2xs"
             title="Open Analysis Queue"
           >
+            <ListOrdered className="w-3.5 h-3.5 text-[#667085]" strokeWidth={2} />
             {queueSummary.analysing_count > 0 ? (
               <>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#3157D5] animate-pulse" />
@@ -160,11 +164,46 @@ export default function WorkspaceHeader({
           </button>
         )}
 
+        {/* Export Dropdown */}
+        {(onExportJSON || onExportCSV) && (
+          <div className="relative group">
+            <button
+              className="inline-flex items-center gap-1.5 rounded-sm border border-[#D9DEE5] bg-white px-2.5 py-1 text-[11.5px] sm:text-[12px] font-semibold text-[#344054] hover:bg-[#F5F6F4] transition-colors cursor-pointer shadow-2xs shrink-0 whitespace-nowrap"
+              title="Export Extracted Findings"
+            >
+              <Download className="w-3.5 h-3.5 text-[#667085]" strokeWidth={2} />
+              <span>Export</span>
+              <ChevronDown className="w-3 h-3 text-[#98A2B3]" strokeWidth={2} />
+            </button>
+            <div className="absolute right-0 top-full mt-1 w-36 bg-white border border-[#D9DEE5] rounded-sm shadow-md py-1 hidden group-hover:block z-50">
+              {onExportJSON && (
+                <button
+                  onClick={onExportJSON}
+                  className="w-full text-left px-3 py-1.5 text-[12px] text-[#344054] hover:bg-[#F5F6F4] hover:text-[#111827] font-medium flex items-center gap-2 cursor-pointer"
+                >
+                  <span className="font-mono text-[10px] px-1 py-0.5 bg-gray-100 rounded text-gray-600">JSON</span>
+                  <span>Findings</span>
+                </button>
+              )}
+              {onExportCSV && (
+                <button
+                  onClick={onExportCSV}
+                  className="w-full text-left px-3 py-1.5 text-[12px] text-[#344054] hover:bg-[#F5F6F4] hover:text-[#111827] font-medium flex items-center gap-2 cursor-pointer"
+                >
+                  <span className="font-mono text-[10px] px-1 py-0.5 bg-gray-100 rounded text-gray-600">CSV</span>
+                  <span>Findings</span>
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+
         <button
           onClick={onNewTenderClick}
-          className="inline-flex items-center gap-1 rounded-sm bg-[#3157D5] px-2.5 py-1 text-[11.5px] sm:text-[12px] font-semibold text-white hover:bg-[#2544ab] transition-colors cursor-pointer shadow-2xs shrink-0 whitespace-nowrap"
+          className="inline-flex items-center gap-1.5 rounded-sm bg-[#3157D5] px-2.5 py-1 text-[11.5px] sm:text-[12px] font-semibold text-white hover:bg-[#2544ab] transition-colors cursor-pointer shadow-2xs shrink-0 whitespace-nowrap"
         >
-          <span>+ New Tender</span>
+          <Plus className="w-3.5 h-3.5" strokeWidth={2} />
+          <span>New Tender</span>
         </button>
 
         <span className="h-4 w-px bg-[#D9DEE5] shrink-0" />

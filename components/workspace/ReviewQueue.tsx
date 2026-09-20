@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { ArrowRight } from 'lucide-react';
 import { FindingItem } from './FindingsLedger';
 
 interface ReviewQueueProps {
@@ -16,17 +17,17 @@ export default function ReviewQueue({
   activeFindingId,
   onSelectFinding,
   onViewAllFindings,
-  limit = 4
+  limit = 5
 }: ReviewQueueProps) {
   if (!findings || findings.length === 0) {
     return null;
   }
 
-  // Take the first N prioritized findings
+  // Pick the top items up to the specified limit
   const queueItems = findings.slice(0, limit);
 
   return (
-    <section className="bg-white border border-[#D9DEE5] rounded-sm p-6 sm:p-8">
+    <section className="bg-white border border-[#D9DEE5] rounded-sm p-6 mb-6">
       
       {/* Header Strip */}
       <div className="flex items-center justify-between gap-3 pb-4 mb-4 border-b border-[#F2F4F7]">
@@ -45,7 +46,7 @@ export default function ReviewQueue({
           className="text-[12px] font-semibold text-[#3157D5] hover:text-[#2546B8] flex items-center gap-1 cursor-pointer transition-colors"
         >
           <span>View all findings ({findings.length})</span>
-          <span>&rarr;</span>
+          <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
         </button>
       </div>
 
@@ -109,7 +110,7 @@ export default function ReviewQueue({
                 )}
                 <span className="text-[12px] font-semibold text-[#3157D5] flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
                   <span>Inspect</span>
-                  <span>&rarr;</span>
+                  <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                 </span>
               </div>
             </div>
@@ -122,9 +123,10 @@ export default function ReviewQueue({
         <div className="mt-4 pt-4 border-t border-[#F2F4F7] flex items-center justify-center">
           <button
             onClick={onViewAllFindings}
-            className="w-full sm:w-auto px-4 py-2 border border-[#D9DEE5] hover:bg-[#F5F6F4] text-[#344054] text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1 w-full sm:w-auto px-4 py-2 border border-[#D9DEE5] hover:bg-[#F5F6F4] text-[#344054] text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer"
           >
-            Show remaining {findings.length - limit} findings in full ledger &rarr;
+            <span>Show remaining {findings.length - limit} findings in full ledger</span>
+            <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
           </button>
         </div>
       )}

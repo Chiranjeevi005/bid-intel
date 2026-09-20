@@ -14,10 +14,38 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: 'documentId is required' }, { status: 400 });
     }
 
-    const supabase = await createClient();
-    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    // Support both SSR cookie auth and Bearer token auth
+    let user: any = null;
+    let supabase: any = null;
 
-    if (authError || !user) {
+    const authHeader = request.headers.get('Authorization') || request.headers.get('authorization');
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+      const token = authHeader.substring(7);
+      const { createClient: createSupabaseJsClient } = await import('@supabase/supabase-js');
+      const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+      if (serviceKey) {
+        const adminClient = createSupabaseJsClient(
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          serviceKey,
+          { auth: { persistSession: false, autoRefreshToken: false } }
+        );
+        const { data: userData } = await adminClient.auth.getUser(token);
+        if (userData?.user) {
+          user = userData.user;
+          supabase = adminClient;
+        }
+      }
+    }
+
+    if (!user) {
+      supabase = await createClient();
+      const { data: authData, error: authError } = await supabase.auth.getUser();
+      if (!authError && authData?.user) {
+        user = authData.user;
+      }
+    }
+
+    if (!user || !supabase) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
@@ -100,6 +128,69 @@ export async function GET(request: Request) {
       pageCoverage = getPageCoverageAudit(pages, candidates);
     }
 
+    // 5. Derive effective user plan server-side
+    let userPlan: 'FREE' | 'PRO_INDIA' | 'PRO_GLOBAL' = 'FREE';
+    const { data: activeSub } = await supabase
+      .from('user_subscriptions')
+      .select('plan, status')
+      .eq('user_id', user.id)
+      .eq('status', 'ACTIVE')
+      .maybeSingle();
+
+    if (activeSub && (activeSub.plan === 'PRO_INDIA' || activeSub.plan === 'PRO_GLOBAL')) {
+      userPlan = activeSub.plan;
+    }
+
+    // 6. Enforce server-side entitlement for Contract Exposure findings
+    // PRO_GLOBAL receives all substantive finding content.
+    // FREE and PRO_INDIA (Plus) have Contract Exposure content masked server-side to prevent network payload leaks.
+    const isPro = userPlan === 'PRO_GLOBAL';
+    let gatedContractExposureCount = 0;
+
+    const sanitizedFindings = findings.map((f: any) => {
+      // Check if this finding belongs to Contract Exposure
+      const cat = (f.category || '').toUpperCase();
+      const title = (f.title || '').toLowerCase();
+      const fact = (f.finding || '').toLowerCase();
+      const implication = (f.business_implication || '').toLowerCase();
+      
+      const isContractExposure = 
+        cat === 'LIABILITY_INDEMNITY' ||
+        cat === 'LIABILITY_RISK' ||
+        cat === 'TERMINATION_RIGHTS' ||
+        cat === 'TERMINATION' ||
+        cat === 'PENALTIES_LIQUIDATED_DAMAGES' ||
+        cat === 'RISK_CANDIDATES' ||
+        cat === 'INDEMNITY' ||
+        (cat === 'UNUSUAL_OBLIGATIONS' && !title.includes('registration') && !fact.includes('mandatory registration')) ||
+        ((cat === 'COMMERCIAL_TERMS' || cat === 'COMMERCIAL_CONTRACT_TERMS' || cat === 'COMMERCIAL') &&
+          (title.includes('penalty') || title.includes('damage') || title.includes('reimbursement') || title.includes('liability') || title.includes('termination') || implication.includes('delay') || implication.includes('cash flow') || implication.includes('cost') || implication.includes('exposure')));
+
+      if (isContractExposure && !isPro) {
+        gatedContractExposureCount++;
+        return {
+          id: f.id,
+          analysis_run_id: f.analysis_run_id,
+          document_id: f.document_id,
+          category: f.category,
+          title: f.title ? 'Contractual Exposure Finding' : 'Contractual Exposure Finding',
+          finding: 'Substantive contractual finding details and risk exposure analysis are protected under the Pro plan.',
+          severity: f.severity,
+          confidence: f.confidence,
+          business_implication: null,
+          action_recommendation: null,
+          quotes: [], // Redact verbatim quotes from payload
+          is_pro_gated: true,
+          created_at: f.created_at,
+        };
+      }
+
+      return {
+        ...f,
+        is_pro_gated: false,
+      };
+    });
+
     return NextResponse.json({
       document: {
         id: doc.id,
@@ -115,10 +206,12 @@ export async function GET(request: Request) {
       },
       pages: pages || [],
       run: latestRun || null,
-      findings,
+      findings: sanitizedFindings,
       coverage: coverageReport,
       candidates,
-      page_coverage: pageCoverage
+      page_coverage: pageCoverage,
+      userPlan,
+      contractExposureGatedCount: gatedContractExposureCount,
     });
 
   } catch (err: any) {

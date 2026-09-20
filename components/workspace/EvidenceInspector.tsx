@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { FileSearch, X, ChevronLeft, ChevronRight, Copy, Check, ArrowRight } from 'lucide-react';
 import { FindingItem } from './FindingsLedger';
 
 export interface CategoryInspectionState {
@@ -89,7 +90,7 @@ export default function EvidenceInspector({
     return (
       <div className="h-full bg-white p-8 flex flex-col items-center justify-center text-center">
         <div className="w-12 h-12 rounded-full bg-[#F5F6F4] border border-[#D9DEE5] flex items-center justify-center mb-3">
-          <span className="text-[18px] text-[#667085] font-mono">§</span>
+          <FileSearch className="w-6 h-6 text-[#667085]" strokeWidth={1.75} />
         </div>
         <h3 className="text-[15px] font-bold text-[#111827] mb-1.5">
           Evidence & Source Inspector
@@ -135,9 +136,10 @@ export default function EvidenceInspector({
 
           <button
             onClick={onClearSelection}
-            className="p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-colors cursor-pointer text-[13px] font-semibold"
+            className="inline-flex items-center p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-colors cursor-pointer text-[13px] font-semibold"
           >
-            ✕ Close
+            <X className="w-4 h-4 mr-1" strokeWidth={2} />
+            Close
           </button>
         </div>
 
@@ -167,13 +169,14 @@ export default function EvidenceInspector({
                 <button
                   key={pg}
                   onClick={() => setNavPageNum(pg)}
-                  className={`px-3 py-1.5 text-[12px] font-mono font-medium rounded-sm border transition-colors cursor-pointer ${
+                  className={`inline-flex items-center gap-1 px-3 py-1.5 text-[12px] font-mono font-medium rounded-sm border transition-colors cursor-pointer ${
                     activePageNum === pg
                       ? 'bg-[#3157D5] text-white border-[#3157D5]'
                       : 'bg-white text-[#344054] border-[#D9DEE5] hover:bg-gray-50'
                   }`}
                 >
-                  Inspect Page {pg} &rarr;
+                  Inspect Page {pg}
+                  <ArrowRight className="w-3 h-3" strokeWidth={2} />
                 </button>
               ))}
             </div>
@@ -190,16 +193,18 @@ export default function EvidenceInspector({
               <button
                 disabled={activePageNum <= 1}
                 onClick={() => setNavPageNum(Math.max(1, activePageNum - 1))}
-                className="px-2.5 py-1 text-[11.5px] font-medium border border-[#D9DEE5] rounded bg-white text-gray-700 disabled:opacity-40 cursor-pointer"
+                className="inline-flex items-center px-2.5 py-1 text-[11.5px] font-medium border border-[#D9DEE5] rounded bg-white text-gray-700 disabled:opacity-40 cursor-pointer"
               >
-                &larr; Prev
+                <ChevronLeft className="w-3.5 h-3.5 mr-0.5" strokeWidth={2} />
+                Prev
               </button>
               <button
                 disabled={activePageNum >= totalPages}
                 onClick={() => setNavPageNum(Math.min(totalPages, activePageNum + 1))}
-                className="px-2.5 py-1 text-[11.5px] font-medium border border-[#D9DEE5] rounded bg-white text-gray-700 disabled:opacity-40 cursor-pointer"
+                className="inline-flex items-center px-2.5 py-1 text-[11.5px] font-medium border border-[#D9DEE5] rounded bg-white text-gray-700 disabled:opacity-40 cursor-pointer"
               >
-                Next &rarr;
+                Next
+                <ChevronRight className="w-3.5 h-3.5 ml-0.5" strokeWidth={2} />
               </button>
             </div>
           </div>
@@ -244,9 +249,10 @@ export default function EvidenceInspector({
 
           <button
             onClick={onClearSelection}
-            className="p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-colors cursor-pointer text-[13px] font-semibold"
+            className="inline-flex items-center p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-colors cursor-pointer text-[13px] font-semibold"
           >
-            ✕ Close
+            <X className="w-4 h-4 mr-1" strokeWidth={2} />
+            Close
           </button>
         </div>
 
@@ -321,17 +327,24 @@ export default function EvidenceInspector({
                           className="font-sans text-[11.5px] font-semibold text-[#667085] hover:text-[#111827] flex items-center gap-1 cursor-pointer transition-colors"
                         >
                           {isCopied ? (
-                            <span className="text-[#027A48] font-bold">✓ Citation copied</span>
+                            <span className="inline-flex items-center text-[#027A48] font-bold">
+                              <Check className="w-3.5 h-3.5 mr-1 text-[#027A48]" strokeWidth={2.5} />
+                              Citation copied
+                            </span>
                           ) : (
-                            <span>Copy citation</span>
+                            <span className="inline-flex items-center">
+                              <Copy className="w-3.5 h-3.5 mr-1" strokeWidth={2} />
+                              Copy citation
+                            </span>
                           )}
                         </button>
                       </div>
                       <button
                         onClick={() => setNavPageNum(q.page_number)}
-                        className="text-[#3157D5] hover:underline font-sans font-medium text-[12px] cursor-pointer"
+                        className="inline-flex items-center gap-1 text-[#3157D5] hover:underline font-sans font-medium text-[12px] cursor-pointer"
                       >
-                        Open Page {q.page_number} Context &rarr;
+                        Open Page {q.page_number} Context
+                        <ArrowRight className="w-3 h-3" strokeWidth={2} />
                       </button>
                     </div>
                   </div>
@@ -363,16 +376,18 @@ export default function EvidenceInspector({
               <button
                 disabled={activePageNum <= 1}
                 onClick={() => setNavPageNum(Math.max(1, activePageNum - 1))}
-                className="px-2.5 py-1 text-[11px] font-medium border border-[#D9DEE5] rounded bg-white text-gray-700 disabled:opacity-40 cursor-pointer"
+                className="inline-flex items-center px-2.5 py-1 text-[11px] font-medium border border-[#D9DEE5] rounded bg-white text-gray-700 disabled:opacity-40 cursor-pointer"
               >
-                &larr; Prev
+                <ChevronLeft className="w-3.5 h-3.5 mr-0.5" strokeWidth={2} />
+                Prev
               </button>
               <button
                 disabled={activePageNum >= totalPages}
                 onClick={() => setNavPageNum(Math.min(totalPages, activePageNum + 1))}
-                className="px-2.5 py-1 text-[11px] font-medium border border-[#D9DEE5] rounded bg-white text-gray-700 disabled:opacity-40 cursor-pointer"
+                className="inline-flex items-center px-2.5 py-1 text-[11px] font-medium border border-[#D9DEE5] rounded bg-white text-gray-700 disabled:opacity-40 cursor-pointer"
               >
-                Next &rarr;
+                Next
+                <ChevronRight className="w-3.5 h-3.5 ml-0.5" strokeWidth={2} />
               </button>
             </div>
           </div>

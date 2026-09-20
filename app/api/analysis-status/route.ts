@@ -27,10 +27,10 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: 'Run not found' }, { status: 404 });
     }
     
-    // Authorization check
+    // Authorization & document metadata check
     const { data: doc } = await supabase
       .from('documents')
-      .select('user_id')
+      .select('id, user_id, qualification_status, qualification_reason, document_type')
       .eq('id', run.document_id)
       .single();
       
@@ -44,16 +44,52 @@ export async function GET(request: Request) {
         .select('*', { count: 'exact', head: true })
         .eq('analysis_run_id', runId);
         
-      return NextResponse.json({ status: run.status, findingsCount: count });
+      return NextResponse.json({
+        status: run.status,
+        findingsCount: count,
+        qualification_status: doc.qualification_status,
+      });
+    }
+
+    // If qualification rejected by AI
+    if (doc.qualification_status === 'AI_REJECTED') {
+      return NextResponse.json({
+        status: 'REJECTED',
+        qualification_status: 'AI_REJECTED',
+        qualification_reason: doc.qualification_reason || run.last_error || 'Document classified as non-procurement opportunity.',
+        error: doc.qualification_reason || 'Document does not appear to be a procurement opportunity.',
+        document_id: doc.id,
+      });
+    }
+
+    // If qualification ambiguous
+    if (doc.qualification_status === 'AI_AMBIGUOUS') {
+      return NextResponse.json({
+        status: 'AMBIGUOUS',
+        qualification_status: 'AI_AMBIGUOUS',
+        qualification_reason: doc.qualification_reason || 'Document classification uncertain, requires user confirmation.',
+        error: doc.qualification_reason || 'Document classification uncertain.',
+        document_id: doc.id,
+      });
     }
 
     if (run.status === 'FAILED') {
-      // Do not expose internal technical errors, just a sanitized message
       console.error(`Internal Job Failure for run ${runId}:`, run.last_error);
-      return NextResponse.json({ status: run.status, error: "Analysis could not be completed. Please try again." });
+      return NextResponse.json({
+        status: run.status,
+        error: run.last_error || 'Analysis could not be completed. Please try again.',
+        last_error: run.last_error,
+        qualification_status: doc.qualification_status,
+        qualification_reason: doc.qualification_reason || run.last_error,
+        document_id: doc.id,
+      });
     }
 
-    return NextResponse.json({ status: run.status });
+    return NextResponse.json({
+      status: run.status,
+      qualification_status: doc.qualification_status,
+      document_id: doc.id,
+    });
 
   } catch (err: any) {
     console.error('Analysis Status Route Error:', err);

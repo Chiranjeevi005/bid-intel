@@ -41,7 +41,9 @@ export async function updateSession(request: NextRequest) {
 
   if (!user && isProtected) {
     const url = request.nextUrl.clone();
+    const nextTarget = request.nextUrl.pathname + request.nextUrl.search;
     url.pathname = '/login';
+    url.searchParams.set('next', nextTarget);
     return NextResponse.redirect(url);
   }
 
