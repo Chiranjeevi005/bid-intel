@@ -25,6 +25,13 @@ export async function GET(request: Request) {
         url.host = forwardedHost;
       }
 
+      // If NEXT_PUBLIC_APP_URL is explicitly configured, redirect to the canonical domain
+      const canonicalAppUrl = process.env.NEXT_PUBLIC_APP_URL;
+      if (canonicalAppUrl && !url.hostname.includes('localhost') && !url.hostname.includes('127.0.0.1')) {
+        const canonicalUrl = new URL(next, canonicalAppUrl);
+        return NextResponse.redirect(canonicalUrl);
+      }
+
       // Force HTTP for localhost to prevent ERR_SSL_PROTOCOL_ERROR
       if (url.hostname === 'localhost' || url.hostname === '127.0.0.1') {
         url.protocol = 'http:';

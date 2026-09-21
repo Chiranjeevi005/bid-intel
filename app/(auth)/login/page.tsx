@@ -39,7 +39,8 @@ function LoginForm() {
     event({ action: 'login_started', category: 'auth', label: 'magic_link' });
 
     try {
-      const emailRedirectTo = `${location.origin}/auth/callback?next=${encodeURIComponent(safeNext)}`;
+      const appUrl = process.env.NEXT_PUBLIC_APP_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+      const emailRedirectTo = `${appUrl}/auth/callback?next=${encodeURIComponent(safeNext)}`;
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
@@ -66,7 +67,8 @@ function LoginForm() {
     event({ action: 'login_started', category: 'auth', label: 'google' });
 
     try {
-      const redirectTo = `${location.origin}/auth/callback?next=${encodeURIComponent(safeNext)}`;
+      const appUrl = process.env.NEXT_PUBLIC_APP_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+      const redirectTo = `${appUrl}/auth/callback?next=${encodeURIComponent(safeNext)}`;
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
