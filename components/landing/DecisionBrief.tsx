@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { CheckCircle2, AlertTriangle, HelpCircle, ChevronLeft, ChevronRight, ArrowRight, ArrowDown } from "lucide-react";
 
 interface InvestigationStage {
@@ -31,87 +31,133 @@ interface InvestigationStage {
 const INVESTIGATION_STAGES: InvestigationStage[] = [
   {
     step: "01",
-    badge: "FORENSIC INGESTION",
-    title: "Document Ingestion & Section Parsing",
+    badge: "DOCUMENT QUALIFICATION",
+    title: "Document Ingestion & Qualification Gate",
     shortDesc:
-      "Deep OCR decomposition parses multi-part PDFs, annexures, and addenda into structured, searchable clause entities.",
-    consoleTitle: "Tender Specimen Decomposition",
-    metric: "49 Pages · 142 Clauses",
-    metricLabel: "OCR Confidence 99.8%",
-    visualTag: "PARSING COMPLETE",
+      "Direct PDF parsing extracts page content with scan detection. An AI qualification gate validates whether the document is a genuine procurement opportunity before pipeline execution.",
+    consoleTitle: "Document Intake & Qualification Gate",
+    metric: "49 Pages Processed",
+    metricLabel: "Status: AI_QUALIFIED (High)",
+    visualTag: "PROCUREMENT VERIFIED",
     visualTagColor: "blue",
     documentContext: {
-      section: "Full Specimen Package: MOT-2026-EXP",
-      page: "Pages 1-49",
+      section: "Document Preamble · Specimen: MOT-2026-EXP",
+      page: "Page 1 of 49",
       quote:
-        "Tender specifications, Commercial Schedules A through D, Technical SLA Addenda, and General Conditions of Contract (GCC).",
+        "Request for Proposals (RFP) for the Engineering, Procurement, and Construction (EPC) of High-Speed Transit Infrastructure for the Ministry of Transport.",
     },
     forensicInsights: [
-      { label: "Document Type", value: "Public Transit Infrastructure RFP" },
-      { label: "Mandatory Schedules", value: "4 Schedules, 2 Technical Annexures" },
-      { label: "Submission Deadline", value: "18 September 2026 (17:00 IST)" },
-      { label: "Estimated Baseline", value: "₹350 Crore (₹3,500,000,000)" },
+      { label: "Document Type", value: "Procurement Opportunity (RFP / Tender)", status: "covered" },
+      { label: "Qualification State", value: "AI_QUALIFIED (Confidence: HIGH)", status: "covered" },
+      { label: "Text Extraction", value: "49 Pages Extracted · Direct Stream Parsing", status: "covered" },
+      { label: "Candidate Retrieval", value: "12 Critical Procurement Domains Indexed" },
     ],
     verdictAction:
-      "Deconstructed 142 discrete obligations into normalized categories for automated cross-examination.",
+      "Document authenticated as genuine public procurement tender. Trigger and context window expansion initialized across all 49 pages.",
   },
   {
     step: "02",
-    badge: "CLAUSE CROSS-EXAMINATION",
-    title: "Contractual Trap & Risk Interrogation",
+    badge: "EVIDENCE VALIDATION",
+    title: "Clause Extraction & Verbatim Evidence Validation",
     shortDesc:
-      "Every clause is cross-examined against standard commercial playbooks to expose uncapped liabilities, missing SLAs, and punitive terms.",
-    consoleTitle: "Forensic Risk Interrogation",
-    metric: "2 Critical Traps",
-    metricLabel: "3 Ambiguities Flagged",
+      "Targeted extraction analyzes critical procurement categories. Every extracted finding is tested against 100% exact substring matching to eliminate synthetic hallucinations.",
+    consoleTitle: "Clause Extraction & Verbatim Match Engine",
+    metric: "18 Verified Findings",
+    metricLabel: "100% Substring Grounding · 0 Hallucinations",
     visualTag: "CRITICAL EXPOSURE",
     visualTagColor: "danger",
     documentContext: {
-      section: "Section 6.2: Indemnification & Third-Party Claims",
+      section: "Section 6.2: Indemnification & Liability Risk",
       page: "Page 14",
       quote:
         "The Supplier shall indemnify, defend and hold harmless the Authority from and against any and all claims, losses, damages, liabilities, costs and expenses arising out of or related to this Agreement without limitation.",
     },
     forensicInsights: [
-      { label: "Liability Ceiling", value: "Uncapped (No aggregate stop-loss)", status: "danger" },
-      { label: "Delay Penalties", value: "₹1,25,000 / calendar day (Uncapped)", status: "danger" },
-      { label: "Response Time SLA", value: "'Immediate' (Legally ambiguous)", status: "warning" },
-      { label: "Mandatory ISO Certs", value: "ISO 27001 & ISO 9001 Required", status: "covered" },
+      { label: "Liability Ceiling", value: "Uncapped (No aggregate stop-loss ceiling)", status: "danger" },
+      { label: "Delay Penalties", value: "₹1,25,000 / calendar day of delay", status: "danger" },
+      { label: "Support SLAs", value: "'Immediate response required' (Ambiguous SLA)", status: "warning" },
+      { label: "Performance Security", value: "5% PBG required within 15 days (Pg 22)", status: "covered" },
     ],
     verdictAction:
-      "Identified uncapped indemnification risk. Bidding without amending clause 6.2 creates unlimited balance sheet liability.",
+      "Discovered uncapped indemnification risk. Verbatim quote verified character-for-character against Page 14 raw text. Zero unsupported claims accepted into confirmed findings.",
   },
   {
     step: "03",
-    badge: "BID DECISION DOSSIER",
-    title: "Executive Decision Dossier & Q&A Strategy",
+    badge: "DECISION BRIEF",
+    title: "Selective Risk Interpretation & 12-Domain Coverage",
     shortDesc:
-      "Synthesizes verified findings into an executive decision dossier, line-item risk highlights, and formal clarification inquiries for the Q&A period.",
-    consoleTitle: "Pre-Bid Executive Dossier",
-    metric: "Status: Review Required",
-    metricLabel: "4 Clarification Questions",
-    visualTag: "EXECUTIVE DOSSIER",
+      "High-risk clauses receive automated business implication analysis and actionable pre-bid clarification inquiries. 12 critical domains are audited for coverage health.",
+    consoleTitle: "Executive Decision Dossier & Q&A Strategy",
+    metric: "12 Critical Domains Evaluated",
+    metricLabel: "Domain Health: Review Required",
+    visualTag: "ACTION REQUIRED",
     visualTagColor: "danger",
     documentContext: {
-      section: "Executive Action Plan: Q&A Submission Draft",
-      page: "Dossier Summary",
+      section: "Pre-Bid Clarification Action Item #1 · Section 6.2",
+      page: "Page 14 (Indemnity)",
       quote:
-        "Tender contains high commercial risk in Section 6.2 and 9.4. Do not commit formal bid pricing until clarification answers cap total liability at 100% contract value.",
+        "Formal Pre-Bid Clarification Request: Propose amendment to Clause 6.2 inserting an aggregate liability cap of 100% contract value, and a 10% maximum cumulative ceiling on liquidated damages.",
     },
     forensicInsights: [
-      { label: "Commercial Risk Rating", value: "High (Score 78/100)", status: "danger" },
-      { label: "Technical Eligibility", value: "Qualified (3/3 criteria met)", status: "covered" },
-      { label: "Recommended Action", value: "Submit Clarification Request #1-4", status: "warning" },
-      { label: "Bid Effort Estimate", value: "240 Engineering & Commercial Hours" },
+      { label: "Liability Risk Domain", value: "REVIEW_REQUIRED (Uncapped risk on Pg 14)", status: "danger" },
+      { label: "Penalties & LDs Domain", value: "REVIEW_REQUIRED (No cumulative cap on LDs)", status: "warning" },
+      { label: "Eligibility & Mandatory Docs", value: "COVERED (Turnover & ISO certs met)", status: "covered" },
+      { label: "Pre-Bid Clarifications", value: "3 Clarification Inquiries Drafted", status: "covered" },
     ],
     verdictAction:
-      "Drafted 4 precise Q&A inquiries to propose a standard 100% liability cap and 10% liquidated damages stop-loss during the tender clarification window.",
+      "Executive dossier compiled. Recommends raising clarification questions during the official pre-bid window to negotiate a standard 100% liability cap before submitting a price bid.",
   },
 ];
 
 export default function DecisionBrief({ user = null }: { user?: any | null }) {
-  const [activeStepIndex, setActiveStepIndex] = useState<number>(1);
+  const [[activeStepIndex, direction], setStage] = useState<[number, number]>([0, 0]);
   const activeStage = INVESTIGATION_STAGES[activeStepIndex];
+
+  const navigateTo = (newIndex: number) => {
+    if (newIndex === activeStepIndex) return;
+    const dir = newIndex > activeStepIndex ? 1 : -1;
+    setStage([newIndex, dir]);
+  };
+
+  const handleNext = () => {
+    const nextIndex = activeStepIndex < 2 ? activeStepIndex + 1 : 0;
+    const dir = nextIndex > activeStepIndex ? 1 : 1;
+    setStage([nextIndex, dir]);
+  };
+
+  const handlePrev = () => {
+    const prevIndex = activeStepIndex > 0 ? activeStepIndex - 1 : 2;
+    const dir = prevIndex < activeStepIndex ? -1 : -1;
+    setStage([prevIndex, dir]);
+  };
+
+  const consoleVariants: Variants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 20 : dir < 0 ? -20 : 0,
+      opacity: 0,
+      filter: "blur(4px)",
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      filter: "blur(0px)",
+      transition: {
+        x: { type: "spring" as const, stiffness: 320, damping: 30 },
+        opacity: { duration: 0.26, ease: [0.16, 1, 0.3, 1] },
+        filter: { duration: 0.22 },
+      },
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? -20 : dir < 0 ? 20 : 0,
+      opacity: 0,
+      filter: "blur(4px)",
+      transition: {
+        x: { type: "spring" as const, stiffness: 320, damping: 30 },
+        opacity: { duration: 0.18, ease: "easeInOut" },
+        filter: { duration: 0.18 },
+      },
+    }),
+  };
 
   return (
     <div className="w-full bg-[#F5F6F4] text-[#111827] flex flex-col items-center">
@@ -164,7 +210,7 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
             <div className="w-full grid grid-cols-3 gap-4 pt-6 border-t border-[#D9DEE5]">
               <div>
                 <div className="text-[18px] font-bold text-[#111827]">~30s</div>
-                <div className="text-[12px] text-[#667085] font-medium">Forensic OCR Intake</div>
+                <div className="text-[12px] text-[#667085] font-medium">Automated Intake & Audit</div>
               </div>
               <div>
                 <div className="text-[18px] font-bold text-[#111827]">100%</div>
@@ -302,10 +348,13 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
             {INVESTIGATION_STAGES.map((stage, idx) => {
               const isActive = idx === activeStepIndex;
               return (
-                <button
+                <motion.button
                   key={stage.step}
-                  onClick={() => setActiveStepIndex(idx)}
-                  className={`text-left p-5 rounded-md border transition-all duration-200 flex flex-col justify-between relative overflow-hidden ${
+                  onClick={() => navigateTo(idx)}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.99 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className={`text-left p-5 rounded-md border transition-all duration-200 flex flex-col justify-between relative overflow-hidden cursor-pointer ${
                     isActive
                       ? "bg-[#F5F6F4] border-[#3157D5] ring-2 ring-[#3157D5]/20 shadow-sm"
                       : "bg-white border-[#D9DEE5] hover:border-gray-300 hover:bg-gray-50/70"
@@ -316,7 +365,7 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                     <motion.div
                       layoutId="activeIndicator"
                       className="absolute top-0 left-0 right-0 h-1 bg-[#3157D5]"
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      transition={{ type: "spring", stiffness: 350, damping: 32 }}
                     />
                   )}
 
@@ -345,47 +394,48 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                       {isActive ? "Viewing Specimen →" : "Click to inspect"}
                     </span>
                   </div>
-                </button>
+                </motion.button>
               );
             })}
           </div>
 
-          {/* Dynamic Forensic Console Screen */}
-          <div className="w-full bg-[#111827] text-white rounded-lg p-6 sm:p-8 md:p-10 shadow-xl border border-gray-800">
-            <AnimatePresence mode="wait">
+          {/* Dynamic Forensic Console Screen - LIGHT THEME */}
+          <div className="w-full bg-[#FAFAFC] rounded-xl p-6 sm:p-8 md:p-9 shadow-sm border border-[#D9DEE5] overflow-hidden">
+            <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={activeStage.step}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
+                custom={direction}
+                variants={consoleVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
                 className="flex flex-col gap-6"
               >
                 {/* Console Terminal Header */}
-                <div className="flex flex-wrap items-center justify-between pb-4 border-b border-gray-800 gap-3">
+                <div className="flex flex-wrap items-center justify-between pb-4 border-b border-[#E4E7EC] gap-3">
                   <div className="flex items-center gap-3">
                     <span className="flex h-2.5 w-2.5 relative">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
                     </span>
-                    <span className="text-[13px] font-mono font-semibold tracking-wider uppercase text-gray-300">
-                      FORENSIC DESK // {activeStage.consoleTitle}
+                    <span className="text-[12px] font-mono font-semibold tracking-wider uppercase text-[#344054]">
+                      FORENSIC PIPELINE DESK // {activeStage.consoleTitle}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <span
-                      className={`text-[11px] font-mono font-bold px-2.5 py-0.5 rounded ${
+                      className={`text-[11px] font-mono font-bold px-2.5 py-1 rounded border transition-colors ${
                         activeStage.visualTagColor === "danger"
-                          ? "bg-red-900/60 text-red-300 border border-red-700/50"
+                          ? "bg-[#FEF3F2] text-[#B42318] border-[#FECDCA]"
                           : activeStage.visualTagColor === "success"
-                          ? "bg-emerald-900/60 text-emerald-300 border border-emerald-700/50"
-                          : "bg-blue-900/60 text-blue-300 border border-blue-700/50"
+                          ? "bg-[#ECFDF3] text-[#027A48] border-[#A6F4C5]"
+                          : "bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]"
                       }`}
                     >
                       ● {activeStage.visualTag}
                     </span>
-                    <span className="text-[12px] font-mono text-gray-400">
+                    <span className="text-[12px] font-mono font-medium text-[#667085]">
                       {activeStage.metricLabel}
                     </span>
                   </div>
@@ -395,71 +445,84 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   
                   {/* Left Console: Evidence Quote & Citations */}
-                  <div className="lg:col-span-7 flex flex-col gap-4">
-                    <div className="text-[11px] font-mono font-semibold tracking-wider uppercase text-gray-400 flex items-center justify-between">
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.28, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+                    className="lg:col-span-7 flex flex-col gap-4"
+                  >
+                    <div className="text-[11px] font-mono font-semibold tracking-wider uppercase text-[#667085] flex items-center justify-between">
                       <span>Source Evidence Interrogation</span>
-                      <span className="text-gray-500 font-normal">{activeStage.documentContext.page}</span>
+                      <span className="text-[#475467] font-medium">{activeStage.documentContext.page}</span>
                     </div>
 
-                    <div className="p-5 bg-gray-900/80 border border-gray-800 rounded-md">
-                      <div className="text-[12px] font-mono text-blue-400 mb-2 font-medium">
+                    <div className="p-5 bg-white border border-[#E4E7EC] rounded-lg shadow-xs">
+                      <div className="text-[12px] font-mono text-[#3157D5] mb-2.5 font-semibold flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#3157D5]" />
                         {activeStage.documentContext.section}
                       </div>
-                      <p className="text-[16px] sm:text-[17px] font-serif leading-relaxed text-gray-200 italic">
-                        &quot;{activeStage.documentContext.quote}&quot;
-                      </p>
+                      <div className="p-4 bg-[#F8F9FA] rounded border-l-3 border-[#3157D5]">
+                        <p className="text-[15px] sm:text-[16px] font-serif leading-relaxed text-[#1F2937] italic">
+                          &quot;{activeStage.documentContext.quote}&quot;
+                        </p>
+                      </div>
                     </div>
 
                     {/* Forensic Finding Box */}
-                    <div className="p-4 bg-gray-900/40 border border-gray-800/80 rounded-md">
-                      <div className="text-[11px] font-mono uppercase tracking-wider text-gray-400 mb-1">
-                        Forensic Assessment
+                    <div className="p-4 bg-white border border-[#E4E7EC] rounded-lg shadow-xs">
+                      <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#667085] mb-1.5">
+                        Pipeline Action & Grounding
                       </div>
-                      <p className="text-[13px] text-gray-300 leading-relaxed">
+                      <p className="text-[13px] text-[#344054] leading-relaxed">
                         {activeStage.verdictAction}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Right Console: Line-Item Clause Audit Log */}
-                  <div className="lg:col-span-5 flex flex-col gap-3">
-                    <div className="text-[11px] font-mono font-semibold tracking-wider uppercase text-gray-400 mb-1">
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.28, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className="lg:col-span-5 flex flex-col gap-3"
+                  >
+                    <div className="text-[11px] font-mono font-semibold tracking-wider uppercase text-[#667085] mb-1">
                       Investigation Audit Log
                     </div>
 
-                    <div className="flex flex-col divide-y divide-gray-800 bg-gray-900/80 border border-gray-800 rounded-md">
+                    <div className="flex flex-col divide-y divide-[#EAECF0] bg-white border border-[#E4E7EC] rounded-lg shadow-xs overflow-hidden">
                       {activeStage.forensicInsights.map((insight, i) => (
-                        <div key={i} className="p-3.5 flex flex-col gap-1">
-                          <span className="text-[11px] font-mono text-gray-400 uppercase">
+                        <div key={i} className="p-3.5 flex flex-col gap-1 hover:bg-[#F9FAFB] transition-colors">
+                          <span className="text-[11px] font-mono text-[#667085] uppercase tracking-wider">
                             {insight.label}
                           </span>
                           <span
                             className={`text-[13px] font-medium flex items-center justify-between ${
                               insight.status === "danger"
-                                ? "text-red-400 font-semibold"
+                                ? "text-[#B42318] font-semibold"
                                 : insight.status === "warning"
-                                ? "text-amber-400 font-semibold"
+                                ? "text-[#B54708] font-semibold"
                                 : insight.status === "covered"
-                                ? "text-emerald-400 font-semibold"
-                                : "text-gray-200"
+                                ? "text-[#027A48] font-semibold"
+                                : "text-[#1F2937]"
                             }`}
                           >
-                            {insight.value}
+                            <span>{insight.value}</span>
                             {insight.status === "danger" && (
-                              <span className="inline-flex items-center gap-1 text-[11px]">
-                                <AlertTriangle className="w-3 h-3 text-red-400 shrink-0" strokeWidth={2.5} />
+                              <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#FEF3F2] text-[#B42318] border border-[#FECDCA] shrink-0">
+                                <AlertTriangle className="w-3 h-3 text-[#B42318] shrink-0" strokeWidth={2.5} />
                                 CRITICAL
                               </span>
                             )}
                             {insight.status === "warning" && (
-                              <span className="inline-flex items-center gap-1 text-[11px]">
-                                <HelpCircle className="w-3 h-3 text-amber-400 shrink-0" strokeWidth={2.5} />
+                              <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#FFFAEB] text-[#B54708] border border-[#FEDF89] shrink-0">
+                                <HelpCircle className="w-3 h-3 text-[#B54708] shrink-0" strokeWidth={2.5} />
                                 AMBIGUOUS
                               </span>
                             )}
                             {insight.status === "covered" && (
-                              <span className="inline-flex items-center gap-1 text-[11px]">
-                                <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" strokeWidth={2.5} />
+                              <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#ECFDF3] text-[#027A48] border border-[#A6F4C5] shrink-0">
+                                <CheckCircle2 className="w-3 h-3 text-[#027A48] shrink-0" strokeWidth={2.5} />
                                 VERIFIED
                               </span>
                             )}
@@ -467,30 +530,54 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </motion.div>
 
                 </div>
 
                 {/* Bottom Console Action Row */}
-                <div className="pt-4 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <span className="text-[12px] font-mono text-gray-400">
-                    Step {activeStage.step} of 03 in the automated pre-bid forensic pipeline.
-                  </span>
+                <div className="pt-4 border-t border-[#E4E7EC] flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <button
-                      onClick={() => setActiveStepIndex((prev) => (prev > 0 ? prev - 1 : 2))}
-                      className="inline-flex items-center px-3 py-1.5 text-[12px] font-mono bg-gray-800 hover:bg-gray-700 text-gray-200 rounded border border-gray-700 transition-colors cursor-pointer"
+                    <span className="text-[12px] font-mono text-[#667085]">
+                      Stage {activeStage.step} of 03 in the RFPground analysis pipeline.
+                    </span>
+                    {/* Visual Stage Progress Track */}
+                    <div className="flex items-center gap-1.5">
+                      {INVESTIGATION_STAGES.map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={() => navigateTo(i)}
+                          aria-label={`Jump to Stage 0${i + 1}`}
+                          className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                            i === activeStepIndex
+                              ? "w-6 bg-[#3157D5]"
+                              : "w-2 bg-[#D0D5DD] hover:bg-gray-400"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.96 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                      onClick={handlePrev}
+                      className="group inline-flex items-center px-3.5 py-1.5 text-[12px] font-mono font-medium bg-white hover:bg-gray-50 text-[#344054] rounded border border-[#D0D5DD] shadow-2xs hover:shadow-xs transition-colors cursor-pointer"
                     >
-                      <ChevronLeft className="w-3.5 h-3.5 mr-1" strokeWidth={2} />
-                      Prev Stage
-                    </button>
-                    <button
-                      onClick={() => setActiveStepIndex((prev) => (prev < 2 ? prev + 1 : 0))}
-                      className="inline-flex items-center px-3 py-1.5 text-[12px] font-mono bg-[#3157D5] hover:bg-[#2845a9] text-white rounded transition-colors cursor-pointer"
+                      <ChevronLeft className="w-3.5 h-3.5 mr-1 transition-transform duration-200 group-hover:-translate-x-0.5" strokeWidth={2.5} />
+                      <span>Prev Stage</span>
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.96 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                      onClick={handleNext}
+                      className="group inline-flex items-center px-4 py-1.5 text-[12px] font-mono font-semibold bg-[#3157D5] hover:bg-[#2845a9] text-white rounded shadow-2xs hover:shadow-xs transition-colors cursor-pointer"
                     >
-                      Next Stage
-                      <ChevronRight className="w-3.5 h-3.5 ml-1" strokeWidth={2} />
-                    </button>
+                      <span>Next Stage</span>
+                      <ChevronRight className="w-3.5 h-3.5 ml-1 transition-transform duration-200 group-hover:translate-x-0.5" strokeWidth={2.5} />
+                    </motion.button>
                   </div>
                 </div>
               </motion.div>

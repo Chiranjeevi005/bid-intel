@@ -27,13 +27,13 @@ function LoginForm() {
 
   const handleMagicLink = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic frontend validation for Taste-Skill state completeness
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
       setStatus({ type: 'error', text: 'Please enter a valid email address.' });
       return;
     }
-    
+
     setLoading(true);
     setStatus(null);
 
@@ -89,18 +89,18 @@ function LoginForm() {
 
   return (
     <div className="min-h-dvh flex flex-col bg-[#F5F6F4] font-sans text-foreground selection:bg-[#3157D5]/15 selection:text-[#3157D5]">
-      
+
       {/* Top Navigation Bar: Exact height (h-18), background, logo asset and container width as homepage navbar */}
       <header className="w-full h-18 border-b border-[#D9DEE5] bg-background px-6 lg:px-12 sticky top-0 z-50 flex items-center justify-center shrink-0">
         <div className="w-full max-w-6xl mx-auto flex items-center justify-between">
           {/* Brand Logo matching homepage */}
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center">
-              <Image 
-                src="/brand-assets/navbar-logo.png" 
-                alt="RFPground" 
-                width={200} 
-                height={48} 
+              <Image
+                src="/brand-assets/navbar-logo.png"
+                alt="RFPground"
+                width={200}
+                height={48}
                 className="h-10 md:h-11 w-auto object-contain"
                 priority
               />
@@ -109,15 +109,15 @@ function LoginForm() {
 
           {/* Nav links: Terms of Service, Support email */}
           <nav className="flex items-center gap-5 sm:gap-7 text-[13px] font-medium text-[#4B5563]">
-            <Link 
-              href="/terms" 
+            <Link
+              href="/terms"
               className="hover:text-[#111827] transition-colors duration-150"
             >
               Terms of Service
             </Link>
             <span className="hidden sm:inline text-[#D1D5DB]">|</span>
-            <a 
-              href="mailto:support@rfpground.com" 
+            <a
+              href="mailto:support@rfpground.com"
               className="text-[#3157D5] hover:text-[#2544a8] transition-colors duration-150 font-medium"
             >
               support@rfpground.com
@@ -128,7 +128,7 @@ function LoginForm() {
 
       {/* Main Operational Canvas */}
       <main className="flex-1 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_390px] gap-8 lg:gap-16 px-6 lg:px-12 py-10 lg:py-16 items-start">
-        
+
         {/* Left Side: Document Evidence Preview */}
         <div className="flex flex-col justify-center w-full">
           <div className="bg-white rounded-lg border border-[#D9DEE5] p-7 md:p-9 shadow-xs">
@@ -203,11 +203,10 @@ function LoginForm() {
 
             {status && (
               <div
-                className={`mb-5 text-[13px] font-medium p-3 rounded-md border flex items-center gap-2 ${
-                  status.type === 'success'
-                    ? 'bg-[#ECFDF3] border-[#027A48]/20 text-[#027A48]'
-                    : 'bg-[#FEF3F2] border-[#B42318]/20 text-[#B42318]'
-                }`}
+                className={`mb-5 text-[13px] font-medium p-3 rounded-md border flex items-center gap-2 ${status.type === 'success'
+                  ? 'bg-[#ECFDF3] border-[#027A48]/20 text-[#027A48]'
+                  : 'bg-[#FEF3F2] border-[#B42318]/20 text-[#B42318]'
+                  }`}
                 role="alert"
               >
                 {status.type === 'success' ? (
@@ -235,7 +234,7 @@ function LoginForm() {
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
                     className="block w-full rounded-md border border-[#D0D5DD] bg-white px-3.5 py-2.5 text-[14px] text-[#111827] placeholder-[#98A2B3] focus:outline-none transition-colors"
-                    placeholder="name@company.com"
+                    placeholder="username@gmail.com"
                     value={email}
                     onChange={(e) => {
                       setEmail(e.target.value);
@@ -284,7 +283,7 @@ function LoginForm() {
               </svg>
               Google
             </button>
-            
+
             <p className="mt-6 text-center text-[12px] text-[#667085] leading-normal">
               By continuing, you agree to our{' '}
               <Link href="/terms" className="underline hover:text-[#111827]">Terms of Service</Link>.
