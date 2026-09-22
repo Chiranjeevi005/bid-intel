@@ -20,7 +20,7 @@ export interface PlanConfig {
   id: SubscriptionPlan;
   name: string;
   currency: string;
-  priceSubunits: number; // paise for INR, cents for USD
+  priceSubunits: number; // paise for INR (subunits)
   displayPrice: string;
   interval: 'monthly';
   monthlyQuota: number;

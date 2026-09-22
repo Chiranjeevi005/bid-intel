@@ -13,7 +13,7 @@ export default async function Home() {
       <main className="flex-1">
         <DecisionBrief user={user} />
       </main>
-      <LandingFooter user={user} />
+      <LandingFooter />
     </div>
   );
 }

@@ -42,15 +42,15 @@ const INVESTIGATION_STAGES: InvestigationStage[] = [
     visualTagColor: "blue",
     documentContext: {
       section: "Full Specimen Package: MOT-2026-EXP",
-      page: "Pages 1 – 49",
+      page: "Pages 1-49",
       quote:
         "Tender specifications, Commercial Schedules A through D, Technical SLA Addenda, and General Conditions of Contract (GCC).",
     },
     forensicInsights: [
       { label: "Document Type", value: "Public Transit Infrastructure RFP" },
-      { label: "Mandatory Schedules", value: "4 Schedules · 2 Technical Annexures" },
-      { label: "Submission Deadline", value: "18 September 2026 (17:00 EST)" },
-      { label: "Estimated Baseline", value: "$42,000,000 USD" },
+      { label: "Mandatory Schedules", value: "4 Schedules, 2 Technical Annexures" },
+      { label: "Submission Deadline", value: "18 September 2026 (17:00 IST)" },
+      { label: "Estimated Baseline", value: "₹350 Crore (₹3,500,000,000)" },
     ],
     verdictAction:
       "Deconstructed 142 discrete obligations into normalized categories for automated cross-examination.",
@@ -67,14 +67,14 @@ const INVESTIGATION_STAGES: InvestigationStage[] = [
     visualTag: "CRITICAL EXPOSURE",
     visualTagColor: "danger",
     documentContext: {
-      section: "Section 6.2 — Indemnification & Third-Party Claims",
+      section: "Section 6.2: Indemnification & Third-Party Claims",
       page: "Page 14",
       quote:
         "The Supplier shall indemnify, defend and hold harmless the Authority from and against any and all claims, losses, damages, liabilities, costs and expenses arising out of or related to this Agreement without limitation.",
     },
     forensicInsights: [
       { label: "Liability Ceiling", value: "Uncapped (No aggregate stop-loss)", status: "danger" },
-      { label: "Delay Penalties", value: "$15,000 / calendar day (Uncapped)", status: "danger" },
+      { label: "Delay Penalties", value: "₹1,25,000 / calendar day (Uncapped)", status: "danger" },
       { label: "Response Time SLA", value: "'Immediate' (Legally ambiguous)", status: "warning" },
       { label: "Mandatory ISO Certs", value: "ISO 27001 & ISO 9001 Required", status: "covered" },
     ],
@@ -93,7 +93,7 @@ const INVESTIGATION_STAGES: InvestigationStage[] = [
     visualTag: "EXECUTIVE DOSSIER",
     visualTagColor: "danger",
     documentContext: {
-      section: "Executive Action Plan · Q&A Submission Draft",
+      section: "Executive Action Plan: Q&A Submission Draft",
       page: "Dossier Summary",
       quote:
         "Tender contains high commercial risk in Section 6.2 and 9.4. Do not commit formal bid pricing until clarification answers cap total liability at 100% contract value.",
@@ -101,7 +101,7 @@ const INVESTIGATION_STAGES: InvestigationStage[] = [
     forensicInsights: [
       { label: "Commercial Risk Rating", value: "High (Score 78/100)", status: "danger" },
       { label: "Technical Eligibility", value: "Qualified (3/3 criteria met)", status: "covered" },
-      { label: "Recommended Action", value: "Submit Clarification Request #1–4", status: "warning" },
+      { label: "Recommended Action", value: "Submit Clarification Request #1-4", status: "warning" },
       { label: "Bid Effort Estimate", value: "240 Engineering & Commercial Hours" },
     ],
     verdictAction:
@@ -152,7 +152,7 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                 <ArrowRight className="w-4 h-4" strokeWidth={2} />
               </Link>
               <a
-                href="#investigation-process"
+                href="#how-it-works"
                 className="inline-flex items-center justify-center gap-1.5 rounded-sm border border-[#D0D5DD] bg-white px-5 py-3.5 text-[14px] font-medium text-[#344054] hover:bg-gray-50 transition-colors duration-150"
               >
                 <span>Explore the investigation flow</span>
@@ -219,7 +219,7 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                   <span>·</span>
                   <span>Submission 18 Sep 2026</span>
                   <span>·</span>
-                  <span>$42M Est. Value</span>
+                  <span>₹350 Cr Est. Value</span>
                 </div>
 
                 {/* Key Risk Finding Excerpt */}
@@ -256,7 +256,7 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                     <span className="font-medium text-[#344054]">Milestone Penalties</span>
                     <span className="inline-flex items-center gap-1 text-[#B42318] font-semibold">
                       <AlertTriangle className="w-3.5 h-3.5" strokeWidth={2.5} />
-                      $15k/Day
+                      ₹1.25L/Day
                     </span>
                   </div>
                   <div className="flex items-center justify-between p-2.5 bg-gray-50 rounded border border-gray-100">
@@ -278,7 +278,7 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
           SECTION 02: THE FORENSIC INVESTIGATION WORKFLOW (Interactive)
       ──────────────────────────────────────────────────────────── */}
       <section
-        id="investigation-process"
+        id="how-it-works"
         className="w-full border-t border-[#D9DEE5] bg-white py-16 md:py-24 scroll-mt-20"
       >
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
@@ -496,26 +496,6 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
               </motion.div>
             </AnimatePresence>
           </div>
-
-          {/* Bottom Action Strip */}
-          <div className="mt-16 pt-10 border-t border-[#EAECF0] flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div>
-              <h4 className="text-[17px] font-bold text-[#111827]">
-                Ready to investigate your upcoming tender?
-              </h4>
-              <p className="text-[13px] text-[#667085]">
-                Upload your RFP documents and receive a comprehensive pre-bid intelligence brief in under a minute.
-              </p>
-            </div>
-            <Link
-              href={user ? "/dashboard" : "/login"}
-              className="inline-flex items-center justify-center gap-1.5 rounded-sm bg-[#3157D5] px-6 py-3.5 text-[14px] font-semibold text-white shadow-sm hover:bg-[#2845a9] transition-all duration-150 active:scale-[0.98] shrink-0"
-            >
-              <span>Analyse a tender now</span>
-              <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-          </div>
-
         </div>
       </section>
     </div>

@@ -107,17 +107,21 @@ function LoginForm() {
             </Link>
           </div>
 
-          {/* Nav links: Legal, Privacy, Support */}
-          <nav className="flex items-center gap-6 sm:gap-8 text-[13px] font-medium text-[#667085]">
-            <Link href="#" className="hover:text-foreground transition-colors duration-150">
-              Legal
+          {/* Nav links: Terms of Service, Support email */}
+          <nav className="flex items-center gap-5 sm:gap-7 text-[13px] font-medium text-[#4B5563]">
+            <Link 
+              href="/terms" 
+              className="hover:text-[#111827] transition-colors duration-150"
+            >
+              Terms of Service
             </Link>
-            <Link href="#" className="hover:text-foreground transition-colors duration-150">
-              Privacy
-            </Link>
-            <Link href="#" className="hover:text-foreground transition-colors duration-150">
-              Support
-            </Link>
+            <span className="hidden sm:inline text-[#D1D5DB]">|</span>
+            <a 
+              href="mailto:support@rfpground.com" 
+              className="text-[#3157D5] hover:text-[#2544a8] transition-colors duration-150 font-medium"
+            >
+              support@rfpground.com
+            </a>
           </nav>
         </div>
       </header>
@@ -283,8 +287,7 @@ function LoginForm() {
             
             <p className="mt-6 text-center text-[12px] text-[#667085] leading-normal">
               By continuing, you agree to our{' '}
-              <Link href="#" className="underline hover:text-[#111827]">Terms</Link> and{' '}
-              <Link href="#" className="underline hover:text-[#111827]">Privacy Policy</Link>.
+              <Link href="/terms" className="underline hover:text-[#111827]">Terms of Service</Link>.
             </p>
           </div>
         </div>

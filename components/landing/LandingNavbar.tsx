@@ -47,9 +47,6 @@ export default function LandingNavbar({ initialUser = null }: LandingNavbarProps
 
         {/* Center: Restrained Nav */}
         <nav className="hidden md:flex items-center gap-8 text-[13px] font-medium text-[#667085]">
-          <Link href="#product" className="hover:text-foreground transition-colors duration-150">
-            Product
-          </Link>
           <Link href="#how-it-works" className="hover:text-foreground transition-colors duration-150">
             How it works
           </Link>

@@ -85,7 +85,16 @@ export async function POST(request: Request) {
     }
 
     // 5. Verify plan integrity against server-side configuration
+    const isProduction = process.env.NODE_ENV === 'production';
     const expectedPlanId = planIds[localSub.plan as keyof typeof planIds];
+    if (isProduction && !expectedPlanId) {
+      console.error(`[Verify Subscription] Missing plan ID in server configuration for plan: ${localSub.plan}`);
+      return NextResponse.json(
+        { error: 'GATEWAY_CONFIG_ERROR', message: 'Payment gateway plan configuration missing' },
+        { status: 503 }
+      );
+    }
+
     if (expectedPlanId && localSub.razorpay_plan_id && localSub.razorpay_plan_id !== expectedPlanId) {
       return NextResponse.json(
         { error: 'PLAN_MISMATCH', message: 'Subscription plan does not match server configuration' },
@@ -110,6 +119,13 @@ export async function POST(request: Request) {
     if (expectedPlanId && rzpSub.plan_id !== expectedPlanId) {
       return NextResponse.json(
         { error: 'PLAN_MISMATCH', message: 'Razorpay subscription plan mismatch' },
+        { status: 400 }
+      );
+    }
+
+    if (localSub.razorpay_plan_id && rzpSub.plan_id !== localSub.razorpay_plan_id) {
+      return NextResponse.json(
+        { error: 'PLAN_MISMATCH', message: 'Provider subscription plan does not match local record' },
         { status: 400 }
       );
     }

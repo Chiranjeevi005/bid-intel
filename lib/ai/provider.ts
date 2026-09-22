@@ -16,7 +16,7 @@ function getEnrichedUsage(data: any) {
   const reasoningTokens = usage.completion_tokens_details?.reasoning_tokens || 0;
   const uncachedPromptTokens = Math.max(0, promptTokens - cachedTokens);
   
-  const costDollars = 
+  const tokenCost = 
     (uncachedPromptTokens / 1_000_000) * 0.14 +
     (cachedTokens / 1_000_000) * 0.014 +
     (completionTokens / 1_000_000) * 0.28;
@@ -27,7 +27,7 @@ function getEnrichedUsage(data: any) {
     total_tokens: usage.total_tokens || 0,
     cached_tokens: cachedTokens,
     reasoning_tokens: reasoningTokens,
-    estimated_cost_cents: costDollars * 100
+    estimated_cost_cents: tokenCost * 100
   };
 }
 
