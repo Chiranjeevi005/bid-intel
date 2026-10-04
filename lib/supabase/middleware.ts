@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
+import { getCanonicalOrigin } from '@/lib/auth/origin';
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -39,10 +40,11 @@ export async function updateSession(request: NextRequest) {
     request.nextUrl.pathname.startsWith('/dashboard') ||
     request.nextUrl.pathname.startsWith('/documents');
 
+  const canonicalOrigin = getCanonicalOrigin(request);
+
   if (!user && isProtected) {
-    const url = request.nextUrl.clone();
     const nextTarget = request.nextUrl.pathname + request.nextUrl.search;
-    url.pathname = '/login';
+    const url = new URL('/login', canonicalOrigin);
     url.searchParams.set('next', nextTarget);
     return NextResponse.redirect(url);
   }
@@ -65,7 +67,7 @@ export async function updateSession(request: NextRequest) {
     ) {
       target = nextParam;
     }
-    const url = new URL(target, request.nextUrl.origin);
+    const url = new URL(target, canonicalOrigin);
     return NextResponse.redirect(url);
   }
 
@@ -88,7 +90,7 @@ export async function updateSession(request: NextRequest) {
     ) {
       target = rawNext;
     }
-    const url = new URL('/auth/callback', request.nextUrl.origin);
+    const url = new URL('/auth/callback', canonicalOrigin);
     url.searchParams.set('code', code);
     url.searchParams.set('next', target);
     return NextResponse.redirect(url);

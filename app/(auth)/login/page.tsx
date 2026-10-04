@@ -7,6 +7,7 @@ import { event } from '@/lib/analytics';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
+import { getCanonicalOrigin } from '@/lib/auth/origin';
 
 function LoginForm() {
   const searchParams = useSearchParams();
@@ -72,7 +73,7 @@ function LoginForm() {
     event({ action: 'login_started', category: 'auth', label: 'magic_link' });
 
     try {
-      const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : (process.env.NEXT_PUBLIC_APP_URL || '');
+      const origin = getCanonicalOrigin();
       const emailRedirectTo = `${origin}/auth/callback?next=${encodeURIComponent(safeNext)}`;
       const { error } = await supabase.auth.signInWithOtp({
         email,
@@ -100,7 +101,7 @@ function LoginForm() {
     event({ action: 'login_started', category: 'auth', label: 'google' });
 
     try {
-      const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : (process.env.NEXT_PUBLIC_APP_URL || '');
+      const origin = getCanonicalOrigin();
       const redirectTo = `${origin}/auth/callback?next=${encodeURIComponent(safeNext)}`;
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
