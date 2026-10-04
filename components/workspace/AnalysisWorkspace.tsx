@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import LoadingState from '@/app/loading';
 import WorkspaceHeader from './WorkspaceHeader';
 import AttentionBrief from './AttentionBrief';
 import CoveragePulse from './CoveragePulse';
@@ -60,14 +62,18 @@ interface ActiveDocumentData {
 interface AnalysisWorkspaceProps {
   userId: string;
   initialDocumentId?: string;
+  initialDocData?: ActiveDocumentData | null;
+  initialDocumentsList?: DocumentSummary[];
 }
 
 export default function AnalysisWorkspace({
   userId,
-  initialDocumentId
+  initialDocumentId,
+  initialDocData,
+  initialDocumentsList
 }: AnalysisWorkspaceProps) {
   const router = useRouter();
-  const [documentsList, setDocumentsList] = useState<DocumentSummary[]>([]);
+  const [documentsList, setDocumentsList] = useState<DocumentSummary[]>(initialDocumentsList || []);
   const [activeDocId, setActiveDocId] = useState<string | null>(initialDocumentId || null);
 
   // Synchronize activeDocId when initialDocumentId prop updates (e.g., client route changes)
@@ -76,8 +82,9 @@ export default function AnalysisWorkspace({
       setActiveDocId(initialDocumentId);
     }
   }, [initialDocumentId]);
-  const [activeDocData, setActiveDocData] = useState<ActiveDocumentData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const [activeDocData, setActiveDocData] = useState<ActiveDocumentData | null>(initialDocData || null);
+  const [isLoading, setIsLoading] = useState<boolean>(!initialDocData);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
   const [isIntakeView, setIsIntakeView] = useState<boolean>(false);
   const [isQueueOpen, setIsQueueOpen] = useState<boolean>(false);
@@ -106,6 +113,31 @@ export default function AnalysisWorkspace({
   const [isEvidenceDrawerOpen, setIsEvidenceDrawerOpen] = useState<boolean>(false);
   const [isFullLedgerOpen, setIsFullLedgerOpen] = useState<boolean>(false);
   const [isCoverageMatrixOpen, setIsCoverageMatrixOpen] = useState<boolean>(false);
+
+  // Escape key and body-scroll lock for drawers and modals
+  useEffect(() => {
+    const isAnyOpen = isEvidenceDrawerOpen || isFullLedgerOpen || isCoverageMatrixOpen || isQueueOpen;
+    if (!isAnyOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (isEvidenceDrawerOpen) setIsEvidenceDrawerOpen(false);
+        else if (isFullLedgerOpen) setIsFullLedgerOpen(false);
+        else if (isCoverageMatrixOpen) setIsCoverageMatrixOpen(false);
+        else if (isQueueOpen) setIsQueueOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isEvidenceDrawerOpen, isFullLedgerOpen, isCoverageMatrixOpen, isQueueOpen]);
+
 
   // Active category filter for the full ledger
   const [activeCategoryFilter, setActiveCategoryFilter] = useState<string>('ALL');
@@ -212,8 +244,13 @@ export default function AnalysisWorkspace({
     }
   }, []);
 
+  const isInitialDocLoadedRef = useRef<boolean>(Boolean(initialDocData));
+
   // 1. Initial load of documents
   useEffect(() => {
+    if (initialDocumentsList && initialDocumentsList.length > 0) {
+      return;
+    }
     let isMounted = true;
     const loadDocs = async () => {
       try {
@@ -246,7 +283,7 @@ export default function AnalysisWorkspace({
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [initialDocumentId, initialDocumentsList]);
 
   // 2. Load document analysis whenever activeDocId changes
   useEffect(() => {
@@ -254,8 +291,13 @@ export default function AnalysisWorkspace({
       setIsLoading(false);
       return;
     }
+    if (isInitialDocLoadedRef.current && initialDocData && initialDocData.document.id === activeDocId) {
+      isInitialDocLoadedRef.current = false;
+      return;
+    }
     fetchDocumentAnalysis(activeDocId, false);
-  }, [activeDocId, fetchDocumentAnalysis]);
+  }, [activeDocId, fetchDocumentAnalysis, initialDocData]);
+
 
   // 3. Canonical Background Refresh (every 5 seconds while analysis is QUEUED or PROCESSING)
   useEffect(() => {
@@ -339,7 +381,7 @@ export default function AnalysisWorkspace({
   };
 
   const handleSelectDocument = (newDocId: string) => {
-    setActiveDocId(newDocId);
+    if (newDocId === activeDocId) return;
     setIsIntakeView(false);
     setIsEvidenceDrawerOpen(false);
     setIsFullLedgerOpen(false);
@@ -412,17 +454,10 @@ export default function AnalysisWorkspace({
             onCancel={documentsList.length > 0 ? () => setIsIntakeView(false) : undefined}
           />
         </main>
-      ) : isLoading ? (
-        <main className="flex-1 flex flex-col items-center justify-center p-12 text-center">
-          <div className="w-8 h-8 border-2 border-[#3157D5] border-t-transparent rounded-full animate-spin mb-3" />
-          <span className="text-[13.5px] font-semibold text-[#111827]">
-            Loading Tender Intelligence...
-          </span>
-          <span className="text-[12px] text-[#667085] mt-1 font-mono">
-            Evaluating citations & deterministic coverage
-          </span>
-        </main>
+      ) : isLoading && !activeDocData ? (
+        <LoadingState />
       ) : activeDocData ? (
+
         <main className="flex-1 flex flex-col relative">
           
           {/* FIRST SCREEN: Decision Brief Information Architecture */}
@@ -464,7 +499,7 @@ export default function AnalysisWorkspace({
                   </button>
                   <button
                     onClick={() => setIsIntakeView(true)}
-                    className="px-4 py-2 bg-[#111827] hover:bg-black text-white text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer shadow-xs flex items-center gap-1.5"
+                    className="px-4 py-2 bg-[#111827] hover:bg-black text-white text-[12.5px] font-semibold rounded-sm transition-all duration-150 ease-out active:scale-[0.98] active:translate-y-px motion-reduce:transform-none cursor-pointer shadow-xs flex items-center gap-1.5"
                   >
                     <span>Ingest a New Tender</span>
                     <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
@@ -526,13 +561,13 @@ export default function AnalysisWorkspace({
                   <div className="flex items-center gap-2.5 shrink-0">
                     <button
                       onClick={() => setIsCoverageMatrixOpen(true)}
-                      className="px-3.5 py-2 bg-[#F5F6F4] hover:bg-gray-200 border border-[#D9DEE5] text-[#344054] text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer"
+                      className="px-3.5 py-2 bg-[#F5F6F4] hover:bg-gray-200 border border-[#D9DEE5] text-[#344054] text-[12.5px] font-semibold rounded-sm transition-all duration-150 ease-out active:scale-[0.98] motion-reduce:transform-none cursor-pointer"
                     >
                       Coverage Audit
                     </button>
                     <button
                       onClick={() => handleOpenLedgerWithCategory('ALL')}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#111827] hover:bg-black text-white text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer shadow-xs"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#111827] hover:bg-black text-white text-[12.5px] font-semibold rounded-sm transition-all duration-150 ease-out active:scale-[0.98] active:translate-y-px motion-reduce:transform-none cursor-pointer shadow-xs"
                     >
                       <span>View All Findings ({activeDocData.findings.length})</span>
                       <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
@@ -547,108 +582,153 @@ export default function AnalysisWorkspace({
           {/* ========================================================================= */}
           {/* SLIDE-OVER DRAWER: EVIDENCE & SOURCE INSPECTOR */}
           {/* ========================================================================= */}
-          {isEvidenceDrawerOpen && (
-            <div className="fixed inset-0 z-50 overflow-hidden flex justify-end">
-              {/* Backdrop */}
-              <div
-                className="fixed inset-0 bg-black/40 transition-opacity"
-                onClick={() => setIsEvidenceDrawerOpen(false)}
-              />
-
-              {/* Drawer Surface */}
-              <div className="relative w-full max-w-2xl bg-white shadow-2xl h-full flex flex-col z-10 animate-in slide-in-from-right duration-200">
-                <EvidenceInspector
-                  selectedFinding={selectedFinding}
-                  selectedCategoryState={selectedCategoryState}
-                  pages={activeDocData.pages}
-                  onClearSelection={() => {
-                    setSelectedFinding(null);
-                    setSelectedCategoryState(null);
-                    setIsEvidenceDrawerOpen(false);
-                  }}
+          <AnimatePresence>
+            {isEvidenceDrawerOpen && (
+              <div className="fixed inset-0 z-50 overflow-hidden flex justify-end">
+                {/* Backdrop */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="fixed inset-0 bg-black/40"
+                  onClick={() => setIsEvidenceDrawerOpen(false)}
                 />
+
+                {/* Drawer Surface */}
+                <motion.div
+                  initial={{ x: "100%" }}
+                  animate={{ x: 0 }}
+                  exit={{ x: "100%" }}
+                  transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative w-full max-w-2xl bg-white shadow-2xl h-full flex flex-col z-10 motion-reduce:transform-none"
+                >
+                  <EvidenceInspector
+                    selectedFinding={selectedFinding}
+                    selectedCategoryState={selectedCategoryState}
+                    pages={activeDocData.pages}
+                    onClearSelection={() => {
+                      setSelectedFinding(null);
+                      setSelectedCategoryState(null);
+                      setIsEvidenceDrawerOpen(false);
+                    }}
+                  />
+                </motion.div>
               </div>
-            </div>
-          )}
+            )}
+          </AnimatePresence>
 
           {/* ========================================================================= */}
           {/* SLIDE-OVER / MODAL: COMPLETE FINDINGS LEDGER */}
           {/* ========================================================================= */}
-          {isFullLedgerOpen && (
-            <div className="fixed inset-0 z-50 overflow-hidden flex justify-end">
-              {/* Backdrop */}
-              <div
-                className="fixed inset-0 bg-black/40 transition-opacity"
-                onClick={() => setIsFullLedgerOpen(false)}
-              />
+          <AnimatePresence>
+            {isFullLedgerOpen && (
+              <div className="fixed inset-0 z-50 overflow-hidden flex justify-end">
+                {/* Backdrop */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="fixed inset-0 bg-black/40"
+                  onClick={() => setIsFullLedgerOpen(false)}
+                />
 
-              {/* Drawer Surface */}
-              <div className="relative w-full max-w-3xl bg-[#F5F6F4] shadow-2xl h-full flex flex-col z-10 animate-in slide-in-from-right duration-200">
-                <div className="p-4 bg-white border-b border-[#D9DEE5] flex items-center justify-between">
-                  <div>
-                    <h3 className="text-[16px] font-bold text-[#111827]">
-                      Complete Findings Ledger
-                    </h3>
-                    <p className="text-[12px] text-[#667085]">
-                      {activeDocData.findings.length} total extracted findings
-                    </p>
+                {/* Drawer Surface */}
+                <motion.div
+                  initial={{ x: "100%" }}
+                  animate={{ x: 0 }}
+                  exit={{ x: "100%" }}
+                  transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative w-full max-w-3xl bg-[#F5F6F4] shadow-2xl h-full flex flex-col z-10 motion-reduce:transform-none"
+                >
+                  <div className="p-4 bg-white border-b border-[#D9DEE5] flex items-center justify-between">
+                    <div>
+                      <h3 className="text-[16px] font-bold text-[#111827]">
+                        Complete Findings Ledger
+                      </h3>
+                      <p className="text-[12px] text-[#667085]">
+                        {activeDocData.findings.length} total extracted findings
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => setIsFullLedgerOpen(false)}
+                      className="inline-flex items-center p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-all duration-150 ease-out active:scale-95 motion-reduce:transform-none cursor-pointer text-[13px] font-semibold"
+                    >
+                      <X className="w-4 h-4 mr-1" strokeWidth={2} />
+                      Close
+                    </button>
                   </div>
-                  <button
-                    onClick={() => setIsFullLedgerOpen(false)}
-                    className="inline-flex items-center p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-colors cursor-pointer text-[13px] font-semibold"
-                  >
-                    <X className="w-4 h-4 mr-1" strokeWidth={2} />
-                    Close
-                  </button>
-                </div>
 
-                <div className="flex-1 overflow-hidden">
-                  <FindingsLedger
-                    findings={activeDocData.findings}
-                    selectedFindingId={selectedFinding?.id || null}
-                    onSelectFinding={(f) => {
-                      if (f.is_pro_gated) {
-                        router.push('/subscription');
-                        return;
-                      }
-                      setSelectedFinding(f);
-                      setSelectedCategoryState(null);
-                      setIsEvidenceDrawerOpen(true);
-                    }}
-                    activeCategoryFilter={activeCategoryFilter}
-                    onCategoryFilterChange={(cat) => setActiveCategoryFilter(cat)}
-                    userPlan={activeDocData.userPlan}
-                    onUpgradeToPro={() => router.push('/subscription')}
-                  />
-                </div>
+                  <div className="flex-1 overflow-hidden">
+                    <FindingsLedger
+                      findings={activeDocData.findings}
+                      selectedFindingId={selectedFinding?.id || null}
+                      onSelectFinding={(f) => {
+                        if (f.is_pro_gated) {
+                          router.push('/subscription');
+                          return;
+                        }
+                        setSelectedFinding(f);
+                        setSelectedCategoryState(null);
+                        setIsEvidenceDrawerOpen(true);
+                      }}
+                      activeCategoryFilter={activeCategoryFilter}
+                      onCategoryFilterChange={(cat) => setActiveCategoryFilter(cat)}
+                      userPlan={activeDocData.userPlan}
+                      onUpgradeToPro={() => router.push('/subscription')}
+                    />
+                  </div>
+                </motion.div>
               </div>
-            </div>
-          )}
+            )}
+          </AnimatePresence>
 
           {/* ========================================================================= */}
           {/* SLIDE-OVER / MODAL: COMPLETE COVERAGE AUDIT MATRIX */}
           {/* ========================================================================= */}
-          {isCoverageMatrixOpen && (
-            <div className="fixed inset-0 z-50 overflow-y-auto bg-black/40 p-4 sm:p-6 md:p-10 flex items-center justify-center">
-              <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-sm shadow-2xl">
-                <CoverageAuditTray
-                  coverage={activeDocData.coverage}
-                  pageCoverage={activeDocData.page_coverage}
-                  candidates={activeDocData.candidates}
-                  activeCategoryFilter={activeCategoryFilter}
-                  onSelectCategory={(cat) => setActiveCategoryFilter(cat)}
-                  onInspectCategory={handleInspectCategoryAudit}
-                  onClose={() => setIsCoverageMatrixOpen(false)}
-                  isExpandedView={true}
-                  userPlan={activeDocData.userPlan}
-                  onUpgradeToPro={() => {
-                    setIsCoverageMatrixOpen(false);
-                    router.push('/subscription');
-                  }}
+          <AnimatePresence>
+            {isCoverageMatrixOpen && (
+              <div
+                className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6 md:p-10"
+              >
+                {/* Backdrop */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.18, ease: "easeOut" }}
+                  className="fixed inset-0 bg-black/40"
+                  onClick={() => setIsCoverageMatrixOpen(false)}
                 />
+
+                {/* Modal Surface */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-sm shadow-2xl z-10 motion-reduce:transform-none"
+                >
+                  <CoverageAuditTray
+                    coverage={activeDocData.coverage}
+                    pageCoverage={activeDocData.page_coverage}
+                    candidates={activeDocData.candidates}
+                    activeCategoryFilter={activeCategoryFilter}
+                    onSelectCategory={(cat) => setActiveCategoryFilter(cat)}
+                    onInspectCategory={handleInspectCategoryAudit}
+                    onClose={() => setIsCoverageMatrixOpen(false)}
+                    isExpandedView={true}
+                    userPlan={activeDocData.userPlan}
+                    onUpgradeToPro={() => {
+                      setIsCoverageMatrixOpen(false);
+                      router.push('/subscription');
+                    }}
+                  />
+                </motion.div>
               </div>
-            </div>
-          )}
+            )}
+          </AnimatePresence>
 
         </main>
       ) : analysisError ? (
@@ -671,14 +751,14 @@ export default function AnalysisWorkspace({
               {activeDocId && (
                 <button
                   onClick={() => fetchDocumentAnalysis(activeDocId)}
-                  className="px-4 py-2 bg-[#D92D20] hover:bg-[#B42318] text-white text-[12.5px] font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
+                  className="px-4 py-2 bg-[#D92D20] hover:bg-[#B42318] text-white text-[12.5px] font-semibold rounded-md shadow-xs transition-all duration-150 ease-out active:scale-[0.98] motion-reduce:transform-none cursor-pointer"
                 >
                   Retry Loading Analysis
                 </button>
               )}
               <Link
                 href="/dashboard"
-                className="px-4 py-2 bg-white hover:bg-gray-50 border border-[#D0D5DD] text-[#344054] text-[12.5px] font-semibold rounded-md transition-colors cursor-pointer"
+                className="px-4 py-2 bg-white hover:bg-gray-50 border border-[#D0D5DD] text-[#344054] text-[12.5px] font-semibold rounded-md transition-all duration-150 ease-out active:scale-[0.98] motion-reduce:transform-none cursor-pointer"
               >
                 Return to Document Library
               </Link>
@@ -695,7 +775,7 @@ export default function AnalysisWorkspace({
           </p>
           <button
             onClick={() => setIsIntakeView(true)}
-            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#3157D5] text-white text-[13px] font-semibold rounded-sm shadow-xs hover:bg-[#2546B8] cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#3157D5] text-white text-[13px] font-semibold rounded-sm shadow-xs hover:bg-[#2546B8] transition-all duration-150 ease-out active:scale-[0.98] active:translate-y-px motion-reduce:transform-none cursor-pointer"
           >
             <Plus className="w-4 h-4" strokeWidth={2} />
             <span>Ingest New Tender PDF</span>

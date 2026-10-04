@@ -230,9 +230,9 @@ export default function SubscriptionView({ initialUser }: SubscriptionViewProps)
             <Image
               src="/brand-assets/navbar-logo.png"
               alt="RFPground"
-              width={180}
-              height={42}
-              className="h-9 md:h-10 w-auto object-contain"
+              width={220}
+              height={52}
+              className="h-11 md:h-12 w-auto object-contain"
               priority
             />
           </Link>

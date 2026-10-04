@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import DocumentLibrary from '@/components/dashboard/DocumentLibrary';
+import { getUserDocumentsPayload } from '@/lib/server/documents';
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -10,7 +11,9 @@ export default async function DashboardPage() {
     redirect('/login');
   }
 
+  const { documents } = await getUserDocumentsPayload(user.id, supabase);
+
   return (
-    <DocumentLibrary userId={user.id} userEmail={user.email} />
+    <DocumentLibrary userId={user.id} userEmail={user.email} initialDocuments={documents || []} />
   );
 }

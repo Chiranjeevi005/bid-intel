@@ -80,7 +80,7 @@ export default function CoverageAuditTray({
           {onClose && (
             <button
               onClick={onClose}
-              className="inline-flex items-center p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] rounded-sm transition-colors cursor-pointer text-[13px] font-semibold"
+              className="inline-flex items-center p-1.5 text-[#667085] hover:text-[#111827] hover:bg-[#F5F6F4] active:scale-[0.98] rounded-sm transition-all duration-150 ease-out cursor-pointer text-[13px] font-semibold motion-reduce:transform-none"
             >
               <X className="w-4 h-4 mr-1" strokeWidth={2} />
               Close
@@ -307,7 +307,7 @@ export default function CoverageAuditTray({
                 });
               }}
               title={`${cat}: ${item.reason}`}
-              className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-semibold border transition-all cursor-pointer ${
+              className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-semibold border transition-all duration-150 ease-out cursor-pointer active:scale-[0.98] motion-reduce:transform-none ${
                 isFilterActive
                   ? 'ring-2 ring-[#3157D5] border-[#3157D5]'
                   : ''

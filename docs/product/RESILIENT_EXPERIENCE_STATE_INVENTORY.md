@@ -695,14 +695,15 @@ While the underlying systems are resilient and truthful at the database and API 
 - **Domain:** Analysis Workspace
 - **User journey:** Navigate to `/documents/[documentId]`
 - **Technical state:** `isLoading = true`, `activeDocData = null`
-- **User-facing state:** Centered spinner with message: "Loading Tender Intelligence... Evaluating citations & deterministic coverage".
+- **User-facing state:** Centered spinner with message: "Loading..." (unified primary loader).
 - **Trigger:** Loading workspace for a specific document ID.
-- **Current UI:** [`components/workspace/AnalysisWorkspace.tsx:L404-L413`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/AnalysisWorkspace.tsx#L404-L413)
-- **Current message:** *"Loading Tender Intelligence... Evaluating citations & deterministic coverage"*
+- **Current UI:** [`app/loading.tsx`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/app/loading.tsx)
+- **Current message:** *"Loading..."*
 - **Primary action:** Wait.
 - **Secondary action:** Back to "All Documents" via header.
 - **Can retry:** Refresh page.
 - **Can leave page:** Yes.
+
 - **Can refresh:** Yes.
 - **Data preserved:** N/A.
 - **Credit/payment impact:** None.
@@ -1309,8 +1310,8 @@ While the underlying systems are resilient and truthful at the database and API 
 | [`components/workspace/DocumentIntake.tsx`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/DocumentIntake.tsx) | PDF upload to Supabase storage | Modal spinner: `"Uploading Tender Document... Uploading PDF..."` | Yes | No | Yes | No | Catches error -> `stage = 'FAILED'` | Upload Another Document | `IMPLEMENTED` | [`DocumentIntake.tsx:L351-L372`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/DocumentIntake.tsx#L351-L372) |
 | [`components/workspace/DocumentIntake.tsx`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/DocumentIntake.tsx) | Text extraction & density evaluation | Modal spinner: `"Extracting Document Pages... Extracting document pages and verifying text density..."` | Yes | No | Yes | Document row preserved | Catches error -> `stage = 'FAILED'` | Upload Another Document | `IMPLEMENTED` | [`DocumentIntake.tsx:L351-L372`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/DocumentIntake.tsx#L351-L372) |
 | [`components/workspace/DocumentIntake.tsx`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/DocumentIntake.tsx) | Procurement qualification evaluation | Modal spinner: `"Evaluating Procurement Qualification... Evaluating procurement qualification gate..."` | Yes | No | Yes | Document row preserved | Catches error -> `stage = 'FAILED'` | Upload Another Document | `IMPLEMENTED` | [`DocumentIntake.tsx:L351-L372`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/DocumentIntake.tsx#L351-L372) |
-| [`components/workspace/DocumentIntake.tsx`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/DocumentIntake.tsx) | In-progress background analysis polling | Dynamic message: `"Analysing document pages (Stage: {status})..."` | Yes | No | Yes | Run continues in Inngest | Shows error message if run fails | Retry analysis | `IMPLEMENTED` | [`DocumentIntake.tsx:L245`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/DocumentIntake.tsx#L245) |
-| [`components/workspace/AnalysisWorkspace.tsx`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/AnalysisWorkspace.tsx) | Initial workspace load | Centered spinner: `"Loading Tender Intelligence... Evaluating citations & deterministic coverage"` | Yes | No | Yes | Yes (re-triggers fetch) | Silent empty workspace fallback (flaw) | Return to Dashboard | `PARTIALLY_IMPLEMENTED` | [`AnalysisWorkspace.tsx:L404-L413`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/AnalysisWorkspace.tsx#L404-L413) |
+| [`components/workspace/AnalysisWorkspace.tsx`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/AnalysisWorkspace.tsx) | Initial workspace load | Centered spinner: `"Loading..."` (unified primary loader) | Yes | No | Yes | Yes (re-triggers fetch) | Handled by server preload & error boundary | Return to Dashboard | `IMPLEMENTED` | [`app/loading.tsx:L1-L10`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/app/loading.tsx#L1-L10) |
+
 | [`components/workspace/AnalysisWorkspace.tsx`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/AnalysisWorkspace.tsx) | Document processing in workspace | Centered spinner: `"Analysis is being prepared. {filename} is currently undergoing AI segmentation..."` | Yes | No | Yes | Yes (polls every 3s via queue) | Shows failed run in queue | Open Queue Drawer | `IMPLEMENTED` | [`AnalysisWorkspace.tsx:L463-L476`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/workspace/AnalysisWorkspace.tsx#L463-L476) |
 | [`components/billing/SubscriptionView.tsx`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/billing/SubscriptionView.tsx) | Subscription checkout opening | Button spinner: `"Opening Checkout..."` | Yes | No | Yes | No | Red error banner | Dismiss & re-click | `IMPLEMENTED` | [`SubscriptionView.tsx:L328-L333`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/billing/SubscriptionView.tsx#L328-L333) |
 | [`components/billing/SubscriptionBadge.tsx`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/billing/BillingBadge.tsx) | Billing status initial load | Component returns `null` (invisible) | No | No | Yes | Yes | None | None | `IMPLEMENTED` | [`BillingBadge.tsx:L31-L33`](file:///c:/Users/Chiranjeevi%20PK/Desktop/bid-intel/components/billing/BillingBadge.tsx#L31-L33) |
@@ -1430,7 +1431,8 @@ While the underlying systems are resilient and truthful at the database and API 
 | **05. Extraction** | Pages extracted badge (`{N} Pages Extracted`) | Spinner: "Extracting pages & text density..." | Red card: "Processing Failed. Text extraction failed." | Scanned/Raster PDF blocked: "OCR Required" | 0 pages extracted marked FAILED | "Select Another Document" |
 | **06. Qualification** | Transitions to background analysis | Spinner: "Evaluating qualification gate..." | Red card: "Document Rejected (Non-RFP)" | Ambiguous intake card requires confirmation | Non-RFP document | "Override & Analyze" / Confirm |
 | **07. Analysis Queue** | Green card: "Tender Accepted & Queued" | Spinner: "Analysing document pages..." | Red card: "Processing Failed" | Quota exceeded (403): "Analysis quota exceeded" | Empty Queue Drawer | "Retry Analysis" from queue drawer |
-| **08. Workspace** | Decision Brief (Attention Brief + Coverage Pulse) | Spinner: "Loading Tender Intelligence..." | **MISSING**: Renders "No Tender Selected" on API error | Foreign document returns Next.js 404 | Card: "No Verified Findings Extracted" | Return to Dashboard / Coverage Audit |
+| **08. Workspace** | Decision Brief (Attention Brief + Coverage Pulse) | Spinner: "Loading..." (unified primary loader) | **MISSING**: Renders "No Tender Selected" on API error | Foreign document returns Next.js 404 | Card: "No Verified Findings Extracted" | Return to Dashboard / Coverage Audit |
+
 | **09. Review Findings**| Verbatim quotes, implications & page badges | Drawer slides in with highlighted text | Missing quote logs warning | Gated Contract Exposure findings show lock icon | Empty search filter shows "Clear Filters" | Click "Upgrade to Pro" to unlock |
 | **10. Export** | Immediate client download of JSON/CSV | Instant (client Blob) | Export button hidden if 0 findings | N/A | N/A | Re-click export |
 | **11. Subscription**| Pricing page shows active plan and quotas | Button spinner: "Opening Checkout..." | Red banner: "Payment initiation failed" | Already subscribed returns 409 | N/A | Re-click checkout |

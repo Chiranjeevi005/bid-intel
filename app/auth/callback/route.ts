@@ -7,7 +7,18 @@ export async function GET(request: Request) {
   const rawNext = searchParams.get('next');
   // Safe internal path validation: must start with / and not // or /\, no backslashes, and no external scheme/origin
   let next = '/dashboard';
-  if (rawNext && rawNext.startsWith('/') && !rawNext.startsWith('//') && !rawNext.startsWith('/\\') && !rawNext.includes('\\') && !rawNext.includes(':')) {
+  if (
+    rawNext &&
+    rawNext !== '/' &&
+    rawNext !== '/login' &&
+    !rawNext.startsWith('/login?') &&
+    !rawNext.startsWith('/auth') &&
+    rawNext.startsWith('/') &&
+    !rawNext.startsWith('//') &&
+    !rawNext.startsWith('/\\') &&
+    !rawNext.includes('\\') &&
+    !rawNext.includes(':')
+  ) {
     next = rawNext;
   }
 

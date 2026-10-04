@@ -15,7 +15,7 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://rfpground.com"),
-  title: "Pre-Bid Intelligence | RFP Analysis & Risk Detection",
+  title: "RFPGround | RFP Analysis & Risk Detection",
   description: "Analyze RFPs to extract requirements, identify risks, and highlight missing information before committing to a proposal.",
   icons: {
     icon: [

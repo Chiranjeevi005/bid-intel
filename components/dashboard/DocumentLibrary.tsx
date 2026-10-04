@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import LogoutButton from '@/app/dashboard/LogoutButton';
 import DocumentIntake from '@/components/workspace/DocumentIntake';
 import BillingBadge from '@/components/billing/BillingBadge';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Plus,
   Search,
@@ -50,14 +51,15 @@ export interface LibraryDocument {
 interface DocumentLibraryProps {
   userId: string;
   userEmail?: string | null;
+  initialDocuments?: LibraryDocument[];
 }
 
 type FilterTab = 'ALL' | 'READY' | 'PROCESSING' | 'REVIEW' | 'FAILED' | 'REJECTED';
 
-export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryProps) {
+export default function DocumentLibrary({ userId, userEmail, initialDocuments }: DocumentLibraryProps) {
   const router = useRouter();
-  const [documents, setDocuments] = useState<LibraryDocument[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [documents, setDocuments] = useState<LibraryDocument[]>(initialDocuments || []);
+  const [isLoading, setIsLoading] = useState<boolean>(!initialDocuments);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeTab, setActiveTab] = useState<FilterTab>('ALL');
   const [isUploadModalOpen, setIsUploadModalOpen] = useState<boolean>(false);
@@ -70,10 +72,37 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
   // Library fetch error state (Law 1: Error != Empty)
   const [fetchError, setFetchError] = useState<string | null>(null);
 
+  // Escape key and body-scroll lock for modals
+  useEffect(() => {
+    const isAnyModalOpen = isUploadModalOpen || Boolean(deletingDoc);
+    if (!isAnyModalOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (isUploadModalOpen) setIsUploadModalOpen(false);
+        if (deletingDoc && !isDeleting) {
+          setDeletingDoc(null);
+          setDeleteError(null);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isUploadModalOpen, deletingDoc, isDeleting]);
+
   // Fetch all documents for this user
-  const fetchDocuments = useCallback(async () => {
+  const fetchDocuments = useCallback(async (isInitial = false) => {
     try {
-      setIsLoading(true);
+      if (isInitial && !initialDocuments) {
+        setIsLoading(true);
+      }
       setFetchError(null);
       const res = await fetch('/api/documents');
       if (!res.ok) {
@@ -93,11 +122,14 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [initialDocuments]);
 
   useEffect(() => {
-    fetchDocuments();
-  }, [fetchDocuments]);
+    if (!initialDocuments) {
+      fetchDocuments(true);
+    }
+  }, [fetchDocuments, initialDocuments]);
+
 
   const handleDeleteConfirm = async () => {
     if (!deletingDoc) return;
@@ -235,9 +267,9 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
             <Image
               src="/brand-assets/navbar-logo.png"
               alt="RFPground"
-              width={128}
-              height={32}
-              className="h-7 w-auto object-contain shrink-0"
+              width={160}
+              height={40}
+              className="h-9 sm:h-9.5 md:h-10 w-auto object-contain shrink-0"
               priority
             />
           </Link>
@@ -284,7 +316,7 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
 
           <button
             onClick={() => setIsUploadModalOpen(true)}
-            className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#3157D5] hover:bg-[#2544ab] text-white text-[13px] font-semibold rounded-md shadow-xs transition-colors cursor-pointer shrink-0"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#3157D5] hover:bg-[#2544ab] active:scale-[0.98] active:translate-y-px text-white text-[13px] font-semibold rounded-md shadow-xs transition-all duration-150 ease-out cursor-pointer shrink-0 motion-reduce:transform-none"
           >
             <Plus className="w-4 h-4" strokeWidth={2} />
             <span>Upload Tender</span>
@@ -322,7 +354,7 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-2.5 py-1 text-[12px] font-semibold rounded-md transition-colors cursor-pointer shrink-0 flex items-center gap-1.5 ${isActive
+                  className={`px-2.5 py-1 text-[12px] font-semibold rounded-md transition-all duration-150 ease-out cursor-pointer shrink-0 flex items-center gap-1.5 active:scale-[0.98] motion-reduce:transform-none ${isActive
                     ? 'bg-[#3157D5] text-white shadow-2xs'
                     : 'text-[#475467] hover:bg-[#F5F6F4] hover:text-[#111827]'
                     }`}
@@ -368,11 +400,13 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                 Your previously uploaded tenders and analyses are safe in our database.
               </p>
               <button
-                onClick={fetchDocuments}
+                type="button"
+                onClick={() => fetchDocuments()}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#D92D20] hover:bg-[#B42318] text-white text-[12.5px] font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
               >
                 <span>Retry Loading Tenders</span>
               </button>
+
             </div>
           ) : filteredDocuments.length === 0 ? (
             <div className="bg-white border border-[#D9DEE5] rounded-lg p-12 flex flex-col items-center justify-center text-center">
@@ -416,7 +450,7 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
               return (
                 <div
                   key={doc.id}
-                  className="bg-white border border-[#D9DEE5] hover:border-[#B2BDCE] rounded-lg p-4 transition-all duration-150 flex flex-col sm:flex-row sm:items-start justify-between gap-4 group shadow-2xs hover:shadow-xs"
+                  className="bg-white border border-[#D9DEE5] hover:border-[#B2BDCE] active:border-[#98A2B3] active:bg-[#FAFAFA] active:translate-y-[0.5px] rounded-lg p-4 transition-all duration-150 flex flex-col sm:flex-row sm:items-start justify-between gap-4 group shadow-2xs hover:shadow-xs motion-reduce:transform-none"
                 >
                   {/* Left Column: Filename, metadata, and status badges */}
                   <div className="flex-1 min-w-0 flex flex-col gap-2">
@@ -542,7 +576,7 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                   <div className="shrink-0 sm:self-center flex items-center gap-2">
                     <Link
                       href={`/documents/${doc.id}`}
-                      className={`w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-[12.5px] font-semibold rounded-md transition-colors cursor-pointer ${isCompleted
+                      className={`w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-[12.5px] font-semibold rounded-md transition-all duration-150 ease-out cursor-pointer active:scale-[0.98] active:translate-y-px motion-reduce:transform-none ${isCompleted
                         ? 'bg-[#3157D5] hover:bg-[#2544ab] text-white shadow-2xs'
                         : isRejected
                           ? 'bg-[#FEF3F2] hover:bg-[#FEE4E2] text-[#B42318] border border-[#FECDCA]'
@@ -577,7 +611,7 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
                       }}
                       title="Delete document"
                       aria-label="Delete document"
-                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-[12.5px] font-medium text-[#B42318] hover:text-[#912018] bg-white hover:bg-[#FEF3F2] border border-[#FECDCA] hover:border-[#FDA29B] rounded-md transition-colors cursor-pointer shrink-0"
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-[12.5px] font-medium text-[#B42318] hover:text-[#912018] bg-white hover:bg-[#FEF3F2] border border-[#FECDCA] hover:border-[#FDA29B] rounded-md transition-all duration-150 ease-out cursor-pointer shrink-0 active:scale-[0.98] motion-reduce:transform-none"
                     >
                       <Trash2 className="w-3.5 h-3.5 text-[#D92D20]" strokeWidth={1.75} />
                       <span>Delete</span>
@@ -591,167 +625,213 @@ export default function DocumentLibrary({ userId, userEmail }: DocumentLibraryPr
       </main>
 
       {/* 4. UPLOAD TENDER MODAL / INTAKE TRAY */}
-      {isUploadModalOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/50 p-4 sm:p-6 md:p-10 flex items-center justify-center animate-in fade-in duration-150">
-          <div className="relative w-full max-w-2xl bg-white rounded-xl shadow-2xl overflow-hidden border border-[#D9DEE5]">
-            <div className="px-6 py-4 border-b border-[#D9DEE5] flex items-center justify-between bg-[#F8F9FA]">
-              <div>
-                <h3 className="text-[15px] font-bold text-[#111827]">
-                  Upload Tender for Review
-                </h3>
-                <p className="text-[12px] text-[#667085]">
-                  Extract clauses, verify requirements, and evaluate bid coverage
-                </p>
-              </div>
-              <button
-                onClick={() => setIsUploadModalOpen(false)}
-                className="p-1.5 text-[#667085] hover:text-[#111827] hover:bg-gray-200 rounded transition-colors cursor-pointer"
-                title="Close"
-              >
-                <X className="w-4 h-4" strokeWidth={2} />
-              </button>
-            </div>
-
-            <div className="p-6">
-              <DocumentIntake
-                userId={userId}
-                onAnalysisComplete={handleUploadComplete}
-                onCancel={() => setIsUploadModalOpen(false)}
-              />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* 5. PERMANENT DELETE CONFIRMATION MODAL */}
-      {deletingDoc && (
-        <div
-          className="fixed inset-0 z-50 overflow-y-auto bg-[#0F172A]/50 backdrop-blur-[2px] p-4 flex items-center justify-center animate-in fade-in duration-150"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="delete-dialog-title"
-        >
-          <div className="relative w-full max-w-110 bg-white rounded-lg shadow-xl border border-[#E2E8F0] overflow-hidden">
-            {/* Header */}
-            <div className="px-6 pt-6 pb-4 flex items-start justify-between">
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-[#FEF3F2] border border-[#FEE4E2] text-[#D92D20] flex items-center justify-center shrink-0">
-                  <Trash2 className="w-5 h-5 text-[#D92D20]" strokeWidth={1.75} />
-                </div>
+      <AnimatePresence>
+        {isUploadModalOpen && (
+          <div
+            className="fixed inset-0 z-50 overflow-y-auto p-4 sm:p-6 md:p-10 flex items-center justify-center"
+            role="dialog"
+            aria-modal="true"
+          >
+            <motion.div
+              key="upload-modal-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.18, ease: 'easeOut' }}
+              className="fixed inset-0 bg-black/50"
+              onClick={() => setIsUploadModalOpen(false)}
+            />
+            <motion.div
+              key="upload-modal-card"
+              initial={{ opacity: 0, scale: 0.98, y: 4 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.98, y: 4 }}
+              transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10 w-full max-w-2xl bg-white rounded-xl shadow-2xl overflow-hidden border border-[#D9DEE5]"
+            >
+              <div className="px-6 py-4 border-b border-[#D9DEE5] flex items-center justify-between bg-[#F8F9FA]">
                 <div>
-                  <h3 id="delete-dialog-title" className="text-[16px] font-semibold text-[#101828] leading-tight">
-                    Delete tender document
+                  <h3 className="text-[15px] font-bold text-[#111827]">
+                    Upload Tender for Review
                   </h3>
-                  <p className="text-[13px] text-[#475467] mt-1 leading-normal">
-                    This will permanently remove this tender and all its associated intelligence.
+                  <p className="text-[12px] text-[#667085]">
+                    Extract clauses, verify requirements, and evaluate bid coverage
                   </p>
                 </div>
-              </div>
-              <button
-                disabled={isDeleting}
-                onClick={() => {
-                  setDeletingDoc(null);
-                  setDeleteError(null);
-                }}
-                className="p-1 text-[#98A2B3] hover:text-[#475467] hover:bg-[#F2F4F7] rounded-md transition-colors cursor-pointer disabled:opacity-50 -mr-1 -mt-1"
-                title="Close"
-              >
-                <X className="w-4 h-4" strokeWidth={2} />
-              </button>
-            </div>
-
-            {/* Document Details Card */}
-            <div className="px-6 pb-5 space-y-3.5">
-              <div className="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-md">
-                <div className="flex items-center gap-2.5">
-                  <FileText className="w-4 h-4 text-[#64748B] shrink-0" strokeWidth={2} />
-                  <span className="text-[13px] font-medium text-[#1E293B] truncate" title={deletingDoc.original_filename}>
-                    {deletingDoc.original_filename}
-                  </span>
-                </div>
-                <div className="mt-2 pt-2 border-t border-[#EDF2F7] flex items-center gap-3 text-[11.5px] text-[#64748B]">
-                  <span>{deletingDoc.total_pages} pages</span>
-                  <span>•</span>
-                  <span>{(deletingDoc.size_bytes / 1024 / 1024).toFixed(1)} MB</span>
-                  <span>•</span>
-                  <span className="capitalize">{deletingDoc.status.replace(/_/g, ' ').toLowerCase()}</span>
-                </div>
+                <button
+                  onClick={() => setIsUploadModalOpen(false)}
+                  className="p-1.5 text-[#667085] hover:text-[#111827] hover:bg-gray-200 active:scale-[0.98] rounded transition-all duration-150 ease-out cursor-pointer motion-reduce:transform-none"
+                  title="Close"
+                >
+                  <X className="w-4 h-4" strokeWidth={2} />
+                </button>
               </div>
 
-              {/* Items affected breakdown */}
-              <div className="rounded-md border border-[#F2F4F7] bg-[#FAFAFA] p-3 space-y-2">
-                <p className="text-[11px] font-semibold text-[#64748B] uppercase tracking-wider">
-                  The following data will be purged:
-                </p>
-                <div className="grid grid-cols-2 gap-2 text-[12px] text-[#475467]">
-                  <div className="flex items-center gap-1.5">
-                    <HardDrive className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
-                    <span>Raw PDF file</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <FileCheck className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
-                    <span>Extracted pages</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Database className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
-                    <span>Clause findings</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <ShieldAlert className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
-                    <span>Risk matrix audit</span>
-                  </div>
-                </div>
+              <div className="p-6">
+                <DocumentIntake
+                  userId={userId}
+                  onAnalysisComplete={handleUploadComplete}
+                  onCancel={() => setIsUploadModalOpen(false)}
+                />
               </div>
-
-              {/* Notice */}
-              <p className="text-[12px] text-[#B42318] bg-[#FEF3F2] border border-[#FECDCA] rounded-md px-3 py-2 leading-snug">
-                <strong>Warning:</strong> This operation is permanent and cannot be reversed.
-              </p>
-
-              {/* Error if deletion failed */}
-              {deleteError && (
-                <div className="p-3 bg-[#FEF3F2] border border-[#FECDCA] rounded-md text-[#B42318] text-[12px] flex items-start gap-2">
-                  <AlertTriangle className="w-4 h-4 text-[#D92D20] shrink-0 mt-0.5" strokeWidth={2} />
-                  <span className="leading-normal">{deleteError}</span>
-                </div>
-              )}
-            </div>
-
-            {/* Footer */}
-            <div className="px-6 py-3.5 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-end gap-2.5">
-              <button
-                type="button"
-                disabled={isDeleting}
-                onClick={() => {
-                  setDeletingDoc(null);
-                  setDeleteError(null);
-                }}
-                className="px-3.5 py-2 text-[13px] font-medium text-[#344054] bg-white hover:bg-[#F2F4F7] border border-[#D0D5DD] rounded-md transition-colors cursor-pointer disabled:opacity-50"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                disabled={isDeleting}
-                onClick={handleDeleteConfirm}
-                className="px-4 py-2 text-[13px] font-medium text-white bg-[#D92D20] hover:bg-[#B42318] rounded-md transition-colors cursor-pointer shadow-xs disabled:opacity-50 flex items-center gap-2"
-              >
-                {isDeleting ? (
-                  <>
-                    <Loader2 className="w-3.5 h-3.5 animate-spin text-white" strokeWidth={2} />
-                    <span>Deleting...</span>
-                  </>
-                ) : (
-                  <>
-                    <Trash2 className="w-3.5 h-3.5 text-white" strokeWidth={2} />
-                    <span>Delete tender</span>
-                  </>
-                )}
-              </button>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
+
+      {/* 5. PERMANENT DELETE CONFIRMATION MODAL */}
+      <AnimatePresence>
+        {deletingDoc && (
+          <div
+            className="fixed inset-0 z-50 overflow-y-auto p-4 flex items-center justify-center"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="delete-dialog-title"
+          >
+            <motion.div
+              key="delete-modal-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.18, ease: 'easeOut' }}
+              className="fixed inset-0 bg-[#0F172A]/50 backdrop-blur-[2px]"
+              onClick={() => {
+                if (!isDeleting) {
+                  setDeletingDoc(null);
+                  setDeleteError(null);
+                }
+              }}
+            />
+
+            <motion.div
+              key="delete-modal-card"
+              initial={{ opacity: 0, scale: 0.98, y: 4 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.98, y: 4 }}
+              transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10 w-full max-w-110 bg-white rounded-lg shadow-xl border border-[#E2E8F0] overflow-hidden"
+            >
+              {/* Header */}
+              <div className="px-6 pt-6 pb-4 flex items-start justify-between">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-full bg-[#FEF3F2] border border-[#FEE4E2] text-[#D92D20] flex items-center justify-center shrink-0">
+                    <Trash2 className="w-5 h-5 text-[#D92D20]" strokeWidth={1.75} />
+                  </div>
+                  <div>
+                    <h3 id="delete-dialog-title" className="text-[16px] font-semibold text-[#101828] leading-tight">
+                      Delete tender document
+                    </h3>
+                    <p className="text-[13px] text-[#475467] mt-1 leading-normal">
+                      This will permanently remove this tender and all its associated intelligence.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  disabled={isDeleting}
+                  onClick={() => {
+                    setDeletingDoc(null);
+                    setDeleteError(null);
+                  }}
+                  className="p-1 text-[#98A2B3] hover:text-[#475467] hover:bg-[#F2F4F7] active:scale-[0.98] rounded-md transition-all duration-150 ease-out cursor-pointer disabled:opacity-50 -mr-1 -mt-1 motion-reduce:transform-none"
+                  title="Close"
+                >
+                  <X className="w-4 h-4" strokeWidth={2} />
+                </button>
+              </div>
+
+              {/* Document Details Card */}
+              <div className="px-6 pb-5 space-y-3.5">
+                <div className="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-md">
+                  <div className="flex items-center gap-2.5">
+                    <FileText className="w-4 h-4 text-[#64748B] shrink-0" strokeWidth={2} />
+                    <span className="text-[13px] font-medium text-[#1E293B] truncate" title={deletingDoc.original_filename}>
+                      {deletingDoc.original_filename}
+                    </span>
+                  </div>
+                  <div className="mt-2 pt-2 border-t border-[#EDF2F7] flex items-center gap-3 text-[11.5px] text-[#64748B]">
+                    <span>{deletingDoc.total_pages} pages</span>
+                    <span>•</span>
+                    <span>{(deletingDoc.size_bytes / 1024 / 1024).toFixed(1)} MB</span>
+                    <span>•</span>
+                    <span className="capitalize">{deletingDoc.status.replace(/_/g, ' ').toLowerCase()}</span>
+                  </div>
+                </div>
+
+                {/* Items affected breakdown */}
+                <div className="rounded-md border border-[#F2F4F7] bg-[#FAFAFA] p-3 space-y-2">
+                  <p className="text-[11px] font-semibold text-[#64748B] uppercase tracking-wider">
+                    The following data will be purged:
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 text-[12px] text-[#475467]">
+                    <div className="flex items-center gap-1.5">
+                      <HardDrive className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
+                      <span>Raw PDF file</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <FileCheck className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
+                      <span>Extracted pages</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Database className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
+                      <span>Clause findings</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <ShieldAlert className="w-3.5 h-3.5 text-[#98A2B3] shrink-0" strokeWidth={2} />
+                      <span>Risk matrix audit</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Notice */}
+                <p className="text-[12px] text-[#B42318] bg-[#FEF3F2] border border-[#FECDCA] rounded-md px-3 py-2 leading-snug">
+                  <strong>Warning:</strong> This operation is permanent and cannot be reversed.
+                </p>
+
+                {/* Error if deletion failed */}
+                {deleteError && (
+                  <div className="p-3 bg-[#FEF3F2] border border-[#FECDCA] rounded-md text-[#B42318] text-[12px] flex items-start gap-2">
+                    <AlertTriangle className="w-4 h-4 text-[#D92D20] shrink-0 mt-0.5" strokeWidth={2} />
+                    <span className="leading-normal">{deleteError}</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Footer */}
+              <div className="px-6 py-3.5 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-end gap-2.5">
+                <button
+                  type="button"
+                  disabled={isDeleting}
+                  onClick={() => {
+                    setDeletingDoc(null);
+                    setDeleteError(null);
+                  }}
+                  className="px-3.5 py-2 text-[13px] font-medium text-[#344054] bg-white hover:bg-[#F2F4F7] active:scale-[0.98] border border-[#D0D5DD] rounded-md transition-all duration-150 ease-out cursor-pointer disabled:opacity-50 motion-reduce:transform-none"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  disabled={isDeleting}
+                  onClick={handleDeleteConfirm}
+                  className="px-4 py-2 text-[13px] font-medium text-white bg-[#D92D20] hover:bg-[#B42318] active:scale-[0.98] active:translate-y-px rounded-md transition-all duration-150 ease-out cursor-pointer shadow-xs disabled:opacity-50 flex items-center gap-2 motion-reduce:transform-none"
+                >
+                  {isDeleting ? (
+                    <>
+                      <Loader2 className="w-3.5 h-3.5 animate-spin text-white" strokeWidth={2} />
+                      <span>Deleting...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Trash2 className="w-3.5 h-3.5 text-white" strokeWidth={2} />
+                      <span>Delete tender</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

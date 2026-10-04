@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { Loader2, CheckCircle2, AlertCircle, AlertTriangle } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 import { event } from '@/lib/analytics';
@@ -13,9 +13,20 @@ function LoginForm() {
   const errorParam = searchParams.get('error');
   const nextParam = searchParams.get('next');
 
-  // Validate internal path for next to prevent open redirect
+  // Validate internal path for next to prevent open redirect, default to /dashboard
   let safeNext = '/dashboard';
-  if (nextParam && nextParam.startsWith('/') && !nextParam.startsWith('//') && !nextParam.startsWith('/\\') && !nextParam.includes('\\') && !nextParam.includes(':')) {
+  if (
+    nextParam &&
+    nextParam !== '/' &&
+    nextParam !== '/login' &&
+    !nextParam.startsWith('/login?') &&
+    !nextParam.startsWith('/auth') &&
+    nextParam.startsWith('/') &&
+    !nextParam.startsWith('//') &&
+    !nextParam.startsWith('/\\') &&
+    !nextParam.includes('\\') &&
+    !nextParam.includes(':')
+  ) {
     safeNext = nextParam;
   }
 
@@ -24,6 +35,27 @@ function LoginForm() {
   const [status, setStatus] = useState<{ type: 'error' | 'success'; text: string } | null>(null);
   const [isFocused, setIsFocused] = useState(false);
   const supabase = createClient();
+
+  // If user is already authenticated or becomes authenticated on login/signup, redirect to dashboard
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (user) {
+        window.location.href = safeNext;
+      }
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session?.user && (event === 'SIGNED_IN' || event === 'USER_UPDATED')) {
+        window.location.href = safeNext;
+      }
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [safeNext, supabase.auth]);
 
   const handleMagicLink = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,8 +72,8 @@ function LoginForm() {
     event({ action: 'login_started', category: 'auth', label: 'magic_link' });
 
     try {
-      const appUrl = process.env.NEXT_PUBLIC_APP_URL || (typeof window !== 'undefined' ? window.location.origin : '');
-      const emailRedirectTo = `${appUrl}/auth/callback?next=${encodeURIComponent(safeNext)}`;
+      const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : (process.env.NEXT_PUBLIC_APP_URL || '');
+      const emailRedirectTo = `${origin}/auth/callback?next=${encodeURIComponent(safeNext)}`;
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
@@ -68,8 +100,8 @@ function LoginForm() {
     event({ action: 'login_started', category: 'auth', label: 'google' });
 
     try {
-      const appUrl = process.env.NEXT_PUBLIC_APP_URL || (typeof window !== 'undefined' ? window.location.origin : '');
-      const redirectTo = `${appUrl}/auth/callback?next=${encodeURIComponent(safeNext)}`;
+      const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : (process.env.NEXT_PUBLIC_APP_URL || '');
+      const redirectTo = `${origin}/auth/callback?next=${encodeURIComponent(safeNext)}`;
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {

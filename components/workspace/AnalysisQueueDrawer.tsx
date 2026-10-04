@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { X, Loader2, CheckCircle2, AlertTriangle, ArrowRight, Inbox, RefreshCw } from 'lucide-react';
 
 export interface QueueJob {
@@ -35,8 +36,6 @@ export default function AnalysisQueueDrawer({
   onSelectDocument,
   onRetryAnalysis
 }: AnalysisQueueDrawerProps) {
-  if (!isOpen) return null;
-
   // Split into in-progress, completed, failed/action required
   const activeJobs = jobs.filter(j => 
     ['QUEUED', 'PARSING', 'VALIDATING', 'ANALYZING', 'SYNTHESIZING', 'PROCESSING', 'EXTRACTING', 'QUALIFYING', 'ANALYSING', 'VERIFYING', 'FINALIZING'].includes(j.status)
@@ -72,38 +71,50 @@ export default function AnalysisQueueDrawer({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden">
-      {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-black/40 backdrop-blur-[2px] transition-opacity"
-        onClick={onClose}
-      />
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-50 overflow-hidden">
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"
+            onClick={onClose}
+          />
 
-      {/* Slide-over Panel */}
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white shadow-xl flex flex-col">
-          
-          {/* Header */}
-          <div className="h-14 px-6 border-b border-[#D9DEE5] flex items-center justify-between bg-white shrink-0">
-            <div className="flex items-center gap-2.5">
-              <h2 className="text-[14px] font-bold text-[#111827] tracking-tight">
-                Analysis Queue
-              </h2>
-              {activeJobs.length > 0 && (
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#EFF8FF] text-[#175CD3] border border-[#B2DDFF] animate-pulse">
-                  <Loader2 className="w-3 h-3 animate-spin shrink-0" strokeWidth={2.5} />
-                  {activeJobs.length} Active
-                </span>
-              )}
-            </div>
-            <button
-              onClick={onClose}
-              className="p-1.5 text-gray-400 hover:text-gray-600 rounded-sm hover:bg-gray-100 transition-colors"
-              title="Close Queue"
+          {/* Slide-over Panel */}
+          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              className="w-screen max-w-md bg-white shadow-xl flex flex-col motion-reduce:transform-none"
             >
-              <X className="w-5 h-5" strokeWidth={1.75} />
-            </button>
-          </div>
+
+              {/* Header */}
+              <div className="h-14 px-6 border-b border-[#D9DEE5] flex items-center justify-between bg-white shrink-0">
+                <div className="flex items-center gap-2.5">
+                  <h2 className="text-[14px] font-bold text-[#111827] tracking-tight">
+                    Analysis Queue
+                  </h2>
+                  {activeJobs.length > 0 && (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#EFF8FF] text-[#175CD3] border border-[#B2DDFF] animate-pulse">
+                      <Loader2 className="w-3 h-3 animate-spin shrink-0" strokeWidth={2.5} />
+                      {activeJobs.length} Active
+                    </span>
+                  )}
+                </div>
+                <button
+                  onClick={onClose}
+                  className="p-1.5 text-gray-400 hover:text-gray-600 rounded-sm hover:bg-gray-100 transition-all duration-150 ease-out active:scale-95 motion-reduce:transform-none cursor-pointer"
+                  title="Close Queue"
+                >
+                  <X className="w-5 h-5" strokeWidth={1.75} />
+                </button>
+              </div>
 
           {/* Jobs List */}
           <div className="flex-1 overflow-y-auto p-6 space-y-6">
@@ -177,7 +188,7 @@ export default function AnalysisQueueDrawer({
                             onSelectDocument(job.document_id);
                             onClose();
                           }}
-                          className="inline-flex items-center gap-1 px-3 py-1 bg-[#027A48] hover:bg-[#05603A] text-white font-semibold text-[11.5px] rounded-sm transition-colors cursor-pointer"
+                          className="inline-flex items-center gap-1 px-3 py-1 bg-[#027A48] hover:bg-[#05603A] text-white font-semibold text-[11.5px] rounded-sm transition-all duration-150 ease-out active:scale-[0.98] motion-reduce:transform-none cursor-pointer shadow-2xs"
                         >
                           Open Analysis
                           <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
@@ -216,7 +227,7 @@ export default function AnalysisQueueDrawer({
                       <div className="flex items-center justify-end gap-2 pt-2 border-t border-[#FECDCA]/60">
                         <button
                           onClick={() => onRetryAnalysis(job.document_id, true)}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#111827] hover:bg-black text-white font-semibold text-[11.5px] rounded-sm transition-colors cursor-pointer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#111827] hover:bg-black text-white font-semibold text-[11.5px] rounded-sm transition-all duration-150 ease-out active:scale-[0.98] motion-reduce:transform-none cursor-pointer"
                         >
                           {job.status === 'REJECTED' ? (
                             <>
@@ -253,8 +264,10 @@ export default function AnalysisQueueDrawer({
             <span className="font-mono text-[#98A2B3]">{jobs.length} Total Documents</span>
           </div>
 
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </AnimatePresence>
   );
 }

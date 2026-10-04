@@ -50,7 +50,7 @@ export default function AttentionBrief({
         </p>
         <button
           onClick={onOpenCoverageAudit}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#111827] hover:bg-black text-white text-[12px] font-semibold rounded-sm transition-colors cursor-pointer"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#111827] hover:bg-black active:scale-[0.98] active:translate-y-px text-white text-[12px] font-semibold rounded-sm transition-all duration-150 ease-out cursor-pointer motion-reduce:transform-none"
         >
           <span>View Coverage Audit</span>
           <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
@@ -117,7 +117,7 @@ export default function AttentionBrief({
 
                   <button
                     onClick={() => onSelectFinding(primaryFinding)}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#3157D5] hover:bg-[#2546B8] text-white text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#3157D5] hover:bg-[#2546B8] active:scale-[0.98] active:translate-y-px text-white text-[12.5px] font-semibold rounded-sm transition-all duration-150 ease-out cursor-pointer shadow-xs motion-reduce:transform-none"
                   >
                     <span>Review Evidence</span>
                     <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
@@ -140,7 +140,7 @@ export default function AttentionBrief({
               </div>
               <button
                 onClick={onOpenCoverageAudit}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#111827] hover:bg-black text-white text-[12px] font-semibold rounded-sm transition-colors cursor-pointer shrink-0"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#111827] hover:bg-black active:scale-[0.98] active:translate-y-px text-white text-[12px] font-semibold rounded-sm transition-all duration-150 ease-out cursor-pointer shrink-0 motion-reduce:transform-none"
               >
                 <span>Inspect Coverage Audit</span>
                 <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
@@ -295,7 +295,7 @@ export default function AttentionBrief({
               <div className="shrink-0 w-full sm:w-auto">
                 <button
                   onClick={onUpgradeToPro}
-                  className="w-full sm:w-auto px-4 py-2 bg-[#3157D5] hover:bg-[#2544ab] text-white text-[12.5px] font-semibold rounded-sm transition-colors cursor-pointer shadow-xs whitespace-nowrap flex items-center justify-center gap-1.5"
+                  className="w-full sm:w-auto px-4 py-2 bg-[#3157D5] hover:bg-[#2544ab] active:scale-[0.98] active:translate-y-px text-white text-[12.5px] font-semibold rounded-sm transition-all duration-150 ease-out cursor-pointer shadow-xs whitespace-nowrap flex items-center justify-center gap-1.5 motion-reduce:transform-none"
                 >
                   <span>Upgrade to Pro</span>
                   <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />

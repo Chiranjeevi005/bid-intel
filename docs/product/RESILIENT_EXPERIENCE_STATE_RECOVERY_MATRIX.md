@@ -380,10 +380,11 @@ Every asynchronous operation in Section 5 defines standard continuity semantics 
 
 #### `STATE-WRK-01`: Workspace Initial Skeleton Loading
 - **Technical state:** `isLoading = true`, `activeDocData = null`
-- **RFPGround must show:** Skeleton Decision Brief with text: *"Loading Tender Intelligence... Evaluating citations & deterministic coverage"*.
+- **RFPGround must show:** Unified generic primary loader with text: *"Loading..."* (from `app/loading.tsx`).
 - **User must understand:** Workspace is assembling findings, page quotes, and category coverage.
 - **Available action:** Wait. Secondary: `"All Documents"` link in header.
 - **System preserves:** Target document ID.
+
 
 #### `STATE-WRK-02`: Active Processing in Workspace
 - **Technical state:** Active document has `run.status === 'PROCESSING'`.

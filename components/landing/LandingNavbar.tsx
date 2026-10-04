@@ -15,12 +15,20 @@ export default function LandingNavbar({ initialUser = null }: LandingNavbarProps
   const supabase = createClient();
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash.includes('access_token=')) {
+      window.location.href = '/dashboard';
+      return;
+    }
+
     supabase.auth.getUser().then(({ data: { user: currentUser } }) => {
       setUser(currentUser);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       setUser(session?.user || null);
+      if (session?.user && event === 'SIGNED_IN') {
+        window.location.href = '/dashboard';
+      }
     });
 
     return () => {
@@ -34,12 +42,12 @@ export default function LandingNavbar({ initialUser = null }: LandingNavbarProps
         {/* Left: Brand */}
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center">
-            <Image 
-              src="/brand-assets/navbar-logo.png" 
-              alt="RFPground" 
-              width={200} 
-              height={48} 
-              className="h-10 md:h-11 w-auto object-contain"
+            <Image
+              src="/brand-assets/navbar-logo.png"
+              alt="RFPground"
+              width={220}
+              height={52}
+              className="h-11 md:h-12 w-auto object-contain"
               priority
             />
           </Link>
