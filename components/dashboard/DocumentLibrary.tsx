@@ -494,18 +494,18 @@ export default function DocumentLibrary({ userId, userEmail, initialDocuments }:
                     {/* Metadata Line */}
                     <div className="flex items-center gap-2.5 text-[12px] text-[#667085] flex-wrap">
                       <span>{doc.total_pages > 0 ? `${doc.total_pages} pages` : 'Pending page audit'}</span>
-                      <span>•</span>
+                      <span className="w-1 h-1 rounded-full bg-[#98A2B3]" />
                       <span>Uploaded {formatTimeAgo(doc.created_at)}</span>
 
                       {/* Operational Status Tag */}
                       {isCompleted && (
                         <>
-                          <span>•</span>
+                          <span className="w-1 h-1 rounded-full bg-[#98A2B3]" />
                           <span className="inline-flex items-center gap-1 font-semibold text-[#027A48]">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#12B76A]" />
                             Analysis Complete
                           </span>
-                          <span>•</span>
+                          <span className="w-1 h-1 rounded-full bg-[#98A2B3]" />
                           <span className="text-[#344054] font-medium bg-[#F5F6F4] px-1.5 py-0.5 rounded border border-[#E4E7EC]">
                             {doc.total_pages > 0
                               ? `${doc.evaluated_pages_count ?? doc.total_pages} / ${doc.total_pages} Pages Evaluated`
@@ -516,7 +516,7 @@ export default function DocumentLibrary({ userId, userEmail, initialDocuments }:
 
                       {isProcessing && (
                         <>
-                          <span>•</span>
+                          <span className="w-1 h-1 rounded-full bg-[#98A2B3]" />
                           <span className="inline-flex items-center gap-1.5 font-semibold text-[#B54708]">
                             <span className="w-2 h-2 rounded-full bg-[#F79009] animate-pulse" />
                             {opStatus === 'EXTRACTING'
@@ -530,7 +530,7 @@ export default function DocumentLibrary({ userId, userEmail, initialDocuments }:
 
                       {!isCompleted && !isProcessing && !isFailed && (opStatus === 'TEXT_EXTRACTED' || opStatus === 'UPLOADED') && !isRejected && (
                         <>
-                          <span>•</span>
+                          <span className="w-1 h-1 rounded-full bg-[#98A2B3]" />
                           <span className="text-[#344054] font-medium bg-[#F5F6F4] px-1.5 py-0.5 rounded border border-[#E4E7EC]">
                             {opStatus === 'TEXT_EXTRACTED' ? 'Text Extracted' : 'Uploaded'}
                           </span>
@@ -539,7 +539,7 @@ export default function DocumentLibrary({ userId, userEmail, initialDocuments }:
 
                       {isFailed && (
                         <>
-                          <span>•</span>
+                          <span className="w-1 h-1 rounded-full bg-[#98A2B3]" />
                           <span className="inline-flex items-center gap-1 font-semibold text-[#D92D20]">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#F04438]" />
                             Analysis Failed
@@ -750,9 +750,9 @@ export default function DocumentLibrary({ userId, userEmail, initialDocuments }:
                   </div>
                   <div className="mt-2 pt-2 border-t border-[#EDF2F7] flex items-center gap-3 text-[11.5px] text-[#64748B]">
                     <span>{deletingDoc.total_pages} pages</span>
-                    <span>•</span>
+                    <span className="w-1 h-1 rounded-full bg-[#98A2B3]" />
                     <span>{(deletingDoc.size_bytes / 1024 / 1024).toFixed(1)} MB</span>
-                    <span>•</span>
+                    <span className="w-1 h-1 rounded-full bg-[#98A2B3]" />
                     <span className="capitalize">{deletingDoc.status.replace(/_/g, ' ').toLowerCase()}</span>
                   </div>
                 </div>

@@ -55,24 +55,19 @@ export default function LandingNavbar({ initialUser = null }: LandingNavbarProps
 
         {/* Center: Restrained Nav */}
         <nav className="hidden md:flex items-center gap-8 text-[13px] font-medium text-[#667085]">
-          <Link href="#how-it-works" className="hover:text-foreground transition-colors duration-150">
+          <Link href="/#how-it-works" className="hover:text-foreground transition-colors duration-150">
             How it works
           </Link>
-          <Link href="/subscription" className="hover:text-foreground transition-colors duration-150">
+          <Link href="/pricing" className="hover:text-foreground transition-colors duration-150">
             Pricing
+          </Link>
+          <Link href="/contact" className="hover:text-foreground transition-colors duration-150">
+            Contact
           </Link>
         </nav>
 
-        {/* Right: Auth & CTA */}
-        <div className="flex items-center gap-6">
-          {!user && (
-            <Link 
-              href="/login" 
-              className="hidden sm:block text-[13px] font-medium text-[#667085] hover:text-foreground transition-colors duration-150"
-            >
-              Sign in
-            </Link>
-          )}
+        {/* Right: Action CTA */}
+        <div className="flex items-center">
           <Link 
             href={user ? "/dashboard" : "/login"} 
             className="flex items-center justify-center rounded-sm bg-[#3157D5] px-4 py-2 text-[13px] font-medium text-white hover:bg-[#2845a9] transition-all duration-150 active:scale-[0.98] active:translate-y-px"

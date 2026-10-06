@@ -13,6 +13,7 @@ import {
   RefreshCw,
   Search,
   ExternalLink,
+  Minus,
 } from 'lucide-react';
 
 interface RefundRecord {
@@ -377,7 +378,7 @@ export default function RefundConsoleView({ initialUser }: RefundConsoleViewProp
                   {refunds.map((r) => (
                     <tr key={r.id} className="hover:bg-slate-800/40 transition-colors">
                       <td className="py-3.5 px-4 font-semibold text-white">{r.razorpay_payment_id}</td>
-                      <td className="py-3.5 px-4 text-slate-300">{r.razorpay_refund_id || '—'}</td>
+                      <td className="py-3.5 px-4 text-slate-300">{r.razorpay_refund_id || <Minus className="w-3.5 h-3.5 text-slate-500 inline" />}</td>
                       <td className="py-3.5 px-4 font-sans font-medium text-white">
                         ₹{(r.amount / 100).toFixed(2)} {r.currency}
                       </td>

@@ -511,7 +511,7 @@ export default function AttentionBrief({
             {/* Principle badge */}
             <div className="mt-2 p-2 bg-[#F9FAFB] border border-[#EAECF0] rounded-xs flex items-center gap-2 text-[11px] text-[#475467]">
               <span className="font-bold text-[#111827]">Core Rule:</span>
-              <span>No Verified Finding ≠ No Requirement. Always inspect candidate text for unverified domains.</span>
+              <span>No Verified Finding does not mean No Requirement. Always inspect candidate text for unverified domains.</span>
             </div>
           </div>
         </section>

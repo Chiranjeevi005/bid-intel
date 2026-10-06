@@ -30,26 +30,45 @@ export default function LandingFooter() {
 
           {/* Navigation Columns (Col 6-12) */}
           <div className="md:col-span-6 lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
-            {/* Column 1: Exploration */}
+            {/* Column 1: Product */}
             <div className="flex flex-col gap-3.5">
               <span className="text-[11px] font-semibold text-[#111827] uppercase tracking-wider">
-                Platform
+                Product
               </span>
               <Link 
-                href="#how-it-works" 
+                href="/#how-it-works" 
                 className="text-[14px] text-[#4B5563] hover:text-[#111827] transition-colors"
               >
                 How it works
               </Link>
               <Link 
-                href="/subscription" 
+                href="/pricing" 
                 className="text-[14px] text-[#4B5563] hover:text-[#111827] transition-colors"
               >
                 Pricing
               </Link>
             </div>
 
-            {/* Column 2: Legal & Governance */}
+            {/* Column 2: Support */}
+            <div className="flex flex-col gap-3.5">
+              <span className="text-[11px] font-semibold text-[#111827] uppercase tracking-wider">
+                Support
+              </span>
+              <Link 
+                href="/contact" 
+                className="text-[14px] text-[#4B5563] hover:text-[#111827] transition-colors"
+              >
+                Contact Us
+              </Link>
+              <a 
+                href="mailto:support@rfpground.com" 
+                className="text-[14px] font-medium text-[#3157D5] hover:text-[#2544a8] transition-colors"
+              >
+                support@rfpground.com
+              </a>
+            </div>
+
+            {/* Column 3: Legal */}
             <div className="flex flex-col gap-3.5">
               <span className="text-[11px] font-semibold text-[#111827] uppercase tracking-wider">
                 Legal
@@ -60,22 +79,18 @@ export default function LandingFooter() {
               >
                 Terms of Service
               </Link>
-            </div>
-
-            {/* Column 3: Inquiries & Support */}
-            <div className="flex flex-col gap-3.5 col-span-2 sm:col-span-1">
-              <span className="text-[11px] font-semibold text-[#111827] uppercase tracking-wider">
-                Inquiries
-              </span>
-              <p className="text-[13px] text-[#6B7280]">
-                Technical and procurement assistance:
-              </p>
-              <a 
-                href="mailto:support@rfpground.com" 
-                className="text-[14px] font-medium text-[#3157D5] hover:text-[#2544a8] transition-colors"
+              <Link 
+                href="/privacy" 
+                className="text-[14px] text-[#4B5563] hover:text-[#111827] transition-colors"
               >
-                support@rfpground.com
-              </a>
+                Privacy Policy
+              </Link>
+              <Link 
+                href="/refund-cancellation" 
+                className="text-[14px] text-[#4B5563] hover:text-[#111827] transition-colors"
+              >
+                Refund & Cancellation
+              </Link>
             </div>
           </div>
         </div>
@@ -83,7 +98,7 @@ export default function LandingFooter() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[13px] text-[#6B7280]">
           <div>
-            &copy; {new Date().getFullYear()} RFPground. All rights reserved.
+            &copy; {new Date().getFullYear()} RFPGround. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <span>Enterprise-Grade Document Security</span>

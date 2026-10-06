@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Check, Loader2, ArrowRight, Lock, X, RefreshCw, Clock, ShieldCheck } from 'lucide-react';
+import { Check, Loader2, ArrowRight, ArrowLeft, Lock, X, RefreshCw, Clock, ShieldCheck } from 'lucide-react';
 import { BillingStatus } from '@/lib/billing/config';
 
 interface SubscriptionViewProps {
@@ -240,9 +240,10 @@ export default function SubscriptionView({ initialUser }: SubscriptionViewProps)
           <div className="flex items-center gap-4">
             <Link
               href={user ? "/dashboard" : "/"}
-              className="text-[13px] font-medium text-[#667085] hover:text-[#101828] transition-colors"
+              className="text-[13px] font-medium text-[#667085] hover:text-[#101828] transition-colors inline-flex items-center gap-1.5"
             >
-              {user ? "← Back to Dashboard" : "← Back to Home"}
+              <ArrowLeft className="w-4 h-4" />
+              <span>{user ? "Back to Dashboard" : "Back to Home"}</span>
             </Link>
             {!user && (
               <Link
@@ -402,11 +403,10 @@ export default function SubscriptionView({ initialUser }: SubscriptionViewProps)
             <div className="mt-8 pt-4">
               <Link
                 href={user ? "/dashboard" : "/login"}
-                className={`w-full block text-center rounded-sm py-2.5 text-[13px] font-semibold transition-all ${
-                  !isPro
+                className={`w-full block text-center rounded-sm py-2.5 text-[13px] font-semibold transition-all ${!isPro
                     ? 'bg-[#F2F4F7] text-[#344054] cursor-default'
                     : 'bg-white border border-[#D0D5DD] text-[#344054] hover:bg-gray-50'
-                }`}
+                  }`}
               >
                 {!isPro ? 'Current Plan' : 'Free Included'}
               </Link>
@@ -473,13 +473,12 @@ export default function SubscriptionView({ initialUser }: SubscriptionViewProps)
               <button
                 onClick={() => handleSubscribe('PRO_INDIA')}
                 disabled={actionLoading !== null || confirmingPlan !== null || (isPro && billing?.plan === 'PRO_INDIA')}
-                className={`w-full rounded-sm py-2.5 text-[13px] font-semibold transition-all shadow-sm flex items-center justify-center gap-1.5 ${
-                  isPro && billing?.plan === 'PRO_INDIA'
+                className={`w-full rounded-sm py-2.5 text-[13px] font-semibold transition-all shadow-sm flex items-center justify-center gap-1.5 ${isPro && billing?.plan === 'PRO_INDIA'
                     ? 'bg-[#F2F4F7] text-[#667085] cursor-default'
                     : confirmingPlan !== null || actionLoading !== null
-                    ? 'bg-[#3157D5]/60 text-white cursor-not-allowed'
-                    : 'bg-[#3157D5] text-white hover:bg-[#2845a9] active:scale-[0.99] cursor-pointer'
-                }`}
+                      ? 'bg-[#3157D5]/60 text-white cursor-not-allowed'
+                      : 'bg-[#3157D5] text-white hover:bg-[#2845a9] active:scale-[0.99] cursor-pointer'
+                  }`}
               >
                 {actionLoading === 'PRO_INDIA' ? (
                   <>
@@ -563,13 +562,12 @@ export default function SubscriptionView({ initialUser }: SubscriptionViewProps)
               <button
                 onClick={() => handleSubscribe('PRO_GLOBAL')}
                 disabled={actionLoading !== null || confirmingPlan !== null || (isPro && billing?.plan === 'PRO_GLOBAL')}
-                className={`w-full rounded-sm py-2.5 text-[13px] font-semibold transition-all border flex items-center justify-center gap-1.5 ${
-                  isPro && billing?.plan === 'PRO_GLOBAL'
+                className={`w-full rounded-sm py-2.5 text-[13px] font-semibold transition-all border flex items-center justify-center gap-1.5 ${isPro && billing?.plan === 'PRO_GLOBAL'
                     ? 'bg-[#F2F4F7] text-[#667085] cursor-default'
                     : confirmingPlan !== null || actionLoading !== null
-                    ? 'bg-blue-50 text-[#3157D5]/60 border-[#3157D5]/40 cursor-not-allowed'
-                    : 'bg-white text-[#3157D5] border-[#3157D5] hover:bg-blue-50 cursor-pointer'
-                }`}
+                      ? 'bg-blue-50 text-[#3157D5]/60 border-[#3157D5]/40 cursor-not-allowed'
+                      : 'bg-white text-[#3157D5] border-[#3157D5] hover:bg-blue-50 cursor-pointer'
+                  }`}
               >
                 {actionLoading === 'PRO_GLOBAL' ? (
                   <>
@@ -600,7 +598,13 @@ export default function SubscriptionView({ initialUser }: SubscriptionViewProps)
             <Lock className="w-3.5 h-3.5 text-[#667085] shrink-0" strokeWidth={2} />
             <span>All transactions are securely billed in Indian Rupees (INR) via <strong>Razorpay</strong>. Indian and international credit &amp; debit cards accepted.</span>
           </p>
-          <div className="mt-3">
+          <div className="mt-3 flex items-center justify-center gap-4 text-[12px] text-[#98A2B3] flex-wrap">
+            <Link href="/terms" className="hover:text-[#475467] transition-colors">Terms of Service</Link>
+            <span>&middot;</span>
+            <Link href="/privacy" className="hover:text-[#475467] transition-colors">Privacy Policy</Link>
+            <span>&middot;</span>
+            <Link href="/refund-cancellation" className="hover:text-[#475467] transition-colors">Refund &amp; Cancellation</Link>
+            <span>&middot;</span>
             <Link
               href="/subscription/refunds"
               className="text-[11.5px] text-[#98A2B3] hover:text-[#475467] transition-colors"

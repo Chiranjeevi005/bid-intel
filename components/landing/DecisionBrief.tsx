@@ -277,8 +277,9 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                   <p className="text-[15px] font-serif leading-relaxed text-[#1F2937] italic">
                     &quot;The Supplier shall indemnify, defend and hold harmless the Authority from and against any and all claims, losses, damages, liabilities...&quot;
                   </p>
-                  <div className="mt-2 text-[12px] font-medium text-[#B42318]">
-                    ● Uncapped liability exposure detected (No stop-loss ceiling)
+                  <div className="mt-2 text-[12px] font-medium text-[#B42318] flex items-center gap-1.5">
+                    <AlertTriangle className="w-3.5 h-3.5 shrink-0" strokeWidth={2.5} />
+                    <span>Uncapped liability exposure detected (No stop-loss ceiling)</span>
                   </div>
                 </div>
 
@@ -390,8 +391,15 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
 
                   <div className="mt-4 pt-3 border-t border-[#E5E7EB] flex items-center justify-between text-[11px] font-semibold text-[#667085]">
                     <span>{stage.metric}</span>
-                    <span className={isActive ? "text-[#3157D5]" : "text-gray-400"}>
-                      {isActive ? "Viewing Specimen →" : "Click to inspect"}
+                    <span className={isActive ? "text-[#3157D5] inline-flex items-center gap-1" : "text-gray-400"}>
+                      {isActive ? (
+                        <>
+                          <span>Viewing Specimen</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </>
+                      ) : (
+                        "Click to inspect"
+                      )}
                     </span>
                   </div>
                 </motion.button>
@@ -425,7 +433,7 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
 
                   <div className="flex items-center gap-3">
                     <span
-                      className={`text-[11px] font-mono font-bold px-2.5 py-1 rounded border transition-colors ${
+                      className={`text-[11px] font-mono font-bold px-2.5 py-1 rounded border transition-colors inline-flex items-center gap-1.5 ${
                         activeStage.visualTagColor === "danger"
                           ? "bg-[#FEF3F2] text-[#B42318] border-[#FECDCA]"
                           : activeStage.visualTagColor === "success"
@@ -433,7 +441,8 @@ export default function DecisionBrief({ user = null }: { user?: any | null }) {
                           : "bg-[#EFF8FF] text-[#175CD3] border-[#B2DDFF]"
                       }`}
                     >
-                      ● {activeStage.visualTag}
+                      <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                      <span>{activeStage.visualTag}</span>
                     </span>
                     <span className="text-[12px] font-mono font-medium text-[#667085]">
                       {activeStage.metricLabel}

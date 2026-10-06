@@ -53,7 +53,7 @@ export default function BillingBadge() {
       title="View Plans & Pricing"
     >
       <span className="font-semibold">{planLabel}</span>
-      <span className="text-gray-400">•</span>
+      <span className="w-1 h-1 rounded-full bg-gray-400" />
       <span>
         {billing.consumed}/{billing.limit} {isPro ? 'this month' : 'used'}
       </span>

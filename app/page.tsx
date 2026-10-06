@@ -3,6 +3,15 @@ import LandingNavbar from "@/components/landing/LandingNavbar";
 import DecisionBrief from "@/components/landing/DecisionBrief";
 import LandingFooter from "@/components/landing/LandingFooter";
 import { createClient } from "@/lib/supabase/server";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "RFPGround — RFP & Tender Decision Intelligence",
+  description: "Pre-bid intelligence for teams making serious bid decisions. Uncover uncapped liability, missing SLAs, and qualification blockers before committing proposal resources.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default async function Home(props: {
   searchParams?: Promise<{ code?: string; next?: string }>;
