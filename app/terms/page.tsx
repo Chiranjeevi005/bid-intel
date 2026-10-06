@@ -279,15 +279,15 @@ export default async function TermsOfServicePage() {
             <p className="font-medium text-[#111827]">
               RFPGround &mdash; RFP &amp; Tender Decision Intelligence
             </p>
-            <div className="bg-white border border-[#E5E7EB] rounded-lg p-5 text-[13.5px] space-y-1.5 text-[#4B5563]">
-              <p className="font-semibold text-[#111827]">
-                RFPGround Platform Operations
+            <div className="bg-white border border-[#E5E7EB] rounded-lg p-5 text-[13.5px] space-y-2 text-[#4B5563]">
+              <p>
+                <strong className="text-[#111827]">Operated By:</strong> <strong className="text-[#111827]">POOVADI KISHOREBABU CHIRANJEEVI</strong>
               </p>
               <p>
-                Operating Location: Bengaluru, Karnataka, India
+                <strong className="text-[#111827]">Operating Location:</strong> Bengaluru, Karnataka, India
               </p>
               <p>
-                For questions regarding these Terms, contact{" "}
+                <strong className="text-[#111827]">Customer Support:</strong> For customer support and inquiries regarding these Terms, contact{" "}
                 <a
                   href="mailto:support@rfpground.com"
                   className="text-[#3157D5] hover:text-[#2544a8] underline inline-flex items-center gap-1 font-medium"

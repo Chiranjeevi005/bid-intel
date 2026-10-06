@@ -98,7 +98,7 @@ export default function LandingFooter() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[13px] text-[#6B7280]">
           <div>
-            &copy; {new Date().getFullYear()} RFPGround. All rights reserved.
+            &copy; {new Date().getFullYear()} RFPGround. Operated by POOVADI KISHOREBABU CHIRANJEEVI. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <span>Enterprise-Grade Document Security</span>

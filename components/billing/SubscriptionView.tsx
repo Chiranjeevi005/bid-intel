@@ -152,7 +152,7 @@ export default function SubscriptionView({ initialUser }: SubscriptionViewProps)
 
       const loaded = await loadScript();
       if (!loaded || !(window as any).Razorpay) {
-        throw new Error('Unable to load Razorpay payment gateway. Please check your connection.');
+        throw new Error('Unable to load payment gateway. Please check your connection.');
       }
 
       const options = {
@@ -383,7 +383,7 @@ export default function SubscriptionView({ initialUser }: SubscriptionViewProps)
               <div className="border-t border-[#EAECF0] pt-5 space-y-3">
                 <div className="flex items-center gap-2.5 text-[13px] text-[#344054]">
                   <Check className="w-4 h-4 text-blue-600 shrink-0" strokeWidth={2.5} />
-                  <span><strong>3 lifetime</strong> full tender analyses</span>
+                  <span><strong>3 tender analyses</strong> for your account</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-[13px] text-[#344054]">
                   <Check className="w-4 h-4 text-blue-600 shrink-0" strokeWidth={2.5} />
@@ -592,13 +592,89 @@ export default function SubscriptionView({ initialUser }: SubscriptionViewProps)
           </div>
         </div>
 
+        {/* Commercial Decision FAQ */}
+        <div className="max-w-3xl mx-auto mt-16 mb-12">
+          <div className="mb-6 text-center">
+            <h2 className="text-[20px] font-bold text-[#111827] tracking-tight">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-[14px] text-[#6B7280]">
+              Key commercial details about subscriptions and quotas.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <div className="bg-white border border-[#E5E7EB] rounded-lg p-5">
+              <h3 className="text-[14px] font-semibold text-[#111827] mb-1.5">
+                Can I upgrade or change my plan later?
+              </h3>
+              <p className="text-[13px] text-[#4B5563] leading-relaxed">
+                Yes. You can change your subscription plan through the available subscription settings. Any plan change will take effect according to the applicable billing and subscription terms shown at the time of the change.
+              </p>
+            </div>
+
+            <div className="bg-white border border-[#E5E7EB] rounded-lg p-5">
+              <h3 className="text-[14px] font-semibold text-[#111827] mb-1.5">
+                What happens when my analyses are consumed?
+              </h3>
+              <p className="text-[13px] text-[#4B5563] leading-relaxed">
+                Your plan includes the stated number of analyses for each billing cycle. Once your available analyses are used, you cannot start another analysis until the next billing cycle or until you change to an eligible plan. Unused analyses do not carry forward to the next billing cycle.
+              </p>
+            </div>
+
+            <div className="bg-white border border-[#E5E7EB] rounded-lg p-5">
+              <h3 className="text-[14px] font-semibold text-[#111827] mb-1.5">
+                How does the Free plan quota work?
+              </h3>
+              <p className="text-[13px] text-[#4B5563] leading-relaxed">
+                The Free plan includes 3 tender analyses for your account. These analyses are available without a recurring subscription and allow you to evaluate RFPGround before choosing a paid plan.
+              </p>
+            </div>
+
+            <div className="bg-white border border-[#E5E7EB] rounded-lg p-5">
+              <h3 className="text-[14px] font-semibold text-[#111827] mb-1.5">
+                Can I cancel my subscription?
+              </h3>
+              <p className="text-[13px] text-[#4B5563] leading-relaxed">
+                Yes. You can cancel future subscription renewals through the available subscription settings or by contacting RFPGround support. Cancellation prevents the next renewal but does not refund the current paid billing period or unused analysis capacity. See our{" "}
+                <Link href="/refund-cancellation" className="text-[#3157D5] hover:underline font-medium">
+                  Refund &amp; Cancellation Policy
+                </Link>{" "}
+                for details.
+              </p>
+            </div>
+
+            <div className="bg-white border border-[#E5E7EB] rounded-lg p-5">
+              <h3 className="text-[14px] font-semibold text-[#111827] mb-1.5">
+                Are RFPGround subscriptions refundable?
+              </h3>
+              <p className="text-[13px] text-[#4B5563] leading-relaxed">
+                Subscription fees are generally non-refundable once the applicable billing period has started. Verified duplicate, unauthorized, or erroneous transactions may be investigated and addressed where appropriate. See our{" "}
+                <Link href="/refund-cancellation" className="text-[#3157D5] hover:underline font-medium">
+                  Refund &amp; Cancellation Policy
+                </Link>{" "}
+                for details.
+              </p>
+            </div>
+
+            <div className="bg-white border border-[#E5E7EB] rounded-lg p-5">
+              <h3 className="text-[14px] font-semibold text-[#111827] mb-1.5">
+                Which payment methods and currencies are supported?
+              </h3>
+              <p className="text-[13px] text-[#4B5563] leading-relaxed">
+                RFPGround subscriptions are billed in Indian Rupees (INR). Available payment methods are shown at checkout and may include supported cards, UPI, and net banking depending on the payment options available for your transaction.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Security & Policy Note */}
-        <div className="mt-16 text-center text-[12.5px] text-[#667085]">
-          <p className="inline-flex items-center gap-1.5 justify-center flex-wrap">
+        <div className="mt-12 text-center text-[12.5px] text-[#667085]">
+          <p className="inline-flex items-center gap-1.5 justify-center flex-wrap max-w-2xl mx-auto">
             <Lock className="w-3.5 h-3.5 text-[#667085] shrink-0" strokeWidth={2} />
-            <span>All transactions are securely billed in Indian Rupees (INR) via <strong>Razorpay</strong>. Indian and international credit &amp; debit cards accepted.</span>
+            <span>RFPGround subscriptions are billed in Indian Rupees (INR). Available payment methods are shown at checkout and may include supported cards, UPI, and net banking depending on the payment options available for your transaction.</span>
           </p>
-          <div className="mt-3 flex items-center justify-center gap-4 text-[12px] text-[#98A2B3] flex-wrap">
+          <div className="mt-4 flex items-center justify-center gap-4 text-[12px] text-[#98A2B3] flex-wrap">
             <Link href="/terms" className="hover:text-[#475467] transition-colors">Terms of Service</Link>
             <span>&middot;</span>
             <Link href="/privacy" className="hover:text-[#475467] transition-colors">Privacy Policy</Link>
